@@ -7,6 +7,13 @@
  * @package siteorigin_unwind
  */
 
+define('SITEORIGIN_THEME_VERSION', 'dev');
+define('SITEORIGIN_THEME_JS_PREFIX', '');
+
+// The settings manager
+include get_template_directory() . '/inc/settings/settings.php';
+include get_template_directory() . '/inc/settings/page-settings.php';
+
 if ( ! function_exists( 'siteorigin_unwind_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -76,6 +83,17 @@ function siteorigin_unwind_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	if( !defined('SITEORIGIN_PANELS_VERSION') ){
+		// Only include panels lite if the panels plugin doesn't exist
+		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
+	}
+
+	add_theme_support( 'siteorigin-panels', array(
+		'home-page' => true,
+		// TODO implement a responsive enabled setting
+		// 'responsive' => !siteorigin_setting( 'responsive_enabled' ),
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
