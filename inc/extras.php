@@ -24,6 +24,11 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Check if the sidebar has widgets
+	if( !is_active_sidebar('main-sidebar') ) {
+		$classes[] = 'no-active-sidebar';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'siteorigin_unwind_body_classes' );

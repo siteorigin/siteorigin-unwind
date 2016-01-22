@@ -117,11 +117,11 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );
  */
 function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'siteorigin_unwind' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html__( 'Main Sidebar', 'siteorigin_unwind' ),
+		'id'            => 'main-sidebar',
 		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );

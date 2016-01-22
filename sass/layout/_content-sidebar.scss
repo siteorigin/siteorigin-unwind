@@ -12,9 +12,40 @@
 	float: right;
 	overflow: hidden;
 	width: $size__site-sidebar;
+	padding-left: 40px;
 }
 
-.site-footer {
-	clear: both;
-	width: $size__site-main;
+.no-active-sidebar {
+
+	.content-area {
+		float: none;
+		width: auto;
+		margin: 0;
+	}
+
+	.site-main {
+		margin: 0;
+	}
+
+}
+
+// Making the layout responsive
+
+@media (max-width: 600px) {
+	.content-area {
+		float: none;
+		width: auto;
+		margin: 0;
+	}
+
+	.site-main {
+		margin: 0;
+	}
+
+	.site-content .widget-area {
+		float: none;
+		width: 100%;
+		padding-left: 0;
+		margin-top: 40px;
+	}
 }
