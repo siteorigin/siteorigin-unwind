@@ -238,6 +238,48 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
 
+.heading-strike {
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+  .heading-strike:before, .heading-strike:after {
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+    height: 2px;
+    content: '\a0';
+    background-color: #f4f4f4;
+    align-self: center; }
+  .heading-strike:before {
+    margin-right: 10px; }
+  .heading-strike:after {
+    margin-left: 10px; }
+
 p {
   margin-bottom: 1.5em; }
 
