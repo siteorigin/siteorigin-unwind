@@ -14,11 +14,13 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'siteorigin_unwind' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'siteorigin_unwind' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'siteorigin_unwind' ), 'siteorigin_unwind', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="container">
+			<div class="site-info">
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'siteorigin_unwind' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'siteorigin_unwind' ), 'WordPress' ); ?></a>
+				<span class="sep"> | </span>
+				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'siteorigin_unwind' ), 'siteorigin_unwind', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+			</div><!-- .site-info -->
+		</div><!-- .container -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

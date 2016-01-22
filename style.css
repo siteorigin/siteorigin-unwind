@@ -623,6 +623,11 @@ a {
   width: 30%;
   padding-left: 40px; }
 
+.site-footer {
+  clear: both;
+  width: 100%;
+  min-width: 1060px; }
+
 .no-active-sidebar .content-area {
   float: none;
   width: auto;
@@ -653,6 +658,15 @@ a {
   position: relative;
   padding: 0 20px;
   width: 1040px; }
+
+/*--------------------------------------------------------------
+## Site Masthead
+--------------------------------------------------------------*/
+#masthead {
+  width: 100%; }
+  #masthead .container-inner {
+    display: table;
+    width: 100%; }
 
 /*--------------------------------------------------------------
 ## Posts and pages

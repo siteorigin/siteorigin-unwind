@@ -15,6 +15,12 @@
 	padding-left: 40px;
 }
 
+.site-footer {
+	clear: both;
+	width: $size__site-main;
+	min-width: 1060px;
+}
+
 .no-active-sidebar {
 
 	.content-area {
