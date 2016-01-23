@@ -736,6 +736,18 @@ a {
   clear: both;
   margin: 0 0 1.5em; }
 
+.entry-meta {
+  text-align: center;
+  text-transform: uppercase; }
+  .entry-meta span {
+    font-size: 0.8em;
+    color: #d9d9d9; }
+    .entry-meta span:not(:first-child)::before {
+      content: '\00a0\00a0/\00a0\00a0'; }
+    .entry-meta span a {
+      text-decoration: none;
+      color: inherit; }
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/

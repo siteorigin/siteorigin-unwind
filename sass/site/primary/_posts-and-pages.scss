@@ -26,3 +26,24 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.entry-meta {
+	text-align: center;
+	text-transform: uppercase;
+
+	span{
+		font-size: 0.8em;
+		color: $color__text-meta;
+
+		&:not(:first-child) {
+			&::before {
+				content: '\00a0\00a0/\00a0\00a0';
+			}
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+}

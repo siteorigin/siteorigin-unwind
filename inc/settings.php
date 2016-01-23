@@ -23,6 +23,32 @@ add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
 function siteorigin_unwind_settings_init(){
 
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
+
+		'navigation' => array(
+			'title' => __( 'Navigation', 'siteorigin-unwind' ),
+			'fields' => array(
+				'post' => array(
+					'type' => 'checkbox',
+					'label' => __('Post navigation', 'siteorigin-unwind'),
+					'description' => __('Display next and previous post navigation', 'siteorigin-unwind'),
+				),
+			),
+		),
+
+		'blog' => array(
+			'title' => __( 'Blog', 'siteorigin-unwind' ),
+			'fields' => array(
+				'featured_single' => array(
+					'type' => 'checkbox',
+					'label' => __('Featured image on single', 'siteorigin-unwind'),
+				),
+				'display_author_box' => array(
+					'type' => 'checkbox',
+					'label' => __('Display author box on single', 'siteorigin-unwind'),
+				),
+			)
+		),
+
 	) ) );
 }
 add_action('siteorigin_settings_init', 'siteorigin_unwind_settings_init');
@@ -59,6 +85,14 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom
  * @return mixed
  */
 function siteorigin_unwind_settings_defaults( $defaults ){
+
+	// Navigation defaults
+	$defaults['navigation_post'] = true;
+
+	// Blog settings
+	$defaults['blog_featured_single'] = true;
+	$defaults['blog_display_author_box'] = false;
+
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults');

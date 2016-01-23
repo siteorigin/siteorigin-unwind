@@ -39,6 +39,31 @@ function siteorigin_unwind_posted_on() {
 }
 endif;
 
+if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ):
+/**
+ * Prints HTML with meta information for the current post-date/time, category and comment count.
+ */
+function siteorigin_unwind_post_meta() {
+
+	$num_comments = get_comments_number(); // get_comments_number returns only a numeric value
+
+	if ( comments_open() ) {
+		if ( $num_comments == 0 ) {
+			$comments = __('Comments');
+		} elseif ( $num_comments > 1 ) {
+			$comments = $num_comments . __(' Comments');
+		} else {
+			$comments = __('1 Comment');
+		}
+		$write_comments = '<a href="' . get_comments_link() .'">'. $comments.'</a>';
+	} ?>
+
+	<span class="entry-date"><?php the_time( 'M d, Y' ); ?></span>
+	<span class="entry-category"><?php the_category( ', ' ); ?></span>
+	<span class="entry-comments"><?php echo $write_comments; ?></span>
+<?php }
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
