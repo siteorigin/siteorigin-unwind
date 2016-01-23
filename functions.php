@@ -168,3 +168,18 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load the theme settings file
+ */
+require get_template_directory() . '/inc/settings.php';
+
+/**
+ * Support for SiteOrigin Page Builder
+ */
+// require get_template_directory() . '/inc/siteorigin-panels.php';
+
+/**
+ * Load support for WooCommerce
+ */
+// include get_template_directory() . '/woocommerce/functions.php';

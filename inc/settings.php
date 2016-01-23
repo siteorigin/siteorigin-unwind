@@ -15,7 +15,7 @@ function siteorigin_unwind_settings_localize( $loc ){
 		'meta_box' => __('Page settings', 'siteorigin-unwind'),
 	), $loc);
 }
-add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
+add_filter('siteorigin_settings_localization', 'siteorigin_unwind_settings_localize');
 
 /**
  * Initialize the settings
