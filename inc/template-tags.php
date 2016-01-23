@@ -45,22 +45,33 @@ if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ):
  */
 function siteorigin_unwind_post_meta() {
 
-	$num_comments = get_comments_number(); // get_comments_number returns only a numeric value
+	/* translators: used between list items, there is a space after the comma */
+	$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin_unwind' ) );
+	// get_comments_number returns only a numeric value
+	$num_comments = get_comments_number();
 
 	if ( comments_open() ) {
 		if ( $num_comments == 0 ) {
-			$comments = __('Comments');
+			$comments = esc_html__('Comments');
 		} elseif ( $num_comments > 1 ) {
-			$comments = $num_comments . __(' Comments');
+			$comments = $num_comments . esc_html__(' Comments');
 		} else {
-			$comments = __('1 Comment');
+			$comments = esc_html__('1 Comment');
 		}
-		$write_comments = '<a href="' . get_comments_link() .'">'. $comments.'</a>';
+	} else {
+		$comments = NULL;
 	} ?>
 
 	<span class="entry-date"><?php the_time( 'M d, Y' ); ?></span>
-	<span class="entry-category"><?php the_category( ', ' ); ?></span>
-	<span class="entry-comments"><?php echo $write_comments; ?></span>
+
+	<?php if ( $categories_list && siteorigin_unwind_categorized_blog() ) {
+		printf( '<span class="entry-category">' . esc_html__( '%1$s', 'siteorigin_unwind' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+	} ?>
+
+	<?php if ( $comments ) {
+		echo '<span class="entry-comments"><a href="' . get_comments_link() .'">'. $comments.'</a></span>';
+	} ?>
+
 <?php }
 endif;
 
@@ -70,19 +81,9 @@ if ( ! function_exists( 'siteorigin_unwind_entry_footer' ) ) :
  */
 function siteorigin_unwind_entry_footer() {
 	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin_unwind' ) );
-		if ( $categories_list && siteorigin_unwind_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'siteorigin_unwind' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
-
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'siteorigin_unwind' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'siteorigin_unwind' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
+	if ( 'post' === get_post_type() ) { ?>
+		<span class="tags-list"><?php the_tags('', '', ''); ?></span>
+	<?php }
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
@@ -96,7 +97,7 @@ function siteorigin_unwind_entry_footer() {
 			esc_html__( 'Edit %s', 'siteorigin_unwind' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
-		'<span class="edit-link">',
+		'</br><span class="edit-link">',
 		'</span>'
 	);
 }

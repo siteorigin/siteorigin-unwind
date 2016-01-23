@@ -51,4 +51,24 @@
 .entry-title {
 	text-align: center;
 	color: $color__text-titles;
+	margin-top: 0.25em;
+}
+
+.tags-list {
+	margin-top: 1em;
+	a {
+		background: #f4f4f4;
+		color: #626262;
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom:10px;
+		text-decoration: none;
+		line-height: 1em;
+		font-size: 0.8em;
+		padding: 8px 12px;
+
+		&:hover {
+			//background: $color__primary_accent_dark;
+		}
+	}
 }

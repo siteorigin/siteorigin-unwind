@@ -750,7 +750,21 @@ a {
 
 .entry-title {
   text-align: center;
-  color: #2d2d2d; }
+  color: #2d2d2d;
+  margin-top: 0.25em; }
+
+.tags-list {
+  margin-top: 1em; }
+  .tags-list a {
+    background: #f4f4f4;
+    color: #626262;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    line-height: 1em;
+    font-size: 0.8em;
+    padding: 8px 12px; }
 
 /*--------------------------------------------------------------
 ## Asides
