@@ -26,7 +26,9 @@ get_header(); ?>
 				siteorigin_unwind_the_post_navigation();
 			endif;
 
-			siteorigin_unwind_author_box();
+			if ( siteorigin_setting('blog_display_author_box') ) :
+				siteorigin_unwind_author_box();
+			endif;
 
 			if ( function_exists( 'related_posts' ) ):
 				related_posts();

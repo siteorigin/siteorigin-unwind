@@ -18,5 +18,5 @@ YARPP Template: SiteOrigin Unwind
 	<div class="clear"></div>
 
 <?php else: ?>
-	<p>No related photos.</p>
+	<p><?php esc_html_e( 'No related posts.', 'siteorigin_unwind' ); ?></p>
 <?php endif; ?>
