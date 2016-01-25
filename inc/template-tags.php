@@ -103,6 +103,30 @@ function siteorigin_unwind_entry_footer() {
 }
 endif;
 
+if ( ! function_exists( 'siteorigin_unwind_author_box' ) ) :
+/**
+ * Displays the author box in single posts
+ */
+function siteorigin_unwind_author_box() {
+	if ( siteorigin_setting('blog_display_author_box') ) { ?>
+		<div class="author-box">
+			<div class="author-avatar">
+				<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
+			</div>
+			<div class="author-description">
+				<span class="post-author-title">
+					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+						<?php echo get_the_author(); ?>
+					</a>
+				</span><br />
+				<?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?>
+			</div>
+			<div class="clear"></div>
+		</div>
+	<?php }
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.

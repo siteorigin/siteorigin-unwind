@@ -26,6 +26,8 @@ get_header(); ?>
 				siteorigin_unwind_the_post_navigation();
 			endif;
 
+			siteorigin_unwind_author_box();
+
 			if ( function_exists( 'related_posts' ) ):
 				related_posts();
 			endif;

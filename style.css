@@ -818,6 +818,27 @@ a {
       font-size: 0.9em;
       color: #d9d9d9; }
 
+.author-box {
+  margin: 20px 0; }
+  .author-box .author-avatar {
+    float: left; }
+    .author-box .author-avatar img {
+      vertical-align: middle;
+      border-radius: 50%; }
+  .author-box .author-description {
+    padding-left: 120px;
+    font-size: 0.95em;
+    color: #626262; }
+    .author-box .author-description .post-author-title {
+      margin-top: 0;
+      font-size: 1em;
+      font-weight: bold; }
+      .author-box .author-description .post-author-title a {
+        color: #2d2d2d;
+        text-decoration: none; }
+        .author-box .author-description .post-author-title a:hover {
+          color: #21af7b; }
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/

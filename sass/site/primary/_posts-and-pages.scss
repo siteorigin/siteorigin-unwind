@@ -126,3 +126,37 @@
 		}
 	}
 }
+
+.author-box {
+	margin: 20px 0;
+
+	.author-avatar {
+		float: left;
+
+		img {
+			vertical-align: middle;
+			border-radius: 50%;
+		}
+	}
+
+	.author-description {
+		padding-left: 120px;
+		font-size: 0.95em;
+		color: $color__text-medium;
+
+		.post-author-title {
+			margin-top: 0;
+			font-size: 1em;
+			font-weight: bold;
+
+			a {
+				color: $color__text-dark;
+				text-decoration: none;
+
+				&:hover {
+					color: $color__primary-accent-dark;
+				}
+			}
+		}
+	}
+}
