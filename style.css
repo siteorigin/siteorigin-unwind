@@ -784,6 +784,16 @@ a {
     .tags-list a:hover {
       background: #21af7b; }
 
+.share-this {
+  font-size: 1em; }
+
+.single-post .sharedaddy .sd-content {
+  padding: 30px 0;
+  width: 100%;
+  text-align: center; }
+  .single-post .sharedaddy .sd-content ul {
+    display: inline-block; }
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
