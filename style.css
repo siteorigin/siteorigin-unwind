@@ -757,7 +757,7 @@ a {
 .tags-list {
   margin-top: 1em; }
   .tags-list a {
-    background: #dadada;
+    background: #f4f4f4;
     color: #626262;
     display: inline-block;
     margin-right: 10px;
@@ -767,7 +767,7 @@ a {
     font-size: 0.8em;
     padding: 8px 12px; }
     .tags-list a:hover {
-      background: #126245; }
+      background: #21af7b; }
 
 /*--------------------------------------------------------------
 ## Asides
@@ -812,7 +812,7 @@ a {
       font-size: 0.8em;
       line-height: 1em; }
       .comment-list li.comment .comment-reply-link:hover {
-        color: #126245; }
+        color: #21af7b; }
     .comment-list li.comment .info {
       color: #d9d9d9; }
     .comment-list li.comment .author {
@@ -888,8 +888,8 @@ a {
       -moz-transition: 0.085s;
       transition: 0.085s; }
       #commentform .form-submit input:hover {
-        background: #126245;
-        border-color: #126245;
+        background: #21af7b;
+        border-color: #21af7b;
         color: #ffffff;
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
   #commentform input, #commentform textarea {
