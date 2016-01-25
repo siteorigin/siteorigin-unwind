@@ -557,6 +557,21 @@ a {
   text-align: right;
   width: 50%; }
 
+.post-navigation {
+  padding: 60px 0;
+  border-top: 2px solid #f4f4f4;
+  border-bottom: 2px solid #f4f4f4; }
+  .post-navigation a {
+    text-decoration: none;
+    color: #2d2d2d; }
+    .post-navigation a .sub-title {
+      display: inline-block;
+      text-transform: uppercase;
+      color: #dadada;
+      border-bottom: 2px solid #dadada;
+      padding-bottom: 5px;
+      margin-bottom: 10px; }
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/

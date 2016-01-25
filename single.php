@@ -18,7 +18,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'single' );
 
 			if( siteorigin_setting('navigation_post') ) :
-				//siteorigin_unwind_the_post_navigation();
+				siteorigin_unwind_the_post_navigation();
 			endif;
 
 			// If comments are open or we have at least one comment, load up the comment template.

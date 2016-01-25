@@ -103,6 +103,34 @@ function siteorigin_unwind_entry_footer() {
 }
 endif;
 
+if ( ! function_exists( 'siteorigin_unwind_the_post_navigation' ) ) :
+/**
+ * Display navigation to next/previous post when applicable.
+ */
+function siteorigin_unwind_the_post_navigation() {
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	?>
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin_unwind' ); ?></h2>
+		<div class="nav-links">
+			<div class="nav-previous">
+				<?php previous_post_link ( '%link', '<span class="sub-title">&larr; ' . __( 'Previous Post', 'siteorigin_unwind' ) . '</span><br />%title' ); ?>
+			</div>
+			<div class="nav-next">
+				<?php next_post_link( '%link', '<span class="sub-title">' . __( 'Next article', 'siteorigin_unwind' ) . ' &rarr;</span><br />%title' ); ?>
+			</div>
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
+
 /**
  * Returns true if a blog has more than 1 category.
  *
