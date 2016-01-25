@@ -86,3 +86,43 @@
 		display: inline-block;
 	}
 }
+
+.yarpp-related {
+	.related-posts {
+		font-size: 1em;
+		text-transform: uppercase;
+	}
+
+	ol{
+		margin: 0;
+		list-style: none;
+
+		li {
+			display: block;
+			float: left;
+			width: 33.333%;
+			margin: 0;
+
+			&:hover {
+				.related-post-title {
+					color: $color__primary-accent-dark;
+				}
+			}
+
+			img {
+				vertical-align: middle;
+			}
+
+			.related-post-title {
+				font-size: 1em;
+				color: $color__text-dark;
+			}
+
+			.related-post-date {
+				margin-top: 0;
+				font-size: 0.9em;
+				color: $color__text-meta;
+			}
+		}
+	}
+}

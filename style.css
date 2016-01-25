@@ -7,7 +7,7 @@ Description: SiteOrigin Unwind is our latest, flexible multipurpose theme. It's 
 Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: siteorigin-unwind
+Text Domain: siteorigin_unwind
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments, white, gray, responsive-layout, right-sidebar, custom-colors, custom-menu, full-width-template
 
 This theme, like WordPress, is licensed under the GPL.
@@ -793,6 +793,30 @@ a {
   text-align: center; }
   .single-post .sharedaddy .sd-content ul {
     display: inline-block; }
+
+.yarpp-related .related-posts {
+  font-size: 1em;
+  text-transform: uppercase; }
+
+.yarpp-related ol {
+  margin: 0;
+  list-style: none; }
+  .yarpp-related ol li {
+    display: block;
+    float: left;
+    width: 33.333%;
+    margin: 0; }
+    .yarpp-related ol li:hover .related-post-title {
+      color: #21af7b; }
+    .yarpp-related ol li img {
+      vertical-align: middle; }
+    .yarpp-related ol li .related-post-title {
+      font-size: 1em;
+      color: #2d2d2d; }
+    .yarpp-related ol li .related-post-date {
+      margin-top: 0;
+      font-size: 0.9em;
+      color: #d9d9d9; }
 
 /*--------------------------------------------------------------
 ## Asides

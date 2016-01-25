@@ -26,6 +26,10 @@ get_header(); ?>
 				siteorigin_unwind_the_post_navigation();
 			endif;
 
+			if ( function_exists( 'related_posts' ) ):
+				related_posts();
+			endif;
+
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();

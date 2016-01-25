@@ -78,6 +78,9 @@ function siteorigin_unwind_setup() {
 		'link',
 	) );
 
+	// Adding custom image sizes
+	add_image_size( 'related-post', 300 , 200, true );
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'siteorigin_unwind_custom_background_args', array(
 		'default-color' => 'ffffff',
