@@ -4,6 +4,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .heading-strike {
 	text-align: center;
+	text-transform: uppercase;
 	@include display(flex);
 	@include flex-direction(row);
 	@include justify-content(center);
@@ -12,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 		@include flex-grow(1);
 		height: 2px;
 		content: '\a0';
-		background-color: #f4f4f4;
+		background-color: $color__borders;
 		align-self: center;
 	}
 	&:before {

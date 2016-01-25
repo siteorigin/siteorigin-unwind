@@ -4,3 +4,168 @@
 .bypostauthor {
 	display: block;
 }
+
+.comment-list {
+	margin: 25px 0;
+	padding: 0;
+
+	li.comment {
+		width: auto;
+		display: block;
+		color: $color__text-medium;
+
+		.comment-box {
+			padding: 25px 0;
+			border-bottom: 1px solid $color__borders;
+		}
+
+		.comment-container {
+			margin-left: 120px;
+		}
+
+		&.pingback {
+			.comment-container {
+				margin-left: 0;
+			}
+		}
+
+		.avatar-container {
+			float: left;
+
+			img {
+				display: block;
+				border-radius: 50%;
+			}
+		}
+
+		.comment-reply-link {
+			font-weight: bold;
+			color: $color__text-dark;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 0.8em;
+			line-height: 1em;
+
+			&:hover {
+				color: $color__primary-accent-dark;
+			}
+		}
+
+		.info {
+			color: $color__text-meta;
+		}
+
+		.author {
+			color: $color__text-dark;
+			font-weight: bold;
+			font-size: 1.1em;
+
+			a {
+				color: $color__text-dark;
+				text-decoration: none;
+			}
+		}
+
+		.children {
+			margin-left: 70px;
+			margin-top: 50px;
+			padding: 0;
+		}
+	}
+}
+
+.comments-title, .comment-reply-title {
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+.comment-reply-title {
+	font-size: 1em;
+	text-transform: uppercase;
+	border-bottom: 1px solid $color__borders;
+	padding-bottom: 15px;
+	margin-top: 50px;
+}
+
+#commentform {
+	margin: 0 -15px;
+
+	> p {
+		padding: 0 15px;
+		margin: 25px;
+	}
+
+	.comment-form-author, .comment-form-email, .comment-form-url {
+		display: block;
+		float: left;
+		width: 33.333%;
+		margin: 0 0 20px 0;
+
+		input {
+			color: $color__text-medium;
+			width: 100%;
+			font-size: 0.85em;
+			padding: 8px 30px;
+			border-radius: 0px;
+		}
+	}
+
+	.comment-form-comment {
+		margin: 10px 0;
+
+		textarea {
+			color: $color__text-medium;
+			width: 100%;
+			font-size: 0.85em;
+			padding: 15px 30px;
+			border-radius: 0px;
+			display: block;
+		}
+	}
+
+	.form-allowed-tags, .comment-notes, .logged-in-as {
+		color: $color__text-meta;
+		margin: 10px 0;
+		&, code {
+			font-size: 0.75em;
+		}
+	}
+
+	.form-submit {
+		text-align: right;
+		margin: 10px 0 0 0;
+		clear: both;
+
+		input {
+			background: transparent;
+			border-radius: 0px;
+			font-size: 0.85em;
+			float: left;
+			border: 2px solid $color__border-button;
+			padding: 10px 30px;
+			line-height: 1em;
+			text-decoration: none;
+			color: $color__text-dark;
+			text-transform: uppercase;
+			text-shadow: none;
+
+			@include transition(0.085s);
+
+			&:hover{
+				background: $color__primary-accent-dark;
+				border-color: $color__primary-accent-dark;
+				color: #ffffff;
+				box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+			}
+		}
+	}
+
+	input, textarea {
+		background-color: #ffffff;
+
+		&:focus {
+			background-color: #fcfcfc;
+			outline: none;
+		}
+	}
+}

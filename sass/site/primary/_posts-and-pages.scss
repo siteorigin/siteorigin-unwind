@@ -50,15 +50,15 @@
 
 .entry-title {
 	text-align: center;
-	color: $color__text-titles;
+	color: $color__text-dark;
 	margin-top: 0.25em;
 }
 
 .tags-list {
 	margin-top: 1em;
 	a {
-		background: #f4f4f4;
-		color: #626262;
+		background: $color__text-light;
+		color: $color__text-medium;
 		display: inline-block;
 		margin-right: 10px;
 		margin-bottom:10px;
@@ -68,7 +68,7 @@
 		padding: 8px 12px;
 
 		&:hover {
-			//background: $color__primary_accent_dark;
+			background: $color__primary-accent-dark;
 		}
 	}
 }

@@ -240,6 +240,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .heading-strike {
   text-align: center;
+  text-transform: uppercase;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -385,10 +386,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
+  border-color: #dadada;
   border-radius: 3px;
   background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
   font-size: 0.75rem;
@@ -757,7 +757,7 @@ a {
 .tags-list {
   margin-top: 1em; }
   .tags-list a {
-    background: #f4f4f4;
+    background: #dadada;
     color: #626262;
     display: inline-block;
     margin-right: 10px;
@@ -766,6 +766,8 @@ a {
     line-height: 1em;
     font-size: 0.8em;
     padding: 8px 12px; }
+    .tags-list a:hover {
+      background: #126245; }
 
 /*--------------------------------------------------------------
 ## Asides
@@ -782,6 +784,119 @@ a {
 
 .bypostauthor {
   display: block; }
+
+.comment-list {
+  margin: 25px 0;
+  padding: 0; }
+  .comment-list li.comment {
+    width: auto;
+    display: block;
+    color: #626262; }
+    .comment-list li.comment .comment-box {
+      padding: 25px 0;
+      border-bottom: 1px solid #f4f4f4; }
+    .comment-list li.comment .comment-container {
+      margin-left: 120px; }
+    .comment-list li.comment.pingback .comment-container {
+      margin-left: 0; }
+    .comment-list li.comment .avatar-container {
+      float: left; }
+      .comment-list li.comment .avatar-container img {
+        display: block;
+        border-radius: 50%; }
+    .comment-list li.comment .comment-reply-link {
+      font-weight: bold;
+      color: #2d2d2d;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      line-height: 1em; }
+      .comment-list li.comment .comment-reply-link:hover {
+        color: #126245; }
+    .comment-list li.comment .info {
+      color: #d9d9d9; }
+    .comment-list li.comment .author {
+      color: #2d2d2d;
+      font-weight: bold;
+      font-size: 1.1em; }
+      .comment-list li.comment .author a {
+        color: #2d2d2d;
+        text-decoration: none; }
+    .comment-list li.comment .children {
+      margin-left: 70px;
+      margin-top: 50px;
+      padding: 0; }
+
+.comments-title, .comment-reply-title {
+  font-size: 1em;
+  text-transform: uppercase; }
+
+.comment-reply-title {
+  font-size: 1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 15px;
+  margin-top: 50px; }
+
+#commentform {
+  margin: 0 -15px; }
+  #commentform > p {
+    padding: 0 15px;
+    margin: 25px; }
+  #commentform .comment-form-author, #commentform .comment-form-email, #commentform .comment-form-url {
+    display: block;
+    float: left;
+    width: 33.333%;
+    margin: 0 0 20px 0; }
+    #commentform .comment-form-author input, #commentform .comment-form-email input, #commentform .comment-form-url input {
+      color: #626262;
+      width: 100%;
+      font-size: 0.85em;
+      padding: 8px 30px;
+      border-radius: 0px; }
+  #commentform .comment-form-comment {
+    margin: 10px 0; }
+    #commentform .comment-form-comment textarea {
+      color: #626262;
+      width: 100%;
+      font-size: 0.85em;
+      padding: 15px 30px;
+      border-radius: 0px;
+      display: block; }
+  #commentform .form-allowed-tags, #commentform .comment-notes, #commentform .logged-in-as {
+    color: #d9d9d9;
+    margin: 10px 0; }
+    #commentform .form-allowed-tags, #commentform .form-allowed-tags code, #commentform .comment-notes, #commentform .comment-notes code, #commentform .logged-in-as, #commentform .logged-in-as code {
+      font-size: 0.75em; }
+  #commentform .form-submit {
+    text-align: right;
+    margin: 10px 0 0 0;
+    clear: both; }
+    #commentform .form-submit input {
+      background: transparent;
+      border-radius: 0px;
+      font-size: 0.85em;
+      float: left;
+      border: 2px solid #dadada;
+      padding: 10px 30px;
+      line-height: 1em;
+      text-decoration: none;
+      color: #2d2d2d;
+      text-transform: uppercase;
+      text-shadow: none;
+      -webkit-transition: 0.085s;
+      -moz-transition: 0.085s;
+      transition: 0.085s; }
+      #commentform .form-submit input:hover {
+        background: #126245;
+        border-color: #126245;
+        color: #ffffff;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
+  #commentform input, #commentform textarea {
+    background-color: #ffffff; }
+    #commentform input:focus, #commentform textarea:focus {
+      background-color: #fcfcfc;
+      outline: none; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

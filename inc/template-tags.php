@@ -145,3 +145,36 @@ function siteorigin_unwind_category_transient_flusher() {
 }
 add_action( 'edit_category', 'siteorigin_unwind_category_transient_flusher' );
 add_action( 'save_post',     'siteorigin_unwind_category_transient_flusher' );
+
+if( !function_exists('siteorigin_unwind_comment') ) :
+function siteorigin_unwind_comment( $comment, $args, $depth ){
+	?>
+	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
+		<?php $type = get_comment_type($comment->comment_ID); ?>
+		<div class="comment-box">
+			<?php if($type == 'comment') : ?>
+				<div class="avatar-container">
+					<?php echo get_avatar(get_comment_author_email(), 80) ?>
+				</div>
+			<?php endif; ?>
+
+			<div class="comment-container">
+				<div class="info">
+					<span class="author"><?php comment_author_link() ?></span><br>
+					<span class="date"><?php comment_date() ?></span>
+				</div>
+
+				<div class="comment-content content">
+					<?php comment_text() ?>
+				</div>
+
+				<?php if($depth <= $args['max_depth']) : ?>
+					<?php comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'])) ?>
+				<?php endif; ?>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+	<?php
+}
+endif;
