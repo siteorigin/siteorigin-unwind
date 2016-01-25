@@ -24,6 +24,24 @@ function siteorigin_unwind_settings_init(){
 
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
 
+		'branding' => array(
+			'title' => __('Branding', 'siteorigin-north'),
+			'fields' => array(
+				'accent' => array(
+					'type' => 'color',
+					'label' => __('Accent Color', 'siteorigin-north'),
+					'description' => __('The color used for links and various other accents.', 'siteorigin-north'),
+					'live' => true,
+				),
+				'accent_dark' => array(
+					'type' => 'color',
+					'label' => __('Dark Accent Color', 'siteorigin-north'),
+					'description' => __('A darker version of your accent color.', 'siteorigin-north'),
+					'live' => true,
+				),
+			)
+		),
+
 		'navigation' => array(
 			'title' => __( 'Navigation', 'siteorigin-unwind' ),
 			'fields' => array(
@@ -73,6 +91,17 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  * @return string
  */
 function siteorigin_unwind_settings_custom_css($css){
+	// Custom CSS Code
+	$css .= '/* style */' . "\n" .
+		'blockquote {' . "\n" .
+		'color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'a {' . "\n" .
+		'color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'a:hover,a:focus {' . "\n" .
+		'color: ${branding_accent_dark};' . "\n" .
+		'}';
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
@@ -85,6 +114,10 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom
  * @return mixed
  */
 function siteorigin_unwind_settings_defaults( $defaults ){
+
+	//Branding
+	$defaults['branding_accent'] = '#25c48a';
+	$defaults['branding_accent_dark'] = '#21af7b';
 
 	// Navigation defaults
 	$defaults['navigation_post'] = true;

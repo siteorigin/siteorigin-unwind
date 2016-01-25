@@ -479,13 +479,9 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
-  a:visited {
-    color: purple; }
-  a:hover, a:focus, a:active {
-    color: midnightblue; }
-  a:focus {
-    outline: thin dotted; }
+  color: #25c48a; }
+  a:hover, a:focus {
+    color: #21af7b; }
   a:hover, a:active {
     outline: 0; }
 
@@ -563,9 +559,13 @@ a {
   border-bottom: 2px solid #f4f4f4; }
   .post-navigation a {
     text-decoration: none;
-    color: #2d2d2d; }
+    color: #626262;
+    font-weight: bold; }
+    .post-navigation a:hover {
+      color: #21af7b; }
     .post-navigation a .sub-title {
       display: inline-block;
+      font-weight: normal;
       text-transform: uppercase;
       color: #dadada;
       border-bottom: 2px solid #dadada;

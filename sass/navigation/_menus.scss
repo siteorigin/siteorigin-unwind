@@ -111,10 +111,16 @@
 
 	a {
 		text-decoration: none;
-		color: $color__text-dark;
+		color: $color__text-medium;
+		font-weight: bold;
+
+		&:hover {
+			color: $color__primary-accent-dark;
+		}
 
 		.sub-title {
 			display: inline-block;
+			font-weight: normal;
 			text-transform: uppercase;
 			color: $color__text-light;
 			border-bottom: 2px solid $color__text-light;
