@@ -2,7 +2,7 @@
 /*
 YARPP Template: SiteOrigin Unwind
 */ ?>
-<h2 class="related-posts heading-strike"><?php esc_html_e( 'You may also like', 'siteorigin_unwind' ); ?></h2>
+<h2 class="related-posts heading-strike"><?php esc_html_e( 'You may also like', 'siteorigin-unwind' ); ?></h2>
 <?php if (have_posts()):?>
 	<ol>
 		<?php while (have_posts()) : the_post(); ?>
@@ -18,5 +18,5 @@ YARPP Template: SiteOrigin Unwind
 	<div class="clear"></div>
 
 <?php else: ?>
-	<p><?php esc_html_e( 'No related posts.', 'siteorigin_unwind' ); ?></p>
+	<p><?php esc_html_e( 'No related posts.', 'siteorigin-unwind' ); ?></p>
 <?php endif; ?>

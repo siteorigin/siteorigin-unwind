@@ -18,7 +18,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'single' );
 
 			if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy' ) ) :?>
-				<h2 class="share-this heading-strike"><?php esc_html_e( 'Share This', 'siteorigin_unwind' ); ?></h2>
+				<h2 class="share-this heading-strike"><?php esc_html_e( 'Share This', 'siteorigin-unwind' ); ?></h2>
 				<?php echo sharing_display();
 			endif;
 

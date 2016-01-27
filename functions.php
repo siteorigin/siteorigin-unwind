@@ -27,9 +27,9 @@ function siteorigin_unwind_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on siteorigin_unwind, use a find and replace
-	 * to change 'siteorigin_unwind' to the name of your theme in all the template files.
+	 * to change 'siteorigin-unwind' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'siteorigin_unwind', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'siteorigin-unwind', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );

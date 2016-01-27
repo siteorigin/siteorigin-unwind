@@ -25,12 +25,12 @@ function siteorigin_unwind_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'siteorigin_unwind' ),
+		esc_html_x( 'Posted on %s', 'post date', 'siteorigin-unwind' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'siteorigin_unwind' ),
+		esc_html_x( 'by %s', 'post author', 'siteorigin-unwind' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -46,7 +46,7 @@ if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ):
 function siteorigin_unwind_post_meta() {
 
 	/* translators: used between list items, there is a space after the comma */
-	$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin_unwind' ) );
+	$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-unwind' ) );
 	// get_comments_number returns only a numeric value
 	$num_comments = get_comments_number();
 
@@ -65,7 +65,7 @@ function siteorigin_unwind_post_meta() {
 	<span class="entry-date"><?php the_time( 'M d, Y' ); ?></span>
 
 	<?php if ( $categories_list && siteorigin_unwind_categorized_blog() ) {
-		printf( '<span class="entry-category">' . esc_html__( '%1$s', 'siteorigin_unwind' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		printf( '<span class="entry-category">' . esc_html__( '%1$s', 'siteorigin-unwind' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 	} ?>
 
 	<?php if ( $comments ) {
@@ -87,14 +87,14 @@ function siteorigin_unwind_entry_footer() {
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin_unwind' ), esc_html__( '1 Comment', 'siteorigin_unwind' ), esc_html__( '% Comments', 'siteorigin_unwind' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-unwind' ), esc_html__( '1 Comment', 'siteorigin-unwind' ), esc_html__( '% Comments', 'siteorigin-unwind' ) );
 		echo '</span>';
 	}
 
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'siteorigin_unwind' ),
+			esc_html__( 'Edit %s', 'siteorigin-unwind' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'</br><span class="edit-link">',
@@ -139,13 +139,13 @@ function siteorigin_unwind_the_post_navigation() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin_unwind' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-unwind' ); ?></h2>
 		<div class="nav-links">
 			<div class="nav-previous">
-				<?php previous_post_link ( '%link', '<span class="sub-title">&larr; ' . __( 'Previous Post', 'siteorigin_unwind' ) . '</span><br />%title' ); ?>
+				<?php previous_post_link ( '%link', '<span class="sub-title">&larr; ' . __( 'Previous Post', 'siteorigin-unwind' ) . '</span><br />%title' ); ?>
 			</div>
 			<div class="nav-next">
-				<?php next_post_link( '%link', '<span class="sub-title">' . __( 'Next article', 'siteorigin_unwind' ) . ' &rarr;</span><br />%title' ); ?>
+				<?php next_post_link( '%link', '<span class="sub-title">' . __( 'Next article', 'siteorigin-unwind' ) . ' &rarr;</span><br />%title' ); ?>
 			</div>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
