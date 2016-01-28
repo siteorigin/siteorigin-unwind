@@ -27,6 +27,25 @@
 	margin: 0 0 1.5em;
 }
 
+.page-title {
+	text-align: center;
+	font-size: 1em;
+	text-transform: uppercase;
+	color: $color__text-dark;
+}
+
+.page-title-text {
+	padding: 10px 0;
+	border-top: 2px solid $color__text-light;
+	border-bottom: 2px solid $color__text-light;
+}
+
+.page-header {
+	padding: 70px 0;
+	margin-bottom: 55px;
+	border-bottom: 2px solid $color__borders;
+}
+
 .entry-meta {
 	text-align: center;
 	text-transform: uppercase;

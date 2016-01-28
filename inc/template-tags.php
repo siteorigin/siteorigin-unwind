@@ -7,6 +7,22 @@
  * @package siteorigin_unwind
  */
 
+if ( ! function_exists( 'siteorigin_unwind_archive_title' ) ) :
+/**
+ * Display titles in archive pages
+ */
+function siteorigin_unwind_archive_title() {
+	?>
+	<header class="page-header">
+		<?php
+			the_archive_title( '<h1 class="page-title"><span class="page-title-text">', '</span></h1>' );
+			the_archive_description( '<div class="taxonomy-description">', '</div>' );
+		?>
+	</header><!-- .page-header -->
+	<?php
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.

@@ -768,6 +768,22 @@ a {
   clear: both;
   margin: 0 0 1.5em; }
 
+.page-title {
+  text-align: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #2d2d2d; }
+
+.page-title-text {
+  padding: 10px 0;
+  border-top: 2px solid #dadada;
+  border-bottom: 2px solid #dadada; }
+
+.page-header {
+  padding: 70px 0;
+  margin-bottom: 55px;
+  border-bottom: 2px solid #f4f4f4; }
+
 .entry-meta {
   text-align: center;
   text-transform: uppercase; }
