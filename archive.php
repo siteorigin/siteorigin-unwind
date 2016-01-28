@@ -35,7 +35,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			siteorigin_unwind_posts_navigation();
 
 		else :
 

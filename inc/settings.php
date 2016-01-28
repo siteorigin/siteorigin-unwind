@@ -56,6 +56,10 @@ function siteorigin_unwind_settings_init(){
 		'blog' => array(
 			'title' => __( 'Blog', 'siteorigin-unwind' ),
 			'fields' => array(
+				'featured_archive' => array(
+					'type' => 'checkbox',
+					'label' => __('Featured image on archive', 'siteorigin-unwind'),
+				),
 				'featured_single' => array(
 					'type' => 'checkbox',
 					'label' => __('Featured image on single', 'siteorigin-unwind'),
@@ -123,6 +127,7 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	$defaults['navigation_post'] = true;
 
 	// Blog settings
+	$defaults['blog_featured_archive'] = true;
 	$defaults['blog_featured_single'] = true;
 	$defaults['blog_display_author_box'] = false;
 
