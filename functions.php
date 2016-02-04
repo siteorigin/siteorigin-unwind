@@ -27,9 +27,9 @@ function siteorigin_unwind_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on siteorigin_unwind, use a find and replace
-	 * to change 'siteorigin_unwind' to the name of your theme in all the template files.
+	 * to change 'siteorigin-unwind' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'siteorigin_unwind', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'siteorigin-unwind', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -78,6 +78,9 @@ function siteorigin_unwind_setup() {
 		'link',
 	) );
 
+	// Adding custom image sizes
+	add_image_size( 'related-post', 300 , 200, true );
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'siteorigin_unwind_custom_background_args', array(
 		'default-color' => 'ffffff',
@@ -99,6 +102,19 @@ endif;
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
 
 /**
+ * Add support for premium theme components
+ */
+function siteorigin_unwind_premium_setup(){
+
+	// This theme supports the no attribution addon
+	add_theme_support( 'siteorigin-premium-no-attribution', array(
+		'filter' => 'siteorigin_unwind_footer_credits',
+		'enabled' => siteorigin_setting( 'branding_attribution' )
+	) );
+}
+add_action( 'after_setup_theme', 'siteorigin_unwind_premium_setup' );
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -117,12 +133,22 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );
  */
 function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Main Sidebar', 'siteorigin_unwind' ),
+		'name'          => esc_html__( 'Main Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'main-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title heading-strike">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Sidebar', 'siteorigin-unwind' ),
+		'id'            => 'footer-sidebar',
+		'description'   => '',
+		'before_widget' => '<div class="widget-wrapper"><aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside></div>',
+		'before_title'  => '<h2 class="widget-title heading-strike">',
 		'after_title'   => '</h2>',
 	) );
 }
@@ -168,3 +194,18 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load the theme settings file
+ */
+require get_template_directory() . '/inc/settings.php';
+
+/**
+ * Support for SiteOrigin Page Builder
+ */
+// require get_template_directory() . '/inc/siteorigin-panels.php';
+
+/**
+ * Load support for WooCommerce
+ */
+// include get_template_directory() . '/woocommerce/functions.php';

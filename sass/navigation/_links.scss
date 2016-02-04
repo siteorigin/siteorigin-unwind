@@ -1,16 +1,9 @@
 a {
-	color: $color__link;
+	color: $color__primary-accent;
 
-	&:visited {
-		color: $color__link-visited;
-	}
 	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
 	&:focus {
-		outline: thin dotted;
+		color: $color__primary-accent-dark;
 	}
 	&:hover,
 	&:active {

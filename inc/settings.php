@@ -15,7 +15,7 @@ function siteorigin_unwind_settings_localize( $loc ){
 		'meta_box' => __('Page settings', 'siteorigin-unwind'),
 	), $loc);
 }
-add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
+add_filter('siteorigin_settings_localization', 'siteorigin_unwind_settings_localize');
 
 /**
  * Initialize the settings
@@ -23,6 +23,94 @@ add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
 function siteorigin_unwind_settings_init(){
 
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
+
+		'branding' => array(
+			'title' => __('Branding', 'siteorigin-north'),
+			'fields' => array(
+				'accent' => array(
+					'type' => 'color',
+					'label' => __('Accent Color', 'siteorigin-north'),
+					'description' => __('The color used for links and various other accents.', 'siteorigin-north'),
+					'live' => true,
+				),
+				'accent_dark' => array(
+					'type' => 'color',
+					'label' => __('Dark Accent Color', 'siteorigin-north'),
+					'description' => __('A darker version of your accent color.', 'siteorigin-north'),
+					'live' => true,
+				),
+			)
+		),
+
+		'navigation' => array(
+			'title' => __( 'Navigation', 'siteorigin-unwind' ),
+			'fields' => array(
+				'post' => array(
+					'type' => 'checkbox',
+					'label' => __('Post navigation', 'siteorigin-unwind'),
+					'description' => __('Display next and previous post navigation', 'siteorigin-unwind'),
+				),
+			),
+		),
+
+		'blog' => array(
+			'title' => __( 'Blog', 'siteorigin-unwind' ),
+			'fields' => array(
+				'featured_archive' => array(
+					'type' => 'checkbox',
+					'label' => __('Featured image on archive', 'siteorigin-unwind'),
+				),
+				'featured_single' => array(
+					'type' => 'checkbox',
+					'label' => __('Featured image on single', 'siteorigin-unwind'),
+				),
+				'display_author_box' => array(
+					'type' => 'checkbox',
+					'label' => __('Display author box on single', 'siteorigin-unwind'),
+				),
+			)
+		),
+
+		'footer' => array(
+			'title' => __('Footer', 'siteorigin-unwind'),
+			'fields' => array(
+
+				'text' => array(
+					'type' => 'text',
+					'label' => __('Footer Text', 'siteorigin-unwind'),
+					'description' => __("{sitename} and {year} are your site's name and current year", 'siteorigin-unwind'),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+
+				'constrained' => array(
+					'type' => 'checkbox',
+					'label' => __('Constrain', 'siteorigin-unwind'),
+					'description' => __("Constrain the footer width", 'siteorigin-unwind'),
+				),
+
+				'top_padding' => array(
+					'type' => 'text',
+					'label' => __('Top Padding', 'siteorigin-unwind'),
+					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
+					'live' => true,
+				),
+
+				'side_padding' => array(
+					'type' => 'text',
+					'label' => __('Side Padding', 'siteorigin-unwind'),
+					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
+					'live' => true,
+				),
+
+				'top_margin' => array(
+					'type' => 'text',
+					'label' => __('Top Margin', 'siteorigin-unwind'),
+					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
+					'live' => true,
+				),
+			),
+		),
+
 	) ) );
 }
 add_action('siteorigin_settings_init', 'siteorigin_unwind_settings_init');
@@ -47,6 +135,23 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  * @return string
  */
 function siteorigin_unwind_settings_custom_css($css){
+	// Custom CSS Code
+	$css .= '/* style */' . "\n" .
+		'blockquote {' . "\n" .
+		'color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'a {' . "\n" .
+		'color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'a:hover,a:focus {' . "\n" .
+		'color: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
+		'#colophon {' . "\n" .
+		'margin-top: ${footer_top_margin};' . "\n" .
+		'}' . "\n" .
+		'#colophon .widgets {' . "\n" .
+		'padding: ${footer_top_padding} ${footer_side_padding};' . "\n" .
+		'}';
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
@@ -59,6 +164,26 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom
  * @return mixed
  */
 function siteorigin_unwind_settings_defaults( $defaults ){
+
+	//Branding
+	$defaults['branding_accent'] = '#25c48a';
+	$defaults['branding_accent_dark'] = '#21af7b';
+
+	// Navigation defaults
+	$defaults['navigation_post'] = true;
+
+	// Blog settings
+	$defaults['blog_featured_archive'] = true;
+	$defaults['blog_featured_single'] = true;
+	$defaults['blog_display_author_box'] = false;
+
+	// Footer settings
+	$defaults['footer_text'] = __('{year} © {sitename}.', 'siteorigin-unwind');
+	$defaults['footer_constrained'] = false;
+	$defaults['footer_top_padding'] = '40px';
+	$defaults['footer_side_padding'] = '40px';
+	$defaults['footer_top_margin'] = '30px';
+
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults');
