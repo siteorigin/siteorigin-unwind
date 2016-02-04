@@ -39,11 +39,11 @@ function siteorigin_unwind_posts_navigation() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'siteorigin-unwind' ) . ' &rarr;' ); ?></div>
+			<div class="nav-next"><?php next_posts_link( esc_html__( 'Older posts', 'siteorigin-unwind' ) . ' &rarr;' ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( '&larr; ' . esc_html__( 'Newer posts', 'siteorigin-unwind' ) ); ?></div>
+			<div class="nav-previous"><?php previous_posts_link( '&larr; ' . esc_html__( 'Newer posts', 'siteorigin-unwind' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -165,7 +165,6 @@ function siteorigin_unwind_author_box() { ?>
 			</span><br />
 			<?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?>
 		</div>
-		<div class="clear"></div>
 	</div>
 <?php }
 endif;
@@ -190,7 +189,7 @@ function siteorigin_unwind_the_post_navigation() {
 				<?php previous_post_link ( '%link', '<span class="sub-title">&larr; ' . __( 'Previous Post', 'siteorigin-unwind' ) . '</span><br />%title' ); ?>
 			</div>
 			<div class="nav-next">
-				<?php next_post_link( '%link', '<span class="sub-title">' . __( 'Next article', 'siteorigin-unwind' ) . ' &rarr;</span><br />%title' ); ?>
+				<?php next_post_link( '%link', '<span class="sub-title">' . __( 'Next Post', 'siteorigin-unwind' ) . ' &rarr;</span><br />%title' ); ?>
 			</div>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -254,6 +253,7 @@ function siteorigin_unwind_footer_text(){
 	);
 	echo wp_kses_post( $text );
 }
+endif;
 
 if( !function_exists('siteorigin_unwind_comment') ) :
 function siteorigin_unwind_comment( $comment, $args, $depth ){
@@ -282,8 +282,6 @@ function siteorigin_unwind_comment( $comment, $args, $depth ){
 				<?php endif; ?>
 			</div>
 		</div>
-
-		<div class="clear"></div>
 	<?php
 }
 endif;
