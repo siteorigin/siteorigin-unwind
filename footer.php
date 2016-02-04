@@ -15,6 +15,21 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
+
+			<?php
+			if( is_active_sidebar( 'footer-sidebar' ) ) {
+				$siteorigin_unwind_sidebars = wp_get_sidebars_widgets();
+				?>
+				<div class="widgets widgets-<?php echo count( $siteorigin_unwind_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php _e( 'Footer Sidebar', 'siteorigin-unwind' ); ?>">
+					<?php dynamic_sidebar( 'footer-sidebar' ); ?>
+				</div>
+				<?php
+			}
+			?>
+
+		</div>
+
+		<div class="container">
 			<div class="site-info">
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'siteorigin_unwind' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'siteorigin_unwind' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
