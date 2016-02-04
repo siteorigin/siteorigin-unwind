@@ -103,3 +103,29 @@
 		width: 50%;
 	}
 }
+
+.post-navigation {
+	padding: 60px 0;
+	border-top: 2px solid $color__borders;
+	border-bottom: 2px solid $color__borders;
+
+	a {
+		text-decoration: none;
+		color: $color__text-medium;
+		font-weight: bold;
+
+		&:hover {
+			color: $color__primary-accent-dark;
+		}
+
+		.sub-title {
+			display: inline-block;
+			font-weight: normal;
+			text-transform: uppercase;
+			color: $color__text-light;
+			border-bottom: 2px solid $color__text-light;
+			padding-bottom: 5px;
+			margin-bottom: 10px;
+		}
+	}
+}

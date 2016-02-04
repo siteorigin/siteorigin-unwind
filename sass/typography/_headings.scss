@@ -1,3 +1,25 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
+
+.heading-strike {
+	text-align: center;
+	text-transform: uppercase;
+	@include display(flex);
+	@include flex-direction(row);
+	@include justify-content(center);
+
+	&:before, &:after {
+		@include flex-grow(1);
+		height: 2px;
+		content: '\a0';
+		background-color: $color__borders;
+		align-self: center;
+	}
+	&:before {
+		margin-right:10px;
+	}
+	&:after {
+		margin-left:10px;
+	}
+}
