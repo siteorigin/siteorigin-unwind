@@ -71,6 +71,46 @@ function siteorigin_unwind_settings_init(){
 			)
 		),
 
+		'footer' => array(
+			'title' => __('Footer', 'siteorigin-unwind'),
+			'fields' => array(
+
+				'text' => array(
+					'type' => 'text',
+					'label' => __('Footer Text', 'siteorigin-unwind'),
+					'description' => __("{sitename} and {year} are your site's name and current year", 'siteorigin-unwind'),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+
+				'constrained' => array(
+					'type' => 'checkbox',
+					'label' => __('Constrain', 'siteorigin-unwind'),
+					'description' => __("Constrain the footer width", 'siteorigin-unwind'),
+				),
+
+				'top_padding' => array(
+					'type' => 'text',
+					'label' => __('Top Padding', 'siteorigin-unwind'),
+					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
+					'live' => true,
+				),
+
+				'side_padding' => array(
+					'type' => 'text',
+					'label' => __('Side Padding', 'siteorigin-unwind'),
+					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
+					'live' => true,
+				),
+
+				'top_margin' => array(
+					'type' => 'text',
+					'label' => __('Top Margin', 'siteorigin-unwind'),
+					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
+					'live' => true,
+				),
+			),
+		),
+
 	) ) );
 }
 add_action('siteorigin_settings_init', 'siteorigin_unwind_settings_init');
@@ -105,6 +145,12 @@ function siteorigin_unwind_settings_custom_css($css){
 		'}' . "\n" .
 		'a:hover,a:focus {' . "\n" .
 		'color: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
+		'#colophon {' . "\n" .
+		'margin-top: ${footer_top_margin};' . "\n" .
+		'}' . "\n" .
+		'#colophon .widgets {' . "\n" .
+		'padding: ${footer_top_padding} ${footer_side_padding};' . "\n" .
 		'}';
 	return $css;
 }
@@ -130,6 +176,13 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	$defaults['blog_featured_archive'] = true;
 	$defaults['blog_featured_single'] = true;
 	$defaults['blog_display_author_box'] = false;
+
+	// Footer settings
+	$defaults['footer_text'] = __('{year} © {sitename}.', 'siteorigin-unwind');
+	$defaults['footer_constrained'] = false;
+	$defaults['footer_top_padding'] = '40px';
+	$defaults['footer_side_padding'] = '40px';
+	$defaults['footer_top_margin'] = '30px';
 
 	return $defaults;
 }

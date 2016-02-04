@@ -241,6 +241,20 @@ function siteorigin_unwind_category_transient_flusher() {
 add_action( 'edit_category', 'siteorigin_unwind_category_transient_flusher' );
 add_action( 'save_post',     'siteorigin_unwind_category_transient_flusher' );
 
+/**
+ * Insert footer text from theme settings
+ */
+if( !function_exists('siteorigin_unwind_footer_text') ) :
+function siteorigin_unwind_footer_text(){
+	$text = siteorigin_setting('footer_text');
+	$text = str_replace(
+		array( '{sitename}', '{year}'),
+		array( get_bloginfo('sitename'), date('Y') ),
+		$text
+	);
+	echo wp_kses_post( $text );
+}
+
 if( !function_exists('siteorigin_unwind_comment') ) :
 function siteorigin_unwind_comment( $comment, $args, $depth ){
 	?>
