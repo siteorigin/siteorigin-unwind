@@ -27,9 +27,9 @@ function siteorigin_unwind_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on siteorigin_unwind, use a find and replace
-	 * to change 'siteorigin_unwind' to the name of your theme in all the template files.
+	 * to change 'siteorigin-unwind' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'siteorigin_unwind', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'siteorigin-unwind', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -77,6 +77,9 @@ function siteorigin_unwind_setup() {
 		'quote',
 		'link',
 	) );
+
+	// Adding custom image sizes
+	add_image_size( 'related-post', 300 , 200, true );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'siteorigin_unwind_custom_background_args', array(
@@ -196,3 +199,13 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load the theme settings file
  */
 require get_template_directory() . '/inc/settings.php';
+
+/**
+ * Support for SiteOrigin Page Builder
+ */
+// require get_template_directory() . '/inc/siteorigin-panels.php';
+
+/**
+ * Load support for WooCommerce
+ */
+// include get_template_directory() . '/woocommerce/functions.php';
