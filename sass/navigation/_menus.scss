@@ -93,15 +93,15 @@
 	}
 
 	.nav-previous {
-		float: right;
-		text-align: right;
+		float: left;
+		text-align: left;
 		width: 50%;
 		padding: 10px 0;
 	}
 
 	.nav-next {
-		float: left;
-		text-align: left;
+		float: right;
+		text-align: right;
 		width: 50%;
 		padding: 10px 0;
 	}
@@ -128,6 +128,8 @@
 		text-decoration: none;
 		color: $color__text-medium;
 		font-weight: bold;
+		padding: 0;
+		border: none;
 
 		&:hover {
 			color: $color__primary-accent-dark;

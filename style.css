@@ -543,16 +543,16 @@ a {
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-  float: right;
-  text-align: right;
+  float: left;
+  text-align: left;
   width: 50%;
   padding: 10px 0; }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-  float: left;
-  text-align: left;
+  float: right;
+  text-align: right;
   width: 50%;
   padding: 10px 0; }
 
@@ -576,7 +576,9 @@ a {
   .post-navigation a {
     text-decoration: none;
     color: #626262;
-    font-weight: bold; }
+    font-weight: bold;
+    padding: 0;
+    border: none; }
     .post-navigation a:hover {
       color: #21af7b; }
     .post-navigation a .sub-title {
@@ -959,6 +961,9 @@ a {
     border-bottom: 2px solid #dadada; }
 
 .entry {
+  margin-bottom: 50px; }
+
+.archive-entry {
   padding-bottom: 50px;
   margin-bottom: 50px;
   border-bottom: 2px solid #f4f4f4; }
