@@ -93,13 +93,54 @@
 	}
 
 	.nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
+		padding: 10px 0;
+	}
+
+	.nav-next {
+		float: left;
+		text-align: left;
+		width: 50%;
+		padding: 10px 0;
+	}
+
+	a {
+		color: $color__text-dark;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 10px 20px;
+		border: 2px solid $color__text-light;
+
+		&:hover {
+			color: $color__primary-accent-dark;
+		}
+	}
+}
+
+.post-navigation {
+	padding: 60px 0;
+	border-top: 2px solid $color__borders;
+	border-bottom: 2px solid $color__borders;
+
+	a {
+		text-decoration: none;
+		color: $color__text-medium;
+		font-weight: bold;
+
+		&:hover {
+			color: $color__primary-accent-dark;
+		}
+
+		.sub-title {
+			display: inline-block;
+			font-weight: normal;
+			text-transform: uppercase;
+			color: $color__text-light;
+			border-bottom: 2px solid $color__text-light;
+			padding-bottom: 5px;
+			margin-bottom: 10px;
+		}
 	}
 }
