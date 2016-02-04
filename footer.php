@@ -13,7 +13,7 @@
 		</div><!-- .container -->
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer <?php if( !siteorigin_setting('footer_constrained') ) echo 'unconstrained-footer' ?>" role="contentinfo">
 		<div class="container">
 
 			<?php
@@ -29,13 +29,23 @@
 
 		</div>
 
-		<div class="container">
-			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'siteorigin_unwind' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'siteorigin_unwind' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'siteorigin_unwind' ), 'siteorigin_unwind', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-			</div><!-- .site-info -->
-		</div><!-- .container -->
+		<div class="site-info">
+			<div class="container">
+				<?php
+				siteorigin_unwind_footer_text();
+
+				$credit_text = apply_filters(
+					'siteorigin_unwind_footer_credits',
+					sprintf( esc_html__( 'Crafted with love by %s.', 'siteorigin-unwind' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
+				);
+
+				if( !empty($credit_text) ) {
+					?>&nbsp;<?php
+					echo wp_kses_post( $credit_text );
+				}
+				?>
+			</div><!-- .container -->
+		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

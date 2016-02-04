@@ -15,7 +15,7 @@ function siteorigin_unwind_settings_localize( $loc ){
 		'meta_box' => __('Page settings', 'siteorigin-unwind'),
 	), $loc);
 }
-add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
+add_filter('siteorigin_settings_localization', 'siteorigin_unwind_settings_localize');
 
 /**
  * Initialize the settings
@@ -23,6 +23,47 @@ add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
 function siteorigin_unwind_settings_init(){
 
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
+
+		'footer' => array(
+			'title' => __('Footer', 'siteorigin-unwind'),
+			'fields' => array(
+
+				'text' => array(
+					'type' => 'text',
+					'label' => __('Footer Text', 'siteorigin-unwind'),
+					'description' => __("{sitename} and {year} are your site's name and current year", 'siteorigin-unwind'),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+
+				'constrained' => array(
+					'type' => 'checkbox',
+					'label' => __('Constrain', 'siteorigin-unwind'),
+					'description' => __("Constrain the footer width", 'siteorigin-unwind'),
+				),
+
+				'top_padding' => array(
+					'type' => 'text',
+					'label' => __('Top Padding', 'siteorigin-unwind'),
+					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
+					'live' => true,
+				),
+
+				'side_padding' => array(
+					'type' => 'text',
+					'label' => __('Side Padding', 'siteorigin-unwind'),
+					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
+					'live' => true,
+				),
+
+				'top_margin' => array(
+					'type' => 'text',
+					'label' => __('Top Margin', 'siteorigin-unwind'),
+					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
+					'live' => true,
+				),
+			),
+		),
+
 	) ) );
 }
 add_action('siteorigin_settings_init', 'siteorigin_unwind_settings_init');
@@ -47,6 +88,14 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  * @return string
  */
 function siteorigin_unwind_settings_custom_css($css){
+	// Custom CSS collator_get_error_code
+	$css .= '/* style */' . "\n" .
+		'#colophon {' . "\n" .
+		'margin-top: ${footer_top_margin};' . "\n" .
+		'}' . "\n" .
+		'#colophon .widgets {' . "\n" .
+		'padding: ${footer_top_padding} ${footer_side_padding};' . "\n" .
+		'}';
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
@@ -59,6 +108,13 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom
  * @return mixed
  */
 function siteorigin_unwind_settings_defaults( $defaults ){
+
+	// Footer settings
+	$defaults['footer_text'] = __('{year} © {sitename}.', 'siteorigin-unwind');
+	$defaults['footer_constrained'] = false;
+	$defaults['footer_top_padding'] = '40px';
+	$defaults['footer_side_padding'] = '40px';
+	$defaults['footer_top_margin'] = '30px';
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults');

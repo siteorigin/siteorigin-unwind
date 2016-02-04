@@ -700,10 +700,10 @@ a {
 --------------------------------------------------------------*/
 .container {
   margin: 0 auto;
-  max-width: none;
+  max-width: 1040px;
   position: relative;
   padding: 0 20px;
-  width: 1040px; }
+  width: 100%; }
 
 /*--------------------------------------------------------------
 ## Site Masthead
@@ -718,7 +718,8 @@ a {
 ## Site Footer
 --------------------------------------------------------------*/
 #colophon {
-  width: 100%; }
+  width: 100%;
+  border-top: 1px solid #f4f4f4; }
   #colophon .widgets {
     width: 100%;
     overflow: hidden;
@@ -759,6 +760,19 @@ a {
         width: 100% !important;
         padding-bottom: 0;
         margin-bottom: 0; } }
+  #colophon .site-info {
+    border-top: 1px solid #f4f4f4;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+    color: #626262; }
+    #colophon .site-info a {
+      color: inherit;
+      text-decoration: none; }
+      #colophon .site-info a:hover {
+        color: #21af7b; }
+  #colophon.unconstrained-footer .container {
+    max-width: none; }
 
 /*--------------------------------------------------------------
 ## Posts and pages

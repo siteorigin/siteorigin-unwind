@@ -99,6 +99,19 @@ endif;
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
 
 /**
+ * Add support for premium theme components
+ */
+function siteorigin_unwind_premium_setup(){
+
+	// This theme supports the no attribution addon
+	add_theme_support( 'siteorigin-premium-no-attribution', array(
+		'filter' => 'siteorigin_unwind_footer_credits',
+		'enabled' => siteorigin_setting( 'branding_attribution' )
+	) );
+}
+add_action( 'after_setup_theme', 'siteorigin_unwind_premium_setup' );
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -178,3 +191,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load the theme settings file
+ */
+require get_template_directory() . '/inc/settings.php';
