@@ -13,7 +13,6 @@
 		</div><!-- .container -->
 	</div><!-- #content -->
 
-	<div class="clear"></div>
 	<footer id="colophon" class="site-footer <?php if( !siteorigin_setting('footer_constrained') ) echo 'unconstrained-footer' ?>" role="contentinfo">
 		<div class="container">
 

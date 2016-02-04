@@ -697,6 +697,11 @@ a {
 .site-main {
   margin: 0 30% 0 0; }
 
+.site-content::after {
+  clear: both;
+  content: "";
+  display: table; }
+
 .site-content .widget-area {
   float: right;
   overflow: hidden;
@@ -909,6 +914,10 @@ a {
 .yarpp-related ol {
   margin: 0;
   list-style: none; }
+  .yarpp-related ol::after {
+    clear: both;
+    content: "";
+    display: table; }
   .yarpp-related ol li {
     display: block;
     float: left;
@@ -937,6 +946,10 @@ a {
     padding-left: 120px;
     font-size: 0.95em;
     color: #626262; }
+    .author-box .author-description::after {
+      clear: both;
+      content: "";
+      display: table; }
     .author-box .author-description .post-author-title {
       margin-top: 0;
       font-size: 1em;
@@ -994,6 +1007,10 @@ a {
     .comment-list li.comment .comment-box {
       padding: 25px 0;
       border-bottom: 1px solid #f4f4f4; }
+      .comment-list li.comment .comment-box::after {
+        clear: both;
+        content: "";
+        display: table; }
     .comment-list li.comment .comment-container {
       margin-left: 120px; }
     .comment-list li.comment.pingback .comment-container {

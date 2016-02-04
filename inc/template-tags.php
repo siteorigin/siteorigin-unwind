@@ -165,7 +165,6 @@ function siteorigin_unwind_author_box() { ?>
 			</span><br />
 			<?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?>
 		</div>
-		<div class="clear"></div>
 	</div>
 <?php }
 endif;
@@ -283,8 +282,6 @@ function siteorigin_unwind_comment( $comment, $args, $depth ){
 				<?php endif; ?>
 			</div>
 		</div>
-
-		<div class="clear"></div>
 	<?php
 }
 endif;

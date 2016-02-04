@@ -130,6 +130,7 @@
 	ol{
 		margin: 0;
 		list-style: none;
+		@include clearfix;
 
 		li {
 			display: block;
@@ -177,6 +178,7 @@
 		padding-left: 120px;
 		font-size: 0.95em;
 		color: $color__text-medium;
+		@include clearfix;
 
 		.post-author-title {
 			margin-top: 0;

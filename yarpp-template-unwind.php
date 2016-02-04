@@ -15,8 +15,6 @@ YARPP Template: SiteOrigin Unwind
 			</a></li>
 		<?php endwhile; ?>
 	</ol>
-	<div class="clear"></div>
-
 <?php else: ?>
 	<p><?php esc_html_e( 'No related posts.', 'siteorigin-unwind' ); ?></p>
 <?php endif; ?>

@@ -17,6 +17,7 @@
 		.comment-box {
 			padding: 25px 0;
 			border-bottom: 1px solid $color__borders;
+			@include clearfix;
 		}
 
 		.comment-container {
