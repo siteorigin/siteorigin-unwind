@@ -93,14 +93,29 @@
 	}
 
 	.nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
+		padding: 10px 0;
+	}
+
+	.nav-next {
+		float: left;
+		text-align: left;
+		width: 50%;
+		padding: 10px 0;
+	}
+
+	a {
+		color: $color__text-dark;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 10px 20px;
+		border: 2px solid $color__text-light;
+
+		&:hover {
+			color: $color__primary-accent-dark;
+		}
 	}
 }
 

@@ -7,6 +7,51 @@
  * @package siteorigin_unwind
  */
 
+if ( ! function_exists( 'siteorigin_unwind_archive_title' ) ) :
+/**
+ * Display titles in archive pages
+ */
+function siteorigin_unwind_archive_title() {
+	?>
+	<header class="page-header">
+		<?php
+			the_archive_title( '<h1 class="page-title"><span class="page-title-text">', '</span></h1>' );
+			the_archive_description( '<div class="taxonomy-description">', '</div>' );
+		?>
+	</header><!-- .page-header -->
+	<?php
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_posts_navigation' ) ) :
+/**
+ * Display navigation to next/previous set of posts when applicable.
+ *
+ */
+function siteorigin_unwind_posts_navigation() {
+	// Don't print empty markup if there's only one page.
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		return;
+	}
+	?>
+	<nav class="navigation posts-navigation" role="navigation">
+		<h3 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'siteorigin-unwind' ); ?></h3>
+		<div class="nav-links">
+
+			<?php if ( get_next_posts_link() ) : ?>
+			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'siteorigin-unwind' ) . ' &rarr;' ); ?></div>
+			<?php endif; ?>
+
+			<?php if ( get_previous_posts_link() ) : ?>
+			<div class="nav-next"><?php previous_posts_link( '&larr; ' . esc_html__( 'Newer posts', 'siteorigin-unwind' ) ); ?></div>
+			<?php endif; ?>
+
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
