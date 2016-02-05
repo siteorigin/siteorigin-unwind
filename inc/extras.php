@@ -32,3 +32,14 @@ function siteorigin_unwind_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'siteorigin_unwind_body_classes' );
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function siteorigin_unwind_excerpt_read_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'siteorigin_unwind_excerpt_read_more' );

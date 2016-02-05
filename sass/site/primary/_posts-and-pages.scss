@@ -222,3 +222,41 @@
 	margin-bottom: 50px;
 	border-bottom: 2px solid $color__borders;
 }
+
+body.search-results .content-area {
+	article {
+		@include clearfix;
+
+		.entry-thumbnail {
+			width: 42.5%;
+			margin: 0 1.5% 0 0;
+			float: left;
+		}
+
+		.entry-content {
+			width: 100%;
+			float: right;
+			margin: 0;
+
+			.entry-meta {
+				text-align: left;
+			}
+
+			.entry-title {
+				text-align: left;
+				font-size: 1.35em;
+				margin: 0;
+			}
+
+			.entry-summary {
+				margin-top: 0.5em;
+			}
+		}
+
+		&.has-post-thumbnail {
+			.entry-content {
+				width: 56%;
+			}
+		}
+	}
+}
