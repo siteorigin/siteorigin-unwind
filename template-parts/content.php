@@ -15,10 +15,9 @@
 			<div class="entry-meta">
 				<?php siteorigin_unwind_post_meta(); ?>
 			</div><!-- .entry-meta -->
+		<?php endif; ?>
 
-			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-		<?php
-		endif; ?>
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php if( has_post_thumbnail() && siteorigin_setting('blog_featured_archive') ) : ?>

@@ -9,15 +9,15 @@
 
 get_header(); ?>
 
+	<header class="page-header">
+		<h1 class="page-title"><span class="page-title-text"><?php printf( esc_html__( 'Search Results: %s', 'siteorigin_unwind' ), get_search_query() ); ?></span></h1>
+	</header><!-- .page-header -->
+
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'siteorigin_unwind' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
@@ -32,7 +32,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			siteorigin_unwind_posts_navigation();
 
 		else :
 
