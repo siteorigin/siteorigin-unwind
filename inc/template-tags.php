@@ -7,6 +7,42 @@
  * @package siteorigin_unwind
  */
 
+if( !function_exists('siteorigin_unwind_display_logo') ):
+/**
+ * Display the logo or site title
+ */
+function siteorigin_unwind_display_logo(){
+	$logo = siteorigin_setting( 'branding_logo' );
+	if( !empty($logo) ) {
+		$logo_id = attachment_url_to_postid( $logo );
+		$attrs = apply_filters( 'siteorigin_unwind_logo_attributes', array() );
+
+		?><center><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
+		echo wp_get_attachment_image( $logo_id, 'full', false, $attrs );
+		?></a></center><?php
+
+	}
+	else {
+		?><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1><?php
+	}
+}
+endif;
+
+if( !function_exists('siteorigin_unwind_display_retina_logo') ):
+/**
+ * Display a retina ready logo
+ */
+function siteorigin_unwind_display_retina_logo( $attr ){
+	$logo = siteorigin_setting( 'branding_logo' );
+	$retina = siteorigin_setting( 'branding_retina_logo' );
+	if( !empty($retina) ) {
+		$attr['srcset'] = $logo . ' 1x,' . $retina . ' 2x';
+		return $attr;
+	}
+}
+add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_archive_title' ) ) :
 /**
  * Display titles in archive pages

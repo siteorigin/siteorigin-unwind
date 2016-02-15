@@ -748,10 +748,23 @@ a {
 ## Site Masthead
 --------------------------------------------------------------*/
 #masthead {
-  width: 100%; }
+  width: 100%;
+  border-bottom: 1px solid #f4f4f4;
+  margin-bottom: 50px; }
   #masthead .container-inner {
     display: table;
     width: 100%; }
+  #masthead .site-branding {
+    margin: 75px 0; }
+    #masthead .site-branding .site-title {
+      font-size: 3em;
+      margin: 0;
+      text-align: center; }
+      #masthead .site-branding .site-title a {
+        text-decoration: none;
+        color: inherit; }
+    #masthead .site-branding .site-description {
+      text-align: center; }
 
 /*--------------------------------------------------------------
 ## Site Footer
