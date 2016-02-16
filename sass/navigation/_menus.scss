@@ -2,7 +2,7 @@
 	clear: both;
 	display: block;
 	float: left;
-	width: 100%;
+	padding: 0.7em 0;
 
 	ul {
 		display: none;
@@ -11,12 +11,14 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			background: #fff;
 			float: left;
 			position: absolute;
-			top: 1.5em;
+			top: 2.5em;
 			left: -999em;
 			z-index: 99999;
+			padding: 0;
 
 			ul {
 				left: -999em;
@@ -24,14 +26,23 @@
 			}
 
 			li {
+				padding: 0;
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
 				}
+
+				&:last-child a {
+					border-bottom: 0;
+				}
 			}
 
 			a {
-				width: 200px;
+				min-width: 150px;
+				text-transform: none;
+				border-bottom: 1px solid $color__borders;
+				margin: 0 20px;
+				padding: 10px 0;
 			}
 
 			:hover > a,
@@ -51,9 +62,18 @@
 	li {
 		float: left;
 		position: relative;
+		padding-right: 2em;
+
+		a {
+			text-transform: uppercase;
+			color: $color__text-medium;
+			font-size: 0.85em;
+			padding: 0.75em 0;
+		}
 
 		&:hover > a,
 		&.focus > a {
+			color: $color__text-dark;
 		}
 	}
 	a {

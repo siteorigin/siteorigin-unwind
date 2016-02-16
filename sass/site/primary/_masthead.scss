@@ -3,9 +3,9 @@
 	border-bottom: 1px solid $color__borders;
 	margin-bottom: 50px;
 
-	.container-inner {
-		display: table;
-		width: 100%;
+	.top-bar {
+		border-bottom: 1px solid $color__borders;
+		@include clearfix;
 	}
 
 	.site-branding {

@@ -25,19 +25,22 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin_unwind' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="container">
-			<div class="container-inner">
+
+		<div class="top-bar">
+			<div class="container">
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin_unwind' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
-				<div class="site-branding">
-					<?php siteorigin_unwind_display_logo() ?>
-					<?php if( siteorigin_setting('branding_site_description') ) : ?>
-						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-					<?php endif ?>
-				</div><!-- .site-branding -->
-			</div><!-- .container-inner -->
+			</div><!-- .container -->
+		</div><!-- .top-bar -->
+		<div class="container">
+			<div class="site-branding">
+				<?php siteorigin_unwind_display_logo() ?>
+				<?php if( siteorigin_setting('branding_site_description') ) : ?>
+					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+				<?php endif ?>
+			</div><!-- .site-branding -->
 		</div><!-- .container -->
 	</header><!-- #masthead -->
 
