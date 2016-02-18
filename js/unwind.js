@@ -64,4 +64,51 @@ jQuery( function($){
 
 	} );
 
+	// Now lets do the sticky menu
+
+	if( $('.top-bar').hasClass('sticky-menu') && !$('body').hasClass('is-mobile') ) {
+        var $tbs = false,
+            pageTop = $('#page').offset().top,
+            $tb = $('.top-bar');
+
+        var smSetup = function () {
+            pageTop = $('#page').offset().top;
+
+            if ($tbs === false) {
+                $tbs = $('<div class="top-bar-sentinel"></div>').insertAfter($tb);
+            }
+
+
+            var top  = window.pageYOffset || document.documentElement.scrollTop;
+            $tb.css({
+                'position': 'relative',
+                'top': 0,
+                'left': 0,
+                'width': null,
+            });
+
+            var adminBarOffset = $('#wpadminbar').css('position') === 'fixed' ? $('#wpadminbar').outerHeight() : 0;
+
+            if( top + adminBarOffset > $tb.offset().top ) {
+
+                $tbs.show().css({
+                    'height': $tb.outerHeight(),
+                    'margin-bottom' : $tb.css('margin-bottom')
+                });
+                $tb.css({
+                    'position': 'fixed',
+                    'top': adminBarOffset,
+                    'left': 0 - self.pageXOffset+'px',
+                    'width': '100%',
+                });
+            }
+            else {
+                $tbs.hide();
+            }
+        };
+        smSetup();
+        $(window).resize( smSetup ).scroll( smSetup );
+
+    }
+
 } );

@@ -8,6 +8,12 @@
 		height: 60px;
 		@include clearfix;
 		position: relative;
+		background: #ffffff;
+		z-index: 9999;
+	}
+
+	.top-bar-sentinel {
+		box-sizing: border-box;
 	}
 
 	.site-branding {

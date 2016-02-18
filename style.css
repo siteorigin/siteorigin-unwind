@@ -665,7 +665,8 @@ a {
       border: 0;
       height: 50px;
       font-size: 36px;
-      outline: none; }
+      outline: none;
+      background: transparent; }
     #fullscreen-search form input[type="submit"] {
       display: none; }
     #fullscreen-search form .search-icon {
@@ -897,11 +898,15 @@ a {
   #masthead .top-bar {
     border-bottom: 1px solid #f4f4f4;
     height: 60px;
-    position: relative; }
+    position: relative;
+    background: #ffffff;
+    z-index: 9999; }
     #masthead .top-bar::after {
       clear: both;
       content: "";
       display: table; }
+  #masthead .top-bar-sentinel {
+    box-sizing: border-box; }
   #masthead .site-branding {
     margin: 75px 0; }
     #masthead .site-branding .site-title {

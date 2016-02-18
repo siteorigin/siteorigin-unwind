@@ -72,6 +72,11 @@ function siteorigin_unwind_settings_init(){
 		'navigation' => array(
 			'title' => __( 'Navigation', 'siteorigin-unwind' ),
 			'fields' => array(
+				'sticky' => array(
+					'type' => 'checkbox',
+					'label' => __('Sticky menu', 'siteorigin-north'),
+					'description' => __('Stick menu to top of screen', 'siteorigin-north'),
+				),
 				'post' => array(
 					'type' => 'checkbox',
 					'label' => __('Post navigation', 'siteorigin-unwind'),
@@ -206,6 +211,7 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	$defaults['masthead_bottom_margin'] = '30px';
 
 	// Navigation defaults
+	$defaults['navigation_sticky'] = true;
 	$defaults['navigation_post'] = true;
 
 	// Blog settings
