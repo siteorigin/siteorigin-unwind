@@ -34,6 +34,10 @@
 				</nav><!-- #site-navigation -->
 				<div id="mobile-navigation"></div>
 				<div class="social-search">
+					<?php dynamic_sidebar( 'sidebar-header' ); ?>
+					<?php if( is_active_sidebar( 'sidebar-header' ) ): ?>
+						<span class="v-line"></span>
+					<?php endif; ?>
 					<button id="search-button" class="search-toggle">
 						<span class="open">Search</span>
 						<span class="close">Close</span>

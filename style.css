@@ -643,6 +643,13 @@ a {
       display: none; }
     .social-search .search-toggle.close-search .close {
       display: block; }
+  .social-search .widget {
+    display: inline-block; }
+  .social-search .v-line {
+    width: 1px;
+    height: 20px;
+    border-left: 1px solid #f4f4f4;
+    margin: 0 10px; }
 
 #fullscreen-search {
   position: absolute;

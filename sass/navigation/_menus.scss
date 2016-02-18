@@ -228,6 +228,17 @@
 			}
 		}
 	}
+
+	.widget {
+		display: inline-block;
+	}
+
+	.v-line {
+		width: 1px;
+		height: 20px;
+		border-left: 1px solid $color__borders;
+		margin: 0 10px;
+	}
 }
 
 #fullscreen-search {
