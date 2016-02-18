@@ -5,6 +5,7 @@
 
 	.top-bar {
 		border-bottom: 1px solid $color__borders;
+		height: 60px;
 		@include clearfix;
 	}
 

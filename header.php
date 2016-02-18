@@ -29,9 +29,10 @@
 		<div class="top-bar">
 			<div class="container">
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin_unwind' ); ?></button>
+					<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin_unwind' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
+				<div id="mobile-navigation"></div>
 			</div><!-- .container -->
 		</div><!-- .top-bar -->
 		<div class="container">

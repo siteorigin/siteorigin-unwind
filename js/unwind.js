@@ -18,4 +18,28 @@ jQuery( function($){
 
 	}
 
+	// Handle displaying the mobile menu
+	var $mobileMenu = false;
+	$('#mobile-menu-button').click( function(e){
+		e.preventDefault();
+		var $$ = $(this);
+		$$.toggleClass('to-close');
+		var $mobileMenuDiv = $('#mobile-navigation');
+
+		if( $mobileMenu === false ) {
+			$mobileMenu = $mobileMenuDiv
+				.append($('.main-navigation ul').first().clone())
+				.appendTo($mobileMenuDiv).hide();
+		}
+
+		$mobileMenu.slideToggle('fast');
+
+		$mobileMenuDiv.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false"></button>' );
+		$mobileMenuDiv.find( '.menu-item-has-children a' ).width('100%');
+		$mobileMenuDiv.find( '.dropdown-toggle' ).click( function( e ) {
+			e.preventDefault();
+			$( this ).next( '.children, .sub-menu' ).slideToggle('fast');
+		} );
+	} );
+
 } );
