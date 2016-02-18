@@ -42,4 +42,26 @@ jQuery( function($){
 		} );
 	} );
 
+	// Handle display of fullscreen search
+	$('#search-button').click( function(e){
+		e.preventDefault();
+		var $$ = $(this);
+		$$.toggleClass('close-search');
+
+		$("input[type='search']").each(function () { $(this).attr('size', $(this).attr('placeholder').length); });
+
+		var fullscreenSearch = function() {
+			vpw = $(window).width();
+			vph = $(window).height();
+			$('#fullscreen-search').css({'height': vph - 60 + 'px', 'width': vpw + 'px'});
+		};
+		fullscreenSearch();
+		$(window).resize( fullscreenSearch );
+
+		$('#fullscreen-search').find( "input[type='search']" ).after( '<span class="search-icon">i</span>' );
+
+		$('#fullscreen-search').slideToggle('fast');
+
+	} );
+
 } );

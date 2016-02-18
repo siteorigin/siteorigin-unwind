@@ -202,6 +202,84 @@
 	}
 }
 
+.social-search {
+	float: right;
+
+	.search-toggle {
+		background: transparent;
+		border: none;
+		height: 20px;
+		margin: 20px 0;
+		outline: none;
+
+		.open {
+			display: block;
+		}
+		.close {
+			display: none;
+		}
+
+		&.close-search {
+			.open {
+				display: none;
+			}
+			.close {
+				display: block;
+			}
+		}
+	}
+}
+
+#fullscreen-search {
+	position: absolute;
+	top: 60px;
+	left: 0;
+	background: rgba(255, 255, 255, 0.9);
+	z-index: 10;
+	display: none;
+
+	form {
+		position: absolute;
+		top:30%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		.searchform-title {
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 18px;
+			padding-bottom: 1em;
+		}
+
+		input[type="search"] {
+			border: 0;
+			height: 50px;
+			font-size: 36px;
+			outline: none;
+		}
+
+		input[type="submit"] {
+			display: none;
+		}
+
+		.search-icon {
+			font-size: 36px;
+			position: absolute;
+			right: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	#fullscreen-search form {
+		input[type="search"] {
+			font-size: 24px;
+		}
+	}
+
+}
+
 .comment-navigation,
 .posts-navigation,
 .post-navigation {

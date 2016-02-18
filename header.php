@@ -22,18 +22,27 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin_unwind' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-unwind' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 
 		<div class="top-bar">
 			<div class="container">
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin_unwind' ); ?></button>
+					<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin-unwind' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
 				<div id="mobile-navigation"></div>
+				<div class="social-search">
+					<button id="search-button" class="search-toggle">
+						<span class="open">Search</span>
+						<span class="close">Close</span>
+					</button>
+				</div>
 			</div><!-- .container -->
+			<div id="fullscreen-search">
+				<?php get_search_form() ?>
+			</div>
 		</div><!-- .top-bar -->
 		<div class="container">
 			<div class="site-branding">
