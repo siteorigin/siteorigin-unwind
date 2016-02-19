@@ -710,8 +710,7 @@ a {
 
 .site-footer {
   clear: both;
-  width: 100%;
-  min-width: 1060px; }
+  width: 100%; }
 
 .no-active-sidebar .content-area {
   float: none;
@@ -793,7 +792,7 @@ a {
       width: 11.11111%; }
     #colophon .widgets.widgets-10 .widget-wrapper {
       width: 10%; }
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       #colophon .widgets .widget-wrapper {
         float: none;
         width: 100% !important;
