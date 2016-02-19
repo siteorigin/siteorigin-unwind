@@ -144,6 +144,15 @@ function siteorigin_unwind_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name' => __( 'Header', 'siteorigin-unwind' ),
+		'id' => 'sidebar-header',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
+	) );
+
+	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'footer-sidebar',
 		'description'   => '',
@@ -161,7 +170,8 @@ add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
 function siteorigin_unwind_scripts() {
 	wp_enqueue_style( 'siteorigin_unwind-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'siteorigin_unwind-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	//wp_enqueue_script( 'siteorigin_unwind-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'siteorigin-unwind-script', get_template_directory_uri() . '/js/unwind.js', array('jquery') );
 
 	wp_enqueue_script( 'siteorigin_unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 

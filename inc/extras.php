@@ -19,6 +19,8 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	$classes[] = 'no-js';
+	$classes[] = 'css3-animations';
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -27,6 +29,14 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// Check if the sidebar has widgets
 	if( !is_active_sidebar('main-sidebar') ) {
 		$classes[] = 'no-active-sidebar';
+	}
+
+	if( siteorigin_setting('navigation_sticky') ) {
+		$classes[] = 'sticky-menu';
+	}
+
+	if( wp_is_mobile() ) {
+		$classes[] = 'is_mobile';
 	}
 
 	return $classes;

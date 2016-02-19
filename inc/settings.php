@@ -25,18 +25,45 @@ function siteorigin_unwind_settings_init(){
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
 
 		'branding' => array(
-			'title' => __('Branding', 'siteorigin-north'),
+			'title' => __('Branding', 'siteorigin-unwind'),
 			'fields' => array(
+				'logo' => array(
+					'type' => 'media',
+					'label' => __('Logo', 'siteorigin-unwind'),
+					'description' => __('Logo displayed in your masthead.', 'siteorigin-unwind')
+				),
+				'retina_logo' => array(
+					'type' => 'media',
+					'label' => __('Retina Logo', 'siteorigin-unwind'),
+					'description' => __('A double sized logo to use on retina devices.', 'siteorigin-unwind')
+				),
+				'site_description' => array(
+					'type' => 'checkbox',
+					'label' => __('Site Description', 'siteorigin-north'),
+					'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
+				),
 				'accent' => array(
 					'type' => 'color',
-					'label' => __('Accent Color', 'siteorigin-north'),
-					'description' => __('The color used for links and various other accents.', 'siteorigin-north'),
+					'label' => __('Accent Color', 'siteorigin-unwind'),
+					'description' => __('The color used for links and various other accents.', 'siteorigin-unwind'),
 					'live' => true,
 				),
 				'accent_dark' => array(
 					'type' => 'color',
-					'label' => __('Dark Accent Color', 'siteorigin-north'),
-					'description' => __('A darker version of your accent color.', 'siteorigin-north'),
+					'label' => __('Dark Accent Color', 'siteorigin-unwind'),
+					'description' => __('A darker version of your accent color.', 'siteorigin-unwind'),
+					'live' => true,
+				),
+			)
+		),
+
+		'masthead' => array(
+			'title' => __('Header', 'siteorigin-unwind'),
+			'fields' => array(
+				'bottom_margin' => array(
+					'type' => 'text',
+					'label' => __('Bottom Margin', 'siteorigin-unwind'),
+					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
 					'live' => true,
 				),
 			)
@@ -45,6 +72,11 @@ function siteorigin_unwind_settings_init(){
 		'navigation' => array(
 			'title' => __( 'Navigation', 'siteorigin-unwind' ),
 			'fields' => array(
+				'sticky' => array(
+					'type' => 'checkbox',
+					'label' => __('Sticky menu', 'siteorigin-north'),
+					'description' => __('Stick menu to top of screen', 'siteorigin-north'),
+				),
 				'post' => array(
 					'type' => 'checkbox',
 					'label' => __('Post navigation', 'siteorigin-unwind'),
@@ -146,6 +178,9 @@ function siteorigin_unwind_settings_custom_css($css){
 		'a:hover,a:focus {' . "\n" .
 		'color: ${branding_accent_dark};' . "\n" .
 		'}' . "\n" .
+		'#masthead {' . "\n" .
+		'margin-bottom: ${masthead_bottom_margin};' . "\n" .
+		'}' . "\n" .
 		'#colophon {' . "\n" .
 		'margin-top: ${footer_top_margin};' . "\n" .
 		'}' . "\n" .
@@ -165,11 +200,18 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom
  */
 function siteorigin_unwind_settings_defaults( $defaults ){
 
-	//Branding
+	// Branding defaults
+	$defaults['branding_logo'] = false;
+	$defaults['branding_logo_retina'] = false;
+	$defaults['branding_site_description'] = false;
 	$defaults['branding_accent'] = '#25c48a';
 	$defaults['branding_accent_dark'] = '#21af7b';
 
+	// The masthead defaults
+	$defaults['masthead_bottom_margin'] = '30px';
+
 	// Navigation defaults
+	$defaults['navigation_sticky'] = true;
 	$defaults['navigation_post'] = true;
 
 	// Blog settings

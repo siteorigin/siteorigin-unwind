@@ -1,8 +1,36 @@
 #masthead {
 	width: $size__site-main;
+	border-bottom: 1px solid $color__borders;
+	margin-bottom: 50px;
 
-	.container-inner {
-		display: table;
-		width: 100%;
+	.top-bar {
+		border-bottom: 1px solid $color__borders;
+		height: 60px;
+		@include clearfix;
+		position: relative;
+		background: #ffffff;
+		z-index: 9999;
+	}
+
+	.top-bar-sentinel {
+		box-sizing: border-box;
+	}
+
+	.site-branding {
+		margin: 75px 0;
+
+		.site-title {
+			font-size: 3em;
+			margin: 0;
+			text-align: center;
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+
+		.site-description {
+			text-align: center;
+		}
 	}
 }

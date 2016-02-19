@@ -491,48 +491,199 @@ a {
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
-  width: 100%; }
+  float: left; }
+  .main-navigation::after {
+    clear: both;
+    content: "";
+    display: table; }
   .main-navigation ul {
     display: none;
     list-style: none;
     margin: 0;
     padding-left: 0; }
     .main-navigation ul ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      background: #fff;
       float: left;
       position: absolute;
-      top: 1.5em;
+      top: 50px;
       left: -999em;
-      z-index: 99999; }
+      z-index: 99999;
+      padding: 0; }
       .main-navigation ul ul ul {
         left: -999em;
         top: 0; }
-      .main-navigation ul ul li:hover > ul,
-      .main-navigation ul ul li.focus > ul {
-        left: 100%; }
+      .main-navigation ul ul li {
+        padding: 0; }
+        .main-navigation ul ul li:hover > ul,
+        .main-navigation ul ul li.focus > ul {
+          left: 100%; }
+        .main-navigation ul ul li:last-child a {
+          border-bottom: 0; }
       .main-navigation ul ul a {
-        width: 200px; }
+        min-width: 150px;
+        text-transform: none;
+        border-bottom: 1px solid #f4f4f4;
+        margin: 0 20px;
+        padding: 15px 0; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       left: auto; }
   .main-navigation li {
     float: left;
-    position: relative; }
+    position: relative;
+    padding-right: 2em; }
+    .main-navigation li a {
+      text-transform: uppercase;
+      color: #626262;
+      font-size: 12px;
+      line-height: 12px;
+      padding: 24px 0; }
+    .main-navigation li:hover > a,
+    .main-navigation li.focus > a {
+      color: #2d2d2d; }
   .main-navigation a {
     display: block;
     text-decoration: none; }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block; }
+.main-navigation ul {
+  display: none; }
 
-@media screen and (min-width: 37.5em) {
+.menu-toggle {
+  display: block;
+  border: 0;
+  background: transparent;
+  height: 20px;
+  margin: 20px 0;
+  outline: none; }
+
+@media screen and (min-width: 769px) {
   .menu-toggle {
     display: none; }
   .main-navigation ul {
-    display: block; } }
+    display: block; }
+  #mobile-navigation {
+    display: none !important; } }
+
+#mobile-navigation {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  width: 100%;
+  z-index: 10; }
+  #mobile-navigation ul {
+    margin: 0;
+    list-style: none;
+    padding: 0; }
+    #mobile-navigation ul li {
+      line-height: 42px;
+      background: #f8f8f8;
+      width: 100%;
+      position: relative; }
+      #mobile-navigation ul li a {
+        display: block;
+        text-decoration: none;
+        color: #626262;
+        padding: 15px 0 15px 20px;
+        border-bottom: 1px solid #ebebeb;
+        width: 100%;
+        font-size: 12px;
+        line-height: 12px;
+        text-transform: uppercase; }
+      #mobile-navigation ul li.menu-item-has-children > a {
+        padding-right: 48px; }
+      #mobile-navigation ul li .dropdown-toggle {
+        background: transparent;
+        border: 0;
+        content: "";
+        height: 30px;
+        padding: 6px;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        width: 42px;
+        outline: none;
+        box-shadow: none; }
+        #mobile-navigation ul li .dropdown-toggle:after {
+          color: #626262;
+          content: "d";
+          font-size: 15px;
+          line-height: 42px;
+          position: relative;
+          top: 0;
+          left: 1px;
+          width: 42px; }
+    #mobile-navigation ul ul {
+      margin: 0;
+      padding: 0;
+      display: none; }
+      #mobile-navigation ul ul li {
+        padding-left: 20px;
+        background: #ffffff; }
+        #mobile-navigation ul ul li a {
+          width: 100%;
+          text-transform: uppercase; }
+        #mobile-navigation ul ul li ul {
+          display: none; }
+
+.social-search {
+  float: right; }
+  .social-search .search-toggle {
+    background: transparent;
+    border: none;
+    height: 20px;
+    margin: 20px 0;
+    outline: none; }
+    .social-search .search-toggle .open {
+      display: block; }
+    .social-search .search-toggle .close {
+      display: none; }
+    .social-search .search-toggle.close-search .open {
+      display: none; }
+    .social-search .search-toggle.close-search .close {
+      display: block; }
+  .social-search .widget {
+    display: inline-block; }
+  .social-search .v-line {
+    width: 1px;
+    height: 20px;
+    border-left: 1px solid #f4f4f4;
+    margin: 0 10px; }
+
+#fullscreen-search {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 10;
+  display: none; }
+  #fullscreen-search form {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    #fullscreen-search form .searchform-title {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 18px;
+      padding-bottom: 1em; }
+    #fullscreen-search form input[type="search"] {
+      border: 0;
+      height: 50px;
+      font-size: 36px;
+      outline: none;
+      background: transparent; }
+    #fullscreen-search form input[type="submit"] {
+      display: none; }
+    #fullscreen-search form .search-icon {
+      font-size: 36px;
+      position: absolute;
+      right: 0; }
+
+@media screen and (max-width: 768px) {
+  #fullscreen-search form input[type="search"] {
+    font-size: 24px; } }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -749,10 +900,32 @@ a {
 ## Site Masthead
 --------------------------------------------------------------*/
 #masthead {
-  width: 100%; }
-  #masthead .container-inner {
-    display: table;
-    width: 100%; }
+  width: 100%;
+  border-bottom: 1px solid #f4f4f4;
+  margin-bottom: 50px; }
+  #masthead .top-bar {
+    border-bottom: 1px solid #f4f4f4;
+    height: 60px;
+    position: relative;
+    background: #ffffff;
+    z-index: 9999; }
+    #masthead .top-bar::after {
+      clear: both;
+      content: "";
+      display: table; }
+  #masthead .top-bar-sentinel {
+    box-sizing: border-box; }
+  #masthead .site-branding {
+    margin: 75px 0; }
+    #masthead .site-branding .site-title {
+      font-size: 3em;
+      margin: 0;
+      text-align: center; }
+      #masthead .site-branding .site-title a {
+        text-decoration: none;
+        color: inherit; }
+    #masthead .site-branding .site-description {
+      text-align: center; }
 
 /*--------------------------------------------------------------
 ## Site Footer
