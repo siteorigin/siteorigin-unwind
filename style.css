@@ -981,7 +981,7 @@ a {
       text-align: center; } }
 
 .more-link {
-  font-size: 1em;
+  font-size: 0.8em;
   display: block;
   text-align: center;
   color: #2d2d2d;
@@ -1001,31 +1001,49 @@ a {
   margin-bottom: 50px;
   border-bottom: 2px solid #f4f4f4; }
 
-body.search-results .content-area article::after {
+.search-results .content-area article::after {
   clear: both;
   content: "";
   display: table; }
 
-body.search-results .content-area article .entry-thumbnail {
+.search-results .content-area article .entry-thumbnail {
   width: 42.5%;
   margin: 0 1.5% 0 0;
   float: left; }
 
-body.search-results .content-area article .entry-content {
+.search-results .content-area article .entry-content {
   width: 100%;
   float: right;
   margin: 0; }
-  body.search-results .content-area article .entry-content .entry-meta {
+  .search-results .content-area article .entry-content .entry-meta {
     text-align: left; }
-  body.search-results .content-area article .entry-content .entry-title {
+  .search-results .content-area article .entry-content .entry-title {
     text-align: left;
     font-size: 1.35em;
     margin: 0; }
-  body.search-results .content-area article .entry-content .entry-summary {
+  .search-results .content-area article .entry-content .entry-summary {
     margin-top: 0.5em; }
 
-body.search-results .content-area article.has-post-thumbnail .entry-content {
+.search-results .content-area article.has-post-thumbnail .entry-content {
   width: 56%; }
+
+@media screen and (max-width: 320px) {
+  .search-results .content-area article .entry-thumbnail {
+    width: 100%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px; }
+  .search-results .content-area article .entry-content {
+    float: none; }
+    .search-results .content-area article .entry-content .entry-meta {
+      text-align: center; }
+    .search-results .content-area article .entry-content .entry-title {
+      text-align: center; }
+    .search-results .content-area article .entry-content .entry-summary {
+      text-align: center; }
+  .search-results .content-area article.has-post-thumbnail .entry-content {
+    width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Asides
