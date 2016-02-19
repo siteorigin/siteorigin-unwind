@@ -578,16 +578,18 @@ a {
     color: #626262;
     font-weight: bold;
     padding: 0;
-    border: none; }
+    border: none;
+    text-transform: none; }
     .post-navigation a:hover {
       color: #21af7b; }
     .post-navigation a .sub-title {
       display: inline-block;
       font-weight: normal;
+      font-size: 0.8em;
       text-transform: uppercase;
       color: #dadada;
       border-bottom: 2px solid #dadada;
-      padding-bottom: 5px;
+      padding-bottom: 2px;
       margin-bottom: 10px; }
 
 /*--------------------------------------------------------------
@@ -721,7 +723,7 @@ a {
 .no-active-sidebar .site-main {
   margin: 0; }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .content-area {
     float: none;
     width: auto;
@@ -935,8 +937,12 @@ a {
       font-size: 0.9em;
       color: #d9d9d9; }
 
+@media screen and (max-width: 320px) {
+  .yarpp-related ol li {
+    width: 100%; } }
+
 .author-box {
-  margin: 20px 0; }
+  margin: 50px 0; }
   .author-box .author-avatar {
     float: left; }
     .author-box .author-avatar img {
@@ -959,6 +965,20 @@ a {
         text-decoration: none; }
         .author-box .author-description .post-author-title a:hover {
           color: #21af7b; }
+
+@media screen and (max-width: 320px) {
+  .author-box .author-avatar {
+    float: none; }
+    .author-box .author-avatar img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px; }
+  .author-box .author-description {
+    padding-left: 0;
+    text-align: center; }
+    .author-box .author-description .post-author-title a {
+      text-align: center; } }
 
 .more-link {
   font-size: 1em;
@@ -1072,6 +1092,9 @@ body.search-results .content-area article.has-post-thumbnail .entry-content {
 .comments-title, .comment-reply-title {
   font-size: 1em;
   text-transform: uppercase; }
+
+.comments-title {
+  margin-bottom: 0; }
 
 .comment-reply-title {
   font-size: 1em;

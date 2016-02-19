@@ -162,8 +162,16 @@
 	}
 }
 
+@media screen and (max-width: 320px) {
+	.yarpp-related {
+		ol li {
+			width: 100%;
+		}
+	}
+}
+
 .author-box {
-	margin: 20px 0;
+	margin: 50px 0;
 
 	.author-avatar {
 		float: left;
@@ -194,6 +202,32 @@
 				}
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.author-box {
+
+		.author-avatar {
+			float: none;
+
+			img {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 30px;
+			}
+		}
+
+		.author-description {
+			padding-left: 0;
+			text-align: center;
+
+			.post-author-title a {
+				text-align: center;
+			}
+		}
+
 	}
 }
 
