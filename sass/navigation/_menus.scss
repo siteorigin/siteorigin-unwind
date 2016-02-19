@@ -130,6 +130,7 @@
 		font-weight: bold;
 		padding: 0;
 		border: none;
+		text-transform: none;
 
 		&:hover {
 			color: $color__primary-accent-dark;
@@ -138,10 +139,11 @@
 		.sub-title {
 			display: inline-block;
 			font-weight: normal;
+			font-size: 0.8em;
 			text-transform: uppercase;
 			color: $color__text-light;
 			border-bottom: 2px solid $color__text-light;
-			padding-bottom: 5px;
+			padding-bottom: 2px;
 			margin-bottom: 10px;
 		}
 	}

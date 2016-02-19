@@ -162,8 +162,16 @@
 	}
 }
 
+@media screen and (max-width: 320px) {
+	.yarpp-related {
+		ol li {
+			width: 100%;
+		}
+	}
+}
+
 .author-box {
-	margin: 20px 0;
+	margin: 50px 0;
 
 	.author-avatar {
 		float: left;
@@ -197,8 +205,34 @@
 	}
 }
 
+@media screen and (max-width: 320px) {
+	.author-box {
+
+		.author-avatar {
+			float: none;
+
+			img {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 30px;
+			}
+		}
+
+		.author-description {
+			padding-left: 0;
+			text-align: center;
+
+			.post-author-title a {
+				text-align: center;
+			}
+		}
+
+	}
+}
+
 .more-link {
-	font-size: 1em;
+	font-size: 0.8em;
 	display: block;
 	text-align: center;
 	color: $color__text-dark;
@@ -223,7 +257,7 @@
 	border-bottom: 2px solid $color__borders;
 }
 
-body.search-results .content-area {
+.search-results .content-area {
 	article {
 		@include clearfix;
 
@@ -257,6 +291,44 @@ body.search-results .content-area {
 			.entry-content {
 				width: 56%;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.search-results .content-area {
+		article {
+
+			.entry-thumbnail {
+				width: 100%;
+				margin: 0;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 25px;
+			}
+
+			.entry-content {
+				float: none;
+
+				.entry-meta {
+					text-align: center;
+				}
+
+				.entry-title {
+					text-align: center;
+				}
+
+				.entry-summary {
+					text-align: center;
+				}
+			}
+
+			&.has-post-thumbnail {
+				.entry-content {
+					width: 100%;
+				}
+			}
+
 		}
 	}
 }
