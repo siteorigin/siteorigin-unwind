@@ -246,6 +246,13 @@ function siteorigin_unwind_setup_page_settings(){
 				'full-width-sidebar' => __( 'Full Width, With Sidebar', 'siteorigin-unwind' ),
 			),
 		),
+
+		'page_title' => array(
+			'type' => 'checkbox',
+			'label' => __( 'Page Title', 'siteorigin-unwind' ),
+			'checkbox_label' => __( 'display', 'siteorigin-unwind' ),
+			'description' => __('Display the page title on this page.', 'siteorigin-unwind')
+		),
 	) );
 
 }
@@ -256,6 +263,7 @@ add_action('siteorigin_page_settings_init', 'siteorigin_unwind_setup_page_settin
  */
 function siteorigin_unwind_setup_page_setting_defaults( $defaults ){
 	$defaults['layout'] = 'default';
+	$defaults['page_title'] = true;
 	return $defaults;
 }
 add_filter('siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_setting_defaults');
@@ -269,6 +277,7 @@ add_filter('siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_se
  */
 function siteorigin_unwind_page_settings_panels_defaults( $settings ){
 	$settings['layout'] = 'no-sidebar';
+	$defaults['page_title'] = false;
 	return $settings;
 }
 add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults');
