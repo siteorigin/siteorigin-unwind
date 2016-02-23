@@ -896,6 +896,14 @@ a {
   padding: 0 20px;
   width: 100%; }
 
+.page-layout-no-sidebar .site-main,
+.page-layout-full-width .site-main {
+  margin: 0; }
+
+.page-layout-full-width .site-content .container,
+.page-layout-full-width-sidebar .site-content .container {
+  max-width: 100%; }
+
 /*--------------------------------------------------------------
 ## Site Masthead
 --------------------------------------------------------------*/

@@ -26,6 +26,10 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	if( is_page() ) {
+		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
+	}
+
 	// Check if the sidebar has widgets
 	if( !is_active_sidebar('main-sidebar') ) {
 		$classes[] = 'no-active-sidebar';

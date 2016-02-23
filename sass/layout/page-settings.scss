@@ -1,0 +1,13 @@
+.page-layout-no-sidebar,
+.page-layout-full-width {
+    .site-main {
+        margin: 0;
+    }
+}
+
+.page-layout-full-width,
+.page-layout-full-width-sidebar {
+    .site-content .container {
+        max-width: 100%;
+    }
+}

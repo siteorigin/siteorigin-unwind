@@ -39,8 +39,8 @@ function siteorigin_unwind_settings_init(){
 				),
 				'site_description' => array(
 					'type' => 'checkbox',
-					'label' => __('Site Description', 'siteorigin-north'),
-					'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
+					'label' => __('Site Description', 'siteorigin-unwind'),
+					'description' => __('Show your site description below your site title or logo.', 'siteorigin-unwind')
 				),
 				'accent' => array(
 					'type' => 'color',
@@ -74,8 +74,8 @@ function siteorigin_unwind_settings_init(){
 			'fields' => array(
 				'sticky' => array(
 					'type' => 'checkbox',
-					'label' => __('Sticky menu', 'siteorigin-north'),
-					'description' => __('Stick menu to top of screen', 'siteorigin-north'),
+					'label' => __('Sticky menu', 'siteorigin-unwind'),
+					'description' => __('Stick menu to top of screen', 'siteorigin-unwind'),
 				),
 				'post' => array(
 					'type' => 'checkbox',
@@ -236,7 +236,16 @@ add_filter('siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults'
 function siteorigin_unwind_setup_page_settings(){
 
 	SiteOrigin_Settings_Page_Settings::single()->configure( array(
-
+		'layout' => array(
+			'type' => 'select',
+			'label' => __( 'Page Layout', 'siteorigin-unwind' ),
+			'options' => array(
+				'default' => __( 'Default', 'siteorigin-unwind' ),
+				'no-sidebar' => __( 'No Sidebar', 'siteorigin-unwind' ),
+				'full-width' => __( 'Full Width', 'siteorigin-unwind' ),
+				'full-width-sidebar' => __( 'Full Width, With Sidebar', 'siteorigin-unwind' ),
+			),
+		),
 	) );
 
 }
@@ -246,6 +255,7 @@ add_action('siteorigin_page_settings_init', 'siteorigin_unwind_setup_page_settin
  * Add the default Page Settings
  */
 function siteorigin_unwind_setup_page_setting_defaults( $defaults ){
+	$defaults['layout'] = 'default';
 	return $defaults;
 }
 add_filter('siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_setting_defaults');
@@ -258,6 +268,7 @@ add_filter('siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_se
  * @return mixed
  */
 function siteorigin_unwind_page_settings_panels_defaults( $settings ){
+	$settings['layout'] = 'no-sidebar';
 	return $settings;
 }
 add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults');
