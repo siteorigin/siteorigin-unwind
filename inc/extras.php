@@ -26,6 +26,16 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	if( is_page() ) {
+		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
+		if( !SiteOrigin_Settings_Page_Settings::get('masthead_margin') ) {
+			$classes[] = 'page-layout-no-masthead-margin';
+		}
+		if( !SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
+			$classes[] = 'page-layout-no-footer-margin';
+		}
+	}
+
 	// Check if the sidebar has widgets
 	if( !is_active_sidebar('main-sidebar') ) {
 		$classes[] = 'no-active-sidebar';

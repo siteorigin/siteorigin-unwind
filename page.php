@@ -33,6 +33,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-get_sidebar();
+<?php if( in_array( SiteOrigin_Settings_Page_Settings::get('layout'), array('default','full-width-sidebar'), true )  ) get_sidebar();
 get_footer();
