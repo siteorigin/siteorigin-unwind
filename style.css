@@ -904,6 +904,12 @@ a {
 .page-layout-full-width-sidebar .site-content .container {
   max-width: 100%; }
 
+.page-layout-no-masthead-margin #masthead {
+  margin-bottom: 0; }
+
+.page-layout-no-footer-margin #colophon {
+  margin-top: 0; }
+
 /*--------------------------------------------------------------
 ## Site Masthead
 --------------------------------------------------------------*/

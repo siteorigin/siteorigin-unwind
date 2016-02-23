@@ -253,6 +253,22 @@ function siteorigin_unwind_setup_page_settings(){
 			'checkbox_label' => __( 'display', 'siteorigin-unwind' ),
 			'description' => __('Display the page title on this page.', 'siteorigin-unwind')
 		),
+
+		'masthead_margin' => array(
+			'type' => 'checkbox',
+			'label' => __( 'Masthead Bottom Margin', 'siteorigin-unwind' ),
+			'checkbox_label' => __( 'enable', 'siteorigin-unwind' ),
+			'default' => true,
+			'description' => __('Include the margin below the masthead (top area) of your site.', 'siteorigin-unwind')
+		),
+
+		'footer_margin' => array(
+			'type' => 'checkbox',
+			'label' => __( 'Footer Top Margin', 'siteorigin-unwind' ),
+			'checkbox_label' => __( 'enable', 'siteorigin-unwind' ),
+			'default' => true,
+			'description' => __('Include the margin above your footer.', 'siteorigin-unwind')
+		),
 	) );
 
 }
@@ -263,7 +279,9 @@ add_action('siteorigin_page_settings_init', 'siteorigin_unwind_setup_page_settin
  */
 function siteorigin_unwind_setup_page_setting_defaults( $defaults ){
 	$defaults['layout'] = 'default';
-	$defaults['page_title'] = true;
+	$defaults['page_title'] = true;	
+	$defaults['masthead_margin'] = true;
+	$defaults['footer_margin'] = true;
 	return $defaults;
 }
 add_filter('siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_setting_defaults');

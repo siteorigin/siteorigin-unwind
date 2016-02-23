@@ -11,3 +11,11 @@
         max-width: 100%;
     }
 }
+
+.page-layout-no-masthead-margin #masthead {
+    margin-bottom: 0;
+}
+
+.page-layout-no-footer-margin #colophon {
+    margin-top: 0;
+}
