@@ -88,6 +88,9 @@ function siteorigin_unwind_setup() {
 		'default-image' => '',
 	) ) );
 
+	// This theme supports WooCommerce
+	add_theme_support( 'woocommerce' );
+
 	if( !defined('SITEORIGIN_PANELS_VERSION') ){
 		// Only include panels lite if the panels plugin doesn't exist
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
@@ -219,4 +222,4 @@ require get_template_directory() . '/inc/settings.php';
 /**
  * Load support for WooCommerce
  */
-// include get_template_directory() . '/woocommerce/functions.php';
+include get_template_directory() . '/woocommerce/functions.php';
