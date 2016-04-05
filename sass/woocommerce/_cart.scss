@@ -12,6 +12,10 @@
 			padding: 2em;
 			border-radius: 0;
 
+			@media screen and (max-width: 768px) {
+				padding: 1em;
+			}
+
 			thead {
 				th {
 					font-weight: normal;
@@ -45,6 +49,10 @@
 						width: auto;
 					}
 				}
+
+				@media screen and (max-width: 768px) {
+					display: none;
+				}
 			}
 
 			.product-name {
@@ -64,10 +72,25 @@
 				.amount{
 					font-weight: bold;
 				}
+
+				@media screen and (max-width: 768px) {
+					display: none;
+				}
 			}
 
 			.product-quantity {
 				width: 150px;
+
+				@media screen and (max-width: 768px) {
+					width: 60px;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.add,
+				.subtract {
+					display: none;
+				}
 			}
 
 			.product-subtotal {
@@ -75,9 +98,13 @@
 				.amount{
 					font-weight: bold;
 				}
+
+				@media screen and (max-width: 768px) {
+					width: 60px;
+				}
 			}
 
-			.actions {
+			td.actions {
 				padding: 2em 0 0 0;
 
 				input.button {
@@ -88,6 +115,10 @@
 					&:hover {
 						background-color: $color__primary-accent-dark;
 					}
+
+					@media screen and (max-width: 768px) {
+						width: 100% !important;
+					}
 				}
 
 				.coupon {
@@ -95,6 +126,11 @@
 						height: 36px;
 						border-radius: 0;
 						width: 200px !important;
+
+						@media screen and (max-width: 768px) {
+							width: 100% !important;
+							margin-bottom: 10px;
+						}
 					}
 				}
 			}
@@ -112,7 +148,7 @@
 				tr {
 					th {
 						padding-left: 0;
-						width: 250px;
+						width: 150px;
 						border-top: none;
 						border-bottom: 1px solid $color__borders;
 					}
@@ -150,6 +186,11 @@
 
 			&:hover {
 				background-color: $color__primary-accent-dark;
+			}
+
+			@media screen and (max-width: 768px) {
+				width: 100%;
+				margin-bottom: 10px;
 			}
 		}
 	}

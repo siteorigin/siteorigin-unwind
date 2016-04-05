@@ -42,4 +42,6 @@ jQuery( function($){
 	$('table.shop_table').each(function(i, el) {
 		quantityButtons(el);
 	});
+
+	$('table.shop_table').removeClass('shop_table_responsive');
 } );
