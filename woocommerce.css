@@ -40,6 +40,10 @@
   width: 48%;
   float: left;
   margin-top: 2em; }
+  @media screen and (max-width: 768px) {
+    .woocommerce .woocommerce-checkout .checkout-details {
+      width: 100%;
+      float: none; } }
   .woocommerce .woocommerce-checkout .checkout-details h3 {
     font-size: 1.5em; }
     .woocommerce .woocommerce-checkout .checkout-details h3 label {
@@ -62,6 +66,10 @@
   border: 1px solid #f4f4f4;
   padding: 0 1em;
   margin-top: 2em; }
+  @media screen and (max-width: 768px) {
+    .woocommerce .woocommerce-checkout .order-details {
+      width: 100%;
+      float: none; } }
   .woocommerce .woocommerce-checkout .order-details h3 {
     font-size: 1.5em; }
   .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table {
