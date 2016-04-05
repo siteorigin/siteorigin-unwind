@@ -1,4 +1,12 @@
 .woocommerce-cart {
+	.woocommerce-message {
+		border-top: none;
+
+		&:before {
+			color: $color__primary-accent;
+		}
+	}
+
 	form {
 		table.shop_table {
 			padding: 2em;

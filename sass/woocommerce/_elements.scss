@@ -1,0 +1,41 @@
+.woocommerce {
+	// Styling quantity field
+	.quantity.button-controls {
+		@include clearfix;
+
+		.qty {
+			border-radius: 0;
+			width: 2em;
+			float: left;
+			height: 26px;
+			-moz-appearance: textfield;
+
+			&::-webkit-inner-spin-button,
+			&::-webkit-outer-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+		}
+
+		.add,
+		.subtract {
+			border-radius: 0;
+			border-color: $color__text-meta;
+			background: #f9f9f9;
+			float: left;
+
+			&:hover {
+				background: darken( #f9f9f9, 20%);
+			}
+		}
+
+		.subtract {
+			border-right: none;
+		}
+
+		.add {
+			border-left: none;
+		}
+	}
+
+}
