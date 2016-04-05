@@ -1,0 +1,148 @@
+.woocommerce-cart {
+	form {
+		table.shop_table {
+			padding: 2em;
+			border-radius: 0;
+
+			thead {
+				th {
+					font-weight: normal;
+					text-transform: uppercase;
+					font-size: 0.85em;
+				}
+			}
+
+			.product-remove {
+				width: 30px;
+
+				a {
+					color: $color__text-meta !important;
+					font-weight: 100;
+
+					&:hover,
+					&:focus {
+						background: transparent;
+						color: darken( $color__text-meta, 25% ) !important;
+					}
+				}
+			}
+
+			.product-thumbnail {
+				width:85px;
+				padding: 6px 0;
+
+				a {
+					vertical-align: middle;
+					img {
+						width: auto;
+					}
+				}
+			}
+
+			.product-name {
+				a {
+					text-decoration: none;
+					color: $color__text-dark;
+					font-weight: bold;
+
+					&:hover {
+						color: $color__primary-accent-dark;
+					}
+				}
+			}
+
+			.product-price {
+				width: 150px;
+				.amount{
+					font-weight: bold;
+				}
+			}
+
+			.product-quantity {
+				width: 150px;
+			}
+
+			.product-subtotal {
+				width: 150px;
+				.amount{
+					font-weight: bold;
+				}
+			}
+
+			.actions {
+				padding: 2em 0 0 0;
+
+				input.button {
+					background-color: $color__primary-accent;
+					color: #fff;
+					border-radius: 0;
+
+					&:hover {
+						background-color: $color__primary-accent-dark;
+					}
+				}
+
+				.coupon {
+					input.input-text {
+						height: 36px;
+						border-radius: 0;
+						width: 200px !important;
+					}
+				}
+			}
+		}
+	}
+
+	.cart-collaterals {
+		.cart_totals {
+			float: none;
+			width: 100%;
+
+			table {
+				border: none;
+
+				tr {
+					th {
+						padding-left: 0;
+						width: 250px;
+						border-top: none;
+						border-bottom: 1px solid $color__borders;
+					}
+
+					td {
+						padding-right: 0;
+						text-align: right;
+						border-top: none;
+						border-bottom: 1px solid $color__borders;
+					}
+
+					&.shipping {
+						p {
+							margin-top: 0.25em;
+							margin-bottom: 0;
+
+							a {
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.wc-proceed-to-checkout{
+		a.checkout-button {
+			display: inline-block;
+			background-color: $color__primary-accent;
+			color: #fff;
+			border-radius: 0;
+			font-size: 1em;
+			float: right;
+
+			&:hover {
+				background-color: $color__primary-accent-dark;
+			}
+		}
+	}
+}
