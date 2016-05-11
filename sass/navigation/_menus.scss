@@ -16,12 +16,16 @@
 			float: left;
 			position: absolute;
 			top: 50px;
-			left: -999em;
+			visibility: hidden;
+			opacity: 0;
 			z-index: 99999;
 			padding: 0;
+			@include transition (all 0.1s ease-in-out);
+			@include transform-origin(center top);
+			@include transform( scaleY(0) );
 
 			ul {
-				left: -999em;
+				left: 100%;
 				top: 0;
 			}
 
@@ -54,9 +58,13 @@
 			}
 		}
 
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
+		li:hover,
+		li.focus {
+			> ul {
+				visibility: visible;
+				opacity: 1;
+				@include transform( scaleY(1) );
+			}
 		}
 	}
 	li {
