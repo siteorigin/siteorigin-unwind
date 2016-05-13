@@ -12,7 +12,6 @@ define('SITEORIGIN_THEME_JS_PREFIX', '');
 
 // The settings manager
 include get_template_directory() . '/inc/settings/settings.php';
-include get_template_directory() . '/inc/settings/page-settings.php';
 
 if ( ! function_exists( 'siteorigin_unwind_setup' ) ) :
 /**
@@ -144,15 +143,6 @@ function siteorigin_unwind_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
 		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Header', 'siteorigin-unwind' ),
-		'id' => 'sidebar-header',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
 	) );
 
 	register_sidebar( array(
