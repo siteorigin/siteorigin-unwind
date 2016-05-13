@@ -31,7 +31,7 @@
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
-				__( '<span class="more-text">Continue reading<span><span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
+				__( '<span class="more-text">Continue reading<span><span class="screen-reader-text"> "%s"</span>', 'siteorigin-unwind' ),
 				get_the_title()
 			) );
 
