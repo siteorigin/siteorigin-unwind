@@ -29,8 +29,8 @@ siteorigin_unwind includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
-* Initial release
+= 0.1 - May 13 2016 =
+* Preliminary release
 
 == Credits ==
 
