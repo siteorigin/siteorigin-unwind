@@ -28,7 +28,7 @@ add_filter( 'woocommerce_enqueue_styles', 'siteorigin_unwind_woocommerce_enqueue
 function siteorigin_unwind_woocommerce_enqueue_scripts() {
 	if ( ! function_exists( 'is_woocommerce' ) ) return;
 
-	if ( is_woocommerce() ) {
+	if ( is_woocommerce() || is_cart() ) {
 		wp_enqueue_script( 'siteorigin-unwind-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 	}
 }

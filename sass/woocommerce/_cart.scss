@@ -1,5 +1,6 @@
 .woocommerce-cart {
-	.woocommerce-message {
+	.woocommerce-message,
+	.woocommerce-info {
 		border-top: none;
 
 		&:before {
@@ -167,6 +168,29 @@
 
 							a {
 								text-decoration: none;
+							}
+						}
+
+						.shipping-calculator-form {
+							.shipping-calculator-button {
+								color: $color__primary-accent;
+
+								&:hover {
+									color: $color__primary-accent-dark;
+								}
+							}
+							.button {
+								background-color: $color__primary-accent;
+								color: #fff;
+								border-radius: 0;
+
+								&:hover {
+									background-color: $color__primary-accent-dark;
+								}
+
+								@media screen and (max-width: 768px) {
+									width: 100% !important;
+								}
 							}
 						}
 					}
