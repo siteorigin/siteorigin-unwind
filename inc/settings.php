@@ -60,6 +60,14 @@ function siteorigin_unwind_settings_init(){
 		'masthead' => array(
 			'title' => __('Header', 'siteorigin-unwind'),
 			'fields' => array(
+				'social_widget' => array(
+					'type' => 'widget',
+					'widget_class' => 'SiteOrigin_Widget_SocialMediaButtons_Widget',
+					'bundle_widget' => 'social-media-buttons',
+					'plugin' => 'so-widgets-bundle',
+					'plugin_name' => __('SiteOrigin Widgets Bundle', 'siteorigin-unwind'),
+					'description' => __('Add social icons to the masthead.', 'siteorigin-unwind'),
+				),
 				'bottom_margin' => array(
 					'type' => 'text',
 					'label' => __('Bottom Margin', 'siteorigin-unwind'),
@@ -279,7 +287,7 @@ add_action('siteorigin_page_settings_init', 'siteorigin_unwind_setup_page_settin
  */
 function siteorigin_unwind_setup_page_setting_defaults( $defaults ){
 	$defaults['layout'] = 'default';
-	$defaults['page_title'] = true;	
+	$defaults['page_title'] = true;
 	$defaults['masthead_margin'] = true;
 	$defaults['footer_margin'] = true;
 	return $defaults;
