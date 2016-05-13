@@ -216,6 +216,7 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	$defaults['branding_accent_dark'] = '#21af7b';
 
 	// The masthead defaults
+	$defaults['masthead_social_widget'] = '';
 	$defaults['masthead_bottom_margin'] = '30px';
 
 	// Navigation defaults

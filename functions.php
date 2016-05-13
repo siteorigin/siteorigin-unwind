@@ -146,15 +146,6 @@ function siteorigin_unwind_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Header', 'siteorigin-unwind' ),
-		'id' => 'sidebar-header',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-
-	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'footer-sidebar',
 		'description'   => '',
