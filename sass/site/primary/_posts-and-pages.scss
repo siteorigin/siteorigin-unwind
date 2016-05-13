@@ -121,7 +121,8 @@
 	}
 }
 
-.yarpp-related {
+.yarpp-related,
+.related-posts-section {
 	.related-posts {
 		font-size: 1em;
 		text-transform: uppercase;
@@ -135,13 +136,25 @@
 		li {
 			display: block;
 			float: left;
-			width: 33.333%;
+			width: 31%;
 			margin: 0;
+
+			&:first-child {
+				margin-right: 3.5%;
+			}
+
+			&:last-child {
+				margin-left: 3.5%;
+			}
 
 			&:hover {
 				.related-post-title {
 					color: $color__primary-accent-dark;
 				}
+			}
+
+			a {
+				text-decoration: none;
 			}
 
 			img {

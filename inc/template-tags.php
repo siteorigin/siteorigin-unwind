@@ -205,6 +205,51 @@ function siteorigin_unwind_author_box() { ?>
 <?php }
 endif;
 
+if ( ! function_exists( 'siteorigin_unwind_related_posts' ) ) :
+/**
+ * Displays the author box in single posts
+ */
+function siteorigin_unwind_related_posts( $post_id ) {
+	if ( function_exists( 'related_posts' ) ) { // Check for YRAPP plugin
+		related_posts();
+	} else { // The fallback loop
+		$categories = get_the_category( $post_id );
+		$first_cat = $categories[0]->cat_ID;
+		$args=array(
+			'category__in' => array( $first_cat ),
+			'post__not_in' => array( $post_id ),
+			'posts_per_page' => 3,
+			'ignore_sticky_posts' => -1
+		);
+		$related_posts = new WP_Query( $args ); ?>
+
+		<div class="related-posts-section">
+			<h2 class="related-posts heading-strike"><?php esc_html_e( 'You may also like', 'siteorigin-unwind' ); ?></h2>
+			<?php if ( $related_posts ) : ?>
+				<ol>
+					<?php if ( $related_posts->have_posts() ) : ?>
+						<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
+							<li>
+								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+									<?php if ( has_post_thumbnail() ) :?>
+										<?php the_post_thumbnail( 'related-post' ); ?>
+									<?php endif; ?>
+									<h3 class="related-post-title"><?php the_title(); ?></h3>
+									<p class="related-post-date"><?php the_time( 'M d, Y' ); ?></p>
+								</a>
+							</li>
+						<?php endwhile; ?>
+					<?php endif; ?>
+				</ol>
+			<?php else : ?>
+				<p><?php esc_html_e( 'No related posts.', 'siteorigin-unwind' ); ?></p>
+			<?php endif; ?>
+		</div>
+		<?php wp_reset_query();
+	}
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
