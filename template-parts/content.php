@@ -36,7 +36,7 @@
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin_unwind' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin-unwind' ),
 				'after'  => '</div>',
 			) );
 		?>

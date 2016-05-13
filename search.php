@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<header class="page-header">
-		<h1 class="page-title"><span class="page-title-text"><?php printf( esc_html__( 'Search Results: %s', 'siteorigin_unwind' ), get_search_query() ); ?></span></h1>
+		<h1 class="page-title"><span class="page-title-text"><?php printf( esc_html__( 'Search Results: %s', 'siteorigin-unwind' ), get_search_query() ); ?></span></h1>
 	</header><!-- .page-header -->
 
 	<section id="primary" class="content-area">
