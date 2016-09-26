@@ -88,7 +88,7 @@
 
 		&:hover > a,
 		&.focus > a {
-			color: $color__link;
+			color: $color__text-dark;
 		}
 	}
 
@@ -313,21 +313,29 @@
 
 	.site-main & {
 		margin: 0 0 1.5em;
-		overflow: hidden;
+		overflow: auto;
 	}
 
 	.nav-previous {
 		float: left;
 		text-align: left;
 		width: 50%;
-		padding: 10px 0;
+		padding: 1em 0;
+		
+		span {
+			margin-right: 0.5em; 
+		}				
 	}
 
 	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
-		padding: 10px 0;
+		padding: 1em 0;
+		
+		span {
+			margin-left: 0.5em; 
+		}		
 	}
 
 	a {
@@ -337,7 +345,7 @@
 		@include font-size(0.8666);
 		text-decoration: none;
 		text-transform: uppercase;
-		padding: 10px 12px;
+		padding: 1em 1.923em;
 		
 		&:hover {
 			border-color: $color__link; 

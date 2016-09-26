@@ -75,11 +75,11 @@ function siteorigin_unwind_posts_navigation() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-next"><?php next_posts_link( esc_html__( 'Older posts', 'siteorigin-unwind' ) . ' &rarr;' ); ?></div>
+			<div class="nav-next"><?php next_posts_link( esc_html__( 'Older posts', 'siteorigin-unwind' ) . '<span>&rarr;</span>' ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-previous"><?php previous_posts_link( '&larr; ' . esc_html__( 'Newer posts', 'siteorigin-unwind' ) ); ?></div>
+			<div class="nav-previous"><?php previous_posts_link( '<span>&larr;</span>' . esc_html__( 'Newer posts', 'siteorigin-unwind' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
