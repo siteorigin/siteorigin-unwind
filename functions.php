@@ -1,16 +1,17 @@
 <?php
 /**
- * siteorigin_unwind functions and definitions.
+ * SiteOrigin Unwind functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
-define('SITEORIGIN_THEME_VERSION', 'dev');
-define('SITEORIGIN_THEME_JS_PREFIX', '');
+define( 'SITEORIGIN_THEME_VERSION', 'dev' );
+define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
+define('SITEORIGIN_THEME_PREMIUM_URL', 'https://siteorigin.com/downloads/premium/');
 
-// The settings manager
+// The settings manager.
 include get_template_directory() . '/inc/settings/settings.php';
 
 if ( ! function_exists( 'siteorigin_unwind_setup' ) ) :
@@ -77,7 +78,7 @@ function siteorigin_unwind_setup() {
 		'link',
 	) );
 
-	// Adding custom image sizes
+	// Adding custom image sizes.
 	add_image_size( 'related-post', 300 , 200, true );
 	add_image_size( 'search-post', 400 , 250, true );
 
@@ -87,11 +88,11 @@ function siteorigin_unwind_setup() {
 		'default-image' => '',
 	) ) );
 
-	// This theme supports WooCommerce
+	// This theme supports WooCommerce.
 	add_theme_support( 'woocommerce' );
 
-	if( !defined('SITEORIGIN_PANELS_VERSION') ){
-		// Only include panels lite if the panels plugin doesn't exist
+	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
+		// Only include panels lite if the panels plugin doesn't exist.
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 	}
 
@@ -101,15 +102,15 @@ function siteorigin_unwind_setup() {
 		// 'responsive' => !siteorigin_setting( 'responsive_enabled' ),
 	) );
 }
-endif;
+endif; // siteorigin_unwind_setup
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
 
 /**
- * Add support for premium theme components
+ * Add support for premium theme components.
  */
-function siteorigin_unwind_premium_setup(){
+function siteorigin_unwind_premium_setup() {
 
-	// This theme supports the no attribution addon
+	// This theme supports the no attribution addon.
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
 		'filter' => 'siteorigin_unwind_footer_credits',
 		'enabled' => siteorigin_setting( 'branding_attribution' )
@@ -166,7 +167,7 @@ function siteorigin_unwind_scripts() {
 	//wp_enqueue_script( 'siteorigin_unwind-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'siteorigin-unwind-script', get_template_directory_uri() . '/js/unwind.js', array('jquery') );
 
-	wp_enqueue_script( 'siteorigin_unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'siteorigin-unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
