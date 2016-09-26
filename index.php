@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 get_header(); ?>

@@ -2,7 +2,7 @@
 /**
  * Template part for displaying single posts.
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 ?>

@@ -1,14 +1,14 @@
 #masthead {
 	width: $size__site-main;
-	border-bottom: 1px solid $color__borders;
-	margin-bottom: 50px;
+	border-bottom: 1px solid $color__background-hr-dark;
+	margin-bottom: 60px; 
 
 	.top-bar {
-		border-bottom: 1px solid $color__borders;
+		border-bottom: 1px solid $color__background-hr-dark;
 		height: 60px;
 		@include clearfix;
 		position: relative;
-		background: #ffffff;
+		background: #fff;
 		z-index: 9999;
 	}
 
@@ -17,12 +17,17 @@
 	}
 
 	.site-branding {
-		margin: 75px 0;
+		margin: 60px 0;
 
 		.site-title {
-			font-size: 3em;
+			font-family: $font__details; 
+			font-weight: 300;
+			@include font-size(4);
+			line-height: normal; 
 			margin: 0;
 			text-align: center;
+			text-transform: uppercase;
+			
 			a {
 				text-decoration: none;
 				color: inherit;

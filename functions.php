@@ -9,7 +9,7 @@
 
 define( 'SITEORIGIN_THEME_VERSION', 'dev' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
-define('SITEORIGIN_THEME_PREMIUM_URL', 'https://siteorigin.com/downloads/premium/');
+define( 'SITEORIGIN_THEME_PREMIUM_URL', 'https://siteorigin.com/downloads/premium/' );
 
 // The settings manager.
 include get_template_directory() . '/inc/settings/settings.php';
@@ -51,7 +51,7 @@ function siteorigin_unwind_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'siteorigin-unwind' ),
+		'primary' => esc_html__( 'Primary Menu', 'siteorigin-unwind' ),
 	) );
 
 	/*
@@ -71,11 +71,9 @@ function siteorigin_unwind_setup() {
 	 * See https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside',
+		'gallery',
 		'image',
 		'video',
-		'quote',
-		'link',
 	) );
 
 	// Adding custom image sizes.
@@ -97,12 +95,10 @@ function siteorigin_unwind_setup() {
 	}
 
 	add_theme_support( 'siteorigin-panels', array(
-		'home-page' => true,
-		// TODO implement a responsive enabled setting
-		// 'responsive' => !siteorigin_setting( 'responsive_enabled' ),
+		// 'responsive' => siteorigin_setting( 'layout_responsive' ),
 	) );
 }
-endif; // siteorigin_unwind_setup
+endif; // siteorigin_unwind_setup.
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
 
 /**
@@ -126,7 +122,7 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_premium_setup' );
  * @global int $content_width
  */
 function siteorigin_unwind_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'siteorigin_unwind_content_width', 777 );
+	$GLOBALS['content_width'] = apply_filters( 'siteorigin_unwind_content_width', 848 );
 }
 add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );
 
@@ -189,11 +185,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.

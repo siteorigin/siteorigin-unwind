@@ -16,7 +16,7 @@
 
 		.comment-box {
 			padding: 25px 0;
-			border-bottom: 1px solid $color__borders;
+			border-bottom: 1px solid $color__background-hr-dark;
 			@include clearfix;
 		}
 
@@ -87,7 +87,7 @@
 .comment-reply-title {
 	font-size: 1em;
 	text-transform: uppercase;
-	border-bottom: 1px solid $color__borders;
+	border-bottom: 1px solid $color__background-hr-dark;
 	padding-bottom: 15px;
 	margin-top: 50px;
 }

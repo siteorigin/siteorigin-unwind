@@ -1,18 +1,17 @@
 #colophon {
+	border-top: 1px solid $color__background-hr-dark;
 	width: $size__site-main;
-	border-top: 1px solid $color__borders;
 
 	.widgets {
 		@include clearfix();
-		width: 100%;
 		overflow: hidden;
-		padding: 45px 0;
+		padding: 30px 0;
+		width: 100%;
 
 		.widget-wrapper {
 			box-sizing: border-box;
 			float: left;
 			padding: 0 10px;
-
 			padding-bottom: 9999px;
 			margin-bottom: -9999px;
 		}
@@ -34,23 +33,24 @@
 	}
 
 	.site-info {
-		border-top: 1px solid $color__borders;
-		text-align: center;
-		padding: 25px 0;
-		font-size: 0.9em;
+		border-top: 1px solid $color__background-hr-dark;
 		color: $color__text-medium;
+		@include font-size(0.8666);
+		padding: 45px 0;
+		text-align: center;
 
 		a {
 			color: inherit;
 			text-decoration: none;
 
 			&:hover {
-				color: $color__primary-accent-dark;
+				color: $color__text-dark;
 			}
 		}
 	}
 
 	&.unconstrained-footer {
+
 		.container {
 			max-width: none;
 		}

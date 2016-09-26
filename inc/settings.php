@@ -57,6 +57,55 @@ function siteorigin_unwind_settings_init(){
 			)
 		),
 
+		'fonts'      => array(
+			'title'  => __( 'Fonts', 'siteorigin-unwind' ),
+			'fields' => array(
+
+				// The font families used.
+				'main'        => array(
+					'type'        => 'font',
+					'label'       => __( 'Main Font', 'siteorigin-unwind' ),
+					'description' => __( 'Main font used on your site.', 'siteorigin-unwind' ),
+					'live'        => true,
+				),
+				'headings'    => array(
+					'type'        => 'font',
+					'label'       => __( 'Headings font', 'siteorigin-unwind' ),
+					'description' => __( 'Font used for headings.', 'siteorigin-unwind' ),
+					'live'        => true,
+				),
+				'details'     => array(
+					'type'        => 'font',
+					'label'       => __( 'Details font', 'siteorigin-unwind' ),
+					'description' => __( 'Font used for smaller details.', 'siteorigin-unwind' ),
+					'live'        => true,
+				),
+				// The colors
+
+				'text_dark'   => array(
+					'type'  => 'color',
+					'label' => __( 'Dark Text Color', 'siteorigin-unwind' ),
+					'live'  => true,
+				),
+				'text_medium' => array(
+					'type'  => 'color',
+					'label' => __( 'Medium Text Color', 'siteorigin-unwind' ),
+					'live'  => true,
+				),
+				'text_light'  => array(
+					'type'  => 'color',
+					'label' => __( 'Light Text Color', 'siteorigin-unwind' ),
+					'live'  => true,
+				),
+				'text_meta'   => array(
+					'type'  => 'color',
+					'label' => __( 'Meta Text Color', 'siteorigin-unwind' ),
+					'live'  => true,
+				),
+
+			),
+		),		
+
 		'masthead' => array(
 			'title' => __('Header', 'siteorigin-unwind'),
 			'fields' => array(
@@ -163,6 +212,27 @@ add_action('siteorigin_settings_init', 'siteorigin_unwind_settings_init');
  * @return array
  */
 function siteorigin_unwind_font_settings( $settings ) {
+
+	$settings['fonts_main']     = array(
+		'name'    => 'Merriweather',
+		'weights' => array(
+			400,
+			700
+		),
+	);
+	$settings['fonts_headings'] = array(
+		'name'    => 'Merriweather',
+		'weights' => array(
+			400
+		),
+	);	
+	$settings['fonts_details'] = array(
+		'name'    => 'Lato',
+		'weights' => array(
+			400
+		),
+	);	
+
 	return $settings;
 }
 add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_settings' );

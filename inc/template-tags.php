@@ -4,16 +4,16 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
-if( !function_exists('siteorigin_unwind_display_logo') ):
+if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) :
 /**
- * Display the logo or site title
+ * Display the logo or site title.
  */
-function siteorigin_unwind_display_logo(){
+function siteorigin_unwind_display_logo() {
 	$logo = siteorigin_setting( 'branding_logo' );
-	if( !empty($logo) ) {
+	if ( !empty( $logo ) ) {
 		$logo_id = attachment_url_to_postid( $logo );
 		$attrs = apply_filters( 'siteorigin_unwind_logo_attributes', array() );
 
@@ -28,24 +28,24 @@ function siteorigin_unwind_display_logo(){
 }
 endif;
 
-if( !function_exists('siteorigin_unwind_display_retina_logo') ):
+if ( ! function_exists( 'siteorigin_unwind_display_retina_logo' ) ) :
 /**
- * Display a retina ready logo
+ * Display a retina ready logo.
  */
 function siteorigin_unwind_display_retina_logo( $attr ){
 	$logo = siteorigin_setting( 'branding_logo' );
 	$retina = siteorigin_setting( 'branding_retina_logo' );
-	if( !empty($retina) ) {
+	if ( !empty( $retina ) ) {
 		$attr['srcset'] = $logo . ' 1x,' . $retina . ' 2x';
 		return $attr;
 	}
 }
-add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 endif;
+add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 
 if ( ! function_exists( 'siteorigin_unwind_archive_title' ) ) :
 /**
- * Display titles in archive pages
+ * Display titles in archive pages.
  */
 function siteorigin_unwind_archive_title() {
 	?>
@@ -115,12 +115,12 @@ function siteorigin_unwind_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline">' . $byline . '</span>'; // WPCS: XSS OK.
 
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ):
+if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time, category and comment count.
  */
@@ -186,7 +186,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_author_box' ) ) :
 /**
- * Displays the author box in single posts
+ * Displays the author box in single posts.
  */
 function siteorigin_unwind_author_box() { ?>
 	<div class="author-box">
@@ -277,11 +277,11 @@ add_action( 'edit_category', 'siteorigin_unwind_category_transient_flusher' );
 add_action( 'save_post',     'siteorigin_unwind_category_transient_flusher' );
 
 /**
- * Insert footer text from theme settings
+ * Insert footer text from theme settings.
  */
-if( !function_exists('siteorigin_unwind_footer_text') ) :
-function siteorigin_unwind_footer_text(){
-	$text = siteorigin_setting('footer_text');
+if ( ! function_exists( 'siteorigin_unwind_footer_text' ) ) :
+function siteorigin_unwind_footer_text() {
+	$text = siteorigin_setting( 'footer_text' );
 	$text = str_replace(
 		array( '{sitename}', '{year}'),
 		array( get_bloginfo('sitename'), date('Y') ),
@@ -291,8 +291,8 @@ function siteorigin_unwind_footer_text(){
 }
 endif;
 
-if( !function_exists('siteorigin_unwind_comment') ) :
-function siteorigin_unwind_comment( $comment, $args, $depth ){
+if ( ! function_exists( 'siteorigin_unwind_comment' ) ) :
+function siteorigin_unwind_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
 		<?php $type = get_comment_type($comment->comment_ID); ?>

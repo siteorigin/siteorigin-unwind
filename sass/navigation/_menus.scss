@@ -11,18 +11,18 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 			background: #fff;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 			float: left;
+			opacity: 0;
+			padding: 0;
 			position: absolute;
 			top: 50px;
-			visibility: hidden;
-			opacity: 0;
-			z-index: 99999;
-			padding: 0;
 			@include transition (all 0.1s ease-in-out);
 			@include transform-origin(center top);
 			@include transform( scaleY(0) );
+			visibility: hidden;
+			z-index: 99999;
 
 			ul {
 				left: 100%;
@@ -31,6 +31,7 @@
 
 			li {
 				padding: 0;
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -42,11 +43,14 @@
 			}
 
 			a {
-				min-width: 150px;
-				text-transform: none;
-				border-bottom: 1px solid $color__borders;
+				border-bottom: 1px solid $color__background-hr;
+				font-family: $font__main;
+				@include font-size(0.8666);
+				line-height: normal;
 				margin: 0 20px;
+				min-width: 150px;
 				padding: 15px 0;
+				text-transform: none;
 			}
 
 			:hover > a,
@@ -60,31 +64,34 @@
 
 		li:hover,
 		li.focus {
+
 			> ul {
-				visibility: visible;
 				opacity: 1;
 				@include transform( scaleY(1) );
+				visibility: visible;
 			}
 		}
 	}
+
 	li {
 		float: left;
+		padding-right: 45px;
 		position: relative;
-		padding-right: 2em;
 
 		a {
 			text-transform: uppercase;
 			color: $color__text-medium;
-			font-size: 12px;
-			line-height: 12px;
-			padding: 24px 0;
+			font-family: $font__details;
+			@include font-size(0.8);
+			line-height: 60px;
 		}
 
 		&:hover > a,
 		&.focus > a {
-			color: $color__text-dark;
+			color: $color__link;
 		}
 	}
+
 	a {
 		display: block;
 		text-decoration: none;
@@ -244,7 +251,7 @@
 	.v-line {
 		width: 1px;
 		height: 20px;
-		border-left: 1px solid $color__borders;
+		border-left: 1px solid $color__background-hr-dark;
 		margin: 0 10px;
 	}
 }
@@ -259,7 +266,7 @@
 
 	form {
 		position: absolute;
-		top:30%;
+		top: 30%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 
@@ -324,33 +331,41 @@
 	}
 
 	a {
-		color: $color__text-dark;
-		text-transform: uppercase;
+		border: 2px solid $color__background-hr-dark;
+		color: $color__text-medium;
+		font-family: $font__details;
+		@include font-size(0.8666);
 		text-decoration: none;
-		padding: 10px 20px;
-		border: 2px solid $color__text-light;
-
+		text-transform: uppercase;
+		padding: 10px 12px;
+		
 		&:hover {
-			color: $color__primary-accent-dark;
+			border-color: $color__link; 
+			color: $color__link;
 		}
 	}
 }
 
 .post-navigation {
 	padding: 60px 0;
-	border-top: 2px solid $color__borders;
-	border-bottom: 2px solid $color__borders;
+	border-top: 2px solid $color__background-hr-dark;
+	border-bottom: 2px solid $color__background-hr-dark;
+	
+	&:hover {
+		border-color: $color__link; 
+	}
 
 	a {
-		text-decoration: none;
+		border: none;
 		color: $color__text-medium;
 		font-weight: bold;
+		font-weight: 600; 
 		padding: 0;
-		border: none;
+		text-decoration: none;
 		text-transform: none;
 
 		&:hover {
-			color: $color__primary-accent-dark;
+			color: $color__link;
 		}
 
 		.sub-title {

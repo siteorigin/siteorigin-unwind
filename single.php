@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 get_header(); ?>

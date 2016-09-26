@@ -10,13 +10,14 @@
 
 .site-content {
 	@include clearfix;
+	margin-bottom: 75px; 
 }
 
 .site-content .widget-area {
 	float: right;
 	overflow: hidden;
+	padding-left: 30px;
 	width: $size__site-sidebar;
-	padding-left: 40px;
 }
 
 .site-footer {
@@ -28,8 +29,8 @@
 
 	.content-area {
 		float: none;
-		width: auto;
 		margin: 0;
+		width: auto;
 	}
 
 	.site-main {
@@ -38,13 +39,12 @@
 
 }
 
-// Making the layout responsive
-
+// Making the layout responsive.
 @media (max-width: 768px) {
 	.content-area {
 		float: none;
-		width: auto;
 		margin: 0;
+		width: auto;
 	}
 
 	.site-main {
@@ -53,8 +53,8 @@
 
 	.site-content .widget-area {
 		float: none;
-		width: 100%;
-		padding-left: 0;
 		margin-top: 40px;
+		padding-left: 0;
+		width: 100%;
 	}
 }

@@ -1,6 +1,7 @@
 === SiteOrigin Unwind ===
 
 Contributors: siteorigin
+
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 Requires at least: 4.0
@@ -12,7 +13,7 @@ Short description.
 
 == Description ==
 
-Long description.
+SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with various plugins. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though Unwind's WooCommerce integration.
 
 == Installation ==
 	
@@ -20,16 +21,19 @@ Long description.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+== Documentation ==
+
+[Documentation](http://siteorigin.com/unwind/documentation) is available on siteorigin.com.
+
+== Support ==
+
+[Support](http://siteorigin.com/thread/) is available on siteorigin.com.
+
 == Frequently Asked Questions ==
 
 = Does this theme support any plugins? =
 
 SiteOrigin Unwind includes support for Infinite Scroll in Jetpack.
-
-== Changelog ==
-
-= 0.1 - May 13 2016 =
-* Preliminary release
 
 == Credits ==
 
@@ -39,5 +43,6 @@ SiteOrigin Unwind includes support for Infinite Scroll in Jetpack.
 == Design ==
 
 Original design files are available on Google Drive.
+
 
 https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing

@@ -8,6 +8,7 @@
 }
 
 .widget-title {
+	color: $color__text-medium;
+	@include font-size(0.8666);
 	text-transform: uppercase;
-	font-size: 1.1em;
 }
