@@ -1,0 +1,4 @@
+== Changelog ==
+
+= 0.1 - May 13 2016 =
+* Preliminary release.
