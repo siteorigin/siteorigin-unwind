@@ -125,7 +125,7 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_premium_setup' );
  * @global int $content_width
  */
 function siteorigin_unwind_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'siteorigin_unwind_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'siteorigin_unwind_content_width', 777 );
 }
 add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );
 
