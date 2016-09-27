@@ -46,7 +46,7 @@
 				</div>
 			</div><!-- .container -->
 			<div id="fullscreen-search">
-				<?php get_search_form(); ?>
+				<?php get_template_part( 'template-parts/searchform-fullscreen' ); ?>
 			</div>
 		</div><!-- .top-bar -->
 		<div class="container">
