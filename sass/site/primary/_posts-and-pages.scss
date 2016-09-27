@@ -3,11 +3,10 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
 }
 
 .byline,
-.updated:not(.published){
+.updated:not(.published) {
 	display: none;
 }
 
@@ -35,9 +34,10 @@
 }
 
 .page-title-text {
+	border: 2px solid $color__background-hr-dark;
+	border-right: none;
+	border-left: none; 
 	padding: 10px 0;
-	border-top: 2px solid $color__background-hr-dark;
-	border-bottom: 2px solid $color__background-hr-dark;
 }
 
 .page-header {
@@ -49,7 +49,8 @@
 .entry-meta {
 	@include display(flex);
 	font-family: $font__details;
-	@include justify-content(center); 
+	@include justify-content(center);
+	line-height: normal;
 	text-align: center;
 	text-transform: uppercase;
 
@@ -143,7 +144,7 @@
 		text-transform: uppercase;
 	}
 
-	ol{
+	ol {
 		margin: 0;
 		list-style: none;
 		@include clearfix;
@@ -194,21 +195,21 @@
 		float: left;
 
 		img {
-			vertical-align: middle;
 			border-radius: 50%;
+			vertical-align: middle;
 		}
 	}
 
 	.author-description {
-		padding-left: 120px;
-		font-size: 0.95em;
-		color: $color__text-medium;
 		@include clearfix;
-
+		color: $color__text-medium;
+		font-size: 0.95em;
+		padding-left: 120px;
+		
 		.post-author-title {
-			margin-top: 0;
-			font-size: 1em;
 			font-weight: bold;
+			font-size: 1em;
+			margin-top: 0;
 
 			a {
 				color: $color__text-dark;
@@ -223,6 +224,7 @@
 }
 
 @media screen and (max-width: 320px) {
+
 	.author-box {
 
 		.author-avatar {
@@ -284,30 +286,34 @@
 	}
 }
 
-.search-results .content-area {
+/*--------------------------------------------------------------
+# Post Loop: Left Medium Thumbnail
+--------------------------------------------------------------*/
+.left-medium-loop {
 
 	article {
 		@include clearfix;
 
 		.entry-thumbnail {
-			width: 42.5%;
-			margin: 0 1.5% 0 0;
 			float: left;
+			margin: 0 0 4em 0;
+			width: 42.452830188679%;
 		}
 
 		.entry-content {
-			width: 100%;
 			float: right;
 			margin: 0;
+			width: 100%;
 
 			.entry-meta {
-				text-align: left;
+				justify-content: initial;
+				margin: .45em 0 .6em;  
 			}
 
 			.entry-title {
-				text-align: left;
-				font-size: 1.35em;
+				@include font-size(1.6);
 				margin: 0;
+				text-align: left;
 			}
 
 			.entry-summary {
@@ -316,24 +322,23 @@
 		}
 
 		&.has-post-thumbnail {
+
 			.entry-content {
-				width: 56%;
+				width: 54.009433962264%;
 			}
 		}
 	}
 }
 
 @media screen and (max-width: 320px) {
+
 	.search-results .content-area {
 		
 		article {
 
 			.entry-thumbnail {
+				margin: 0 auto 25px;
 				width: 100%;
-				margin: 0;
-				margin-left: auto;
-				margin-right: auto;
-				margin-bottom: 25px;
 			}
 
 			.entry-content {
@@ -353,11 +358,11 @@
 			}
 
 			&.has-post-thumbnail {
+
 				.entry-content {
 					width: 100%;
 				}
 			}
-
 		}
 	}
 }

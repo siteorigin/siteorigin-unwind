@@ -77,8 +77,8 @@ function siteorigin_unwind_setup() {
 	) );
 
 	// Adding custom image sizes.
-	add_image_size( 'related-post', 300 , 200, true );
-	add_image_size( 'search-post', 400 , 250, true );
+	add_image_size( 'siteorigin-unwind-related-post', 300 , 200, true );
+	add_image_size( 'siteorigin-unwind-medium-featured', 360 , 238, true );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'siteorigin_unwind_custom_background_args', array(

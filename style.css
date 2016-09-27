@@ -939,11 +939,11 @@ a {
 --------------------------------------------------------------*/
 .content-area {
   float: left;
-  margin: 0 -22.98246% 0 0;
+  margin: 0 -25.61404% 0 0;
   width: 100%; }
 
 .site-main {
-  margin: 0 22.98246% 0 0; }
+  margin: 0 25.61404% 0 0; }
 
 .site-content {
   padding: 4em 0 5em; }
@@ -955,8 +955,8 @@ a {
 .site-content .widget-area {
   float: right;
   overflow: hidden;
-  padding-left: 30px;
-  width: 22.98246%; }
+  padding-left: 2em;
+  width: 25.61404%; }
 
 .site-footer {
   clear: both;
@@ -1107,9 +1107,6 @@ a {
 .sticky {
   display: block; }
 
-.hentry {
-  margin: 0 0 1.5em; }
-
 .byline,
 .updated:not(.published) {
   display: none; }
@@ -1135,9 +1132,10 @@ a {
   text-transform: uppercase; }
 
 .page-title-text {
-  padding: 10px 0;
-  border-top: 2px solid #ebebeb;
-  border-bottom: 2px solid #ebebeb; }
+  border: 2px solid #ebebeb;
+  border-right: none;
+  border-left: none;
+  padding: 10px 0; }
 
 .page-header {
   border-bottom: 2px solid #f4f4f4;
@@ -1162,6 +1160,7 @@ a {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
+  line-height: normal;
   text-align: center;
   text-transform: uppercase; }
   .entry-meta span {
@@ -1258,20 +1257,20 @@ a {
   .author-box .author-avatar {
     float: left; }
     .author-box .author-avatar img {
-      vertical-align: middle;
-      border-radius: 50%; }
+      border-radius: 50%;
+      vertical-align: middle; }
   .author-box .author-description {
-    padding-left: 120px;
+    color: #626262;
     font-size: 0.95em;
-    color: #626262; }
+    padding-left: 120px; }
     .author-box .author-description::after {
       clear: both;
       content: "";
       display: table; }
     .author-box .author-description .post-author-title {
-      margin-top: 0;
+      font-weight: bold;
       font-size: 1em;
-      font-weight: bold; }
+      margin-top: 0; }
       .author-box .author-description .post-author-title a {
         color: #2d2d2d;
         text-decoration: none; }
@@ -1320,39 +1319,41 @@ a {
   .archive-entry:last-of-type {
     margin-bottom: 5.5em; }
 
-.search-results .content-area article::after {
+/*--------------------------------------------------------------
+# Post Loop: Left Medium Thumbnail
+--------------------------------------------------------------*/
+.left-medium-loop article::after {
   clear: both;
   content: "";
   display: table; }
 
-.search-results .content-area article .entry-thumbnail {
-  width: 42.5%;
-  margin: 0 1.5% 0 0;
-  float: left; }
+.left-medium-loop article .entry-thumbnail {
+  float: left;
+  margin: 0 0 4em 0;
+  width: 42.452830188679%; }
 
-.search-results .content-area article .entry-content {
-  width: 100%;
+.left-medium-loop article .entry-content {
   float: right;
-  margin: 0; }
-  .search-results .content-area article .entry-content .entry-meta {
+  margin: 0;
+  width: 100%; }
+  .left-medium-loop article .entry-content .entry-meta {
+    justify-content: initial;
+    margin: .45em 0 .6em; }
+  .left-medium-loop article .entry-content .entry-title {
+    font-size: 25.6px;
+    font-size: 1.6rem;
+    margin: 0;
     text-align: left; }
-  .search-results .content-area article .entry-content .entry-title {
-    text-align: left;
-    font-size: 1.35em;
-    margin: 0; }
-  .search-results .content-area article .entry-content .entry-summary {
+  .left-medium-loop article .entry-content .entry-summary {
     margin-top: 0.5em; }
 
-.search-results .content-area article.has-post-thumbnail .entry-content {
-  width: 56%; }
+.left-medium-loop article.has-post-thumbnail .entry-content {
+  width: 54.009433962264%; }
 
 @media screen and (max-width: 320px) {
   .search-results .content-area article .entry-thumbnail {
-    width: 100%;
-    margin: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 25px; }
+    margin: 0 auto 25px;
+    width: 100%; }
   .search-results .content-area article .entry-content {
     float: none; }
     .search-results .content-area article .entry-content .entry-meta {
