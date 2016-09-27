@@ -28,22 +28,22 @@
 }
 
 .page-title {
+	font-family: $font__details; 
+	@include font-size(0.8666);
 	text-align: center;
-	font-size: 1em;
 	text-transform: uppercase;
-	color: $color__text-dark;
 }
 
 .page-title-text {
 	padding: 10px 0;
-	border-top: 2px solid $color__text-light;
-	border-bottom: 2px solid $color__text-light;
+	border-top: 2px solid $color__background-hr-dark;
+	border-bottom: 2px solid $color__background-hr-dark;
 }
 
 .page-header {
-	padding: 70px 0;
-	margin-bottom: 55px;
-	border-bottom: 2px solid $color__background-hr-dark;
+	border-bottom: 2px solid $color__background-hr; 
+	margin-bottom: 5.3333em; 
+	padding-bottom: 4em; 	
 }
 
 .entry-meta {
