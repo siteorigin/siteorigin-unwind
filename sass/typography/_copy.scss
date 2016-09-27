@@ -1,5 +1,5 @@
 p {
-	margin: 0 0 1.5em;
+	margin: 0 0 2.25em;
 }
 
 dfn, 
@@ -10,7 +10,9 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	border-left: 2px solid $color__link;
+	margin: 0 0 2.25em; 
+	padding: 1em 0 1em 1.3333em;
 }
 
 address {

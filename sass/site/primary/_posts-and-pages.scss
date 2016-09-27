@@ -106,18 +106,18 @@
 	margin-top: 1em;
 	
 	a {
-		background: $color__background-hr-dark ;
+		background: $color__background-hr-dark;
 		color: $color__text-medium;
 		display: inline-block;
-		font-size: 0.8em;
-		line-height: 1em;
-		margin-right: 10px;
-		margin-bottom: 10px;
-		padding: 8px 12px;
+		@include font-size(0.8666);
+		line-height: normal;
+		margin-right: 0.4615em;
+		padding: 0.6153em 0.7692em;
 		text-decoration: none;
 		
 		&:hover {
-			background: $color__primary-accent-dark;
+			background: $color__text-medium;
+			color: #fff; 
 		}
 	}
 }

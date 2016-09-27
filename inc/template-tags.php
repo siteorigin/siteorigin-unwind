@@ -171,16 +171,7 @@ function siteorigin_unwind_entry_footer() {
 		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-unwind' ), esc_html__( '1 Comment', 'siteorigin-unwind' ), esc_html__( '% Comments', 'siteorigin-unwind' ) );
 		echo '</span>';
 	}
-
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'siteorigin-unwind' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'</br><span class="edit-link">',
-		'</span>'
-	);
+	
 }
 endif;
 
