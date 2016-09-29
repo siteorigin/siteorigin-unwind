@@ -30,8 +30,8 @@ get_header(); ?>
 				siteorigin_unwind_author_box();
 			endif;
 
-			if ( function_exists( 'related_posts' ) ):
-				related_posts();
+			if ( siteorigin_setting('blog_display_related_posts') ) :
+				siteorigin_unwind_related_posts( $post->ID );
 			endif;
 
 			// If comments are open or we have at least one comment, load up the comment template.
