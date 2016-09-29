@@ -301,11 +301,11 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	$defaults['blog_featured_archive'] = true;
 	$defaults['blog_featured_single'] = true;
 	$defaults['blog_display_related_posts'] = true;
-	$defaults['blog_display_author_box'] = false;
+	$defaults['blog_display_author_box'] = true;
 
 	// Footer settings
 	$defaults['footer_text'] = __('{year} © {sitename}.', 'siteorigin-unwind');
-	$defaults['footer_constrained'] = false;
+	$defaults['footer_constrained'] = true;
 	$defaults['footer_top_padding'] = '40px';
 	$defaults['footer_side_padding'] = '40px';
 	$defaults['footer_top_margin'] = '30px';
