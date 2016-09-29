@@ -62,6 +62,4 @@ Add image credits.
 
 == Design ==
 
-Original design files are available on Google Drive.
-
-https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing
+Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).

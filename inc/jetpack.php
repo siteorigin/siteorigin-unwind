@@ -5,6 +5,8 @@
  * @link https://jetpack.me/
  *
  * @package siteorigin-unwind
+ * @since siteorigin-unwind 0.1
+ * @license GPL 2.0
  */
 
 /**

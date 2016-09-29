@@ -5,6 +5,8 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package siteorigin-unwind
+ * @since siteorigin-unwind 0.1
+ * @license GPL 2.0
  */
 
 /**
