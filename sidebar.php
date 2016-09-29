@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 if ( ! is_active_sidebar( 'main-sidebar' ) ) {

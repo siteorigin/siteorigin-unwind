@@ -8,6 +8,43 @@
 }
 
 .widget-title {
+	color: $color__text-medium;
+	@include font-size(0.8666);
 	text-transform: uppercase;
-	font-size: 1.1em;
+}
+
+#secondary {
+
+	a {
+		color: $color__text-medium;
+		text-decoration: none;
+		
+		&:hover {
+			color: $color__text-dark;
+		} 
+	}
+
+	.widget {
+		margin-bottom: 4em; 
+	}
+	
+	.widget-title {
+		margin: 0 0 2em;
+	}
+
+	ul {
+		margin: 0; 
+		list-style: none;
+		
+		li {
+			border-bottom: 1px solid $color__background-hr; 
+			@include font-size(0.8666);
+			line-height: normal;
+			padding: 1.25em 0;
+			
+			&:first-of-type {
+				padding-top: 0; 
+			}
+		}
+	}
 }

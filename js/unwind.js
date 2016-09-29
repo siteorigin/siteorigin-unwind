@@ -65,7 +65,6 @@ jQuery( function($){
 	} );
 
 	// Now lets do the sticky menu
-
 	if( $('.top-bar').hasClass('sticky-menu') && !$('body').hasClass('is-mobile') ) {
         var $tbs = false,
             pageTop = $('#page').offset().top,

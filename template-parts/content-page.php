@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 ?>
@@ -21,7 +21,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin_unwind' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin-unwind' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -32,7 +32,7 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'siteorigin_unwind' ),
+					esc_html__( 'Edit %s', 'siteorigin-unwind' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',

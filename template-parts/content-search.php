@@ -4,16 +4,16 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if( has_post_thumbnail() ) : ?>
+	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail('search-post'); ?>
+				<?php the_post_thumbnail( 'siteorigin-unwind-medium-featured' ); ?>
 			</a>
 		</div>
 	<?php endif; ?>

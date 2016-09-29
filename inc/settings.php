@@ -1,6 +1,6 @@
 <?php
 
-function siteorigin_unwind_settings_localize( $loc ){
+function siteorigin_unwind_settings_localize( $loc ) {
 	return wp_parse_args( array(
 		'section_title' => __('Theme Settings', 'siteorigin-unwind'),
 		'section_description' => __('Change settings for your theme.', 'siteorigin-unwind'),
@@ -15,12 +15,12 @@ function siteorigin_unwind_settings_localize( $loc ){
 		'meta_box' => __('Page settings', 'siteorigin-unwind'),
 	), $loc);
 }
-add_filter('siteorigin_settings_localization', 'siteorigin_unwind_settings_localize');
+add_filter( 'siteorigin_settings_localization', 'siteorigin_unwind_settings_localize' );
 
 /**
  * Initialize the settings
  */
-function siteorigin_unwind_settings_init(){
+function siteorigin_unwind_settings_init() {
 
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
 
@@ -57,9 +57,66 @@ function siteorigin_unwind_settings_init(){
 			)
 		),
 
+		'fonts'      => array(
+			'title'  => __( 'Fonts', 'siteorigin-unwind' ),
+			'fields' => array(
+
+				// The font families used.
+				'main'        => array(
+					'type'        => 'font',
+					'label'       => __( 'Main Font', 'siteorigin-unwind' ),
+					'description' => __( 'Main font used on your site.', 'siteorigin-unwind' ),
+					'live'        => true,
+				),
+				'headings'    => array(
+					'type'        => 'font',
+					'label'       => __( 'Headings font', 'siteorigin-unwind' ),
+					'description' => __( 'Font used for headings.', 'siteorigin-unwind' ),
+					'live'        => true,
+				),
+				'details'     => array(
+					'type'        => 'font',
+					'label'       => __( 'Details font', 'siteorigin-unwind' ),
+					'description' => __( 'Font used for smaller details.', 'siteorigin-unwind' ),
+					'live'        => true,
+				),
+				// The colors
+
+				'text_dark'   => array(
+					'type'  => 'color',
+					'label' => __( 'Dark Text Color', 'siteorigin-unwind' ),
+					'live'  => true,
+				),
+				'text_medium' => array(
+					'type'  => 'color',
+					'label' => __( 'Medium Text Color', 'siteorigin-unwind' ),
+					'live'  => true,
+				),
+				'text_light'  => array(
+					'type'  => 'color',
+					'label' => __( 'Light Text Color', 'siteorigin-unwind' ),
+					'live'  => true,
+				),
+				'text_meta'   => array(
+					'type'  => 'color',
+					'label' => __( 'Meta Text Color', 'siteorigin-unwind' ),
+					'live'  => true,
+				),
+
+			),
+		),		
+
 		'masthead' => array(
 			'title' => __('Header', 'siteorigin-unwind'),
 			'fields' => array(
+				'social_widget' => array(
+					'type' => 'widget',
+					'widget_class' => 'SiteOrigin_Widget_SocialMediaButtons_Widget',
+					'bundle_widget' => 'social-media-buttons',
+					'plugin' => 'so-widgets-bundle',
+					'plugin_name' => __('SiteOrigin Widgets Bundle', 'siteorigin-unwind'),
+					'description' => __('Add social icons to the masthead.', 'siteorigin-unwind'),
+				),
 				'bottom_margin' => array(
 					'type' => 'text',
 					'label' => __('Bottom Margin', 'siteorigin-unwind'),
@@ -155,6 +212,27 @@ add_action('siteorigin_settings_init', 'siteorigin_unwind_settings_init');
  * @return array
  */
 function siteorigin_unwind_font_settings( $settings ) {
+
+	$settings['fonts_main']     = array(
+		'name'    => 'Merriweather',
+		'weights' => array(
+			400,
+			700
+		),
+	);
+	$settings['fonts_headings'] = array(
+		'name'    => 'Merriweather',
+		'weights' => array(
+			400
+		),
+	);	
+	$settings['fonts_details'] = array(
+		'name'    => 'Lato',
+		'weights' => array(
+			400
+		),
+	);	
+
 	return $settings;
 }
 add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_settings' );
@@ -208,6 +286,7 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	$defaults['branding_accent_dark'] = '#21af7b';
 
 	// The masthead defaults
+	$defaults['masthead_social_widget'] = '';
 	$defaults['masthead_bottom_margin'] = '30px';
 
 	// Navigation defaults
@@ -272,19 +351,19 @@ function siteorigin_unwind_setup_page_settings(){
 	) );
 
 }
-add_action('siteorigin_page_settings_init', 'siteorigin_unwind_setup_page_settings');
+add_action( 'siteorigin_page_settings_init', 'siteorigin_unwind_setup_page_settings' );
 
 /**
  * Add the default Page Settings
  */
-function siteorigin_unwind_setup_page_setting_defaults( $defaults ){
+function siteorigin_unwind_setup_page_setting_defaults( $defaults ) {
 	$defaults['layout'] = 'default';
-	$defaults['page_title'] = true;	
+	$defaults['page_title'] = true;
 	$defaults['masthead_margin'] = true;
 	$defaults['footer_margin'] = true;
 	return $defaults;
 }
-add_filter('siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_setting_defaults');
+add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_setting_defaults' );
 
 /**
  * Change the default page settings for the home page.
@@ -293,9 +372,9 @@ add_filter('siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_se
  *
  * @return mixed
  */
-function siteorigin_unwind_page_settings_panels_defaults( $settings ){
+function siteorigin_unwind_page_settings_panels_defaults( $settings ) {
 	$settings['layout'] = 'no-sidebar';
 	$defaults['page_title'] = false;
 	return $settings;
 }
-add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults');
+add_filter( 'siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults' );
