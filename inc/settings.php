@@ -1,6 +1,6 @@
 <?php
 
-function siteorigin_unwind_settings_localize( $loc ){
+function siteorigin_unwind_settings_localize( $loc ) {
 	return wp_parse_args( array(
 		'section_title' => __('Theme Settings', 'siteorigin-unwind'),
 		'section_description' => __('Change settings for your theme.', 'siteorigin-unwind'),
@@ -15,12 +15,12 @@ function siteorigin_unwind_settings_localize( $loc ){
 		'meta_box' => __('Page settings', 'siteorigin-unwind'),
 	), $loc);
 }
-add_filter('siteorigin_settings_localization', 'siteorigin_unwind_settings_localize');
+add_filter( 'siteorigin_settings_localization', 'siteorigin_unwind_settings_localize' );
 
 /**
  * Initialize the settings
  */
-function siteorigin_unwind_settings_init(){
+function siteorigin_unwind_settings_init() {
 
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
 
@@ -351,19 +351,19 @@ function siteorigin_unwind_setup_page_settings(){
 	) );
 
 }
-add_action('siteorigin_page_settings_init', 'siteorigin_unwind_setup_page_settings');
+add_action( 'siteorigin_page_settings_init', 'siteorigin_unwind_setup_page_settings' );
 
 /**
  * Add the default Page Settings
  */
-function siteorigin_unwind_setup_page_setting_defaults( $defaults ){
+function siteorigin_unwind_setup_page_setting_defaults( $defaults ) {
 	$defaults['layout'] = 'default';
 	$defaults['page_title'] = true;
 	$defaults['masthead_margin'] = true;
 	$defaults['footer_margin'] = true;
 	return $defaults;
 }
-add_filter('siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_setting_defaults');
+add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_setting_defaults' );
 
 /**
  * Change the default page settings for the home page.
@@ -372,9 +372,9 @@ add_filter('siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_se
  *
  * @return mixed
  */
-function siteorigin_unwind_page_settings_panels_defaults( $settings ){
+function siteorigin_unwind_page_settings_panels_defaults( $settings ) {
 	$settings['layout'] = 'no-sidebar';
 	$defaults['page_title'] = false;
 	return $settings;
 }
-add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults');
+add_filter( 'siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults' );
