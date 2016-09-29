@@ -7,23 +7,47 @@ h6 {
 	clear: both;
 	color: $color__text-dark;
 	font-family: $font__headings;
-	font-weight: 700; 
+	font-weight: 700;
+}
+
+h1 {
+	@include font-size(1.78571);
+}
+
+h2 {
+	@include font-size(1.57143);
+}
+
+h3 {
+	@include font-size(1.42857);
+}
+
+h4 {
+	@include font-size(1.28571);
+}
+
+h5 {
+	@include font-size(1.14286);
+}
+
+h6 {
+	@include font-size(1);
 }
 
 .heading-strike {
-	text-align: center;
-	text-transform: uppercase;
 	@include display(flex);
 	@include flex-direction(row);
 	@include justify-content(center);
-
+	text-align: center;
+	text-transform: uppercase;
+	
 	&:before, 
 	&:after {
+		align-self: center;
+		background-color: $color__background-hr;
+		content: '\a0';
 		@include flex-grow(1);
 		height: 2px;
-		content: '\a0';
-		background-color: $color__background-hr;
-		align-self: center;
 	}
 
 	&:before {

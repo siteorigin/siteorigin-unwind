@@ -10,9 +10,14 @@ i {
 }
 
 blockquote {
-	border-left: 2px solid $color__link;
+	border-left: 3px solid $color__link;
+	font-style: italic;
 	margin: 0 0 2.25em; 
-	padding: 1em 0 1em 1.3333em;
+	padding: .5em 0 .55em 1.3333em;
+	
+	p {
+		margin-bottom: 0;
+	}
 }
 
 address {
