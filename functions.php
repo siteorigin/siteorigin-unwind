@@ -1,16 +1,17 @@
 <?php
 /**
- * siteorigin_unwind functions and definitions.
+ * SiteOrigin Unwind functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
-define('SITEORIGIN_THEME_VERSION', 'dev');
-define('SITEORIGIN_THEME_JS_PREFIX', '');
+define( 'SITEORIGIN_THEME_VERSION', 'dev' );
+define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
+define( 'SITEORIGIN_THEME_PREMIUM_URL', 'https://siteorigin.com/downloads/premium/' );
 
-// The settings manager
+// The settings manager.
 include get_template_directory() . '/inc/settings/settings.php';
 
 if ( ! function_exists( 'siteorigin_unwind_setup' ) ) :
@@ -50,7 +51,7 @@ function siteorigin_unwind_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'siteorigin_unwind' ),
+		'primary' => esc_html__( 'Primary Menu', 'siteorigin-unwind' ),
 	) );
 
 	/*
@@ -70,16 +71,14 @@ function siteorigin_unwind_setup() {
 	 * See https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside',
+		'gallery',
 		'image',
 		'video',
-		'quote',
-		'link',
 	) );
 
-	// Adding custom image sizes
-	add_image_size( 'related-post', 300 , 200, true );
-	add_image_size( 'search-post', 400 , 250, true );
+	// Adding custom image sizes.
+	add_image_size( '300x200-crop', 300 , 200, true );
+	add_image_size( '360x238-crop', 360 , 238, true );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'siteorigin_unwind_custom_background_args', array(
@@ -87,29 +86,27 @@ function siteorigin_unwind_setup() {
 		'default-image' => '',
 	) ) );
 
-	// This theme supports WooCommerce
+	// This theme supports WooCommerce.
 	add_theme_support( 'woocommerce' );
 
-	if( !defined('SITEORIGIN_PANELS_VERSION') ){
-		// Only include panels lite if the panels plugin doesn't exist
+	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
+		// Only include panels lite if the panels plugin doesn't exist.
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 	}
 
 	add_theme_support( 'siteorigin-panels', array(
-		'home-page' => true,
-		// TODO implement a responsive enabled setting
-		// 'responsive' => !siteorigin_setting( 'responsive_enabled' ),
+		// 'responsive' => siteorigin_setting( 'layout_responsive' ),
 	) );
 }
-endif;
+endif; // siteorigin_unwind_setup.
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
 
 /**
- * Add support for premium theme components
+ * Add support for premium theme components.
  */
-function siteorigin_unwind_premium_setup(){
+function siteorigin_unwind_premium_setup() {
 
-	// This theme supports the no attribution addon
+	// This theme supports the no attribution addon.
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
 		'filter' => 'siteorigin_unwind_footer_credits',
 		'enabled' => siteorigin_setting( 'branding_attribution' )
@@ -125,7 +122,7 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_premium_setup' );
  * @global int $content_width
  */
 function siteorigin_unwind_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'siteorigin_unwind_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'siteorigin_unwind_content_width', 848 );
 }
 add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );
 
@@ -138,7 +135,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Main Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'main-sidebar',
-		'description'   => '',
+		'description'   => 'Visible on posts and pages that use the default template.',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
@@ -148,7 +145,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'footer-sidebar',
-		'description'   => '',
+		'description'   => 'A column will be automatically assigned to each widget inserted.',
 		'before_widget' => '<div class="widget-wrapper"><aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside></div>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
@@ -161,13 +158,16 @@ add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
  * Enqueue scripts and styles.
  */
 function siteorigin_unwind_scripts() {
+	// Theme stylesheet.
 	wp_enqueue_style( 'siteorigin_unwind-style', get_stylesheet_uri() );
 
-	//wp_enqueue_script( 'siteorigin_unwind-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	// Theme JS.
 	wp_enqueue_script( 'siteorigin-unwind-script', get_template_directory_uri() . '/js/unwind.js', array('jquery') );
 
-	wp_enqueue_script( 'siteorigin_unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	// Skip link focus fix.
+	wp_enqueue_script( 'siteorigin-unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
+	// Comment reply.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -190,11 +190,6 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
@@ -203,11 +198,6 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load the theme settings file
  */
 require get_template_directory() . '/inc/settings.php';
-
-/**
- * Support for SiteOrigin Page Builder
- */
-// require get_template_directory() . '/inc/siteorigin-panels.php';
 
 /**
  * Load support for WooCommerce

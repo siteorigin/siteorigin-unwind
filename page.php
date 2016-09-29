@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 get_header(); ?>
@@ -33,5 +33,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php if( in_array( SiteOrigin_Settings_Page_Settings::get('layout'), array('default','full-width-sidebar'), true )  ) get_sidebar();
+<?php if ( in_array( SiteOrigin_Settings_Page_Settings::get( 'layout' ), array( 'default', 'full-width-sidebar' ), true )  ) get_sidebar();
 get_footer();

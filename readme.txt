@@ -1,19 +1,19 @@
-=== siteorigin_unwind ===
+=== SiteOrigin Unwind ===
 
 Contributors: siteorigin
+
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 Requires at least: 4.0
-Tested up to: 4.3.1
-Stable tag: 1.0.0
+Tested up to: 4.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called siteorigin_unwind, or underscores.
+Short description.
 
 == Description ==
 
-Hi. I'm a starter theme called siteorigin_unwind, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with various plugins. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though Unwind's WooCommerce integration.
 
 == Installation ==
 	
@@ -21,16 +21,33 @@ Hi. I'm a starter theme called siteorigin_unwind, or underscores, if you like. I
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+== Documentation ==
+
+[Documentation](http://siteorigin.com/unwind/documentation) is available on siteorigin.com.
+
+== Support ==
+
+[Support](http://siteorigin.com/thread/) is available on siteorigin.com.
+
 == Frequently Asked Questions ==
 
 = Does this theme support any plugins? =
 
-siteorigin_unwind includes support for Infinite Scroll in Jetpack.
+SiteOrigin Unwind includes support for Infinite Scroll in Jetpack.
 
-== Changelog ==
+== License ==
 
-= 0.1 - May 13 2016 =
-* Preliminary release
+SiteOrigin Unwind WordPress Theme, Copyright 2016 SiteOrigin. SiteOrigin Unwind is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/copyleft/gpl.html.
+
+== Images ==
+
+Add image credits.
 
 == Credits ==
 

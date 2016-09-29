@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 /**
@@ -21,31 +21,35 @@ function siteorigin_unwind_body_classes( $classes ) {
 
 	$classes[] = 'no-js';
 	$classes[] = 'css3-animations';
+	
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Page settings related classes.
 	if( is_page() ) {
 		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
-		if( !SiteOrigin_Settings_Page_Settings::get('masthead_margin') ) {
+		if ( ! SiteOrigin_Settings_Page_Settings::get('masthead_margin') ) {
 			$classes[] = 'page-layout-no-masthead-margin';
 		}
-		if( !SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
+		if ( ! SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
 			$classes[] = 'page-layout-no-footer-margin';
 		}
 	}
 
-	// Check if the sidebar has widgets
-	if( !is_active_sidebar('main-sidebar') ) {
+	// Check if the sidebar has widgets.
+	if ( ! is_active_sidebar('main-sidebar') ) {
 		$classes[] = 'no-active-sidebar';
 	}
 
-	if( siteorigin_setting('navigation_sticky') ) {
+	// If the navigation is sticky, add a class.
+	if ( siteorigin_setting('navigation_sticky') ) {
 		$classes[] = 'sticky-menu';
 	}
 
-	if( wp_is_mobile() ) {
+	// If we're viewing on a mobile device, add a class.
+	if ( wp_is_mobile() ) {
 		$classes[] = 'is_mobile';
 	}
 

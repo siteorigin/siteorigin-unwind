@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.me/
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 /**

@@ -1,5 +1,13 @@
-h1, h2, h3, h4, h5, h6 {
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
 	clear: both;
+	color: $color__text-dark;
+	font-family: $font__headings;
+	font-weight: 700; 
 }
 
 .heading-strike {
@@ -9,17 +17,20 @@ h1, h2, h3, h4, h5, h6 {
 	@include flex-direction(row);
 	@include justify-content(center);
 
-	&:before, &:after {
+	&:before, 
+	&:after {
 		@include flex-grow(1);
 		height: 2px;
 		content: '\a0';
-		background-color: $color__borders;
+		background-color: $color__background-hr;
 		align-self: center;
 	}
+
 	&:before {
-		margin-right:10px;
+		margin-right: 7px;
 	}
+	
 	&:after {
-		margin-left:10px;
+		margin-left: 7px;
 	}
 }

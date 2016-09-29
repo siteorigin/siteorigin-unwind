@@ -4,41 +4,19 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 get_header(); ?>
 
 	<header class="page-header">
-		<h1 class="page-title"><span class="page-title-text"><?php printf( esc_html__( 'Search Results: %s', 'siteorigin_unwind' ), get_search_query() ); ?></span></h1>
+		<h1 class="page-title"><span class="page-title-text"><?php printf( esc_html__( 'Search Results: %s', 'siteorigin-unwind' ), get_search_query() ); ?></span></h1>
 	</header><!-- .page-header -->
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			siteorigin_unwind_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
+			<?php get_template_part( 'loops/loop', 'medium-left' ); ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 ?>
@@ -31,12 +31,12 @@
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
-				__( '<span class="more-text">Continue reading<span><span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
+				__( '<span class="more-text">Continue reading<span><span class="screen-reader-text"> "%s"</span>', 'siteorigin-unwind' ),
 				get_the_title()
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin_unwind' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin-unwind' ),
 				'after'  => '</div>',
 			) );
 		?>

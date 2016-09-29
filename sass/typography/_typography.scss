@@ -1,3 +1,7 @@
+html {
+  font-size: 93.75%;
+}
+
 body,
 button,
 input,
@@ -5,7 +9,9 @@ select,
 textarea {
 	color: $color__text-main;
 	font-family: $font__main;
-	@include font-size(1);
+	font-size: 15px;
+	font-size: 1em;
+	font-weight: 400; 
 	line-height: $font__line-height-body;
 }
 

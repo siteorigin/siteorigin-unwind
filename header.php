@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 ?><!DOCTYPE html>
@@ -26,7 +26,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<div class="top-bar <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>">
+		<div class="top-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
 			<div class="container">
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin-unwind' ); ?></button>
@@ -35,8 +35,8 @@
 				<div id="mobile-navigation"></div>
 				<div class="social-search">
 					<?php $widget = siteorigin_setting( 'masthead_social_widget' ); ?>
-					<?php if( !empty($widget['networks']) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) : ?>
-						<?php the_widget('SiteOrigin_Widget_SocialMediaButtons_Widget', $widget); ?>
+					<?php if ( !empty($widget['networks']) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) : ?>
+						<?php the_widget( 'SiteOrigin_Widget_SocialMediaButtons_Widget', $widget ); ?>
 						<span class="v-line"></span>
 					<?php endif; ?>
 					<button id="search-button" class="search-toggle">
@@ -46,13 +46,13 @@
 				</div>
 			</div><!-- .container -->
 			<div id="fullscreen-search">
-				<?php get_search_form() ?>
+				<?php get_template_part( 'template-parts/searchform-fullscreen' ); ?>
 			</div>
 		</div><!-- .top-bar -->
 		<div class="container">
 			<div class="site-branding">
-				<?php siteorigin_unwind_display_logo() ?>
-				<?php if( siteorigin_setting('branding_site_description') ) : ?>
+				<?php siteorigin_unwind_display_logo(); ?>
+				<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
 					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 				<?php endif ?>
 			</div><!-- .site-branding -->
