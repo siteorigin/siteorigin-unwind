@@ -226,10 +226,10 @@ function siteorigin_unwind_the_post_navigation() {
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-unwind' ); ?></h2>
 		<div class="nav-links">
 			<div class="nav-previous">
-				<?php previous_post_link ( '%link', '<span class="sub-title">&larr; ' . __( 'Previous Post', 'siteorigin-unwind' ) . '</span><br />%title' ); ?>
+				<?php previous_post_link ( '%link', '<span class="sub-title"><span>&larr;</span> ' . __( 'Previous Post', 'siteorigin-unwind' ) . '</span> <div>%title</div>' ); ?>
 			</div>
 			<div class="nav-next">
-				<?php next_post_link( '%link', '<span class="sub-title">' . __( 'Next Post', 'siteorigin-unwind' ) . ' &rarr;</span><br />%title' ); ?>
+				<?php next_post_link( '%link', '<span class="sub-title">' . __( 'Next Post', 'siteorigin-unwind' ) . ' <span>&rarr;</span></span> <div>%title</div>' ); ?>
 			</div>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
