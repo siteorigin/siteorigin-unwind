@@ -242,8 +242,8 @@ if ( ! function_exists( 'siteorigin_unwind_footer_text' ) ) :
 function siteorigin_unwind_footer_text() {
 	$text = siteorigin_setting( 'footer_text' );
 	$text = str_replace(
-		array( '{sitename}', '{year}'),
-		array( get_bloginfo('sitename'), date('Y') ),
+		array( '{sitename}', '{year}' ),
+		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
 		$text
 	);
 	echo wp_kses_post( $text );
