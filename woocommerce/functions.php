@@ -6,7 +6,7 @@ function siteorigin_unwind_woocommerce_change_hooks(){
 	include get_template_directory() . '/woocommerce/template-tags.php';
 
 }
-add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_change_hooks' );
+add_action('after_setup_theme', 'siteorigin_unwind_woocommerce_change_hooks');
 
 function siteorigin_unwind_woocommerce_add_to_cart_text( $text ) {
 	return $text;
