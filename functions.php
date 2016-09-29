@@ -135,7 +135,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Main Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'main-sidebar',
-		'description'   => '',
+		'description'   => 'Visible on posts and pages that use the default template.',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
@@ -145,7 +145,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'footer-sidebar',
-		'description'   => '',
+		'description'   => 'A column will be automatically assigned to each widget inserted.',
 		'before_widget' => '<div class="widget-wrapper"><aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside></div>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
@@ -158,13 +158,16 @@ add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
  * Enqueue scripts and styles.
  */
 function siteorigin_unwind_scripts() {
+	// Theme stylesheet.
 	wp_enqueue_style( 'siteorigin_unwind-style', get_stylesheet_uri() );
 
-	//wp_enqueue_script( 'siteorigin_unwind-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	// Theme JS.
 	wp_enqueue_script( 'siteorigin-unwind-script', get_template_directory_uri() . '/js/unwind.js', array('jquery') );
 
+	// Skip link focus fix.
 	wp_enqueue_script( 'siteorigin-unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
+	// Comment reply.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -195,11 +198,6 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load the theme settings file
  */
 require get_template_directory() . '/inc/settings.php';
-
-/**
- * Support for SiteOrigin Page Builder
- */
-// require get_template_directory() . '/inc/siteorigin-panels.php';
 
 /**
  * Load support for WooCommerce
