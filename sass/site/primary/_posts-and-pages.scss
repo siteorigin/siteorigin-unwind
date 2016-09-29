@@ -50,6 +50,7 @@
 	@include display(flex);
 	font-family: $font__details;
 	@include justify-content(center);
+	letter-spacing: .1em;
 	line-height: normal;
 	text-align: center;
 	text-transform: uppercase;
@@ -62,6 +63,7 @@
 
 			&:after {
 				content: '\00a0\00a0/\00a0\00a0';
+				padding: 0 .4166em;
 			}
 		}
 
