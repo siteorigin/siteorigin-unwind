@@ -153,6 +153,10 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'checkbox',
 					'label' => __('Featured image on single', 'siteorigin-unwind'),
 				),
+				'display_related_posts' => array(
+					'type' => 'checkbox',
+					'label' => __('Display related posts on single', 'siteorigin-unwind'),
+				),
 				'display_author_box' => array(
 					'type' => 'checkbox',
 					'label' => __('Display author box on single', 'siteorigin-unwind'),
@@ -296,6 +300,7 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	// Blog settings
 	$defaults['blog_featured_archive'] = true;
 	$defaults['blog_featured_single'] = true;
+	$defaults['blog_display_related_posts'] = true;
 	$defaults['blog_display_author_box'] = false;
 
 	// Footer settings
