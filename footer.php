@@ -6,14 +6,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
 ?>
 		</div><!-- .container -->
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer <?php if( !siteorigin_setting('footer_constrained') ) echo 'unconstrained-footer' ?>" role="contentinfo">
+	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer' ?>" role="contentinfo">
 		<div class="container">
 
 			<?php
@@ -39,7 +39,7 @@
 					sprintf( esc_html__( 'Crafted with love by %s.', 'siteorigin-unwind' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
 				);
 
-				if( !empty($credit_text) ) {
+				if ( !empty( $credit_text ) ) {
 					?>&nbsp;<?php
 					echo wp_kses_post( $credit_text );
 				}

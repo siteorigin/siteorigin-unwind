@@ -4,16 +4,16 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package siteorigin_unwind
+ * @package siteorigin-unwind
  */
 
-if( !function_exists('siteorigin_unwind_display_logo') ):
+if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) :
 /**
- * Display the logo or site title
+ * Display the logo or site title.
  */
-function siteorigin_unwind_display_logo(){
+function siteorigin_unwind_display_logo() {
 	$logo = siteorigin_setting( 'branding_logo' );
-	if( !empty($logo) ) {
+	if ( !empty( $logo ) ) {
 		$logo_id = attachment_url_to_postid( $logo );
 		$attrs = apply_filters( 'siteorigin_unwind_logo_attributes', array() );
 
@@ -28,24 +28,24 @@ function siteorigin_unwind_display_logo(){
 }
 endif;
 
-if( !function_exists('siteorigin_unwind_display_retina_logo') ):
+if ( ! function_exists( 'siteorigin_unwind_display_retina_logo' ) ) :
 /**
- * Display a retina ready logo
+ * Display a retina ready logo.
  */
 function siteorigin_unwind_display_retina_logo( $attr ){
 	$logo = siteorigin_setting( 'branding_logo' );
 	$retina = siteorigin_setting( 'branding_retina_logo' );
-	if( !empty($retina) ) {
+	if ( !empty( $retina ) ) {
 		$attr['srcset'] = $logo . ' 1x,' . $retina . ' 2x';
 		return $attr;
 	}
 }
-add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 endif;
+add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 
 if ( ! function_exists( 'siteorigin_unwind_archive_title' ) ) :
 /**
- * Display titles in archive pages
+ * Display titles in archive pages.
  */
 function siteorigin_unwind_archive_title() {
 	?>
@@ -75,11 +75,11 @@ function siteorigin_unwind_posts_navigation() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-next"><?php next_posts_link( esc_html__( 'Older posts', 'siteorigin-unwind' ) . ' &rarr;' ); ?></div>
+			<div class="nav-next"><?php next_posts_link( esc_html__( 'Older posts', 'siteorigin-unwind' ) . '<span>&rarr;</span>' ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-previous"><?php previous_posts_link( '&larr; ' . esc_html__( 'Newer posts', 'siteorigin-unwind' ) ); ?></div>
+			<div class="nav-previous"><?php previous_posts_link( '<span>&larr;</span>' . esc_html__( 'Newer posts', 'siteorigin-unwind' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -88,39 +88,7 @@ function siteorigin_unwind_posts_navigation() {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_unwind_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function siteorigin_unwind_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'siteorigin-unwind' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'siteorigin-unwind' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
-}
-endif;
-
-if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ):
+if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time, category and comment count.
  */
@@ -133,11 +101,11 @@ function siteorigin_unwind_post_meta() {
 
 	if ( comments_open() ) {
 		if ( $num_comments == 0 ) {
-			$comments = esc_html__('Comments');
+			$comments = esc_html__( 'Post a Comment' );
 		} elseif ( $num_comments > 1 ) {
-			$comments = $num_comments . esc_html__(' Comments');
+			$comments = $num_comments . esc_html__( ' Comments' );
 		} else {
-			$comments = esc_html__('1 Comment');
+			$comments = esc_html__( '1 Comment' );
 		}
 	} else {
 		$comments = NULL;
@@ -171,22 +139,13 @@ function siteorigin_unwind_entry_footer() {
 		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-unwind' ), esc_html__( '1 Comment', 'siteorigin-unwind' ), esc_html__( '% Comments', 'siteorigin-unwind' ) );
 		echo '</span>';
 	}
-
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'siteorigin-unwind' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'</br><span class="edit-link">',
-		'</span>'
-	);
+	
 }
 endif;
 
 if ( ! function_exists( 'siteorigin_unwind_author_box' ) ) :
 /**
- * Displays the author box in single posts
+ * Displays the author box in single posts.
  */
 function siteorigin_unwind_author_box() { ?>
 	<div class="author-box">
@@ -277,22 +236,22 @@ add_action( 'edit_category', 'siteorigin_unwind_category_transient_flusher' );
 add_action( 'save_post',     'siteorigin_unwind_category_transient_flusher' );
 
 /**
- * Insert footer text from theme settings
+ * Insert footer text from theme settings.
  */
-if( !function_exists('siteorigin_unwind_footer_text') ) :
-function siteorigin_unwind_footer_text(){
-	$text = siteorigin_setting('footer_text');
+if ( ! function_exists( 'siteorigin_unwind_footer_text' ) ) :
+function siteorigin_unwind_footer_text() {
+	$text = siteorigin_setting( 'footer_text' );
 	$text = str_replace(
-		array( '{sitename}', '{year}'),
-		array( get_bloginfo('sitename'), date('Y') ),
+		array( '{sitename}', '{year}' ),
+		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
 		$text
 	);
 	echo wp_kses_post( $text );
 }
 endif;
 
-if( !function_exists('siteorigin_unwind_comment') ) :
-function siteorigin_unwind_comment( $comment, $args, $depth ){
+if ( ! function_exists( 'siteorigin_unwind_comment' ) ) :
+function siteorigin_unwind_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
 		<?php $type = get_comment_type($comment->comment_ID); ?>

@@ -16,7 +16,7 @@
 
 		.comment-box {
 			padding: 25px 0;
-			border-bottom: 1px solid $color__borders;
+			border-bottom: 1px solid $color__background-hr-dark;
 			@include clearfix;
 		}
 
@@ -85,22 +85,18 @@
 }
 
 .comment-reply-title {
-	font-size: 1em;
-	text-transform: uppercase;
-	border-bottom: 1px solid $color__borders;
-	padding-bottom: 15px;
+	border-bottom: 1px solid $color__background-hr-dark;
+	@include font-size(0.9333);
 	margin-top: 50px;
+	padding-bottom: 15px;
+	text-transform: uppercase;
 }
 
 #commentform {
-	margin: 0 -15px;
 
-	> p {
-		padding: 0 15px;
-		margin: 25px;
-	}
-
-	.comment-form-author, .comment-form-email, .comment-form-url {
+	.comment-form-author, 
+	.comment-form-email, 
+	.comment-form-url {
 		display: block;
 		float: left;
 		width: 33.333%;
@@ -116,56 +112,49 @@
 	}
 
 	.comment-form-comment {
-		margin: 10px 0;
+		
+		label {
+			color: $color__text-dark;
+			display: block;
+			@include font-size(0.8666);
+			line-height: normal;
+			margin-bottom: 0.6666em; 
+		}
 
 		textarea {
 			color: $color__text-medium;
 			width: 100%;
-			font-size: 0.85em;
 			padding: 15px 30px;
 			border-radius: 0px;
 			display: block;
 		}
 	}
 
-	.form-allowed-tags, .comment-notes, .logged-in-as {
+	.comment-notes, 
+	.logged-in-as {
 		color: $color__text-meta;
+		@include font-size(0.8666);
 		margin: 10px 0;
-		&, code {
-			font-size: 0.75em;
+		
+		a {
+			color: $color__text-main;
+			font-family: $font__details;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+		
+		&, 
+		code {
 		}
 	}
 
 	.form-submit {
-		text-align: right;
-		margin: 10px 0 0 0;
+		margin: 2em 0 0 0;
 		clear: both;
-
-		input {
-			background: transparent;
-			border-radius: 0px;
-			font-size: 0.85em;
-			float: left;
-			border: 2px solid $color__border-button;
-			padding: 10px 30px;
-			line-height: 1em;
-			text-decoration: none;
-			color: $color__text-dark;
-			text-transform: uppercase;
-			text-shadow: none;
-
-			@include transition(0.085s);
-
-			&:hover{
-				background: $color__primary-accent-dark;
-				border-color: $color__primary-accent-dark;
-				color: #ffffff;
-				box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-			}
-		}
 	}
 
-	input, textarea {
+	input, 
+	textarea {
 		background-color: #ffffff;
 
 		&:focus {

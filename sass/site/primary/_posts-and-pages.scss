@@ -3,11 +3,10 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
 }
 
 .byline,
-.updated:not(.published){
+.updated:not(.published) {
 	display: none;
 }
 
@@ -19,7 +18,7 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 2em 0 0;
 }
 
 .page-links {
@@ -28,58 +27,76 @@
 }
 
 .page-title {
+	font-family: $font__details; 
+	@include font-size(0.8666);
 	text-align: center;
-	font-size: 1em;
 	text-transform: uppercase;
-	color: $color__text-dark;
 }
 
 .page-title-text {
+	border: 2px solid $color__background-hr-dark;
+	border-right: none;
+	border-left: none; 
 	padding: 10px 0;
-	border-top: 2px solid $color__text-light;
-	border-bottom: 2px solid $color__text-light;
 }
 
 .page-header {
-	padding: 70px 0;
-	margin-bottom: 55px;
-	border-bottom: 2px solid $color__borders;
+	border-bottom: 2px solid $color__background-hr; 
+	margin-bottom: 5.3333em; 
+	padding-bottom: 4em; 	
 }
 
 .entry-meta {
+	@include display(flex);
+	font-family: $font__details;
+	@include justify-content(center);
+	letter-spacing: .1em;
+	line-height: normal;
 	text-align: center;
 	text-transform: uppercase;
 
-	span{
-		font-size: 0.8em;
+	span {
 		color: $color__text-meta;
+		@include font-size(0.8);
+		
+		&:not(:last-child) {
 
-		&:not(:first-child) {
-			&::before {
+			&:after {
 				content: '\00a0\00a0/\00a0\00a0';
+				padding: 0 .4166em;
 			}
 		}
 
 		a {
-			text-decoration: none;
 			color: inherit;
+			text-decoration: none;
+			
+			&:hover {
+				color: $color__link; 
+			}
 		}
 	}
 }
 
 .entry-title {
-	text-align: center;
 	color: $color__text-dark;
-	margin-top: 0.25em;
-	font-size: 2em;
+	@include font-size(2.133);
+	line-height: normal;
+	margin: 0.5em 0 0; 
+	text-align: center;
 
 	a {
 		color: inherit;
 		text-decoration: none;
+		
+		&:hover {
+			color: $color__text-medium;
+		}
 	}
 }
 
 .entry-thumbnail {
+	
 	margin: 35px 0;
 
 	img {
@@ -90,19 +107,20 @@
 
 .tags-list {
 	margin-top: 1em;
+	
 	a {
-		background: $color__borders ;
+		background: $color__background-hr-dark;
 		color: $color__text-medium;
 		display: inline-block;
-		margin-right: 10px;
-		margin-bottom:10px;
+		@include font-size(0.8666);
+		line-height: normal;
+		margin-right: 0.4615em;
+		padding: 0.6153em 0.7692em;
 		text-decoration: none;
-		line-height: 1em;
-		font-size: 0.8em;
-		padding: 8px 12px;
-
+		
 		&:hover {
-			background: $color__primary-accent-dark;
+			background: $color__text-medium;
+			color: #fff; 
 		}
 	}
 }
@@ -122,12 +140,13 @@
 }
 
 .yarpp-related {
+	
 	.related-posts {
 		font-size: 1em;
 		text-transform: uppercase;
 	}
 
-	ol{
+	ol {
 		margin: 0;
 		list-style: none;
 		@include clearfix;
@@ -139,6 +158,7 @@
 			margin: 0;
 
 			&:hover {
+
 				.related-post-title {
 					color: $color__primary-accent-dark;
 				}
@@ -177,21 +197,21 @@
 		float: left;
 
 		img {
-			vertical-align: middle;
 			border-radius: 50%;
+			vertical-align: middle;
 		}
 	}
 
 	.author-description {
-		padding-left: 120px;
-		font-size: 0.95em;
-		color: $color__text-medium;
 		@include clearfix;
-
+		color: $color__text-medium;
+		font-size: 0.95em;
+		padding-left: 120px;
+		
 		.post-author-title {
-			margin-top: 0;
-			font-size: 1em;
 			font-weight: bold;
+			font-size: 1em;
+			margin-top: 0;
 
 			a {
 				color: $color__text-dark;
@@ -206,6 +226,7 @@
 }
 
 @media screen and (max-width: 320px) {
+
 	.author-box {
 
 		.author-avatar {
@@ -232,54 +253,73 @@
 }
 
 .more-link {
-	font-size: 0.8em;
 	display: block;
-	text-align: center;
 	color: $color__text-dark;
-	text-transform: uppercase;
+	@include font-size(0.8666);
+	text-align: center;
 	text-decoration: none;
+	text-transform: uppercase;
 	margin-top: 70px;
 
 	.more-text {
+		border-top: 2px solid $color__background-hr-dark;
+		border-bottom: 2px solid $color__background-hr-dark;
+		font-family: $font__details; 
 		padding: 10px 0;
-		border-top: 2px solid $color__text-light;
-		border-bottom: 2px solid $color__text-light;
+		
+		&:hover {
+			border: 2px solid $color__link;
+			padding: 10px 12px;
+		}
 	}
 }
 
 .entry {
-	margin-bottom: 50px;
+	margin-bottom: 5em;
 }
 
 .archive-entry {
-	padding-bottom: 50px;
-	margin-bottom: 50px;
-	border-bottom: 2px solid $color__borders;
+	border-bottom: 2px solid $color__background-hr;
+	margin-bottom: 5em;
+	padding-bottom: 5em;
+	
+	&:last-of-type {
+		margin-bottom: 5.5em; 
+	}
 }
 
-.search-results .content-area {
+/*--------------------------------------------------------------
+# Search Results
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Post Loop: Left Medium Thumbnail
+--------------------------------------------------------------*/
+.left-medium-loop {
+
 	article {
 		@include clearfix;
 
 		.entry-thumbnail {
-			width: 42.5%;
-			margin: 0 1.5% 0 0;
 			float: left;
+			margin: 0 0 4em 0;
+			width: 42.452830188679%;
 		}
 
 		.entry-content {
-			width: 100%;
 			float: right;
 			margin: 0;
+			width: 100%;
 
 			.entry-meta {
-				text-align: left;
+				justify-content: initial;
+				margin: .45em 0 .6em;  
 			}
 
 			.entry-title {
-				text-align: left;
-				font-size: 1.35em;
+				@include font-size(1.6);
 				margin: 0;
+				text-align: left;
 			}
 
 			.entry-summary {
@@ -288,23 +328,23 @@
 		}
 
 		&.has-post-thumbnail {
+
 			.entry-content {
-				width: 56%;
+				width: 54.009433962264%;
 			}
 		}
 	}
 }
 
 @media screen and (max-width: 320px) {
+
 	.search-results .content-area {
+		
 		article {
 
 			.entry-thumbnail {
+				margin: 0 auto 25px;
 				width: 100%;
-				margin: 0;
-				margin-left: auto;
-				margin-right: auto;
-				margin-bottom: 25px;
 			}
 
 			.entry-content {
@@ -324,11 +364,11 @@
 			}
 
 			&.has-post-thumbnail {
+
 				.entry-content {
 					width: 100%;
 				}
 			}
-
 		}
 	}
 }
