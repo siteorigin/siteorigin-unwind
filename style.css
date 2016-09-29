@@ -776,7 +776,7 @@ a {
     font-size: 24px; } }
 
 /*--------------------------------------------------------------
-## Post and Comment Navigation
+## Posts, Post and Comment Navigation
 --------------------------------------------------------------*/
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -821,6 +821,14 @@ a {
   .post-navigation a:hover {
     border-color: #24c48a;
     color: #24c48a; }
+
+.posts-navigation .nav-links {
+  font-family: "Lato", sans-serif !important;
+  letter-spacing: 1px; }
+  .posts-navigation .nav-links .nav-previous span {
+    margin-right: .5em; }
+  .posts-navigation .nav-links .nav-next span {
+    margin-left: .5em; }
 
 .post-navigation {
   border-top: 2px solid #ebebeb;
@@ -1309,6 +1317,7 @@ a {
     border-top: 2px solid #ebebeb;
     border-bottom: 2px solid #ebebeb;
     font-family: "Lato", sans-serif;
+    letter-spacing: 1px;
     padding: 10px 0; }
     .more-link .more-text:hover {
       border: 2px solid #24c48a;

@@ -315,7 +315,7 @@
 }
 
 /*--------------------------------------------------------------
-## Post and Comment Navigation
+## Posts, Post and Comment Navigation
 --------------------------------------------------------------*/
 .comment-navigation,
 .posts-navigation,
@@ -362,6 +362,21 @@
 	}
 }
 
+// Archive post navigation.
+.posts-navigation .nav-links {
+	font-family: $font__details !important;
+	letter-spacing: 1px; 
+	
+	.nav-previous span {
+		margin-right: .5em; 
+	}
+
+	.nav-next span {
+		margin-left: .5em; 
+	}	
+}
+
+// Single post navigation.
 .post-navigation {
 	border-top: 2px solid $color__background-hr-dark;
 	border-bottom: 2px solid $color__background-hr-dark;
