@@ -1,8 +1,8 @@
 .main-navigation {
 	clear: both;
+	@include clearfix;
 	display: block;
 	float: left;
-	@include clearfix;
 
 	ul {
 		display: none;
@@ -46,6 +46,7 @@
 				border-bottom: 1px solid $color__background-hr;
 				font-family: $font__main;
 				@include font-size(0.8666);
+				letter-spacing: normal;
 				line-height: normal;
 				margin: 0 20px;
 				min-width: 150px;
@@ -83,6 +84,7 @@
 			color: $color__text-medium;
 			font-family: $font__details;
 			@include font-size(0.8);
+			letter-spacing: 1px;
 			line-height: 60px;
 		}
 
@@ -291,6 +293,10 @@
 			color: $color__text-main; 
 			@include font-size(2.1333);
 			outline: none;
+			
+			@media (max-width: 768px) {
+				font-size: 24px;
+			}
 		}
 
 		input[type="submit"] {
@@ -301,15 +307,6 @@
 			font-size: 36px;
 			position: absolute;
 			right: 0;
-		}
-	}
-}
-
-@media screen and (max-width: 768px) {
-
-	#fullscreen-search form {
-		input[type="search"] {
-			font-size: 24px;
 		}
 	}
 }
@@ -339,9 +336,9 @@
 
 	.nav-next {
 		float: right;
+		padding: 1em 0;
 		text-align: right;
 		width: 50%;
-		padding: 1em 0;
 		
 		span {
 			margin-left: .2em; 
@@ -351,9 +348,9 @@
 	a {
 		border: 2px solid $color__background-hr-dark;
 		color: $color__text-medium;
-		text-decoration: none;
-		text-transform: uppercase;
 		padding: 1em 1.923em;
+		text-decoration: none;
+		text-transform: uppercase;		
 		
 		&:hover {
 			border-color: $color__link; 
@@ -364,6 +361,7 @@
 
 // Archive post navigation.
 .posts-navigation .nav-links {
+	@include font-size(0.8666);
 	font-family: $font__details !important;
 	letter-spacing: 1px; 
 	

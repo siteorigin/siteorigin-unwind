@@ -21,6 +21,7 @@
 			font-family: $font__details; 
 			font-weight: 300;
 			@include font-size(4);
+			letter-spacing: 1px;
 			line-height: normal; 
 			margin: 0;
 			text-align: center;

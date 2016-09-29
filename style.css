@@ -595,6 +595,7 @@ a {
         font-family: "Merriweather", serif;
         font-size: 13.8656px;
         font-size: 0.8666rem;
+        letter-spacing: normal;
         line-height: normal;
         margin: 0 20px;
         min-width: 150px;
@@ -619,6 +620,7 @@ a {
       font-family: "Lato", sans-serif;
       font-size: 12.8px;
       font-size: 0.8rem;
+      letter-spacing: 1px;
       line-height: 60px; }
     .main-navigation li:hover > a,
     .main-navigation li.focus > a {
@@ -764,16 +766,15 @@ a {
       font-size: 34.1328px;
       font-size: 2.1333rem;
       outline: none; }
+      @media (max-width: 768px) {
+        #fullscreen-search form input[type="search"] {
+          font-size: 24px; } }
     #fullscreen-search form input[type="submit"] {
       display: none; }
     #fullscreen-search form .search-icon {
       font-size: 36px;
       position: absolute;
       right: 0; }
-
-@media screen and (max-width: 768px) {
-  #fullscreen-search form input[type="search"] {
-    font-size: 24px; } }
 
 /*--------------------------------------------------------------
 ## Posts, Post and Comment Navigation
@@ -800,9 +801,9 @@ a {
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
   float: right;
+  padding: 1em 0;
   text-align: right;
-  width: 50%;
-  padding: 1em 0; }
+  width: 50%; }
   .comment-navigation .nav-next span,
   .posts-navigation .nav-next span,
   .post-navigation .nav-next span {
@@ -813,9 +814,9 @@ a {
 .post-navigation a {
   border: 2px solid #ebebeb;
   color: #626262;
+  padding: 1em 1.923em;
   text-decoration: none;
-  text-transform: uppercase;
-  padding: 1em 1.923em; }
+  text-transform: uppercase; }
   .comment-navigation a:hover,
   .posts-navigation a:hover,
   .post-navigation a:hover {
@@ -823,6 +824,8 @@ a {
     color: #24c48a; }
 
 .posts-navigation .nav-links {
+  font-size: 13.8656px;
+  font-size: 0.8666rem;
   font-family: "Lato", sans-serif !important;
   letter-spacing: 1px; }
   .posts-navigation .nav-links .nav-previous span {
@@ -1085,6 +1088,7 @@ a {
       font-weight: 300;
       font-size: 64px;
       font-size: 4rem;
+      letter-spacing: 1px;
       line-height: normal;
       margin: 0;
       text-align: center;
