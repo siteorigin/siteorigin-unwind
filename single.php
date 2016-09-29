@@ -17,16 +17,16 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'single' );
 
-			if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy' ) ) :?>
+			if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy' ) ) : ?>
 				<h2 class="share-this heading-strike"><?php esc_html_e( 'Share This', 'siteorigin-unwind' ); ?></h2>
 				<?php echo sharing_display();
 			endif;
 
-			if( siteorigin_setting('navigation_post') ) :
+			if ( siteorigin_setting( 'navigation_post' ) ) :
 				siteorigin_unwind_the_post_navigation();
 			endif;
 
-			if ( siteorigin_setting('blog_display_author_box') ) :
+			if ( siteorigin_setting( 'blog_display_author_box' ) ) :
 				siteorigin_unwind_author_box();
 			endif;
 
