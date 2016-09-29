@@ -5,6 +5,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package siteorigin-unwind
+ * @since siteorigin-unwind 0.1
+ * @license GPL 2.0
  */
 
 get_header(); ?>
