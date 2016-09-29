@@ -303,6 +303,9 @@
 /*--------------------------------------------------------------
 # Search Results
 --------------------------------------------------------------*/
+.search-results .site-content {
+	padding: 4em 0 5em;
+}
 
 /*--------------------------------------------------------------
 # Post Loop: Left Medium Thumbnail
@@ -311,6 +314,7 @@
 
 	article {
 		@include clearfix;
+		margin-bottom: 1.75em; 
 
 		.entry-thumbnail {
 			float: left;

@@ -1327,36 +1327,38 @@ a {
 /*--------------------------------------------------------------
 # Search Results
 --------------------------------------------------------------*/
+.search-results .site-content {
+  padding: 4em 0 5em; }
+
 /*--------------------------------------------------------------
 # Post Loop: Left Medium Thumbnail
 --------------------------------------------------------------*/
-.left-medium-loop article::after {
-  clear: both;
-  content: "";
-  display: table; }
-
-.left-medium-loop article .entry-thumbnail {
-  float: left;
-  margin: 0 0 4em 0;
-  width: 42.452830188679%; }
-
-.left-medium-loop article .entry-content {
-  float: right;
-  margin: 0;
-  width: 100%; }
-  .left-medium-loop article .entry-content .entry-meta {
-    justify-content: initial;
-    margin: .45em 0 .6em; }
-  .left-medium-loop article .entry-content .entry-title {
-    font-size: 25.6px;
-    font-size: 1.6rem;
+.left-medium-loop article {
+  margin-bottom: 1.75em; }
+  .left-medium-loop article::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .left-medium-loop article .entry-thumbnail {
+    float: left;
+    margin: 0 0 4em 0;
+    width: 42.452830188679%; }
+  .left-medium-loop article .entry-content {
+    float: right;
     margin: 0;
-    text-align: left; }
-  .left-medium-loop article .entry-content .entry-summary {
-    margin-top: 0.5em; }
-
-.left-medium-loop article.has-post-thumbnail .entry-content {
-  width: 54.009433962264%; }
+    width: 100%; }
+    .left-medium-loop article .entry-content .entry-meta {
+      justify-content: initial;
+      margin: .45em 0 .6em; }
+    .left-medium-loop article .entry-content .entry-title {
+      font-size: 25.6px;
+      font-size: 1.6rem;
+      margin: 0;
+      text-align: left; }
+    .left-medium-loop article .entry-content .entry-summary {
+      margin-top: 0.5em; }
+  .left-medium-loop article.has-post-thumbnail .entry-content {
+    width: 54.009433962264%; }
 
 @media screen and (max-width: 320px) {
   .search-results .content-area article .entry-thumbnail {
