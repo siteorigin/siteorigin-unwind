@@ -39,9 +39,13 @@ jQuery( function($){
 
 	}
 
-	$('table.shop_table').each(function(i, el) {
-		quantityButtons(el);
-	});
+	function triggerQuantityButtons() {
+		$('table.shop_table').each(function(i, el) {
+			quantityButtons(el);
+		});
+	}
+
+	triggerQuantityButtons();
 
 	$('table.shop_table').removeClass('shop_table_responsive');
 } );
