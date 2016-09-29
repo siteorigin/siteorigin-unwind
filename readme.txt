@@ -33,7 +33,13 @@ SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully respons
 
 = Does this theme support any plugins? =
 
-SiteOrigin Unwind includes support for Infinite Scroll in Jetpack.
+SiteOrigin Unwind includes support for:
+
+* SiteOrigin Page Builder
+* SiteOrigin Widgets Bundle 
+* SiteOrigin CSS
+* WooCommerce
+* Jetpack Infinite Scroll
 
 == License ==
 
