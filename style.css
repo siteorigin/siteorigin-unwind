@@ -36,9 +36,9 @@ Tags: one column, two columns, custom-background, custom-colors, custom-header, 
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
 ----------------------------------------------------------------
-Please don't edit below, changes will be lost during the theme
+Please don't edit below, changes will be lost during the theme 
 update process. If you need to make CSS modifications try
-https://wordpress.org/plugins/so-css/
+https://wordpress.org/plugins/so-css/.
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -237,6 +237,10 @@ textarea {
   font-weight: 400;
   line-height: 1.8666; }
 
+.site-content {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word; }
+
 h1,
 h2,
 h3,
@@ -248,9 +252,31 @@ h6 {
   font-family: "Merriweather", serif;
   font-weight: 700; }
 
+h1 {
+  font-size: 28.57136px;
+  font-size: 1.78571rem; }
+
+h2 {
+  font-size: 25.14288px;
+  font-size: 1.57143rem; }
+
+h3 {
+  font-size: 22.85712px;
+  font-size: 1.42857rem; }
+
+h4 {
+  font-size: 20.57136px;
+  font-size: 1.28571rem; }
+
+h5 {
+  font-size: 18.28576px;
+  font-size: 1.14286rem; }
+
+h6 {
+  font-size: 16px;
+  font-size: 1rem; }
+
 .heading-strike {
-  text-align: center;
-  text-transform: uppercase;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -276,16 +302,18 @@ h6 {
   -ms-justify-content: center;
   -o-justify-content: center;
   justify-content: center;
-  -ms-flex-pack: center; }
+  -ms-flex-pack: center;
+  text-align: center;
+  text-transform: uppercase; }
   .heading-strike:before, .heading-strike:after {
+    align-self: center;
+    background-color: #f4f4f4;
+    content: '\a0';
     -webkit-flex-grow: 1;
     -moz-flex-grow: 1;
     flex-grow: 1;
     -ms-flex-positive: 1;
-    height: 2px;
-    content: '\a0';
-    background-color: #f4f4f4;
-    align-self: center; }
+    height: 2px; }
   .heading-strike:before {
     margin-right: 7px; }
   .heading-strike:after {
@@ -301,9 +329,12 @@ i {
   font-style: italic; }
 
 blockquote {
-  border-left: 2px solid #24c48a;
+  border-left: 3px solid #24c48a;
+  font-style: italic;
   margin: 0 0 2.25em;
-  padding: 1em 0 1em 1.3333em; }
+  padding: .5em 0 .55em 1.3333em; }
+  blockquote p {
+    margin-bottom: 0; }
 
 address {
   margin: 0 0 1.5em; }
@@ -596,7 +627,33 @@ a {
     display: block;
     text-decoration: none; }
 
-/* Small menu. */
+.social-search {
+  float: right; }
+  .social-search .search-toggle {
+    background: transparent;
+    border: none;
+    height: 20px;
+    margin: 20px 0;
+    outline: none; }
+    .social-search .search-toggle .open {
+      display: block; }
+    .social-search .search-toggle .close {
+      display: none; }
+    .social-search .search-toggle.close-search .open {
+      display: none; }
+    .social-search .search-toggle.close-search .close {
+      display: block; }
+  .social-search .widget {
+    display: inline-block; }
+  .social-search .v-line {
+    width: 1px;
+    height: 20px;
+    border-left: 1px solid #ebebeb;
+    margin: 0 10px; }
+
+/*--------------------------------------------------------------
+## Mobile Menu
+--------------------------------------------------------------*/
 .main-navigation ul {
   display: none; }
 
@@ -677,30 +734,9 @@ a {
         #mobile-navigation ul ul li ul {
           display: none; }
 
-.social-search {
-  float: right; }
-  .social-search .search-toggle {
-    background: transparent;
-    border: none;
-    height: 20px;
-    margin: 20px 0;
-    outline: none; }
-    .social-search .search-toggle .open {
-      display: block; }
-    .social-search .search-toggle .close {
-      display: none; }
-    .social-search .search-toggle.close-search .open {
-      display: none; }
-    .social-search .search-toggle.close-search .close {
-      display: block; }
-  .social-search .widget {
-    display: inline-block; }
-  .social-search .v-line {
-    width: 1px;
-    height: 20px;
-    border-left: 1px solid #ebebeb;
-    margin: 0 10px; }
-
+/*--------------------------------------------------------------
+## Full Screen Search
+--------------------------------------------------------------*/
 #fullscreen-search {
   background: rgba(255, 255, 255, 0.97);
   display: none;
@@ -739,6 +775,9 @@ a {
   #fullscreen-search form input[type="search"] {
     font-size: 24px; } }
 
+/*--------------------------------------------------------------
+## Post and Comment Navigation
+--------------------------------------------------------------*/
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -749,13 +788,13 @@ a {
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
+  padding: 1em 0;
   text-align: left;
-  width: 50%;
-  padding: 1em 0; }
+  width: 50%; }
   .comment-navigation .nav-previous span,
   .posts-navigation .nav-previous span,
   .post-navigation .nav-previous span {
-    margin-right: 0.5em; }
+    margin-right: .2em; }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
@@ -767,16 +806,13 @@ a {
   .comment-navigation .nav-next span,
   .posts-navigation .nav-next span,
   .post-navigation .nav-next span {
-    margin-left: 0.5em; }
+    margin-left: .2em; }
 
 .comment-navigation a,
 .posts-navigation a,
 .post-navigation a {
   border: 2px solid #ebebeb;
   color: #626262;
-  font-family: "Lato", sans-serif;
-  font-size: 13.8656px;
-  font-size: 0.8666rem;
   text-decoration: none;
   text-transform: uppercase;
   padding: 1em 1.923em; }
@@ -787,13 +823,16 @@ a {
     color: #24c48a; }
 
 .post-navigation {
-  padding: 60px 0;
   border-top: 2px solid #ebebeb;
-  border-bottom: 2px solid #ebebeb; }
+  border-bottom: 2px solid #ebebeb;
+  font-family: "Merriweather", serif;
+  font-size: 17.0656px;
+  font-size: 1.0666rem;
+  font-weight: 600;
+  padding: 4em 0; }
   .post-navigation a {
     border: none;
     color: #626262;
-    font-weight: bold;
     font-weight: 600;
     padding: 0;
     text-decoration: none;
@@ -804,13 +843,17 @@ a {
       border-bottom: 2px solid #ebebeb;
       color: #adadad;
       display: inline-block;
+      font-family: "Lato", sans-serif;
       font-size: 13.8656px;
       font-size: 0.8666rem;
       font-weight: normal;
       text-transform: uppercase;
+      letter-spacing: 1px;
       line-height: normal;
-      margin-bottom: 1.3076em;
-      padding-bottom: .4; }
+      margin-bottom: 1.1em;
+      padding-bottom: .2em; }
+    .post-navigation a div {
+      line-height: normal; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -937,13 +980,30 @@ a {
 /*--------------------------------------------------------------
 ## General Layout
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Containers
+--------------------------------------------------------------*/
+.container {
+  margin: 0 auto;
+  max-width: 1140px;
+  position: relative;
+  width: 100%; }
+
 .content-area {
   float: left;
   margin: 0 -25.61404% 0 0;
   width: 100%; }
+  @media (max-width: 768px) {
+    .content-area {
+      float: none;
+      margin: 0;
+      width: auto; } }
 
 .site-main {
   margin: 0 25.61404% 0 0; }
+  @media (max-width: 768px) {
+    .site-main {
+      margin: 0; } }
 
 .site-content {
   padding: 5.3333em 0 5em; }
@@ -957,6 +1017,12 @@ a {
   overflow: hidden;
   padding-left: 2em;
   width: 25.61404%; }
+  @media (max-width: 768px) {
+    .site-content .widget-area {
+      float: none;
+      margin-top: 40px;
+      padding-left: 0;
+      width: 100%; } }
 
 .site-footer {
   clear: both;
@@ -970,28 +1036,9 @@ a {
 .no-active-sidebar .site-main {
   margin: 0; }
 
-@media (max-width: 768px) {
-  .content-area {
-    float: none;
-    margin: 0;
-    width: auto; }
-  .site-main {
-    margin: 0; }
-  .site-content .widget-area {
-    float: none;
-    margin-top: 40px;
-    padding-left: 0;
-    width: 100%; } }
-
 /*--------------------------------------------------------------
-## General Layout
+## Page Settings
 --------------------------------------------------------------*/
-.container {
-  margin: 0 auto;
-  max-width: 1140px;
-  position: relative;
-  width: 100%; }
-
 .page-layout-no-sidebar .site-main,
 .page-layout-full-width .site-main {
   margin: 0; }
@@ -1039,67 +1086,6 @@ a {
         text-decoration: none; }
     #masthead .site-branding .site-description {
       text-align: center; }
-
-/*--------------------------------------------------------------
-## Site Footer
---------------------------------------------------------------*/
-#colophon {
-  border-top: 1px solid #ebebeb;
-  width: 100%; }
-  #colophon .widgets {
-    overflow: hidden;
-    padding: 30px 0;
-    width: 100%; }
-    #colophon .widgets::after {
-      clear: both;
-      content: "";
-      display: table; }
-    #colophon .widgets .widget-wrapper {
-      box-sizing: border-box;
-      float: left;
-      padding: 0 10px;
-      padding-bottom: 9999px;
-      margin-bottom: -9999px; }
-    #colophon .widgets.widgets-1 .widget-wrapper {
-      width: 100%; }
-    #colophon .widgets.widgets-2 .widget-wrapper {
-      width: 50%; }
-    #colophon .widgets.widgets-3 .widget-wrapper {
-      width: 33.33333%; }
-    #colophon .widgets.widgets-4 .widget-wrapper {
-      width: 25%; }
-    #colophon .widgets.widgets-5 .widget-wrapper {
-      width: 20%; }
-    #colophon .widgets.widgets-6 .widget-wrapper {
-      width: 16.66667%; }
-    #colophon .widgets.widgets-7 .widget-wrapper {
-      width: 14.28571%; }
-    #colophon .widgets.widgets-8 .widget-wrapper {
-      width: 12.5%; }
-    #colophon .widgets.widgets-9 .widget-wrapper {
-      width: 11.11111%; }
-    #colophon .widgets.widgets-10 .widget-wrapper {
-      width: 10%; }
-    @media (max-width: 768px) {
-      #colophon .widgets .widget-wrapper {
-        float: none;
-        width: 100% !important;
-        padding-bottom: 0;
-        margin-bottom: 0; } }
-  #colophon .site-info {
-    border-top: 1px solid #ebebeb;
-    color: #626262;
-    font-size: 13.8656px;
-    font-size: 0.8666rem;
-    padding: 45px 0;
-    text-align: center; }
-    #colophon .site-info a {
-      color: inherit;
-      text-decoration: none; }
-      #colophon .site-info a:hover {
-        color: #2d2d2d; }
-  #colophon.unconstrained-footer .container {
-    max-width: none; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -1519,6 +1505,67 @@ a {
   #commentform textarea:focus {
     background-color: #fcfcfc;
     outline: none; }
+
+/*--------------------------------------------------------------
+## Site Footer
+--------------------------------------------------------------*/
+#colophon {
+  border-top: 1px solid #ebebeb;
+  width: 100%; }
+  #colophon .widgets {
+    overflow: hidden;
+    padding: 30px 0;
+    width: 100%; }
+    #colophon .widgets::after {
+      clear: both;
+      content: "";
+      display: table; }
+    #colophon .widgets .widget-wrapper {
+      box-sizing: border-box;
+      float: left;
+      padding: 0 10px;
+      padding-bottom: 9999px;
+      margin-bottom: -9999px; }
+    #colophon .widgets.widgets-1 .widget-wrapper {
+      width: 100%; }
+    #colophon .widgets.widgets-2 .widget-wrapper {
+      width: 50%; }
+    #colophon .widgets.widgets-3 .widget-wrapper {
+      width: 33.33333%; }
+    #colophon .widgets.widgets-4 .widget-wrapper {
+      width: 25%; }
+    #colophon .widgets.widgets-5 .widget-wrapper {
+      width: 20%; }
+    #colophon .widgets.widgets-6 .widget-wrapper {
+      width: 16.66667%; }
+    #colophon .widgets.widgets-7 .widget-wrapper {
+      width: 14.28571%; }
+    #colophon .widgets.widgets-8 .widget-wrapper {
+      width: 12.5%; }
+    #colophon .widgets.widgets-9 .widget-wrapper {
+      width: 11.11111%; }
+    #colophon .widgets.widgets-10 .widget-wrapper {
+      width: 10%; }
+    @media (max-width: 768px) {
+      #colophon .widgets .widget-wrapper {
+        float: none;
+        width: 100% !important;
+        padding-bottom: 0;
+        margin-bottom: 0; } }
+  #colophon .site-info {
+    border-top: 1px solid #ebebeb;
+    color: #626262;
+    font-size: 13.8656px;
+    font-size: 0.8666rem;
+    padding: 45px 0;
+    text-align: center; }
+    #colophon .site-info a {
+      color: inherit;
+      text-decoration: none; }
+      #colophon .site-info a:hover {
+        color: #2d2d2d; }
+  #colophon.unconstrained-footer .container {
+    max-width: none; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
