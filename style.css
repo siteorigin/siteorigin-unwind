@@ -917,11 +917,11 @@ a {
   margin-bottom: 4em; }
 
 #secondary .widget-title {
-  margin: 0 0 2em; }
+  margin: 0 0 1.6em; }
 
 #secondary ul {
-  margin: 0;
-  list-style: none; }
+  list-style: none;
+  margin: 0; }
   #secondary ul li {
     border-bottom: 1px solid #f4f4f4;
     font-size: 13.8656px;
@@ -946,7 +946,7 @@ a {
   margin: 0 25.61404% 0 0; }
 
 .site-content {
-  padding: 4em 0 5em; }
+  padding: 5.3333em 0 5em; }
   .site-content::after {
     clear: both;
     content: "";
@@ -1321,6 +1321,9 @@ a {
   .archive-entry:last-of-type {
     margin-bottom: 5.5em; }
 
+/*--------------------------------------------------------------
+# Search Results
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Post Loop: Left Medium Thumbnail
 --------------------------------------------------------------*/

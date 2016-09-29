@@ -1,3 +1,6 @@
+/*--------------------------------------------------------------
+# Containers
+--------------------------------------------------------------*/
 .container {
 	margin: 0 auto;
 	max-width: 1140px;
@@ -5,4 +8,65 @@
 	width: 100%;
 }
 
+.content-area {
+	float: left;
+	margin: 0 (-$size__site-sidebar) 0 0;
+	width: $size__site-main;
+	
+	@media (max-width: 768px) {
+		float: none;
+		margin: 0;
+		width: auto;
+	}
+}
+
+.site-main {
+	margin: 0 $size__site-sidebar 0 0;
+	
+	@media (max-width: 768px) {
+		margin: 0;		
+	}
+}
+
+.site-content {
+	@include clearfix;
+	padding: 5.3333em 0 5em;
+}
+
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	padding-left: 2em;
+	width: $size__site-sidebar;
+	
+	@media (max-width: 768px) {
+		float: none;
+		margin-top: 40px;
+		padding-left: 0;
+		width: 100%;		
+	}
+}
+
+.site-footer {
+	clear: both;
+	width: $size__site-main;
+}
+
+.no-active-sidebar {
+
+	.content-area {
+		float: none;
+		margin: 0;
+		width: auto;
+	}
+
+	.site-main {
+		margin: 0;
+	}
+
+}
+
+/*--------------------------------------------------------------
+# Page Settings
+--------------------------------------------------------------*/
 @import "page-settings";
