@@ -36,7 +36,7 @@ Tags: one column, two columns, custom-background, custom-colors, custom-header, 
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
 ----------------------------------------------------------------
-Please don't edit below, changes will be lost during the theme 
+Please don't edit below, changes will be lost during the theme
 update process. If you need to make CSS modifications try
 https://wordpress.org/plugins/so-css/
 --------------------------------------------------------------*/
@@ -1222,30 +1222,47 @@ a {
   .single-post .sharedaddy .sd-content ul {
     display: inline-block; }
 
-.yarpp-related .related-posts {
+.yarpp-related .related-posts,
+.related-posts-section .related-posts {
   font-size: 1em;
   text-transform: uppercase; }
 
-.yarpp-related ol {
+.yarpp-related ol,
+.related-posts-section ol {
   margin: 0;
   list-style: none; }
-  .yarpp-related ol::after {
+  .yarpp-related ol::after,
+  .related-posts-section ol::after {
     clear: both;
     content: "";
     display: table; }
-  .yarpp-related ol li {
+  .yarpp-related ol li,
+  .related-posts-section ol li {
     display: block;
     float: left;
-    width: 33.333%;
+    width: 31%;
     margin: 0; }
-    .yarpp-related ol li:hover .related-post-title {
+    .yarpp-related ol li:first-child,
+    .related-posts-section ol li:first-child {
+      margin-right: 3.5%; }
+    .yarpp-related ol li:last-child,
+    .related-posts-section ol li:last-child {
+      margin-left: 3.5%; }
+    .yarpp-related ol li:hover .related-post-title,
+    .related-posts-section ol li:hover .related-post-title {
       color: #21af7b; }
-    .yarpp-related ol li img {
+    .yarpp-related ol li a,
+    .related-posts-section ol li a {
+      text-decoration: none; }
+    .yarpp-related ol li img,
+    .related-posts-section ol li img {
       vertical-align: middle; }
-    .yarpp-related ol li .related-post-title {
+    .yarpp-related ol li .related-post-title,
+    .related-posts-section ol li .related-post-title {
       font-size: 1em;
       color: #2d2d2d; }
-    .yarpp-related ol li .related-post-date {
+    .yarpp-related ol li .related-post-date,
+    .related-posts-section ol li .related-post-date {
       margin-top: 0;
       font-size: 0.9em;
       color: #adadad; }

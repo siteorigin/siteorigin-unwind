@@ -6,7 +6,7 @@ input[type="submit"] {
 	border-color: $color__border-button;
 	background: $color__background-button;
 	color: $color__text-dark;
-	font-family: $font__details; 
+	font-family: $font__details;
 	@include font-size(0.8666);
 	line-height: 1;
 	padding: 1em 1.923em;
@@ -22,6 +22,6 @@ input[type="submit"] {
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;
-		color: $color__link; 
+		color: $color__link;
 	}
 }

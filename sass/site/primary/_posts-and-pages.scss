@@ -27,7 +27,7 @@
 }
 
 .page-title {
-	font-family: $font__details; 
+	font-family: $font__details;
 	@include font-size(0.8666);
 	text-align: center;
 	text-transform: uppercase;
@@ -36,14 +36,14 @@
 .page-title-text {
 	border: 2px solid $color__background-hr-dark;
 	border-right: none;
-	border-left: none; 
+	border-left: none;
 	padding: 10px 0;
 }
 
 .page-header {
-	border-bottom: 2px solid $color__background-hr; 
-	margin-bottom: 5.3333em; 
-	padding-bottom: 4em; 	
+	border-bottom: 2px solid $color__background-hr;
+	margin-bottom: 5.3333em;
+	padding-bottom: 4em;
 }
 
 .entry-meta {
@@ -58,7 +58,7 @@
 	span {
 		color: $color__text-meta;
 		@include font-size(0.8);
-		
+
 		&:not(:last-child) {
 
 			&:after {
@@ -70,9 +70,9 @@
 		a {
 			color: inherit;
 			text-decoration: none;
-			
+
 			&:hover {
-				color: $color__link; 
+				color: $color__link;
 			}
 		}
 	}
@@ -82,13 +82,13 @@
 	color: $color__text-dark;
 	@include font-size(2.133);
 	line-height: normal;
-	margin: 0.5em 0 0; 
+	margin: 0.5em 0 0;
 	text-align: center;
 
 	a {
 		color: inherit;
 		text-decoration: none;
-		
+
 		&:hover {
 			color: $color__text-medium;
 		}
@@ -96,7 +96,7 @@
 }
 
 .entry-thumbnail {
-	
+
 	margin: 35px 0;
 
 	img {
@@ -107,7 +107,7 @@
 
 .tags-list {
 	margin-top: 1em;
-	
+
 	a {
 		background: $color__background-hr-dark;
 		color: $color__text-medium;
@@ -117,10 +117,10 @@
 		margin-right: 0.4615em;
 		padding: 0.6153em 0.7692em;
 		text-decoration: none;
-		
+
 		&:hover {
 			background: $color__text-medium;
-			color: #fff; 
+			color: #fff;
 		}
 	}
 }
@@ -139,8 +139,8 @@
 	}
 }
 
-.yarpp-related {
-	
+.yarpp-related,
+.related-posts-section {
 	.related-posts {
 		font-size: 1em;
 		text-transform: uppercase;
@@ -154,14 +154,26 @@
 		li {
 			display: block;
 			float: left;
-			width: 33.333%;
+			width: 31%;
 			margin: 0;
+
+			&:first-child {
+				margin-right: 3.5%;
+			}
+
+			&:last-child {
+				margin-left: 3.5%;
+			}
 
 			&:hover {
 
 				.related-post-title {
 					color: $color__primary-accent-dark;
 				}
+			}
+
+			a {
+				text-decoration: none;
 			}
 
 			img {
@@ -207,7 +219,7 @@
 		color: $color__text-medium;
 		font-size: 0.95em;
 		padding-left: 120px;
-		
+
 		.post-author-title {
 			font-weight: bold;
 			font-size: 1em;
@@ -264,9 +276,9 @@
 	.more-text {
 		border-top: 2px solid $color__background-hr-dark;
 		border-bottom: 2px solid $color__background-hr-dark;
-		font-family: $font__details; 
+		font-family: $font__details;
 		padding: 10px 0;
-		
+
 		&:hover {
 			border: 2px solid $color__link;
 			padding: 10px 12px;
@@ -282,9 +294,9 @@
 	border-bottom: 2px solid $color__background-hr;
 	margin-bottom: 5em;
 	padding-bottom: 5em;
-	
+
 	&:last-of-type {
-		margin-bottom: 5.5em; 
+		margin-bottom: 5.5em;
 	}
 }
 
@@ -313,7 +325,7 @@
 
 			.entry-meta {
 				justify-content: initial;
-				margin: .45em 0 .6em;  
+				margin: .45em 0 .6em;
 			}
 
 			.entry-title {
@@ -339,7 +351,7 @@
 @media screen and (max-width: 320px) {
 
 	.search-results .content-area {
-		
+
 		article {
 
 			.entry-thumbnail {

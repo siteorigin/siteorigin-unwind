@@ -1,0 +1,188 @@
+.woocommerce {
+	.woocommerce-info {
+		padding-left: 2em !important;
+		border-top: 0;
+		margin-bottom: 0.5em !important;
+
+		&:before {
+			content: '';
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	form.login,
+	form.checkout_coupon {
+		margin: 0.5em 0;
+		border-radius: 0;
+		border-color: $color__borders;
+		padding: 10px 20px;
+
+		input.input-text {
+			padding: 0.5em;
+			border-radius: 0;
+		}
+
+		.form-row {
+			padding: 1em 0;
+		}
+
+		input.button {
+			background-color: $color__primary-accent;
+			color: #fff;
+			margin-right: 1.2em;
+			border-radius: 0;
+
+			&:hover {
+				background-color: $color__primary-accent-dark;
+			}
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	.woocommerce-checkout {
+		.checkout-details {
+			width: 48%;
+			float: left;
+			margin-top: 2em;
+
+			@media screen and (max-width: 768px) {
+				width: 100%;
+				float: none;
+			}
+
+			h3 {
+				font-size: 1.5em;
+
+				label {
+					font-size: 0.8em;
+				}
+			}
+
+			.form-row {
+				margin-bottom: 1em;
+
+				label {
+					line-height: 1.75;
+					font-size: 0.9em;
+
+					abbr {
+						color: inherit;
+					}
+				}
+
+				input.input-text,
+				textarea.input-text {
+					padding: 0.5em;
+					border-radius: 0;
+				}
+			}
+		}
+
+		.order-details {
+			width: 48%;
+			float: right;
+			border: 1px solid $color__borders;
+			padding: 0 1em;
+			margin-top: 2em;
+
+			@media screen and (max-width: 768px) {
+				width: 100%;
+				float: none;
+			}
+
+			h3 {
+				font-size: 1.5em;
+			}
+
+			.woocommerce-checkout-review-order {
+				.woocommerce-checkout-review-order-table {
+					border: none;
+					border-bottom: 1px solid $color__borders;
+					margin-bottom: 0;
+
+					td {
+						border-top: 1px solid $color__borders;
+					}
+
+					.product-name {
+						width: 70%;
+						padding: 10px 12px 10px 0;
+					}
+
+					.product-total {
+						width: 30%;
+						text-align: right;
+						padding: 10px 0 10px 12px;
+					}
+
+					tfoot{
+						th {
+							border-top: 1px solid $color__borders;
+							padding: 10px 12px 10px 0;
+						}
+
+						td {
+							padding: 10px 0 10px 12px;
+						}
+
+						.cart-subtotal,
+						.order-total {
+							td {
+								text-align: right;
+							}
+						}
+					}
+				}
+
+				#payment {
+					background: none;
+
+					.payment_methods {
+						border-bottom: none;
+						padding: 1em 0;
+
+						li {
+							border-bottom: 1px solid $color__borders;
+							padding: 0.5em 0;
+						}
+					}
+
+					.payment_box {
+						margin: 0;
+						background-color: transparent;
+
+						&:before {
+							border: none;
+						}
+
+						p:first-child {
+							margin-top: 0;
+						}
+					}
+
+					.place-order {
+						float: left;
+						padding: 1em 0;
+
+						.button {
+							background-color: $color__primary-accent;
+							color: #fff;
+							margin-right: 1.2em;
+							border-radius: 0;
+
+							&:hover {
+								background-color: $color__primary-accent-dark;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
