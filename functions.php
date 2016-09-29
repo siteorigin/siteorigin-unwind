@@ -5,14 +5,21 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package siteorigin-unwind
+ * @since siteorigin-unwind 0.1
+ * @license GPL 2.0
  */
 
 define( 'SITEORIGIN_THEME_VERSION', 'dev' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
 define( 'SITEORIGIN_THEME_PREMIUM_URL', 'https://siteorigin.com/downloads/premium/' );
 
-// The settings manager.
+// Load theme specific files.
 include get_template_directory() . '/inc/settings/settings.php';
+require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/inc/settings.php';
+require get_template_directory() . '/inc/template-tags.php';
+include get_template_directory() . '/woocommerce/functions.php';
 
 if ( ! function_exists( 'siteorigin_unwind_setup' ) ) :
 /**
@@ -76,7 +83,7 @@ function siteorigin_unwind_setup() {
 		'video',
 	) );
 
-	// Adding custom image sizes.
+	// Custom image sizes.
 	add_image_size( '300x200-crop', 300 , 200, true );
 	add_image_size( '360x238-crop', 360 , 238, true );
 
@@ -173,33 +180,3 @@ function siteorigin_unwind_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'siteorigin_unwind_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Load the theme settings file
- */
-require get_template_directory() . '/inc/settings.php';
-
-/**
- * Load support for WooCommerce
- */
-include get_template_directory() . '/woocommerce/functions.php';
