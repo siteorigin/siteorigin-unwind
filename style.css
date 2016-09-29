@@ -1000,10 +1000,25 @@ a {
   position: relative;
   width: 100%; }
 
+.site-content {
+  padding: 5.3333em 0 5em; }
+  .site-content::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.search-results .site-content,
+.archive .site-content {
+  padding-top: 4em; }
+
 .content-area {
   float: left;
   margin: 0 -25.61404% 0 0;
   width: 100%; }
+  .no-active-sidebar .content-area {
+    float: none;
+    margin: 0;
+    width: auto; }
   @media (max-width: 768px) {
     .content-area {
       float: none;
@@ -1012,16 +1027,11 @@ a {
 
 .site-main {
   margin: 0 25.61404% 0 0; }
+  .no-active-sidebar .site-main {
+    margin: 0; }
   @media (max-width: 768px) {
     .site-main {
       margin: 0; } }
-
-.site-content {
-  padding: 5.3333em 0 5em; }
-  .site-content::after {
-    clear: both;
-    content: "";
-    display: table; }
 
 .site-content .widget-area {
   float: right;
@@ -1038,14 +1048,6 @@ a {
 .site-footer {
   clear: both;
   width: 100%; }
-
-.no-active-sidebar .content-area {
-  float: none;
-  margin: 0;
-  width: auto; }
-
-.no-active-sidebar .site-main {
-  margin: 0; }
 
 /*--------------------------------------------------------------
 ## Page Settings
@@ -1336,12 +1338,6 @@ a {
   padding-bottom: 5em; }
   .archive-entry:last-of-type {
     margin-bottom: 5.5em; }
-
-/*--------------------------------------------------------------
-# Search Results
---------------------------------------------------------------*/
-.search-results .site-content {
-  padding: 4em 0 5em; }
 
 /*--------------------------------------------------------------
 # Post Loop: Left Medium Thumbnail
