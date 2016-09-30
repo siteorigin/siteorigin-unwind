@@ -159,8 +159,8 @@ function siteorigin_unwind_author_box() { ?>
 				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
 					<?php echo get_the_author(); ?>
 				</a>
-			</span><br />
-			<?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?>
+			</span>
+			<div><?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?></div>
 		</div>
 	</div>
 <?php }

@@ -90,7 +90,7 @@
 		text-decoration: none;
 
 		&:hover {
-			color: $color__text-medium;
+			color: $color__text-main;
 		}
 	}
 }
@@ -203,7 +203,7 @@
 }
 
 .author-box {
-	margin: 50px 0;
+	margin: 2.666em 0 4.3333em;
 
 	.author-avatar {
 		float: left;
@@ -216,21 +216,23 @@
 
 	.author-description {
 		@include clearfix;
-		color: $color__text-medium;
-		font-size: 0.95em;
+		color: $color__text-main;
+		@include font-size(0.9333);
+		margin-left: 2em; 
 		padding-left: 120px;
 
 		.post-author-title {
-			font-weight: bold;
-			font-size: 1em;
-			margin-top: 0;
+			@include font-size(0.9333);
+			display: block;
+			font-weight: 700;
+			margin: 0 0 .35em 0;
 
 			a {
 				color: $color__text-dark;
 				text-decoration: none;
 
 				&:hover {
-					color: $color__primary-accent-dark;
+					color: $color__text-main;
 				}
 			}
 		}

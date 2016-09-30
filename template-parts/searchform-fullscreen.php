@@ -5,6 +5,8 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package siteorigin-unwind
+ * @since siteorigin-unwind 0.2
+ * @license GPL 2.0
  */
 
 ?>
