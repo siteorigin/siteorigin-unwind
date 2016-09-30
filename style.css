@@ -1190,6 +1190,35 @@ a {
     .entry-title a:hover {
       color: #626262; }
 
+.more-link {
+  display: block;
+  color: #2d2d2d;
+  font-size: 13.8656px;
+  font-size: 0.8666rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 70px; }
+  .more-link .more-text {
+    border-top: 2px solid #ebebeb;
+    border-bottom: 2px solid #ebebeb;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 1px;
+    padding: 10px 0; }
+    .more-link .more-text:hover {
+      border: 2px solid #24c48a;
+      padding: 10px 12px; }
+
+.entry {
+  margin-bottom: 5em; }
+
+.archive-entry {
+  border-bottom: 2px solid #f4f4f4;
+  margin-bottom: 5em;
+  padding-bottom: 5em; }
+  .archive-entry:last-of-type {
+    margin-bottom: 5.5em; }
+
 .entry-thumbnail {
   margin: 35px 0; }
   .entry-thumbnail img {
@@ -1217,11 +1246,14 @@ a {
 
 .single-post .sharedaddy .sd-content {
   padding: 30px 0;
-  width: 100%;
-  text-align: center; }
+  text-align: center;
+  width: 100%; }
   .single-post .sharedaddy .sd-content ul {
     display: inline-block; }
 
+/*--------------------------------------------------------------
+## Related Posts
+--------------------------------------------------------------*/
 .yarpp-related .related-posts,
 .related-posts-section .related-posts {
   font-size: 1em;
@@ -1229,8 +1261,9 @@ a {
 
 .yarpp-related ol,
 .related-posts-section ol {
+  list-style: none;
   margin: 0;
-  list-style: none; }
+  padding: 0.3333em 0 0; }
   .yarpp-related ol::after,
   .related-posts-section ol::after {
     clear: both;
@@ -1240,17 +1273,14 @@ a {
   .related-posts-section ol li {
     display: block;
     float: left;
-    width: 31%;
-    margin: 0; }
+    margin: 0;
+    width: 31%; }
     .yarpp-related ol li:first-child,
     .related-posts-section ol li:first-child {
       margin-right: 3.5%; }
     .yarpp-related ol li:last-child,
     .related-posts-section ol li:last-child {
       margin-left: 3.5%; }
-    .yarpp-related ol li:hover .related-post-title,
-    .related-posts-section ol li:hover .related-post-title {
-      color: #21af7b; }
     .yarpp-related ol li a,
     .related-posts-section ol li a {
       text-decoration: none; }
@@ -1259,18 +1289,26 @@ a {
       vertical-align: middle; }
     .yarpp-related ol li .related-post-title,
     .related-posts-section ol li .related-post-title {
-      font-size: 1em;
-      color: #2d2d2d; }
+      font-size: 14.9328px;
+      font-size: 0.9333rem;
+      margin-bottom: 0; }
+      .yarpp-related ol li .related-post-title:hover,
+      .related-posts-section ol li .related-post-title:hover {
+        color: #626262; }
     .yarpp-related ol li .related-post-date,
     .related-posts-section ol li .related-post-date {
-      margin-top: 0;
-      font-size: 0.9em;
-      color: #adadad; }
+      color: #adadad;
+      font-size: 13.8656px;
+      font-size: 0.8666rem;
+      margin-top: 0; }
 
 @media screen and (max-width: 320px) {
   .yarpp-related ol li {
     width: 100%; } }
 
+/*--------------------------------------------------------------
+## Author Box
+--------------------------------------------------------------*/
 .author-box {
   margin: 2.666em 0 4.3333em; }
   .author-box .author-avatar {
@@ -1314,37 +1352,8 @@ a {
     .author-box .author-description .post-author-title a {
       text-align: center; } }
 
-.more-link {
-  display: block;
-  color: #2d2d2d;
-  font-size: 13.8656px;
-  font-size: 0.8666rem;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  margin-top: 70px; }
-  .more-link .more-text {
-    border-top: 2px solid #ebebeb;
-    border-bottom: 2px solid #ebebeb;
-    font-family: "Lato", sans-serif;
-    letter-spacing: 1px;
-    padding: 10px 0; }
-    .more-link .more-text:hover {
-      border: 2px solid #24c48a;
-      padding: 10px 12px; }
-
-.entry {
-  margin-bottom: 5em; }
-
-.archive-entry {
-  border-bottom: 2px solid #f4f4f4;
-  margin-bottom: 5em;
-  padding-bottom: 5em; }
-  .archive-entry:last-of-type {
-    margin-bottom: 5.5em; }
-
 /*--------------------------------------------------------------
-# Post Loop: Left Medium Thumbnail
+## Post Loop: Left Medium Thumbnail
 --------------------------------------------------------------*/
 .left-medium-loop article {
   margin-bottom: 1.75em; }

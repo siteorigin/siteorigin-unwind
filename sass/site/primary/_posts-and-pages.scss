@@ -95,6 +95,43 @@
 	}
 }
 
+.more-link {
+	display: block;
+	color: $color__text-dark;
+	@include font-size(0.8666);
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-top: 70px;
+
+	.more-text {
+		border-top: 2px solid $color__background-hr-dark;
+		border-bottom: 2px solid $color__background-hr-dark;
+		font-family: $font__details;
+		letter-spacing: 1px; 
+		padding: 10px 0;
+
+		&:hover {
+			border: 2px solid $color__link;
+			padding: 10px 12px;
+		}
+	}
+}
+
+.entry {
+	margin-bottom: 5em;
+}
+
+.archive-entry {
+	border-bottom: 2px solid $color__background-hr;
+	margin-bottom: 5em;
+	padding-bottom: 5em;
+
+	&:last-of-type {
+		margin-bottom: 5.5em;
+	}
+}
+
 .entry-thumbnail {
 
 	margin: 35px 0;
@@ -131,31 +168,36 @@
 
 .single-post .sharedaddy .sd-content {
 	padding: 30px 0;
-	width: 100%;
 	text-align: center;
+	width: 100%;
 
 	ul {
 		display: inline-block;
 	}
 }
 
+/*--------------------------------------------------------------
+## Related Posts
+--------------------------------------------------------------*/
 .yarpp-related,
 .related-posts-section {
+
 	.related-posts {
 		font-size: 1em;
 		text-transform: uppercase;
 	}
 
 	ol {
-		margin: 0;
-		list-style: none;
 		@include clearfix;
-
+		list-style: none;
+		margin: 0; 
+		padding: 0.3333em 0 0;
+		
 		li {
 			display: block;
 			float: left;
-			width: 31%;
 			margin: 0;
+			width: 31%;
 
 			&:first-child {
 				margin-right: 3.5%;
@@ -163,13 +205,6 @@
 
 			&:last-child {
 				margin-left: 3.5%;
-			}
-
-			&:hover {
-
-				.related-post-title {
-					color: $color__primary-accent-dark;
-				}
 			}
 
 			a {
@@ -181,27 +216,36 @@
 			}
 
 			.related-post-title {
-				font-size: 1em;
-				color: $color__text-dark;
+				@include font-size(0.9333);
+				margin-bottom: 0;
+				
+				@at-root &:hover {
+					color: $color__text-main;
+				}
 			}
 
 			.related-post-date {
-				margin-top: 0;
-				font-size: 0.9em;
 				color: $color__text-meta;
+				@include font-size(0.8666);
+				margin-top: 0;
 			}
 		}
 	}
 }
 
 @media screen and (max-width: 320px) {
+
 	.yarpp-related {
+	
 		ol li {
 			width: 100%;
 		}
 	}
 }
 
+/*--------------------------------------------------------------
+## Author Box
+--------------------------------------------------------------*/
 .author-box {
 	margin: 2.666em 0 4.3333em;
 
@@ -266,45 +310,8 @@
 	}
 }
 
-.more-link {
-	display: block;
-	color: $color__text-dark;
-	@include font-size(0.8666);
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	margin-top: 70px;
-
-	.more-text {
-		border-top: 2px solid $color__background-hr-dark;
-		border-bottom: 2px solid $color__background-hr-dark;
-		font-family: $font__details;
-		letter-spacing: 1px; 
-		padding: 10px 0;
-
-		&:hover {
-			border: 2px solid $color__link;
-			padding: 10px 12px;
-		}
-	}
-}
-
-.entry {
-	margin-bottom: 5em;
-}
-
-.archive-entry {
-	border-bottom: 2px solid $color__background-hr;
-	margin-bottom: 5em;
-	padding-bottom: 5em;
-
-	&:last-of-type {
-		margin-bottom: 5.5em;
-	}
-}
-
 /*--------------------------------------------------------------
-# Post Loop: Left Medium Thumbnail
+## Post Loop: Left Medium Thumbnail
 --------------------------------------------------------------*/
 .left-medium-loop {
 
