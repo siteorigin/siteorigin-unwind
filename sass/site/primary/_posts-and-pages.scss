@@ -162,12 +162,15 @@
 	}
 }
 
+/*--------------------------------------------------------------
+## Jetpack Sharing
+--------------------------------------------------------------*/
 .share-this {
 	font-size: 1em;
 }
 
 .single-post .sharedaddy .sd-content {
-	padding: 30px 0;
+	padding: 1em 0 1.5em;
 	text-align: center;
 	width: 100%;
 
@@ -354,8 +357,6 @@
 		}
 	}
 }
-
-// Sort our responsive for this loop.
 
 @media screen and (max-width: 320px) {
 

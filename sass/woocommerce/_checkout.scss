@@ -17,7 +17,7 @@
 	form.checkout_coupon {
 		margin: 0.5em 0;
 		border-radius: 0;
-		border-color: $color__borders;
+		border-color: $color__background-hr;
 		padding: 10px 20px;
 
 		input.input-text {
@@ -87,7 +87,7 @@
 		.order-details {
 			width: 48%;
 			float: right;
-			border: 1px solid $color__borders;
+			border: 1px solid $color__background-hr;
 			padding: 0 1em;
 			margin-top: 2em;
 
@@ -103,11 +103,11 @@
 			.woocommerce-checkout-review-order {
 				.woocommerce-checkout-review-order-table {
 					border: none;
-					border-bottom: 1px solid $color__borders;
+					border-bottom: 1px solid $color__background-hr;
 					margin-bottom: 0;
 
 					td {
-						border-top: 1px solid $color__borders;
+						border-top: 1px solid $color__background-hr;
 					}
 
 					.product-name {
@@ -123,7 +123,7 @@
 
 					tfoot{
 						th {
-							border-top: 1px solid $color__borders;
+							border-top: 1px solid $color__background-hr;
 							padding: 10px 12px 10px 0;
 						}
 
@@ -148,7 +148,7 @@
 						padding: 1em 0;
 
 						li {
-							border-bottom: 1px solid $color__borders;
+							border-bottom: 1px solid $color__background-hr;
 							padding: 0.5em 0;
 						}
 					}
