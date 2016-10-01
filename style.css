@@ -2,7 +2,6 @@
 Theme Name: SiteOrigin Unwind
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
-Theme URI: http://siteorigin.com/theme/unwind/
 Description: SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with various plugins. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though Unwind's WooCommerce integration. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
 Version: dev
 License: GNU General Public License v2 or later
@@ -1257,53 +1256,55 @@ a {
 /*--------------------------------------------------------------
 ## Related Posts
 --------------------------------------------------------------*/
-.yarpp-related .related-posts,
-.related-posts-section .related-posts {
-  font-size: 1em;
-  text-transform: uppercase; }
-
-.yarpp-related ol,
-.related-posts-section ol {
-  list-style: none;
-  margin: 0;
-  padding: 0.3333em 0 0; }
-  .yarpp-related ol::after,
-  .related-posts-section ol::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .yarpp-related ol li,
-  .related-posts-section ol li {
-    display: block;
-    float: left;
+.yarpp-related,
+.related-posts-section {
+  padding-bottom: 1.3333em; }
+  .yarpp-related .related-posts,
+  .related-posts-section .related-posts {
+    font-size: 1em;
+    text-transform: uppercase; }
+  .yarpp-related ol,
+  .related-posts-section ol {
+    list-style: none;
     margin: 0;
-    width: 31%; }
-    .yarpp-related ol li:first-child,
-    .related-posts-section ol li:first-child {
-      margin-right: 3.5%; }
-    .yarpp-related ol li:last-child,
-    .related-posts-section ol li:last-child {
-      margin-left: 3.5%; }
-    .yarpp-related ol li a,
-    .related-posts-section ol li a {
-      text-decoration: none; }
-    .yarpp-related ol li img,
-    .related-posts-section ol li img {
-      vertical-align: middle; }
-    .yarpp-related ol li .related-post-title,
-    .related-posts-section ol li .related-post-title {
-      font-size: 14.9328px;
-      font-size: 0.9333rem;
-      margin-bottom: 0; }
-      .yarpp-related ol li .related-post-title:hover,
-      .related-posts-section ol li .related-post-title:hover {
-        color: #626262; }
-    .yarpp-related ol li .related-post-date,
-    .related-posts-section ol li .related-post-date {
-      color: #adadad;
-      font-size: 13.8656px;
-      font-size: 0.8666rem;
-      margin-top: 0; }
+    padding: 0.3333em 0 0; }
+    .yarpp-related ol::after,
+    .related-posts-section ol::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .yarpp-related ol li,
+    .related-posts-section ol li {
+      display: block;
+      float: left;
+      margin: 0;
+      width: 31%; }
+      .yarpp-related ol li:first-child,
+      .related-posts-section ol li:first-child {
+        margin-right: 3.5%; }
+      .yarpp-related ol li:last-child,
+      .related-posts-section ol li:last-child {
+        margin-left: 3.5%; }
+      .yarpp-related ol li a,
+      .related-posts-section ol li a {
+        text-decoration: none; }
+      .yarpp-related ol li img,
+      .related-posts-section ol li img {
+        vertical-align: middle; }
+      .yarpp-related ol li .related-post-title,
+      .related-posts-section ol li .related-post-title {
+        font-size: 14.9328px;
+        font-size: 0.9333rem;
+        margin-bottom: 0; }
+        .yarpp-related ol li .related-post-title:hover,
+        .related-posts-section ol li .related-post-title:hover {
+          color: #626262; }
+      .yarpp-related ol li .related-post-date,
+      .related-posts-section ol li .related-post-date {
+        color: #adadad;
+        font-size: 13.8656px;
+        font-size: 0.8666rem;
+        margin-top: 0; }
 
 @media screen and (max-width: 320px) {
   .yarpp-related ol li {
