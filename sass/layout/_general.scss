@@ -3,9 +3,14 @@
 --------------------------------------------------------------*/
 .container {
 	margin: 0 auto;
-	max-width: 1140px;
+	max-width: 1190px; // 1140px container.
+	padding: 0 25px;
 	position: relative;
 	width: 100%;
+	
+	@media (max-width: 320px) {
+		padding: 0 15px;
+	}
 }
 
 .site-content {
@@ -13,8 +18,9 @@
 	padding: 5.3333em 0 5em;
 }
 
-.search-results .site-content,
-.archive .site-content {
+// Archive and search results site content.
+.archive .site-content,
+.search-results .site-content {
 	padding-top: 4em;
 }
 
@@ -56,7 +62,7 @@
 	
 	@media (max-width: 768px) {
 		float: none;
-		margin-top: 40px;
+		margin-top: 5.3333em;
 		padding-left: 0;
 		width: 100%;		
 	}
