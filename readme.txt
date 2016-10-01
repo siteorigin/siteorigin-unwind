@@ -9,7 +9,7 @@ Tested up to: 4.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Short description.
+SiteOrigin Unwind is our latest, flexible multipurpose feature stunning WooCommerce integration.
 
 == Description ==
 
@@ -20,10 +20,6 @@ SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully respons
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
-
-== Documentation ==
-
-[Documentation](http://siteorigin.com/unwind/documentation) is available on siteorigin.com.
 
 == Support ==
 
@@ -52,8 +48,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/copyleft/gpl.html.
 
 == Images ==
-
-Add image credits.
 
 == Credits ==
 

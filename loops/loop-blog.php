@@ -1,7 +1,12 @@
 <?php
 /**
- * Loop Name: Blog
+ * Loop Name: Blog.
+ *
+ * @package siteorigin-unwind
+ * @since siteorigin-unwind 0.2
+ * @license GPL 2.0
  */
+
 ?>
 
 <?php
