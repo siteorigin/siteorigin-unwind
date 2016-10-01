@@ -1411,8 +1411,13 @@ a {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-.comment-content a {
-  word-wrap: break-word; }
+.comment-content {
+  font-size: 14.9328px;
+  font-size: 0.9333rem; }
+  .comment-content p:last-of-type {
+    margin-bottom: .9em; }
+  .comment-content a {
+    word-wrap: break-word; }
 
 .bypostauthor {
   display: block; }
@@ -1425,14 +1430,14 @@ a {
     display: block;
     color: #626262; }
     .comment-list li.comment .comment-box {
-      padding: 25px 0;
+      padding: 2em 0;
       border-bottom: 1px solid #ebebeb; }
       .comment-list li.comment .comment-box::after {
         clear: both;
         content: "";
         display: table; }
     .comment-list li.comment .comment-container {
-      margin-left: 120px; }
+      margin-left: 6em; }
     .comment-list li.comment.pingback .comment-container {
       margin-left: 0; }
     .comment-list li.comment .avatar-container {
@@ -1440,24 +1445,35 @@ a {
       .comment-list li.comment .avatar-container img {
         display: block;
         border-radius: 50%; }
-    .comment-list li.comment .comment-reply-link {
-      font-weight: bold;
-      color: #2d2d2d;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 0.8em;
-      line-height: 1em; }
-      .comment-list li.comment .comment-reply-link:hover {
-        color: #21af7b; }
     .comment-list li.comment .info {
-      color: #adadad; }
+      padding-bottom: .33em; }
     .comment-list li.comment .author {
       color: #2d2d2d;
-      font-weight: bold;
-      font-size: 1.1em; }
+      font-size: 14.9328px;
+      font-size: 0.9333rem;
+      font-weight: 700;
+      margin-bottom: -1em; }
       .comment-list li.comment .author a {
         color: #2d2d2d;
         text-decoration: none; }
+        .comment-list li.comment .author a:hover {
+          color: #626262; }
+    .comment-list li.comment .date {
+      color: #adadad;
+      font-size: 13.8656px;
+      font-size: 0.8666rem; }
+    .comment-list li.comment .comment-reply-link {
+      color: #2d2d2d;
+      font-family: "Lato", sans-serif;
+      font-size: 12.8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: normal;
+      text-decoration: none;
+      text-transform: uppercase; }
+      .comment-list li.comment .comment-reply-link:hover {
+        color: #24c48a; }
     .comment-list li.comment .children {
       margin-left: 70px;
       margin-top: 50px;

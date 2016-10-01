@@ -1,6 +1,15 @@
-.comment-content a {
-	word-wrap: break-word;
+.comment-content {
+	@include font-size(0.9333);
+	
+	p:last-of-type {
+		margin-bottom: .9em; 
+	}
+
+	a {
+		word-wrap: break-word;
+	}
 }
+
 .bypostauthor {
 	display: block;
 }
@@ -15,13 +24,13 @@
 		color: $color__text-medium;
 
 		.comment-box {
-			padding: 25px 0;
+			padding: 2em 0;
 			border-bottom: 1px solid $color__background-hr-dark;
 			@include clearfix;
 		}
 
 		.comment-container {
-			margin-left: 120px;
+			margin-left: 6em;
 		}
 
 		&.pingback {
@@ -40,33 +49,45 @@
 			}
 		}
 
-		.comment-reply-link {
-			font-weight: bold;
-			color: $color__text-dark;
-			text-decoration: none;
-			text-transform: uppercase;
-			font-size: 0.8em;
-			line-height: 1em;
-
-			&:hover {
-				color: $color__primary-accent-dark;
-			}
-		}
-
 		.info {
-			color: $color__text-meta;
+			padding-bottom: .33em; 
 		}
 
 		.author {
 			color: $color__text-dark;
-			font-weight: bold;
-			font-size: 1.1em;
+			@include font-size(0.9333);
+			font-weight: 700;
+			margin-bottom: -1em; 
 
 			a {
 				color: $color__text-dark;
 				text-decoration: none;
+				
+				&:hover {
+					color: $color__text-main;
+				}
 			}
 		}
+
+		.date {
+			color: $color__text-meta;
+			@include font-size(0.8666);
+		}
+
+		.comment-reply-link {
+			color: $color__text-dark;
+			font-family: $font__details; 
+			@include font-size(0.8);
+			font-weight: 700; 
+			letter-spacing: 1px;
+			line-height: normal;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			&:hover {
+				color: $color__link;
+			}
+		}		
 
 		.children {
 			margin-left: 70px;
