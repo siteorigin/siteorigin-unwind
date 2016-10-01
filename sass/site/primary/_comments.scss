@@ -50,14 +50,15 @@
 		}
 
 		.info {
-			padding-bottom: .33em; 
+			line-height: 1.5;
+			padding-bottom: .45em;
 		}
 
 		.author {
 			color: $color__text-dark;
 			@include font-size(0.9333);
 			font-weight: 700;
-			margin-bottom: -1em; 
+			padding-bottom: .6em;
 
 			a {
 				color: $color__text-dark;
@@ -97,7 +98,8 @@
 	}
 }
 
-.comments-title, .comment-reply-title {
+.comments-title, 
+.comment-reply-title {
 	font-size: 1em;
 	text-transform: uppercase;
 }
@@ -109,79 +111,86 @@
 .comment-reply-title {
 	border-bottom: 1px solid $color__background-hr-dark;
 	@include font-size(0.9333);
-	margin-top: 50px;
-	padding-bottom: 15px;
+	margin-top: 3.8em;
+	padding-bottom: 0.8666em;
 	text-transform: uppercase;
+	
+	#cancel-comment-reply-link {
+		color: $color__text-meta; 
+		font-family: $font__details; 
+		@include font-size(0.8);
+		font-weight: normal;
+		letter-spacing: 1px; 
+		line-height: normal;
+		text-decoration: none;
+		margin-left: .25em;
+		
+		&:hover {
+			color: $color__link;
+		}
+	}	
 }
 
 #commentform {
 
+	p {
+		line-height: normal;
+		margin-bottom: 2em; 
+	}
+
+	label {
+		color: $color__text-dark;
+		display: block;
+		@include font-size(0.8666);
+		line-height: normal;
+		margin-bottom: .5em; 
+	}
+
+	textarea {
+		width: 100%;
+	}			
+
 	.comment-form-author, 
 	.comment-form-email, 
 	.comment-form-url {
-		display: block;
+		box-sizing: border-box;
 		float: left;
-		width: 33.333%;
-		margin: 0 0 20px 0;
+		width: 31%;
+
+		@media (max-width: 768px) {
+			width: 100%;
+		}
 
 		input {
-			color: $color__text-medium;
 			width: 100%;
-			font-size: 0.85em;
-			padding: 8px 30px;
-			border-radius: 0px;
 		}
 	}
 
-	.comment-form-comment {
+	.comment-form-email {
+		margin: 0 3.5% 2em;
 		
-		label {
-			color: $color__text-dark;
-			display: block;
-			@include font-size(0.8666);
-			line-height: normal;
-			margin-bottom: 0.6666em; 
-		}
-
-		textarea {
-			color: $color__text-medium;
-			width: 100%;
-			padding: 15px 30px;
-			border-radius: 0px;
-			display: block;
-		}
+		@media (max-width: 768px) {
+			margin: 0 0 2em;
+		} 
 	}
 
 	.comment-notes, 
 	.logged-in-as {
-		color: $color__text-meta;
 		@include font-size(0.8666);
-		margin: 10px 0;
+		margin: .66em 0 2.25em;
 		
 		a {
 			color: $color__text-main;
-			font-family: $font__details;
-			text-transform: uppercase;
 			text-decoration: none;
-		}
-		
-		&, 
-		code {
+			
+			&:hover {
+				color: $color__text-dark;
+			}
 		}
 	}
 
 	.form-submit {
 		margin: 2em 0 0 0;
 		clear: both;
-	}
-
-	input, 
-	textarea {
-		background-color: #ffffff;
-
-		&:focus {
-			background-color: #fcfcfc;
-			outline: none;
-		}
 	}
 }

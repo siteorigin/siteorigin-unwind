@@ -525,6 +525,7 @@ input[type="color"] {
   padding: .43em 1.7857em; }
 
 textarea {
+  outline: none;
   padding: 0.9285em 1.7857em;
   width: 100%; }
 
@@ -1302,6 +1303,7 @@ a {
       .related-posts-section ol li .related-post-title {
         font-size: 14.9328px;
         font-size: 0.9333rem;
+        line-height: normal;
         margin-bottom: 0; }
         .yarpp-related ol li .related-post-title:hover,
         .related-posts-section ol li .related-post-title:hover {
@@ -1453,13 +1455,14 @@ a {
         display: block;
         border-radius: 50%; }
     .comment-list li.comment .info {
-      padding-bottom: .33em; }
+      line-height: 1.5;
+      padding-bottom: .45em; }
     .comment-list li.comment .author {
       color: #2d2d2d;
       font-size: 14.9328px;
       font-size: 0.9333rem;
       font-weight: 700;
-      margin-bottom: -1em; }
+      padding-bottom: .6em; }
       .comment-list li.comment .author a {
         color: #2d2d2d;
         text-decoration: none; }
@@ -1486,7 +1489,8 @@ a {
       margin-top: 50px;
       padding: 0; }
 
-.comments-title, .comment-reply-title {
+.comments-title,
+.comment-reply-title {
   font-size: 1em;
   text-transform: uppercase; }
 
@@ -1497,65 +1501,75 @@ a {
   border-bottom: 1px solid #ebebeb;
   font-size: 14.9328px;
   font-size: 0.9333rem;
-  margin-top: 50px;
-  padding-bottom: 15px;
+  margin-top: 3.8em;
+  padding-bottom: 0.8666em;
   text-transform: uppercase; }
+  .comment-reply-title #cancel-comment-reply-link {
+    color: #adadad;
+    font-family: "Lato", sans-serif;
+    font-size: 12.8px;
+    font-size: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: normal;
+    text-decoration: none;
+    margin-left: .25em; }
+    .comment-reply-title #cancel-comment-reply-link:hover {
+      color: #24c48a; }
 
-#commentform .comment-form-author,
-#commentform .comment-form-email,
-#commentform .comment-form-url {
-  display: block;
-  float: left;
-  width: 33.333%;
-  margin: 0 0 20px 0; }
-  #commentform .comment-form-author input,
-  #commentform .comment-form-email input,
-  #commentform .comment-form-url input {
-    color: #626262;
-    width: 100%;
-    font-size: 0.85em;
-    padding: 8px 30px;
-    border-radius: 0px; }
+#commentform p {
+  line-height: normal;
+  margin-bottom: 2em; }
 
-#commentform .comment-form-comment label {
+#commentform label {
   color: #2d2d2d;
   display: block;
   font-size: 13.8656px;
   font-size: 0.8666rem;
   line-height: normal;
-  margin-bottom: 0.6666em; }
+  margin-bottom: .5em; }
 
-#commentform .comment-form-comment textarea {
-  color: #626262;
-  width: 100%;
-  padding: 15px 30px;
-  border-radius: 0px;
-  display: block; }
+#commentform textarea {
+  width: 100%; }
+
+#commentform .comment-form-author,
+#commentform .comment-form-email,
+#commentform .comment-form-url {
+  box-sizing: border-box;
+  float: left;
+  width: 31%; }
+  @media (max-width: 768px) {
+    #commentform .comment-form-author,
+    #commentform .comment-form-email,
+    #commentform .comment-form-url {
+      width: 100%; } }
+  #commentform .comment-form-author input,
+  #commentform .comment-form-email input,
+  #commentform .comment-form-url input {
+    width: 100%; }
+
+#commentform .comment-form-email {
+  margin: 0 3.5% 2em; }
+  @media (max-width: 768px) {
+    #commentform .comment-form-email {
+      margin: 0 0 2em; } }
 
 #commentform .comment-notes,
 #commentform .logged-in-as {
-  color: #adadad;
   font-size: 13.8656px;
   font-size: 0.8666rem;
-  margin: 10px 0; }
+  margin: .66em 0 2.25em; }
   #commentform .comment-notes a,
   #commentform .logged-in-as a {
     color: #626262;
-    font-family: "Lato", sans-serif;
-    text-transform: uppercase;
     text-decoration: none; }
+    #commentform .comment-notes a:hover,
+    #commentform .logged-in-as a:hover {
+      color: #2d2d2d; }
 
 #commentform .form-submit {
   margin: 2em 0 0 0;
   clear: both; }
-
-#commentform input,
-#commentform textarea {
-  background-color: #ffffff; }
-  #commentform input:focus,
-  #commentform textarea:focus {
-    background-color: #fcfcfc;
-    outline: none; }
 
 /*--------------------------------------------------------------
 ## Site Footer

@@ -221,6 +221,7 @@
 
 			.related-post-title {
 				@include font-size(0.9333);
+				line-height: normal;
 				margin-bottom: 0;
 				
 				@at-root &:hover {
