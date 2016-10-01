@@ -521,6 +521,7 @@ input[type="datetime-local"],
 input[type="color"] {
   font-size: 14.9328px;
   font-size: 0.9333rem;
+  outline: none;
   padding: .43em 1.7857em; }
 
 textarea {
@@ -949,8 +950,7 @@ a {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5em;
-  /* Make sure select elements fit in widgets. */ }
+  margin: 0 0 1.5em; }
   .widget select {
     max-width: 100%; }
 
@@ -960,6 +960,9 @@ a {
   font-size: 0.8666rem;
   text-transform: uppercase; }
 
+/*--------------------------------------------------------------
+## Sidebar Widgets
+--------------------------------------------------------------*/
 #secondary a {
   color: #626262;
   text-decoration: none; }

@@ -42,6 +42,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"] {
 	@include font-size(0.9333);
+	outline: none;
 	padding: .43em 1.7857em;
 }
 
