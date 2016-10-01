@@ -49,10 +49,18 @@ You should have received a copy of the GNU General Public License along with thi
 
 == Images ==
 
+Theme screenshot image with lake and mountains sourced from https://unsplash.com by Blake Richard Verdoorn (https://unsplash.com/photos/eRQPWFijcx4) licensed under CC0 1.0 Universal (CC0 1.0) (http://creativecommons.org/publicdomain/zero/1.0/).
+
+Theme screenshot image with scooter sourced from https://pixabay.com by Unsplash (https://pixabay.com/en/scooter-italy-vintage-old-green-593155/) licensed under CC0 Public Domain (https://creativecommons.org/publicdomain/zero/1.0/).
+
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+
+== SiteOrigin Settings ==
+
+This theme makes use of the SiteOrigin Settings Framework contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 
 
 == Design ==
 
