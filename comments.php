@@ -8,6 +8,8 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package siteorigin-unwind
+ * @since siteorigin-unwind 0.1
+ * @license GPL 2.0
  */
 
 /*
@@ -51,6 +53,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'callback' => 'siteorigin_unwind_comment',
+					'avatar_size' => 70,
 					'short_ping' => true,
 				) );
 			?>
