@@ -262,56 +262,6 @@
 }
 
 /*--------------------------------------------------------------
-## Full Screen Search
---------------------------------------------------------------*/
-#fullscreen-search {
-	background: rgba(255, 255, 255, 0.97);
-	display: none;
-	left: 0;
-	position: absolute;
-	top: 60px;
-	z-index: 10;
-	
-	form {
-		position: absolute;
-		top: 30%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-
-		h3 {
-			color: $color__text-main;
-			font-family: $font__details;
-			@include font-size(1.0666);
-			font-weight: 400;
-			text-align: center; 
-			text-transform: uppercase; 
-		}
-
-		input[type="search"] {
-			background: transparent;
-			border: 0;
-			color: $color__text-main; 
-			@include font-size(2.1333);
-			outline: none;
-			
-			@media (max-width: 768px) {
-				font-size: 24px;
-			}
-		}
-
-		input[type="submit"] {
-			display: none;
-		}
-
-		.search-icon {
-			font-size: 36px;
-			position: absolute;
-			right: 0;
-		}
-	}
-}
-
-/*--------------------------------------------------------------
 ## Posts, Post and Comment Navigation
 --------------------------------------------------------------*/
 .comment-navigation,

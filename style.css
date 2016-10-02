@@ -336,7 +336,7 @@ blockquote {
     margin-bottom: 0; }
 
 address {
-  margin: 0 0 1.5em; }
+  margin: 0 0 2.25em; }
 
 pre {
   background: #eee;
@@ -344,7 +344,7 @@ pre {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 1.6;
-  margin-bottom: 1.6em;
+  margin-bottom: 2.25em;
   max-width: 100%;
   overflow: auto;
   padding: 1.6em; }
@@ -431,6 +431,7 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+.button, .page-links span:not(.page-links-title),
 button,
 input[type="button"],
 input[type="reset"],
@@ -448,6 +449,7 @@ input[type="submit"] {
   -moz-transition: 0.085s;
   transition: 0.085s;
   text-transform: uppercase; }
+  .button:hover, .page-links span:hover:not(.page-links-title),
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
@@ -455,7 +457,9 @@ input[type="submit"] {
     background: #fff;
     border-color: #24c48a;
     color: #24c48a; }
-  button:active, button:focus,
+  .button:active, .page-links span:active:not(.page-links-title), .button:focus, .page-links span:focus:not(.page-links-title),
+  button:active,
+  button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
   input[type="reset"]:active,
@@ -737,46 +741,6 @@ a {
           text-transform: uppercase; }
         #mobile-navigation ul ul li ul {
           display: none; }
-
-/*--------------------------------------------------------------
-## Full Screen Search
---------------------------------------------------------------*/
-#fullscreen-search {
-  background: rgba(255, 255, 255, 0.97);
-  display: none;
-  left: 0;
-  position: absolute;
-  top: 60px;
-  z-index: 10; }
-  #fullscreen-search form {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    #fullscreen-search form h3 {
-      color: #626262;
-      font-family: "Lato", sans-serif;
-      font-size: 17.0656px;
-      font-size: 1.0666rem;
-      font-weight: 400;
-      text-align: center;
-      text-transform: uppercase; }
-    #fullscreen-search form input[type="search"] {
-      background: transparent;
-      border: 0;
-      color: #626262;
-      font-size: 34.1328px;
-      font-size: 2.1333rem;
-      outline: none; }
-      @media (max-width: 768px) {
-        #fullscreen-search form input[type="search"] {
-          font-size: 24px; } }
-    #fullscreen-search form input[type="submit"] {
-      display: none; }
-    #fullscreen-search form .search-icon {
-      font-size: 36px;
-      position: absolute;
-      right: 0; }
 
 /*--------------------------------------------------------------
 ## Posts, Post and Comment Navigation
@@ -1072,7 +1036,7 @@ a {
 .site-content .widget-area {
   float: right;
   overflow: hidden;
-  padding-left: 2em;
+  padding-left: 3.3333em;
   width: 25.61404%; }
   @media (max-width: 768px) {
     .site-content .widget-area {
@@ -1138,6 +1102,46 @@ a {
       text-align: center; }
 
 /*--------------------------------------------------------------
+## Full Screen Search
+--------------------------------------------------------------*/
+#fullscreen-search {
+  background: rgba(255, 255, 255, 0.97);
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 60px;
+  z-index: 10; }
+  #fullscreen-search form {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    #fullscreen-search form h3 {
+      color: #626262;
+      font-family: "Lato", sans-serif;
+      font-size: 17.0656px;
+      font-size: 1.0666rem;
+      font-weight: 400;
+      text-align: center;
+      text-transform: uppercase; }
+    #fullscreen-search form input[type="search"] {
+      background: transparent;
+      border: 0;
+      color: #626262;
+      font-size: 34.1328px;
+      font-size: 2.1333rem;
+      outline: none; }
+      @media (max-width: 768px) {
+        #fullscreen-search form input[type="search"] {
+          font-size: 24px; } }
+    #fullscreen-search form input[type="submit"] {
+      display: none; }
+    #fullscreen-search form .search-icon {
+      font-size: 36px;
+      position: absolute;
+      right: 0; }
+
+/*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
 .sticky {
@@ -1155,10 +1159,6 @@ a {
 .entry-content,
 .entry-summary {
   margin: 2em 0 0; }
-
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em; }
 
 .page-title {
   font-family: "Lato", sans-serif;
@@ -1225,6 +1225,22 @@ a {
     text-decoration: none; }
     .entry-title a:hover {
       color: #626262; }
+
+.page-links {
+  clear: both;
+  margin: 0 0 4.6666em; }
+  .page-links .page-links-title {
+    color: #2d2d2d; }
+  .page-links a {
+    text-decoration: none; }
+  .page-links span:not(.page-links-title) {
+    background: #fff;
+    border-color: #24c48a;
+    color: #24c48a;
+    margin-right: 0.1333em; }
+  .page-links .page-links-title ~ a span {
+    border-color: #dadada;
+    color: #2d2d2d; }
 
 .more-link {
   display: block;
@@ -1398,14 +1414,14 @@ a {
 ## Post Loop: Left Medium Thumbnail
 --------------------------------------------------------------*/
 .left-medium-loop article {
-  margin-bottom: 1.75em; }
+  margin-bottom: 3.25em; }
   .left-medium-loop article::after {
     clear: both;
     content: "";
     display: table; }
   .left-medium-loop article .entry-thumbnail {
     float: left;
-    margin: 0 0 4em 0;
+    margin: 0;
     width: 42.452830188679%; }
   .left-medium-loop article .entry-content {
     float: right;

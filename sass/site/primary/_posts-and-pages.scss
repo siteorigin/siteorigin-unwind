@@ -21,11 +21,6 @@
 	margin: 2em 0 0;
 }
 
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
 .page-title {
 	font-family: $font__details;
 	@include font-size(0.8666);
@@ -92,6 +87,32 @@
 		&:hover {
 			color: $color__text-main;
 		}
+	}
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 4.6666em;
+	
+	.page-links-title {
+		color: $color__text-dark;
+	}
+	
+	a {
+		text-decoration: none;
+	}	
+	
+	span:not(.page-links-title) {
+		@extend .button;
+		background: $color__background-button;
+		border-color: $color__border-button-hover;
+		color: $color__link;
+		margin-right: 0.1333em; 
+	}
+
+	.page-links-title ~ a span {
+		border-color: $color__border-button;
+		color: $color__text-dark;
 	}
 }
 
@@ -322,11 +343,11 @@
 
 	article {
 		@include clearfix;
-		margin-bottom: 1.75em; 
+		margin-bottom: 3.25em; 
 
 		.entry-thumbnail {
 			float: left;
-			margin: 0 0 4em 0;
+			margin: 0;
 			width: 42.452830188679%;
 		}
 

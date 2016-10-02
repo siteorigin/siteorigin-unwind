@@ -56,6 +56,9 @@ function siteorigin_unwind_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	/*
+	 * Enable support for the custom logo.
+	 */
 	add_theme_support( 'custom-logo' );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -132,7 +135,7 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_premium_setup' );
  * @global int $content_width
  */
 function siteorigin_unwind_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'siteorigin_unwind_content_width', 848 );
+	$GLOBALS['content_width'] = apply_filters( 'siteorigin_unwind_content_width', 828 );
 }
 add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );
 
