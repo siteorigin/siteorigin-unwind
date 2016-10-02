@@ -119,6 +119,10 @@ function siteorigin_unwind_post_meta() {
 		$comments = NULL;
 	} ?>
 
+	<?php if ( is_sticky() && is_home() && ! is_paged() ) {
+		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
+	} ?>	
+
 	<span class="entry-date"><?php the_time( 'M d, Y' ); ?></span>
 
 	<?php if ( $categories_list && siteorigin_unwind_categorized_blog() ) {
