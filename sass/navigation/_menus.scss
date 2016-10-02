@@ -106,15 +106,18 @@
 	}
 }
 
+/*--------------------------------------------------------------
+## Social and Search Icons
+--------------------------------------------------------------*/
 .social-search {
 	float: right;
 
 	.search-toggle {
 		background: transparent;
 		border: none;
-		height: 20px;
-		margin: 20px 0;
+		line-height: 60px; 
 		outline: none;
+		padding: 0;
 
 		.open {
 			display: block;
