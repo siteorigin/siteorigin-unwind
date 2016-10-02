@@ -269,6 +269,20 @@ function siteorigin_unwind_categorized_blog() {
 	}
 }
 
+if ( ! function_exists( 'siteorigin_unwind_tag_cloud' ) ) :
+/**
+ * Filter the Tag Cloud widget.
+ */
+function siteorigin_unwind_tag_cloud( $args ) {
+
+    $args['unit'] = 'em';
+    $args['largest'] = 0.9285; 
+    $args['smallest'] = 0.9285;
+    return $args;
+}
+endif;
+add_filter( 'widget_tag_cloud_args', 'siteorigin_unwind_tag_cloud' );
+
 /**
  * Flush out the transients used in siteorigin_unwind_categorized_blog.
  */

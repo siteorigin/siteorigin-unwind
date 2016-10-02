@@ -964,26 +964,31 @@ a {
   font-size: 14.9328px;
   font-size: 0.9333rem; }
 
-#secondary a {
+#secondary .widget a,
+#colophon .widget a {
   color: #626262;
   text-decoration: none; }
-  #secondary a:hover {
+  #secondary .widget a:hover,
+  #colophon .widget a:hover {
     color: #2d2d2d; }
 
-#secondary .widget {
-  margin-bottom: 4em; }
-
-#secondary ul {
+#secondary .widget ul,
+#colophon .widget ul {
   list-style: none;
   margin: 0; }
-  #secondary ul li {
+  #secondary .widget ul li,
+  #colophon .widget ul li {
     border-bottom: 1px solid #f4f4f4;
     font-size: 13.8656px;
     font-size: 0.8666rem;
     line-height: normal;
     padding: 1.25em 0; }
-    #secondary ul li:first-of-type {
+    #secondary .widget ul li:first-of-type,
+    #colophon .widget ul li:first-of-type {
       padding-top: 0; }
+
+#secondary .widget {
+  margin-bottom: 4em; }
 
 /*--------------------------------------------------------------
 ## Recent Posts Widget
@@ -1001,6 +1006,13 @@ a {
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
+.widget_tag_cloud a {
+  border: 1px solid #dadada;
+  display: inline-block;
+  margin: 0 .107em .45em 0;
+  padding: .7642em .9785em .6213em;
+  line-height: normal; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

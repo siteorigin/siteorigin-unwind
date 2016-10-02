@@ -7,14 +7,11 @@
 		margin: 0 0 1.6em;
 		text-transform: uppercase;
 	}
-
+	
+	// Set the font size of elements below the widget title to 14px.
 	~ * {
 		@include font-size(0.9333);
-	}		
-	
-}
-
-#secondary {
+	}
 
 	a {
 		color: $color__text-medium;
@@ -23,10 +20,6 @@
 		&:hover {
 			color: $color__text-dark;
 		} 
-	}
-
-	.widget {
-		margin-bottom: 4em; 
 	}
 
 	ul {
@@ -43,6 +36,13 @@
 				padding-top: 0; 
 			}
 		}
+	}				
+}
+
+#secondary {
+
+	.widget {
+		margin-bottom: 4em; 
 	}
 }
 
@@ -67,3 +67,14 @@
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
+.widget_tag_cloud {
+
+	a {
+		border: 1px solid $color__border-button;
+		display: inline-block;
+		margin: 0 .107em .45em 0;
+		padding: .7642em .9785em .6213em;
+		line-height: normal;
+	}
+}
+
