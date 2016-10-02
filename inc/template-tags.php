@@ -109,11 +109,11 @@ function siteorigin_unwind_post_meta() {
 
 	if ( comments_open() ) {
 		if ( $num_comments == 0 ) {
-			$comments = esc_html__( 'Post a Comment' );
+			$comments = esc_html__( 'Post a Comment', 'siteorigin-unwind' );
 		} elseif ( $num_comments > 1 ) {
-			$comments = $num_comments . esc_html__( ' Comments' );
+			$comments = $num_comments . esc_html__( ' Comments', 'siteorigin-unwind' );
 		} else {
-			$comments = esc_html__( '1 Comment' );
+			$comments = esc_html__( '1 Comment', 'siteorigin-unwind' );
 		}
 	} else {
 		$comments = NULL;
