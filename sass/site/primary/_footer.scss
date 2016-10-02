@@ -1,33 +1,42 @@
 #colophon {
 	border-top: 1px solid $color__background-hr-dark;
-	width: $size__site-main;
 
 	.widgets {
 		@include clearfix();
-		overflow: hidden;
-		padding: 30px 0;
-		width: 100%;
+		padding: 5em 0;
 
-		.widget-wrapper {
-			box-sizing: border-box;
+		.widget {
+			box-sizing: content-box;
+			margin-right: 2.5%; 
 			float: left;
-			padding: 0 10px;
-			padding-bottom: 9999px;
-			margin-bottom: -9999px;
+			
+			&:last-of-type {
+				margin-right: 0 !important; 
+			}
+			
+			@media (max-width: 768px) {
+				float: none;
+				margin-right: 0; 
+			} 
 		}
+
+		&.widgets-1 .widget {
+			margin-right: 0;
+			width: 100%; 
+		}		
+
+		&.widgets-2 .widget {
+			width: 48.75%; 
+		}
+
+		&.widgets-3 .widget {
+			width: 31.66%; 
+		}		
 
 		@for $i from 1 through 10 {
-			&.widgets-#{$i} .widget-wrapper{
-				width: 100% / $i;
-			}
-		}
-
-		@media (max-width: 768px) {
-			.widget-wrapper {
-				float: none;
-				width: 100% !important;
-				padding-bottom: 0;
-				margin-bottom: 0;
+			$margin: ($i - 1) * 2.5;
+			&.widgets-#{$i} .widget {
+				width: (100% - $margin) / $i;
 			}
 		}
 	}

@@ -1,20 +1,19 @@
-.widget {
-	margin: 0 0 1.5em;
+#secondary .widget, 
+#colophon .widget {
 
-	select {
-		max-width: 100%;
+	.widget-title {
+		color: $color__text-medium;
+		@include font-size(0.8666);
+		margin: 0 0 1.6em;
+		text-transform: uppercase;
 	}
+
+	~ * {
+		@include font-size(0.9333);
+	}		
+	
 }
 
-.widget-title {
-	color: $color__text-medium;
-	@include font-size(0.8666);
-	text-transform: uppercase;
-}
-
-/*--------------------------------------------------------------
-## Sidebar Widgets
---------------------------------------------------------------*/
 #secondary {
 
 	a {
@@ -28,10 +27,6 @@
 
 	.widget {
 		margin-bottom: 4em; 
-	}
-	
-	.widget-title {
-		margin: 0 0 1.6em;
 	}
 
 	ul {
@@ -50,3 +45,25 @@
 		}
 	}
 }
+
+
+/*--------------------------------------------------------------
+## Recent Posts Widget
+--------------------------------------------------------------*/
+.widget_recent_entries {
+
+	a {
+		padding-bottom: 0.5em; 
+	}
+	
+	.post-date {
+		color: $color__text-meta;
+		display: block;
+		@include font-size(0.8);
+		padding-top: 0.5em;
+	}
+}
+
+/*--------------------------------------------------------------
+## Tag Cloud Widget
+--------------------------------------------------------------*/
