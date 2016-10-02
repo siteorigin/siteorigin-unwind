@@ -286,7 +286,7 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
 	$defaults['branding_logo_retina'] = false;
 	$defaults['branding_site_description'] = false;
-	$defaults['branding_accent'] = '#25c48a';
+	$defaults['branding_accent'] = '#24c48a';
 	$defaults['branding_accent_dark'] = '#21af7b';
 
 	// The masthead defaults
