@@ -3,7 +3,7 @@
  * Loop Name: Left Aligned Medium.
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 0.2
+ * @since siteorigin-unwind 0.9
  * @license GPL 2.0
  */
 
