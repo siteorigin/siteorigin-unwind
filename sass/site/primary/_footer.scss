@@ -4,6 +4,13 @@
 	.widgets {
 		@include clearfix();
 		padding: 5em 0;
+		
+		@for $i from 1 through 10 {
+			$margin: ($i - 1) * 2.5;
+			&.widgets-#{$i} .widget {
+				width: (100% - $margin) / $i;
+			}
+		}		
 
 		.widget {
 			box-sizing: content-box;
@@ -16,29 +23,10 @@
 			
 			@media (max-width: 768px) {
 				float: none;
-				margin-right: 0; 
-			} 
-		}
-
-		&.widgets-1 .widget {
-			margin-right: 0;
-			width: 100%; 
+				margin: 0 0 4em;
+				width: 100% !important; 
+			}			
 		}		
-
-		&.widgets-2 .widget {
-			width: 48.75%; 
-		}
-
-		&.widgets-3 .widget {
-			width: 31.66%; 
-		}		
-
-		@for $i from 1 through 10 {
-			$margin: ($i - 1) * 2.5;
-			&.widgets-#{$i} .widget {
-				width: (100% - $margin) / $i;
-			}
-		}
 	}
 
 	.site-info {
