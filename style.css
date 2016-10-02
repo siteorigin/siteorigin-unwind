@@ -715,7 +715,7 @@ a {
       #mobile-navigation ul li .dropdown-toggle {
         background: transparent;
         border: 0;
-        content: "";
+        content: "Open";
         height: 30px;
         padding: 6px;
         position: absolute;
@@ -726,7 +726,7 @@ a {
         box-shadow: none; }
         #mobile-navigation ul li .dropdown-toggle:after {
           color: #626262;
-          content: "d";
+          content: "\2193";
           font-size: 15px;
           line-height: 42px;
           position: relative;
