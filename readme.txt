@@ -2,7 +2,7 @@
 
 Contributors: siteorigin
 
-Tags: one column, two columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, sticky-post, theme-options, translation-ready, blog, ecommerce
+Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, sticky-post, theme-options, translation-ready, blog, e-commerce
 
 Requires at least: 4.0
 Tested up to: 4.6.1
