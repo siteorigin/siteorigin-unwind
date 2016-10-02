@@ -1162,12 +1162,12 @@ a {
       @media (max-width: 768px) {
         #fullscreen-search form input[type="search"] {
           font-size: 24px; } }
-    #fullscreen-search form input[type="submit"] {
-      display: none; }
-    #fullscreen-search form .search-icon {
-      font-size: 36px;
-      position: absolute;
-      right: 0; }
+    #fullscreen-search form button svg {
+      font-size: 16px;
+      font-size: 1rem;
+      fill: #626262;
+      height: 1.2666em;
+      width: 1.3333em; }
 
 /*--------------------------------------------------------------
 ## Posts and pages

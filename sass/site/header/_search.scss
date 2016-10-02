@@ -33,14 +33,14 @@
 			}
 		}
 
-		input[type="submit"] {
-			display: none;
-		}
-
-		.search-icon {
-			font-size: 36px;
-			position: absolute;
-			right: 0;
+		button {
+			
+			svg {
+				@include font-size(1);
+				fill: $color__text-main;
+				height: 1.2666em;
+				width: 1.3333em;
+			}
 		}
 	}
 }
