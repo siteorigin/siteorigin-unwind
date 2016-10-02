@@ -50,56 +50,7 @@ function siteorigin_unwind_settings_init() {
 					'live' => true,
 				),
 			)
-		),
-
-		'fonts'      => array(
-			'title'  => __( 'Fonts', 'siteorigin-unwind' ),
-			'fields' => array(
-
-				// The font families used.
-				'main'        => array(
-					'type'        => 'font',
-					'label'       => __( 'Main Font', 'siteorigin-unwind' ),
-					'description' => __( 'Main font used on your site.', 'siteorigin-unwind' ),
-					'live'        => true,
-				),
-				'headings'    => array(
-					'type'        => 'font',
-					'label'       => __( 'Headings font', 'siteorigin-unwind' ),
-					'description' => __( 'Font used for headings.', 'siteorigin-unwind' ),
-					'live'        => true,
-				),
-				'details'     => array(
-					'type'        => 'font',
-					'label'       => __( 'Details font', 'siteorigin-unwind' ),
-					'description' => __( 'Font used for smaller details.', 'siteorigin-unwind' ),
-					'live'        => true,
-				),
-				// The colors
-
-				'text_dark'   => array(
-					'type'  => 'color',
-					'label' => __( 'Dark Text Color', 'siteorigin-unwind' ),
-					'live'  => true,
-				),
-				'text_medium' => array(
-					'type'  => 'color',
-					'label' => __( 'Medium Text Color', 'siteorigin-unwind' ),
-					'live'  => true,
-				),
-				'text_light'  => array(
-					'type'  => 'color',
-					'label' => __( 'Light Text Color', 'siteorigin-unwind' ),
-					'live'  => true,
-				),
-				'text_meta'   => array(
-					'type'  => 'color',
-					'label' => __( 'Meta Text Color', 'siteorigin-unwind' ),
-					'live'  => true,
-				),
-
-			),
-		),		
+		),	
 
 		'masthead' => array(
 			'title' => __('Header', 'siteorigin-unwind'),
@@ -112,11 +63,10 @@ function siteorigin_unwind_settings_init() {
 					'plugin_name' => __('SiteOrigin Widgets Bundle', 'siteorigin-unwind'),
 					'description' => __('Add social icons to the masthead.', 'siteorigin-unwind'),
 				),
-				'bottom_margin' => array(
-					'type' => 'text',
-					'label' => __('Bottom Margin', 'siteorigin-unwind'),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
-					'live' => true,
+				'bottom_margin'	=> array(
+					'type'	=> 'measurement',
+					'label'	=> __( 'Bottom Margin', 'siteorigin-unwind' ),
+					'live'	=> true,
 				),
 			)
 		),
@@ -176,25 +126,22 @@ function siteorigin_unwind_settings_init() {
 					'description' => __("Constrain the footer width", 'siteorigin-unwind'),
 				),
 
-				'top_padding' => array(
-					'type' => 'text',
-					'label' => __('Top Padding', 'siteorigin-unwind'),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
-					'live' => true,
+				'top_padding'	=> array(
+					'type'	=> 'measurement',
+					'label'	=> __( 'Top Padding', 'siteorigin-unwind' ),
+					'live'	=> true,
 				),
 
-				'side_padding' => array(
-					'type' => 'text',
-					'label' => __('Side Padding', 'siteorigin-unwind'),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
-					'live' => true,
+				'side_padding'	=> array(
+					'type'	=> 'measurement',
+					'label'	=> __( 'Side Padding', 'siteorigin-unwind' ),
+					'live'	=> true,
 				),
 
-				'top_margin' => array(
-					'type' => 'text',
-					'label' => __('Top Margin', 'siteorigin-unwind'),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
-					'live' => true,
+				'top_margin'	=> array(
+					'type'	=> 'measurement',
+					'label'	=> __( 'Top Margin', 'siteorigin-unwind' ),
+					'live'	=> true,
 				),
 			),
 		),
@@ -202,39 +149,6 @@ function siteorigin_unwind_settings_init() {
 	) ) );
 }
 add_action('siteorigin_settings_init', 'siteorigin_unwind_settings_init');
-
-/**
- * Tell the settings framework which settings we're using as fonts
- *
- * @param $settings
- *
- * @return array
- */
-function siteorigin_unwind_font_settings( $settings ) {
-
-	$settings['fonts_main']     = array(
-		'name'    => 'Merriweather',
-		'weights' => array(
-			400,
-			700
-		),
-	);
-	$settings['fonts_headings'] = array(
-		'name'    => 'Merriweather',
-		'weights' => array(
-			400
-		),
-	);	
-	$settings['fonts_details'] = array(
-		'name'    => 'Lato',
-		'weights' => array(
-			400
-		),
-	);	
-
-	return $settings;
-}
-add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_settings' );
 
 /**
  * Add custom CSS for the theme settings
@@ -307,73 +221,3 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults');
-
-/**
- * Setup Page Settings for SiteOrigin Unwind
- */
-function siteorigin_unwind_setup_page_settings(){
-
-	SiteOrigin_Settings_Page_Settings::single()->configure( array(
-		'layout' => array(
-			'type' => 'select',
-			'label' => __( 'Page Layout', 'siteorigin-unwind' ),
-			'options' => array(
-				'default' => __( 'Default', 'siteorigin-unwind' ),
-				'no-sidebar' => __( 'No Sidebar', 'siteorigin-unwind' ),
-				'full-width' => __( 'Full Width', 'siteorigin-unwind' ),
-				'full-width-sidebar' => __( 'Full Width, With Sidebar', 'siteorigin-unwind' ),
-			),
-		),
-
-		'page_title' => array(
-			'type' => 'checkbox',
-			'label' => __( 'Page Title', 'siteorigin-unwind' ),
-			'checkbox_label' => __( 'display', 'siteorigin-unwind' ),
-			'description' => __('Display the page title on this page.', 'siteorigin-unwind')
-		),
-
-		'masthead_margin' => array(
-			'type' => 'checkbox',
-			'label' => __( 'Masthead Bottom Margin', 'siteorigin-unwind' ),
-			'checkbox_label' => __( 'enable', 'siteorigin-unwind' ),
-			'default' => true,
-			'description' => __('Include the margin below the masthead (top area) of your site.', 'siteorigin-unwind')
-		),
-
-		'footer_margin' => array(
-			'type' => 'checkbox',
-			'label' => __( 'Footer Top Margin', 'siteorigin-unwind' ),
-			'checkbox_label' => __( 'enable', 'siteorigin-unwind' ),
-			'default' => true,
-			'description' => __('Include the margin above your footer.', 'siteorigin-unwind')
-		),
-	) );
-
-}
-add_action( 'siteorigin_page_settings_init', 'siteorigin_unwind_setup_page_settings' );
-
-/**
- * Add the default Page Settings
- */
-function siteorigin_unwind_setup_page_setting_defaults( $defaults ) {
-	$defaults['layout'] = 'default';
-	$defaults['page_title'] = true;
-	$defaults['masthead_margin'] = true;
-	$defaults['footer_margin'] = true;
-	return $defaults;
-}
-add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_setting_defaults' );
-
-/**
- * Change the default page settings for the home page.
- *
- * @param $settings
- *
- * @return mixed
- */
-function siteorigin_unwind_page_settings_panels_defaults( $settings ) {
-	$settings['layout'] = 'no-sidebar';
-	$defaults['page_title'] = false;
-	return $settings;
-}
-add_filter( 'siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults' );
