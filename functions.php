@@ -141,7 +141,7 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );
  */
 function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Main Sidebar', 'siteorigin-unwind' ),
+		'name'          => esc_html__( 'Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'main-sidebar',
 		'description'   => 'Visible on posts and pages that use the default template.',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -151,11 +151,11 @@ function siteorigin_unwind_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar', 'siteorigin-unwind' ),
+		'name'          => esc_html__( 'Footer', 'siteorigin-unwind' ),
 		'id'            => 'footer-sidebar',
 		'description'   => 'A column will be automatically assigned to each widget inserted.',
-		'before_widget' => '<div class="widget-wrapper"><aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside></div>',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
 		'after_title'   => '</h2>',
 	) );
