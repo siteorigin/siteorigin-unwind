@@ -9,6 +9,7 @@
  * @license GPL 2.0
  */
 
+if ( ! function_exists( 'siteorigin_unwind_body_classes' ) ) :
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -24,13 +25,13 @@ function siteorigin_unwind_body_classes( $classes ) {
 	$classes[] = 'no-js';
 	$classes[] = 'css3-animations';
 	
-	// Adds a class of hfeed to non-singular pages.
+	// Add a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Page settings related classes.
-	if( is_page() ) {
+	// Add the page setting classes.
+	if ( is_page() ) {
 		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
 		if ( ! SiteOrigin_Settings_Page_Settings::get('masthead_margin') ) {
 			$classes[] = 'page-layout-no-masthead-margin';
@@ -57,8 +58,10 @@ function siteorigin_unwind_body_classes( $classes ) {
 
 	return $classes;
 }
+endif;
 add_filter( 'body_class', 'siteorigin_unwind_body_classes' );
 
+if ( ! function_exists( 'siteorigin_unwind_excerpt_read_more' ) ) :
 /**
  * Filter the excerpt "read more" string.
  *
@@ -68,4 +71,5 @@ add_filter( 'body_class', 'siteorigin_unwind_body_classes' );
 function siteorigin_unwind_excerpt_read_more( $more ) {
     return '...';
 }
+endif;
 add_filter( 'excerpt_more', 'siteorigin_unwind_excerpt_read_more' );
