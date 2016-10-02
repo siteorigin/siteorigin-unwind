@@ -43,12 +43,6 @@ function siteorigin_unwind_settings_init() {
 					'description' => __('The color used for links and various other accents.', 'siteorigin-unwind'),
 					'live' => true,
 				),
-				'accent_dark' => array(
-					'type' => 'color',
-					'label' => __('Dark Accent Color', 'siteorigin-unwind'),
-					'description' => __('A darker version of your accent color.', 'siteorigin-unwind'),
-					'live' => true,
-				),
 			)
 		),	
 
@@ -167,7 +161,7 @@ function siteorigin_unwind_settings_custom_css($css){
 		'color: ${branding_accent};' . "\n" .
 		'}' . "\n" .
 		'a:hover,a:focus {' . "\n" .
-		'color: ${branding_accent_dark};' . "\n" .
+		'color: ${branding_accent};' . "\n" .
 		'}' . "\n" .
 		'#masthead {' . "\n" .
 		'margin-bottom: ${masthead_bottom_margin};' . "\n" .
@@ -195,7 +189,6 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
 	$defaults['branding_site_description'] = false;
 	$defaults['branding_accent'] = '#24c48a';
-	$defaults['branding_accent_dark'] = '#21af7b';
 
 	// The masthead defaults
 	$defaults['masthead_social_widget'] = '';

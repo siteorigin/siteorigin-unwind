@@ -31,7 +31,7 @@
     border-radius: 0; }
     .woocommerce form.login input.button:hover,
     .woocommerce form.checkout_coupon input.button:hover {
-      background-color: #21af7b; }
+      background-color: #24c48a; }
   .woocommerce form.login a,
   .woocommerce form.checkout_coupon a {
     text-decoration: none; }
@@ -117,7 +117,7 @@
         margin-right: 1.2em;
         border-radius: 0; }
         .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:hover {
-          background-color: #21af7b; }
+          background-color: #24c48a; }
 
 /*--------------------------------------------------------------
 # WooCommerce Cart
@@ -162,7 +162,7 @@
     color: #2d2d2d;
     font-weight: bold; }
     .woocommerce-cart form table.shop_table .product-name a:hover {
-      color: #21af7b; }
+      color: #24c48a; }
   .woocommerce-cart form table.shop_table .product-price {
     width: 150px; }
     .woocommerce-cart form table.shop_table .product-price .amount {
@@ -193,7 +193,7 @@
       color: #fff;
       border-radius: 0; }
       .woocommerce-cart form table.shop_table td.actions input.button:hover {
-        background-color: #21af7b; }
+        background-color: #24c48a; }
       @media screen and (max-width: 768px) {
         .woocommerce-cart form table.shop_table td.actions input.button {
           width: 100% !important; } }
@@ -229,13 +229,13 @@
     .woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .shipping-calculator-button {
       color: #24c48a; }
       .woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .shipping-calculator-button:hover {
-        color: #21af7b; }
+        color: #24c48a; }
     .woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button {
       background-color: #24c48a;
       color: #fff;
       border-radius: 0; }
       .woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button:hover {
-        background-color: #21af7b; }
+        background-color: #24c48a; }
       @media screen and (max-width: 768px) {
         .woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button {
           width: 100% !important; } }
@@ -248,7 +248,7 @@
   font-size: 1em;
   float: right; }
   .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover {
-    background-color: #21af7b; }
+    background-color: #24c48a; }
   @media screen and (max-width: 768px) {
     .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
       width: 100%;

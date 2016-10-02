@@ -17,20 +17,13 @@ Tags: one column, two columns, custom-background, custom-colors, custom-header, 
 # Elements
 # Forms
 # Navigation
-	## Links
-	## Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
 # Content
-    ## Posts and pages
-	## Asides
-	## Comments
 # Infinite scroll
 # Media
-	## Captions
-	## Galleries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
@@ -240,6 +233,9 @@ textarea {
   -ms-word-wrap: break-word;
   word-wrap: break-word; }
 
+/*--------------------------------------------------------------
+## Headings
+--------------------------------------------------------------*/
 h1,
 h2,
 h3,
@@ -318,6 +314,9 @@ h6 {
   .heading-strike:after {
     margin-left: 7px; }
 
+/*--------------------------------------------------------------
+## Copy
+--------------------------------------------------------------*/
 p {
   margin: 0 0 2.25em; }
 
@@ -397,6 +396,15 @@ hr {
   height: 1px;
   margin-bottom: 1.5em; }
 
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+/*--------------------------------------------------------------
+## Lists
+--------------------------------------------------------------*/
 ul, ol {
   margin: 0 0 1.5em 1.5em;
   padding: 0; }
@@ -418,12 +426,9 @@ dt {
 dd {
   margin: 0 1.5em 1.5em; }
 
-img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */ }
-
+/*--------------------------------------------------------------
+## Tables
+--------------------------------------------------------------*/
 table {
   margin: 0 0 1.5em;
   width: 100%; }
@@ -544,7 +549,7 @@ textarea {
 a {
   color: #24c48a; }
   a:hover, a:focus {
-    color: #21af7b; }
+    color: #24c48a; }
   a:hover, a:active {
     outline: 0; }
 
