@@ -16,15 +16,15 @@ if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) :
 function siteorigin_unwind_display_logo() {
 	$logo = siteorigin_setting( 'branding_logo' );
 	if ( !empty( $logo ) ) {
-		$logo_id = attachment_url_to_postid( $logo );
 		$attrs = apply_filters( 'siteorigin_unwind_logo_attributes', array() );
 
 		?><center><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
-		echo wp_get_attachment_image( $logo_id, 'full', false, $attrs );
+		echo wp_get_attachment_image( $logo, 'full', false, $attrs );
 		?></a></center><?php
 
-	}
-	else {
+	} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		?><center><?php the_custom_logo(); ?></center><?php
+	} else {
 		?><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1><?php
 	}
 }
@@ -141,7 +141,7 @@ function siteorigin_unwind_entry_footer() {
 		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-unwind' ), esc_html__( '1 Comment', 'siteorigin-unwind' ), esc_html__( '% Comments', 'siteorigin-unwind' ) );
 		echo '</span>';
 	}
-	
+
 }
 endif;
 
