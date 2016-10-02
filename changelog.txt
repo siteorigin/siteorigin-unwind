@@ -2,3 +2,5 @@
 
 = 0.1 - May 13 2016 =
 * Preliminary release.
+
+= 0.2 - October 08 2016 =
