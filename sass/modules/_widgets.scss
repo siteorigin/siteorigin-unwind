@@ -83,12 +83,12 @@
 		button[type="submit"] {
 			border: none;
 			padding: .65em;
+			padding-left: 0.89375em; 
 			position: absolute;
 			top: .2em;
 			right: 1.269em;
 			
 			svg {
-				@include font-size(1);
 				fill: $color__text-main;
 				height: 1.2666em;
 				width: 1.3333em;

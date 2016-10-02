@@ -984,13 +984,12 @@ a {
   #colophon .widget_search .search-form button[type="submit"] {
     border: none;
     padding: .65em;
+    padding-left: 0.89375em;
     position: absolute;
     top: .2em;
     right: 1.269em; }
     #secondary .widget_search .search-form button[type="submit"] svg,
     #colophon .widget_search .search-form button[type="submit"] svg {
-      font-size: 16px;
-      font-size: 1rem;
       fill: #626262;
       height: 1.2666em;
       width: 1.3333em; }
@@ -1139,35 +1138,45 @@ a {
   position: absolute;
   top: 60px;
   z-index: 10; }
-  #fullscreen-search form {
+  #fullscreen-search .fullscreen-search-container {
+    left: 50%;
     position: absolute;
     top: 139px;
-    left: 50%;
     transform: translate(-50%, -50%); }
-    #fullscreen-search form h3 {
-      color: #626262;
-      font-family: "Lato", sans-serif;
-      font-size: 17.0656px;
-      font-size: 1.0666rem;
-      font-weight: 400;
-      text-align: center;
-      text-transform: uppercase; }
-    #fullscreen-search form input[type="search"] {
-      background: transparent;
-      border: 0;
-      color: #626262;
-      font-size: 34.1328px;
-      font-size: 2.1333rem;
-      outline: none; }
-      @media (max-width: 768px) {
-        #fullscreen-search form input[type="search"] {
-          font-size: 24px; } }
-    #fullscreen-search form button svg {
-      font-size: 16px;
-      font-size: 1rem;
-      fill: #626262;
-      height: 1.2666em;
-      width: 1.3333em; }
+  #fullscreen-search h3 {
+    color: #626262;
+    font-family: "Lato", sans-serif;
+    font-size: 17.0656px;
+    font-size: 1.0666rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase; }
+  #fullscreen-search form input[type="search"] {
+    background: transparent;
+    border: 0;
+    color: #626262;
+    display: inline-block;
+    font-size: 34.1328px;
+    font-size: 2.1333rem;
+    max-width: 493px;
+    outline: none; }
+    @media (max-width: 768px) {
+      #fullscreen-search form input[type="search"] {
+        font-size: 24px; } }
+  #fullscreen-search form button[type="submit"] {
+    border: none;
+    display: inline-block;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 93px; }
+    #fullscreen-search form button[type="submit"] svg {
+      fill: #adadad;
+      height: 31px;
+      top: 32px;
+      width: 32px; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
