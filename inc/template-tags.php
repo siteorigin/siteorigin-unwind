@@ -49,39 +49,6 @@ function siteorigin_unwind_display_logo() {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_unwind_display_retina_logo' ) ) :
-/**
- * Display the Retina logo.
- */
-function siteorigin_unwind_display_retina_logo( $attr ) {
-	$logo = siteorigin_setting( 'branding_logo' );
-	$retina = siteorigin_setting( 'branding_logo_retina' );
-
-	if ( ! empty( $retina ) ) {
-
-		$srcset = array();
-
-		$logo_src = wp_get_attachment_image_src( $logo, 'full' );
-		$retina_src = wp_get_attachment_image_src( $retina, 'full' );
-
-		if ( ! empty( $logo_src ) ) {
-			$srcset[] = $logo_src[0] . ' 1x';
-		}
-
-		if ( ! empty( $logo_src ) ) {
-			$srcset[] = $retina_src[0] . ' 2x';
-		}
-
-		if ( ! empty( $srcset ) ) {
-			$attr['srcset'] = implode( ',', $srcset );
-		}
-	}
-
-	return $attr;
-}
-endif;
-add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
-
 if ( ! function_exists( 'siteorigin_unwind_archive_title' ) ) :
 /**
  * Display titles in archive pages.

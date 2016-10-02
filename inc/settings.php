@@ -32,11 +32,6 @@ function siteorigin_unwind_settings_init() {
 					'label' => __('Logo', 'siteorigin-unwind'),
 					'description' => __('Logo displayed in your masthead.', 'siteorigin-unwind')
 				),
-				'retina_logo' => array(
-					'type' => 'media',
-					'label' => __('Retina Logo', 'siteorigin-unwind'),
-					'description' => __('A double sized logo to use on retina devices.', 'siteorigin-unwind')
-				),
 				'site_description' => array(
 					'type' => 'checkbox',
 					'label' => __('Site Description', 'siteorigin-unwind'),
@@ -284,7 +279,6 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 
 	// Branding defaults
 	$defaults['branding_logo'] = false;
-	$defaults['branding_logo_retina'] = false;
 	$defaults['branding_site_description'] = false;
 	$defaults['branding_accent'] = '#24c48a';
 	$defaults['branding_accent_dark'] = '#21af7b';
@@ -383,21 +377,3 @@ function siteorigin_unwind_page_settings_panels_defaults( $settings ) {
 	return $settings;
 }
 add_filter( 'siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults' );
-
-/**
- * Convert URL based images into IDs
- *
- * @param $mods
- *
- * @return mixed
- */
-function siteorigin_unwind_siteorigin_setting_update_image( $mods ) {
-	foreach ( array( 'branding_logo', 'branding_retina_logo' ) as $key ) {
-		if( ! empty( $mods[ 'theme_settings_' . $key ] ) && ! is_numeric( $mods[ 'theme_settings_' . $key ] ) ) {
-			$mods[ 'theme_settings_' . $key ] = SiteOrigin_Settings::get_image_id( $mods[ 'theme_settings_' . $key ] );
-		}
-	}
-
-	return $mods;
-}
-add_filter( 'option_theme_mods_siteorigin-unwind', 'siteorigin_unwind_siteorigin_setting_update_image' );
