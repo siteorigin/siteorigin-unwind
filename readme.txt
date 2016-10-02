@@ -17,7 +17,7 @@ SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully respons
 
 == Installation ==
 	
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
+1. Login to your WordPress installation, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
@@ -54,6 +54,8 @@ Theme screenshot image with lake and mountains sourced from https://unsplash.com
 
 Theme screenshot image with scooter sourced from https://pixabay.com by Unsplash (https://pixabay.com/en/scooter-italy-vintage-old-green-593155/) licensed under CC0 Public Domain (https://creativecommons.org/publicdomain/zero/1.0/).
 
+SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and copyright 2016 SiteOrigin.
+
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
@@ -61,7 +63,7 @@ Theme screenshot image with scooter sourced from https://pixabay.com by Unsplash
 
 == SiteOrigin Settings ==
 
-This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 
+This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header. 
 
 == Design ==
 

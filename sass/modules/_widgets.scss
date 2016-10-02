@@ -73,23 +73,27 @@
 	.search-form {
 		position: relative;
 
-		label {
-			display: block;
-			
-			&:before {
-			}			
-		}
-
 		input[type="search"] {
 			box-sizing: border-box;
-			padding-right: 2.1538em;
+			padding-right: 2em;
 			max-width: 100%;
 			width: 100%; 
 		}
 
-		.search-submit {
-			display: none;
-		}	
+		button[type="submit"] {
+			border: none;
+			padding: 0;
+			position: absolute;
+			top: .85em;
+			right: 1.9190em;
+			
+			svg {
+				@include font-size(1);
+				fill: $color__text-main;
+				height: 1.2666em;
+				width: 1.3333em;
+			}
+		}
 	}
 }
 
