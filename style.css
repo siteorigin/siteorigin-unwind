@@ -983,10 +983,10 @@ a {
   #secondary .widget_search .search-form button[type="submit"],
   #colophon .widget_search .search-form button[type="submit"] {
     border: none;
-    padding: 0;
+    padding: .65em;
     position: absolute;
-    top: .85em;
-    right: 1.9190em; }
+    top: .2em;
+    right: 1.269em; }
     #secondary .widget_search .search-form button[type="submit"] svg,
     #colophon .widget_search .search-form button[type="submit"] svg {
       font-size: 16px;
