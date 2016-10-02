@@ -80,6 +80,10 @@
 	line-height: normal;
 	margin: 0.5em 0 0;
 	text-align: center;
+	
+	@at-root .page .entry-title {
+		margin: 0;
+	}
 
 	a {
 		color: inherit;
