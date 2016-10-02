@@ -1735,7 +1735,8 @@ object {
 ## Captions
 --------------------------------------------------------------*/
 .wp-caption {
-  margin-bottom: 1.5em;
+  font-size: 14.9328px;
+  font-size: 0.9333rem;
   max-width: 100%; }
   .wp-caption img[class*="wp-image-"] {
     display: block;
@@ -1751,10 +1752,11 @@ object {
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
-  margin-bottom: 1.5em; }
+  margin-bottom: 2.25em; }
 
 .gallery-item {
   display: inline-block;
+  margin-bottom: 1.125em;
   text-align: center;
   vertical-align: top;
   width: 100%; }
@@ -1776,4 +1778,6 @@ object {
     max-width: 11.11%; }
 
 .gallery-caption {
-  display: block; }
+  display: block;
+  font-size: 14.9328px;
+  font-size: 0.9333rem; }

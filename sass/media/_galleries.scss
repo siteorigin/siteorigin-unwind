@@ -1,9 +1,10 @@
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: 2.25em;
 }
 
 .gallery-item {
 	display: inline-block;
+	margin-bottom: 1.125em; 
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -43,4 +44,5 @@
 
 .gallery-caption {
 	display: block;
+	@include font-size(0.9333);
 }
