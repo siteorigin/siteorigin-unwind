@@ -65,6 +65,35 @@
 }
 
 /*--------------------------------------------------------------
+## Search Widget
+--------------------------------------------------------------*/
+#secondary .widget_search, 
+#colophon .widget_search {
+
+	.search-form {
+		position: relative;
+
+		label {
+			display: block;
+			
+			&:before {
+			}			
+		}
+
+		input[type="search"] {
+			box-sizing: border-box;
+			padding-right: 2.1538em;
+			max-width: 100%;
+			width: 100%; 
+		}
+
+		.search-submit {
+			display: none;
+		}	
+	}
+}
+
+/*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
 #page .widget_tag_cloud {

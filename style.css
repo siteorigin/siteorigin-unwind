@@ -968,6 +968,25 @@ a {
   padding-top: 0.5em; }
 
 /*--------------------------------------------------------------
+## Search Widget
+--------------------------------------------------------------*/
+#secondary .widget_search .search-form,
+#colophon .widget_search .search-form {
+  position: relative; }
+  #secondary .widget_search .search-form label,
+  #colophon .widget_search .search-form label {
+    display: block; }
+  #secondary .widget_search .search-form input[type="search"],
+  #colophon .widget_search .search-form input[type="search"] {
+    box-sizing: border-box;
+    padding-right: 2.1538em;
+    max-width: 100%;
+    width: 100%; }
+  #secondary .widget_search .search-form .search-submit,
+  #colophon .widget_search .search-form .search-submit {
+    display: none; }
+
+/*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
 #page .widget_tag_cloud a {
