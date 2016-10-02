@@ -1138,8 +1138,9 @@ a {
   position: absolute;
   top: 60px;
   z-index: 10; }
-  #fullscreen-search .fullscreen-search-container {
+  #fullscreen-search .container {
     left: 50%;
+    max-width: 658px;
     position: absolute;
     top: 139px;
     transform: translate(-50%, -50%); }
@@ -1162,7 +1163,8 @@ a {
     outline: none; }
     @media (max-width: 768px) {
       #fullscreen-search form input[type="search"] {
-        font-size: 24px; } }
+        font-size: 24px;
+        padding-left: 0; } }
   #fullscreen-search form button[type="submit"] {
     border: none;
     display: inline-block;
@@ -1181,6 +1183,9 @@ a {
       @media (max-width: 768px) {
         #fullscreen-search form button[type="submit"] svg {
           height: 24px; } }
+      @media (max-width: 480px) {
+        #fullscreen-search form button[type="submit"] svg {
+          display: none; } }
 
 /*--------------------------------------------------------------
 ## Posts and pages
