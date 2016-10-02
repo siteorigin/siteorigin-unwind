@@ -35,6 +35,7 @@ SiteOrigin Unwind includes support for:
 * SiteOrigin Widgets Bundle 
 * SiteOrigin CSS
 * WooCommerce
+* Yet Another Related Posts Plugin (YARPP)
 * Jetpack Infinite Scroll
 
 == License ==
@@ -60,7 +61,7 @@ Theme screenshot image with scooter sourced from https://pixabay.com by Unsplash
 
 == SiteOrigin Settings ==
 
-This theme makes use of the SiteOrigin Settings Framework contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 
+This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 
 
 == Design ==
 
