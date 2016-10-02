@@ -23,7 +23,5 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 35 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 add_action( 'woocommerce_after_single_product_summary', 'siteorigin_unwind_woocommerce_output_upsells', 15 );
 
-/**
- * Cart
- **/
+// Remove the cross sell display.
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
