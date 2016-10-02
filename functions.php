@@ -11,7 +11,6 @@
 
 define( 'SITEORIGIN_THEME_VERSION', 'dev' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
-define( 'SITEORIGIN_THEME_PREMIUM_URL', 'https://siteorigin.com/downloads/premium/' );
 
 // Load theme specific files.
 include get_template_directory() . '/inc/settings/settings.php';
