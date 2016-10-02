@@ -33,12 +33,12 @@ function siteorigin_unwind_display_logo() {
 	if ( !empty( $logo ) ) {
 		$attrs = apply_filters( 'siteorigin_unwind_logo_attributes', array() );
 
-		?><center><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
+		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
 		echo wp_get_attachment_image( $logo, 'full', false, $attrs );
-		?></a></center><?php
+		?></a><?php
 
 	} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-		?><center><?php the_custom_logo(); ?></center><?php
+		?><?php the_custom_logo(); ?><?php
 	} else {
 		?><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1><?php
 	}
