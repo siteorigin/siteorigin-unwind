@@ -383,3 +383,21 @@ function siteorigin_unwind_page_settings_panels_defaults( $settings ) {
 	return $settings;
 }
 add_filter( 'siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults' );
+
+/**
+ * Convert URL based images into IDs
+ *
+ * @param $mods
+ *
+ * @return mixed
+ */
+function siteorigin_unwind_siteorigin_setting_update_image( $mods ) {
+	foreach ( array( 'branding_logo', 'branding_retina_logo' ) as $key ) {
+		if( ! empty( $mods[ 'theme_settings_' . $key ] ) && ! is_numeric( $mods[ 'theme_settings_' . $key ] ) ) {
+			$mods[ 'theme_settings_' . $key ] = SiteOrigin_Settings::get_image_id( $mods[ 'theme_settings_' . $key ] );
+		}
+	}
+
+	return $mods;
+}
+add_filter( 'option_theme_mods_siteorigin-unwind', 'siteorigin_unwind_siteorigin_setting_update_image' );

@@ -15,6 +15,7 @@
 
 	.site-branding {
 		padding: 4em 0;
+		text-align: center;
 
 		.site-title {
 			font-family: $font__details; 
@@ -27,7 +28,7 @@
 			text-transform: uppercase;
 			
 			a {
-				color: inherit;
+				color: $color__text-dark;
 				text-decoration: none;
 			}
 		}

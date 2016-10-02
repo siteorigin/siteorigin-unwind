@@ -1113,7 +1113,8 @@ a {
   #masthead .top-bar-sentinel {
     box-sizing: border-box; }
   #masthead .site-branding {
-    padding: 4em 0; }
+    padding: 4em 0;
+    text-align: center; }
     #masthead .site-branding .site-title {
       font-family: "Lato", sans-serif;
       font-weight: 300;
@@ -1125,7 +1126,7 @@ a {
       text-align: center;
       text-transform: uppercase; }
       #masthead .site-branding .site-title a {
-        color: inherit;
+        color: #2d2d2d;
         text-decoration: none; }
     #masthead .site-branding .site-description {
       text-align: center; }
