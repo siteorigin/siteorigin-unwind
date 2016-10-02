@@ -37,7 +37,7 @@
 				<div id="mobile-navigation"></div>
 				<div class="social-search">
 					<?php $widget = siteorigin_setting( 'masthead_social_widget' ); ?>
-					<?php if ( !empty($widget['networks']) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) : ?>
+					<?php if ( ! empty( $widget['networks'] ) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) : ?>
 						<?php the_widget( 'SiteOrigin_Widget_SocialMediaButtons_Widget', $widget ); ?>
 						<span class="v-line"></span>
 					<?php endif; ?>

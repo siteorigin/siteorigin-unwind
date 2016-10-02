@@ -1,19 +1,26 @@
 <?php
+/**
+ * SiteOrigin Unwind WooCommerce functions and definitions.
+ *
+ * @package siteorigin-unwind
+ * @since siteorigin-unwind 0.2
+ * @license GPL 2.0
+ */
 
-function siteorigin_unwind_woocommerce_change_hooks(){
+function siteorigin_unwind_woocommerce_change_hooks() {
 
 	// Load template related functions.
 	include get_template_directory() . '/woocommerce/template-tags.php';
 
 }
-add_action('after_setup_theme', 'siteorigin_unwind_woocommerce_change_hooks');
+add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_change_hooks' );
 
 function siteorigin_unwind_woocommerce_add_to_cart_text( $text ) {
 	return $text;
 }
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'siteorigin_unwind_woocommerce_add_to_cart_text' );
 
-function siteorigin_unwind_woocommerce_enqueue_styles( $styles ){
+function siteorigin_unwind_woocommerce_enqueue_styles( $styles ) {
 	$styles['unwind-woocommerce'] = array(
 		'src' => get_template_directory_uri() . '/woocommerce.css',
 		'deps' => 'woocommerce-layout',
@@ -46,21 +53,20 @@ function siteorigin_unwind_woocommerce_related_product_args( $args ) {
 }
 add_filter( 'woocommerce_output_related_products_args', 'siteorigin_unwind_woocommerce_related_product_args' );
 
-if( ! function_exists('siteorigin_unwind_woocommerce_output_upsells' ) ) {
+if ( ! function_exists('siteorigin_unwind_woocommerce_output_upsells' ) ) {
 
 	function siteorigin_unwind_woocommerce_output_upsells(){
 		woocommerce_upsell_display( -1, 3 );
 	}
-
 }
 
-// Modifying cart product image size
+// Modifying cart product image size.
 add_image_size( 'cart_item_image_size', 80, 80, true );
 
 add_filter( 'woocommerce_cart_item_thumbnail', 'cart_item_thumbnail', 10, 3 );
 
 function cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
-	// create the product object
+	// Create the product object.
 	$product = get_product( $cart_item['product_id'] );
 	return $product->get_image( 'cart_item_image_size' );
 }
