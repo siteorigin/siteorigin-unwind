@@ -304,7 +304,7 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	$defaults['blog_display_author_box'] = true;
 
 	// Footer settings
-	$defaults['footer_text'] = __('{year} © {sitename}.', 'siteorigin-unwind');
+	$defaults['footer_text'] = esc_html__('{year} &copy; {sitename}.', 'siteorigin-unwind');
 	$defaults['footer_constrained'] = true;
 	$defaults['footer_top_padding'] = '40px';
 	$defaults['footer_side_padding'] = '40px';
