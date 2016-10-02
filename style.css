@@ -1157,8 +1157,7 @@ a {
     border: 0;
     color: #626262;
     display: inline-block;
-    font-size: 34.1328px;
-    font-size: 2.1333rem;
+    font-size: 32px;
     max-width: 493px;
     outline: none; }
     @media (max-width: 768px) {
@@ -1171,12 +1170,17 @@ a {
     padding: 0;
     position: absolute;
     right: 0;
-    top: 93px; }
+    top: 90px; }
+    @media (max-width: 768px) {
+      #fullscreen-search form button[type="submit"] {
+        top: 82px; } }
     #fullscreen-search form button[type="submit"] svg {
       fill: #adadad;
       height: 31px;
-      top: 32px;
       width: 32px; }
+      @media (max-width: 768px) {
+        #fullscreen-search form button[type="submit"] svg {
+          height: 24px; } }
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -1201,6 +1205,7 @@ a {
   font-family: "Lato", sans-serif;
   font-size: 13.8656px;
   font-size: 0.8666rem;
+  letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase; }
 
