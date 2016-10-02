@@ -970,7 +970,7 @@ a {
   text-decoration: none; }
   #secondary .widget a:hover,
   #colophon .widget a:hover {
-    color: #2d2d2d; }
+    color: #24c48a; }
 
 #secondary .widget ul,
 #colophon .widget ul {
@@ -1006,12 +1006,16 @@ a {
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
-.widget_tag_cloud a {
+#page .widget_tag_cloud a {
   border: 1px solid #dadada;
   display: inline-block;
   margin: 0 .107em .45em 0;
   padding: .7642em .9785em .6213em;
   line-height: normal; }
+  #page .widget_tag_cloud a:hover {
+    background: #626262;
+    border-color: #626262;
+    color: #fff; }
 
 /*--------------------------------------------------------------
 # Content
@@ -1607,23 +1611,6 @@ a {
       clear: both;
       content: "";
       display: table; }
-    #colophon .widgets .widget {
-      box-sizing: content-box;
-      margin-right: 2.5%;
-      float: left; }
-      #colophon .widgets .widget:last-of-type {
-        margin-right: 0 !important; }
-      @media (max-width: 768px) {
-        #colophon .widgets .widget {
-          float: none;
-          margin-right: 0; } }
-    #colophon .widgets.widgets-1 .widget {
-      margin-right: 0;
-      width: 100%; }
-    #colophon .widgets.widgets-2 .widget {
-      width: 48.75%; }
-    #colophon .widgets.widgets-3 .widget {
-      width: 31.66%; }
     #colophon .widgets.widgets-1 .widget {
       width: 100%; }
     #colophon .widgets.widgets-2 .widget {
@@ -1644,6 +1631,17 @@ a {
       width: 8.88889%; }
     #colophon .widgets.widgets-10 .widget {
       width: 7.75%; }
+    #colophon .widgets .widget {
+      box-sizing: content-box;
+      margin-right: 2.5%;
+      float: left; }
+      #colophon .widgets .widget:last-of-type {
+        margin-right: 0 !important; }
+      @media (max-width: 768px) {
+        #colophon .widgets .widget {
+          float: none;
+          margin: 0 0 4em;
+          width: 100% !important; } }
   #colophon .site-info {
     border-top: 1px solid #ebebeb;
     color: #626262;

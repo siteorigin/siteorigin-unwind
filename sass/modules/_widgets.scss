@@ -18,7 +18,7 @@
 		text-decoration: none;
 		
 		&:hover {
-			color: $color__text-dark;
+			color: $color__link;
 		} 
 	}
 
@@ -67,7 +67,7 @@
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
-.widget_tag_cloud {
+#page .widget_tag_cloud {
 
 	a {
 		border: 1px solid $color__border-button;
@@ -75,6 +75,11 @@
 		margin: 0 .107em .45em 0;
 		padding: .7642em .9785em .6213em;
 		line-height: normal;
+		
+		&:hover {
+			background: $color__text-medium;
+			border-color: $color__text-medium; 
+			color: #fff;
+		}		
 	}
 }
-
