@@ -163,9 +163,12 @@ function siteorigin_unwind_settings_custom_css($css){
 		'a:hover,a:focus {' . "\n" .
 		'color: ${branding_accent};' . "\n" .
 		'}' . "\n" .
-		'#masthead {' . "\n" .
-		'margin-bottom: ${masthead_bottom_margin};' . "\n" .
+		'.site-content {' . "\n" .
+		'padding-top: ${masthead_bottom_margin};' . "\n" .
 		'}' . "\n" .
+		'.page-header {' . "\n" .
+		'margin-bottom: ${masthead_bottom_margin};' . "\n" .
+		'}' . "\n" .		
 		'#colophon {' . "\n" .
 		'margin-top: ${footer_top_margin};' . "\n" .
 		'}' . "\n" .
@@ -192,7 +195,7 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 
 	// The masthead defaults
 	$defaults['masthead_social_widget'] = '';
-	$defaults['masthead_bottom_margin'] = '30px';
+	$defaults['masthead_bottom_margin'] = '80px';
 
 	// Navigation defaults
 	$defaults['navigation_sticky'] = true;
