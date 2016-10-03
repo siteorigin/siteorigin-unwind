@@ -1134,6 +1134,7 @@ a {
         color: #2d2d2d;
         text-decoration: none; }
     #masthead .site-branding .site-description {
+      margin-bottom: 0;
       text-align: center; }
 
 /*--------------------------------------------------------------
