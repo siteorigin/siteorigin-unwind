@@ -1808,5 +1808,6 @@ object {
 
 .gallery-caption {
   display: block;
-  font-size: 14.9328px;
-  font-size: 0.9333rem; }
+  font-size: 13.8656px;
+  font-size: 0.8666rem;
+  line-height: 1.3999; }
