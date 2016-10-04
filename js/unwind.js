@@ -60,6 +60,8 @@ jQuery( function($){
 
 		$( '#fullscreen-search' ).slideToggle( 'fast' );
 
+		$( '#fullscreen-search input' ).focus();
+
 	} );
 
 	// Close Fullscreen Search with Escape key.
