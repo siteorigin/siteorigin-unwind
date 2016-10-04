@@ -1,8 +1,8 @@
-/* globals jQuery */
+/* Globals jQuery */
 
 jQuery( function($){
 
-	// Remove the no-js body class
+	// no-js Body Class.
 	$('body.no-js').removeClass('no-js');
 	if( $('body').hasClass('css3-animations') ) {
 
@@ -18,7 +18,7 @@ jQuery( function($){
 
 	}
 
-	// Handle displaying the mobile menu
+	// Mobile Menu.
 	var $mobileMenu = false;
 	$('#mobile-menu-button').click( function(e){
 		e.preventDefault();
@@ -42,7 +42,7 @@ jQuery( function($){
 		} );
 	} );
 
-	// Handle display of fullscreen search
+	// Fullscreen Search.
 	$('#search-button').click( function(e){
 		e.preventDefault();
 		var $$ = $(this);
@@ -58,13 +58,11 @@ jQuery( function($){
 		fullscreenSearch();
 		$(window).resize( fullscreenSearch );
 
-		$('#fullscreen-search').find( "input[type='search']" ).after( '<span class="search-icon">i</span>' );
-
 		$('#fullscreen-search').slideToggle('fast');
 
 	} );
 
-	// Now lets do the sticky menu
+	// Sticky Menu.
 	if( $('.top-bar').hasClass('sticky-menu') && !$('body').hasClass('is-mobile') ) {
         var $tbs = false,
             pageTop = $('#page').offset().top,

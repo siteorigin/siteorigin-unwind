@@ -24,6 +24,7 @@
 .page-title {
 	font-family: $font__details;
 	@include font-size(0.8666);
+	letter-spacing: 1px;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -79,6 +80,10 @@
 	line-height: normal;
 	margin: 0.5em 0 0;
 	text-align: center;
+	
+	@at-root .page .entry-title {
+		margin: 0;
+	}
 
 	a {
 		color: inherit;

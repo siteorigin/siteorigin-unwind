@@ -1,6 +1,7 @@
 == Changelog ==
 
-= 0.1 - May 13 2016 =
-* Preliminary release.
+= 0.9 - 2 October 2016 =
+* Various changes to prepare for release.
 
-= 0.2 - October 08 2016 =
+= 0.1 - 13 May 2016 =
+* Preliminary release.

@@ -5,7 +5,6 @@
 		background: #fff;
 		border-bottom: 1px solid $color__background-hr-dark;
 		@include clearfix;
-		height: 60px;
 		position: relative;
 		z-index: 9999;
 	}
@@ -16,6 +15,7 @@
 
 	.site-branding {
 		padding: 4em 0;
+		text-align: center;
 
 		.site-title {
 			font-family: $font__details; 
@@ -28,12 +28,13 @@
 			text-transform: uppercase;
 			
 			a {
-				color: inherit;
+				color: $color__text-dark;
 				text-decoration: none;
 			}
 		}
 
 		.site-description {
+			margin-bottom: 0; 
 			text-align: center;
 		}
 	}

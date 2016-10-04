@@ -24,41 +24,32 @@ function siteorigin_unwind_display_icon( $type ){
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) :
+if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ):
 /**
  * Display the logo or site title.
  */
 function siteorigin_unwind_display_logo() {
 	$logo = siteorigin_setting( 'branding_logo' );
-	if ( !empty( $logo ) ) {
+	if ( ! empty( $logo ) ) {
 		$attrs = apply_filters( 'siteorigin_unwind_logo_attributes', array() );
 
-		?><center><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
-		echo wp_get_attachment_image( $logo, 'full', false, $attrs );
-		?></a></center><?php
+		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<span class="screen-reader-text"><?php esc_html_e( 'Home', 'siteorigin-unwind' ); ?></span><?php
+			echo wp_get_attachment_image( $logo, 'full', false, $attrs );
+		?></a><?php
 
 	} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-		?><center><?php the_custom_logo(); ?></center><?php
-	} else {
-		?><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1><?php
+		?><?php the_custom_logo(); ?><?php
+	}
+	else {
+		if ( is_front_page() ) : ?>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<?php else : ?>
+			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+		<?php endif;
 	}
 }
 endif;
-
-if ( ! function_exists( 'siteorigin_unwind_display_retina_logo' ) ) :
-/**
- * Display a retina ready logo.
- */
-function siteorigin_unwind_display_retina_logo( $attr ){
-	$logo = siteorigin_setting( 'branding_logo' );
-	$retina = siteorigin_setting( 'branding_retina_logo' );
-	if ( !empty( $retina ) ) {
-		$attr['srcset'] = $logo . ' 1x,' . $retina . ' 2x';
-		return $attr;
-	}
-}
-endif;
-add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 
 if ( ! function_exists( 'siteorigin_unwind_archive_title' ) ) :
 /**
@@ -118,15 +109,19 @@ function siteorigin_unwind_post_meta() {
 
 	if ( comments_open() ) {
 		if ( $num_comments == 0 ) {
-			$comments = esc_html__( 'Post a Comment' );
+			$comments = esc_html__( 'Post a Comment', 'siteorigin-unwind' );
 		} elseif ( $num_comments > 1 ) {
-			$comments = $num_comments . esc_html__( ' Comments' );
+			$comments = $num_comments . esc_html__( ' Comments', 'siteorigin-unwind' );
 		} else {
-			$comments = esc_html__( '1 Comment' );
+			$comments = esc_html__( '1 Comment', 'siteorigin-unwind' );
 		}
 	} else {
 		$comments = NULL;
 	} ?>
+
+	<?php if ( is_sticky() && is_home() && ! is_paged() ) {
+		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
+	} ?>	
 
 	<span class="entry-date"><?php the_time( 'M d, Y' ); ?></span>
 

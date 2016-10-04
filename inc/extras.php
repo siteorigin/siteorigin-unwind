@@ -17,23 +17,37 @@ if ( ! function_exists( 'siteorigin_unwind_body_classes' ) ) :
  * @return array
  */
 function siteorigin_unwind_body_classes( $classes ) {
+
+	// Add a CSS3 animations class.
+	$classes[] = 'css3-animations';
+
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
 
-	$classes[] = 'no-js';
-	$classes[] = 'css3-animations';
-	
 	// Add a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
 
+	// If we're viewing on a mobile device, add a class.
+	if ( wp_is_mobile() ) {
+		$classes[] = 'is_mobile';
+	}	
+
+	// Add a no-js class which we'll remove as required.
+	$classes[] = 'no-js';
+
+	// Check if the sidebar has widgets.
+	if ( ! is_active_sidebar( 'main-sidebar' ) ) {
+		$classes[] = 'no-active-sidebar';
+	}	
+
 	// Add the page setting classes.
 	if ( is_page() ) {
-		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
-		if ( ! SiteOrigin_Settings_Page_Settings::get('masthead_margin') ) {
+		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get( 'layout' );
+		if ( ! SiteOrigin_Settings_Page_Settings::get( 'masthead_margin' ) ) {
 			$classes[] = 'page-layout-no-masthead-margin';
 		}
 		if ( ! SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
@@ -41,19 +55,9 @@ function siteorigin_unwind_body_classes( $classes ) {
 		}
 	}
 
-	// Check if the sidebar has widgets.
-	if ( ! is_active_sidebar('main-sidebar') ) {
-		$classes[] = 'no-active-sidebar';
-	}
-
 	// If the navigation is sticky, add a class.
-	if ( siteorigin_setting('navigation_sticky') ) {
+	if ( siteorigin_setting( 'navigation_sticky' ) ) {
 		$classes[] = 'sticky-menu';
-	}
-
-	// If we're viewing on a mobile device, add a class.
-	if ( wp_is_mobile() ) {
-		$classes[] = 'is_mobile';
 	}
 
 	return $classes;

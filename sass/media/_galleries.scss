@@ -44,5 +44,6 @@
 
 .gallery-caption {
 	display: block;
-	@include font-size(0.9333);
+	@include font-size(0.8666);
+	line-height: 1.3999; 
 }

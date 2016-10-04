@@ -32,10 +32,9 @@
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
-				esc_html__( '<span class="more-text">Continue reading<span><span class="screen-reader-text"> "%s"</span>', 'siteorigin-unwind' ),
-				get_the_title()
-			) );
+			the_content( 
+				wp_kses( __( '<span class="more-text">Continue reading</span>', 'siteorigin-unwind' ), array( 'span' => array( 'class' => array() ) ), false ) 
+			);
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',

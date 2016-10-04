@@ -7,7 +7,7 @@ Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: siteorigin-unwind
-Tags: one column, two columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, sticky-post, theme-options, translation-ready, blog, ecommerce
+Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, sticky-post, theme-options, translation-ready, blog, e-commerce
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -17,20 +17,13 @@ Tags: one column, two columns, custom-background, custom-colors, custom-header, 
 # Elements
 # Forms
 # Navigation
-	## Links
-	## Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
 # Content
-    ## Posts and pages
-	## Asides
-	## Comments
 # Infinite scroll
 # Media
-	## Captions
-	## Galleries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
@@ -240,6 +233,9 @@ textarea {
   -ms-word-wrap: break-word;
   word-wrap: break-word; }
 
+/*--------------------------------------------------------------
+## Headings
+--------------------------------------------------------------*/
 h1,
 h2,
 h3,
@@ -318,6 +314,9 @@ h6 {
   .heading-strike:after {
     margin-left: 7px; }
 
+/*--------------------------------------------------------------
+## Copy
+--------------------------------------------------------------*/
 p {
   margin: 0 0 2.25em; }
 
@@ -397,6 +396,15 @@ hr {
   height: 1px;
   margin-bottom: 1.5em; }
 
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+/*--------------------------------------------------------------
+## Lists
+--------------------------------------------------------------*/
 ul, ol {
   margin: 0 0 1.5em 1.5em;
   padding: 0; }
@@ -418,12 +426,9 @@ dt {
 dd {
   margin: 0 1.5em 1.5em; }
 
-img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */ }
-
+/*--------------------------------------------------------------
+## Tables
+--------------------------------------------------------------*/
 table {
   margin: 0 0 1.5em;
   width: 100%; }
@@ -544,7 +549,7 @@ textarea {
 a {
   color: #24c48a; }
   a:hover, a:focus {
-    color: #21af7b; }
+    color: #24c48a; }
   a:hover, a:active {
     outline: 0; }
 
@@ -636,14 +641,17 @@ a {
     display: block;
     text-decoration: none; }
 
+/*--------------------------------------------------------------
+## Social and Search Icons
+--------------------------------------------------------------*/
 .social-search {
   float: right; }
   .social-search .search-toggle {
     background: transparent;
     border: none;
-    height: 20px;
-    margin: 20px 0;
-    outline: none; }
+    line-height: 60px;
+    outline: none;
+    padding: 0; }
     .social-search .search-toggle .open {
       display: block; }
     .social-search .search-toggle .close {
@@ -712,7 +720,7 @@ a {
       #mobile-navigation ul li .dropdown-toggle {
         background: transparent;
         border: 0;
-        content: "";
+        content: "Open";
         height: 30px;
         padding: 6px;
         position: absolute;
@@ -723,7 +731,7 @@ a {
         box-shadow: none; }
         #mobile-navigation ul li .dropdown-toggle:after {
           color: #626262;
-          content: "d";
+          content: "\2193";
           font-size: 15px;
           line-height: 42px;
           position: relative;
@@ -984,13 +992,12 @@ a {
   #colophon .widget_search .search-form button[type="submit"] {
     border: none;
     padding: .65em;
+    padding-left: 0.89375em;
     position: absolute;
     top: .2em;
     right: 1.269em; }
     #secondary .widget_search .search-form button[type="submit"] svg,
     #colophon .widget_search .search-form button[type="submit"] svg {
-      font-size: 16px;
-      font-size: 1rem;
       fill: #626262;
       height: 1.2666em;
       width: 1.3333em; }
@@ -1102,7 +1109,6 @@ a {
   #masthead .top-bar {
     background: #fff;
     border-bottom: 1px solid #ebebeb;
-    height: 60px;
     position: relative;
     z-index: 9999; }
     #masthead .top-bar::after {
@@ -1112,7 +1118,8 @@ a {
   #masthead .top-bar-sentinel {
     box-sizing: border-box; }
   #masthead .site-branding {
-    padding: 4em 0; }
+    padding: 4em 0;
+    text-align: center; }
     #masthead .site-branding .site-title {
       font-family: "Lato", sans-serif;
       font-weight: 300;
@@ -1124,9 +1131,10 @@ a {
       text-align: center;
       text-transform: uppercase; }
       #masthead .site-branding .site-title a {
-        color: inherit;
+        color: #2d2d2d;
         text-decoration: none; }
     #masthead .site-branding .site-description {
+      margin-bottom: 0;
       text-align: center; }
 
 /*--------------------------------------------------------------
@@ -1139,35 +1147,54 @@ a {
   position: absolute;
   top: 60px;
   z-index: 10; }
-  #fullscreen-search form {
+  #fullscreen-search .container {
+    left: 50%;
+    max-width: 658px;
     position: absolute;
     top: 139px;
-    left: 50%;
     transform: translate(-50%, -50%); }
-    #fullscreen-search form h3 {
-      color: #626262;
-      font-family: "Lato", sans-serif;
-      font-size: 17.0656px;
-      font-size: 1.0666rem;
-      font-weight: 400;
-      text-align: center;
-      text-transform: uppercase; }
-    #fullscreen-search form input[type="search"] {
-      background: transparent;
-      border: 0;
-      color: #626262;
-      font-size: 34.1328px;
-      font-size: 2.1333rem;
-      outline: none; }
+  #fullscreen-search h3 {
+    color: #626262;
+    font-family: "Lato", sans-serif;
+    font-size: 17.0656px;
+    font-size: 1.0666rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase; }
+  #fullscreen-search form input[type="search"] {
+    background: transparent;
+    border: 0;
+    color: #626262;
+    display: inline-block;
+    font-size: 32px;
+    max-width: 493px;
+    outline: none; }
+    @media (max-width: 768px) {
+      #fullscreen-search form input[type="search"] {
+        font-size: 24px;
+        padding-left: 0; } }
+  #fullscreen-search form button[type="submit"] {
+    border: none;
+    display: inline-block;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 90px; }
+    @media (max-width: 768px) {
+      #fullscreen-search form button[type="submit"] {
+        top: 82px; } }
+    #fullscreen-search form button[type="submit"] svg {
+      fill: #adadad;
+      height: 31px;
+      width: 32px; }
       @media (max-width: 768px) {
-        #fullscreen-search form input[type="search"] {
-          font-size: 24px; } }
-    #fullscreen-search form button svg {
-      font-size: 16px;
-      font-size: 1rem;
-      fill: #626262;
-      height: 1.2666em;
-      width: 1.3333em; }
+        #fullscreen-search form button[type="submit"] svg {
+          height: 24px; } }
+      @media (max-width: 480px) {
+        #fullscreen-search form button[type="submit"] svg {
+          display: none; } }
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -1192,6 +1219,7 @@ a {
   font-family: "Lato", sans-serif;
   font-size: 13.8656px;
   font-size: 0.8666rem;
+  letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase; }
 
@@ -1248,6 +1276,8 @@ a {
   line-height: normal;
   margin: 0.5em 0 0;
   text-align: center; }
+  .page .entry-title {
+    margin: 0; }
   .entry-title a {
     color: inherit;
     text-decoration: none; }
@@ -1779,5 +1809,6 @@ object {
 
 .gallery-caption {
   display: block;
-  font-size: 14.9328px;
-  font-size: 0.9333rem; }
+  font-size: 13.8656px;
+  font-size: 0.8666rem;
+  line-height: 1.3999; }

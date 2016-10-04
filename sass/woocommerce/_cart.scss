@@ -63,7 +63,7 @@
 					font-weight: bold;
 
 					&:hover {
-						color: $color__primary-accent-dark;
+						color: $color__primary-accent;
 					}
 				}
 			}
@@ -114,7 +114,7 @@
 					border-radius: 0;
 
 					&:hover {
-						background-color: $color__primary-accent-dark;
+						background-color: $color__primary-accent;
 					}
 
 					@media screen and (max-width: 768px) {
@@ -176,7 +176,7 @@
 								color: $color__primary-accent;
 
 								&:hover {
-									color: $color__primary-accent-dark;
+									color: $color__primary-accent;
 								}
 							}
 							.button {
@@ -185,7 +185,7 @@
 								border-radius: 0;
 
 								&:hover {
-									background-color: $color__primary-accent-dark;
+									background-color: $color__primary-accent;
 								}
 
 								@media screen and (max-width: 768px) {
@@ -209,7 +209,7 @@
 			float: right;
 
 			&:hover {
-				background-color: $color__primary-accent-dark;
+				background-color: $color__primary-accent;
 			}
 
 			@media screen and (max-width: 768px) {
