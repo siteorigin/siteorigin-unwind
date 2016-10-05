@@ -1401,6 +1401,10 @@ a {
       float: left;
       margin: 0;
       width: 31%; }
+      @media (max-width: 320px) {
+        .yarpp-related ol li,
+        .related-posts-section ol li {
+          width: 100%; } }
       .yarpp-related ol li:first-child,
       .related-posts-section ol li:first-child {
         margin-right: 3.5%; }
@@ -1428,10 +1432,6 @@ a {
         font-size: 13.8656px;
         font-size: 0.8666rem;
         margin-top: 0; }
-
-@media screen and (max-width: 320px) {
-  .yarpp-related ol li {
-    width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Author Box

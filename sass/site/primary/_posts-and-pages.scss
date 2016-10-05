@@ -252,6 +252,10 @@
 			float: left;
 			margin: 0;
 			width: 31%;
+			
+			@media (max-width: 320px) {
+				width: 100%;
+			}
 
 			&:first-child {
 				margin-right: 3.5%;
@@ -284,16 +288,6 @@
 				@include font-size(0.8666);
 				margin-top: 0;
 			}
-		}
-	}
-}
-
-@media screen and (max-width: 320px) {
-
-	.yarpp-related {
-	
-		ol li {
-			width: 100%;
 		}
 	}
 }
