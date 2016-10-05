@@ -11,27 +11,27 @@ h6 {
 }
 
 h1 {
-	@include font-size(1.78571);
+	@include font-size(2.1333);
 }
 
 h2 {
-	@include font-size(1.57143);
+	@include font-size(1.8666);
 }
 
 h3 {
-	@include font-size(1.42857);
+	@include font-size(1.6);
 }
 
 h4 {
-	@include font-size(1.28571);
+	@include font-size(1.3333);
 }
 
 h5 {
-	@include font-size(1.14286);
+	@include font-size(1.2);
 }
 
 h6 {
-	@include font-size(1);
+	@include font-size(1.0666);
 }
 
 .heading-strike {
