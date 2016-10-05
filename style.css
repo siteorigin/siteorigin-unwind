@@ -245,7 +245,8 @@ h6 {
   clear: both;
   color: #2d2d2d;
   font-family: "Merriweather", serif;
-  font-weight: 700; }
+  font-weight: 700;
+  margin: 1em 0; }
 
 h1 {
   font-size: 34.1328px;
@@ -318,7 +319,7 @@ h6 {
 ## Copy
 --------------------------------------------------------------*/
 p {
-  margin: 0 0 2.25em; }
+  margin: 0 0 1.9833em; }
 
 dfn,
 cite,
@@ -335,7 +336,7 @@ blockquote {
     margin-bottom: 0; }
 
 address {
-  margin: 0 0 2.25em; }
+  margin: 0 0 1.9833; }
 
 pre {
   background: #eee;
@@ -343,7 +344,7 @@ pre {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 1.6;
-  margin-bottom: 2.25em;
+  margin-bottom: 1.9833;
   max-width: 100%;
   overflow: auto;
   padding: 1.6em; }
