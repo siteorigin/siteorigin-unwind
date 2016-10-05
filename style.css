@@ -1401,7 +1401,7 @@ a {
       float: left;
       margin: 0;
       width: 31%; }
-      @media (max-width: 320px) {
+      @media (max-width: 480px) {
         .yarpp-related ol li,
         .related-posts-section ol li {
           width: 100%; } }
