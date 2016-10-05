@@ -8,3 +8,25 @@
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+
+#page #infinite-handle {
+	text-align: center;
+
+	span {
+    	background: inherit;
+    	border-radius: initial;
+    	color: inherit;
+    	cursor: pointer;
+    	font-size: inherit;
+	    padding: inherit;
+
+		button {
+			@extend .button;
+		}
+	}
+}
+
+.infinite-scroll .infinite-loader .spinner {
+	margin: 0 auto;
+	text-align: center;
+}
