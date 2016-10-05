@@ -1053,7 +1053,8 @@ a {
     display: table; }
 
 .archive .site-content,
-.search-results .site-content {
+.search-results .site-content,
+.error404 .site-content {
   padding-top: 4em; }
 
 .content-area {
@@ -1226,23 +1227,10 @@ a {
   margin: 2em 0 0; }
 
 .page-title {
-  font-family: "Lato", sans-serif;
-  font-size: 13.8656px;
-  font-size: 0.8666rem;
-  letter-spacing: 1px;
-  text-align: center;
-  text-transform: uppercase; }
-
-.page-title-text {
-  border: 2px solid #ebebeb;
-  border-right: none;
-  border-left: none;
-  padding: 10px 0; }
-
-.page-header {
-  border-bottom: 2px solid #f4f4f4;
-  margin-bottom: 5.3333em;
-  padding-bottom: 4em; }
+  color: #2d2d2d;
+  line-height: normal;
+  margin: 0;
+  text-align: center; }
 
 .entry-meta {
   display: -webkit-box;
@@ -1281,8 +1269,6 @@ a {
 
 .entry-title {
   color: #2d2d2d;
-  font-size: 34.128px;
-  font-size: 2.133rem;
   line-height: normal;
   margin: 0.5em 0 0;
   text-align: center; }
@@ -1360,6 +1346,21 @@ a {
     .tags-list a:hover {
       background: #626262;
       color: #fff; }
+
+/*--------------------------------------------------------------
+## Search Form
+--------------------------------------------------------------*/
+.content-area .search-form button[type="submit"] {
+  border: none;
+  padding: .65em;
+  padding-left: 0.89375em;
+  position: relative;
+  top: .2em;
+  right: 4.5356em; }
+  .content-area .search-form button[type="submit"] svg {
+    fill: #626262;
+    height: 1.2666em;
+    width: 1.3333em; }
 
 /*--------------------------------------------------------------
 ## Jetpack Sharing
@@ -1744,13 +1745,10 @@ a {
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
   display: none; }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
   display: block; }
 

@@ -21,25 +21,32 @@
 	margin: 2em 0 0;
 }
 
+// .page-title {
+// 	font-family: $font__details;
+// 	@include font-size(0.8666);
+// 	letter-spacing: 1px;
+// 	text-align: center;
+// 	text-transform: uppercase;
+// }
+
+// .page-title-text {
+// 	border: 2px solid $color__background-hr-dark;
+// 	border-right: none;
+// 	border-left: none;
+// 	padding: 10px 0;
+// }
+
+// .page-header {
+// 	border-bottom: 2px solid $color__background-hr;
+// 	margin-bottom: 5.3333em;
+// 	padding-bottom: 4em;
+// }
+
 .page-title {
-	font-family: $font__details;
-	@include font-size(0.8666);
-	letter-spacing: 1px;
+	color: $color__text-dark;
+	line-height: normal;
+	margin: 0;
 	text-align: center;
-	text-transform: uppercase;
-}
-
-.page-title-text {
-	border: 2px solid $color__background-hr-dark;
-	border-right: none;
-	border-left: none;
-	padding: 10px 0;
-}
-
-.page-header {
-	border-bottom: 2px solid $color__background-hr;
-	margin-bottom: 5.3333em;
-	padding-bottom: 4em;
 }
 
 .entry-meta {
@@ -76,7 +83,6 @@
 
 .entry-title {
 	color: $color__text-dark;
-	@include font-size(2.133);
 	line-height: normal;
 	margin: 0.5em 0 0;
 	text-align: center;
@@ -186,6 +192,24 @@
 			color: #fff;
 		}
 	}
+}
+
+/*--------------------------------------------------------------
+## Search Form
+--------------------------------------------------------------*/
+.content-area .search-form button[type="submit"] {
+	border: none;
+	padding: .65em;
+	padding-left: 0.89375em; 
+	position: relative;
+	top: .2em;
+	right: 4.5356em;
+	
+	svg {
+		fill: $color__text-main;
+		height: 1.2666em;
+		width: 1.3333em;
+	}	
 }
 
 /*--------------------------------------------------------------
