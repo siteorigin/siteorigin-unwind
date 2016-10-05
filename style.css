@@ -405,9 +405,13 @@ img {
 /*--------------------------------------------------------------
 ## Lists
 --------------------------------------------------------------*/
-ul, ol {
-  margin: 0 0 1.5em 1.5em;
+ul,
+ol {
+  margin: 0 0 2.25em 2.4em;
   padding: 0; }
+  ul li,
+  ol li {
+    padding-bottom: .2em; }
 
 ul {
   list-style: disc; }
@@ -417,14 +421,13 @@ ol {
 
 li > ul,
 li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5em; }
+  margin: 0 0 0 2.4em; }
 
 dt {
   font-weight: bold; }
 
 dd {
-  margin: 0 1.5em 1.5em; }
+  margin: 0 0 0 2.4em; }
 
 /*--------------------------------------------------------------
 ## Tables
@@ -1005,14 +1008,23 @@ a {
 --------------------------------------------------------------*/
 #page .widget_tag_cloud a {
   border: 1px solid #dadada;
+  color: #626262;
   display: inline-block;
+  font-size: 14.9328px;
+  font-size: 0.9333rem;
   margin: 0 .107em .45em 0;
   padding: .7642em .9785em .6213em;
-  line-height: normal; }
+  line-height: normal;
+  text-decoration: none; }
   #page .widget_tag_cloud a:hover {
     background: #626262;
     border-color: #626262;
     color: #fff; }
+
+#secondary .widget_tag_cloud,
+#colophon .widget_tag_cloud {
+  font-size: 14.856px;
+  font-size: 0.9285rem; }
 
 /*--------------------------------------------------------------
 # Content
