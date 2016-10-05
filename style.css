@@ -1515,41 +1515,47 @@ a {
     clear: both;
     content: "";
     display: table; }
+  @media (max-width: 1024px) {
+    .left-medium-loop article {
+      margin-bottom: 1.4667em; } }
   .left-medium-loop article .entry-thumbnail {
     float: left;
     margin: 0;
     width: 42.452830188679%; }
+    @media (max-width: 480px) {
+      .left-medium-loop article .entry-thumbnail {
+        float: none;
+        margin-bottom: 1.8em;
+        text-align: center;
+        width: 100%; } }
   .left-medium-loop article .entry-content {
     float: right;
     margin: 0;
     width: 100%; }
+    @media (max-width: 480px) {
+      .left-medium-loop article .entry-content {
+        float: none; } }
     .left-medium-loop article .entry-content .entry-meta {
       justify-content: initial;
       margin: .45em 0 .6em; }
+      @media (max-width: 480px) {
+        .left-medium-loop article .entry-content .entry-meta {
+          justify-content: center; } }
     .left-medium-loop article .entry-content .entry-title {
       font-size: 25.6px;
       font-size: 1.6rem;
       margin: 0;
       text-align: left; }
+      @media (max-width: 480px) {
+        .left-medium-loop article .entry-content .entry-title {
+          text-align: center; } }
     .left-medium-loop article .entry-content .entry-summary {
       margin-top: 0.5em; }
   .left-medium-loop article.has-post-thumbnail .entry-content {
     width: 54.009433962264%; }
-
-@media screen and (max-width: 320px) {
-  .search-results .content-area article .entry-thumbnail {
-    margin: 0 auto 25px;
-    width: 100%; }
-  .search-results .content-area article .entry-content {
-    float: none; }
-    .search-results .content-area article .entry-content .entry-meta {
-      text-align: center; }
-    .search-results .content-area article .entry-content .entry-title {
-      text-align: center; }
-    .search-results .content-area article .entry-content .entry-summary {
-      text-align: center; }
-  .search-results .content-area article.has-post-thumbnail .entry-content {
-    width: 100%; } }
+    @media (max-width: 480px) {
+      .left-medium-loop article.has-post-thumbnail .entry-content {
+        width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Asides

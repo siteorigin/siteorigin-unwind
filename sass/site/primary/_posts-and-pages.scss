@@ -367,27 +367,50 @@
 	article {
 		@include clearfix;
 		margin-bottom: 3.25em; 
+		
+		@media (max-width: 1024px) {
+			margin-bottom: 1.4667em;
+		}
 
 		.entry-thumbnail {
 			float: left;
 			margin: 0;
 			width: 42.452830188679%;
+			
+			@media (max-width: 480px) {
+				float: none;
+				margin-bottom: 1.8em; 
+				text-align: center;
+				width: 100%; 
+			}
 		}
 
 		.entry-content {
 			float: right;
 			margin: 0;
 			width: 100%;
+			
+			@media (max-width: 480px) {
+				float: none; 
+			}
 
 			.entry-meta {
 				justify-content: initial;
 				margin: .45em 0 .6em;
+				
+				@media (max-width: 480px) {
+					justify-content: center;
+				}					
 			}
 
 			.entry-title {
 				@include font-size(1.6);
 				margin: 0;
 				text-align: left;
+				
+				@media (max-width: 480px) {
+					text-align: center;
+				}				
 			}
 
 			.entry-summary {
@@ -399,42 +422,9 @@
 
 			.entry-content {
 				width: 54.009433962264%;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 320px) {
-
-	.search-results .content-area {
-
-		article {
-
-			.entry-thumbnail {
-				margin: 0 auto 25px;
-				width: 100%;
-			}
-
-			.entry-content {
-				float: none;
-
-				.entry-meta {
-					text-align: center;
-				}
-
-				.entry-title {
-					text-align: center;
-				}
-
-				.entry-summary {
-					text-align: center;
-				}
-			}
-
-			&.has-post-thumbnail {
-
-				.entry-content {
-					width: 100%;
+				
+				@media (max-width: 480px) {
+					width: 100%; 
 				}
 			}
 		}
