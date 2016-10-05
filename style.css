@@ -1041,7 +1041,7 @@ a {
   padding: 0 25px;
   position: relative;
   width: 100%; }
-  @media (max-width: 320px) {
+  @media (max-width: 480px) {
     .container {
       padding: 0 15px; } }
 
