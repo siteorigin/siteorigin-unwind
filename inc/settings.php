@@ -44,7 +44,7 @@ function siteorigin_unwind_settings_init() {
 					'live' => true,
 				),
 			)
-		),	
+		),
 
 		'masthead' => array(
 			'title' => __('Header', 'siteorigin-unwind'),
@@ -168,7 +168,7 @@ function siteorigin_unwind_settings_custom_css($css){
 		'}' . "\n" .
 		'.page-header {' . "\n" .
 		'margin-bottom: ${masthead_bottom_margin};' . "\n" .
-		'}' . "\n" .		
+		'}' . "\n" .
 		'#colophon {' . "\n" .
 		'margin-top: ${footer_top_margin};' . "\n" .
 		'}' . "\n" .
@@ -217,3 +217,116 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults');
+
+if ( ! function_exists( 'siteorigin_unwind_page_settings' ) ) :
+/**
+ * Setup Page Settings for SiteOrigin North
+ */
+function siteorigin_unwind_page_settings( $settings, $type, $id ){
+
+	$settings['layout'] = array(
+		'type'    => 'select',
+		'label'   => __( 'Page Layout', 'siteorigin-unwind' ),
+		'options' => array(
+			'default'            => __( 'Default', 'siteorigin-unwind' ),
+			'no-sidebar'         => __( 'No Sidebar', 'siteorigin-unwind' ),
+			'full-width'         => __( 'Full Width', 'siteorigin-unwind' ),
+			'full-width-sidebar' => __( 'Full Width, With Sidebar', 'siteorigin-unwind' ),
+		),
+	);
+
+	$settings['page_title'] = array(
+		'type'           => 'checkbox',
+		'label'          => __( 'Page Title', 'siteorigin-unwind' ),
+		'checkbox_label' => __( 'display', 'siteorigin-unwind' ),
+		'description'    => __( 'Display the page title on this page.', 'siteorigin-unwind' )
+	);
+
+	if( $type == 'post' ) $post = get_post( $id );
+	if( ! empty( $post ) && $post->post_type == 'page' ) {
+		$settings['featured_image'] = array(
+			'type'           => 'checkbox',
+			'label'          => __( 'Page Featured Image', 'siteorigin-unwind' ),
+			'checkbox_label' => __( 'display', 'siteorigin-unwind' ),
+			'description'    => __( 'Display the page featured image on this page.', 'siteorigin-unwind' )
+		);
+	}
+
+	$settings['masthead_margin'] = array(
+		'type'           => 'checkbox',
+		'label'          => __( 'Masthead Bottom Margin', 'siteorigin-unwind' ),
+		'checkbox_label' => __( 'enable', 'siteorigin-unwind' ),
+		'description'    => __( 'Include the margin below the masthead (top area) of your site.', 'siteorigin-unwind' )
+	);
+
+	$settings['footer_margin'] = array(
+		'type'           => 'checkbox',
+		'label'          => __( 'Footer Top Margin', 'siteorigin-unwind' ),
+		'checkbox_label' => __( 'enable', 'siteorigin-unwind' ),
+		'description'    => __( 'Include the margin above your footer.', 'siteorigin-unwind' )
+	);
+
+	$settings['hide_masthead'] = array(
+		'type'           => 'checkbox',
+		'label'          => __( 'Hide Masthead', 'siteorigin-unwind' ),
+		'checkbox_label' => __( 'hide', 'siteorigin-unwind' ),
+		'description'    => __( 'Hide the masthead on this page.', 'siteorigin-unwind' )
+	);
+
+	$settings['hide_footer_widgets'] = array(
+		'type'           => 'checkbox',
+		'label'          => __( 'Hide Footer Widgets', 'siteorigin-unwind' ),
+		'checkbox_label' => __( 'hide', 'siteorigin-unwind' ),
+		'description'    => __( 'Hide the footer widgets on this page.', 'siteorigin-unwind' )
+	);
+
+	return $settings;
+}
+endif;
+add_action( 'siteorigin_page_settings', 'siteorigin_unwind_page_settings', 10, 3 );
+
+if ( ! function_exists( 'siteorigin_unwind_setup_page_setting_defaults' ) ) :
+/**
+ * Add the default Page Settings
+ */
+function siteorigin_unwind_setup_page_setting_defaults( $defaults, $type, $id ){
+	// All the basic default settings
+	$defaults['layout']              = 'default';
+	$defaults['page_title']          = true;
+	$defaults['masthead_margin']     = true;
+	$defaults['footer_margin']       = true;
+	$defaults['hide_masthead']       = false;
+	$defaults['hide_footer_widgets'] = false;
+
+	// Defaults for page only settings
+	if( $type == 'post' ) $post = get_post( $id );
+	if( ! empty( $post ) && $post->post_type == 'page' ) {
+		$defaults['featured_image'] = false;
+	}
+
+	// Specific default settings for different types
+	if( $type == 'template' && $id == 'home' ) {
+		$defaults['page_title'] = false;
+	}
+
+	return $defaults;
+}
+endif;
+add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_setting_defaults', 10, 3 );
+
+if ( ! function_exists( 'siteorigin_unwind_page_settings_panels_defaults' ) ) :
+/**
+ * Change the default page settings for the home page.
+ *
+ * @param $settings
+ *
+ * @return mixed
+ */
+function siteorigin_unwind_page_settings_panels_defaults( $settings ){
+	$settings['layout']     = 'no-sidebar';
+	$settings['page_title'] = false;
+
+	return $settings;
+}
+endif;
+add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults');
