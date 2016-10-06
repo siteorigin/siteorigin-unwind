@@ -1,5 +1,5 @@
 p {
-	margin: 0 0 2.25em;
+	margin: 0 0 1.9833em;
 }
 
 dfn, 
@@ -21,7 +21,7 @@ blockquote {
 }
 
 address {
-	margin: 0 0 2.25em;
+	margin: 0 0 1.9833;
 }
 
 pre {
@@ -29,7 +29,7 @@ pre {
 	font-family: $font__pre;
 	@include font-size(0.9375);
 	line-height: $font__line-height-pre;
-	margin-bottom: 2.25em;
+	margin-bottom: 1.9833;
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;

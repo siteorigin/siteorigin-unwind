@@ -245,31 +245,32 @@ h6 {
   clear: both;
   color: #2d2d2d;
   font-family: "Merriweather", serif;
-  font-weight: 700; }
+  font-weight: 700;
+  margin: 1em 0; }
 
 h1 {
-  font-size: 28.57136px;
-  font-size: 1.78571rem; }
+  font-size: 34.1328px;
+  font-size: 2.1333rem; }
 
 h2 {
-  font-size: 25.14288px;
-  font-size: 1.57143rem; }
+  font-size: 29.8656px;
+  font-size: 1.8666rem; }
 
 h3 {
-  font-size: 22.85712px;
-  font-size: 1.42857rem; }
+  font-size: 25.6px;
+  font-size: 1.6rem; }
 
 h4 {
-  font-size: 20.57136px;
-  font-size: 1.28571rem; }
+  font-size: 21.3328px;
+  font-size: 1.3333rem; }
 
 h5 {
-  font-size: 18.28576px;
-  font-size: 1.14286rem; }
+  font-size: 19.2px;
+  font-size: 1.2rem; }
 
 h6 {
-  font-size: 16px;
-  font-size: 1rem; }
+  font-size: 17.0656px;
+  font-size: 1.0666rem; }
 
 .heading-strike {
   display: -webkit-box;
@@ -318,7 +319,7 @@ h6 {
 ## Copy
 --------------------------------------------------------------*/
 p {
-  margin: 0 0 2.25em; }
+  margin: 0 0 1.9833em; }
 
 dfn,
 cite,
@@ -335,7 +336,7 @@ blockquote {
     margin-bottom: 0; }
 
 address {
-  margin: 0 0 2.25em; }
+  margin: 0 0 1.9833; }
 
 pre {
   background: #eee;
@@ -343,7 +344,7 @@ pre {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 1.6;
-  margin-bottom: 2.25em;
+  margin-bottom: 1.9833;
   max-width: 100%;
   overflow: auto;
   padding: 1.6em; }
@@ -405,9 +406,13 @@ img {
 /*--------------------------------------------------------------
 ## Lists
 --------------------------------------------------------------*/
-ul, ol {
-  margin: 0 0 1.5em 1.5em;
+ul,
+ol {
+  margin: 0 0 2.25em 2.4em;
   padding: 0; }
+  ul li,
+  ol li {
+    padding-bottom: .2em; }
 
 ul {
   list-style: disc; }
@@ -417,14 +422,13 @@ ol {
 
 li > ul,
 li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5em; }
+  margin: 0 0 0 2.4em; }
 
 dt {
   font-weight: bold; }
 
 dd {
-  margin: 0 1.5em 1.5em; }
+  margin: 0 0 0 2.4em; }
 
 /*--------------------------------------------------------------
 ## Tables
@@ -436,7 +440,7 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-.button, .page-links span:not(.page-links-title),
+.button, .page-links span:not(.page-links-title), #page #infinite-handle span button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -454,7 +458,7 @@ input[type="submit"] {
   -moz-transition: 0.085s;
   transition: 0.085s;
   text-transform: uppercase; }
-  .button:hover, .page-links span:hover:not(.page-links-title),
+  .button:hover, .page-links span:hover:not(.page-links-title), #page #infinite-handle span button:hover,
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
@@ -462,7 +466,7 @@ input[type="submit"] {
     background: #fff;
     border-color: #24c48a;
     color: #24c48a; }
-  .button:active, .page-links span:active:not(.page-links-title), .button:focus, .page-links span:focus:not(.page-links-title),
+  .button:active, .page-links span:active:not(.page-links-title), #page #infinite-handle span button:active, .button:focus, .page-links span:focus:not(.page-links-title), #page #infinite-handle span button:focus,
   button:active,
   button:focus,
   input[type="button"]:active,
@@ -868,10 +872,8 @@ a {
     text-decoration: none;
     top: 5px;
     width: auto;
-    z-index: 100000;
-    /* Above WP toolbar. */ }
+    z-index: 100000; }
 
-/* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
   outline: 0; }
 
@@ -1007,14 +1009,23 @@ a {
 --------------------------------------------------------------*/
 #page .widget_tag_cloud a {
   border: 1px solid #dadada;
+  color: #626262;
   display: inline-block;
+  font-size: 14.9328px;
+  font-size: 0.9333rem;
   margin: 0 .107em .45em 0;
   padding: .7642em .9785em .6213em;
-  line-height: normal; }
+  line-height: normal;
+  text-decoration: none; }
   #page .widget_tag_cloud a:hover {
     background: #626262;
     border-color: #626262;
     color: #fff; }
+
+#secondary .widget_tag_cloud,
+#colophon .widget_tag_cloud {
+  font-size: 14.856px;
+  font-size: 0.9285rem; }
 
 /*--------------------------------------------------------------
 # Content
@@ -1031,7 +1042,7 @@ a {
   padding: 0 25px;
   position: relative;
   width: 100%; }
-  @media (max-width: 320px) {
+  @media (max-width: 480px) {
     .container {
       padding: 0 15px; } }
 
@@ -1043,7 +1054,8 @@ a {
     display: table; }
 
 .archive .site-content,
-.search-results .site-content {
+.search-results .site-content,
+.error404 .site-content {
   padding-top: 4em; }
 
 .content-area {
@@ -1202,38 +1214,17 @@ a {
 .sticky {
   display: block; }
 
-.byline,
-.updated:not(.published) {
-  display: none; }
-
-.single .byline,
-.group-blog .byline {
-  display: inline; }
-
 .page-content,
 .entry-content,
 .entry-summary {
   margin: 2em 0 0; }
 
-.page-title {
-  font-family: "Lato", sans-serif;
-  font-size: 13.8656px;
-  font-size: 0.8666rem;
-  letter-spacing: 1px;
-  text-align: center;
-  text-transform: uppercase; }
+.entry {
+  margin-bottom: 5em; }
 
-.page-title-text {
-  border: 2px solid #ebebeb;
-  border-right: none;
-  border-left: none;
-  padding: 10px 0; }
-
-.page-header {
-  border-bottom: 2px solid #f4f4f4;
-  margin-bottom: 5.3333em;
-  padding-bottom: 4em; }
-
+/*--------------------------------------------------------------
+## Posts
+--------------------------------------------------------------*/
 .entry-meta {
   display: -webkit-box;
   display: -moz-box;
@@ -1271,8 +1262,6 @@ a {
 
 .entry-title {
   color: #2d2d2d;
-  font-size: 34.128px;
-  font-size: 2.133rem;
   line-height: normal;
   margin: 0.5em 0 0;
   text-align: center; }
@@ -1284,21 +1273,11 @@ a {
     .entry-title a:hover {
       color: #626262; }
 
-.page-links {
-  clear: both;
-  margin: 0 0 4.6666em; }
-  .page-links .page-links-title {
-    color: #2d2d2d; }
-  .page-links a {
-    text-decoration: none; }
-  .page-links span:not(.page-links-title) {
-    background: #fff;
-    border-color: #24c48a;
-    color: #24c48a;
-    margin-right: 0.1333em; }
-  .page-links .page-links-title ~ a span {
-    border-color: #dadada;
-    color: #2d2d2d; }
+.entry-thumbnail {
+  margin: 35px 0; }
+  .entry-thumbnail img {
+    max-width: 100%;
+    vertical-align: middle; }
 
 .more-link {
   display: block;
@@ -1319,21 +1298,21 @@ a {
       border: 2px solid #24c48a;
       padding: 10px 12px; }
 
-.entry {
-  margin-bottom: 5em; }
-
-.archive-entry {
-  border-bottom: 2px solid #f4f4f4;
-  margin-bottom: 5em;
-  padding-bottom: 5em; }
-  .archive-entry:last-of-type {
-    margin-bottom: 5.5em; }
-
-.entry-thumbnail {
-  margin: 35px 0; }
-  .entry-thumbnail img {
-    max-width: 100%;
-    vertical-align: middle; }
+.page-links {
+  clear: both;
+  margin: 0 0 4.6666em; }
+  .page-links .page-links-title {
+    color: #2d2d2d; }
+  .page-links a {
+    text-decoration: none; }
+  .page-links span:not(.page-links-title) {
+    background: #fff;
+    border-color: #24c48a;
+    color: #24c48a;
+    margin-right: 0.1333em; }
+  .page-links .page-links-title ~ a span {
+    border-color: #dadada;
+    color: #2d2d2d; }
 
 .tags-list {
   margin-top: 1em; }
@@ -1350,6 +1329,63 @@ a {
     .tags-list a:hover {
       background: #626262;
       color: #fff; }
+
+/*--------------------------------------------------------------
+## Archives & Search Results
+--------------------------------------------------------------*/
+.archive .container > .page-header,
+.search .container > .page-header {
+  border-bottom: 2px solid #f4f4f4;
+  margin-bottom: 5.3333em;
+  padding-bottom: 4em; }
+  .archive .container > .page-header .page-title,
+  .search .container > .page-header .page-title {
+    font-family: "Lato", sans-serif;
+    font-size: 13.8656px;
+    font-size: 0.8666rem;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase; }
+  .archive .container > .page-header .page-title-text,
+  .search .container > .page-header .page-title-text {
+    border: 2px solid #ebebeb;
+    border-right: none;
+    border-left: none;
+    padding: 10px 0; }
+
+.search-no-results #primary {
+  text-align: center; }
+
+.archive-entry {
+  border-bottom: 2px solid #f4f4f4;
+  margin-bottom: 5em;
+  padding-bottom: 5em; }
+  .archive-entry:last-of-type {
+    margin-bottom: 5.5em; }
+
+/*--------------------------------------------------------------
+## Pages
+--------------------------------------------------------------*/
+.page-title {
+  color: #2d2d2d;
+  line-height: normal;
+  margin: 0;
+  text-align: center; }
+
+/*--------------------------------------------------------------
+## Search Form
+--------------------------------------------------------------*/
+.content-area .search-form button[type="submit"] {
+  border: none;
+  padding: .65em;
+  padding-left: 0.89375em;
+  position: relative;
+  top: .2em;
+  right: 4.5356em; }
+  .content-area .search-form button[type="submit"] svg {
+    fill: #626262;
+    height: 1.2666em;
+    width: 1.3333em; }
 
 /*--------------------------------------------------------------
 ## Jetpack Sharing
@@ -1390,6 +1426,10 @@ a {
       float: left;
       margin: 0;
       width: 31%; }
+      @media (max-width: 480px) {
+        .yarpp-related ol li,
+        .related-posts-section ol li {
+          width: 100%; } }
       .yarpp-related ol li:first-child,
       .related-posts-section ol li:first-child {
         margin-right: 3.5%; }
@@ -1418,10 +1458,6 @@ a {
         font-size: 0.8666rem;
         margin-top: 0; }
 
-@media screen and (max-width: 320px) {
-  .yarpp-related ol li {
-    width: 100%; } }
-
 /*--------------------------------------------------------------
 ## Author Box
 --------------------------------------------------------------*/
@@ -1429,9 +1465,18 @@ a {
   margin: 2.666em 0 4.3333em; }
   .author-box .author-avatar {
     float: left; }
+    @media (max-width: 480px) {
+      .author-box .author-avatar {
+        float: none; } }
     .author-box .author-avatar img {
       border-radius: 50%;
       vertical-align: middle; }
+      @media (max-width: 480px) {
+        .author-box .author-avatar img {
+          display: block;
+          margin-right: auto;
+          margin-bottom: 30px;
+          margin-left: auto; } }
   .author-box .author-description {
     color: #626262;
     font-size: 14.9328px;
@@ -1442,6 +1487,10 @@ a {
       clear: both;
       content: "";
       display: table; }
+    @media (max-width: 480px) {
+      .author-box .author-description {
+        padding-left: 0;
+        text-align: center; } }
     .author-box .author-description .post-author-title {
       font-size: 14.9328px;
       font-size: 0.9333rem;
@@ -1451,22 +1500,11 @@ a {
       .author-box .author-description .post-author-title a {
         color: #2d2d2d;
         text-decoration: none; }
+        @media (max-width: 480px) {
+          .author-box .author-description .post-author-title a {
+            text-align: center; } }
         .author-box .author-description .post-author-title a:hover {
           color: #626262; }
-
-@media screen and (max-width: 320px) {
-  .author-box .author-avatar {
-    float: none; }
-    .author-box .author-avatar img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 30px; }
-  .author-box .author-description {
-    padding-left: 0;
-    text-align: center; }
-    .author-box .author-description .post-author-title a {
-      text-align: center; } }
 
 /*--------------------------------------------------------------
 ## Post Loop: Left Medium Thumbnail
@@ -1477,41 +1515,47 @@ a {
     clear: both;
     content: "";
     display: table; }
+  @media (max-width: 1024px) {
+    .left-medium-loop article {
+      margin-bottom: 1.4667em; } }
   .left-medium-loop article .entry-thumbnail {
     float: left;
     margin: 0;
     width: 42.452830188679%; }
+    @media (max-width: 480px) {
+      .left-medium-loop article .entry-thumbnail {
+        float: none;
+        margin-bottom: 1.8em;
+        text-align: center;
+        width: 100%; } }
   .left-medium-loop article .entry-content {
     float: right;
     margin: 0;
     width: 100%; }
+    @media (max-width: 480px) {
+      .left-medium-loop article .entry-content {
+        float: none; } }
     .left-medium-loop article .entry-content .entry-meta {
       justify-content: initial;
       margin: .45em 0 .6em; }
+      @media (max-width: 480px) {
+        .left-medium-loop article .entry-content .entry-meta {
+          justify-content: center; } }
     .left-medium-loop article .entry-content .entry-title {
       font-size: 25.6px;
       font-size: 1.6rem;
       margin: 0;
       text-align: left; }
+      @media (max-width: 480px) {
+        .left-medium-loop article .entry-content .entry-title {
+          text-align: center; } }
     .left-medium-loop article .entry-content .entry-summary {
       margin-top: 0.5em; }
   .left-medium-loop article.has-post-thumbnail .entry-content {
     width: 54.009433962264%; }
-
-@media screen and (max-width: 320px) {
-  .search-results .content-area article .entry-thumbnail {
-    margin: 0 auto 25px;
-    width: 100%; }
-  .search-results .content-area article .entry-content {
-    float: none; }
-    .search-results .content-area article .entry-content .entry-meta {
-      text-align: center; }
-    .search-results .content-area article .entry-content .entry-title {
-      text-align: center; }
-    .search-results .content-area article .entry-content .entry-summary {
-      text-align: center; }
-  .search-results .content-area article.has-post-thumbnail .entry-content {
-    width: 100%; } }
+    @media (max-width: 480px) {
+      .left-medium-loop article.has-post-thumbnail .entry-content {
+        width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Asides
@@ -1734,15 +1778,26 @@ a {
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
   display: none; }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
   display: block; }
+
+#page #infinite-handle {
+  text-align: center; }
+  #page #infinite-handle span {
+    background: inherit;
+    border-radius: initial;
+    color: inherit;
+    cursor: pointer;
+    font-size: inherit;
+    padding: inherit; }
+
+.infinite-scroll .infinite-loader .spinner {
+  margin: 0 auto;
+  text-align: center; }
 
 /*--------------------------------------------------------------
 # Media
