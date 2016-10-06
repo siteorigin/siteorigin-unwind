@@ -34,7 +34,7 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// If we're viewing on a mobile device, add a class.
 	if ( wp_is_mobile() ) {
 		$classes[] = 'is_mobile';
-	}	
+	}
 
 	// Add a no-js class which we'll remove as required.
 	$classes[] = 'no-js';
@@ -42,17 +42,18 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// Check if the sidebar has widgets.
 	if ( ! is_active_sidebar( 'main-sidebar' ) ) {
 		$classes[] = 'no-active-sidebar';
-	}	
+	}
 
 	// Add the page setting classes.
-	if ( is_page() ) {
-		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get( 'layout' );
-		if ( ! SiteOrigin_Settings_Page_Settings::get( 'masthead_margin' ) ) {
-			$classes[] = 'page-layout-no-masthead-margin';
-		}
-		if ( ! SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
-			$classes[] = 'page-layout-no-footer-margin';
-		}
+	$page_settings = siteorigin_page_setting();
+
+	if ( !empty( $page_settings ) ) {
+		if ( !empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
+
+		if ( empty( $page_settings['masthead_margin'] ) ) $classes[] = 'page-layout-no-masthead-margin';
+		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
+		if ( !empty( $page_settings['hide_masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
+		if ( !empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
 	}
 
 	// If the navigation is sticky, add a class.
