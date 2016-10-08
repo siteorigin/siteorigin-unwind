@@ -59,7 +59,7 @@ function siteorigin_unwind_archive_title() {
 	?>
 	<header class="page-header">
 		<?php
-			the_archive_title( '<h1 class="page-title"><span class="page-title-text">', '</span></h1>' );
+			if( siteorigin_page_setting( 'page_title' ) ) the_archive_title( '<h1 class="page-title"><span class="page-title-text">', '</span></h1>' );
 			the_archive_description( '<div class="taxonomy-description">', '</div>' );
 		?>
 	</header><!-- .page-header -->
@@ -121,7 +121,7 @@ function siteorigin_unwind_post_meta() {
 
 	<?php if ( is_sticky() && is_home() && ! is_paged() ) {
 		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
-	} ?>	
+	} ?>
 
 	<span class="entry-date"><?php the_time( 'M d, Y' ); ?></span>
 
@@ -286,7 +286,7 @@ if ( ! function_exists( 'siteorigin_unwind_tag_cloud' ) ) :
 function siteorigin_unwind_tag_cloud( $args ) {
 
     $args['unit'] = 'em';
-    $args['largest'] = 0.9285; 
+    $args['largest'] = 0.9285;
     $args['smallest'] = 0.9285;
     return $args;
 }
