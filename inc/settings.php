@@ -1,140 +1,143 @@
 <?php
 
+/**
+ * Localize the theme settings.
+ */
 function siteorigin_unwind_settings_localize( $loc ) {
 	return wp_parse_args( array(
-		'section_title' => __('Theme Settings', 'siteorigin-unwind'),
-		'section_description' => __('Change settings for your theme.', 'siteorigin-unwind'),
-		'premium_only' => __('Available in Premium', 'siteorigin-unwind'),
+		'section_title' => esc_html__( 'Theme Settings', 'siteorigin-unwind' ),
+		'section_description' => esc_html__( 'Change settings for your theme.', 'siteorigin-unwind' ),
+		'premium_only' => esc_html__( 'Available in Premium', 'siteorigin-unwind' ),
 		'premium_url' => 'https://siteorigin.com/premium/?target=theme_unwind',
 
-		// For the controls
-		'variant' => __('Variant', 'siteorigin-unwind'),
-		'subset' => __('Subset', 'siteorigin-unwind'),
+		// For the controls.
+		'variant' => esc_html__( 'Variant', 'siteorigin-unwind' ),
+		'subset' => esc_html__( 'Subset', 'siteorigin-unwind' ),
 
-		// For the settings metabox
-		'meta_box' => __('Page settings', 'siteorigin-unwind'),
+		// For the settings metabox.
+		'meta_box' => esc_html__( 'Page settings', 'siteorigin-unwind' ),
 	), $loc);
 }
 add_filter( 'siteorigin_settings_localization', 'siteorigin_unwind_settings_localize' );
 
 /**
- * Initialize the settings
+ * Initialize the settings.
  */
 function siteorigin_unwind_settings_init() {
 
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
 
 		'branding' => array(
-			'title' => __('Branding', 'siteorigin-unwind'),
+			'title' => esc_html__( 'Branding', 'siteorigin-unwind' ),
 			'fields' => array(
 				'logo' => array(
 					'type' => 'media',
-					'label' => __('Logo', 'siteorigin-unwind'),
-					'description' => __('Logo displayed in your masthead.', 'siteorigin-unwind')
+					'label' => esc_html__( 'Logo', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Logo displayed in your masthead.', 'siteorigin-unwind' )
 				),
 				'site_description' => array(
 					'type' => 'checkbox',
-					'label' => __('Site Description', 'siteorigin-unwind'),
-					'description' => __('Show your site description below your site title or logo.', 'siteorigin-unwind')
+					'label' => esc_html__( 'Site Description', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Show your site description below your site title or logo.', 'siteorigin-unwind' )
 				),
 				'accent' => array(
 					'type' => 'color',
-					'label' => __('Accent Color', 'siteorigin-unwind'),
-					'description' => __('The color used for links and various other accents.', 'siteorigin-unwind'),
+					'label' => esc_html__( 'Accent Color', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'The color used for links and various other accents.', 'siteorigin-unwind' ),
 					'live' => true,
 				),
 			)
 		),
 
 		'masthead' => array(
-			'title' => __('Header', 'siteorigin-unwind'),
+			'title' => esc_html__( 'Header', 'siteorigin-unwind' ),
 			'fields' => array(
 				'social_widget' => array(
 					'type' => 'widget',
 					'widget_class' => 'SiteOrigin_Widget_SocialMediaButtons_Widget',
 					'bundle_widget' => 'social-media-buttons',
 					'plugin' => 'so-widgets-bundle',
-					'plugin_name' => __('SiteOrigin Widgets Bundle', 'siteorigin-unwind'),
-					'description' => __('Add social icons to the masthead.', 'siteorigin-unwind'),
+					'plugin_name' => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Add social icons to the masthead.', 'siteorigin-unwind' ),
 				),
 				'bottom_margin'	=> array(
 					'type'	=> 'measurement',
-					'label'	=> __( 'Bottom Margin', 'siteorigin-unwind' ),
+					'label'	=> esc_html__( 'Bottom Margin', 'siteorigin-unwind' ),
 					'live'	=> true,
 				),
 			)
 		),
 
 		'navigation' => array(
-			'title' => __( 'Navigation', 'siteorigin-unwind' ),
+			'title' => esc_html__( 'Navigation', 'siteorigin-unwind' ),
 			'fields' => array(
 				'sticky' => array(
 					'type' => 'checkbox',
-					'label' => __('Sticky menu', 'siteorigin-unwind'),
-					'description' => __('Stick menu to top of screen', 'siteorigin-unwind'),
+					'label' => esc_html__( 'Sticky menu', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Stick menu to top of screen', 'siteorigin-unwind' ),
 				),
 				'post' => array(
 					'type' => 'checkbox',
-					'label' => __('Post navigation', 'siteorigin-unwind'),
-					'description' => __('Display next and previous post navigation', 'siteorigin-unwind'),
+					'label' => esc_html__( 'Post navigation', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display next and previous post navigation', 'siteorigin-unwind' ),
 				),
 			),
 		),
 
 		'blog' => array(
-			'title' => __( 'Blog', 'siteorigin-unwind' ),
+			'title' => esc_html__( 'Blog', 'siteorigin-unwind' ),
 			'fields' => array(
 				'featured_archive' => array(
 					'type' => 'checkbox',
-					'label' => __('Featured image on archive', 'siteorigin-unwind'),
+					'label' => esc_html__( 'Featured image on archive', 'siteorigin-unwind' ),
 				),
 				'featured_single' => array(
 					'type' => 'checkbox',
-					'label' => __('Featured image on single', 'siteorigin-unwind'),
+					'label' => esc_html__( 'Featured image on single', 'siteorigin-unwind' ),
 				),
 				'display_related_posts' => array(
 					'type' => 'checkbox',
-					'label' => __('Display related posts on single', 'siteorigin-unwind'),
+					'label' => esc_html__( 'Display related posts on single', 'siteorigin-unwind' ),
 				),
 				'display_author_box' => array(
 					'type' => 'checkbox',
-					'label' => __('Display author box on single', 'siteorigin-unwind'),
+					'label' => esc_html__( 'Display author box on single', 'siteorigin-unwind' ),
 				),
 			)
 		),
 
 		'footer' => array(
-			'title' => __('Footer', 'siteorigin-unwind'),
+			'title' => esc_html__( 'Footer', 'siteorigin-unwind' ),
 			'fields' => array(
 
 				'text' => array(
 					'type' => 'text',
-					'label' => __('Footer Text', 'siteorigin-unwind'),
-					'description' => __("{sitename} and {year} are your site's name and current year", 'siteorigin-unwind'),
+					'label' => esc_html__( 'Footer Text', 'siteorigin-unwind' ),
+					'description' => esc_html__( "{sitename} and {year} are your site's name and current year", 'siteorigin-unwind' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 
 				'constrained' => array(
 					'type' => 'checkbox',
-					'label' => __('Constrain', 'siteorigin-unwind'),
-					'description' => __("Constrain the footer width", 'siteorigin-unwind'),
+					'label' => esc_html__( 'Constrain', 'siteorigin-unwind' ),
+					'description' => esc_html__( "Constrain the footer width", 'siteorigin-unwind' ),
 				),
 
 				'top_padding'	=> array(
 					'type'	=> 'measurement',
-					'label'	=> __( 'Top Padding', 'siteorigin-unwind' ),
+					'label'	=> esc_html__( 'Top Padding', 'siteorigin-unwind' ),
 					'live'	=> true,
 				),
 
 				'side_padding'	=> array(
 					'type'	=> 'measurement',
-					'label'	=> __( 'Side Padding', 'siteorigin-unwind' ),
+					'label'	=> esc_html__( 'Side Padding', 'siteorigin-unwind' ),
 					'live'	=> true,
 				),
 
 				'top_margin'	=> array(
 					'type'	=> 'measurement',
-					'label'	=> __( 'Top Margin', 'siteorigin-unwind' ),
+					'label'	=> esc_html__( 'Top Margin', 'siteorigin-unwind' ),
 					'live'	=> true,
 				),
 			),
@@ -142,7 +145,7 @@ function siteorigin_unwind_settings_init() {
 
 	) ) );
 }
-add_action('siteorigin_settings_init', 'siteorigin_unwind_settings_init');
+add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
 
 /**
  * Add custom CSS for the theme settings
@@ -186,29 +189,29 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom
  *
  * @return mixed
  */
-function siteorigin_unwind_settings_defaults( $defaults ){
+function siteorigin_unwind_settings_defaults( $defaults ) {
 
-	// Branding defaults
+	// Branding defaults.
 	$defaults['branding_logo'] = false;
 	$defaults['branding_site_description'] = false;
 	$defaults['branding_accent'] = '#24c48a';
 
-	// The masthead defaults
+	// The masthead defaults.
 	$defaults['masthead_social_widget'] = '';
 	$defaults['masthead_bottom_margin'] = '80px';
 
-	// Navigation defaults
+	// Navigation defaults.
 	$defaults['navigation_sticky'] = true;
 	$defaults['navigation_post'] = true;
 
-	// Blog settings
+	// Blog settings.
 	$defaults['blog_featured_archive'] = true;
 	$defaults['blog_featured_single'] = true;
 	$defaults['blog_display_related_posts'] = true;
 	$defaults['blog_display_author_box'] = true;
 
-	// Footer settings
-	$defaults['footer_text'] = esc_html__('{year} &copy; {sitename}.', 'siteorigin-unwind');
+	// Footer settings.
+	$defaults['footer_text'] = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );
 	$defaults['footer_constrained'] = true;
 	$defaults['footer_top_padding'] = '40px';
 	$defaults['footer_side_padding'] = '40px';
@@ -216,9 +219,8 @@ function siteorigin_unwind_settings_defaults( $defaults ){
 
 	return $defaults;
 }
-add_filter('siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults');
+add_filter( 'siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults' );
 
-if ( ! function_exists( 'siteorigin_unwind_page_settings' ) ) :
 /**
  * Setup Page Settings for SiteOrigin North
  */
@@ -226,79 +228,75 @@ function siteorigin_unwind_page_settings( $settings, $type, $id ){
 
 	$settings['layout'] = array(
 		'type'    => 'select',
-		'label'   => __( 'Page Layout', 'siteorigin-unwind' ),
+		'label'   => esc_html__( 'Page Layout', 'siteorigin-unwind' ),
 		'options' => array(
-			'default'            => __( 'Default', 'siteorigin-unwind' ),
-			'no-sidebar'         => __( 'No Sidebar', 'siteorigin-unwind' ),
-			'full-width'         => __( 'Full Width', 'siteorigin-unwind' ),
-			'full-width-sidebar' => __( 'Full Width, With Sidebar', 'siteorigin-unwind' ),
+			'default'            => esc_html__( 'Default', 'siteorigin-unwind' ),
+			'no-sidebar'         => esc_html__( 'No Sidebar', 'siteorigin-unwind' ),
+			'full-width'         => esc_html__( 'Full Width', 'siteorigin-unwind' ),
+			'full-width-sidebar' => esc_html__( 'Full Width, With Sidebar', 'siteorigin-unwind' ),
 		),
 	);
 
 	$settings['page_title'] = array(
 		'type'           => 'checkbox',
-		'label'          => __( 'Page Title', 'siteorigin-unwind' ),
-		'checkbox_label' => __( 'display', 'siteorigin-unwind' ),
-		'description'    => __( 'Display the page title on this page.', 'siteorigin-unwind' )
+		'label'          => esc_html__( 'Page Title', 'siteorigin-unwind' ),
+		'checkbox_label' => esc_html__( 'display', 'siteorigin-unwind' ),
+		'description'    => esc_html__( 'Display the page title on this page.', 'siteorigin-unwind' )
 	);
 
 	$settings['masthead_margin'] = array(
 		'type'           => 'checkbox',
-		'label'          => __( 'Masthead Bottom Margin', 'siteorigin-unwind' ),
-		'checkbox_label' => __( 'enable', 'siteorigin-unwind' ),
-		'description'    => __( 'Include the margin below the masthead (top area) of your site.', 'siteorigin-unwind' )
+		'label'          => esc_html__( 'Masthead Bottom Margin', 'siteorigin-unwind' ),
+		'checkbox_label' => esc_html__( 'enable', 'siteorigin-unwind' ),
+		'description'    => esc_html__( 'Include the margin below the masthead (top area) of your site.', 'siteorigin-unwind' )
 	);
 
 	$settings['footer_margin'] = array(
 		'type'           => 'checkbox',
-		'label'          => __( 'Footer Top Margin', 'siteorigin-unwind' ),
-		'checkbox_label' => __( 'enable', 'siteorigin-unwind' ),
-		'description'    => __( 'Include the margin above your footer.', 'siteorigin-unwind' )
+		'label'          => esc_html__( 'Footer Top Margin', 'siteorigin-unwind' ),
+		'checkbox_label' => esc_html__( 'enable', 'siteorigin-unwind' ),
+		'description'    => esc_html__( 'Include the margin above your footer.', 'siteorigin-unwind' )
 	);
 
-	$settings['hide_masthead'] = array(
+	$settings['display_masthead'] = array(
 		'type'           => 'checkbox',
-		'label'          => __( 'Hide Masthead', 'siteorigin-unwind' ),
-		'checkbox_label' => __( 'hide', 'siteorigin-unwind' ),
-		'description'    => __( 'Hide the masthead on this page.', 'siteorigin-unwind' )
+		'label'          => esc_html__( 'Masthead', 'siteorigin-unwind' ),
+		'checkbox_label' => esc_html__( 'Display', 'siteorigin-unwind' ),
+		'description'    => esc_html__( 'Display the masthead on this page.', 'siteorigin-unwind' )
 	);
 
-	$settings['hide_footer_widgets'] = array(
+	$settings['display_footer_widgets'] = array(
 		'type'           => 'checkbox',
-		'label'          => __( 'Hide Footer Widgets', 'siteorigin-unwind' ),
-		'checkbox_label' => __( 'hide', 'siteorigin-unwind' ),
-		'description'    => __( 'Hide the footer widgets on this page.', 'siteorigin-unwind' )
+		'label'          => esc_html__( 'Footer Widgets', 'siteorigin-unwind' ),
+		'checkbox_label' => esc_html__( 'Display', 'siteorigin-unwind' ),
+		'description'    => esc_html__( 'Hide the footer widgets on this page.', 'siteorigin-unwind' )
 	);
 
 	return $settings;
 }
-endif;
 add_action( 'siteorigin_page_settings', 'siteorigin_unwind_page_settings', 10, 3 );
 
-if ( ! function_exists( 'siteorigin_unwind_setup_page_setting_defaults' ) ) :
 /**
- * Add the default Page Settings
+ * Add the default Page Settings.
  */
 function siteorigin_unwind_setup_page_setting_defaults( $defaults, $type, $id ){
-	// All the basic default settings
-	$defaults['layout']              = 'default';
-	$defaults['page_title']          = true;
-	$defaults['masthead_margin']     = true;
-	$defaults['footer_margin']       = true;
-	$defaults['hide_masthead']       = false;
-	$defaults['hide_footer_widgets'] = false;
+	// All the basic default settings.
+	$defaults['layout']              	= 'default';
+	$defaults['page_title']          	= true;
+	$defaults['masthead_margin']     	= true;
+	$defaults['footer_margin']       	= true;
+	$defaults['display_masthead']       = true;
+	$defaults['display_footer_widgets'] = true;
 
-	// Specific default settings for different types
-	if( $type == 'template' && $id == 'home' ) {
+	// Specific default settings for different types.
+	if ( $type == 'template' && $id == 'home' ) {
 		$defaults['page_title'] = false;
 	}
 
 	return $defaults;
 }
-endif;
 add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_setting_defaults', 10, 3 );
 
-if ( ! function_exists( 'siteorigin_unwind_page_settings_panels_defaults' ) ) :
 /**
  * Change the default page settings for the home page.
  *
@@ -312,5 +310,4 @@ function siteorigin_unwind_page_settings_panels_defaults( $settings ){
 
 	return $settings;
 }
-endif;
-add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults');
+add_filter( 'siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults' );

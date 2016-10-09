@@ -47,13 +47,13 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// Add the page setting classes.
 	$page_settings = siteorigin_page_setting();
 
-	if ( !empty( $page_settings ) ) {
-		if ( !empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
+	if ( ! empty( $page_settings ) ) {
+		if ( ! empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
 
 		if ( empty( $page_settings['masthead_margin'] ) ) $classes[] = 'page-layout-no-masthead-margin';
 		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
-		if ( !empty( $page_settings['hide_masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
-		if ( !empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
+		if ( empty( $page_settings['masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
+		if ( empty( $page_settings['footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
 	}
 
 	// If the navigation is sticky, add a class.

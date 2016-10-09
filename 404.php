@@ -15,7 +15,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
-				<?php if( siteorigin_page_setting( 'page_title' ) ) : ?>
+				<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
 					<header class="page-header">
 						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'siteorigin-unwind' ); ?></h1>
 					</header><!-- .page-header -->
