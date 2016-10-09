@@ -1099,6 +1099,7 @@ a {
 /*--------------------------------------------------------------
 ## Page Settings
 --------------------------------------------------------------*/
+/* The Page Setting related layout changes */
 .page-layout-no-sidebar .site-main,
 .page-layout-full-width .site-main {
   margin: 0; }
@@ -1117,7 +1118,8 @@ a {
 ## Site Masthead
 --------------------------------------------------------------*/
 #masthead {
-  border-bottom: 1px solid #ebebeb; }
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 50px; }
   #masthead .top-bar {
     background: #fff;
     border-bottom: 1px solid #ebebeb;

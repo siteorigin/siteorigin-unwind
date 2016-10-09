@@ -15,8 +15,9 @@
 		<div class="entry-meta">
 			<?php siteorigin_unwind_post_meta(); ?>
 		</div><!-- .entry-meta -->
-
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<?php if( has_post_thumbnail() && siteorigin_setting('blog_featured_single') ) : ?>

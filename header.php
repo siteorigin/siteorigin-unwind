@@ -26,45 +26,47 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-unwind' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<?php if( ! siteorigin_page_setting( 'hide_masthead', false ) ) : ?>
+		<header id="masthead" class="site-header" role="banner">
 
-		<div class="top-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
-			<div class="container">
+			<div class="top-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
+				<div class="container">
 
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin-unwind' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-				</nav><!-- #site-navigation -->
-				<div id="mobile-navigation"></div>
-				
-				<div class="social-search">
-					<?php $widget = siteorigin_setting( 'masthead_social_widget' ); ?>
-					<?php if ( ! empty( $widget['networks'] ) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) : ?>
-						<?php the_widget( 'SiteOrigin_Widget_SocialMediaButtons_Widget', $widget ); ?>
-						<span class="v-line"></span>
-					<?php endif; ?>
-					<button id="search-button" class="search-toggle">
-						<span class="open"><?php esc_html_e( 'Search', 'siteorigin-unwind' ); ?></span>
-						<span class="close"><?php esc_html_e( 'Close', 'siteorigin-unwind' ); ?></span>
-					</button>
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+						<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin-unwind' ); ?></button>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					</nav><!-- #site-navigation -->
+					<div id="mobile-navigation"></div>
+
+					<div class="social-search">
+						<?php $widget = siteorigin_setting( 'masthead_social_widget' ); ?>
+						<?php if ( ! empty( $widget['networks'] ) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) : ?>
+							<?php the_widget( 'SiteOrigin_Widget_SocialMediaButtons_Widget', $widget ); ?>
+							<span class="v-line"></span>
+						<?php endif; ?>
+						<button id="search-button" class="search-toggle">
+							<span class="open"><?php esc_html_e( 'Search', 'siteorigin-unwind' ); ?></span>
+							<span class="close"><?php esc_html_e( 'Close', 'siteorigin-unwind' ); ?></span>
+						</button>
+					</div>
+				</div><!-- .container -->
+
+				<div id="fullscreen-search">
+					<?php get_template_part( 'template-parts/searchform-fullscreen' ); ?>
 				</div>
+			</div><!-- .top-bar -->
+
+			<div class="container">
+				<div class="site-branding">
+					<?php siteorigin_unwind_display_logo(); ?>
+					<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
+						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+					<?php endif ?>
+				</div><!-- .site-branding -->
 			</div><!-- .container -->
 
-			<div id="fullscreen-search">
-				<?php get_template_part( 'template-parts/searchform-fullscreen' ); ?>
-			</div>
-		</div><!-- .top-bar -->
-
-		<div class="container">
-			<div class="site-branding">
-				<?php siteorigin_unwind_display_logo(); ?>
-				<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
-					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-				<?php endif ?>
-			</div><!-- .site-branding -->
-		</div><!-- .container -->
-
-	</header><!-- #masthead -->
+		</header><!-- #masthead -->
+	<?php endif; ?>
 
 	<div id="content" class="site-content">
 		<div class="container">

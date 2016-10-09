@@ -108,6 +108,9 @@ function siteorigin_unwind_setup() {
 	// This theme supports SiteOrigin Page Builder.
 	add_theme_support( 'siteorigin-panels', array(
 	) );
+
+	// We'll use archive settings
+	add_theme_support( 'siteorigin-template-settings' );
 }
 endif; // siteorigin_unwind_setup.
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );

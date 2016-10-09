@@ -1,5 +1,6 @@
 #masthead {
 	border-bottom: 1px solid $color__background-hr-dark;
+	margin-bottom: 50px;
 
 	.top-bar {
 		background: #fff;
@@ -18,15 +19,15 @@
 		text-align: center;
 
 		.site-title {
-			font-family: $font__details; 
+			font-family: $font__details;
 			font-weight: 300;
 			@include font-size(4);
 			letter-spacing: 1px;
-			line-height: normal; 
+			line-height: normal;
 			margin: 0;
 			text-align: center;
 			text-transform: uppercase;
-			
+
 			a {
 				color: $color__text-dark;
 				text-decoration: none;
@@ -34,7 +35,7 @@
 		}
 
 		.site-description {
-			margin-bottom: 0; 
+			margin-bottom: 0;
 			text-align: center;
 		}
 	}
