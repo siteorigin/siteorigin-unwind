@@ -22,8 +22,8 @@
 			font-family: $font__details;
 			font-weight: 300;
 			@include font-size(4);
-			letter-spacing: 1px;
-			line-height: normal;
+			letter-spacing: 4px;
+			line-height: normal; 
 			margin: 0;
 			text-align: center;
 			text-transform: uppercase;
@@ -35,6 +35,8 @@
 		}
 
 		.site-description {
+			@include font-size(0.9333);
+			line-height: 1.7142; 
 			margin-bottom: 0;
 			text-align: center;
 		}
