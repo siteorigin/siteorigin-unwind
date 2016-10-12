@@ -165,6 +165,12 @@ function siteorigin_unwind_scripts() {
 	// Skip link focus fix.
 	wp_enqueue_script( 'siteorigin-unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
+	// Flexslider
+	if ( is_home() && siteorigin_setting( 'blog_featured_slider' ) ) {
+		wp_enqueue_script( 'siteorigin-flexslider-js', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ) );
+		wp_enqueue_style( 'siteorigin-flexslider', get_template_directory_uri() . '/css/flexslider.css', array() );
+	}
+
 	// Comment reply.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
