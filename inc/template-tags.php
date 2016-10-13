@@ -17,7 +17,7 @@ function siteorigin_unwind_archive_title() {
 	?>
 	<header class="page-header">
 		<?php
-			if( siteorigin_page_setting( 'page_title' ) ) the_archive_title( '<h1 class="page-title"><span class="page-title-text">', '</span></h1>' );
+			if ( siteorigin_page_setting( 'page_title' ) ) the_archive_title( '<h1 class="page-title"><span class="page-title-text">', '</span></h1>' );
 			the_archive_description( '<div class="taxonomy-description">', '</div>' );
 		?>
 	</header><!-- .page-header -->

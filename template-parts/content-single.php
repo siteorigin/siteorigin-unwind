@@ -20,7 +20,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if( has_post_thumbnail() && siteorigin_setting('blog_featured_single') ) : ?>
+	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail() ?>
 		</div>
