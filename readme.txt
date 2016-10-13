@@ -31,12 +31,13 @@ SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully respons
 
 SiteOrigin Unwind includes support for:
 
+* Jetpack Infinite Scroll
+* Jetpack Featured Content
+* SiteOrigin CSS
 * SiteOrigin Page Builder
 * SiteOrigin Widgets Bundle 
-* SiteOrigin CSS
 * WooCommerce
 * Yet Another Related Posts Plugin (YARPP)
-* Jetpack Infinite Scroll
 
 == License ==
 
@@ -48,6 +49,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/copyleft/gpl.html.
 
+SiteOrigin Unwind WordPress Theme is derived from Underscores WordPress Theme, Copyright 2012 Automattic http://underscores.me/ Underscores WordPress Theme is distributed under the terms of the GNU GPL.
+
 == Images ==
 
 Theme screenshot image with lake and mountains sourced from https://unsplash.com by Blake Richard Verdoorn (https://unsplash.com/photos/eRQPWFijcx4) licensed under CC0 1.0 Universal (CC0 1.0) (http://creativecommons.org/publicdomain/zero/1.0/).
@@ -56,10 +59,15 @@ Theme screenshot image with scooter sourced from https://pixabay.com by Unsplash
 
 SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and copyright 2016 SiteOrigin.
 
-== Credits ==
+== Bundled Resources ==
 
-* Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+Flex Slider, Copyright 2012 WooThemes
+Free to use under the GPLv2 license
+Source: http://www.woothemes.com/flexslider/
+
+Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+Source: https://github.com/necolas/normalize.css/
 
 == SiteOrigin Settings ==
 
