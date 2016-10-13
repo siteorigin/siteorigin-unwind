@@ -61,7 +61,7 @@ SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and co
 
 == Bundled Resources ==
 
-Flex Slider, Copyright 2012 WooThemes
+FlexSlider, Copyright 2012 WooThemes
 Free to use under the GPLv2 license
 Source: http://www.woothemes.com/flexslider/
 
