@@ -316,7 +316,7 @@
 .posts-navigation .nav-links {
 	@include font-size(0.8666);
 	font-family: $font__details !important;
-	letter-spacing: 1px; 
+	letter-spacing: .1em; 
 	
 	.nav-previous span {
 		margin-right: .5em; 

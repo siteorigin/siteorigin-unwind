@@ -41,7 +41,7 @@ if ( empty( $slider ) ) return;
 							<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
 							<div class="entry-button">
-								<a class="entry-button-link" href="<?php esc_url( the_permalink() ); ?>"><?php echo esc_html__( 'Continue Reading', 'siteorigin-unwind' ); ?></a>
+								<a class="button" href="<?php esc_url( the_permalink() ); ?>"><?php echo esc_html__( 'Continue Reading', 'siteorigin-unwind' ); ?></a>
 							</div>
 
 						</div>

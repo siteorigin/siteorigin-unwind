@@ -47,9 +47,14 @@
 
 	#masthead {
 		border-bottom: none;
+		margin-bottom: 0;
 
 		.site-branding {
-			padding-bottom: 3em;
+			// padding-bottom: 3em;
 		}
+	}
+
+	.site-content {
+		padding-top: 0; 
 	}
 }

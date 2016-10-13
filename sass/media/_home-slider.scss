@@ -1,5 +1,21 @@
-.featured-posts-slider {
-
+.flexslider.featured-posts-slider {
+	border: none;
+	
+	.flex-direction-nav a {
+		height: 50px; 
+		top: 49.166%;
+		margin-top: -25px;  
+		width: 40px; 
+	
+		&:before {
+			background: rgba(0, 0, 0, 0.4);
+			color: #fff; 
+			height: 50px;
+			padding: 0;
+			width: 40px; 
+		}
+	}
+	 
 	.featured-posts-slides {
 	
 		.featured-post-slide {
@@ -10,16 +26,16 @@
 			position: relative;
 			width: 100%;
 
-			@media ( max-width: 768px ) {
+			@media (max-width: 768px) {
 				height: 380px;
 			}
 
-			@media ( max-width: 320px ) {
+			@media (max-width: 480px) {
 				height: 155px;
 			}
 
 			.slide-content {
-				background-color: rgba( 0, 0, 0, 0.12);
+				background: $color__text-medium;
 				height: 100%;
 				left: 0;
 				position: absolute;
@@ -47,61 +63,47 @@
 
 				.slide-inner-cell {
 					display: table-cell;
-					vertical-align: middle;
+					padding-top: 157px; 
 					width: 100%;
 				}
 
 				.entry-meta {
-					margin: 0;
-					position: relative;
-					z-index: 3;
-
-					@media ( max-width: 320px ) {
-						display: none;
-					}
-
-					span,
-					a {
-						color: #fff;
-						font-size: 12px;
+					@extend .entry-meta;
+					letter-spacing: .2em; 
+					
+					span {
+						color: #fff; 
 					}
 				}
 
 				.entry-title {
 					color: #fff;
-					font-size: 25px;
-					margin: 1em 0;
+					@include font-size(2.1333);
+					margin: 1em 0 1.65em;
 					position: relative;
 					z-index: 3;
 				}
 
 				.entry-button {
 					@include clearfix;
+					font-size: 13px !important; 
 					margin-top: 18px;
 					position: relative;
 					text-align: center;
 
-					.entry-button-link {
-						@include appearance(none);
-						color: #fff;
-						cursor: pointer;
-						background: transparent;
-						border: 2px solid #fff;
-						display: inline-block;
-						font-size: 12px;
-						padding: 0.5em 1.75em;
-						position: relative;
-						text-align: center;
-						text-decoration: none;
-						text-transform: uppercase;
-						@include transition(all 0.15s ease-in-out);
+					.button {
+						background: transparent; 
+						border-color: #fff;
+						color: #fff; 
+						letter-spacing: .2em; 
 						z-index: 3;
-
-						&:hover {
+						
+						// Not working need to fix.
+						@at-root .featured-posts-slides .slide-entry-link:hover .button  {
 							background: #fff;
-							color: #2d2d2d;
-						}
-					}
+							color: $color__text-dark;  
+						}						
+					}					
 				}
 			}
 		}
