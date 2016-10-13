@@ -1172,6 +1172,11 @@ a {
       margin-bottom: 0;
       text-align: center; }
 
+.homepage-has-slider #masthead {
+  border-bottom: none; }
+  .homepage-has-slider #masthead .site-branding {
+    padding-bottom: 3em; }
+
 /*--------------------------------------------------------------
 ## Full Screen Search
 --------------------------------------------------------------*/
@@ -1890,3 +1895,95 @@ object {
   font-size: 13.8656px;
   font-size: 0.8666rem;
   line-height: 1.3999; }
+
+/*--------------------------------------------------------------
+## Homepage Slider
+--------------------------------------------------------------*/
+.featured-posts-slider .featured-posts-slides .featured-post-slide {
+  width: 100%;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative; }
+  @media (max-width: 768px) {
+    .featured-posts-slider .featured-posts-slides .featured-post-slide {
+      height: 380px; } }
+  @media (max-width: 320px) {
+    .featured-posts-slider .featured-posts-slides .featured-post-slide {
+      height: 155px; } }
+  .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.12); }
+    .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .slide-entry-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 2; }
+    .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .slide-inner {
+      display: table;
+      width: 80%;
+      height: 100%;
+      margin: 0 auto; }
+    .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .slide-inner-cell {
+      display: table-cell;
+      width: 100%;
+      vertical-align: middle; }
+    .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta {
+      margin: 0;
+      z-index: 3;
+      position: relative; }
+      @media (max-width: 320px) {
+        .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta {
+          display: none; } }
+      .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta span,
+      .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta a {
+        color: #fff;
+        font-size: 12px; }
+    .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-title {
+      margin: 1em 0;
+      font-size: 25px;
+      z-index: 3;
+      position: relative;
+      color: #fff; }
+    .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button {
+      position: relative;
+      margin-top: 18px;
+      text-align: center; }
+      .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button::after {
+        clear: both;
+        content: "";
+        display: table; }
+      .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .entry-button-link {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        position: relative;
+        font-size: 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        -webkit-transition: all 0.15s ease-in-out;
+        -moz-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+        text-transform: uppercase;
+        padding: 0.5em 1.75em;
+        background: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        z-index: 3; }
+        .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .entry-button-link:hover {
+          color: #2d2d2d;
+          background: #fff; }

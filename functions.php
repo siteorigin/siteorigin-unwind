@@ -97,6 +97,12 @@ function siteorigin_unwind_setup() {
 		'default-image' => '',
 	) ) );
 
+	add_theme_support( 'featured-content', array(
+		'filter'     => 'siteorigin_unwind_get_featured_posts',
+		'max_posts'  => 5,
+		'post_types' => array( 'post' ),
+	) );
+
 	// This theme supports WooCommerce.
 	add_theme_support( 'woocommerce' );
 
@@ -161,6 +167,12 @@ add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
 function siteorigin_unwind_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'siteorigin_unwind-style', get_stylesheet_uri() );
+
+	// Flexslider
+	if ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) {
+		wp_enqueue_style( 'siteorigin-flexslider', get_template_directory_uri() . '/css/flexslider.css', array() );
+		wp_enqueue_script( 'siteorigin-flexslider-script', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ) );
+	}
 
 	// Theme JS.
 	wp_enqueue_script( 'siteorigin-unwind-script', get_template_directory_uri() . '/js/unwind.js', array('jquery') );

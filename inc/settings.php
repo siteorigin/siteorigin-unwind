@@ -87,6 +87,10 @@ function siteorigin_unwind_settings_init() {
 		'blog' => array(
 			'title' => esc_html__( 'Blog', 'siteorigin-unwind' ),
 			'fields' => array(
+				'featured_slider' => array(
+					'type' => 'checkbox',
+					'label' => __('Display featured slider on blog homepage', 'siteorigin-unwind'),
+				),
 				'featured_archive' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Featured image on archive', 'siteorigin-unwind' ),
@@ -204,7 +208,8 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['navigation_sticky'] = true;
 	$defaults['navigation_post'] = true;
 
-	// Blog settings.
+	// Blog settings
+	$defaults['blog_featured_slider'] = true;
 	$defaults['blog_featured_archive'] = true;
 	$defaults['blog_featured_single'] = true;
 	$defaults['blog_display_related_posts'] = true;

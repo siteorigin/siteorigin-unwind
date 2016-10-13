@@ -23,7 +23,7 @@
 			font-weight: 300;
 			@include font-size(4);
 			letter-spacing: 4px;
-			line-height: normal; 
+			line-height: normal;
 			margin: 0;
 			text-align: center;
 			text-transform: uppercase;
@@ -36,9 +36,19 @@
 
 		.site-description {
 			@include font-size(0.9333);
-			line-height: 1.7142; 
+			line-height: 1.7142;
 			margin-bottom: 0;
 			text-align: center;
+		}
+	}
+}
+
+.homepage-has-slider {
+	#masthead {
+		border-bottom: none;
+
+		.site-branding {
+			padding-bottom: 3em;
 		}
 	}
 }
