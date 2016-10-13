@@ -119,7 +119,8 @@ jQuery( function($){
 
 	$(window).load( function() {
 		$( '.featured-posts-slider' ).flexslider( {
-			animation: "slide"
+			animation: "slide",
+			controlNav: false
 		} );
 	} );
 
