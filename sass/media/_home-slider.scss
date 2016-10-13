@@ -8,6 +8,14 @@
 			background-size: cover;
 			position: relative;
 
+			@media ( max-width: 768px ) {
+				height: 380px;
+			}
+
+			@media ( max-width: 320px ) {
+				height: 155px;
+			}
+
 			.slide-content {
 				width: 100%;
 				height: 100%;
@@ -45,6 +53,10 @@
 					margin: 0;
 					z-index: 3;
 					position: relative;
+
+					@media ( max-width: 320px ) {
+						display: none;
+					}
 
 					span,
 					a {

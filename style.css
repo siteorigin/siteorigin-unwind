@@ -1149,6 +1149,11 @@ a {
       margin-bottom: 0;
       text-align: center; }
 
+.homepage-has-slider #masthead {
+  border-bottom: none; }
+  .homepage-has-slider #masthead .site-branding {
+    padding-bottom: 3em; }
+
 /*--------------------------------------------------------------
 ## Full Screen Search
 --------------------------------------------------------------*/
@@ -1878,6 +1883,12 @@ object {
   background-position: center;
   background-size: cover;
   position: relative; }
+  @media (max-width: 768px) {
+    .featured-posts-slider .featured-posts-slides .featured-post-slide {
+      height: 380px; } }
+  @media (max-width: 320px) {
+    .featured-posts-slider .featured-posts-slides .featured-post-slide {
+      height: 155px; } }
   .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content {
     width: 100%;
     height: 100%;
@@ -1908,6 +1919,9 @@ object {
       margin: 0;
       z-index: 3;
       position: relative; }
+      @media (max-width: 320px) {
+        .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta {
+          display: none; } }
       .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta span,
       .featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta a {
         color: #fff;

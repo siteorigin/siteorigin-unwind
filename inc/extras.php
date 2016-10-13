@@ -34,7 +34,7 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// If we're viewing on a mobile device, add a class.
 	if ( wp_is_mobile() ) {
 		$classes[] = 'is_mobile';
-	}	
+	}
 
 	// Add a no-js class which we'll remove as required.
 	$classes[] = 'no-js';
@@ -42,7 +42,7 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// Check if the sidebar has widgets.
 	if ( ! is_active_sidebar( 'main-sidebar' ) ) {
 		$classes[] = 'no-active-sidebar';
-	}	
+	}
 
 	// Add the page setting classes.
 	if ( is_page() ) {
@@ -53,6 +53,11 @@ function siteorigin_unwind_body_classes( $classes ) {
 		if ( ! SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
 			$classes[] = 'page-layout-no-footer-margin';
 		}
+	}
+
+	// Homepage slider
+	if ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) {
+		$classes[] = 'homepage-has-slider';
 	}
 
 	// If the navigation is sticky, add a class.
