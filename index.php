@@ -19,6 +19,12 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<?php if ( siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) : ?>
+
+				<?php get_template_part( 'template-parts/featured', 'slider' ); ?>
+
+			<?php endif; ?>
+
 			<?php get_template_part( 'loops/loop', 'blog' ); ?>
 
 		</main><!-- #main -->

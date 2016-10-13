@@ -121,7 +121,7 @@ function siteorigin_unwind_post_meta() {
 
 	<?php if ( is_sticky() && is_home() && ! is_paged() ) {
 		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
-	} ?>	
+	} ?>
 
 	<span class="entry-date"><?php the_time( 'M d, Y' ); ?></span>
 
@@ -285,10 +285,10 @@ if ( ! function_exists( 'siteorigin_unwind_tag_cloud' ) ) :
  */
 function siteorigin_unwind_tag_cloud( $args ) {
 
-    $args['unit'] = 'em';
-    $args['largest'] = 0.9285; 
-    $args['smallest'] = 0.9285;
-    return $args;
+	$args['unit'] = 'em';
+	$args['largest'] = 0.9285;
+	$args['smallest'] = 0.9285;
+	return $args;
 }
 endif;
 add_filter( 'widget_tag_cloud_args', 'siteorigin_unwind_tag_cloud' );
@@ -351,3 +351,23 @@ function siteorigin_unwind_comment( $comment, $args, $depth ) {
 	<?php
 }
 endif;
+
+function siteorigin_unwind_get_featured_posts() {
+	return apply_filters( 'siteorigin_unwind_get_featured_posts', array() );
+}
+
+function siteorigin_unwind_has_featured_posts( $minimum = 1 ) {
+	if ( is_paged() )
+		return false;
+
+	$minimum = absint( $minimum );
+	$featured_posts = apply_filters( 'siteorigin_unwind_get_featured_posts', array() );
+
+	if ( ! is_array( $featured_posts ) )
+		return false;
+
+	if ( $minimum > count( $featured_posts ) )
+		return false;
+
+	return true;
+}

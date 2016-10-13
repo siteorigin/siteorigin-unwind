@@ -118,7 +118,7 @@ jQuery( function($){
 	}
 
 	$(window).load( function() {
-		$( '.flexslider' ).flexslider( {
+		$( '.featured-posts-slider' ).flexslider( {
 			animation: "slide"
 		} );
 	} );
