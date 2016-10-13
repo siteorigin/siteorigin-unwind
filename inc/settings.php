@@ -89,23 +89,23 @@ function siteorigin_unwind_settings_init() {
 			'fields' => array(
 				'featured_slider' => array(
 					'type' => 'checkbox',
-					'label' => __('Display featured slider on blog homepage', 'siteorigin-unwind'),
+					'label' => __( 'Featured posts slider on blog home page.', 'siteorigin-unwind' ),
 				),
 				'featured_archive' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Featured image on archive', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Featured image on archive.', 'siteorigin-unwind' ),
 				),
 				'featured_single' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Featured image on single', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Featured image on single post.', 'siteorigin-unwind' ),
 				),
 				'display_related_posts' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display related posts on single', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Related posts on single post.', 'siteorigin-unwind' ),
 				),
 				'display_author_box' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display author box on single', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Display author box on single post.', 'siteorigin-unwind' ),
 				),
 			)
 		),
@@ -209,7 +209,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['navigation_post'] = true;
 
 	// Blog settings
-	$defaults['blog_featured_slider'] = true;
+	$defaults['blog_featured_slider'] = false;
 	$defaults['blog_featured_archive'] = true;
 	$defaults['blog_featured_single'] = true;
 	$defaults['blog_display_related_posts'] = true;
@@ -229,7 +229,7 @@ add_filter( 'siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults
 /**
  * Setup Page Settings for SiteOrigin North
  */
-function siteorigin_unwind_page_settings( $settings, $type, $id ){
+function siteorigin_unwind_page_settings( $settings, $type, $id ) {
 
 	$settings['layout'] = array(
 		'type'    => 'select',

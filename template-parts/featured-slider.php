@@ -1,12 +1,21 @@
 <?php
+/**
+ * Template part for displaying Jetpack Featured Content posts slider.
+ *
+ * @link https://jetpack.com/support/featured-content/
+ *
+ * @package siteorigin-unwind
+ * @since siteorigin-unwind 0.9.3
+ * @license GPL 2.0
+ */
 
-// Get our Featured Content posts
+// Get our Featured Content posts.
 $slider = siteorigin_unwind_get_featured_posts();
 
-// Checking if featured posts exist
+// Checking if featured posts exist.
 if ( empty( $slider ) ) return;
 
-// Looping  through our posts ?>
+// Looping through our posts. ?>
 
 <div class="flexslider featured-posts-slider">
 
@@ -32,7 +41,7 @@ if ( empty( $slider ) ) return;
 							<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
 							<div class="entry-button">
-								<a class="entry-button-link" href="<?php esc_url( the_permalink() ); ?>"><?php echo __( 'Continue Reading', 'siteorigin-unwind' ); ?></a>
+								<a class="entry-button-link" href="<?php esc_url( the_permalink() ); ?>"><?php echo esc_html__( 'Continue Reading', 'siteorigin-unwind' ); ?></a>
 							</div>
 
 						</div>

@@ -1,5 +1,8 @@
-/* Globals jQuery */
-
+/**
+ * File unwind.js.
+ *
+ * Handles the primary JavaScript functions for the theme.
+ */
 jQuery( function($){
 
 	// no-js Body Class.
@@ -18,7 +21,44 @@ jQuery( function($){
 
 	}
 
-	// Mobile Menu.
+	// Featured posts slider.
+	$( window ).load( function() {
+		$( '.featured-posts-slider' ).flexslider( {
+			animation: "slide",
+			controlNav: false
+		} );
+	} );	
+
+	// Fullscreen search.
+	$( '#search-button' ).click( function(e) {
+		e.preventDefault();
+		var $$ = $(this);
+		$$.toggleClass( 'close-search' );
+
+		$( "input[type='search']" ).each( function () { $(this).attr( 'size', $(this).attr( 'placeholder' ).length ); } );
+
+		var fullscreenSearch = function() {
+			vpw = $( window ).width();
+			vph = $( window ).height();
+			$( '#fullscreen-search' ).css( { 'height': vph - 60 + 'px', 'width': vpw + 'px' } );
+		};
+		fullscreenSearch();
+		$( window ).resize( fullscreenSearch );
+
+		$( '#fullscreen-search' ).slideToggle( 'fast' );
+
+		$( '#fullscreen-search input' ).focus();
+
+	} );
+
+	// Close fullscreen search with escape key.
+	$( document ).keyup( function(e) {
+		if ( e.keyCode == 27 ) { // escape key maps to keycode `27`
+			$( '#search-button.close-search' ).trigger( 'click' );
+		}
+	} );
+
+	// Mobile menu.
 	var $mobileMenu = false;
 	$( '#mobile-menu-button' ).click( function(e){
 		e.preventDefault();
@@ -42,36 +82,7 @@ jQuery( function($){
 		} );
 	} );
 
-	// Fullscreen Search.
-	$( '#search-button' ).click( function(e) {
-		e.preventDefault();
-		var $$ = $(this);
-		$$.toggleClass( 'close-search' );
-
-		$( "input[type='search']" ).each( function () { $(this).attr( 'size', $(this).attr( 'placeholder' ).length ); } );
-
-		var fullscreenSearch = function() {
-			vpw = $( window ).width();
-			vph = $( window ).height();
-			$( '#fullscreen-search' ).css( { 'height': vph - 60 + 'px', 'width': vpw + 'px' } );
-		};
-		fullscreenSearch();
-		$( window ).resize( fullscreenSearch );
-
-		$( '#fullscreen-search' ).slideToggle( 'fast' );
-
-		$( '#fullscreen-search input' ).focus();
-
-	} );
-
-	// Close Fullscreen Search with Escape key.
-	$( document ).keyup( function(e) {
-		if ( e.keyCode == 27 ) { // escape key maps to keycode `27`
-			$( '#search-button.close-search' ).trigger( 'click' );
-		}
-	} );
-
-	// Sticky Menu.
+	// Sticky menu.
 	if( $('.top-bar').hasClass('sticky-menu') && !$('body').hasClass('is-mobile') ) {
 		var $tbs = false,
 			pageTop = $('#page').offset().top,
@@ -116,12 +127,5 @@ jQuery( function($){
 		$(window).resize( smSetup ).scroll( smSetup );
 
 	}
-
-	$(window).load( function() {
-		$( '.featured-posts-slider' ).flexslider( {
-			animation: "slide",
-			controlNav: false
-		} );
-	} );
 
 } );

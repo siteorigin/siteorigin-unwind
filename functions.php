@@ -13,9 +13,9 @@ define( 'SITEORIGIN_THEME_VERSION', 'dev' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
 
 // Load theme specific files.
-include get_template_directory() . '/inc/settings/settings.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/jetpack.php';
+include get_template_directory() . '/inc/settings/settings.php';
 require get_template_directory() . '/inc/settings.php';
 require get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/woocommerce/functions.php';
@@ -97,6 +97,10 @@ function siteorigin_unwind_setup() {
 		'default-image' => '',
 	) ) );
 
+	/*
+	 * Enable support for Jetpack Featured Content.
+	 * See https://jetpack.com/support/featured-content/
+	 */
 	add_theme_support( 'featured-content', array(
 		'filter'     => 'siteorigin_unwind_get_featured_posts',
 		'max_posts'  => 5,
@@ -168,13 +172,13 @@ function siteorigin_unwind_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'siteorigin_unwind-style', get_stylesheet_uri() );
 
-	// Flexslider
+	// Flexslider.
 	if ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) {
 		wp_enqueue_style( 'siteorigin-flexslider', get_template_directory_uri() . '/css/flexslider.css', array() );
 		wp_enqueue_script( 'siteorigin-flexslider-script', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ) );
 	}
 
-	// Theme JS.
+	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-unwind-script', get_template_directory_uri() . '/js/unwind.js', array('jquery') );
 
 	// Skip link focus fix.

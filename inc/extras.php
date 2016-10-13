@@ -31,6 +31,11 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Homepage slider.
+	if ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) {
+		$classes[] = 'homepage-has-slider';
+	}
+
 	// If we're viewing on a mobile device, add a class.
 	if ( wp_is_mobile() ) {
 		$classes[] = 'is_mobile';
@@ -54,11 +59,6 @@ function siteorigin_unwind_body_classes( $classes ) {
 		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
 		if ( empty( $page_settings['masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
 		if ( empty( $page_settings['footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
-	}
-
-	// Homepage slider
-	if ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) {
-		$classes[] = 'homepage-has-slider';
 	}
 
 	// If the navigation is sticky, add a class.

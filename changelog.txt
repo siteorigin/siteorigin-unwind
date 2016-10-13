@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 0.9.2 - 9 October 2016 =
+* Added missing translation function to widget area descriptions.
+
+= 0.9.1 - 4 October 2016 =
+* Remove page title conditional.
+* Remove sidebar conditional.
+
 = 0.9 - 2 October 2016 =
 * Various changes to prepare for release.
 
