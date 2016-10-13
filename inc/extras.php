@@ -45,14 +45,15 @@ function siteorigin_unwind_body_classes( $classes ) {
 	}
 
 	// Add the page setting classes.
-	if ( is_page() ) {
-		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get( 'layout' );
-		if ( ! SiteOrigin_Settings_Page_Settings::get( 'masthead_margin' ) ) {
-			$classes[] = 'page-layout-no-masthead-margin';
-		}
-		if ( ! SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
-			$classes[] = 'page-layout-no-footer-margin';
-		}
+	$page_settings = siteorigin_page_setting();
+
+	if ( ! empty( $page_settings ) ) {
+		if ( ! empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
+
+		if ( empty( $page_settings['masthead_margin'] ) ) $classes[] = 'page-layout-no-masthead-margin';
+		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
+		if ( empty( $page_settings['masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
+		if ( empty( $page_settings['footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
 	}
 
 	// Homepage slider

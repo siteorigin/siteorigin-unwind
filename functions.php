@@ -114,6 +114,9 @@ function siteorigin_unwind_setup() {
 	// This theme supports SiteOrigin Page Builder.
 	add_theme_support( 'siteorigin-panels', array(
 	) );
+
+	// We'll use archive settings.
+	add_theme_support( 'siteorigin-template-settings' );
 }
 endif; // siteorigin_unwind_setup.
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
@@ -139,7 +142,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'main-sidebar',
-		'description'   => 'Visible on posts and pages that use the default template.',
+		'description'   => esc_html__( 'Visible on posts and pages that use the default template.' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
@@ -149,7 +152,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'siteorigin-unwind' ),
 		'id'            => 'footer-sidebar',
-		'description'   => 'A column will be automatically assigned to each widget inserted.',
+		'description'   => esc_html__( 'A column will be automatically assigned to each widget inserted' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',

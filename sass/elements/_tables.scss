@@ -1,4 +1,35 @@
 table {
-	margin: 0 0 1.5em;
+	border: 1px solid $color__background-hr-dark;
+	font-family: $font__details;
+	margin: 0 0 1.9833em;
+	text-align: left;
 	width: 100%;
+	
+	a {
+		text-decoration: none;
+	}
+	
+	thead {
+
+		tr {
+			background: $color__background-hr;
+		}
+
+		th {
+			color: $color__text-dark; 
+			@include font-size(0.8666);
+			letter-spacing: 1px;
+			padding: 1.4306em 1.4665em;
+			text-transform: uppercase; 
+		}
+	}
+
+	tr:nth-child(2n+2) {
+		background: $color__background-hr;
+	}
+
+	th,
+	td {
+		padding: 1.1999em 1.4665em; 
+	}
 }

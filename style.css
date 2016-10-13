@@ -434,8 +434,27 @@ dd {
 ## Tables
 --------------------------------------------------------------*/
 table {
-  margin: 0 0 1.5em;
+  border: 1px solid #ebebeb;
+  font-family: "Lato", sans-serif;
+  margin: 0 0 1.9833em;
+  text-align: left;
   width: 100%; }
+  table a {
+    text-decoration: none; }
+  table thead tr {
+    background: #f4f4f4; }
+  table thead th {
+    color: #2d2d2d;
+    font-size: 13.8656px;
+    font-size: 0.8666rem;
+    letter-spacing: 1px;
+    padding: 1.4306em 1.4665em;
+    text-transform: uppercase; }
+  table tr:nth-child(2n+2) {
+    background: #f4f4f4; }
+  table th,
+  table td {
+    padding: 1.1999em 1.4665em; }
 
 /*--------------------------------------------------------------
 # Forms
@@ -1107,17 +1126,18 @@ a {
 .page-layout-full-width-sidebar .site-content .container {
   max-width: 100%; }
 
-.page-layout-no-masthead-margin #masthead {
-  margin-bottom: 0; }
+.page-layout-no-masthead-margin .site-content {
+  padding-top: 0; }
 
-.page-layout-no-footer-margin #colophon {
-  margin-top: 0; }
+.page-layout-no-footer-margin .site-content {
+  padding-bottom: 0; }
 
 /*--------------------------------------------------------------
 ## Site Masthead
 --------------------------------------------------------------*/
 #masthead {
-  border-bottom: 1px solid #ebebeb; }
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 50px; }
   #masthead .top-bar {
     background: #fff;
     border-bottom: 1px solid #ebebeb;
@@ -1137,7 +1157,7 @@ a {
       font-weight: 300;
       font-size: 64px;
       font-size: 4rem;
-      letter-spacing: 1px;
+      letter-spacing: 4px;
       line-height: normal;
       margin: 0;
       text-align: center;
@@ -1146,6 +1166,9 @@ a {
         color: #2d2d2d;
         text-decoration: none; }
     #masthead .site-branding .site-description {
+      font-size: 14.9328px;
+      font-size: 0.9333rem;
+      line-height: 1.7142;
       margin-bottom: 0;
       text-align: center; }
 

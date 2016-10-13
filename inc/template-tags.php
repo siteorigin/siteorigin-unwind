@@ -59,7 +59,7 @@ function siteorigin_unwind_archive_title() {
 	?>
 	<header class="page-header">
 		<?php
-			the_archive_title( '<h1 class="page-title"><span class="page-title-text">', '</span></h1>' );
+			if( siteorigin_page_setting( 'page_title' ) ) the_archive_title( '<h1 class="page-title"><span class="page-title-text">', '</span></h1>' );
 			the_archive_description( '<div class="taxonomy-description">', '</div>' );
 		?>
 	</header><!-- .page-header -->
@@ -285,10 +285,10 @@ if ( ! function_exists( 'siteorigin_unwind_tag_cloud' ) ) :
  */
 function siteorigin_unwind_tag_cloud( $args ) {
 
-	$args['unit'] = 'em';
-	$args['largest'] = 0.9285;
-	$args['smallest'] = 0.9285;
-	return $args;
+    $args['unit'] = 'em';
+    $args['largest'] = 0.9285;
+    $args['smallest'] = 0.9285;
+    return $args;
 }
 endif;
 add_filter( 'widget_tag_cloud_args', 'siteorigin_unwind_tag_cloud' );
