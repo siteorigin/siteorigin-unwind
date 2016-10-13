@@ -6,5 +6,3 @@
 		<?php siteorigin_unwind_display_icon( 'search' ); ?>
 	</button>	
 </form>
-
-
