@@ -303,7 +303,8 @@
 		color: $color__text-medium;
 		padding: 1em 1.923em;
 		text-decoration: none;
-		text-transform: uppercase;		
+		text-transform: uppercase;
+		@include transition(0.3s);		
 		
 		&:hover {
 			border-color: $color__link; 

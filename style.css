@@ -474,9 +474,9 @@ input[type="submit"] {
   line-height: 1;
   letter-spacing: .1em;
   padding: 1em 1.923em;
-  -webkit-transition: 0.085s;
-  -moz-transition: 0.085s;
-  transition: 0.085s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
   text-decoration: none;
   text-transform: uppercase; }
   .button:hover, .page-links span:hover:not(.page-links-title), #page #infinite-handle span button:hover,
@@ -816,7 +816,10 @@ a {
   color: #626262;
   padding: 1em 1.923em;
   text-decoration: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s; }
   .comment-navigation a:hover,
   .posts-navigation a:hover,
   .post-navigation a:hover {
@@ -1275,7 +1278,7 @@ a {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  letter-spacing: .1em;
+  letter-spacing: .2em;
   line-height: normal;
   text-align: center;
   text-transform: uppercase; }
@@ -1905,14 +1908,27 @@ object {
 --------------------------------------------------------------*/
 .flexslider.featured-posts-slider {
   border: none; }
+  .flexslider.featured-posts-slider:hover .flex-direction-nav a.flex-prev:before {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url("images/arrow-left.svg");
+    background-position: 13px 15px;
+    background-repeat: no-repeat; }
+  .flexslider.featured-posts-slider:hover .flex-direction-nav a.flex-next:before {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url("images/arrow-right.svg");
+    background-position: 16px 15px;
+    background-repeat: no-repeat; }
+  .flexslider.featured-posts-slider:hover .flex-direction-nav .flex-prev:hover,
+  .flexslider.featured-posts-slider:hover .flex-direction-nav .flex-next:hover {
+    background: transparent !important; }
   .flexslider.featured-posts-slider .flex-direction-nav a {
     height: 50px;
     top: 49.166%;
     margin-top: -25px;
     width: 40px; }
     .flexslider.featured-posts-slider .flex-direction-nav a:before {
-      background: rgba(0, 0, 0, 0.4);
-      color: #fff;
+      background: none;
+      content: "";
       height: 50px;
       padding: 0;
       width: 40px; }
@@ -1956,7 +1972,7 @@ object {
         padding-top: 157px;
         width: 100%; }
       .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta {
-        letter-spacing: .2em; }
+        letter-spacing: .3em; }
         .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta span {
           color: #fff; }
       .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-title {
@@ -1969,7 +1985,8 @@ object {
       .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button {
         margin-top: 18px;
         position: relative;
-        text-align: center; }
+        text-align: center;
+        z-index: 3; }
         .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button::after {
           clear: both;
           content: "";
@@ -1978,8 +1995,7 @@ object {
           background: transparent;
           border-color: #fff;
           color: #fff;
-          letter-spacing: .2em;
-          z-index: 3; }
-          .featured-posts-slides .slide-entry-link:hover .button, .featured-posts-slides .slide-entry-link:hover .page-links span:not(.page-links-title), .page-links .featured-posts-slides .slide-entry-link:hover span:not(.page-links-title), .featured-posts-slides .slide-entry-link:hover #page #infinite-handle span button, #page #infinite-handle span .featured-posts-slides .slide-entry-link:hover button {
+          letter-spacing: .2em; }
+          .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button:hover, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .page-links span:hover:not(.page-links-title), .page-links .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button span:hover:not(.page-links-title), .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button:hover, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button:hover {
             background: #fff;
             color: #2d2d2d; }

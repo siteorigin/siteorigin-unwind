@@ -12,7 +12,7 @@ input[type="submit"] {
 	line-height: 1;
 	letter-spacing: .1em; 
 	padding: 1em 1.923em;
-	@include transition(0.085s);
+	@include transition(0.3s);
 	text-decoration: none;
 	text-transform: uppercase;
 

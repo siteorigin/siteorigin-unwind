@@ -22,7 +22,7 @@
 	@include display(flex);
 	font-family: $font__details;
 	@include justify-content(center);
-	letter-spacing: .1em;
+	letter-spacing: .2em;
 	line-height: normal;
 	text-align: center;
 	text-transform: uppercase;

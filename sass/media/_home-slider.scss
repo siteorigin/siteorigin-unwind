@@ -1,15 +1,40 @@
 .flexslider.featured-posts-slider {
 	border: none;
 	
+	&:hover {
+
+		.flex-direction-nav a {
+
+			&.flex-prev:before {
+				background-color: rgba(0, 0, 0, 0.4);
+				background-image: url('images/arrow-left.svg');
+				background-position: 13px 15px;
+				background-repeat: no-repeat;  
+			}
+
+			&.flex-next:before {
+				background-color: rgba(0, 0, 0, 0.4);
+				background-image: url('images/arrow-right.svg');
+				background-position: 16px 15px;
+				background-repeat: no-repeat;  
+			}			
+		}
+
+		.flex-direction-nav .flex-prev:hover,
+		.flex-direction-nav .flex-next:hover {
+			background: transparent !important;
+		}
+	}
+
 	.flex-direction-nav a {
 		height: 50px; 
 		top: 49.166%;
-		margin-top: -25px;  
-		width: 40px; 
-	
+		margin-top: -25px;
+		width: 40px;
+
 		&:before {
-			background: rgba(0, 0, 0, 0.4);
-			color: #fff; 
+			background: none; 
+			content: "";
 			height: 50px;
 			padding: 0;
 			width: 40px; 
@@ -69,7 +94,7 @@
 
 				.entry-meta {
 					@extend .entry-meta;
-					letter-spacing: .2em; 
+					letter-spacing: .3em; 
 					
 					span {
 						color: #fff; 
@@ -89,16 +114,15 @@
 					margin-top: 18px;
 					position: relative;
 					text-align: center;
+					z-index: 3;
 
 					.button {
 						background: transparent; 
 						border-color: #fff;
 						color: #fff; 
 						letter-spacing: .2em; 
-						z-index: 3;
 						
-						// Not working need to fix.
-						@at-root .featured-posts-slides .slide-entry-link:hover .button  {
+						&:hover {
 							background: #fff;
 							color: $color__text-dark;  
 						}						
