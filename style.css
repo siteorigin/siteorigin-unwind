@@ -1912,12 +1912,14 @@ object {
     background-color: rgba(0, 0, 0, 0.4);
     background-image: url("images/arrow-left.svg");
     background-position: 13px 15px;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    opacity: 1; }
   .flexslider.featured-posts-slider:hover .flex-direction-nav a.flex-next:before {
     background-color: rgba(0, 0, 0, 0.4);
     background-image: url("images/arrow-right.svg");
     background-position: 16px 15px;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    opacity: 1; }
   .flexslider.featured-posts-slider:hover .flex-direction-nav .flex-prev:hover,
   .flexslider.featured-posts-slider:hover .flex-direction-nav .flex-next:hover {
     background: transparent !important; }
@@ -1930,7 +1932,12 @@ object {
       background: none;
       content: "";
       height: 50px;
+      opacity: 0;
       padding: 0;
+      -webkit-transition: 1s;
+      -moz-transition: 1s;
+      transition: 1s;
+      transition-property: opacity;
       width: 40px; }
   .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide {
     background-size: cover;

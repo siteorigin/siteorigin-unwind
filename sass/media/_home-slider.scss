@@ -10,6 +10,7 @@
 				background-image: url('images/arrow-left.svg');
 				background-position: 13px 15px;
 				background-repeat: no-repeat;  
+				opacity: 1; 
 			}
 
 			&.flex-next:before {
@@ -17,6 +18,7 @@
 				background-image: url('images/arrow-right.svg');
 				background-position: 16px 15px;
 				background-repeat: no-repeat;  
+				opacity: 1; 
 			}			
 		}
 
@@ -36,7 +38,10 @@
 			background: none; 
 			content: "";
 			height: 50px;
+			opacity: 0;
 			padding: 0;
+			@include transition(1s);
+			transition-property: opacity;
 			width: 40px; 
 		}
 	}
