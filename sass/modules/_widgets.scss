@@ -46,6 +46,82 @@
 	}
 }
 
+/*--------------------------------------------------------------
+## Calendar Widget
+--------------------------------------------------------------*/
+.widget #wp-calendar {
+	border: none;
+	margin: 0;
+	
+	caption { 
+		color: $color__text-dark;
+		@include font-size(0.8666);
+		font-weight: 700;
+		text-align: right;
+		text-transform: uppercase; 
+	}
+
+	tr:nth-child(2n+2) {
+		background: none;
+	}	
+
+	th, 
+	td {
+		border: 1px solid #fff;
+		padding: 0;
+	}
+
+	thead {
+
+		tr {
+			background: none; 
+		}
+
+		th {
+			text-align: center;
+			padding-bottom: .5em;
+		}
+	}
+
+	tbody {
+		@include font-size(0.9333);
+
+		.pad {
+			background: none;
+		}
+
+		td { 
+			background: $color__background-hr; 
+			text-align: center;
+			
+			&:hover {
+				background: #fff;  			
+			}
+
+			a {
+				border-bottom: none;
+				display: block;
+				
+				&:hover {
+					border-bottom: none;
+				}
+			}
+		}		
+	}
+	
+	tfoot {
+		@include font-size(0.9333);
+
+		#prev, 
+		#next {
+			padding-top: .5em; 
+		}
+
+		#next {
+			text-align: right;			
+		}
+	}
+}
 
 /*--------------------------------------------------------------
 ## Recent Posts Widget
