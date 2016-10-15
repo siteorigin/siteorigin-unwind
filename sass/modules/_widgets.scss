@@ -57,6 +57,7 @@
 		color: $color__text-dark;
 		@include font-size(0.8666);
 		font-weight: 700;
+		letter-spacing: .2em;
 		text-align: right;
 		text-transform: uppercase; 
 	}
@@ -110,11 +111,13 @@
 	}
 	
 	tfoot {
-		@include font-size(0.9333);
 
 		#prev, 
 		#next {
+			@include font-size(0.8666);
+			letter-spacing: .2em;
 			padding-top: .5em; 
+			text-transform: uppercase; 
 		}
 
 		#next {

@@ -1000,6 +1000,7 @@ a {
     font-size: 13.8656px;
     font-size: 0.8666rem;
     font-weight: 700;
+    letter-spacing: .2em;
     text-align: right;
     text-transform: uppercase; }
   .widget #wp-calendar tr:nth-child(2n+2) {
@@ -1028,14 +1029,15 @@ a {
         display: block; }
         .widget #wp-calendar tbody td a:hover {
           border-bottom: none; }
-  .widget #wp-calendar tfoot {
-    font-size: 14.9328px;
-    font-size: 0.9333rem; }
-    .widget #wp-calendar tfoot #prev,
-    .widget #wp-calendar tfoot #next {
-      padding-top: .5em; }
-    .widget #wp-calendar tfoot #next {
-      text-align: right; }
+  .widget #wp-calendar tfoot #prev,
+  .widget #wp-calendar tfoot #next {
+    font-size: 13.8656px;
+    font-size: 0.8666rem;
+    letter-spacing: .2em;
+    padding-top: .5em;
+    text-transform: uppercase; }
+  .widget #wp-calendar tfoot #next {
+    text-align: right; }
 
 /*--------------------------------------------------------------
 ## Recent Posts Widget
