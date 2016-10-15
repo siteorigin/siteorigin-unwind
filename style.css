@@ -1256,7 +1256,7 @@ a {
     font-size: 17.0656px;
     font-size: 1.0666rem;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: .2em;
     text-align: center;
     text-transform: uppercase; }
   #fullscreen-search form input[type="search"] {
