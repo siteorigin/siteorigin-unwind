@@ -186,6 +186,15 @@
 	height: 20px;
 	margin: 20px 0;
 	outline: none;
+
+	.svg-icon-menu {
+		position: relative;
+		bottom: 16px;
+
+		path {
+			fill: $color__text-main;
+		}
+	}
 }
 
 @media screen and (min-width: 769px) {

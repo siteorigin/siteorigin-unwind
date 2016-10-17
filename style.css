@@ -720,6 +720,11 @@ a {
   height: 20px;
   margin: 20px 0;
   outline: none; }
+  .menu-toggle .svg-icon-menu {
+    position: relative;
+    bottom: 16px; }
+    .menu-toggle .svg-icon-menu path {
+      fill: #626262; }
 
 @media screen and (min-width: 769px) {
   .menu-toggle {
