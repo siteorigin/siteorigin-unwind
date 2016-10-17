@@ -1,6 +1,6 @@
 #masthead {
 	border-bottom: 1px solid $color__background-hr-dark;
-	margin-bottom: 50px;
+	margin-bottom: 80px;
 
 	.top-bar {
 		background: #fff;
@@ -43,15 +43,17 @@
 	}
 }
 
+// Archive and search pages.
+.archive #masthead,
+.search #masthead {
+	margin-bottom: 60px; 
+}
+
 .homepage-has-slider {
 
 	#masthead {
 		border-bottom: none;
 		margin-bottom: 0;
-
-		.site-branding {
-			// padding-bottom: 3em;
-		}
 	}
 
 	.site-content {

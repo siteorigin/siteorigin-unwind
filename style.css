@@ -971,6 +971,7 @@ a {
   color: #626262;
   font-size: 13.8656px;
   font-size: 0.8666rem;
+  line-height: normal;
   margin: 0 0 1.6em;
   text-transform: uppercase; }
 
@@ -1136,17 +1137,10 @@ a {
     .container {
       padding: 0 15px; } }
 
-.site-content {
-  padding: 5.3333em 0 5em; }
-  .site-content::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-.archive .site-content,
-.search-results .site-content,
-.error404 .site-content {
-  padding-top: 4em; }
+.site-content::after {
+  clear: both;
+  content: "";
+  display: table; }
 
 .content-area {
   float: left;
@@ -1208,7 +1202,7 @@ a {
 --------------------------------------------------------------*/
 #masthead {
   border-bottom: 1px solid #ebebeb;
-  margin-bottom: 50px; }
+  margin-bottom: 80px; }
   #masthead .top-bar {
     background: #fff;
     border-bottom: 1px solid #ebebeb;
@@ -1242,6 +1236,10 @@ a {
       line-height: 1.7142;
       margin-bottom: 0;
       text-align: center; }
+
+.archive #masthead,
+.search #masthead {
+  margin-bottom: 60px; }
 
 .homepage-has-slider #masthead {
   border-bottom: none;
@@ -1344,7 +1342,7 @@ a {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  letter-spacing: .2em;
+  letter-spacing: .1em;
   line-height: normal;
   text-align: center;
   text-transform: uppercase; }
@@ -1437,7 +1435,7 @@ a {
 .archive .container > .page-header,
 .search .container > .page-header {
   border-bottom: 2px solid #f4f4f4;
-  margin-bottom: 5.3333em;
+  margin-bottom: 80px;
   padding-bottom: 4em; }
   .archive .container > .page-header .page-title,
   .search .container > .page-header .page-title {
@@ -1452,6 +1450,7 @@ a {
     border: 2px solid #ebebeb;
     border-right: none;
     border-left: none;
+    display: inline-block;
     padding: 10px 0; }
 
 .search-no-results #primary {
@@ -1824,9 +1823,9 @@ a {
 --------------------------------------------------------------*/
 #colophon {
   border-top: 1px solid #ebebeb;
-  margin-top: 30px; }
+  margin-top: 80px; }
   #colophon .widgets {
-    padding: 40px 40px 0; }
+    padding: 80px 40px 0; }
     #colophon .widgets::after {
       clear: both;
       content: "";
@@ -1875,7 +1874,8 @@ a {
       #colophon .site-info a:hover {
         color: #2d2d2d; }
   #colophon.unconstrained-footer .container {
-    max-width: none; }
+    max-width: none;
+    padding: 0 40px; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

@@ -146,7 +146,7 @@ function siteorigin_unwind_settings_init() {
 				'constrained' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Constrain', 'siteorigin-unwind' ),
-					'description' => esc_html__( "Constrain the footer width", 'siteorigin-unwind' ),
+					'description' => esc_html__( "Constrain the footer width.", 'siteorigin-unwind' ),
 				),
 
 				'top_padding'	=> array(
@@ -158,6 +158,7 @@ function siteorigin_unwind_settings_init() {
 				'side_padding'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Side Padding', 'siteorigin-unwind' ),
+					'description' => esc_html__( "Applies if the footer width is not constrained.", 'siteorigin-unwind' ),
 					'live'	=> true,
 				),
 
@@ -174,7 +175,7 @@ function siteorigin_unwind_settings_init() {
 add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
 
 /**
- * Add custom CSS for the theme settings
+ * Add custom CSS for the theme settings.
  *
  * @param $css
  *
@@ -192,8 +193,8 @@ function siteorigin_unwind_settings_custom_css( $css ){
 		'a:hover,a:focus {' . "\n" .
 		'color: ${branding_accent};' . "\n" .
 		'}' . "\n" .
-		'.site-content {' . "\n" .
-		'padding-top: ${masthead_bottom_margin};' . "\n" .
+		'#masthead, .archive .container > .page-header, .search .container > .page-header {' . "\n" .
+		'margin-bottom: ${masthead_bottom_margin};' . "\n" .
 		'}' . "\n" .
 		'.page-header {' . "\n" .
 		'margin-bottom: ${masthead_bottom_margin};' . "\n" .
@@ -203,6 +204,9 @@ function siteorigin_unwind_settings_custom_css( $css ){
 		'}' . "\n" .
 		'#colophon .widgets {' . "\n" .
 		'padding: ${footer_top_padding} ${footer_side_padding};' . "\n" .
+		'}' . "\n" .
+		'#colophon.unconstrained-footer .container {' . "\n" .
+		'padding: 0 ${footer_side_padding};' . "\n" .
 		'}';
 	return $css;
 }
@@ -246,9 +250,9 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	// Footer settings.
 	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );
 	$defaults['footer_constrained']  = true;
-	$defaults['footer_top_padding']  = '40px';
+	$defaults['footer_top_padding']  = '80px';
 	$defaults['footer_side_padding'] = '40px';
-	$defaults['footer_top_margin']   = '30px';
+	$defaults['footer_top_margin']   = '80px';
 
 	return $defaults;
 }

@@ -22,7 +22,7 @@
 	@include display(flex);
 	font-family: $font__details;
 	@include justify-content(center);
-	letter-spacing: .2em;
+	letter-spacing: .1em;
 	line-height: normal;
 	text-align: center;
 	text-transform: uppercase;
@@ -157,7 +157,7 @@
 
 	.container > .page-header {
 		border-bottom: 2px solid $color__background-hr;
-		margin-bottom: 5.3333em;
+		margin-bottom: 80px;
 		padding-bottom: 4em;
 		
 		.page-title {
@@ -172,6 +172,7 @@
 			border: 2px solid $color__background-hr-dark;
 			border-right: none;
 			border-left: none;
+			display: inline-block;
 			padding: 10px 0;
 		}
 	}

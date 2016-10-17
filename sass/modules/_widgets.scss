@@ -4,6 +4,7 @@
 	.widget-title {
 		color: $color__text-medium;
 		@include font-size(0.8666);
+		line-height: normal;
 		margin: 0 0 1.6em;
 		text-transform: uppercase;
 	}
