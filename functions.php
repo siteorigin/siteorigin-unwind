@@ -107,7 +107,17 @@ function siteorigin_unwind_setup() {
 		'post_types' => array( 'post' ),
 	) );
 
-	// This theme supports WooCommerce.
+	/*
+	 * Allow shortcodes to be use in category descriptions.
+	 * See https://developer.wordpress.org/reference/functions/term_description/
+	 */
+	add_filter( 'term_description', 'shortcode_unautop' );
+	add_filter( 'term_description', 'do_shortcode' );		
+
+	/*
+	 * Add WooCommerce support.
+	 * See https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/#section-3
+	 */
 	add_theme_support( 'woocommerce' );
 
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
@@ -190,3 +200,8 @@ function siteorigin_unwind_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'siteorigin_unwind_scripts' );
+
+	// Allowing use of shortcodes in taxonomy descriptions
+	add_filter( 'term_description', 'shortcode_unautop');
+	add_filter( 'term_description', 'do_shortcode' );
+
