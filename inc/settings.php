@@ -183,70 +183,100 @@ add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
  */
 function siteorigin_unwind_settings_custom_css( $css ){
 	// Custom CSS code.
-	$css .= '/* style */
+	$css .= '
 	a {
-	color: ${branding_accent};
+		color: ${branding_accent};
 	}
-	a:hover,a:focus {
-	color: ${branding_accent};
+	a:hover, a:focus {
+		color: ${branding_accent};
 	}
+	.button:hover,.page-links span:hover:not(.page-links-title),#page #infinite-handle span button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,.button:active,
+	.page-links span:active:not(.page-links-title),#page #infinite-handle span button:active,.button:focus,.page-links span:focus:not(.page-links-title),#page #infinite-handle span button:focus,button:active,button:focus {
+		color: ${branding_accent};
+	}
+	blockquote {
+  		border-left: 3px solid ${branding_accent};
+  	}
+ 	.entry-meta span a:hover,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta span a:hover	{
+		color: ${branding_accent};
+ 	}
+ 	.more-link .more-text:hover {
+ 		color: ${branding_accent};
+ 	}
+ 	.page-links span:not(.page-links-title) {
+ 		border-color: ${branding_accent};
+    	color: ${branding_accent};
+ 	}
+  	.comment-list li.comment .comment-reply-link:hover {
+  		color: ${branding_accent};
+  	}
+  	.comment-reply-title #cancel-comment-reply-link:hover {
+  		color: ${branding_accent};	
+  	} 	
+   	.comment-navigation a:hover,.posts-navigation a:hover,.post-navigation a:hover {
+    	border-color: ${branding_accent};
+    	color: ${branding_accent};
+    }
+	#secondary .widget a:hover,#colophon .widget a:hover {
+    	color: ${branding_accent};
+   	}
 	#masthead {
-	margin-bottom: ${masthead_bottom_margin};
+		margin-bottom: ${masthead_bottom_margin};
 	}
 	.archive .container > .page-header,.search .container > .page-header {
-	margin-bottom: ${masthead_bottom_margin};
+		margin-bottom: ${masthead_bottom_margin};
 	}
 	#colophon {
-	margin-top: ${footer_top_margin};
+		margin-top: ${footer_top_margin};
 	}
 	#colophon .widgets {
-	padding: ${footer_top_padding} 0 0;
+		padding: ${footer_top_padding} 0 0;
 	}
 	#colophon.unconstrained-footer .container {
-	padding: 0 ${footer_side_padding};
+		padding: 0 ${footer_side_padding};
 	}
 	/* WooCommerce */
 	.woocommerce form.login input.button,.woocommerce form.checkout_coupon input.button {
-	background-color: ${branding_accent};
+		background-color: ${branding_accent};
 	}
 	.woocommerce form.login input.button:hover,.woocommerce form.checkout_coupon input.button:hover {
-	background-color: ${branding_accent};
+		background-color: ${branding_accent};
 	}
 	.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button {
-	background-color: ${branding_accent};
+		background-color: ${branding_accent};
 	}
 	.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:hover {
-	background-color: ${branding_accent};
+		background-color: ${branding_accent};
 	}
 	.woocommerce-cart .woocommerce-message:before,.woocommerce-cart .woocommerce-info:before {
-	color: ${branding_accent};
+		color: ${branding_accent};
 	}
 	.woocommerce-cart form table.shop_table .product-name a:hover {
-	color: ${branding_accent};
+		color: ${branding_accent};
 	}
 	.woocommerce-cart form table.shop_table td.actions input.button {
-	background-color: ${branding_accent};
+		background-color: ${branding_accent};
 	}
 	.woocommerce-cart form table.shop_table td.actions input.button:hover {
-	background-color: ${branding_accent};
+		background-color: ${branding_accent};
 	}
 	.woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .shipping-calculator-button {
-	color: ${branding_accent};
+		color: ${branding_accent};
 	}
 	.woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .shipping-calculator-button:hover {
-	color: ${branding_accent};
+		color: ${branding_accent};
 	}
 	.woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button {
-	background-color: ${branding_accent};
+		background-color: ${branding_accent};
 	}
 	.woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button:hover {
-	background-color: ${branding_accent};
+		background-color: ${branding_accent};
 	}
 	.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
-	background-color: ${branding_accent};
+		background-color: ${branding_accent};
 	}
 	.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover {
-	background-color: ${branding_accent};
+		background-color: ${branding_accent};
 	}';
 	return $css;
 }
