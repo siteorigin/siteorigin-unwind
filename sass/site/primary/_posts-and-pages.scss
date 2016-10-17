@@ -26,7 +26,7 @@
 	line-height: normal;
 	text-align: center;
 	text-transform: uppercase;
-	
+
 	span {
 		color: $color__text-meta;
 		@include font-size(0.8);
@@ -55,7 +55,7 @@
 	line-height: normal;
 	margin: 0.5em 0 0;
 	text-align: center;
-	
+
 	@at-root .page .entry-title {
 		margin: 0;
 	}
@@ -93,7 +93,7 @@
 		border-top: 2px solid $color__background-hr-dark;
 		border-bottom: 2px solid $color__background-hr-dark;
 		font-family: $font__details;
-		letter-spacing: 1px; 
+		letter-spacing: 1px;
 		padding: 10px 0;
 
 		&:hover {
@@ -106,21 +106,21 @@
 .page-links {
 	clear: both;
 	margin: 0 0 4.6666em;
-	
+
 	.page-links-title {
 		color: $color__text-dark;
 	}
-	
+
 	a {
 		text-decoration: none;
-	}	
-	
+	}
+
 	span:not(.page-links-title) {
 		@extend .button;
 		background: $color__background-button;
 		border-color: $color__border-button-hover;
 		color: $color__link;
-		margin-right: 0.1333em; 
+		margin-right: 0.1333em;
 	}
 
 	.page-links-title ~ a span {
@@ -157,9 +157,9 @@
 
 	.container > .page-header {
 		border-bottom: 2px solid $color__background-hr;
-		margin-bottom: 80px;
+		margin-bottom: $masthead__bottom-margin;
 		padding-bottom: 4em;
-		
+
 		.page-title {
 			font-family: $font__details;
 			@include font-size(0.8666);
@@ -192,6 +192,10 @@
 	}
 }
 
+.page-header {
+	margin-bottom: $masthead__bottom-margin;
+}
+
 /*--------------------------------------------------------------
 ## Pages
 --------------------------------------------------------------*/
@@ -208,16 +212,16 @@
 .content-area .search-form button[type="submit"] {
 	border: none;
 	padding: .65em;
-	padding-left: 0.89375em; 
+	padding-left: 0.89375em;
 	position: relative;
 	top: .2em;
 	right: 4.5356em;
-	
+
 	svg {
 		fill: $color__text-main;
 		height: 1.2666em;
 		width: 1.3333em;
-	}	
+	}
 }
 
 /*--------------------------------------------------------------
@@ -242,7 +246,7 @@
 --------------------------------------------------------------*/
 .yarpp-related,
 .related-posts-section {
-	padding-bottom: 1.3333em; 
+	padding-bottom: 1.3333em;
 
 	.related-posts {
 		font-size: 1em;
@@ -252,15 +256,15 @@
 	ol {
 		@include clearfix;
 		list-style: none;
-		margin: 0; 
+		margin: 0;
 		padding: 0.3333em 0 0;
-		
+
 		li {
 			display: block;
 			float: left;
 			margin: 0;
 			width: 31%;
-			
+
 			@media (max-width: 480px) {
 				width: 100%;
 			}
@@ -285,7 +289,7 @@
 				@include font-size(0.9333);
 				line-height: normal;
 				margin-bottom: 0;
-				
+
 				@at-root &:hover {
 					color: $color__text-main;
 				}
@@ -308,7 +312,7 @@
 
 	.author-avatar {
 		float: left;
-		
+
 		@media (max-width: 480px) {
 			float: none;
 		}
@@ -316,12 +320,12 @@
 		img {
 			border-radius: 50%;
 			vertical-align: middle;
-			
+
 			@media (max-width: 480px) {
 				display: block;
 				margin-right: auto;
-				margin-bottom: 30px;	
-				margin-left: auto;		
+				margin-bottom: 30px;
+				margin-left: auto;
 			}
 		}
 	}
@@ -330,12 +334,12 @@
 		@include clearfix;
 		color: $color__text-main;
 		@include font-size(0.9333);
-		margin-left: 2em; 
+		margin-left: 2em;
 		padding-left: 120px;
-		
+
 		@media (max-width: 480px) {
 			padding-left: 0;
-			text-align: center;			
+			text-align: center;
 		}
 
 		.post-author-title {
@@ -347,7 +351,7 @@
 			a {
 				color: $color__text-dark;
 				text-decoration: none;
-				
+
 				@media (max-width: 480px) {
 					text-align: center;
 				}
@@ -367,8 +371,8 @@
 
 	article {
 		@include clearfix;
-		margin-bottom: 3.25em; 
-		
+		margin-bottom: 3.25em;
+
 		@media (max-width: 1024px) {
 			margin-bottom: 1.4667em;
 		}
@@ -377,12 +381,12 @@
 			float: left;
 			margin: 0;
 			width: 42.452830188679%;
-			
+
 			@media (max-width: 480px) {
 				float: none;
-				margin-bottom: 1.8em; 
+				margin-bottom: 1.8em;
 				text-align: center;
-				width: 100%; 
+				width: 100%;
 			}
 		}
 
@@ -390,28 +394,28 @@
 			float: right;
 			margin: 0;
 			width: 100%;
-			
+
 			@media (max-width: 480px) {
-				float: none; 
+				float: none;
 			}
 
 			.entry-meta {
 				justify-content: initial;
 				margin: .45em 0 .6em;
-				
+
 				@media (max-width: 480px) {
 					justify-content: center;
-				}					
+				}
 			}
 
 			.entry-title {
 				@include font-size(1.6);
 				margin: 0;
 				text-align: left;
-				
+
 				@media (max-width: 480px) {
 					text-align: center;
-				}				
+				}
 			}
 
 			.entry-summary {
@@ -423,9 +427,9 @@
 
 			.entry-content {
 				width: 54.009433962264%;
-				
+
 				@media (max-width: 480px) {
-					width: 100%; 
+					width: 100%;
 				}
 			}
 		}
