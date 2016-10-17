@@ -3,6 +3,6 @@
 	<input type="search" name="s" placeholder="<?php esc_attr_e( 'Search', 'siteorigin-unwind') ?>" value="<?php echo get_search_query() ?>" />
 	<button type="submit">
 		<label class="screen-reader-text"><?php esc_html_e( 'Search', 'siteorigin-unwind' ); ?></label>
-		<?php siteorigin_unwind_display_icon( 'search' ); ?>
-	</button>	
+		<?php siteorigin_unwind_display_icon( 'fullscreen-search' ); ?>
+	</button>
 </form>
