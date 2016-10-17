@@ -147,21 +147,6 @@ function siteorigin_unwind_display_logo() {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_unwind_display_icon' ) ) :
-/**
- * Displays SVG icons.
- */
-function siteorigin_unwind_display_icon( $type ){
-	switch( $type ) {
-		case 'search' : ?>
-			<svg version="1.1" class="svg-icon-search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
-				<path d="M20.943 4.619c-4.5-4.5-11.822-4.5-16.321 0-4.498 4.5-4.498 11.822 0 16.319 4.007 4.006 10.247 4.435 14.743 1.308 0.095 0.447 0.312 0.875 0.659 1.222l6.553 6.55c0.953 0.955 2.496 0.955 3.447 0 0.953-0.951 0.953-2.495 0-3.447l-6.553-6.551c-0.347-0.349-0.774-0.565-1.222-0.658 3.13-4.495 2.7-10.734-1.307-14.743zM18.874 18.871c-3.359 3.357-8.825 3.357-12.183 0-3.357-3.359-3.357-8.825 0-12.184 3.358-3.359 8.825-3.359 12.183 0s3.359 8.825 0 12.184z"></path>
-			</svg>
-		<?php break;
-	}
-}
-endif;
-
 if ( ! function_exists( 'siteorigin_unwind_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -374,3 +359,59 @@ function siteorigin_unwind_tag_cloud( $args ) {
 }
 endif;
 add_filter( 'widget_tag_cloud_args', 'siteorigin_unwind_tag_cloud' );
+
+if ( ! function_exists( 'siteorigin_unwind_custom_icon' ) ):
+/**
+ * Display a custom icons from the settings
+ */
+function siteorigin_unwind_custom_icon( $icon, $class ) {
+	$id = siteorigin_setting( $icon );
+	$url = wp_get_attachment_url( $id );
+	$filetype = wp_check_filetype( $url );
+	$extension = $filetype['ext'];
+
+	switch( $extension ) {
+		case "svg":
+		$attrs['class'] = "style-svg $class";
+		break;
+
+		default:
+		$attrs['class'] = "$class";
+	}
+
+	echo wp_get_attachment_image( $id, 'full', false, $attrs );
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_display_icon' ) ) :
+/**
+ * Displays svg icons.
+ */
+function siteorigin_unwind_display_icon( $type ) {
+
+	switch( $type ) {
+
+		case 'search' : ?>
+			<svg version="1.1" class="svg-icon-search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+				<path d="M20.943 4.619c-4.5-4.5-11.822-4.5-16.321 0-4.498 4.5-4.498 11.822 0 16.319 4.007 4.006 10.247 4.435 14.743 1.308 0.095 0.447 0.312 0.875 0.659 1.222l6.553 6.55c0.953 0.955 2.496 0.955 3.447 0 0.953-0.951 0.953-2.495 0-3.447l-6.553-6.551c-0.347-0.349-0.774-0.565-1.222-0.658 3.13-4.495 2.7-10.734-1.307-14.743zM18.874 18.871c-3.359 3.357-8.825 3.357-12.183 0-3.357-3.359-3.357-8.825 0-12.184 3.358-3.359 8.825-3.359 12.183 0s3.359 8.825 0 12.184z"></path>
+			</svg>
+		<?php break;
+		case 'close' : ?>
+			<svg xmlns="http://www.w3.org/2000/svg" width="15.56" height="15.562" viewBox="0 0 15.56 15.562">
+				<path id="icon_close" data-name="icon close" class="cls-1" d="M1367.53,39.407l-2.12,2.121-5.66-5.657-5.66,5.657-2.12-2.121,5.66-5.657-5.66-5.657,2.12-2.122,5.66,5.657,5.66-5.657,2.12,2.122-5.66,5.657Z" transform="translate(-1351.97 -25.969)"/>
+			</svg>
+		<?php break;
+		case 'menu': ?>
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="32" viewBox="0 0 27 32">
+				<path d="M27.429 24v2.286q0 0.464-0.339 0.804t-0.804 0.339h-25.143q-0.464 0-0.804-0.339t-0.339-0.804v-2.286q0-0.464 0.339-0.804t0.804-0.339h25.143q0.464 0 0.804 0.339t0.339 0.804zM27.429 14.857v2.286q0 0.464-0.339 0.804t-0.804 0.339h-25.143q-0.464 0-0.804-0.339t-0.339-0.804v-2.286q0-0.464 0.339-0.804t0.804-0.339h25.143q0.464 0 0.804 0.339t0.339 0.804zM27.429 5.714v2.286q0 0.464-0.339 0.804t-0.804 0.339h-25.143q-0.464 0-0.804-0.339t-0.339-0.804v-2.286q0-0.464 0.339-0.804t0.804-0.339h25.143q0.464 0 0.804 0.339t0.339 0.804z"></path>
+			</svg>
+		<?php break;
+		case 'chevron-down' : ?>
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+				<path d="M30.054 14.429l-13.25 13.232q-0.339 0.339-0.804 0.339t-0.804-0.339l-13.25-13.232q-0.339-0.339-0.339-0.813t0.339-0.813l2.964-2.946q0.339-0.339 0.804-0.339t0.804 0.339l9.482 9.482 9.482-9.482q0.339-0.339 0.804-0.339t0.804 0.339l2.964 2.946q0.339 0.339 0.339 0.813t-0.339 0.813z"></path>
+			</svg>
+		<?php break;
+
+	}
+}
+endif;
