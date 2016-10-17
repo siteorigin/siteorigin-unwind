@@ -721,8 +721,8 @@ a {
   margin: 20px 0;
   outline: none; }
   .menu-toggle .svg-icon-menu {
-    position: relative;
-    bottom: 16px; }
+    bottom: 16px;
+    position: relative; }
     .menu-toggle .svg-icon-menu path {
       fill: #626262; }
 
@@ -735,60 +735,60 @@ a {
     display: none !important; } }
 
 #mobile-navigation {
-  position: absolute;
   left: 0;
+  position: absolute;
   top: 60px;
   width: 100%;
   z-index: 10; }
   #mobile-navigation ul {
-    margin: 0;
     list-style: none;
+    margin: 0;
     padding: 0; }
     #mobile-navigation ul li {
-      line-height: 42px;
       background: #f8f8f8;
-      width: 100%;
-      position: relative; }
+      line-height: 42px;
+      position: relative;
+      width: 100%; }
       #mobile-navigation ul li a {
-        display: block;
-        text-decoration: none;
-        color: #626262;
-        padding: 15px 0 15px 20px;
         border-bottom: 1px solid #ebebeb;
-        width: 100%;
+        color: #626262;
+        display: block;
         font-size: 12px;
         line-height: 12px;
-        text-transform: uppercase; }
+        padding: 15px 0 15px 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%; }
       #mobile-navigation ul li.menu-item-has-children > a {
-        padding-right: 48px;
-        max-width: 100%; }
+        max-width: 100%;
+        padding-right: 48px; }
       #mobile-navigation ul li .dropdown-toggle {
         background: transparent;
         border: 0;
+        box-shadow: none;
         content: "Open";
         height: 30px;
         padding: 6px;
         position: absolute;
-        top: 5px;
         right: 5px;
-        width: 42px;
+        top: 5px;
         outline: none;
-        box-shadow: none; }
+        width: 42px; }
         #mobile-navigation ul li .dropdown-toggle .svg-icon-submenu {
-          width: 10px;
-          height: 10px; }
+          height: 10px;
+          width: 10px; }
           #mobile-navigation ul li .dropdown-toggle .svg-icon-submenu path {
             fill: #626262; }
     #mobile-navigation ul ul {
+      display: none;
       margin: 0;
-      padding: 0;
-      display: none; }
+      padding: 0; }
       #mobile-navigation ul ul li {
-        padding-left: 20px;
-        background: #ffffff; }
+        background: #fff;
+        padding-left: 20px; }
         #mobile-navigation ul ul li a {
-          width: 100%;
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          width: 100%; }
         #mobile-navigation ul ul li ul {
           display: none; }
 

@@ -182,7 +182,7 @@ add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
  * @return string
  */
 function siteorigin_unwind_settings_custom_css( $css ){
-	// Custom CSS Code
+	// Custom CSS code.
 	$css .= '/* style */
 	a {
 	color: ${branding_accent};
