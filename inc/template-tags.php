@@ -393,7 +393,7 @@ function siteorigin_unwind_display_icon( $type ) {
 
 	switch( $type ) {
 
-		case 'fullscreen-search' : ?>
+		case 'fullscreen-search' :
 			if ( siteorigin_setting( 'icons_fullscreen_search' ) ): ?>
 				<?php siteorigin_north_custom_icon( 'icons_fullscreen_search', 'svg-icon-fullscreen-search' ); ?>
 			<?php else : ?>

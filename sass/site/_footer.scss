@@ -1,32 +1,33 @@
 #colophon {
 	border-top: 1px solid $color__background-hr-dark;
+	margin-top: $footer__top_margin;
 
 	.widgets {
 		@include clearfix();
-		padding: 5em 0;
-		
+		padding: $footer__top_padding $footer__side_padding 0;
+
 		@for $i from 1 through 10 {
 			$margin: ($i - 1) * 2.5;
 			&.widgets-#{$i} .widget {
 				width: (100% - $margin) / $i;
 			}
-		}		
+		}
 
 		.widget {
 			box-sizing: content-box;
-			margin-right: 2.5%; 
+			margin-right: 2.5%;
 			float: left;
-			
+
 			&:last-of-type {
-				margin-right: 0 !important; 
+				margin-right: 0 !important;
 			}
-			
+
 			@media (max-width: 768px) {
 				float: none;
 				margin: 0 0 4em;
-				width: 100% !important; 
-			}			
-		}		
+				width: 100% !important;
+			}
+		}
 	}
 
 	.site-info {

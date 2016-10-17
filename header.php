@@ -45,8 +45,8 @@
 							<span class="v-line"></span>
 						<?php endif; ?>
 						<button id="search-button" class="search-toggle">
-							<span class="open"><?php esc_html_e( 'Search', 'siteorigin-unwind' ); ?></span>
-							<span class="close"><?php esc_html_e( 'Close', 'siteorigin-unwind' ); ?></span>
+							<span class="open"><?php siteorigin_unwind_display_icon( 'search' ); ?></span>
+							<span class="close"><?php siteorigin_unwind_display_icon( 'close' ); ?></span>
 						</button>
 					</div>
 				</div><!-- .container -->

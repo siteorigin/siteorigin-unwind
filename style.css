@@ -679,8 +679,22 @@ a {
     padding: 0; }
     .social-search .search-toggle .open {
       display: block; }
+      .social-search .search-toggle .open .svg-icon-search {
+        height: 20px;
+        width: 20px;
+        position: relative;
+        top: 5px; }
+        .social-search .search-toggle .open .svg-icon-search path {
+          fill: #626262; }
     .social-search .search-toggle .close {
       display: none; }
+      .social-search .search-toggle .close .svg-icon-close {
+        height: 18px;
+        width: 20px;
+        position: relative;
+        top: 5px; }
+        .social-search .search-toggle .close .svg-icon-close path {
+          fill: #626262; }
     .social-search .search-toggle.close-search .open {
       display: none; }
     .social-search .search-toggle.close-search .close {
@@ -1807,9 +1821,10 @@ a {
 ## Site Footer
 --------------------------------------------------------------*/
 #colophon {
-  border-top: 1px solid #ebebeb; }
+  border-top: 1px solid #ebebeb;
+  margin-top: 30px; }
   #colophon .widgets {
-    padding: 5em 0; }
+    padding: 40px 40px 0; }
     #colophon .widgets::after {
       clear: both;
       content: "";
