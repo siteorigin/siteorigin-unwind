@@ -91,10 +91,6 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'media',
 					'label' => __( 'Mobile menu icon', 'siteorigin-unwind' ),
 				),
-				'submenu' => array(
-					'type' => 'media',
-					'label' => __( 'Mobile menu submenu dropdown', 'siteorigin-unwind' ),
-				),
 				'fullscreen_search' => array(
 					'type' => 'media',
 					'label' => __( 'Fullscreen search icon', 'siteorigin-unwind' ),
@@ -239,7 +235,6 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['icons_fullscreen_search'] = false;
 	$defaults['icons_search']            = false;
 	$defaults['icons_close_search']      = false;
-	$defaults['icons_submenu']           = false;
 
 	// Blog settings
 	$defaults['blog_featured_slider']       = false;

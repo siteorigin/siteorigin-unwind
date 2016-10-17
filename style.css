@@ -760,7 +760,8 @@ a {
         line-height: 12px;
         text-transform: uppercase; }
       #mobile-navigation ul li.menu-item-has-children > a {
-        padding-right: 48px; }
+        padding-right: 48px;
+        max-width: 100%; }
       #mobile-navigation ul li .dropdown-toggle {
         background: transparent;
         border: 0;
@@ -768,20 +769,16 @@ a {
         height: 30px;
         padding: 6px;
         position: absolute;
-        top: 0;
+        top: 5px;
         right: 5px;
         width: 42px;
         outline: none;
         box-shadow: none; }
-        #mobile-navigation ul li .dropdown-toggle:after {
-          color: #626262;
-          content: "\2193";
-          font-size: 15px;
-          line-height: 42px;
-          position: relative;
-          top: 0;
-          left: 1px;
-          width: 42px; }
+        #mobile-navigation ul li .dropdown-toggle .svg-icon-submenu {
+          width: 10px;
+          height: 10px; }
+          #mobile-navigation ul li .dropdown-toggle .svg-icon-submenu path {
+            fill: #626262; }
     #mobile-navigation ul ul {
       margin: 0;
       padding: 0;

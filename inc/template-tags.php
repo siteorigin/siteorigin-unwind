@@ -433,16 +433,6 @@ function siteorigin_unwind_display_icon( $type ) {
 			<?php endif;
 			break;
 
-		case 'submenu' :
-			if ( siteorigin_setting( 'icons_submenu' ) ): ?>
-				<?php siteorigin_north_custom_icon( 'icons_submenu', 'svg-icon-submenu' ); ?>
-			<?php else : ?>
-				<svg version="1.1" class="svg-icon-submenu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
-					<path d="M30.054 14.429l-13.25 13.232q-0.339 0.339-0.804 0.339t-0.804-0.339l-13.25-13.232q-0.339-0.339-0.339-0.813t0.339-0.813l2.964-2.946q0.339-0.339 0.804-0.339t0.804 0.339l9.482 9.482 9.482-9.482q0.339-0.339 0.804-0.339t0.804 0.339l2.964 2.946q0.339 0.339 0.339 0.813t-0.339 0.813z"></path>
-				</svg>
-			<?php endif;
-			break;
-
 	}
 }
 endif;

@@ -245,6 +245,7 @@
 
 			&.menu-item-has-children > a {
 				padding-right: 48px;
+				max-width: 100%;
 			}
 
 			.dropdown-toggle {
@@ -254,21 +255,19 @@
 				height: 30px;
 				padding: 6px;
 				position: absolute;
-				top: 0;
+				top: 5px;
 				right: 5px;
 				width: 42px;
 				outline: none;
 				box-shadow: none;
 
-				&:after {
-					color: $color__text-medium;
-					content: "\2193";
-					font-size: 15px;
-					line-height: 42px;
-					position: relative;
-					top: 0;
-					left: 1px;
-					width: 42px;
+				.svg-icon-submenu {
+					width: 10px;
+					height: 10px;
+
+					path {
+						fill: $color__text-medium;
+					}
 				}
 			}
 		}
