@@ -1809,7 +1809,7 @@ a {
   border-top: 1px solid #ebebeb;
   margin-top: 80px; }
   #colophon .widgets {
-    padding: 5.3333em 0; }
+    padding: 5em 0; }
     #colophon .widgets::after {
       clear: both;
       content: "";
@@ -1858,8 +1858,7 @@ a {
       #colophon .site-info a:hover {
         color: #2d2d2d; }
   #colophon.unconstrained-footer .container {
-    max-width: none;
-    padding: 0 40px; }
+    max-width: none; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
