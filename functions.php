@@ -180,7 +180,7 @@ add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
  */
 function siteorigin_unwind_scripts() {
 	// Theme stylesheet.
-	wp_enqueue_style( 'siteorigin_unwind-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'siteorigin-unwind-style', get_stylesheet_uri() );
 
 	// Flexslider.
 	if ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) {
