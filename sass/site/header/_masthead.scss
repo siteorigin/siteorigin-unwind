@@ -1,6 +1,6 @@
 #masthead {
 	border-bottom: 1px solid $color__background-hr-dark;
-	margin-bottom: 80px;
+	margin-bottom: $masthead__bottom_margin;
 
 	.top-bar {
 		background: #fff;
@@ -46,7 +46,7 @@
 // Archive and search pages.
 .archive #masthead,
 .search #masthead {
-	margin-bottom: 60px; 
+	margin-bottom: 60px;
 }
 
 .homepage-has-slider {
@@ -57,6 +57,6 @@
 	}
 
 	.site-content {
-		padding-top: 0; 
+		padding-top: 0;
 	}
 }
