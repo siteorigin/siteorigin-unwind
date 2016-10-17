@@ -196,9 +196,6 @@ function siteorigin_unwind_settings_custom_css( $css ){
 	.archive .container > .page-header,.search .container > .page-header {
 	margin-bottom: ${masthead_bottom_margin};
 	}
-	.page-header {
-	margin-bottom: ${masthead_bottom_margin};
-	}
 	#colophon {
 	margin-top: ${footer_top_margin};
 	}
