@@ -4,7 +4,7 @@
 
 	.widgets {
 		@include clearfix();
-		padding: 5em 0;
+		padding: 5.3333em 0;
 		
 		@for $i from 1 through 10 {
 			$margin: ($i - 1) * 2.5;
@@ -51,6 +51,7 @@
 
 		.container {
 			max-width: none;
+			padding: 0 40px;
 		}
 	}
 }
