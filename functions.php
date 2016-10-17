@@ -157,7 +157,7 @@ add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
  */
 function siteorigin_unwind_scripts() {
 	// Theme stylesheet.
-	wp_enqueue_style( 'siteorigin_unwind-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'siteorigin-unwind-style', get_stylesheet_uri() );
 
 	// Theme JS.
 	wp_enqueue_script( 'siteorigin-unwind-script', get_template_directory_uri() . '/js/unwind.js', array('jquery') );
