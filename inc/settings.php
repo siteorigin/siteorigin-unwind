@@ -203,9 +203,12 @@ function siteorigin_unwind_settings_custom_css( $css ){
 	margin-top: ${footer_top_margin};
 	}
 	#colophon .widgets {
-	padding: ${footer_top_padding} ${footer_side_padding} 0;
+	padding: ${footer_top_padding} 0 0;
 	}
-	/* woocommerce */
+	#colophon.unconstrained-footer .container {
+	padding: 0 ${footer_side_padding};
+	}
+	/* WooCommerce */
 	.woocommerce form.login input.button,.woocommerce form.checkout_coupon input.button {
 	background-color: ${branding_accent};
 	}

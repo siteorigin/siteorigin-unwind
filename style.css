@@ -1828,7 +1828,7 @@ a {
   border-top: 1px solid #ebebeb;
   margin-top: 80px; }
   #colophon .widgets {
-    padding: 80px 40px 0; }
+    padding: 80px 0; }
     #colophon .widgets::after {
       clear: both;
       content: "";

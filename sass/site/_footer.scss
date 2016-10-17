@@ -4,7 +4,7 @@
 
 	.widgets {
 		@include clearfix();
-		padding: $footer__top-padding $footer__side-padding 0;
+		padding: $footer__top-padding 0;
 
 		@for $i from 1 through 10 {
 			$margin: ($i - 1) * 2.5;
@@ -51,7 +51,7 @@
 
 		.container {
 			max-width: none;
-			padding: 0 40px;
+			padding: 0 $footer__side-padding;
 		}
 	}
 }
