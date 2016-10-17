@@ -86,7 +86,7 @@
 			text-transform: uppercase;
 
 			&:hover {
-				color: $color__link;
+				color: $color__primary-accent;
 			}
 		}		
 
@@ -126,7 +126,7 @@
 		margin-left: .25em;
 		
 		&:hover {
-			color: $color__link;
+			color: $color__primary-accent;
 		}
 	}	
 }

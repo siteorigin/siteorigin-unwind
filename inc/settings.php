@@ -274,13 +274,13 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['navigation_sticky'] = true;
 	$defaults['navigation_post']   = true;
 
-	// Icons
+	// Icons.
 	$defaults['icons_menu']              = false;
 	$defaults['icons_fullscreen_search'] = false;
 	$defaults['icons_search']            = false;
 	$defaults['icons_close_search']      = false;
 
-	// Blog settings
+	// Blog settings.
 	$defaults['blog_featured_slider']       = false;
 	$defaults['blog_featured_archive']      = true;
 	$defaults['blog_featured_single']       = true;
@@ -299,7 +299,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 add_filter( 'siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults' );
 
 /**
- * Setup Page Settings for SiteOrigin North
+ * Setup Page Settings.
  */
 function siteorigin_unwind_page_settings( $settings, $type, $id ) {
 
@@ -317,21 +317,21 @@ function siteorigin_unwind_page_settings( $settings, $type, $id ) {
 	$settings['page_title'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Page Title', 'siteorigin-unwind' ),
-		'checkbox_label' => esc_html__( 'display', 'siteorigin-unwind' ),
+		'checkbox_label' => esc_html__( 'Display', 'siteorigin-unwind' ),
 		'description'    => esc_html__( 'Display the page title on this page.', 'siteorigin-unwind' )
 	);
 
 	$settings['masthead_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Masthead Bottom Margin', 'siteorigin-unwind' ),
-		'checkbox_label' => esc_html__( 'enable', 'siteorigin-unwind' ),
+		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
 		'description'    => esc_html__( 'Include the margin below the masthead (top area) of your site.', 'siteorigin-unwind' )
 	);
 
 	$settings['footer_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Footer Top Margin', 'siteorigin-unwind' ),
-		'checkbox_label' => esc_html__( 'enable', 'siteorigin-unwind' ),
+		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
 		'description'    => esc_html__( 'Include the margin above your footer.', 'siteorigin-unwind' )
 	);
 

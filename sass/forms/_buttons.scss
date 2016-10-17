@@ -19,12 +19,12 @@ input[type="submit"] {
 	&:hover {
 		background: $color__background-button;
 		border-color: $color__border-button-hover;
-		color: $color__link; 
+		color: $color__primary-accent; 
 	}
 
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;
-		color: $color__link;
+		color: $color__primary-accent;
 	}
 }

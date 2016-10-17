@@ -44,7 +44,7 @@
 			text-decoration: none;
 
 			&:hover {
-				color: $color__link;
+				color: $color__primary-accent;
 			}
 		}
 	}
@@ -97,7 +97,7 @@
 		padding: 10px 0;
 
 		&:hover {
-			border: 2px solid $color__link;
+			border: 2px solid $color__primary-accent;
 			padding: 10px 12px;
 		}
 	}
@@ -119,7 +119,7 @@
 		@extend .button;
 		background: $color__background-button;
 		border-color: $color__border-button-hover;
-		color: $color__link;
+		color: $color__primary-accent;
 		margin-right: 0.1333em;
 	}
 

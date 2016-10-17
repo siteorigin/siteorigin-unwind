@@ -337,8 +337,8 @@
 		@include transition(0.3s);
 
 		&:hover {
-			border-color: $color__link;
-			color: $color__link;
+			border-color: $color__primary-accent;
+			color: $color__primary-accent;
 		}
 	}
 }
@@ -376,7 +376,7 @@
 		text-transform: none;
 
 		&:hover {
-			color: $color__link;
+			color: $color__primary-accent;
 		}
 
 		.sub-title {
