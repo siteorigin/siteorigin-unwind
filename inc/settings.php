@@ -91,6 +91,10 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'media',
 					'label' => __( 'Mobile menu icon', 'siteorigin-unwind' ),
 				),
+				'submenu' => array(
+					'type' => 'media',
+					'label' => __( 'Mobile menu submenu dropdown', 'siteorigin-unwind' ),
+				),
 				'fullscreen_search' => array(
 					'type' => 'media',
 					'label' => __( 'Fullscreen search icon', 'siteorigin-unwind' ),
@@ -102,10 +106,6 @@ function siteorigin_unwind_settings_init() {
 				'close_search' => array(
 					'type' => 'media',
 					'label' => __( 'Close search icon', 'siteorigin-unwind' ),
-				),
-				'submenu' => array(
-					'type' => 'media',
-					'label' => __( 'Mobile menu submenu dropdown', 'siteorigin-unwind' ),
 				),
 			),
 		),
