@@ -33,7 +33,7 @@
 				<div class="container">
 
 					<nav id="site-navigation" class="main-navigation" role="navigation">
-						<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin-unwind' ); ?></button>
+						<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 					</nav><!-- #site-navigation -->
 					<div id="mobile-navigation"></div>
@@ -45,8 +45,8 @@
 							<span class="v-line"></span>
 						<?php endif; ?>
 						<button id="search-button" class="search-toggle">
-							<span class="open"><?php esc_html_e( 'Search', 'siteorigin-unwind' ); ?></span>
-							<span class="close"><?php esc_html_e( 'Close', 'siteorigin-unwind' ); ?></span>
+							<span class="open"><?php siteorigin_unwind_display_icon( 'search' ); ?></span>
+							<span class="close"><?php siteorigin_unwind_display_icon( 'close' ); ?></span>
 						</button>
 					</div>
 				</div><!-- .container -->

@@ -84,6 +84,28 @@ function siteorigin_unwind_settings_init() {
 			),
 		),
 
+		'icons' => array(
+			'title' => esc_html__( 'Icons', 'siteorigin-unwind' ),
+			'fields' => array(
+				'menu' => array(
+					'type' => 'media',
+					'label' => __( 'Mobile menu icon', 'siteorigin-unwind' ),
+				),
+				'fullscreen_search' => array(
+					'type' => 'media',
+					'label' => __( 'Fullscreen search icon', 'siteorigin-unwind' ),
+				),
+				'search' => array(
+					'type' => 'media',
+					'label' => __( 'Masthead search icon', 'siteorigin-unwind' ),
+				),
+				'close_search' => array(
+					'type' => 'media',
+					'label' => __( 'Close search icon', 'siteorigin-unwind' ),
+				),
+			),
+		),
+
 		'blog' => array(
 			'title' => esc_html__( 'Blog', 'siteorigin-unwind' ),
 			'fields' => array(
@@ -159,8 +181,8 @@ add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
  *
  * @return string
  */
-function siteorigin_unwind_settings_custom_css($css){
-	// Custom CSS code.
+function siteorigin_unwind_settings_custom_css( $css ){
+	// Custom CSS Code
 	$css .= '/* style */' . "\n" .
 		'blockquote {' . "\n" .
 		'color: ${branding_accent};' . "\n" .
@@ -185,7 +207,7 @@ function siteorigin_unwind_settings_custom_css($css){
 		'}' . "\n" .
 		'#colophon.unconstrained-footer .container {' . "\n" .
 		'padding: 0 ${footer_side_padding};' . "\n" .
-		'}';		
+		'}';
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
@@ -200,9 +222,9 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom
 function siteorigin_unwind_settings_defaults( $defaults ) {
 
 	// Branding defaults.
-	$defaults['branding_logo'] = false;
+	$defaults['branding_logo']             = false;
 	$defaults['branding_site_description'] = false;
-	$defaults['branding_accent'] = '#24c48a';
+	$defaults['branding_accent']           = '#24c48a';
 
 	// The masthead defaults.
 	$defaults['masthead_social_widget'] = '';
@@ -210,21 +232,27 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 
 	// Navigation defaults.
 	$defaults['navigation_sticky'] = true;
-	$defaults['navigation_post'] = true;
+	$defaults['navigation_post']   = true;
 
-	// Blog settings.
-	$defaults['blog_featured_slider'] = false;
-	$defaults['blog_featured_archive'] = true;
-	$defaults['blog_featured_single'] = true;
+	// Icons
+	$defaults['icons_menu']              = false;
+	$defaults['icons_fullscreen_search'] = false;
+	$defaults['icons_search']            = false;
+	$defaults['icons_close_search']      = false;
+
+	// Blog settings
+	$defaults['blog_featured_slider']       = false;
+	$defaults['blog_featured_archive']      = true;
+	$defaults['blog_featured_single']       = true;
 	$defaults['blog_display_related_posts'] = true;
-	$defaults['blog_display_author_box'] = true;
+	$defaults['blog_display_author_box']    = true;
 
 	// Footer settings.
-	$defaults['footer_text'] = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );
-	$defaults['footer_constrained'] = true;
-	$defaults['footer_top_padding'] = '80px';
+	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );
+	$defaults['footer_constrained']  = true;
+	$defaults['footer_top_padding']  = '80px';
 	$defaults['footer_side_padding'] = '40px';
-	$defaults['footer_top_margin'] = '80px';
+	$defaults['footer_top_margin']   = '80px';
 
 	return $defaults;
 }

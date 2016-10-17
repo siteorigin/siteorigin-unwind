@@ -115,15 +115,37 @@
 	.search-toggle {
 		background: transparent;
 		border: none;
-		line-height: 60px; 
+		line-height: 60px;
 		outline: none;
 		padding: 0;
 
 		.open {
 			display: block;
+
+			.svg-icon-search {
+				height: 20px;
+				width: 20px;
+				position: relative;
+				top: 5px;
+
+				path {
+					fill: $color__text-main;
+				}
+			}
 		}
 		.close {
 			display: none;
+
+			.svg-icon-close {
+				height: 18px;
+				width: 20px;
+				position: relative;
+				top: 5px;
+
+				path {
+					fill: $color__text-main;
+				}
+			}
 		}
 
 		&.close-search {
@@ -164,6 +186,15 @@
 	height: 20px;
 	margin: 20px 0;
 	outline: none;
+
+	.svg-icon-menu {
+		position: relative;
+		bottom: 16px;
+
+		path {
+			fill: $color__text-main;
+		}
+	}
 }
 
 @media screen and (min-width: 769px) {
@@ -214,6 +245,7 @@
 
 			&.menu-item-has-children > a {
 				padding-right: 48px;
+				max-width: 100%;
 			}
 
 			.dropdown-toggle {
@@ -223,21 +255,19 @@
 				height: 30px;
 				padding: 6px;
 				position: absolute;
-				top: 0;
+				top: 5px;
 				right: 5px;
 				width: 42px;
 				outline: none;
 				box-shadow: none;
 
-				&:after {
-					color: $color__text-medium;
-					content: "\2193";
-					font-size: 15px;
-					line-height: 42px;
-					position: relative;
-					top: 0;
-					left: 1px;
-					width: 42px;
+				.svg-icon-submenu {
+					width: 10px;
+					height: 10px;
+
+					path {
+						fill: $color__text-medium;
+					}
 				}
 			}
 		}
@@ -281,10 +311,10 @@
 		padding: 1em 0;
 		text-align: left;
 		width: 50%;
-		
+
 		span {
-			margin-right: .2em; 
-		}				
+			margin-right: .2em;
+		}
 	}
 
 	.nav-next {
@@ -292,10 +322,10 @@
 		padding: 1em 0;
 		text-align: right;
 		width: 50%;
-		
+
 		span {
-			margin-left: .2em; 
-		}		
+			margin-left: .2em;
+		}
 	}
 
 	a {
@@ -304,10 +334,10 @@
 		padding: 1em 1.923em;
 		text-decoration: none;
 		text-transform: uppercase;
-		@include transition(0.3s);		
-		
+		@include transition(0.3s);
+
 		&:hover {
-			border-color: $color__link; 
+			border-color: $color__link;
 			color: $color__link;
 		}
 	}
@@ -317,15 +347,15 @@
 .posts-navigation .nav-links {
 	@include font-size(0.8666);
 	font-family: $font__details !important;
-	letter-spacing: .1em; 
-	
+	letter-spacing: .1em;
+
 	.nav-previous span {
-		margin-right: .5em; 
+		margin-right: .5em;
 	}
 
 	.nav-next span {
-		margin-left: .5em; 
-	}	
+		margin-left: .5em;
+	}
 }
 
 // Single post navigation.
@@ -334,13 +364,13 @@
 	border-bottom: 2px solid $color__background-hr-dark;
 	font-family: $font__main;
 	@include font-size(1.0666)
-	font-weight: 600;  
+	font-weight: 600;
 	padding: 4em 0;
 
 	a {
 		border: none;
 		color: $color__text-medium;
-		font-weight: 600; 
+		font-weight: 600;
 		padding: 0;
 		text-decoration: none;
 		text-transform: none;
