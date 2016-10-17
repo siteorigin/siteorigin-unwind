@@ -117,8 +117,8 @@
 
 	span:not(.page-links-title) {
 		@extend .button;
-		background: $color__background-button;
-		border-color: $color__border-button-hover;
+		background: #fff;
+		border-color: $color__primary-accent;
 		color: $color__primary-accent;
 		margin-right: 0.1333em;
 	}

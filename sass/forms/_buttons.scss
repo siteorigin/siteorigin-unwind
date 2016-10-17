@@ -5,7 +5,7 @@ input[type="reset"],
 input[type="submit"] {
 	border: 2px solid;
 	border-color: $color__border-button;
-	background: $color__background-button;
+	background: #fff;
 	color: $color__text-dark;
 	font-family: $font__details;
 	@include font-size(0.8666);
@@ -17,14 +17,14 @@ input[type="submit"] {
 	text-transform: uppercase;
 
 	&:hover {
-		background: $color__background-button;
-		border-color: $color__border-button-hover;
+		background: #fff;
+		border-color: $color__primary-accent;
 		color: $color__primary-accent; 
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		border-color: $color__primary-accent;
 		color: $color__primary-accent;
 	}
 }
