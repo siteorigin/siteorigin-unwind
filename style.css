@@ -1453,8 +1453,12 @@ a {
     display: inline-block;
     padding: 10px 0; }
 
-.search-no-results #primary {
+.archive .taxonomy-description {
+  margin-top: 1.6em;
   text-align: center; }
+  .archive .taxonomy-description p:last-of-type,
+  .archive .taxonomy-description p:only-of-type {
+    margin-bottom: 0; }
 
 .archive-entry {
   border-bottom: 2px solid #f4f4f4;
@@ -1462,6 +1466,9 @@ a {
   padding-bottom: 5em; }
   .archive-entry:last-of-type {
     margin-bottom: 5.5em; }
+
+.search-no-results #primary {
+  text-align: center; }
 
 /*--------------------------------------------------------------
 ## Pages

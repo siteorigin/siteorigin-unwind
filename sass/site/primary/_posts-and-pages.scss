@@ -178,8 +178,14 @@
 	}
 }
 
-.search-no-results #primary {
+.archive .taxonomy-description {
+	margin-top: 1.6em; 
 	text-align: center;
+	
+	p:last-of-type,
+	p:only-of-type {
+		margin-bottom: 0;
+	}
 }
 
 .archive-entry {
@@ -190,6 +196,10 @@
 	&:last-of-type {
 		margin-bottom: 5.5em;
 	}
+}
+
+.search-no-results #primary {
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
