@@ -1,10 +1,10 @@
 #colophon {
 	border-top: 1px solid $color__background-hr-dark;
-	margin-top: $footer__top_margin;
+	margin-top: $footer__top-margin;
 
 	.widgets {
 		@include clearfix();
-		padding: $footer__top_padding $footer__side_padding 0;
+		padding: $footer__top-padding $footer__side-padding 0;
 
 		@for $i from 1 through 10 {
 			$margin: ($i - 1) * 2.5;

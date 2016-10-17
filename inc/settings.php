@@ -183,31 +183,71 @@ add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
  */
 function siteorigin_unwind_settings_custom_css( $css ){
 	// Custom CSS Code
-	$css .= '/* style */' . "\n" .
-		'blockquote {' . "\n" .
-		'color: ${branding_accent};' . "\n" .
-		'}' . "\n" .
-		'a {' . "\n" .
-		'color: ${branding_accent};' . "\n" .
-		'}' . "\n" .
-		'a:hover,a:focus {' . "\n" .
-		'color: ${branding_accent};' . "\n" .
-		'}' . "\n" .
-		'#masthead, .archive .container > .page-header, .search .container > .page-header {' . "\n" .
-		'margin-bottom: ${masthead_bottom_margin};' . "\n" .
-		'}' . "\n" .
-		'.page-header {' . "\n" .
-		'margin-bottom: ${masthead_bottom_margin};' . "\n" .
-		'}' . "\n" .
-		'#colophon {' . "\n" .
-		'margin-top: ${footer_top_margin};' . "\n" .
-		'}' . "\n" .
-		'#colophon .widgets {' . "\n" .
-		'padding: ${footer_top_padding} ${footer_side_padding};' . "\n" .
-		'}' . "\n" .
-		'#colophon.unconstrained-footer .container {' . "\n" .
-		'padding: 0 ${footer_side_padding};' . "\n" .
-		'}';
+	$css .= '/* style */
+	a {
+	color: ${branding_accent};
+	}
+	a:hover,a:focus {
+	color: ${branding_accent};
+	}
+	#masthead {
+	margin-bottom: ${masthead_bottom_margin};
+	}
+	.archive .container > .page-header,.search .container > .page-header {
+	margin-bottom: ${masthead_bottom_margin};
+	}
+	.page-header {
+	margin-bottom: ${masthead_bottom_margin};
+	}
+	#colophon {
+	margin-top: ${footer_top_margin};
+	}
+	#colophon .widgets {
+	padding: ${footer_top_padding} ${footer_side_padding} 0;
+	}
+	/* woocommerce */
+	.woocommerce form.login input.button,.woocommerce form.checkout_coupon input.button {
+	background-color: ${branding_accent};
+	}
+	.woocommerce form.login input.button:hover,.woocommerce form.checkout_coupon input.button:hover {
+	background-color: ${branding_accent};
+	}
+	.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button {
+	background-color: ${branding_accent};
+	}
+	.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:hover {
+	background-color: ${branding_accent};
+	}
+	.woocommerce-cart .woocommerce-message:before,.woocommerce-cart .woocommerce-info:before {
+	color: ${branding_accent};
+	}
+	.woocommerce-cart form table.shop_table .product-name a:hover {
+	color: ${branding_accent};
+	}
+	.woocommerce-cart form table.shop_table td.actions input.button {
+	background-color: ${branding_accent};
+	}
+	.woocommerce-cart form table.shop_table td.actions input.button:hover {
+	background-color: ${branding_accent};
+	}
+	.woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .shipping-calculator-button {
+	color: ${branding_accent};
+	}
+	.woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .shipping-calculator-button:hover {
+	color: ${branding_accent};
+	}
+	.woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button {
+	background-color: ${branding_accent};
+	}
+	.woocommerce-cart .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button:hover {
+	background-color: ${branding_accent};
+	}
+	.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+	background-color: ${branding_accent};
+	}
+	.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover {
+	background-color: ${branding_accent};
+	}';
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
