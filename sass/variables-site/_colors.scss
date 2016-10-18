@@ -1,19 +1,20 @@
+// Background colors.
 $color__background-body: #fff;
-$color__background-hr: #f4f4f4;
-$color__background-hr-dark: #ebebeb;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
+$color__background-light: #f4f4f4;
 
-$color__text-input: #dadada;
-$color__text-input-focus: #626262;
-$color__text-main: #626262;
+// Border colors.
+$color__background-hr: #f4f4f4;
+$color__background-hr-dark: #ebebeb;
 
-$color__border-button: #dadada;
-$color__border-input: #dadada;
-$color__border-abbr: #626262;
+// Buttons.
+$color__border-button: #ebebeb;
 
+// Primary accent color.
+$color__primary-accent: #24c48a;
+
+// Text colors.
 $color__text-meta: #adadad;
-$color__text-light: #dadada;
 $color__text-medium: #626262;
 $color__text-dark: #2d2d2d;
-$color__primary-accent: #24c48a;

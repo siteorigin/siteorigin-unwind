@@ -465,7 +465,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 2px solid;
-  border-color: #dadada;
+  border-color: #ebebeb;
   background: #fff;
   color: #2d2d2d;
   font-family: "Lato", sans-serif;
@@ -515,8 +515,8 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: #dadada;
-  border: 1px solid #dadada; }
+  color: #adadad;
+  border: 1px solid #ebebeb; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -537,7 +537,7 @@ textarea {
     outline: none; }
 
 select {
-  border: 1px solid #dadada;
+  border: 1px solid #ebebeb;
   max-width: 100%; }
 
 input[type="text"],
@@ -1099,7 +1099,7 @@ a {
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
 #page .widget_tag_cloud a {
-  border: 1px solid #dadada;
+  border: 1px solid #ebebeb;
   color: #626262;
   display: inline-block;
   font-size: 14.9328px;
@@ -1410,7 +1410,7 @@ a {
     color: #24c48a;
     margin-right: 0.1333em; }
   .page-links .page-links-title ~ a span {
-    border-color: #dadada;
+    border-color: #ebebeb;
     color: #2d2d2d; }
 
 .tags-list {

@@ -65,7 +65,7 @@
 		text-decoration: none;
 
 		&:hover {
-			color: $color__text-main;
+			color: $color__text-medium;
 		}
 	}
 }
@@ -224,7 +224,7 @@
 	right: 4.5356em;
 
 	svg {
-		fill: $color__text-main;
+		fill: $color__text-medium;
 		height: 1.2666em;
 		width: 1.3333em;
 	}
@@ -297,7 +297,7 @@
 				margin-bottom: 0;
 
 				@at-root &:hover {
-					color: $color__text-main;
+					color: $color__text-medium;
 				}
 			}
 
@@ -338,7 +338,7 @@
 
 	.author-description {
 		@include clearfix;
-		color: $color__text-main;
+		color: $color__text-medium;
 		@include font-size(0.9333);
 		margin-left: 2em;
 		padding-left: 120px;
@@ -363,7 +363,7 @@
 				}
 
 				&:hover {
-					color: $color__text-main;
+					color: $color__text-medium;
 				}
 			}
 		}

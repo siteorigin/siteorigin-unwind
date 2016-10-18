@@ -169,7 +169,7 @@
 			right: 1.269em;
 			
 			svg {
-				fill: $color__text-main;
+				fill: $color__text-medium;
 				height: 1.2666em;
 				width: 1.3333em;
 			}
@@ -184,7 +184,7 @@
 
 	a {
 		border: 1px solid $color__border-button;
-		color: $color__text-main;
+		color: $color__text-medium;
 		display: inline-block;
 		@include font-size(0.9333); // 15px base.
 		margin: 0 .107em .45em 0;
