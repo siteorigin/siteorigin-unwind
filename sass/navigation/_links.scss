@@ -1,9 +1,10 @@
 a {
 	color: $color__primary-accent;
+	text-decoration: none;
 
 	&:hover,
 	&:focus {
-		color: $color__primary-accent;
+		color: $color__primary-accent-dark;
 	}
 	&:hover,
 	&:active {

@@ -329,6 +329,7 @@ i {
 
 blockquote {
   border-left: 3px solid #24c48a;
+  color: #828282;
   font-style: italic;
   margin: 0 0 2.25em;
   padding: .5em 0 .55em 1.3333em; }
@@ -572,9 +573,10 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #24c48a; }
+  color: #24c48a;
+  text-decoration: none; }
   a:hover, a:focus {
-    color: #24c48a; }
+    color: #00a76a; }
   a:hover, a:active {
     outline: 0; }
 
@@ -1014,47 +1016,42 @@ a {
   margin: 0; }
   .widget #wp-calendar caption {
     color: #2d2d2d;
-    font-size: 13.8656px;
-    font-size: 0.8666rem;
+    font-family: "Merriweather", serif;
+    font-size: 14.9328px;
+    font-size: 0.9333rem;
     font-weight: 700;
-    letter-spacing: .2em;
-    text-align: right;
-    text-transform: uppercase; }
+    padding-bottom: .4em;
+    text-align: center; }
   .widget #wp-calendar tr:nth-child(2n+2) {
     background: none; }
   .widget #wp-calendar th,
   .widget #wp-calendar td {
-    border: 1px solid #fff;
     padding: 0; }
-  .widget #wp-calendar thead tr {
-    background: none; }
-  .widget #wp-calendar thead th {
-    text-align: center;
-    padding-bottom: .5em; }
+  .widget #wp-calendar thead {
+    border-bottom: 1px solid #f4f4f4; }
+    .widget #wp-calendar thead tr {
+      background: none; }
+    .widget #wp-calendar thead th {
+      text-align: center;
+      padding-bottom: .5em; }
   .widget #wp-calendar tbody {
-    font-size: 14.9328px;
-    font-size: 0.9333rem; }
+    font-size: 13.8656px;
+    font-size: 0.8666rem; }
     .widget #wp-calendar tbody .pad {
       background: none; }
     .widget #wp-calendar tbody td {
-      background: #f4f4f4;
       text-align: center; }
-      .widget #wp-calendar tbody td:hover {
-        background: #fff; }
       .widget #wp-calendar tbody td a {
-        border-bottom: none;
         display: block; }
-        .widget #wp-calendar tbody td a:hover {
-          border-bottom: none; }
-  .widget #wp-calendar tfoot #prev,
-  .widget #wp-calendar tfoot #next {
-    font-size: 13.8656px;
-    font-size: 0.8666rem;
-    letter-spacing: .2em;
-    padding-top: .5em;
-    text-transform: uppercase; }
-  .widget #wp-calendar tfoot #next {
-    text-align: right; }
+  .widget #wp-calendar tfoot {
+    font-family: "Merriweather", serif; }
+    .widget #wp-calendar tfoot #prev,
+    .widget #wp-calendar tfoot #next {
+      font-size: 13.8656px;
+      font-size: 0.8666rem;
+      padding-top: .5em; }
+    .widget #wp-calendar tfoot #next {
+      text-align: right; }
 
 /*--------------------------------------------------------------
 ## Recent Posts Widget
@@ -1454,7 +1451,7 @@ a {
     padding: 10px 0; }
 
 .archive .taxonomy-description {
-  margin-top: 1.6em;
+  margin-top: .4666em;
   text-align: center; }
   .archive .taxonomy-description p:last-of-type,
   .archive .taxonomy-description p:only-of-type {

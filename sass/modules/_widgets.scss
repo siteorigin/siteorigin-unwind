@@ -56,11 +56,11 @@
 	
 	caption { 
 		color: $color__text-dark;
-		@include font-size(0.8666);
+		font-family: $font__main; 
+		@include font-size(0.9333);
 		font-weight: 700;
-		letter-spacing: .2em;
-		text-align: right;
-		text-transform: uppercase; 
+		padding-bottom: .4em; 
+		text-align: center;
 	}
 
 	tr:nth-child(2n+2) {
@@ -69,14 +69,14 @@
 
 	th, 
 	td {
-		border: 1px solid #fff;
 		padding: 0;
 	}
 
 	thead {
+		border-bottom: 1px solid $color__background-hr;
 
 		tr {
-			background: none; 
+			background: none;
 		}
 
 		th {
@@ -86,39 +86,35 @@
 	}
 
 	tbody {
-		@include font-size(0.9333);
+		@include font-size(0.8666);
 
 		.pad {
 			background: none;
 		}
 
 		td { 
-			background: $color__background-hr; 
 			text-align: center;
 			
 			&:hover {
-				background: #fff;  			
+				 			
 			}
 
 			a {
-				border-bottom: none;
 				display: block;
 				
 				&:hover {
-					border-bottom: none;
 				}
 			}
 		}		
 	}
 	
 	tfoot {
+		font-family: $font__main; 
 
 		#prev, 
 		#next {
 			@include font-size(0.8666);
-			letter-spacing: .2em;
 			padding-top: .5em; 
-			text-transform: uppercase; 
 		}
 
 		#next {
