@@ -2,6 +2,7 @@ table {
 	border: 1px solid $color__background-hr-dark;
 	font-family: $font__details;
 	margin: 0 0 1.9833em;
+	max-width: 100%; 
 	text-align: left;
 	width: 100%;
 	
@@ -20,7 +21,7 @@ table {
 			@include font-size(0.8666);
 			letter-spacing: 1px;
 			padding: 1.4306em 1.4665em;
-			text-transform: uppercase; 
+			text-transform: uppercase;
 		}
 	}
 
@@ -30,6 +31,10 @@ table {
 
 	th,
 	td {
-		padding: 1.1999em 1.4665em; 
+		padding: 1.1999em 1.4665em;
+		
+		@media (max-width: 768px) {
+			padding: 2%;
+		}		
 	}
 }
