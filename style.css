@@ -719,12 +719,14 @@ a {
   display: block;
   border: 0;
   background: transparent;
-  height: 20px;
-  margin: 20px 0;
-  outline: none; }
+  outline: none;
+  padding: 10px;
+  position: absolute;
+  left: 17px;
+  top: 9px; }
   .menu-toggle .svg-icon-menu {
-    bottom: 16px;
-    position: relative; }
+    height: 19px;
+    width: 22px; }
     .menu-toggle .svg-icon-menu path {
       fill: #626262; }
 
@@ -1228,6 +1230,10 @@ a {
       margin: 0;
       text-align: center;
       text-transform: uppercase; }
+      @media (max-width: 480px) {
+        #masthead .site-branding .site-title {
+          font-size: 51.2px;
+          font-size: 3.2rem; } }
       #masthead .site-branding .site-title a {
         color: #2d2d2d;
         text-decoration: none; }

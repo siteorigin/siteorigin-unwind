@@ -183,13 +183,15 @@
 	display: block;
 	border: 0;
 	background: transparent;
-	height: 20px;
-	margin: 20px 0;
 	outline: none;
+	padding: 10px;
+	position: absolute;
+	left: 17px; 
+	top: 9px;  
 
 	.svg-icon-menu {
-		bottom: 16px;
-		position: relative;
+		height: 19px; 
+		width: 22px; 
 
 		path {
 			fill: $color__text-medium;
