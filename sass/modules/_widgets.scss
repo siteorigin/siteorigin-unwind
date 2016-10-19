@@ -73,15 +73,15 @@
 	}
 
 	thead {
-		border-bottom: 1px solid $color__background-hr;
+		border-bottom: 1px solid $color__background-hr; 
 
 		tr {
 			background: none;
 		}
 
 		th {
+			padding-bottom: .7em;
 			text-align: center;
-			padding-bottom: .5em;
 		}
 	}
 
@@ -92,19 +92,13 @@
 			background: none;
 		}
 
-		td { 
-			text-align: center;
-			
-			&:hover {
-				 			
-			}
+		tr:first-of-type td {
+			padding-top: .7em;
+		}
 
-			a {
-				display: block;
-				
-				&:hover {
-				}
-			}
+		td { 
+			padding-bottom: .5em;
+			text-align: center;
 		}		
 	}
 	

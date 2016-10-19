@@ -1032,17 +1032,18 @@ a {
     .widget #wp-calendar thead tr {
       background: none; }
     .widget #wp-calendar thead th {
-      text-align: center;
-      padding-bottom: .5em; }
+      padding-bottom: .7em;
+      text-align: center; }
   .widget #wp-calendar tbody {
     font-size: 13.8656px;
     font-size: 0.8666rem; }
     .widget #wp-calendar tbody .pad {
       background: none; }
+    .widget #wp-calendar tbody tr:first-of-type td {
+      padding-top: .7em; }
     .widget #wp-calendar tbody td {
+      padding-bottom: .5em;
       text-align: center; }
-      .widget #wp-calendar tbody td a {
-        display: block; }
   .widget #wp-calendar tfoot {
     font-family: "Merriweather", serif; }
     .widget #wp-calendar tfoot #prev,
