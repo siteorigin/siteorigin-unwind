@@ -3,7 +3,7 @@
 	display: none;
 	left: 0;
 	position: absolute;
-	top: 60px;
+	top: 61px;
 	z-index: 10;
 	
 	.container {
@@ -25,6 +25,7 @@
 	}	
 	
 	form {
+		position: relative;
 
 		input[type="search"] {
 			background: transparent;
@@ -37,6 +38,7 @@
 			
 			@media (max-width: 768px) {
 				font-size: 24px;
+				max-width: 100%; 
 				padding-left: 0; 
 			}
 		}
@@ -48,10 +50,10 @@
 			padding: 0;
 			position: absolute;
 			right: 0;
-			top: 90px;  
+			top: 32px;  
 			
 			@media (max-width: 768px) {
-				top: 82px;
+				top: 24px;
 			}
 			
 			svg {
