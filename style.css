@@ -465,7 +465,7 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-.button, .page-links span:not(.page-links-title), #page #infinite-handle span button,
+.button, #page #infinite-handle span button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -485,7 +485,7 @@ input[type="submit"] {
   transition: 0.3s;
   text-decoration: none;
   text-transform: uppercase; }
-  .button:hover, .page-links span:hover:not(.page-links-title), #page #infinite-handle span button:hover,
+  .button:hover, #page #infinite-handle span button:hover,
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
@@ -493,7 +493,7 @@ input[type="submit"] {
     background: #fff;
     border-color: #24c48a;
     color: #24c48a; }
-  .button:active, .page-links span:active:not(.page-links-title), #page #infinite-handle span button:active, .button:focus, .page-links span:focus:not(.page-links-title), #page #infinite-handle span button:focus,
+  .button:active, #page #infinite-handle span button:active, .button:focus, #page #infinite-handle span button:focus,
   button:active,
   button:focus,
   input[type="button"]:active,
@@ -1400,6 +1400,8 @@ a {
 
 .entry-title {
   color: #2d2d2d;
+  font-size: 34.1328px;
+  font-size: 2.1333rem;
   line-height: normal;
   margin: 0.5em 0 0;
   text-align: center; }
@@ -1448,13 +1450,18 @@ a {
   .page-links a {
     text-decoration: none; }
   .page-links span:not(.page-links-title) {
-    background: #fff;
-    border-color: #24c48a;
-    color: #24c48a;
-    margin-right: 0.1333em; }
+    background: #24c48a;
+    border: 1px solid #24c48a;
+    color: #fff;
+    font-size: 13.8656px;
+    font-size: 0.8666rem;
+    line-height: normal;
+    margin-right: 0.1333em;
+    padding: 7px 13px; }
   .page-links .page-links-title ~ a span {
+    background: #fff;
     border-color: #ebebeb;
-    color: #2d2d2d; }
+    color: #626262; }
 
 .tags-list {
   margin-top: 1em; }
@@ -1583,9 +1590,17 @@ a {
       .yarpp-related ol li:first-child,
       .related-posts-section ol li:first-child {
         margin-right: 3.5%; }
+        @media (max-width: 480px) {
+          .yarpp-related ol li:first-child,
+          .related-posts-section ol li:first-child {
+            margin-right: 0; } }
       .yarpp-related ol li:last-child,
       .related-posts-section ol li:last-child {
         margin-left: 3.5%; }
+        @media (max-width: 480px) {
+          .yarpp-related ol li:last-child,
+          .related-posts-section ol li:last-child {
+            margin-left: 0; } }
       .yarpp-related ol li a,
       .related-posts-section ol li a {
         text-decoration: none; }
@@ -2134,15 +2149,15 @@ object {
           clear: both;
           content: "";
           display: table; }
-        .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .page-links span:not(.page-links-title), .page-links .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button span:not(.page-links-title), .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
+        .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
           background: transparent;
           border-color: #fff;
           color: #fff;
           letter-spacing: .2em; }
-          .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button:hover, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .page-links span:hover:not(.page-links-title), .page-links .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button span:hover:not(.page-links-title), .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button:hover, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button:hover {
+          .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button:hover, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button:hover, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button:hover {
             background: #fff;
             color: #2d2d2d; }
           @media (max-width: 480px) {
-            .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .page-links span:not(.page-links-title), .page-links .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button span:not(.page-links-title), .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
+            .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
               font-size: 11.7328px;
               font-size: 0.7333rem; } }

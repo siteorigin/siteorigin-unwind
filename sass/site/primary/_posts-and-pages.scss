@@ -56,6 +56,7 @@
 
 .entry-title {
 	color: $color__text-dark;
+	@include font-size(2.1333);
 	line-height: normal;
 	margin: 0.5em 0 0;
 	text-align: center;
@@ -124,16 +125,19 @@
 	}
 
 	span:not(.page-links-title) {
-		@extend .button;
-		background: #fff;
-		border-color: $color__primary-accent;
-		color: $color__primary-accent;
+		background: $color__primary-accent;
+		border: 1px solid $color__primary-accent;
+		color: #fff;
+		@include font-size(0.8666);
+		line-height: normal;
 		margin-right: 0.1333em;
+		padding: 7px 13px;
 	}
 
 	.page-links-title ~ a span {
+		background: #fff; 
 		border-color: $color__border-button;
-		color: $color__text-dark;
+		color: $color__text-medium;
 	}
 }
 
@@ -285,10 +289,18 @@
 
 			&:first-child {
 				margin-right: 3.5%;
+				
+				@media (max-width: 480px) {
+					margin-right: 0; 
+				}
 			}
 
 			&:last-child {
 				margin-left: 3.5%;
+				
+				@media (max-width: 480px) {
+					margin-left: 0; 
+				}				
 			}
 
 			a {
