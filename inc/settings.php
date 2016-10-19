@@ -33,7 +33,7 @@ function siteorigin_unwind_settings_init() {
 				'logo' => array(
 					'type' => 'media',
 					'label' => esc_html__( 'Logo', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'Logo displayed in your masthead.', 'siteorigin-unwind' )
+					'description' => esc_html__( 'Logo displayed in your header.', 'siteorigin-unwind' )
 				),
 				'site_description' => array(
 					'type' => 'checkbox',
@@ -58,7 +58,7 @@ function siteorigin_unwind_settings_init() {
 					'bundle_widget' => 'social-media-buttons',
 					'plugin' => 'so-widgets-bundle',
 					'plugin_name' => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'Add social icons to the masthead.', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Add social icons to the menu.', 'siteorigin-unwind' ),
 				),
 				'bottom_margin'	=> array(
 					'type'	=> 'measurement',
@@ -79,7 +79,7 @@ function siteorigin_unwind_settings_init() {
 				'post' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post navigation', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'Display next and previous post navigation', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display next and previous post navigation.', 'siteorigin-unwind' ),
 				),
 			),
 		),
@@ -97,11 +97,11 @@ function siteorigin_unwind_settings_init() {
 				),
 				'search' => array(
 					'type' => 'media',
-					'label' => __( 'Masthead search icon', 'siteorigin-unwind' ),
+					'label' => __( 'Menu search icon', 'siteorigin-unwind' ),
 				),
 				'close_search' => array(
 					'type' => 'media',
-					'label' => __( 'Close search icon', 'siteorigin-unwind' ),
+					'label' => __( 'Menu close search icon', 'siteorigin-unwind' ),
 				),
 			),
 		),
@@ -115,7 +115,7 @@ function siteorigin_unwind_settings_init() {
 				),
 				'featured_archive' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Featured image on archive.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Featured image on archive pages.', 'siteorigin-unwind' ),
 				),
 				'featured_single' => array(
 					'type' => 'checkbox',
@@ -127,7 +127,7 @@ function siteorigin_unwind_settings_init() {
 				),
 				'display_author_box' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display author box on single post.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Author box on single post.', 'siteorigin-unwind' ),
 				),
 			)
 		),
@@ -139,7 +139,7 @@ function siteorigin_unwind_settings_init() {
 				'text' => array(
 					'type' => 'text',
 					'label' => esc_html__( 'Footer Text', 'siteorigin-unwind' ),
-					'description' => esc_html__( "{sitename} and {year} are your site's name and current year", 'siteorigin-unwind' ),
+					'description' => esc_html__( "{sitename} and {year} are your site's name and current year.", 'siteorigin-unwind' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 
@@ -347,36 +347,36 @@ function siteorigin_unwind_page_settings( $settings, $type, $id ) {
 	$settings['page_title'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Page Title', 'siteorigin-unwind' ),
-		'checkbox_label' => esc_html__( 'Display', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Display the page title on this page.', 'siteorigin-unwind' )
+		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
+		'description'    => esc_html__( 'Display the page title.', 'siteorigin-unwind' )
 	);
 
 	$settings['masthead_margin'] = array(
 		'type'           => 'checkbox',
-		'label'          => esc_html__( 'Masthead Bottom Margin', 'siteorigin-unwind' ),
+		'label'          => esc_html__( 'Header Bottom Margin', 'siteorigin-unwind' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Include the margin below the masthead (top area) of your site.', 'siteorigin-unwind' )
+		'description'    => esc_html__( 'Display the margin below the header.', 'siteorigin-unwind' )
 	);
 
 	$settings['footer_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Footer Top Margin', 'siteorigin-unwind' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Include the margin above your footer.', 'siteorigin-unwind' )
+		'description'    => esc_html__( 'Display the margin above the footer.', 'siteorigin-unwind' )
 	);
 
 	$settings['display_masthead'] = array(
 		'type'           => 'checkbox',
-		'label'          => esc_html__( 'Masthead', 'siteorigin-unwind' ),
-		'checkbox_label' => esc_html__( 'Display', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Display the masthead on this page.', 'siteorigin-unwind' )
+		'label'          => esc_html__( 'Header', 'siteorigin-unwind' ),
+		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
+		'description'    => esc_html__( 'Display the header.', 'siteorigin-unwind' )
 	);
 
 	$settings['display_footer_widgets'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Footer Widgets', 'siteorigin-unwind' ),
-		'checkbox_label' => esc_html__( 'Display', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Hide the footer widgets on this page.', 'siteorigin-unwind' )
+		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
+		'description'    => esc_html__( 'Display the footer widgets.', 'siteorigin-unwind' )
 	);
 
 	return $settings;
