@@ -959,6 +959,15 @@ a {
   float: right;
   margin-left: 1.9833em; }
 
+@media (max-width: 480px) {
+  .alignleft,
+  .alignright {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none; } }
+
 .aligncenter {
   clear: both;
   display: block;

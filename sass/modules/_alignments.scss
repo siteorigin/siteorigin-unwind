@@ -10,6 +10,15 @@
 	margin-left: 1.9833em;
 }
 
+@media (max-width: 480px) {
+	.alignleft, 
+	.alignright {
+		clear: both;
+		@include center-block;
+		float: none;
+	}
+}
+
 .aligncenter {
 	clear: both;
 	@include center-block;
