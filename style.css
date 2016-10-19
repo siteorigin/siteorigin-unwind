@@ -685,7 +685,7 @@ a {
         height: 16px;
         width: 17px;
         position: relative;
-        top: 6px; }
+        top: 5px; }
         .social-search .search-toggle .open .svg-icon-search path {
           fill: #626262; }
     .social-search .search-toggle .close {
@@ -694,7 +694,7 @@ a {
         height: 16px;
         width: 16px;
         position: relative;
-        top: 6px; }
+        top: 5px; }
         .social-search .search-toggle .close .svg-icon-close path {
           fill: #626262; }
     .social-search .search-toggle.close-search .open {
