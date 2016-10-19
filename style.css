@@ -714,6 +714,9 @@ a {
 --------------------------------------------------------------*/
 .main-navigation ul {
   display: none; }
+  @media (min-width: 769px) {
+    .main-navigation ul {
+      display: block; } }
 
 .menu-toggle {
   display: block;
@@ -724,43 +727,44 @@ a {
   position: absolute;
   left: 17px;
   top: 9px; }
+  @media (min-width: 769px) {
+    .menu-toggle {
+      display: none; } }
   .menu-toggle .svg-icon-menu {
     height: 19px;
     width: 22px; }
     .menu-toggle .svg-icon-menu path {
       fill: #626262; }
 
-@media screen and (min-width: 769px) {
-  .menu-toggle {
-    display: none; }
-  .main-navigation ul {
-    display: block; }
-  #mobile-navigation {
-    display: none !important; } }
-
 #mobile-navigation {
   left: 0;
   position: absolute;
-  top: 60px;
+  top: 61px;
   width: 100%;
   z-index: 10; }
+  @media (min-width: 769px) {
+    #mobile-navigation {
+      display: none !important; } }
   #mobile-navigation ul {
     list-style: none;
     margin: 0;
     padding: 0; }
     #mobile-navigation ul li {
-      background: #f8f8f8;
+      background: #f4f4f4;
+      border-bottom: 1px solid #ebebeb;
       line-height: 42px;
+      padding: 0;
       position: relative;
       width: 100%; }
       #mobile-navigation ul li a {
-        border-bottom: 1px solid #ebebeb;
         color: #626262;
         display: block;
-        font-size: 12px;
-        line-height: 12px;
-        padding: 15px 0 15px 20px;
-        text-decoration: none;
+        font-family: "Lato", sans-serif;
+        font-size: 12.8px;
+        font-size: 0.8rem;
+        letter-spacing: .1em;
+        line-height: normal;
+        padding: 14px 0 12px 20px;
         text-transform: uppercase;
         width: 100%; }
       #mobile-navigation ul li.menu-item-has-children > a {
@@ -775,7 +779,7 @@ a {
         padding: 6px;
         position: absolute;
         right: 5px;
-        top: 5px;
+        top: 6px;
         outline: none;
         width: 42px; }
         #mobile-navigation ul li .dropdown-toggle .svg-icon-submenu {
@@ -784,17 +788,35 @@ a {
           #mobile-navigation ul li .dropdown-toggle .svg-icon-submenu path {
             fill: #626262; }
     #mobile-navigation ul ul {
+      border-top: 1px solid #ebebeb;
       display: none;
       margin: 0;
       padding: 0; }
       #mobile-navigation ul ul li {
-        background: #fff;
-        padding-left: 20px; }
+        background: #fff; }
+        #mobile-navigation ul ul li:last-of-type {
+          border: 0; }
         #mobile-navigation ul ul li a {
+          padding-left: 40px;
           text-transform: uppercase;
           width: 100%; }
         #mobile-navigation ul ul li ul {
           display: none; }
+
+#mobile-navigation ul ul li a {
+  padding-left: 40px; }
+
+#mobile-navigation ul ul ul li a {
+  padding-left: 80px; }
+
+#mobile-navigation ul ul ul ul li a {
+  padding-left: 120px; }
+
+#mobile-navigation ul ul ul ul ul li a {
+  padding-left: 160px; }
+
+#mobile-navigation ul ul ul ul ul ul li a {
+  padding-left: 200px; }
 
 /*--------------------------------------------------------------
 ## Posts, Post and Comment Navigation
@@ -1357,6 +1379,10 @@ a {
     color: #adadad;
     font-size: 12.8px;
     font-size: 0.8rem; }
+    @media (max-width: 480px) {
+      .entry-meta span, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta span {
+        font-size: 11.7328px;
+        font-size: 0.7333rem; } }
     .entry-meta span:not(:last-child):after, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta span:not(:last-child):after {
       content: '\00a0\00a0/\00a0\00a0';
       padding: 0 .4166em; }
@@ -1371,6 +1397,10 @@ a {
   line-height: normal;
   margin: 0.5em 0 0;
   text-align: center; }
+  @media (max-width: 480px) {
+    .entry-title {
+      font-size: 25.6px;
+      font-size: 1.6rem; } }
   .page .entry-title {
     margin: 0; }
   .entry-title a {

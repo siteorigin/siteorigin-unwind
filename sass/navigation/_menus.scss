@@ -177,6 +177,10 @@
 --------------------------------------------------------------*/
 .main-navigation ul {
 	display: none;
+	
+	@media (min-width: 769px) {
+		display: block;
+	}
 }
 
 .menu-toggle {
@@ -187,7 +191,11 @@
 	padding: 10px;
 	position: absolute;
 	left: 17px; 
-	top: 9px;  
+	top: 9px;
+	
+	@media (min-width: 769px) {
+		display: none;
+	}
 
 	.svg-icon-menu {
 		height: 19px; 
@@ -199,28 +207,16 @@
 	}
 }
 
-@media screen and (min-width: 769px) {
-
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: block;
-	}
-
-	#mobile-navigation {
-		display: none !important;
-	}
-
-}
-
 #mobile-navigation {
 	left: 0;
 	position: absolute;
-	top: 60px;
+	top: 61px;
 	width: 100%;
 	z-index: 10;
+	
+	@media (min-width: 769px) {
+		display: none !important;
+	}	
 
 	ul {
 		list-style: none;
@@ -228,19 +224,21 @@
 		padding: 0;
 
 		li {
-			background: #f8f8f8;
+			background: $color__background-light;
+			border-bottom: 1px solid $color__background-hr-dark;
 			line-height: 42px;
+			padding: 0;
 			position: relative;
 			width: 100%;
 
 			a {
-				border-bottom: 1px solid #ebebeb;
 				color: $color__text-medium;
 				display: block;
-				font-size: 12px;
-				line-height: 12px;
-				padding: 15px 0 15px 20px;
-				text-decoration: none;
+				font-family: $font__details; 
+				@include font-size(0.8);
+				letter-spacing: .1em;
+				line-height: normal;
+				padding: 14px 0 12px 20px;
 				text-transform: uppercase;
 				width: 100%;
 			}
@@ -259,7 +257,7 @@
 				padding: 6px;
 				position: absolute;
 				right: 5px;
-				top: 5px;
+				top: 6px;
 				outline: none;
 				width: 42px;
 
@@ -272,18 +270,23 @@
 					}
 				}
 			}
-		}
+		}		
 
 		ul {
+			border-top: 1px solid $color__background-hr-dark;
 			display: none;
 			margin: 0;
-			padding: 0;
+			padding: 0;		
 
 			li {
 				background: #fff;
-				padding-left: 20px;
+				
+				&:last-of-type {
+					border: 0; 
+				}
 
 				a {
+					padding-left: 40px; 
 					text-transform: uppercase;
 					width: 100%;
 				}
@@ -293,7 +296,19 @@
 				}
 			}
 		}
+
 	}
+}
+
+$sel: '';
+@for $i from 1 through 5 {
+    $sel: if($i == 1, "#mobile-navigation", selector-nest($sel, "ul")) !global;
+
+    #{$sel} {
+      ul ul li a {
+        padding-left: 40px * $i;
+      }
+    }
 }
 
 /*--------------------------------------------------------------
