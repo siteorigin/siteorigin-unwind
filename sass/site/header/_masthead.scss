@@ -27,6 +27,10 @@
 			margin: 0;
 			text-align: center;
 			text-transform: uppercase;
+			
+			@media (max-width: 480px) {
+				@include font-size(3.2);
+			}
 
 			a {
 				color: $color__text-dark;
