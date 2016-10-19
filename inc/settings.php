@@ -46,6 +46,12 @@ function siteorigin_unwind_settings_init() {
 					'description' => esc_html__( 'The color used for links and various other accents.', 'siteorigin-unwind' ),
 					'live' => true,
 				),
+				'accent_dark' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Dark Accent Color', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'The color used for link hovers and various other accents.', 'siteorigin-unwind' ),
+					'live' => true,
+				),				
 			)
 		),
 
@@ -188,7 +194,7 @@ function siteorigin_unwind_settings_custom_css( $css ){
 		color: ${branding_accent};
 	}
 	a:hover, a:focus {
-		color: ${branding_accent};
+		color: ${branding_accent_dark};
 	}
 	.button:hover,.page-links span:hover:not(.page-links-title),#page #infinite-handle span button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,.button:active,
 	.page-links span:active:not(.page-links-title),#page #infinite-handle span button:active,.button:focus,.page-links span:focus:not(.page-links-title),#page #infinite-handle span button:focus,button:active,button:focus {
@@ -220,6 +226,12 @@ function siteorigin_unwind_settings_custom_css( $css ){
 	#secondary .widget a:hover,#colophon .widget a:hover {
     	color: ${branding_accent};
    	}
+    .widget #wp-calendar tfoot #prev a,.widget #wp-calendar tfoot #next a {
+    	color: ${branding_accent};
+   	}
+    .widget #wp-calendar tfoot #prev a:hover,.widget #wp-calendar tfoot #next a:hover {
+        color: ${branding_accent_dark}; 
+   	}   	
 	#masthead {
 		margin-bottom: ${masthead_bottom_margin};
 	}

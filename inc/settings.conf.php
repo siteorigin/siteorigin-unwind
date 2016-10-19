@@ -4,8 +4,9 @@
 return array(
 	'variables' => array(
 
-		// The accent colors used in free.
+		// The accent colors.
 		'branding_accent' => 'color__primary-accent',
+		'branding_accent_dark' => 'color__primary-accent-dark',
 
 		// The masthead customizations.
 		'masthead_bottom_margin' => 'masthead__bottom-margin',
