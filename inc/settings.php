@@ -80,7 +80,7 @@ function siteorigin_unwind_settings_init() {
 				'sticky' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Sticky menu', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'Stick menu to top of screen', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Stick menu to top of screen.', 'siteorigin-unwind' ),
 				),
 				'post' => array(
 					'type' => 'checkbox',
@@ -307,6 +307,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['branding_logo']             = false;
 	$defaults['branding_site_description'] = false;
 	$defaults['branding_accent']           = '#24c48a';
+	$defaults['branding_accent_dark']      = '#00a76a';
 
 	// The masthead defaults.
 	$defaults['masthead_social_widget'] = '';
