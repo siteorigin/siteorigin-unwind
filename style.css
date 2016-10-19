@@ -438,6 +438,7 @@ table {
   border: 1px solid #ebebeb;
   font-family: "Lato", sans-serif;
   margin: 0 0 1.9833em;
+  max-width: 100%;
   text-align: left;
   width: 100%; }
   table a {
@@ -456,6 +457,10 @@ table {
   table th,
   table td {
     padding: 1.1999em 1.4665em; }
+    @media (max-width: 768px) {
+      table th,
+      table td {
+        padding: 2%; } }
 
 /*--------------------------------------------------------------
 # Forms
@@ -1460,7 +1465,7 @@ a {
     font-size: 13.8656px;
     font-size: 0.8666rem;
     line-height: normal;
-    margin-right: 0.4615em;
+    margin: 0 0.4615em 0.4615em 0;
     padding: 0.6153em 0.7692em;
     text-decoration: none; }
     .tags-list a:hover {
