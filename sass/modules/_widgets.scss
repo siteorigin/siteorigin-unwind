@@ -103,12 +103,18 @@
 	}
 	
 	tfoot {
-		font-family: $font__main; 
 
 		#prev, 
 		#next {
-			@include font-size(0.8666);
-			padding-top: .5em; 
+			@include font-size(0.9333);
+			
+			a {
+				color: $color__primary-accent;
+
+				&:hover {
+					color: $color__primary-accent-dark;
+				}				
+			}
 		}
 
 		#next {

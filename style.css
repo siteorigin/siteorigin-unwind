@@ -651,7 +651,7 @@ a {
       visibility: visible; }
   .main-navigation li {
     float: left;
-    padding-right: 45px;
+    padding: 0 45px 0 0;
     position: relative; }
     .main-navigation li a {
       text-transform: uppercase;
@@ -1044,15 +1044,18 @@ a {
     .widget #wp-calendar tbody td {
       padding-bottom: .5em;
       text-align: center; }
-  .widget #wp-calendar tfoot {
-    font-family: "Merriweather", serif; }
-    .widget #wp-calendar tfoot #prev,
-    .widget #wp-calendar tfoot #next {
-      font-size: 13.8656px;
-      font-size: 0.8666rem;
-      padding-top: .5em; }
-    .widget #wp-calendar tfoot #next {
-      text-align: right; }
+  .widget #wp-calendar tfoot #prev,
+  .widget #wp-calendar tfoot #next {
+    font-size: 14.9328px;
+    font-size: 0.9333rem; }
+    .widget #wp-calendar tfoot #prev a,
+    .widget #wp-calendar tfoot #next a {
+      color: #24c48a; }
+      .widget #wp-calendar tfoot #prev a:hover,
+      .widget #wp-calendar tfoot #next a:hover {
+        color: #00a76a; }
+  .widget #wp-calendar tfoot #next {
+    text-align: right; }
 
 /*--------------------------------------------------------------
 ## Recent Posts Widget
