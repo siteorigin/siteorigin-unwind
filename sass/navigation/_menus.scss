@@ -187,20 +187,18 @@
 	display: block;
 	border: 0;
 	background: transparent;
+	line-height: 60px; 
 	outline: none;
-	padding: 10px;
-	position: absolute;
-	left: 17px; 
-	top: 9px;
+	padding: 0;
 	
 	@media (min-width: 769px) {
 		display: none;
 	}
 
 	.svg-icon-menu {
-		height: 19px; 
-		width: 22px; 
-
+		vertical-align: middle;
+		width: 22px;
+	
 		path {
 			fill: $color__text-medium;
 		}

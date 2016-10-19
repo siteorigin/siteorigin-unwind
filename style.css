@@ -722,16 +722,14 @@ a {
   display: block;
   border: 0;
   background: transparent;
+  line-height: 60px;
   outline: none;
-  padding: 10px;
-  position: absolute;
-  left: 17px;
-  top: 9px; }
+  padding: 0; }
   @media (min-width: 769px) {
     .menu-toggle {
       display: none; } }
   .menu-toggle .svg-icon-menu {
-    height: 19px;
+    vertical-align: middle;
     width: 22px; }
     .menu-toggle .svg-icon-menu path {
       fill: #626262; }
