@@ -30,6 +30,10 @@
 	span {
 		color: $color__text-meta;
 		@include font-size(0.8);
+		
+		@media (max-width: 480px) {
+			@include font-size(0.7333);
+		}
 
 		&:not(:last-child) {
 
@@ -55,6 +59,10 @@
 	line-height: normal;
 	margin: 0.5em 0 0;
 	text-align: center;
+	
+	@media (max-width: 480px) {
+		@include font-size(1.6);
+	}
 
 	@at-root .page .entry-title {
 		margin: 0;
