@@ -71,7 +71,7 @@
 		}
 
 		.date {
-			color: $color__text-meta;
+			color: $color__text-light;
 			@include font-size(0.8666);
 		}
 
@@ -116,7 +116,7 @@
 	text-transform: uppercase;
 	
 	#cancel-comment-reply-link {
-		color: $color__text-meta; 
+		color: $color__text-light; 
 		font-family: $font__details; 
 		@include font-size(0.8);
 		font-weight: normal;

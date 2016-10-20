@@ -4,14 +4,22 @@
 return array(
 	'variables' => array(
 
-		// The accent colors.
+		// Branding.
 		'branding_accent' => 'color__primary-accent',
 		'branding_accent_dark' => 'color__primary-accent-dark',
 
-		// The masthead customizations.
+		// Fonts.
+		'fonts_details' => 'font__detail',
+		'fonts_main' => 'font__main',
+		'fonts_headings' => 'font__headings',
+		'fonts_text_light' => 'color__text-meta',
+		'fonts_text_medium' => '$color__text-medium',
+		'fonts_text_headings' => '$color__text-headings',		
+
+		// Header.
 		'masthead_bottom_margin' => 'masthead__bottom-margin',
 
-		// The footer customizations.
+		// Footer
 		'footer_top_padding' => 'footer__top-padding',
 		'footer_side_padding' => 'footer__side-padding',
 		'footer_top_margin' => 'footer__top-margin',

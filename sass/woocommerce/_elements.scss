@@ -10,7 +10,7 @@
 			height: 26px;
 			padding: 0;
 			-moz-appearance: textfield;
-			border-color: $color__text-meta;
+			border-color: $color__text-light;
 			border-width: 1px;
 			color: $color__text-medium;
 
@@ -24,7 +24,7 @@
 		.add,
 		.subtract {
 			border-radius: 0;
-			border-color: $color__text-meta;
+			border-color: $color__text-light;
 			border-width: 1px;
 			background: #f9f9f9;
 			float: left;

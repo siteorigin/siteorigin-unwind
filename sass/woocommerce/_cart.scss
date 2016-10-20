@@ -29,13 +29,13 @@
 				width: 30px;
 
 				a {
-					color: $color__text-meta !important;
+					color: $color__text-light !important;
 					font-weight: 100;
 
 					&:hover,
 					&:focus {
 						background: transparent;
-						color: darken( $color__text-meta, 25% ) !important;
+						color: darken( $color__text-light, 25% ) !important;
 					}
 				}
 			}

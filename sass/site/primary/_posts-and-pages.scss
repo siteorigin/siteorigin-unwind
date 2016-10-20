@@ -29,7 +29,7 @@
 	text-transform: uppercase;
 
 	span {
-		color: $color__text-meta;
+		color: $color__text-light;
 		@include font-size(0.8);
 		
 		@media (max-width: 480px) {
@@ -323,7 +323,7 @@
 			}
 
 			.related-post-date {
-				color: $color__text-meta;
+				color: $color__text-light;
 				@include font-size(0.8666);
 				margin-top: 0;
 			}
