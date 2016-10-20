@@ -224,13 +224,46 @@ function siteorigin_unwind_settings_init() {
 add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
 
 /**
+ * Tell the settings framework which settings we're using as fonts.
+ *
+ * @param $settings
+ *
+ * @return array
+ */
+function siteorigin_unwind_font_settings( $settings ) {
+
+	$settings['fonts_details']  = array(
+		'name'    => 'Lato',
+		'weights' => array(
+			400
+		),
+	);
+	$settings['fonts_main']     = array(
+		'name'    => 'Merriweather',
+		'weights' => array(
+			400,
+			700
+		),
+	);
+	$settings['fonts_headings'] = array(
+		'name'    => 'Merriweather',
+		'weights' => array(
+			700
+		),
+	);
+
+	return $settings;
+}
+add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_settings' );
+
+/**
  * Add custom CSS for the theme settings.
  *
  * @param $css
  *
  * @return string
  */
-function siteorigin_unwind_settings_custom_css( $css ){
+function siteorigin_unwind_settings_custom_css( $css ) {
 	// Custom CSS Code
 	$css .= '
 	body,button,input,select,textarea {
