@@ -271,8 +271,7 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
 	// Custom CSS Code
-	$css .= '/* style */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/8ZYr0G/sass/style.css ***/
+	$css .= '
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -518,8 +517,6 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button:hover,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button:hover,#page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button:hover {
 	color: ${fonts_text_dark};
 	}
-	/* woocommerce */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/8ZYr0G/sass/woocommerce.css ***/
 	.woocommerce form.login input.button,.woocommerce form.checkout_coupon input.button {
 	background-color: ${branding_accent};
 	}
