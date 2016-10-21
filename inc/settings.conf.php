@@ -17,6 +17,7 @@ return array(
 		'fonts_text_headings' => '$color__text-headings',		
 
 		// Header.
+		'masthead_padding' => 'masthead__padding',
 		'masthead_bottom_margin' => 'masthead__bottom-margin',
 
 		// Footer

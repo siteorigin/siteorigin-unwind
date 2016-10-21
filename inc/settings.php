@@ -109,6 +109,12 @@ function siteorigin_unwind_settings_init() {
 					'plugin_name' => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Add social icons to the menu.', 'siteorigin-unwind' ),
 				),
+				'masthead_padding'	=> array(
+					'type'	=> 'measurement',
+					'label'	=> esc_html__( 'Header Padding', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Top and bottom header padding.', 'siteorigin-unwind' ),
+					'live'	=> true,
+				),				
 				'bottom_margin'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Bottom Margin', 'siteorigin-unwind' ),
@@ -446,8 +452,14 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['branding_accent']           = '#24c48a';
 	$defaults['branding_accent_dark']      = '#00a76a';
 
+	// Font defaults.
+	$defaults['fonts_text_light']  = '#adadad';
+	$defaults['fonts_text_medium'] = '#626262';
+	$defaults['fonts_text_dark']   = '#2d2d2d';
+	
 	// The masthead defaults.
 	$defaults['masthead_social_widget'] = '';
+	$defaults['masthead_padding'] = '60px';
 	$defaults['masthead_bottom_margin'] = '80px';
 
 	// Navigation defaults.
