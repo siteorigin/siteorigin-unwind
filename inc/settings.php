@@ -109,7 +109,7 @@ function siteorigin_unwind_settings_init() {
 					'plugin_name' => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Add social icons to the menu.', 'siteorigin-unwind' ),
 				),
-				'masthead_padding'	=> array(
+				'padding'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Header Padding', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Top and bottom header padding.', 'siteorigin-unwind' ),
