@@ -12,9 +12,9 @@ return array(
 		'fonts_details' => 'font__detail',
 		'fonts_main' => 'font__main',
 		'fonts_headings' => 'font__headings',
-		'fonts_text_light' => 'color__text-meta',
-		'fonts_text_medium' => '$color__text-medium',
-		'fonts_text_headings' => '$color__text-headings',		
+		'fonts_text_light' => 'color__text-light',
+		'fonts_text_medium' => 'color__text-medium',
+		'fonts_text_dark' => 'color__text-dark',		
 
 		// Header.
 		'masthead_padding' => 'masthead__padding',
