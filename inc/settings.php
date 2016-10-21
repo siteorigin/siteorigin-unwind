@@ -264,8 +264,8 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  * @return string
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
-	// Custom CSS Code
-	$css .= '
+// Custom CSS Code
+$css .= '/* style */
 	body,button,input,select,textarea {
 	.font( ${fonts_main} );
 	}
@@ -274,6 +274,12 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	blockquote {
 	border-left: 3px solid ${branding_accent};
+	}
+	table {
+	.font( ${fonts_details} );
+	}
+	.button,#page #infinite-handle span button,button,input[type="button"],input[type="reset"],input[type="submit"] {
+	.font( ${fonts_details} );
 	}
 	.button:hover,#page #infinite-handle span button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover {
 	border-color: ${branding_accent};
@@ -292,15 +298,27 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.main-navigation ul ul a {
 	.font( ${fonts_main} );
 	}
+	.main-navigation li a {
+	.font( ${fonts_details} );
+	}
+	#mobile-navigation ul li a {
+	.font( ${fonts_details} );
+	}
 	.comment-navigation a:hover,.posts-navigation a:hover,.post-navigation a:hover {
 	border-color: ${branding_accent};
 	color: ${branding_accent};
+	}
+	.posts-navigation .nav-links {
+	font-family: ${fonts_details} !important;
 	}
 	.post-navigation {
 	.font( ${fonts_main} );
 	}
 	.post-navigation a:hover {
 	color: ${branding_accent};
+	}
+	.post-navigation a .sub-title {
+	.font( ${fonts_details} );
 	}
 	#secondary .widget a:hover,#colophon .widget a:hover {
 	color: ${branding_accent};
@@ -317,8 +335,20 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#masthead {
 	margin-bottom: ${masthead_bottom_margin};
 	}
+	#masthead .site-branding .site-title {
+	.font( ${fonts_details} );
+	}
+	#fullscreen-search h3 {
+	.font( ${fonts_details} );
+	}
+	.entry-meta,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta {
+	.font( ${fonts_details} );
+	}
 	.entry-meta span a:hover,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta span a:hover {
 	color: ${branding_accent};
+	}
+	.more-link .more-text {
+	.font( ${fonts_details} );
 	}
 	.more-link .more-text:hover {
 	border: 2px solid ${branding_accent};
@@ -330,8 +360,17 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.archive .container > .page-header,.search .container > .page-header {
 	margin-bottom: ${masthead_bottom_margin};
 	}
+	.archive .container > .page-header .page-title,.search .container > .page-header .page-title {
+	.font( ${fonts_details} );
+	}
+	.comment-list li.comment .comment-reply-link {
+	.font( ${fonts_details} );
+	}
 	.comment-list li.comment .comment-reply-link:hover {
 	color: ${branding_accent};
+	}
+	.comment-reply-title #cancel-comment-reply-link {
+	.font( ${fonts_details} );
 	}
 	.comment-reply-title #cancel-comment-reply-link:hover {
 	color: ${branding_accent};
@@ -345,6 +384,7 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#colophon.unconstrained-footer .container {
 	padding: 0 ${footer_side_padding};
 	}
+	/* woocommerce */
 	.woocommerce form.login input.button,.woocommerce form.checkout_coupon input.button {
 	background-color: ${branding_accent};
 	}
