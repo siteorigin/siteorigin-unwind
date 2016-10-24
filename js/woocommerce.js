@@ -40,7 +40,7 @@ jQuery( function($){
 	}
 
 	function triggerQuantityButtons() {
-		$('table.shop_table').each(function(i, el) {
+		$('table.shop_table, .product form.cart').each(function(i, el) {
 			quantityButtons(el);
 		});
 	}
