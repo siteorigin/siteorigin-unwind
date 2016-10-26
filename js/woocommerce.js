@@ -48,4 +48,25 @@ jQuery( function($){
 	triggerQuantityButtons();
 
 	$('table.shop_table').removeClass('shop_table_responsive');
+
+	// Product images slider.
+	$( window ).load( function() {
+		$( '.product-images-carousel' ).flexslider( {
+		   animation: "slide",
+		   controlNav: false,
+		   animationLoop: false,
+		   slideshow: false,
+		   itemWidth: 100,
+		   itemMargin: 5,
+		   asNavFor: '.product-images-slider'
+		} );
+		$( '.product-images-slider' ).flexslider( {
+			animation: "slide",
+			animationLoop: false,
+			slideshow: false,
+			controlNav: false,
+			directionNav: false
+		} );
+	} );
+
 } );
