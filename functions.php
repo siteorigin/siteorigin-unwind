@@ -112,7 +112,7 @@ function siteorigin_unwind_setup() {
 	 * See https://developer.wordpress.org/reference/functions/term_description/
 	 */
 	add_filter( 'term_description', 'shortcode_unautop' );
-	add_filter( 'term_description', 'do_shortcode' );		
+	add_filter( 'term_description', 'do_shortcode' );
 
 	/*
 	 * Add WooCommerce support.
@@ -183,7 +183,7 @@ function siteorigin_unwind_scripts() {
 	wp_enqueue_style( 'siteorigin-unwind-style', get_stylesheet_uri() );
 
 	// Flexslider.
-	if ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) {
+	if ( ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) || ( is_woocommerce() && is_product() ) ) {
 		wp_enqueue_style( 'siteorigin-unwind-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 		wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
 	}
@@ -204,4 +204,3 @@ add_action( 'wp_enqueue_scripts', 'siteorigin_unwind_scripts' );
 	// Allowing use of shortcodes in taxonomy descriptions
 	add_filter( 'term_description', 'shortcode_unautop');
 	add_filter( 'term_description', 'do_shortcode' );
-

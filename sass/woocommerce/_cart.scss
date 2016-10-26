@@ -17,6 +17,51 @@
 				padding: 1em;
 			}
 
+			// Styling quantity field
+			.quantity.button-controls {
+				@include clearfix;
+
+				.qty {
+					border-radius: 0;
+					width: 2em;
+					float: left;
+					height: 26px;
+					padding: 0;
+					-moz-appearance: textfield;
+					border-color: $color__text-light;
+					border-width: 1px;
+					color: $color__text-medium;
+
+					&::-webkit-inner-spin-button,
+					&::-webkit-outer-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
+				}
+
+				.add,
+				.subtract {
+					border-radius: 0;
+					border-color: $color__text-light;
+					border-width: 1px;
+					background: #f9f9f9;
+					float: left;
+					padding: 6px 10px;
+
+					&:hover {
+						background: darken( #f9f9f9, 20%);
+					}
+				}
+
+				.subtract {
+					border-right: none;
+				}
+
+				.add {
+					border-left: none;
+				}
+			}
+
 			thead {
 				th {
 					font-weight: normal;
