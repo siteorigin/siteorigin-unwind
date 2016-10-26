@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Custom WooCommerce template tags for this theme.
  *
@@ -10,10 +10,6 @@
 /**
  * The following functionality is focused on handling product archives and product loops.
  **/
-
-// Move the price higher.
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 4 );
 
 // Move the result count.
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
