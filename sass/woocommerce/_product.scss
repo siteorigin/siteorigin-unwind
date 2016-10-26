@@ -40,11 +40,15 @@
 			}
 		}
 
-		p {
+		.description p {
 			color: $color__text-medium;
 		}
 
 		.cart {
+			border-bottom: 1px solid $color__background-hr;
+			margin-bottom: 0;
+			padding-bottom: 30px;
+
 			button {
 				background-color: $color__primary-accent;
 				border-radius: 0;
@@ -101,6 +105,20 @@
 
 				.add {
 					border-left: none;
+				}
+			}
+		}
+
+		.product_meta {
+			border-bottom: 1px solid $color__background-hr;
+			padding: 30px 0;
+
+			span {
+				color: $color__text-light;
+				display: block;
+
+				a {
+					color: $color__text-dark;
 				}
 			}
 		}
