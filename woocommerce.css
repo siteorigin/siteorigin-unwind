@@ -4,8 +4,11 @@
 .woocommerce.single-product #content div.product .entry-summary {
   margin-top: 0; }
   .woocommerce.single-product #content div.product .entry-summary .product_title {
-    font-size: 20px;
-    text-align: left; }
+    font-size: 30px;
+    text-align: left;
+    margin: 20px 0; }
+  .woocommerce.single-product #content div.product .entry-summary .woocommerce-product-rating {
+    margin-bottom: 0; }
   .woocommerce.single-product #content div.product .entry-summary .price {
     font-size: 20px;
     margin-bottom: 15px; }
@@ -20,8 +23,9 @@
   .woocommerce.single-product #content div.product .entry-summary .cart button {
     background-color: #24c48a;
     border-radius: 0;
-    font-size: 10px;
-    padding: 15px 20px;
+    font-size: 14px;
+    margin-left: 15px;
+    padding: 13px 20px;
     text-transform: uppercase; }
     .woocommerce.single-product #content div.product .entry-summary .cart button:hover {
       background-color: #00a76a; }
