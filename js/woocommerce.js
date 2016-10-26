@@ -52,13 +52,14 @@ jQuery( function($){
 	// Product images slider.
 	$( window ).load( function() {
 		$( '.product-images-carousel' ).flexslider( {
-		   animation: "slide",
-		   controlNav: false,
-		   animationLoop: false,
-		   slideshow: false,
-		   itemWidth: 100,
-		   itemMargin: 5,
-		   asNavFor: '.product-images-slider'
+			animation: "slide",
+			controlNav: false,
+			animationLoop: false,
+			slideshow: false,
+			itemWidth: 100,
+			itemMargin: 20,
+			maxItems: 4,
+			asNavFor: '.product-images-slider'
 		} );
 		$( '.product-images-slider' ).flexslider( {
 			animation: "slide",

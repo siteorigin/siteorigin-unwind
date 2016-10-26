@@ -1,6 +1,17 @@
 /*--------------------------------------------------------------
 # WooCommerce Single Product
 --------------------------------------------------------------*/
+.woocommerce.single-product #content div.product span.onsale {
+  background-color: #24c48a;
+  border-radius: 0;
+  left: 4px;
+  line-height: normal;
+  min-height: 0;
+  padding: 6px 15px;
+  text-transform: uppercase;
+  top: 4px;
+  z-index: 10; }
+
 .woocommerce.single-product #content div.product .entry-summary {
   margin-top: 0; }
   .woocommerce.single-product #content div.product .entry-summary .product_title {
@@ -63,6 +74,26 @@
     border-right: none; }
   .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add {
     border-left: none; }
+
+.woocommerce.single-product #content div.product .images .product-images-slider {
+  margin-bottom: 20px; }
+
+.woocommerce.single-product #content div.product .images .product-images-carousel {
+  border: 0;
+  padding: 0 30px; }
+  .woocommerce.single-product #content div.product .images .product-images-carousel .slide {
+    cursor: pointer;
+    opacity: 0.7; }
+    .woocommerce.single-product #content div.product .images .product-images-carousel .slide.flex-active-slide {
+      cursor: default;
+      opacity: 1; }
+  .woocommerce.single-product #content div.product .images .product-images-carousel .flex-direction-nav a {
+    height: 30px;
+    margin: -20px 0 0;
+    width: 28px; }
+    .woocommerce.single-product #content div.product .images .product-images-carousel .flex-direction-nav a:before {
+      font-size: 15px;
+      padding: 3px 10px; }
 
 /*--------------------------------------------------------------
 # WooCommerce Checkout

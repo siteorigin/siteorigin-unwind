@@ -16,14 +16,9 @@ global $post, $product, $woocommerce;
 $gallery = $product->get_gallery_attachment_ids();
 $image_link  = wp_get_attachment_url( get_post_thumbnail_id() );
 
-if ( $gallery || $image_link ) {
+if ( $gallery || $image_link ) { ?>
 
-	$arrows = '';
-	$thumb_count = count( $gallery ) + 1;
-	if ( $thumb_count <= 5 ) $arrows = 'no-slider-arrows';
-	?>
-
-	<div class="product-images-carousel <?php echo $arrows; ?> flexslider">
+	<div class="product-images-carousel flexslider">
 		<ul class="slides">
 
 			<?php if ( has_post_thumbnail() ) {
