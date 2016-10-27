@@ -13,6 +13,8 @@ get_header(); ?>
 
 	<?php siteorigin_unwind_archive_title(); ?>
 
+	<?php siteorigin_unwind_breadcrumbs(); ?>
+
 	<div id="primary" class="content-area">
 
 		<main id="main" class="site-main" role="main">

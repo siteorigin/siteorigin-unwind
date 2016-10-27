@@ -17,6 +17,8 @@ get_header(); ?>
 		</header><!-- .page-header -->
 	<?php endif; ?>
 
+	<?php siteorigin_unwind_breadcrumbs(); ?>
+
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

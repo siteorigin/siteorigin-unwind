@@ -915,6 +915,25 @@ a {
       line-height: normal; }
 
 /*--------------------------------------------------------------
+## Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  color: #adadad;
+  font: 12px "Lato", sans-serif;
+  line-height: normal;
+  margin-bottom: 24px;
+  text-transform: uppercase; }
+  .breadcrumbs a {
+    color: #2d2d2d; }
+    .breadcrumbs a:hover {
+      color: #24c48a; }
+  .breadcrumbs a,
+  .breadcrumbs span {
+    padding: 0 4px; }
+  .breadcrumbs .breadcrumb_last {
+    color: #adadad; }
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */

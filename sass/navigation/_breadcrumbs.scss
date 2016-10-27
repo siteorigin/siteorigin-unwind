@@ -1,0 +1,24 @@
+.breadcrumbs {
+	color: $color__text-light; 
+	font: 12px $font__details;
+	line-height: normal;
+	margin-bottom: 24px; 
+	text-transform: uppercase;
+	
+	a {
+		color: $color__text-dark;
+		
+		&:hover {
+			color: $color__primary-accent;
+		}
+	}
+
+	a, 
+	span {
+		padding: 0 4px;
+	}
+
+	.breadcrumb_last {
+		color: $color__text-light;
+	}
+}
