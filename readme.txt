@@ -31,6 +31,7 @@ SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully respons
 
 SiteOrigin Unwind includes support for:
 
+* Breadcrumb NavXT
 * Jetpack Infinite Scroll
 * Jetpack Featured Content
 * SiteOrigin CSS
@@ -38,6 +39,7 @@ SiteOrigin Unwind includes support for:
 * SiteOrigin Widgets Bundle 
 * WooCommerce
 * Yet Another Related Posts Plugin (YARPP)
+* Yoast Breadcrumbs
 
 == License ==
 

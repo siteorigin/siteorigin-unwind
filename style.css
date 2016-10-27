@@ -933,6 +933,13 @@ a {
   .breadcrumbs .breadcrumb_last {
     color: #adadad; }
 
+.breadcrumbs.bcn a,
+.breadcrumbs.bcn span {
+  padding: 0; }
+
+.breadcrumbs.bcn span {
+  padding: 0 2px; }
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/

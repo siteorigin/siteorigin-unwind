@@ -1,3 +1,4 @@
+// Breadcrumb NavXT and Yoast Breadcrumbs.
 .breadcrumbs {
 	color: $color__text-light; 
 	font: 12px $font__details;
@@ -20,5 +21,18 @@
 
 	.breadcrumb_last {
 		color: $color__text-light;
+	}
+}
+
+// Breadcrumb NavXT.
+.breadcrumbs.bcn {
+	
+	a,
+	span {
+		padding: 0;
+	}
+
+	span {
+		padding: 0 2px;
 	}
 }

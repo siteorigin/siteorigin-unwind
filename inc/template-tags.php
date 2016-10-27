@@ -52,7 +52,7 @@ if ( ! function_exists( 'siteorigin_unwind_breadcrumbs' ) ) :
  */
 function siteorigin_unwind_breadcrumbs() {
 	if ( function_exists( 'bcn_display' ) ) {
-		?><div class="breadcrumbs">
+		?><div class="breadcrumbs bcn">
 			<?php bcn_display(); ?>
 		</div><?php
 	} elseif( function_exists( 'yoast_breadcrumb' ) ) {
