@@ -135,7 +135,7 @@ function siteorigin_unwind_comment( $comment, $args, $depth ) {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ):
+if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) :
 /**
  * Display the logo or site title.
  */
@@ -321,7 +321,7 @@ if ( ! function_exists( 'siteorigin_unwind_related_posts' ) ) :
  * Displays the author box in single posts
  */
 function siteorigin_unwind_related_posts( $post_id ) {
-	if ( function_exists( 'related_posts' ) ) { // Check for YRAPP plugin
+	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin.
 		related_posts();
 	} else { // The fallback loop
 		$categories = get_the_category( $post_id );

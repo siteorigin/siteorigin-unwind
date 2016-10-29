@@ -42,7 +42,7 @@
 					sprintf( esc_html__( 'Crafted with love by %s.', 'siteorigin-unwind' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
 				);
 
-				if ( !empty( $credit_text ) ) {
+				if ( ! empty( $credit_text ) ) {
 					?>&nbsp;<?php
 					echo wp_kses_post( $credit_text );
 				}

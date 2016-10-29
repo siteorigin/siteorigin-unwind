@@ -63,6 +63,10 @@ SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and co
 
 == Bundled Resources ==
 
+Bourbon, Copyright 2011 thoughtbot, inc.
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+Source: https://github.com/thoughtbot/bourbon
+
 FlexSlider, Copyright 2012 WooThemes
 Free to use under the GPLv2 license
 Source: http://www.woothemes.com/flexslider/
