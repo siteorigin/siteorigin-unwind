@@ -31,6 +31,7 @@ SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully respons
 
 SiteOrigin Unwind includes support for:
 
+* Breadcrumb NavXT
 * Jetpack Infinite Scroll
 * Jetpack Featured Content
 * SiteOrigin CSS
@@ -38,6 +39,7 @@ SiteOrigin Unwind includes support for:
 * SiteOrigin Widgets Bundle 
 * WooCommerce
 * Yet Another Related Posts Plugin (YARPP)
+* Yoast Breadcrumbs
 
 == License ==
 
@@ -60,6 +62,10 @@ Theme screenshot image with scooter sourced from https://pixabay.com by Unsplash
 SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and copyright 2016 SiteOrigin.
 
 == Bundled Resources ==
+
+Bourbon, Copyright 2011 thoughtbot, inc.
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+Source: https://github.com/thoughtbot/bourbon
 
 FlexSlider, Copyright 2012 WooThemes
 Free to use under the GPLv2 license

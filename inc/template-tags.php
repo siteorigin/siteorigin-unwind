@@ -46,6 +46,21 @@ function siteorigin_unwind_author_box() { ?>
 <?php }
 endif;
 
+if ( ! function_exists( 'siteorigin_unwind_breadcrumbs' ) ) :
+/**
+ * Display's breadcrumbs supported by Yoast SEO & Breadcrumb NavXT.
+ */
+function siteorigin_unwind_breadcrumbs() {
+	if ( function_exists( 'bcn_display' ) ) {
+		?><div class="breadcrumbs bcn">
+			<?php bcn_display(); ?>
+		</div><?php
+	} elseif( function_exists( 'yoast_breadcrumb' ) ) {
+		yoast_breadcrumb( '<div class="breadcrumbs">','</div>' );
+	}
+}
+endif;
+
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -120,7 +135,7 @@ function siteorigin_unwind_comment( $comment, $args, $depth ) {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ):
+if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) :
 /**
  * Display the logo or site title.
  */
@@ -306,7 +321,7 @@ if ( ! function_exists( 'siteorigin_unwind_related_posts' ) ) :
  * Displays the author box in single posts
  */
 function siteorigin_unwind_related_posts( $post_id ) {
-	if ( function_exists( 'related_posts' ) ) { // Check for YRAPP plugin
+	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin.
 		related_posts();
 	} else { // The fallback loop
 		$categories = get_the_category( $post_id );
