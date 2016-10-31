@@ -155,4 +155,35 @@
 			}
 		}
 	}
+
+	.woocommerce-tabs {
+		.wc-tabs {
+			margin-bottom: 30px;
+			padding-left: 0;
+			text-transform: uppercase;
+
+			&:before {
+				border-bottom: 1px solid $color__background-hr;
+			}
+
+			li {
+				background: transparent;
+				border: none;
+				font-size: 12px;
+				margin: 0;
+				margin-right: 30px;
+				padding: 0;
+
+				&.active {
+					border-bottom: 2px solid $color__text-medium;
+				}
+
+				&:before,
+				&:after {
+					border: none;
+					box-shadow: none;
+				}
+			}
+		}
+	}
 }
