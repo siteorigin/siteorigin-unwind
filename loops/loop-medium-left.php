@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop Name: Left Aligned Medium.
+ * Loop Name: Left Aligned Medium
  *
  * @package siteorigin-unwind
  * @since siteorigin-unwind 0.9
