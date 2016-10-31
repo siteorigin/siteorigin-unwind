@@ -107,6 +107,25 @@
       font-size: 15px;
       padding: 3px 10px; }
 
+.woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs {
+  margin-bottom: 30px;
+  padding-left: 0;
+  text-transform: uppercase; }
+  .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs:before {
+    border-bottom: 1px solid #f4f4f4; }
+  .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs li {
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    margin: 0;
+    margin-right: 30px;
+    padding: 0; }
+    .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs li.active {
+      border-bottom: 2px solid #626262; }
+    .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs li:before, .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs li:after {
+      border: none;
+      box-shadow: none; }
+
 /*--------------------------------------------------------------
 # WooCommerce Checkout
 --------------------------------------------------------------*/

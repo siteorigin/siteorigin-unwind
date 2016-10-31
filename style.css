@@ -590,7 +590,6 @@ a {
 --------------------------------------------------------------*/
 .main-navigation {
   clear: both;
-  display: block;
   float: left; }
   .main-navigation::after {
     clear: both;
@@ -2051,19 +2050,19 @@ object {
   .gallery-columns-2 .gallery-item {
     max-width: 50%; }
   .gallery-columns-3 .gallery-item {
-    max-width: 33.33%; }
+    max-width: 33.33333%; }
   .gallery-columns-4 .gallery-item {
     max-width: 25%; }
   .gallery-columns-5 .gallery-item {
     max-width: 20%; }
   .gallery-columns-6 .gallery-item {
-    max-width: 16.66%; }
+    max-width: 16.66667%; }
   .gallery-columns-7 .gallery-item {
-    max-width: 14.28%; }
+    max-width: 14.28571%; }
   .gallery-columns-8 .gallery-item {
     max-width: 12.5%; }
   .gallery-columns-9 .gallery-item {
-    max-width: 11.11%; }
+    max-width: 11.11111%; }
 
 .gallery-caption {
   display: block;
