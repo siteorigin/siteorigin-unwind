@@ -1496,6 +1496,10 @@ a {
     background: #fff;
     border-color: #ebebeb;
     color: #626262; }
+    .page-links .page-links-title ~ a span:hover {
+      background: #24c48a;
+      border: 1px solid #24c48a;
+      color: #fff; }
 
 .tags-list {
   margin-top: 1em; }
@@ -1550,9 +1554,6 @@ a {
   padding-bottom: 5em; }
   .archive-entry:last-of-type {
     margin-bottom: 5.5em; }
-
-.search-no-results #primary {
-  text-align: center; }
 
 /*--------------------------------------------------------------
 ## Pages

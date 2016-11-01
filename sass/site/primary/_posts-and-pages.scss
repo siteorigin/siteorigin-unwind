@@ -138,6 +138,12 @@
 		background: #fff; 
 		border-color: $color__border-button;
 		color: $color__text-medium;
+		
+		&:hover {
+			background: $color__primary-accent;
+			border: 1px solid $color__primary-accent;
+			color: #fff;
+		}
 	}
 }
 
@@ -208,10 +214,6 @@
 	&:last-of-type {
 		margin-bottom: 5.5em;
 	}
-}
-
-.search-no-results #primary {
-	text-align: center;
 }
 
 /*--------------------------------------------------------------
