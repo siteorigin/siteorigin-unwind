@@ -16,26 +16,7 @@
 	}
 }
 
-
-.woocommerce #container {
-	float: left;
-	margin: 0 (-$size__site-sidebar) 0 0;
-	width: $size__site-main;
-	
-	@at-root .no-active-sidebar .content-area {
-		float: none;
-		margin: 0;
-		width: auto;		
-	}
-	
-	@media (max-width: 768px) {
-		float: none;
-		margin: 0;
-		width: auto;
-	}
-}
-
-.woocommerce #content {
+.woocommerce .container #content {
 	margin: 0 $size__site-sidebar 0 0;
 	
 	@at-root .no-active-sidebar .site-main {
