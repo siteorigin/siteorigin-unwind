@@ -166,7 +166,7 @@ function siteorigin_unwind_settings_init() {
 			'fields' => array(
 				'featured_slider' => array(
 					'type' => 'checkbox',
-					'label' => __( 'Featured posts slider on blog home page.', 'siteorigin-unwind' ),
+					'label' => __( 'Jetpack Featured Content slider on blog home page.', 'siteorigin-unwind' ),
 				),
 				'featured_archive' => array(
 					'type' => 'checkbox',
