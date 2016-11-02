@@ -870,15 +870,24 @@ a {
     border-color: #24c48a;
     color: #24c48a; }
 
-.posts-navigation .nav-links {
+.posts-navigation .nav-links,
+.comment-navigation .nav-links {
   font-size: 13.8656px;
   font-size: 0.8666rem;
   font-family: "Lato", sans-serif !important;
   letter-spacing: .1em; }
-  .posts-navigation .nav-links .nav-previous span {
+  .posts-navigation .nav-links .nav-previous span,
+  .comment-navigation .nav-links .nav-previous span {
     margin-right: .5em; }
-  .posts-navigation .nav-links .nav-next span {
+  .posts-navigation .nav-links .nav-next span,
+  .comment-navigation .nav-links .nav-next span {
     margin-left: .5em; }
+
+#comment-nav-above {
+  padding-top: 35px; }
+
+#comment-nav-below {
+  padding-top: 25px; }
 
 .post-navigation {
   border-top: 2px solid #ebebeb;
