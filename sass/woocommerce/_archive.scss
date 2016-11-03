@@ -4,6 +4,20 @@
 			margin: 0 1% 35px 1%;
 			width: 31.333%;
 
+			span.onsale {
+				background-color: $color__primary-accent;
+				border-radius: 0;
+				font-size: 11px;
+				left: 0;
+				right: auto;
+				line-height: normal;
+				min-height: 0;
+				padding: 5px 13px;
+				text-transform: uppercase;
+				top: 5px;
+				z-index: 10;
+			}
+
 			&.first {
 				margin: 0 2% 35px 0;
 			}
