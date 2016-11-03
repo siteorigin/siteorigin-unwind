@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, sticky-post, theme-options, translation-ready, blog, e-commerce
 
-Requires at least: 4.0
+Requires at least: 4.1
 Tested up to: 4.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,8 +32,9 @@ SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully respons
 SiteOrigin Unwind includes support for:
 
 * Breadcrumb NavXT
-* Jetpack Infinite Scroll
 * Jetpack Featured Content
+* Jetpack Infinite Scroll
+* Jetpack Responsive Videos
 * SiteOrigin CSS
 * SiteOrigin Page Builder
 * SiteOrigin Widgets Bundle 
