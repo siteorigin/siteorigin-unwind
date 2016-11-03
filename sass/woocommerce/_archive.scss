@@ -51,23 +51,54 @@
 
 			.loop-product-thumbnail {
 				position: relative;
+				background: $color__primary-accent-dark;
+
+				&:hover {
+					img {
+						opacity: 0.25;
+					}
+
+					.add_to_cart_button,
+					.product-quick-view-button {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
 
 				.add_to_cart_button,
 				.product-quick-view-button {
+					border-radius: 0;
 					font-size: 12px;
 					left: 50%;
 					margin: 0;
+					opacity: 0;
 					padding: 12px 15px;
 					position: absolute;
+					visibility: hidden;
 					@include transform( translateX( -50% ) );
 				}
 
 				.add_to_cart_button {
+					background: #fff;
+					border: 2px solid #fff;
 					bottom: 20%;
+					color: $color__text-dark;
+
+					&:hover {
+						border: 2px solid $color__text-dark;
+					}
 				}
 
 				.product-quick-view-button {
+					background: transparent;
+					border: 2px solid #fff;
+					color: #fff;
 					top: 20%;
+
+					&:hover {
+						background: #fff;
+						color: $color__text-dark;
+					}
 				}
 			}
 		}
