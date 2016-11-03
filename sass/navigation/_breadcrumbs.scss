@@ -1,7 +1,9 @@
-// Breadcrumb NavXT and Yoast Breadcrumbs.
-.breadcrumbs {
-	color: $color__text-light; 
-	font: 12px $font__details;
+// Breadcrumb NavXT, Yoast and WooCommerce Breadcrumbs.
+.breadcrumbs,
+.woocommerce .woocommerce-breadcrumb {
+	color: $color__text-light;
+	font-family: $font__details; 
+	font-size: 12px; 
 	line-height: normal;
 	margin-bottom: 24px; 
 	text-transform: uppercase;

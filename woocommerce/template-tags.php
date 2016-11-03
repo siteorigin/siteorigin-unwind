@@ -21,3 +21,9 @@ add_action( 'woocommerce_after_single_product_summary', 'siteorigin_unwind_wooco
 
 // Remove the cross sell display.
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+
+// Remove the Product Description Title
+function siteorigin_unwind_woocommerce_description_title() {
+	return '';
+}
+add_filter( 'woocommerce_product_description_heading', 'siteorigin_unwind_woocommerce_description_title' );

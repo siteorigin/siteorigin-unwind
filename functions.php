@@ -172,6 +172,18 @@ function siteorigin_unwind_widgets_init() {
 		'before_title'  => '<h2 class="widget-title heading-strike">',
 		'after_title'   => '</h2>',
 	) );
+
+	if ( siteorigin_unwind_is_woocommerce_active() ) {
+		register_sidebar( array(
+			'name' 			=> __( 'Shop', 'siteorigin-unwind' ),
+			'id' 			=> 'shop-sidebar',
+			'description' 	=> esc_html__( 'Displays on WooCommerce pages.', 'siteorigin-unwind' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' 	=> '</aside>',
+			'before_title' 	=> '<h2 class="widget-title heading-strike">',
+			'after_title' 	=> '</h2>',
+		) );
+	}	
 }
 add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
 

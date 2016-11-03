@@ -357,8 +357,9 @@ $sel: '';
 	}
 }
 
-// Archive post navigation.
-.posts-navigation .nav-links {
+// Archive and comments: next and previous page navigation.
+.posts-navigation .nav-links,
+.comment-navigation .nav-links {
 	@include font-size(0.8666);
 	font-family: $font__details !important;
 	letter-spacing: .1em;
@@ -372,7 +373,17 @@ $sel: '';
 	}
 }
 
-// Single post navigation.
+
+// Comments: next and previous page navigation.
+#comment-nav-above {
+	padding-top: 35px;
+}
+
+#comment-nav-below {
+	padding-top: 25px; 
+}
+
+// Single post page: next and previous post navigation.
 .post-navigation {
 	border-top: 2px solid $color__background-hr-dark;
 	border-bottom: 2px solid $color__background-hr-dark;

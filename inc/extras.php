@@ -45,7 +45,8 @@ function siteorigin_unwind_body_classes( $classes ) {
 	$classes[] = 'no-js';
 
 	// Check if the sidebar has widgets.
-	if ( ! is_active_sidebar( 'main-sidebar' ) ) {
+	$wc_shop_sidebar = siteorigin_unwind_is_woocommerce_active() && is_shop() && is_active_sidebar( 'shop-sidebar' );
+	if ( ! is_active_sidebar( 'main-sidebar' ) && ! $wc_shop_sidebar ) {
 		$classes[] = 'no-active-sidebar';
 	}
 
