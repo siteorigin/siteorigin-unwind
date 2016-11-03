@@ -1,0 +1,39 @@
+.woocommerce {
+	ul.products {
+		li.product {
+			margin: 0 1% 35px 1%;
+			width: 31.333%;
+
+			&.first {
+				margin: 0 2% 35px 0;
+			}
+
+			&.last {
+				margin: 0 0 35px 2%;
+			}
+
+			img {
+				margin-bottom: 0;
+			}
+
+			h3 {
+				text-align: center;
+			}
+
+			.price {
+				color: $color__primary-accent;
+				text-align: center;
+
+				del {
+					color: $color__text-light;
+					display: inline;
+				}
+
+				ins {
+					color: $color__primary-accent;
+					display: inline;
+				}
+			}
+		}
+	}
+}
