@@ -34,7 +34,7 @@ if ( have_posts() ) :
 
 	siteorigin_unwind_posts_navigation();
 
-else :
+	else :
 
 	get_template_part( 'template-parts/content', 'none' );
 

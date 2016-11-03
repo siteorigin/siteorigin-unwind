@@ -112,6 +112,7 @@
 	}
 }
 
+// Page links: very similar to .pagination in _menus.scss.
 .page-links {
 	clear: both;
 	margin: 0 0 4.6666em;
@@ -130,7 +131,7 @@
 		color: #fff;
 		@include font-size(0.8666);
 		line-height: normal;
-		margin-right: 0.1333em;
+		margin-right: 1px;
 		padding: 7px 13px;
 	}
 

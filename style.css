@@ -883,6 +883,37 @@ a {
   .comment-navigation .nav-links .nav-next span {
     margin-left: .5em; }
 
+.pagination {
+  margin: 0 0 4.6666em;
+  text-align: center; }
+  .pagination .page-numbers {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    color: #626262;
+    margin-right: 1px;
+    padding: 7px 13px; }
+    .pagination .page-numbers:hover {
+      background: #24c48a;
+      border-color: #24c48a;
+      color: #fff; }
+  .pagination .dots {
+    background: none;
+    border: 0;
+    font-size: 13px;
+    padding-right: 0;
+    padding-left: 0; }
+    .pagination .dots:hover {
+      background: none;
+      color: #626262; }
+  .pagination .current {
+    background: #24c48a;
+    border-color: #24c48a;
+    color: #fff; }
+  .pagination .next,
+  .pagination .prev {
+    font-family: "Lato", sans-serif;
+    padding: 7px 13px 8px; }
+
 #comment-nav-above {
   padding-top: 35px; }
 
@@ -1506,7 +1537,7 @@ a {
     font-size: 13.8656px;
     font-size: 0.8666rem;
     line-height: normal;
-    margin-right: 0.1333em;
+    margin-right: 1px;
     padding: 7px 13px; }
   .page-links .page-links-title ~ a span {
     background: #fff;

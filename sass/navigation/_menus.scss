@@ -373,6 +373,51 @@ $sel: '';
 	}
 }
 
+// Archive and comments: pagination.
+.pagination {	
+	margin: 0 0 4.6666em;
+	text-align: center;
+	
+	.page-numbers {
+		background: #fff; 
+		border: 1px solid $color__border-button;
+		color: $color__text-medium;
+		margin-right: 1px;
+		padding: 7px 13px;
+		
+		&:hover {
+			background: $color__primary-accent;
+			border-color: $color__primary-accent; 
+			color: #fff;
+		}
+	}
+
+	.dots {
+		background: none;
+		border: 0;
+		font-size: 13px; 
+		padding-right: 0;
+		padding-left: 0; 
+		
+		&:hover {
+			background: none;
+			color: $color__text-medium;
+		}
+	}
+
+	.current {
+		background: $color__primary-accent;
+		border-color: $color__primary-accent; 
+		color: #fff;
+	}
+
+	.next,
+	.prev {
+		font-family: $font__details;
+		padding: 7px 13px 8px;
+	}
+}
+
 
 // Comments: next and previous page navigation.
 #comment-nav-above {
