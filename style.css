@@ -890,6 +890,7 @@ a {
     background: #fff;
     border: 1px solid #ebebeb;
     color: #626262;
+    font-size: 13px;
     margin-right: 1px;
     padding: 7px 13px; }
     .pagination .page-numbers:hover {

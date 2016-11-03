@@ -32,7 +32,12 @@ if ( have_posts() ) :
 
 	endwhile;
 
-	siteorigin_unwind_posts_navigation();
+	// siteorigin_unwind_posts_navigation();
+	
+	the_posts_pagination( array(
+    	'prev_text' => __( '&larr;', 'siteorigin-unwind' ),
+    	'next_text' => __( '&rarr;', 'siteorigin-unwind' ),		
+	) );
 
 	else :
 
