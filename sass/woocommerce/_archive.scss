@@ -26,7 +26,7 @@
 				margin: 0 0 35px 2%;
 			}
 
-			img {
+			a img {
 				margin-bottom: 0;
 			}
 
@@ -46,6 +46,28 @@
 				ins {
 					color: $color__primary-accent;
 					display: inline;
+				}
+			}
+
+			.loop-product-thumbnail {
+				position: relative;
+
+				.add_to_cart_button,
+				.product-quick-view-button {
+					font-size: 12px;
+					left: 50%;
+					margin: 0;
+					padding: 12px 15px;
+					position: absolute;
+					@include transform( translateX( -50% ) );
+				}
+
+				.add_to_cart_button {
+					bottom: 20%;
+				}
+
+				.product-quick-view-button {
+					top: 20%;
 				}
 			}
 		}

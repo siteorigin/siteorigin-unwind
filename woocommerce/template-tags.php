@@ -7,11 +7,7 @@
  * @license GPL 2.0
  */
 
-/**
- * The following functionality is focused on handling product archives and product loops.
- **/
-
-// Move the result count.
+// Move the result count
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 35 );
 
@@ -22,18 +18,49 @@ add_action( 'woocommerce_after_single_product_summary', 'siteorigin_unwind_wooco
 // Remove the cross sell display.
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
+// Modify Archive Content
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+//remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 5 );
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 15 );
+
+//remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+add_action( 'woocommerce_before_shop_loop_item_title', 'siteorigin_unwind_woocommerce_loop_item_image', 10 );
+
+if( ! function_exists( 'siteorigin_unwind_woocommerce_description_title' ) ) :
 // Remove the Product Description Title
 function siteorigin_unwind_woocommerce_description_title() {
 	return '';
 }
+endif;
 add_filter( 'woocommerce_product_description_heading', 'siteorigin_unwind_woocommerce_description_title' );
 
-// Modify Archive Content
-//remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
-//remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-//remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
-//remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+if( ! function_exists( 'siteorigin_unwind_woocommerce_loop_item_image' ) ) :
+/**
+ * The image section for the products in loop
+ */
+function siteorigin_unwind_woocommerce_loop_item_image() { ?>
+	<div class="loop-product-thumbnail">
+		<?php woocommerce_template_loop_product_link_open(); ?>
+		<?php woocommerce_template_loop_product_thumbnail(); ?>
+		<?php woocommerce_template_loop_product_link_close(); ?>
+		<?php woocommerce_template_loop_add_to_cart(); ?>
+		<?php siteorigin_unwind_woocommerce_quick_view_button(); ?>
+	</div>
+<?php }
+endif;
 
-//remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+if( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view_button' ) ) :
+/**
+ * Quick view button for the products in loop
+ */
+function siteorigin_unwind_woocommerce_quick_view_button() {
+	global $product;
+	echo '<a href="#" id="product-id-' . $product->id . '" class="button product-quick-view-button" data-product-id="' . $product->id . '">' . __( 'Quick View', 'siteorigin-unwind') . '</a>';
+}
+endif;

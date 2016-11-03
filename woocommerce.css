@@ -45,7 +45,7 @@
     margin: 0 2% 35px 0; }
   .woocommerce ul.products li.product.last {
     margin: 0 0 35px 2%; }
-  .woocommerce ul.products li.product img {
+  .woocommerce ul.products li.product a img {
     margin-bottom: 0; }
   .woocommerce ul.products li.product h3 {
     text-align: center; }
@@ -58,6 +58,24 @@
     .woocommerce ul.products li.product .price ins {
       color: #24c48a;
       display: inline; }
+  .woocommerce ul.products li.product .loop-product-thumbnail {
+    position: relative; }
+    .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button,
+    .woocommerce ul.products li.product .loop-product-thumbnail .product-quick-view-button {
+      font-size: 12px;
+      left: 50%;
+      margin: 0;
+      padding: 12px 15px;
+      position: absolute;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%); }
+    .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button {
+      bottom: 20%; }
+    .woocommerce ul.products li.product .loop-product-thumbnail .product-quick-view-button {
+      top: 20%; }
 
 /*--------------------------------------------------------------
 # WooCommerce Single Product
