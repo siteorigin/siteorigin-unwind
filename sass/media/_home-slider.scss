@@ -63,6 +63,7 @@
 	.featured-posts-slides {
 	
 		.featured-post-slide {
+			background-color: $color__text-medium;
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
@@ -79,7 +80,6 @@
 			}
 
 			.slide-content {
-				background: $color__text-medium;
 				height: 100%;
 				left: 0;
 				position: absolute;
