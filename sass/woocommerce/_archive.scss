@@ -217,4 +217,37 @@
 			}
 		}
 	}
+
+	.woocommerce-pagination {
+		.page-numbers {
+			border: none;
+
+			li {
+				border: none;
+				margin-right: 5px;
+
+				a, span {
+					border: 1px solid $color__background-hr-dark;
+					color: $color__text-dark;
+					padding: 8px 11px;
+
+					&:hover {
+						color: $color__text-dark;
+						background: transparent;
+					}
+				}
+
+				.current {
+					background: $color__primary-accent;
+					border: 1px solid $color__primary-accent;
+					color: #fff;
+
+					&:hover {
+						background: $color__primary-accent;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
 }

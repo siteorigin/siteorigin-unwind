@@ -201,6 +201,26 @@
         background: #fff;
         color: #2d2d2d; }
 
+.woocommerce .woocommerce-pagination .page-numbers {
+  border: none; }
+  .woocommerce .woocommerce-pagination .page-numbers li {
+    border: none;
+    margin-right: 5px; }
+    .woocommerce .woocommerce-pagination .page-numbers li a, .woocommerce .woocommerce-pagination .page-numbers li span {
+      border: 1px solid #ebebeb;
+      color: #2d2d2d;
+      padding: 8px 11px; }
+      .woocommerce .woocommerce-pagination .page-numbers li a:hover, .woocommerce .woocommerce-pagination .page-numbers li span:hover {
+        color: #2d2d2d;
+        background: transparent; }
+    .woocommerce .woocommerce-pagination .page-numbers li .current {
+      background: #24c48a;
+      border: 1px solid #24c48a;
+      color: #fff; }
+      .woocommerce .woocommerce-pagination .page-numbers li .current:hover {
+        background: #24c48a;
+        color: #fff; }
+
 /*--------------------------------------------------------------
 # WooCommerce Single Product
 --------------------------------------------------------------*/
