@@ -1,8 +1,126 @@
 .woocommerce {
+
+	.woocommerce-ordering {
+		margin-bottom: 40px;
+		cursor: pointer;
+
+		.ordering-selector-wrapper {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+
+			font-size: 0.85em;
+			display: block;
+			border: 1px solid $color__background-hr-dark;
+			padding: 10px;
+			line-height: 1em;
+			position: relative;
+			color: $color__text-medium;
+
+			.current {
+				display: inline-block;
+			}
+
+			svg {
+				float: right;
+				margin: 0 -3px 0 10px;
+				@include transform( rotate(0deg) );
+				@include transition (all 0.15s ease-in);
+
+				path {
+					fill: $color__text-medium;
+				}
+			}
+
+			&:hover {
+				color: $color__text-dark;
+				.north-icon-next {
+					@include transform( rotate(90deg) );
+					color: $color__text-dark;
+				}
+
+				path {
+					fill: $color__text-dark;
+				}
+			}
+
+			.ordering-dropdown-container {
+				left: -1px;
+				right: -1px;
+				position: absolute;
+				z-index: 999;
+				top: 100%;
+				min-height: 1px;
+			}
+
+			.ordering-dropdown {
+				list-style: none;
+				margin: 0;
+				border: 1px solid $color__background-hr-dark;
+				background: white;
+				padding: 5px 0;
+				box-shadow: 0 1px 1px rgba(0,0,0,0.07);
+				display: block;
+				position: absolute;
+				width: 100%;
+				top: 0;
+				opacity: 0;
+				visibility: hidden;
+
+				li {
+					cursor: pointer;
+					white-space: nowrap;
+					padding: 15px 25px;
+					color: $color__text-light;
+					position: relative;
+
+					&:hover {
+						color: $color__text-dark;
+					}
+				}
+
+				opacity: 0;
+				@include transition (all 0.15s ease-in);
+				@include transform-origin(center top);
+				@include transform( scale(0.95) );
+
+			}
+
+			&:hover {
+				.ordering-dropdown {
+					visibility: visible;
+					opacity: 1;
+					@include transform( scale(1) );
+				}
+			}
+		}
+	}
+
 	ul.products {
 		li.product {
-			margin: 0 1% 35px 1%;
-			width: 31.333%;
+			margin: 0 0 25px 0;
+			width: 100%;
+
+			&.first {
+				margin: 0 0 25px 0;
+			}
+
+			&.last {
+				margin: 0 0 25px 1%;
+			}
+
+			@media ( min-width: 321px ) {
+				margin: 0 1% 35px 1%;
+				width: 31.333%;
+
+				&.first {
+					margin: 0 2% 35px 0;
+				}
+
+				&.last {
+					margin: 0 0 35px 2%;
+				}
+			}
 
 			span.onsale {
 				background-color: $color__primary-accent;
@@ -16,14 +134,6 @@
 				text-transform: uppercase;
 				top: 5px;
 				z-index: 10;
-			}
-
-			&.first {
-				margin: 0 2% 35px 0;
-			}
-
-			&.last {
-				margin: 0 0 35px 2%;
 			}
 
 			a img {
