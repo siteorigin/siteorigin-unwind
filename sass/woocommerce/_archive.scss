@@ -1,21 +1,20 @@
 .woocommerce {
 
 	.woocommerce-ordering {
-		margin-bottom: 40px;
 		cursor: pointer;
+		margin-bottom: 40px;
 
 		.ordering-selector-wrapper {
+			border: 1px solid $color__background-hr-dark;
+			box-sizing: border-box;
+			color: $color__text-medium;
+			display: block;
+			font-size: 0.85em;
+			line-height: 1em;
+			padding: 10px;
+			position: relative;
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-
-			font-size: 0.85em;
-			display: block;
-			border: 1px solid $color__background-hr-dark;
-			padding: 10px;
-			line-height: 1em;
-			position: relative;
-			color: $color__text-medium;
 
 			.current {
 				display: inline-block;
@@ -35,8 +34,8 @@
 			&:hover {
 				color: $color__text-dark;
 				.north-icon-next {
-					@include transform( rotate(90deg) );
 					color: $color__text-dark;
+					@include transform( rotate(90deg) );
 				}
 
 				path {
@@ -46,33 +45,33 @@
 
 			.ordering-dropdown-container {
 				left: -1px;
-				right: -1px;
-				position: absolute;
-				z-index: 999;
-				top: 100%;
 				min-height: 1px;
+				position: absolute;
+				right: -1px;
+				top: 100%;
+				z-index: 999;
 			}
 
 			.ordering-dropdown {
-				list-style: none;
-				margin: 0;
-				border: 1px solid $color__background-hr-dark;
 				background: white;
-				padding: 5px 0;
+				border: 1px solid $color__background-hr-dark;
 				box-shadow: 0 1px 1px rgba(0,0,0,0.07);
 				display: block;
-				position: absolute;
-				width: 100%;
-				top: 0;
+				list-style: none;
+				margin: 0;
 				opacity: 0;
+				padding: 5px 0;
+				position: absolute;
+				top: 0;
 				visibility: hidden;
+				width: 100%;
 
 				li {
-					cursor: pointer;
-					white-space: nowrap;
-					padding: 15px 25px;
 					color: $color__text-light;
+					cursor: pointer;
+					padding: 15px 25px;
 					position: relative;
+					white-space: nowrap;
 
 					&:hover {
 						color: $color__text-dark;
@@ -88,12 +87,17 @@
 
 			&:hover {
 				.ordering-dropdown {
-					visibility: visible;
 					opacity: 1;
+					visibility: visible;
 					@include transform( scale(1) );
 				}
 			}
 		}
+	}
+
+	.woocommerce-result-count {
+		color: $color__text-medium;
+		font-size: 13px;
 	}
 
 	ul.products {
