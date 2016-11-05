@@ -892,7 +892,7 @@ a {
     color: #626262;
     font-size: 13px;
     margin-right: 1px;
-    padding: 7px 13px; }
+    padding: 9px 11px 8px; }
     .pagination .page-numbers:hover {
       background: #24c48a;
       border-color: #24c48a;
@@ -913,7 +913,7 @@ a {
   .pagination .next,
   .pagination .prev {
     font-family: "Lato", sans-serif;
-    padding: 7px 13px 8px; }
+    padding: 9px 9px 8px; }
 
 #comment-nav-above {
   padding-top: 35px; }

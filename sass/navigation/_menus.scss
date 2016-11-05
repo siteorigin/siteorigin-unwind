@@ -384,7 +384,7 @@ $sel: '';
 		color: $color__text-medium;
 		font-size: 13px; 
 		margin-right: 1px;
-		padding: 7px 13px;
+		padding: 9px 11px 8px;
 		
 		&:hover {
 			background: $color__primary-accent;
@@ -415,7 +415,7 @@ $sel: '';
 	.next,
 	.prev {
 		font-family: $font__details;
-		padding: 7px 13px 8px;
+		padding: 9px 9px 8px;
 	}
 }
 

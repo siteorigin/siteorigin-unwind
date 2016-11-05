@@ -219,6 +219,7 @@
 	}
 
 	.woocommerce-pagination {
+
 		.page-numbers {
 			border: none;
 
@@ -226,14 +227,19 @@
 				border: none;
 				margin-right: 5px;
 
-				a, span {
-					border: 1px solid $color__background-hr-dark;
-					color: $color__text-dark;
-					padding: 8px 11px;
+				a, 
+				span {
+					background: #fff; 
+					border: 1px solid $color__border-button;
+					color: $color__text-medium;
+					font-size: 13px; 
+					margin-right: 1px;
+					padding: 9px 11px 8px;
 
 					&:hover {
-						color: $color__text-dark;
-						background: transparent;
+						background: $color__primary-accent;
+						border-color: $color__primary-accent; 
+						color: #fff;
 					}
 				}
 
@@ -247,6 +253,18 @@
 						color: #fff;
 					}
 				}
+
+				.current {
+					background: $color__primary-accent;
+					border-color: $color__primary-accent; 
+					color: #fff;
+				}
+
+				.next,
+				.prev {
+					font-family: $font__details;
+					padding: 9px 9px 8px;
+				}				
 			}
 		}
 	}
