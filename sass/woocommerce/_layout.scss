@@ -1,14 +1,14 @@
-.woocommerce #container {
-	float: left;
-	margin: 0 (-$size__site-sidebar) 0 0;
+.woocommerce-page #container {
+	float: right;
+	margin: 0 0 0 (-$size__site-sidebar);
 	width: $size__site-main;
-	
+
 	@at-root .no-active-sidebar .content-area {
 		float: none;
 		margin: 0;
-		width: auto;		
+		width: auto;
 	}
-	
+
 	@media (max-width: 768px) {
 		float: none;
 		margin: 0;
@@ -16,14 +16,23 @@
 	}
 }
 
-.woocommerce .container #content {
-	margin: 0 $size__site-sidebar 0 0;
-	
-	@at-root .no-active-sidebar .site-main {
-		margin: 0;	
-	}	
-	
-	@media (max-width: 768px) {
-		margin: 0;		
+.woocommerce-page .container {
+	#content {
+		float: right;
+		margin: 0 0 0 $size__site-sidebar;
+
+		@at-root .no-active-sidebar .site-main {
+			margin: 0;
+		}
+
+		@media (max-width: 768px) {
+			margin: 0;
+		}
+	}
+
+	.widget-area {
+		float: left;
+		padding-left: 0;
+		padding-right: 40px;
 	}
 }

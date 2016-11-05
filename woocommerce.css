@@ -1,27 +1,33 @@
 /*--------------------------------------------------------------
 # WooCommerce Layout
 --------------------------------------------------------------*/
-.woocommerce #container {
-  float: left;
-  margin: 0 -25.61404% 0 0;
+.woocommerce-page #container {
+  float: right;
+  margin: 0 0 0 -25.61404%;
   width: 100%; }
   .no-active-sidebar .content-area {
     float: none;
     margin: 0;
     width: auto; }
   @media (max-width: 768px) {
-    .woocommerce #container {
+    .woocommerce-page #container {
       float: none;
       margin: 0;
       width: auto; } }
 
-.woocommerce .container #content {
-  margin: 0 25.61404% 0 0; }
+.woocommerce-page .container #content {
+  float: right;
+  margin: 0 0 0 25.61404%; }
   .no-active-sidebar .site-main {
     margin: 0; }
   @media (max-width: 768px) {
-    .woocommerce .container #content {
+    .woocommerce-page .container #content {
       margin: 0; } }
+
+.woocommerce-page .container .widget-area {
+  float: left;
+  padding-left: 0;
+  padding-right: 40px; }
 
 /*--------------------------------------------------------------
 # WooCommerce Archive
