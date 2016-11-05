@@ -1,0 +1,61 @@
+.woocommerce {
+	.widget-area {
+
+		// Pricing filter
+		.widget_price_filter {
+			.ui-slider {
+				background-color: $color__background-hr;
+				margin: 0 0 25px 0;
+
+				.ui-slider-range,
+				.ui-slider-handle {
+					background-color: $color__primary-accent;
+				}
+
+				.ui-slider-handle {
+					border-radius: 0;
+					height: 16px;
+					margin: 0;
+					top: -6px;
+					width: 10px;
+				}
+			}
+
+			.ui-widget-content {
+				border-radius: 0;
+			}
+
+			.ui-slider-horizontal {
+				height: 3px;
+			}
+
+			.price_slider_amount {
+				text-align: left;
+
+				.price_label {
+					font-weight: light;
+
+					span {
+						font-weight: bold;
+					}
+				}
+
+				.button {
+					background: transparent;
+					border-radius: 0;
+					border: 1px solid $color__background-hr;
+					color: $color__text-medium;
+					font-weight: normal;
+					float: right;
+
+					&:hover {
+						border-color: $color__primary-accent-dark;
+						box-shadow: none;
+						color: $color__primary-accent-dark;
+					}
+				}
+			}
+		}
+
+	}
+}
