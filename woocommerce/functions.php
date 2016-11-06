@@ -79,3 +79,12 @@ function cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
 	$product = get_product( $cart_item['product_id'] );
 	return $product->get_image( 'cart_item_image_size' );
 }
+
+function siteorigin_unwind_woocommerce_tag_cloud_widget() {
+	$args['unit'] = 'px';
+	$args['largest'] = 12;
+	$args['smallest'] = 12;
+	$args['taxonomy'] = 'product_tag';
+	return $args;
+}
+add_filter( 'woocommerce_product_tag_cloud_widget_args', 'siteorigin_unwind_woocommerce_tag_cloud_widget' );

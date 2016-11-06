@@ -696,3 +696,18 @@
       border-color: #00a76a;
       box-shadow: none;
       color: #00a76a; }
+
+.woocommerce .widget-area .widget_product_tag_cloud a {
+  border: 1px solid #f4f4f4;
+  color: #626262;
+  display: inline-block;
+  font-size: 14.9328px;
+  font-size: 0.9333rem;
+  margin: 0 .107em .45em 0;
+  padding: .7642em .9785em .6213em;
+  line-height: normal;
+  text-decoration: none; }
+  .woocommerce .widget-area .widget_product_tag_cloud a:hover {
+    background: #24c48a;
+    border-color: #24c48a;
+    color: #fff !important; }

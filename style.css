@@ -1209,7 +1209,7 @@ a {
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
 #page .widget_tag_cloud a {
-  border: 1px solid #ebebeb;
+  border: 1px solid #f4f4f4;
   color: #626262;
   display: inline-block;
   font-size: 14.9328px;
@@ -1219,9 +1219,9 @@ a {
   line-height: normal;
   text-decoration: none; }
   #page .widget_tag_cloud a:hover {
-    background: #626262;
-    border-color: #626262;
-    color: #fff; }
+    background: #24c48a;
+    border-color: #24c48a;
+    color: #fff !important; }
 
 #secondary .widget_tag_cloud,
 #colophon .widget_tag_cloud {
