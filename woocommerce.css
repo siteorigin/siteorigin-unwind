@@ -747,3 +747,21 @@
     .woocommerce .widget-area#secondary .widget_top_rated_products .product_list_widget li del .amount {
       color: #adadad;
       display: inline; }
+
+.woocommerce .widget-area#secondary .widget_product_search .search-form {
+  position: relative; }
+  .woocommerce .widget-area#secondary .widget_product_search .search-form input[type="search"] {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%; }
+  .woocommerce .widget-area#secondary .widget_product_search .search-form button[type="submit"] {
+    border: none;
+    padding: 7px;
+    padding-left: 8px;
+    position: absolute;
+    right: 15px;
+    top: 3px; }
+    .woocommerce .widget-area#secondary .widget_product_search .search-form button[type="submit"] svg {
+      fill: #626262;
+      height: 16px;
+      width: 16px; }

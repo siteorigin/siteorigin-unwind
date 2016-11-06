@@ -151,23 +151,22 @@
 
 		input[type="search"] {
 			box-sizing: border-box;
-			padding-right: 2em;
 			max-width: 100%;
 			width: 100%;
 		}
 
 		button[type="submit"] {
 			border: none;
-			padding: .65em;
-			padding-left: 0.89375em;
+			padding: 7px;
+			padding-left: 8px;
 			position: absolute;
-			top: .2em;
-			right: 1.269em;
+			right: 15px;
+			top: 3px;
 
 			svg {
 				fill: $color__text-medium;
-				height: 1.2666em;
-				width: 1.3333em;
+				height: 16px;
+				width: 16px;
 			}
 		}
 	}

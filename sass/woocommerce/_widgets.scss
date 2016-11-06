@@ -121,5 +121,33 @@
 			}
 		}
 
+		// Search Field
+		.widget_product_search {
+			.search-form {
+				position: relative;
+
+				input[type="search"] {
+					box-sizing: border-box;
+					max-width: 100%;
+					width: 100%;
+				}
+
+				button[type="submit"] {
+					border: none;
+					padding: 7px;
+					padding-left: 8px;
+					position: absolute;
+					right: 15px;
+					top: 3px;
+
+					svg {
+						fill: $color__text-medium;
+						height: 16px;
+						width: 16px;
+					}
+				}
+			}
+		}
+
 	}
 }
