@@ -77,8 +77,10 @@
 			}
 		}
 
-		// Products Widget
-		.widget_products {
+		// Products and Review Widget
+		.widget_products,
+		.widget_recent_reviews,
+		.widget_top_rated_products {
 			.product_list_widget {
 				li {
 					padding-bottom: 25px;
