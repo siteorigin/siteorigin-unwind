@@ -23,7 +23,7 @@ add_filter( 'woocommerce_product_single_add_to_cart_text', 'siteorigin_unwind_wo
 function siteorigin_unwind_woocommerce_enqueue_styles( $styles ) {
 	$styles['unwind-woocommerce'] = array(
 		'src' => get_template_directory_uri() . '/woocommerce.css',
-		'deps' => 'woocommerce-layout',
+		'deps' => array( 'woocommerce-layout', 'siteorigin-unwind-style' ),
 		'version' => SITEORIGIN_THEME_VERSION,
 		'media' => 'all'
 	);

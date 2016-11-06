@@ -182,10 +182,10 @@
 		border: 1px solid $color__background-hr;
 		color: $color__text-medium;
 		display: inline-block;
-		@include font-size(0.9333); // 15px base.
-		margin: 0 .107em .45em 0;
-		padding: .7642em .9785em .6213em;
+		font-size: 15px;
 		line-height: normal;
+		margin: 0 7px 10px 0;
+		padding: 8px 10px;
 		text-decoration: none;
 
 		&:hover {

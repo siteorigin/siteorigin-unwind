@@ -1212,11 +1212,10 @@ a {
   border: 1px solid #f4f4f4;
   color: #626262;
   display: inline-block;
-  font-size: 14.9328px;
-  font-size: 0.9333rem;
-  margin: 0 .107em .45em 0;
-  padding: .7642em .9785em .6213em;
+  font-size: 15px;
   line-height: normal;
+  margin: 0 7px 10px 0;
+  padding: 8px 10px;
   text-decoration: none; }
   #page .widget_tag_cloud a:hover {
     background: #24c48a;

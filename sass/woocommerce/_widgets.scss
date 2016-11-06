@@ -1,5 +1,5 @@
 .woocommerce {
-	.widget-area {
+	.widget-area#secondary {
 
 		// Pricing filter
 		.widget_price_filter {
@@ -63,10 +63,10 @@
 				border: 1px solid $color__background-hr;
 				color: $color__text-medium;
 				display: inline-block;
-				@include font-size(0.9333); // 15px base.
-				margin: 0 .107em .45em 0;
-				padding: .7642em .9785em .6213em;
+				font-size: 15px;
 				line-height: normal;
+				margin: 0 7px 10px 0;
+				padding: 8px 10px;
 				text-decoration: none;
 
 				&:hover {
@@ -74,6 +74,48 @@
 					border-color: $color__primary-accent;
 					color: #fff !important;
 				}
+			}
+		}
+
+		// Products Widget
+		.widget_products {
+			.product_list_widget {
+				li {
+					padding-bottom: 25px;
+					padding-top: 0;
+					border-bottom: none;
+
+					img {
+						float: left;
+						margin-left: 0;
+						margin-right: 20px;
+						width: 70px;
+					}
+
+					.product-title {
+						display: inline-block;
+						padding: 10px 0;
+					}
+
+					.amount {
+						color: $color__primary-accent;
+						display: inline;
+					}
+
+					ins {
+						background: transparent;
+					}
+
+					del {
+						color: $color__text-light;
+
+						.amount {
+							color: $color__text-light;
+							display: inline;
+						}
+					}
+				}
+
 			}
 		}
 
