@@ -220,5 +220,41 @@
 			}
 		}
 
+		.widget_layered_nav {
+			li {
+				a {
+					&:before {
+						background: transparent;
+						color: $color__text-light !important;
+					}
+
+					&:hover:before {
+						background: transparent;
+						color: $color__text-dark !important;
+					}
+				}
+			}
+		}
+
+		.widget_layered_nav_filters {
+			li {
+				border-bottom: none;
+				padding: 0;
+
+				a {
+					&:before {
+						background: transparent;
+						color: $color__text-light !important;
+					}
+
+					&:hover:before {
+						background: transparent;
+						color: $color__text-dark !important;
+					}
+				}
+			}
+		}
+
+
 	}
 }

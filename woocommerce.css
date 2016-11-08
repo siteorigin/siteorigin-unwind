@@ -811,3 +811,21 @@
     .woocommerce .widget-area#secondary .widget_shopping_cart .buttons .button.checkout:hover {
       background: #00a76a;
       border-color: #00a76a; }
+
+.woocommerce .widget-area#secondary .widget_layered_nav li a:before {
+  background: transparent;
+  color: #adadad !important; }
+
+.woocommerce .widget-area#secondary .widget_layered_nav li a:hover:before {
+  background: transparent;
+  color: #2d2d2d !important; }
+
+.woocommerce .widget-area#secondary .widget_layered_nav_filters li {
+  border-bottom: none;
+  padding: 0; }
+  .woocommerce .widget-area#secondary .widget_layered_nav_filters li a:before {
+    background: transparent;
+    color: #adadad !important; }
+  .woocommerce .widget-area#secondary .widget_layered_nav_filters li a:hover:before {
+    background: transparent;
+    color: #2d2d2d !important; }
