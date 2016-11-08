@@ -226,6 +226,8 @@ textarea {
   font-family: "Merriweather", serif;
   font-size: 15px;
   font-size: 1em;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
   font-weight: 400;
   line-height: 1.8666; }
 
