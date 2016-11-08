@@ -149,5 +149,42 @@
 			}
 		}
 
+		.widget_shopping_cart {
+			li {
+				padding-bottom: 25px;
+				padding-top: 0;
+				border-bottom: none;
+
+				img {
+					float: left;
+					margin-left: 0;
+					margin-right: 20px;
+					width: 70px;
+				}
+
+				.product-title {
+					display: inline-block;
+					padding: 10px 0;
+				}
+
+				.quantity {
+					.amount {
+						color: $color__primary-accent;
+					}
+				}
+
+				.remove {
+					left: auto;
+					right: 0;
+					color: $color__text-light !important;
+
+					&:hover {
+						color: $color__text-dark !important;
+						background: transparent;
+					}
+				}
+			}
+		}
+
 	}
 }
