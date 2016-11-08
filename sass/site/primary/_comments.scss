@@ -190,7 +190,15 @@
 	}
 
 	.form-submit {
-		margin: 2em 0 0 0;
+		margin: 2em 0 20px;
 		clear: both;
+	}
+
+	.comment-subscription-form {
+		margin: 0 0 8px;
+		
+		label {
+			color: $color__text-medium;
+		}	
 	}
 }
