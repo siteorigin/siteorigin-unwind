@@ -22,11 +22,13 @@ jQuery( function($){
 	}
 
 	// Featured posts slider.
-	$( window ).load( function() {
-		$( '.featured-posts-slider' ).flexslider( {
-			animation: "slide",
-			controlNav: false
-		} );
+	$(document).ready( function() {
+		if ( $.isFunction( $.fn.flexslider ) ) {
+			$( '.featured-posts-slider' ).flexslider( {
+				animation: "slide",
+				controlNav: false
+			} );
+		}
 	} );
 
 	// Fullscreen search.
