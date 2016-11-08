@@ -655,7 +655,7 @@ a {
       visibility: visible; }
   .main-navigation li {
     float: left;
-    padding: 0 45px 0 0;
+    padding: 2px 45px 0 0;
     position: relative; }
     .main-navigation li a {
       text-transform: uppercase;
@@ -1620,8 +1620,8 @@ a {
   padding: .65em;
   padding-left: 0.89375em;
   position: relative;
-  top: .2em;
-  right: 4.5356em; }
+  right: 4.5356em;
+  top: .2em; }
   .content-area .search-form button[type="submit"] svg {
     fill: #626262;
     height: 1.2666em;
@@ -2244,3 +2244,5 @@ object {
             .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
               font-size: 11.7328px;
               font-size: 0.7333rem; } }
+
+/*# sourceMappingURL=sass/maps/style.css.map */
