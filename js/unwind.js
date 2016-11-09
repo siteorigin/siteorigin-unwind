@@ -47,6 +47,15 @@ jQuery( function($){
 		fullscreenSearch();
 		$( window ).resize( fullscreenSearch );
 
+		// Disable scrolling when fullscreen search is open
+		if ( $$.hasClass( 'close-search' ) ) {
+			$( 'body' ).css( 'margin-right', ( window.innerWidth - $( 'body' ).width() ) + 'px' );
+			$( 'body' ).css( 'overflow', 'hidden' );
+		} else {
+			$( 'body' ).css( 'overflow', '' );
+			$( 'body' ).css( 'margin-right', '' );
+		}
+
 		$( '#fullscreen-search' ).slideToggle( 'fast' );
 
 		$( '#fullscreen-search input' ).focus();
