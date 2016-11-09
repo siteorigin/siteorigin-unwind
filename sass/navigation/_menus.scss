@@ -152,6 +152,7 @@
 			.open {
 				display: none;
 			}
+
 			.close {
 				display: block;
 			}
@@ -160,16 +161,23 @@
 
 	.widget {
 		display: inline-block;
+
+		.sow-social-media-button {
+			color: inherit;
+			margin: 0;
+			padding: 0 0 0 6px;
+		}
 	}
 
 	.v-line {
+		background: $color__background-hr-dark;
+		display: inline-block;
+		height: 10px;
+		line-height: 60px;
+		margin: 0 8px;
 		width: 1px;
-		height: 20px;
-		border-left: 1px solid $color__background-hr-dark;
-		margin: 0 10px;
 	}
 }
-
 
 /*--------------------------------------------------------------
 ## Mobile Menu

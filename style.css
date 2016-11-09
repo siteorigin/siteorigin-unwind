@@ -709,11 +709,17 @@ a {
       display: block; }
   .social-search .widget {
     display: inline-block; }
+    .social-search .widget .sow-social-media-button {
+      color: inherit;
+      margin: 0;
+      padding: 0 0 0 6px; }
   .social-search .v-line {
-    width: 1px;
-    height: 20px;
-    border-left: 1px solid #ebebeb;
-    margin: 0 10px; }
+    background: #ebebeb;
+    display: inline-block;
+    height: 10px;
+    line-height: 60px;
+    margin: 0 8px;
+    width: 1px; }
 
 /*--------------------------------------------------------------
 ## Mobile Menu
