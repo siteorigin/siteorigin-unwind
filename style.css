@@ -1082,16 +1082,13 @@ a {
 #secondary .widget .widget-title,
 #colophon .widget .widget-title {
   color: #626262;
-  font-size: 13.8656px;
-  font-size: 0.8666rem;
+  font-size: 13px;
   line-height: normal;
   margin: 0 0 1.6em;
   text-transform: uppercase; }
-
-#secondary .widget ~ *,
-#colophon .widget ~ * {
-  font-size: 14.9328px;
-  font-size: 0.9333rem; }
+  #secondary .widget .widget-title ~ *,
+  #colophon .widget .widget-title ~ * {
+    font-size: 14px; }
 
 #secondary .widget a,
 #colophon .widget a {

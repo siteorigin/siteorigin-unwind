@@ -3,15 +3,15 @@
 
 	.widget-title {
 		color: $color__text-medium;
-		@include font-size(0.8666);
+		font-size: 13px; 
 		line-height: normal;
 		margin: 0 0 1.6em;
 		text-transform: uppercase;
-	}
-	
-	// Set the font size of elements below the widget title to 14px.
-	~ * {
-		@include font-size(0.9333);
+		
+		// Set the font size of elements below the widget title to 14px.
+		~ * {
+			font-size: 14px;
+		}		
 	}
 
 	a {
