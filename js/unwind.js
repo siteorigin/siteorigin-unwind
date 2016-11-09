@@ -73,6 +73,9 @@ jQuery( function($){
 	var $mobileMenu = false;
 	$( '#mobile-menu-button' ).click( function(e){
 		e.preventDefault();
+
+		$( '#search-button.close-search' ).trigger( 'click' );
+
 		var $$ = $(this);
 		$$.toggleClass( 'to-close' );
 		var $mobileMenuDiv = $( '#mobile-navigation' );
