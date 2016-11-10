@@ -1104,6 +1104,10 @@ a {
   #colophon .widget a:hover {
     color: #24c48a; }
 
+#secondary .widget p,
+#colophon .widget p {
+  margin-bottom: 24px; }
+
 #secondary .widget ul,
 #colophon .widget ul {
   list-style: none;
