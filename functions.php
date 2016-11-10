@@ -175,7 +175,7 @@ function siteorigin_unwind_widgets_init() {
 
 	if ( function_exists( 'is_woocommerce' ) ) {
 		register_sidebar( array(
-			'name' 			=> __( 'Shop', 'siteorigin-unwind' ),
+			'name' 			=> esc_html__( 'Shop', 'siteorigin-unwind' ),
 			'id' 			=> 'shop-sidebar',
 			'description' 	=> esc_html__( 'Displays on WooCommerce pages.', 'siteorigin-unwind' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
