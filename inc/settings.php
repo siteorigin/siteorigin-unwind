@@ -51,7 +51,7 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Dark Accent Color', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'The color used for link hovers and various other accents.', 'siteorigin-unwind' ),
 					'live' => true,
-				),				
+				),
 			)
 		),
 
@@ -81,13 +81,13 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Light Text Color', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Used for smaller details.', 'siteorigin-unwind' ),
 					'live' => true,
-				),	
+				),
 				'text_medium' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Medium Text Color', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Used for body text.', 'siteorigin-unwind' ),
 					'live' => true,
-				),							
+				),
 
 				'text_dark' => array(
 					'type' => 'color',
@@ -96,7 +96,7 @@ function siteorigin_unwind_settings_init() {
 					'live' => true,
 				),
 			),
-		),		
+		),
 
 		'masthead' => array(
 			'title' => esc_html__( 'Header', 'siteorigin-unwind' ),
@@ -114,7 +114,7 @@ function siteorigin_unwind_settings_init() {
 					'label'	=> esc_html__( 'Header Padding', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Top and bottom header padding.', 'siteorigin-unwind' ),
 					'live'	=> true,
-				),				
+				),
 				'bottom_margin'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Bottom Margin', 'siteorigin-unwind' ),
@@ -176,13 +176,29 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Featured image on single post.', 'siteorigin-unwind' ),
 				),
+				'display_date' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display date on single and archive posts.', 'siteorigin-unwind' ),
+				),
+				'display_category' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display categories on single and archive posts.', 'siteorigin-unwind' ),
+				),
+				'display_comments' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display comments link on single and archive posts.', 'siteorigin-unwind' ),
+				),
+				'display_tags' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display tags on single posts.', 'siteorigin-unwind' ),
+				),
 				'display_related_posts' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Related posts on single post.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Display related posts on single post.', 'siteorigin-unwind' ),
 				),
 				'display_author_box' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Author box on single post.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Display author box on single post.', 'siteorigin-unwind' ),
 				),
 			)
 		),
@@ -598,7 +614,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['fonts_text_light']  = '#adadad';
 	$defaults['fonts_text_medium'] = '#626262';
 	$defaults['fonts_text_dark']   = '#2d2d2d';
-	
+
 	// The masthead defaults.
 	$defaults['masthead_social_widget'] = '';
 	$defaults['masthead_padding'] = '60px';
@@ -620,6 +636,10 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_featured_single']       = true;
 	$defaults['blog_display_related_posts'] = true;
 	$defaults['blog_display_author_box']    = true;
+	$defaults['blog_display_date']          = true;
+	$defaults['blog_display_category']      = true;
+	$defaults['blog_display_comments']      = true;
+	$defaults['blog_display_tags']          = true;
 
 	// Footer settings.
 	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );
