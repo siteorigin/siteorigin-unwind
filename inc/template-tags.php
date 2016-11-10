@@ -168,7 +168,7 @@ if ( ! function_exists( 'siteorigin_unwind_entry_footer' ) ) :
  */
 function siteorigin_unwind_entry_footer() {
 	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) { ?>
+	if ( 'post' === get_post_type() && siteorigin_setting( 'blog_display_tags' ) ) { ?>
 		<span class="tags-list"><?php the_tags('', '', ''); ?></span>
 	<?php }
 
@@ -257,13 +257,16 @@ function siteorigin_unwind_post_meta() {
 		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
 	} ?>
 
-	<span class="entry-date"><?php the_time( 'M d, Y' ); ?></span>
+	<?php if ( siteorigin_setting( 'blog_display_date' ) ) { ?>
+		<span class="entry-date"><?php the_time( 'M d, Y' ); ?></span>
+	<?php } ?>
 
-	<?php if ( $categories_list && siteorigin_unwind_categorized_blog() ) {
+
+	<?php if ( $categories_list && siteorigin_unwind_categorized_blog() && siteorigin_setting( 'blog_display_category' ) ) {
 		printf( '<span class="entry-category">' . esc_html__( '%1$s', 'siteorigin-unwind' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 	} ?>
 
-	<?php if ( $comments ) {
+	<?php if ( $comments && siteorigin_setting( 'blog_display_comments' ) ) {
 		echo '<span class="entry-comments"><a href="' . get_comments_link() .'">'. $comments.'</a></span>';
 	} ?>
 
