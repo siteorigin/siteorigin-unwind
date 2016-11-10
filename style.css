@@ -1744,6 +1744,9 @@ a {
           .yarpp-related ol li:last-child,
           .related-posts-section ol li:last-child {
             margin-left: 0; } }
+      .yarpp-related ol li:only-child,
+      .related-posts-section ol li:only-child {
+        margin: 0; }
       .yarpp-related ol li a,
       .related-posts-section ol li a {
         text-decoration: none; }
