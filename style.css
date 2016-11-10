@@ -1131,6 +1131,16 @@ a {
   margin-bottom: 4em; }
 
 /*--------------------------------------------------------------
+## Categories Widget
+--------------------------------------------------------------*/
+.widget_categories {
+  color: #adadad; }
+  .widget_categories a {
+    color: #626262; }
+    .widget_categories a:hover {
+      color: #2d2d2d; }
+
+/*--------------------------------------------------------------
 ## Calendar Widget
 --------------------------------------------------------------*/
 .widget #wp-calendar {
@@ -1195,19 +1205,16 @@ a {
 /*--------------------------------------------------------------
 ## Recent Posts Extended Widget
 --------------------------------------------------------------*/
-#secondary .recent-posts-extended li,
-#colophon .recent-posts-extended li {
+.recent-posts-extended li {
   clear: both;
   padding-top: 3px; }
 
-#secondary .recent-posts-extended .rpwe-alignleft,
-#colophon .recent-posts-extended .rpwe-alignleft {
+.recent-posts-extended .rpwe-alignleft {
   float: left;
   margin-right: 15px;
   padding-bottom: 20px; }
 
-#secondary .recent-posts-extended h3,
-#colophon .recent-posts-extended h3 {
+.recent-posts-extended h3 {
   color: #626262;
   clear: none;
   font-size: 14px;
@@ -1215,12 +1222,10 @@ a {
   line-height: normal;
   margin: 0;
   padding-top: 3px; }
-  #secondary .recent-posts-extended h3 a:hover,
-  #colophon .recent-posts-extended h3 a:hover {
+  .recent-posts-extended h3 a:hover {
     color: #2d2d2d; }
 
-#secondary .recent-posts-extended time,
-#colophon .recent-posts-extended time {
+.recent-posts-extended time {
   color: #adadad;
   font-size: 12px; }
 
@@ -1248,6 +1253,14 @@ a {
       fill: #626262;
       height: 16px;
       width: 16px; }
+
+/*--------------------------------------------------------------
+## Social Media Icons (Jetpack)
+--------------------------------------------------------------*/
+.widget.widget_wpcom_social_media_icons_widget {
+  text-align: center; }
+  .widget.widget_wpcom_social_media_icons_widget li {
+    margin-right: 18px; }
 
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
@@ -2291,3 +2304,5 @@ object {
             .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
               font-size: 11.7328px;
               font-size: 0.7333rem; } }
+
+/*# sourceMappingURL=sass/maps/style.css.map */

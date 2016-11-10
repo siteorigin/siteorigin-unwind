@@ -55,6 +55,21 @@
 }
 
 /*--------------------------------------------------------------
+## Categories Widget
+--------------------------------------------------------------*/
+.widget_categories {
+	color: $color__text-light;
+	
+	a {
+		color: $color__text-medium;
+		
+		&:hover {
+			color: $color__text-dark;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
 ## Calendar Widget
 --------------------------------------------------------------*/
 .widget #wp-calendar {
@@ -150,8 +165,7 @@
 /*--------------------------------------------------------------
 ## Recent Posts Extended Widget
 --------------------------------------------------------------*/
-#secondary .recent-posts-extended,
-#colophon .recent-posts-extended {
+.recent-posts-extended {
 
 	li {
 		clear: both;
@@ -213,6 +227,16 @@
 				width: 16px;
 			}
 		}
+	}
+}
+/*--------------------------------------------------------------
+## Social Media Icons (Jetpack)
+--------------------------------------------------------------*/
+.widget.widget_wpcom_social_media_icons_widget {
+	text-align: center;
+	
+	li {
+		margin-right: 18px;
 	}
 }
 
