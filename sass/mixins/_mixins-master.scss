@@ -17,6 +17,18 @@
 	clear: both;
 }
 
+// Font smoothing.
+@mixin font-smoothing($value: antialiased) {
+  @if $value == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
 // Rem output with px fallback.
 @mixin font-size($sizeValue: 1) {
 	font-size: ($sizeValue * 16) * 1px;

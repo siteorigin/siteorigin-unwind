@@ -50,24 +50,26 @@ jQuery( function($){
 	$('table.shop_table').removeClass('shop_table_responsive');
 
 	// Product images slider.
-	$( window ).load( function() {
-		$( '.product-images-carousel' ).flexslider( {
-			animation: "slide",
-			controlNav: false,
-			animationLoop: false,
-			slideshow: false,
-			itemWidth: 100,
-			itemMargin: 20,
-			maxItems: 4,
-			asNavFor: '.product-images-slider'
-		} );
-		$( '.product-images-slider' ).flexslider( {
-			animation: "slide",
-			animationLoop: false,
-			slideshow: false,
-			controlNav: false,
-			directionNav: false
-		} );
+	$(document).ready( function() {
+		if ( $.isFunction( $.fn.flexslider ) ) {
+			$( '.product-images-carousel' ).flexslider( {
+				animation: "slide",
+				controlNav: false,
+				animationLoop: false,
+				slideshow: false,
+				itemWidth: 100,
+				itemMargin: 20,
+				maxItems: 4,
+				asNavFor: '.product-images-slider'
+			} );
+			$( '.product-images-slider' ).flexslider( {
+				animation: "slide",
+				animationLoop: false,
+				slideshow: false,
+				controlNav: false,
+				directionNav: false
+			} );
+		}
 	} );
 
 	// Convert the dropdown

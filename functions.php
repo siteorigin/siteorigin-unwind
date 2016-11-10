@@ -173,9 +173,9 @@ function siteorigin_unwind_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-	if ( siteorigin_unwind_is_woocommerce_active() ) {
+	if ( function_exists( 'is_woocommerce' ) ) {
 		register_sidebar( array(
-			'name' 			=> __( 'Shop', 'siteorigin-unwind' ),
+			'name' 			=> esc_html__( 'Shop', 'siteorigin-unwind' ),
 			'id' 			=> 'shop-sidebar',
 			'description' 	=> esc_html__( 'Displays on WooCommerce pages.', 'siteorigin-unwind' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -195,7 +195,7 @@ function siteorigin_unwind_scripts() {
 	wp_enqueue_style( 'siteorigin-unwind-style', get_stylesheet_uri() );
 
 	// Flexslider.
-	if ( ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) || ( siteorigin_unwind_is_woocommerce_active() && is_woocommerce() && is_product() ) ) {
+	if ( ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) || ( function_exists( 'is_woocommerce' ) && is_woocommerce() && is_product() ) ) {
 		wp_enqueue_style( 'siteorigin-unwind-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 		wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
 	}
@@ -212,14 +212,3 @@ function siteorigin_unwind_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'siteorigin_unwind_scripts' );
-
-if ( ! function_exists( 'siteorigin_unwind_is_woocommerce_active' ) ) :
-/**
- * Check that WooCommerce is active.
- *
- * @return bool
- */
-function siteorigin_unwind_is_woocommerce_active() {
-	return in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) );
-}
-endif;

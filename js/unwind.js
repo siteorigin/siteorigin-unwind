@@ -22,11 +22,13 @@ jQuery( function($){
 	}
 
 	// Featured posts slider.
-	$( window ).load( function() {
-		$( '.featured-posts-slider' ).flexslider( {
-			animation: "slide",
-			controlNav: false
-		} );
+	$(document).ready( function() {
+		if ( $.isFunction( $.fn.flexslider ) ) {
+			$( '.featured-posts-slider' ).flexslider( {
+				animation: "slide",
+				controlNav: false
+			} );
+		}
 	} );
 
 	// Fullscreen search.
@@ -45,6 +47,15 @@ jQuery( function($){
 		fullscreenSearch();
 		$( window ).resize( fullscreenSearch );
 
+		// Disable scrolling when fullscreen search is open
+		if ( $$.hasClass( 'close-search' ) ) {
+			$( 'body' ).css( 'margin-right', ( window.innerWidth - $( 'body' ).width() ) + 'px' );
+			$( 'body' ).css( 'overflow', 'hidden' );
+		} else {
+			$( 'body' ).css( 'overflow', '' );
+			$( 'body' ).css( 'margin-right', '' );
+		}
+
 		$( '#fullscreen-search' ).slideToggle( 'fast' );
 
 		$( '#fullscreen-search input' ).focus();
@@ -62,6 +73,9 @@ jQuery( function($){
 	var $mobileMenu = false;
 	$( '#mobile-menu-button' ).click( function(e){
 		e.preventDefault();
+
+		$( '#search-button.close-search' ).trigger( 'click' );
+
 		var $$ = $(this);
 		$$.toggleClass( 'to-close' );
 		var $mobileMenuDiv = $( '#mobile-navigation' );
