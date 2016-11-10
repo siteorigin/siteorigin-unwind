@@ -1108,16 +1108,24 @@ a {
 #colophon .widget ul {
   list-style: none;
   margin: 0; }
-  #secondary .widget ul li,
-  #colophon .widget ul li {
-    border-bottom: 1px solid #f4f4f4;
-    font-size: 13.8656px;
-    font-size: 0.8666rem;
-    line-height: normal;
-    padding: 1.25em 0; }
-    #secondary .widget ul li:first-of-type,
-    #colophon .widget ul li:first-of-type {
-      padding-top: 0; }
+
+#secondary .widget.widget_archive ul li, #secondary .widget.widget_categories ul li, #secondary .widget.widget_recent_comments ul li, #secondary .widget.widget_recent_entries ul li, #secondary .widget.widget_meta ul li,
+#colophon .widget.widget_archive ul li,
+#colophon .widget.widget_categories ul li,
+#colophon .widget.widget_recent_comments ul li,
+#colophon .widget.widget_recent_entries ul li,
+#colophon .widget.widget_meta ul li {
+  border-bottom: 1px solid #f4f4f4;
+  font-size: 13px;
+  line-height: normal;
+  padding: 1.25em 0; }
+  #secondary .widget.widget_archive ul li:first-of-type, #secondary .widget.widget_categories ul li:first-of-type, #secondary .widget.widget_recent_comments ul li:first-of-type, #secondary .widget.widget_recent_entries ul li:first-of-type, #secondary .widget.widget_meta ul li:first-of-type,
+  #colophon .widget.widget_archive ul li:first-of-type,
+  #colophon .widget.widget_categories ul li:first-of-type,
+  #colophon .widget.widget_recent_comments ul li:first-of-type,
+  #colophon .widget.widget_recent_entries ul li:first-of-type,
+  #colophon .widget.widget_meta ul li:first-of-type {
+    padding-top: 0; }
 
 #secondary .widget {
   margin-bottom: 4em; }
@@ -1185,6 +1193,38 @@ a {
   padding-top: 0.5em; }
 
 /*--------------------------------------------------------------
+## Recent Posts Extended Widget
+--------------------------------------------------------------*/
+#secondary .recent-posts-extended li,
+#colophon .recent-posts-extended li {
+  clear: both;
+  padding-top: 3px; }
+
+#secondary .recent-posts-extended .rpwe-alignleft,
+#colophon .recent-posts-extended .rpwe-alignleft {
+  float: left;
+  margin-right: 15px;
+  padding-bottom: 20px; }
+
+#secondary .recent-posts-extended h3,
+#colophon .recent-posts-extended h3 {
+  color: #626262;
+  clear: none;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0;
+  padding-top: 3px; }
+  #secondary .recent-posts-extended h3 a:hover,
+  #colophon .recent-posts-extended h3 a:hover {
+    color: #2d2d2d; }
+
+#secondary .recent-posts-extended time,
+#colophon .recent-posts-extended time {
+  color: #adadad;
+  font-size: 12px; }
+
+/*--------------------------------------------------------------
 ## Search Widget
 --------------------------------------------------------------*/
 #secondary .widget_search .search-form,
@@ -1193,40 +1233,38 @@ a {
   #secondary .widget_search .search-form input[type="search"],
   #colophon .widget_search .search-form input[type="search"] {
     box-sizing: border-box;
-    padding-right: 2em;
     max-width: 100%;
     width: 100%; }
   #secondary .widget_search .search-form button[type="submit"],
   #colophon .widget_search .search-form button[type="submit"] {
     border: none;
-    padding: .65em;
-    padding-left: 0.89375em;
+    padding: 7px;
+    padding-left: 8px;
     position: absolute;
-    top: .2em;
-    right: 1.269em; }
+    right: 15px;
+    top: 3px; }
     #secondary .widget_search .search-form button[type="submit"] svg,
     #colophon .widget_search .search-form button[type="submit"] svg {
       fill: #626262;
-      height: 1.2666em;
-      width: 1.3333em; }
+      height: 16px;
+      width: 16px; }
 
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
 #page .widget_tag_cloud a {
-  border: 1px solid #ebebeb;
+  border: 1px solid #f4f4f4;
   color: #626262;
   display: inline-block;
-  font-size: 14.9328px;
-  font-size: 0.9333rem;
-  margin: 0 .107em .45em 0;
-  padding: .7642em .9785em .6213em;
+  font-size: 15px;
   line-height: normal;
+  margin: 0 7px 10px 0;
+  padding: 8px 10px;
   text-decoration: none; }
   #page .widget_tag_cloud a:hover {
-    background: #626262;
-    border-color: #626262;
-    color: #fff; }
+    background: #24c48a;
+    border-color: #24c48a;
+    color: #fff !important; }
 
 #secondary .widget_tag_cloud,
 #colophon .widget_tag_cloud {
@@ -2253,5 +2291,3 @@ object {
             .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
               font-size: 11.7328px;
               font-size: 0.7333rem; } }
-
-/*# sourceMappingURL=sass/maps/style.css.map */

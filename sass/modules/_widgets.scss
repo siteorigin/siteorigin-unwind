@@ -1,9 +1,9 @@
-#secondary .widget, 
+#secondary .widget,
 #colophon .widget {
 
 	.widget-title {
 		color: $color__text-medium;
-		font-size: 13px; 
+		font-size: 13px;
 		line-height: normal;
 		margin: 0 0 1.6em;
 		text-transform: uppercase;
@@ -11,39 +11,46 @@
 		// Set the font size of elements below the widget title to 14px.
 		~ * {
 			font-size: 14px;
-		}		
+		}
 	}
 
 	a {
 		color: $color__text-medium;
 		text-decoration: none;
-		
+
 		&:hover {
 			color: $color__primary-accent;
-		} 
+		}
 	}
 
 	ul {
 		list-style: none;
 		margin: 0; 
-		
-		li {
-			border-bottom: 1px solid $color__background-hr; 
-			@include font-size(0.8666);
+	}
+
+	&.widget_archive,
+	&.widget_categories,
+	&.widget_recent_comments,
+	&.widget_recent_entries,
+	&.widget_meta {
+
+		ul li {
+			border-bottom: 1px solid $color__background-hr;
+			font-size: 13px; 
 			line-height: normal;
 			padding: 1.25em 0;
-			
+
 			&:first-of-type {
-				padding-top: 0; 
+				padding-top: 0;
 			}
 		}
-	}				
+	}
 }
 
 #secondary {
 
 	.widget {
-		margin-bottom: 4em; 
+		margin-bottom: 4em;
 	}
 }
 
@@ -53,27 +60,27 @@
 .widget #wp-calendar {
 	border: none;
 	margin: 0;
-	
-	caption { 
+
+	caption {
 		color: $color__text-dark;
-		font-family: $font__main; 
+		font-family: $font__main;
 		@include font-size(0.9333);
 		font-weight: 700;
-		padding-bottom: .4em; 
+		padding-bottom: .4em;
 		text-align: center;
 	}
 
 	tr:nth-child(2n+2) {
 		background: none;
-	}	
+	}
 
-	th, 
+	th,
 	td {
 		padding: 0;
 	}
 
 	thead {
-		border-bottom: 1px solid $color__background-hr; 
+		border-bottom: 1px solid $color__background-hr;
 
 		tr {
 			background: none;
@@ -96,29 +103,29 @@
 			padding-top: .7em;
 		}
 
-		td { 
+		td {
 			padding-bottom: .5em;
 			text-align: center;
-		}		
+		}
 	}
-	
+
 	tfoot {
 
-		#prev, 
+		#prev,
 		#next {
 			@include font-size(0.9333);
-			
+
 			a {
 				color: $color__primary-accent;
 
 				&:hover {
 					color: $color__primary-accent-dark;
-				}				
+				}
 			}
 		}
 
 		#next {
-			text-align: right;			
+			text-align: right;
 		}
 	}
 }
@@ -129,9 +136,9 @@
 .widget_recent_entries {
 
 	a {
-		padding-bottom: 0.5em; 
+		padding-bottom: 0.5em;
 	}
-	
+
 	.post-date {
 		color: $color__text-light;
 		display: block;
@@ -141,9 +148,46 @@
 }
 
 /*--------------------------------------------------------------
+## Recent Posts Extended Widget
+--------------------------------------------------------------*/
+#secondary .recent-posts-extended,
+#colophon .recent-posts-extended {
+
+	li {
+		clear: both;
+		padding-top: 3px; 
+	}
+
+	.rpwe-alignleft {
+	  	float: left;
+    	margin-right: 15px;
+    	padding-bottom: 20px;  
+	}
+
+	h3 {
+		color: $color__text-medium; 
+		clear: none;
+		font-size: 14px;
+		font-weight: normal;
+		line-height: normal;
+		margin: 0;
+		padding-top: 3px; 
+		
+		a:hover {
+			color: $color__text-dark;
+		}
+	}
+
+	time {
+		color: $color__text-light; 
+		font-size: 12px; 
+	}
+}
+
+/*--------------------------------------------------------------
 ## Search Widget
 --------------------------------------------------------------*/
-#secondary .widget_search, 
+#secondary .widget_search,
 #colophon .widget_search {
 
 	.search-form {
@@ -151,23 +195,22 @@
 
 		input[type="search"] {
 			box-sizing: border-box;
-			padding-right: 2em;
 			max-width: 100%;
-			width: 100%; 
+			width: 100%;
 		}
 
 		button[type="submit"] {
 			border: none;
-			padding: .65em;
-			padding-left: 0.89375em; 
+			padding: 7px;
+			padding-left: 8px;
 			position: absolute;
-			top: .2em;
-			right: 1.269em;
-			
+			right: 15px;
+			top: 3px;
+
 			svg {
 				fill: $color__text-medium;
-				height: 1.2666em;
-				width: 1.3333em;
+				height: 16px;
+				width: 16px;
 			}
 		}
 	}
@@ -179,24 +222,24 @@
 #page .widget_tag_cloud {
 
 	a {
-		border: 1px solid $color__border-button;
+		border: 1px solid $color__background-hr;
 		color: $color__text-medium;
 		display: inline-block;
-		@include font-size(0.9333); // 15px base.
-		margin: 0 .107em .45em 0;
-		padding: .7642em .9785em .6213em;
+		font-size: 15px;
 		line-height: normal;
+		margin: 0 7px 10px 0;
+		padding: 8px 10px;
 		text-decoration: none;
 
 		&:hover {
-			background: $color__text-medium;
-			border-color: $color__text-medium; 
-			color: #fff;
-		}		
+			background: $color__primary-accent;
+			border-color: $color__primary-accent;
+			color: #fff !important;
+		}
 	}
 }
 
-#secondary .widget_tag_cloud, 
+#secondary .widget_tag_cloud,
 #colophon .widget_tag_cloud {
 	@include font-size(0.9285); // 14px base.
 }
