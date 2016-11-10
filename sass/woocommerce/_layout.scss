@@ -3,7 +3,7 @@
 	margin: 0 0 0 (-$size__site-sidebar);
 	width: $size__site-main;
 
-	@at-root .no-active-sidebar.woocommerce-page #container {
+	@at-root .no-active-wc-sidebar.woocommerce-page #container {
 		float: none;
 		margin: 0;
 		width: auto;
@@ -21,7 +21,7 @@
 		float: right;
 		margin: 0 0 0 $size__site-sidebar;
 
-		@at-root .no-active-sidebar.woocommerce-page #content {
+		@at-root .no-active-wc-sidebar.woocommerce-page #content {
 			margin: 0;
 		}
 
