@@ -7,7 +7,7 @@
 		line-height: normal;
 		margin: 0 0 1.6em;
 		text-transform: uppercase;
-		
+
 		// Set the font size of elements below the widget title to 14px.
 		~ * {
 			font-size: 14px;
@@ -23,13 +23,24 @@
 		}
 	}
 
+	p {
+		margin-bottom: 24px;
+	}
+
 	ul {
 		list-style: none;
 		margin: 0;
+	}
 
-		li {
+	&.widget_archive,
+	&.widget_categories,
+	&.widget_recent_comments,
+	&.widget_recent_entries,
+	&.widget_meta {
+
+		ul li {
 			border-bottom: 1px solid $color__background-hr;
-			@include font-size(0.8666);
+			font-size: 13px;
 			line-height: normal;
 			padding: 1.25em 0;
 
@@ -44,6 +55,21 @@
 
 	.widget {
 		margin-bottom: 4em;
+	}
+}
+
+/*--------------------------------------------------------------
+## Categories Widget
+--------------------------------------------------------------*/
+.widget_categories {
+	color: $color__text-light;
+
+	a {
+		color: $color__text-medium;
+
+		&:hover {
+			color: $color__text-dark;
+		}
 	}
 }
 
@@ -141,6 +167,42 @@
 }
 
 /*--------------------------------------------------------------
+## Recent Posts Extended Widget
+--------------------------------------------------------------*/
+.recent-posts-extended {
+
+	li {
+		clear: both;
+		padding-top: 3px;
+	}
+
+	.rpwe-alignleft {
+	  	float: left;
+    	margin-right: 15px;
+    	padding-bottom: 20px;
+	}
+
+	h3 {
+		color: $color__text-medium;
+		clear: none;
+		font-size: 14px;
+		font-weight: normal;
+		line-height: normal;
+		margin: 0;
+		padding-top: 3px;
+
+		a:hover {
+			color: $color__text-dark;
+		}
+	}
+
+	time {
+		color: $color__text-light;
+		font-size: 12px;
+	}
+}
+
+/*--------------------------------------------------------------
 ## Search Widget
 --------------------------------------------------------------*/
 #secondary .widget_search,
@@ -169,6 +231,16 @@
 				width: 16px;
 			}
 		}
+	}
+}
+/*--------------------------------------------------------------
+## Social Media Icons (Jetpack)
+--------------------------------------------------------------*/
+.widget.widget_wpcom_social_media_icons_widget {
+	text-align: center;
+
+	li {
+		margin-right: 18px;
 	}
 }
 

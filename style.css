@@ -28,7 +28,7 @@ Tags: one-column, two-columns, custom-background, custom-colors, custom-header, 
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
 ----------------------------------------------------------------
-Please don't edit below, changes will be lost during the theme 
+Please don't edit below, changes will be lost during the theme
 update process. If you need to make CSS modifications try
 https://wordpress.org/plugins/so-css/.
 --------------------------------------------------------------*/
@@ -1103,23 +1103,45 @@ a {
   #colophon .widget a:hover {
     color: #24c48a; }
 
+#secondary .widget p,
+#colophon .widget p {
+  margin-bottom: 24px; }
+
 #secondary .widget ul,
 #colophon .widget ul {
   list-style: none;
   margin: 0; }
-  #secondary .widget ul li,
-  #colophon .widget ul li {
-    border-bottom: 1px solid #f4f4f4;
-    font-size: 13.8656px;
-    font-size: 0.8666rem;
-    line-height: normal;
-    padding: 1.25em 0; }
-    #secondary .widget ul li:first-of-type,
-    #colophon .widget ul li:first-of-type {
-      padding-top: 0; }
+
+#secondary .widget.widget_archive ul li, #secondary .widget.widget_categories ul li, #secondary .widget.widget_recent_comments ul li, #secondary .widget.widget_recent_entries ul li, #secondary .widget.widget_meta ul li,
+#colophon .widget.widget_archive ul li,
+#colophon .widget.widget_categories ul li,
+#colophon .widget.widget_recent_comments ul li,
+#colophon .widget.widget_recent_entries ul li,
+#colophon .widget.widget_meta ul li {
+  border-bottom: 1px solid #f4f4f4;
+  font-size: 13px;
+  line-height: normal;
+  padding: 1.25em 0; }
+  #secondary .widget.widget_archive ul li:first-of-type, #secondary .widget.widget_categories ul li:first-of-type, #secondary .widget.widget_recent_comments ul li:first-of-type, #secondary .widget.widget_recent_entries ul li:first-of-type, #secondary .widget.widget_meta ul li:first-of-type,
+  #colophon .widget.widget_archive ul li:first-of-type,
+  #colophon .widget.widget_categories ul li:first-of-type,
+  #colophon .widget.widget_recent_comments ul li:first-of-type,
+  #colophon .widget.widget_recent_entries ul li:first-of-type,
+  #colophon .widget.widget_meta ul li:first-of-type {
+    padding-top: 0; }
 
 #secondary .widget {
   margin-bottom: 4em; }
+
+/*--------------------------------------------------------------
+## Categories Widget
+--------------------------------------------------------------*/
+.widget_categories {
+  color: #adadad; }
+  .widget_categories a {
+    color: #626262; }
+    .widget_categories a:hover {
+      color: #2d2d2d; }
 
 /*--------------------------------------------------------------
 ## Calendar Widget
@@ -1184,6 +1206,33 @@ a {
   padding-top: 0.5em; }
 
 /*--------------------------------------------------------------
+## Recent Posts Extended Widget
+--------------------------------------------------------------*/
+.recent-posts-extended li {
+  clear: both;
+  padding-top: 3px; }
+
+.recent-posts-extended .rpwe-alignleft {
+  float: left;
+  margin-right: 15px;
+  padding-bottom: 20px; }
+
+.recent-posts-extended h3 {
+  color: #626262;
+  clear: none;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0;
+  padding-top: 3px; }
+  .recent-posts-extended h3 a:hover {
+    color: #2d2d2d; }
+
+.recent-posts-extended time {
+  color: #adadad;
+  font-size: 12px; }
+
+/*--------------------------------------------------------------
 ## Search Widget
 --------------------------------------------------------------*/
 #secondary .widget_search .search-form,
@@ -1207,6 +1256,14 @@ a {
       fill: #626262;
       height: 16px;
       width: 16px; }
+
+/*--------------------------------------------------------------
+## Social Media Icons (Jetpack)
+--------------------------------------------------------------*/
+.widget.widget_wpcom_social_media_icons_widget {
+  text-align: center; }
+  .widget.widget_wpcom_social_media_icons_widget li {
+    margin-right: 18px; }
 
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
@@ -1686,6 +1743,9 @@ a {
           .yarpp-related ol li:last-child,
           .related-posts-section ol li:last-child {
             margin-left: 0; } }
+      .yarpp-related ol li:only-child,
+      .related-posts-section ol li:only-child {
+        margin: 0; }
       .yarpp-related ol li a,
       .related-posts-section ol li a {
         text-decoration: none; }
