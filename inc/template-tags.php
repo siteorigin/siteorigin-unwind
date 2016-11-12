@@ -32,7 +32,7 @@ if ( ! function_exists( 'siteorigin_unwind_author_box' ) ) :
 function siteorigin_unwind_author_box() { ?>
 	<div class="author-box">
 		<div class="author-avatar">
-			<?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?>
+			<?php echo get_avatar( get_the_author_meta( 'ID' ), 120 ); ?>
 		</div>
 		<div class="author-description">
 			<span class="post-author-title">

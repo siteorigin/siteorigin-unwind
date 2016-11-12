@@ -1792,7 +1792,7 @@ a {
     color: #626262;
     font-size: 14.9328px;
     font-size: 0.9333rem;
-    padding-left: 100px; }
+    padding-left: 150px; }
     .author-box .author-description::after {
       clear: both;
       content: "";
@@ -2311,5 +2311,3 @@ object {
             .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
               font-size: 11.7328px;
               font-size: 0.7333rem; } }
-
-/*# sourceMappingURL=sass/maps/style.css.map */
