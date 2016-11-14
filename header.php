@@ -26,7 +26,7 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-unwind' ); ?></a>
 
-	<?php if ( ! siteorigin_page_setting( 'display_masthead', false ) ) : ?>
+	<?php if ( siteorigin_page_setting( 'display_masthead', true ) ) : ?>
 		<header id="masthead" class="site-header" role="banner">
 
 			<div class="top-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
