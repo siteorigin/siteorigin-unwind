@@ -1361,11 +1361,11 @@ a {
 .page-layout-full-width-sidebar .site-content .container {
   max-width: 100%; }
 
-.page-layout-no-masthead-margin .site-content {
-  padding-top: 0; }
+.page-layout-no-masthead-margin #masthead {
+  margin-bottom: 0; }
 
-.page-layout-no-footer-margin .site-content {
-  padding-bottom: 0; }
+.page-layout-no-footer-margin #colophon {
+  margin-top: 0; }
 
 /*--------------------------------------------------------------
 ## Site Masthead
@@ -2250,12 +2250,12 @@ object {
       z-index: 3; }
       .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .slide-entry-link {
         display: block;
+        height: 100%;
         left: 0;
         position: absolute;
         top: 0;
-        height: 100%;
-        z-index: 2;
-        width: 100%; }
+        width: 100%;
+        z-index: 2; }
       .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .slide-inner {
         display: table;
         height: 100%;
@@ -2311,3 +2311,5 @@ object {
             .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
               font-size: 11.7328px;
               font-size: 0.7333rem; } }
+
+/*# sourceMappingURL=sass/maps/style.css.map */
