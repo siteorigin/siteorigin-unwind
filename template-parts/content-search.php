@@ -15,7 +15,7 @@
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'siteorigin-unwind-medium-featured' ); ?>
+				<?php the_post_thumbnail( '360x238-crop' ); ?>
 			</a>
 		</div>
 	<?php endif; ?>
