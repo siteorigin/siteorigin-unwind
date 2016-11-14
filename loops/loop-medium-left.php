@@ -22,16 +22,37 @@ if ( have_posts() ) :
 
 	<?php 
 	/* Start the Loop */
-	while ( have_posts() ) : the_post();
+	while ( have_posts() ) : the_post(); ?>
 
-		/*
-		 * Include the Post-Format-specific template for the content.
-		 * If you want to override this in a child theme, then include a file
-		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-		 */
-		get_template_part( 'template-parts/content', is_search() ? 'search' : get_post_format() );
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php if ( has_post_thumbnail() ) : ?>
+				<div class="entry-thumbnail">
+					<a href="<?php the_permalink(); ?>">
+						<?php the_post_thumbnail( '360x238-crop' ); ?>
+					</a>
+				</div>
+			<?php endif; ?>
 
-	endwhile; ?>
+			<div class="entry-content">
+				<header class="entry-header">
+					<?php if ( 'post' === get_post_type() ) : ?>
+						<div class="entry-meta">
+							<?php siteorigin_unwind_post_meta(); ?>
+						</div><!-- .entry-meta -->
+					<?php
+					endif; ?>
+
+					<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+				</header><!-- .entry-header -->
+
+				<div class="entry-summary">
+					<?php the_excerpt(); ?>
+				</div><!-- .entry-summary -->
+			</div>
+
+		</article><!-- #post-## -->
+
+	<?php endwhile; ?>
 
 	</div><!-- .left-medium-loop -->
 
