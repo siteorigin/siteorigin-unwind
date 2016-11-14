@@ -1820,7 +1820,7 @@ a {
 ## Post Loop: Left Medium Thumbnail
 --------------------------------------------------------------*/
 .left-medium-loop article {
-  margin-bottom: 3.25em; }
+  margin-bottom: 60px; }
   .left-medium-loop article::after {
     clear: both;
     content: "";
