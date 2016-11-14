@@ -34,7 +34,7 @@ get_header(); ?>
 				siteorigin_unwind_author_box();
 			endif;
 
-			if ( siteorigin_setting( 'blog_display_related_posts' ) ) :
+			if ( ! is_attachment() && siteorigin_setting( 'blog_related_posts' ) ) :
 				siteorigin_unwind_related_posts( $post->ID );
 			endif;
 
