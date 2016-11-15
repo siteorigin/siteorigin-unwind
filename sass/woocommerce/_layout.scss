@@ -22,11 +22,15 @@
 		margin: 0 0 0 $size__site-sidebar;
 
 		@at-root .no-active-wc-sidebar.woocommerce-page #content {
+			float: none;
 			margin: 0;
+			width: auto;
 		}
 
 		@media (max-width: 768px) {
+			float: none;
 			margin: 0;
+			width: auto;
 		}
 	}
 
@@ -34,5 +38,10 @@
 		float: left;
 		padding-left: 0;
 		padding-right: 40px;
+
+		@media (max-width: 768px) {
+			float: none;
+			padding-right: 0;
+		}
 	}
 }
