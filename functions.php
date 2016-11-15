@@ -65,29 +65,6 @@ function siteorigin_unwind_setup() {
 		'primary' => esc_html__( 'Primary Menu', 'siteorigin-unwind' ),
 	) );
 
-	/**
-	 * Set the content width in pixels, based on the theme's design and stylesheet.
-	 *
-	 * Priority 0 to make it available to lower priority callbacks.
-	 *
-	 * @global int $content_width
-	 */
-	global $content_width;
-	if ( ! isset( $content_width ) ) {
-		$content_width = 848;
-	}			 
-	function siteorigin_unwind_adjust_content_width() {	 
-		global $content_width;
-		$page_settings = siteorigin_page_setting();
-
-	    if ( is_active_sidebar( 'main-sidebar' ) && ( $page_settings['layout'] == 'default' ) ) {
-	        $content_width = 848;
-	    } else {
-	    	$content_width = 1140;
-	    }
-	}
-	add_action( 'template_redirect', 'siteorigin_unwind_adjust_content_width' );  
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -161,6 +138,18 @@ function siteorigin_unwind_setup() {
 }
 endif; // siteorigin_unwind_setup.
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */			 
+function siteorigin_unwind_content_width() {	 
+	$GLOBALS['content_width']  = ( is_active_sidebar( 'main-sidebar' ) && ( $page_settings['layout'] == 'default' ) ) ? 848 : 1140;
+}
+add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );  
 
 /**
  * Register widget area.
