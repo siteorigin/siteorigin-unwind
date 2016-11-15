@@ -45,3 +45,17 @@
 		}
 	}
 }
+
+.woocommerce-page.single-product {
+	#container {
+		float: none;
+		margin: 0;
+		width: auto;
+	}
+
+	.container #content {
+		float: none;
+		margin: 0;
+		width: auto;
+	}
+}

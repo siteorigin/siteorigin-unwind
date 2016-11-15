@@ -37,6 +37,16 @@
       float: none;
       padding-right: 0; } }
 
+.woocommerce-page.single-product #container {
+  float: none;
+  margin: 0;
+  width: auto; }
+
+.woocommerce-page.single-product .container #content {
+  float: none;
+  margin: 0;
+  width: auto; }
+
 /*--------------------------------------------------------------
 # WooCommerce Archive
 --------------------------------------------------------------*/
