@@ -7,6 +7,14 @@
  * @license GPL 2.0
  */
 
+if ( get_post_format() == 'gallery' ) {
+	$gallery = get_post_gallery();
+	$content = siteorigin_unwind_strip_gallery( get_the_content() );
+	$content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
+} else {
+	$gallery = '';
+	$content = get_the_content();
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
@@ -20,14 +28,18 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
+	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) && $gallery != '' ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail() ?>
+		</div>
+	<?php else : ?>
+		<div class="flexslider gallery-format-slider">
+			<?php echo $gallery; ?>
 		</div>
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php the_content(); ?>
+		<?php echo $content; ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',

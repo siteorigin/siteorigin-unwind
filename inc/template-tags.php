@@ -381,10 +381,10 @@ if ( ! function_exists( 'siteorigin_unwind_tag_cloud' ) ) :
  */
 function siteorigin_unwind_tag_cloud( $args ) {
 
-    $args['unit'] = 'px';
-    $args['largest'] = 12;
-    $args['smallest'] = 12;
-    return $args;
+	$args['unit'] = 'px';
+	$args['largest'] = 12;
+	$args['smallest'] = 12;
+	return $args;
 }
 endif;
 add_filter( 'widget_tag_cloud_args', 'siteorigin_unwind_tag_cloud' );
@@ -463,5 +463,27 @@ function siteorigin_unwind_display_icon( $type ) {
 			break;
 
 	}
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_strip_gallery' ) ):
+/**
+ * Remove gallery
+ */
+function siteorigin_unwind_strip_gallery( $content ) {
+	preg_match_all( '/' . get_shortcode_regex() . '/s', $content, $matches, PREG_SET_ORDER );
+
+	if ( ! empty( $matches ) ) {
+		foreach ( $matches as $shortcode ) {
+			if ( 'gallery' === $shortcode[2] ) {
+				$pos = strpos( $content, $shortcode[0] );
+				if( false !== $pos ) {
+					return substr_replace( $content, '', $pos, strlen( $shortcode[0] ) );
+				}
+			}
+		}
+	}
+
+	return $content;
 }
 endif;
