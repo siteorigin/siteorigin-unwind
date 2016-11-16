@@ -145,11 +145,11 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
  * Priority 0 to make it available to lower priority callbacks.
  *
  * @global int $content_width
- */			 
-function siteorigin_unwind_content_width() {	 
-	$GLOBALS['content_width']  = ( is_active_sidebar( 'main-sidebar' ) && ( $page_settings['layout'] == 'default' ) ) ? 848 : 1140;
+ */
+function siteorigin_uwnind_content_width() {
+	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 848 );
 }
-add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );  
+add_action( 'after_setup_theme', 'siteorigin_uwnind_content_width', 0 );
 
 /**
  * Register widget area.
