@@ -45,9 +45,11 @@ function siteorigin_unwind_body_classes( $classes ) {
 	$classes[] = 'no-js';
 
 	// Check if the sidebar has widgets.
-	$wc_shop_sidebar = function_exists( 'is_woocommerce' ) && is_woocommerce() && is_active_sidebar( 'shop-sidebar' );
-	if ( ! is_active_sidebar( 'main-sidebar' ) && ! $wc_shop_sidebar ) {
+	if ( ! is_active_sidebar( 'main-sidebar' ) ) {
 		$classes[] = 'no-active-sidebar';
+	}
+	if ( function_exists( 'is_woocommerce' ) && ! is_active_sidebar( 'shop-sidebar' ) ) {
+		$classes[] = 'no-active-wc-sidebar';
 	}
 
 	// Add the page setting classes.

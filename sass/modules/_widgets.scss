@@ -7,7 +7,7 @@
 		line-height: normal;
 		margin: 0 0 1.6em;
 		text-transform: uppercase;
-		
+
 		// Set the font size of elements below the widget title to 14px.
 		~ * {
 			font-size: 14px;
@@ -24,12 +24,12 @@
 	}
 
 	p {
-		margin-bottom: 24px; 
+		margin-bottom: 24px;
 	}
 
 	ul {
 		list-style: none;
-		margin: 0; 
+		margin: 0;
 	}
 
 	&.widget_archive,
@@ -40,7 +40,7 @@
 
 		ul li {
 			border-bottom: 1px solid $color__background-hr;
-			font-size: 13px; 
+			font-size: 13px;
 			line-height: normal;
 			padding: 1.25em 0;
 
@@ -63,10 +63,10 @@
 --------------------------------------------------------------*/
 .widget_categories {
 	color: $color__text-light;
-	
+
 	a {
 		color: $color__text-medium;
-		
+
 		&:hover {
 			color: $color__text-dark;
 		}
@@ -173,32 +173,32 @@
 
 	li {
 		clear: both;
-		padding-top: 3px; 
+		padding-top: 3px;
 	}
 
 	.rpwe-alignleft {
 	  	float: left;
     	margin-right: 15px;
-    	padding-bottom: 20px;  
+    	padding-bottom: 20px;
 	}
 
 	h3 {
-		color: $color__text-medium; 
+		color: $color__text-medium;
 		clear: none;
 		font-size: 14px;
 		font-weight: normal;
 		line-height: normal;
 		margin: 0;
-		padding-top: 3px; 
-		
+		padding-top: 3px;
+
 		a:hover {
 			color: $color__text-dark;
 		}
 	}
 
 	time {
-		color: $color__text-light; 
-		font-size: 12px; 
+		color: $color__text-light;
+		font-size: 12px;
 	}
 }
 
@@ -238,7 +238,7 @@
 --------------------------------------------------------------*/
 .widget.widget_wpcom_social_media_icons_widget {
 	text-align: center;
-	
+
 	li {
 		margin-right: 18px;
 	}

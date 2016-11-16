@@ -381,9 +381,9 @@ if ( ! function_exists( 'siteorigin_unwind_tag_cloud' ) ) :
  */
 function siteorigin_unwind_tag_cloud( $args ) {
 
-    $args['unit'] = 'em';
-    $args['largest'] = 0.9285;
-    $args['smallest'] = 0.9285;
+    $args['unit'] = 'px';
+    $args['largest'] = 12;
+    $args['smallest'] = 12;
     return $args;
 }
 endif;

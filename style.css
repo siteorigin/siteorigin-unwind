@@ -563,14 +563,13 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"] {
-  font-size: 14.9328px;
-  font-size: 0.9333rem;
+  font-size: 14px;
   outline: none;
-  padding: .43em 1.7857em; }
+  padding: 5px 15px; }
 
 textarea {
   outline: none;
-  padding: 0.9285em 1.7857em;
+  padding: 5px 15px;
   width: 100%; }
 
 /*--------------------------------------------------------------
@@ -1337,7 +1336,7 @@ a {
 .site-content .widget-area {
   float: right;
   overflow: hidden;
-  padding-left: 3.3333em;
+  padding-left: 40px;
   width: 25.61404%; }
   @media (max-width: 768px) {
     .site-content .widget-area {

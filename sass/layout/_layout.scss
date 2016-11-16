@@ -7,7 +7,7 @@
 	padding: 0 25px;
 	position: relative;
 	width: 100%;
-	
+
 	@media (max-width: 480px) {
 		padding: 0 15px;
 	}
@@ -21,13 +21,13 @@
 	float: left;
 	margin: 0 (-$size__site-sidebar) 0 0;
 	width: $size__site-main;
-	
+
 	@at-root .no-active-sidebar .content-area {
 		float: none;
 		margin: 0;
-		width: auto;		
+		width: auto;
 	}
-	
+
 	@media (max-width: 768px) {
 		float: none;
 		margin: 0;
@@ -37,27 +37,27 @@
 
 .site-main {
 	margin: 0 $size__site-sidebar 0 0;
-	
+
 	@at-root .no-active-sidebar .site-main {
-		margin: 0;	
-	}	
-	
+		margin: 0;
+	}
+
 	@media (max-width: 768px) {
-		margin: 0;		
+		margin: 0;
 	}
 }
 
 .site-content .widget-area {
 	float: right;
 	overflow: hidden;
-	padding-left: 3.3333em;
+	padding-left: 40px;
 	width: $size__site-sidebar;
-	
+
 	@media (max-width: 768px) {
 		float: none;
 		margin-top: 5.3333em;
 		padding-left: 0;
-		width: 100%;		
+		width: 100%;
 	}
 }
 
