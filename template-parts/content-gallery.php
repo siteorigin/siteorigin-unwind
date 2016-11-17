@@ -28,9 +28,6 @@ $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content 
 			<?php the_post_thumbnail() ?>
 		</div>
 	<?php else : ?>
-		<pre>
-			<?php var_dump ( $gallery ); ?>
-		</pre>
 		<div class="flexslider gallery-format-slider">
 			<ul class="slides gallery-format-slides">
 				<?php foreach ( $gallery['src'] as $image ) : ?>

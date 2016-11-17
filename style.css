@@ -2309,3 +2309,53 @@ object {
             .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
               font-size: 11.7328px;
               font-size: 0.7333rem; } }
+
+/*--------------------------------------------------------------
+## Gallery format Slider
+--------------------------------------------------------------*/
+.flexslider.gallery-format-slider {
+  border: none; }
+  .flexslider.gallery-format-slider .flex-direction-nav a.flex-prev:before {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url("images/arrow-left.svg");
+    background-position: 13px 15px;
+    background-repeat: no-repeat;
+    opacity: 1; }
+  .flexslider.gallery-format-slider .flex-direction-nav a.flex-next:before {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url("images/arrow-right.svg");
+    background-position: 16px 15px;
+    background-repeat: no-repeat;
+    opacity: 1; }
+  .flexslider.gallery-format-slider .flex-direction-nav .flex-prev:hover,
+  .flexslider.gallery-format-slider .flex-direction-nav .flex-next:hover {
+    background: transparent !important; }
+  @media (max-width: 860px) {
+    .flexslider.gallery-format-slider .flex-direction-nav .flex-prev {
+      left: 0; }
+    .flexslider.gallery-format-slider .flex-direction-nav .flex-next {
+      right: 0; } }
+  .flexslider.gallery-format-slider .flex-direction-nav a {
+    height: 50px;
+    top: 49.166%;
+    margin-top: -25px;
+    width: 40px; }
+    .flexslider.gallery-format-slider .flex-direction-nav a:before {
+      background: none;
+      content: "";
+      height: 50px;
+      opacity: 0;
+      padding: 0;
+      -webkit-transition: 1s;
+      -moz-transition: 1s;
+      transition: 1s;
+      transition-property: opacity;
+      width: 40px; }
+  .flexslider.gallery-format-slider .flex-control-nav li {
+    padding: 0; }
+    .flexslider.gallery-format-slider .flex-control-nav li a {
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 9px;
+      width: 9px; }
+      .flexslider.gallery-format-slider .flex-control-nav li a.flex-active {
+        background-color: rgba(0, 0, 0, 0.9); }
