@@ -147,7 +147,7 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
  * @global int $content_width
  */
 function siteorigin_unwind_content_width() {
-	$GLOBALS['content_width']  = ( is_active_sidebar( 'main-sidebar' ) && ( $page_settings['layout'] == 'default' ) ) ? 848 : 1140;
+	$GLOBALS['content_width'] = apply_filters( 'siteorigin_uwnind_content_width', 1140 );
 }
 add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );
 
