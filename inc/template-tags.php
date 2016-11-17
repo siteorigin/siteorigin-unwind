@@ -466,7 +466,7 @@ function siteorigin_unwind_display_icon( $type ) {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_unwind_strip_gallery' ) ):
+if ( ! function_exists( 'siteorigin_unwind_strip_gallery' ) ) :
 /**
  * Remove gallery
  */
