@@ -7,7 +7,7 @@
 
 .page-header,
 .page article:first-of-type .entry-header {
-	margin-bottom: 2em; 
+	margin-bottom: 2em;
 }
 
 .entry {
@@ -413,7 +413,7 @@
 			margin: 0;
 			width: 34.452830188679%;
 
-			@media (max-width: 480px) {
+			@media (max-width: 640px) {
 				float: none;
 				margin-bottom: 1.8em;
 				text-align: center;
@@ -426,7 +426,7 @@
 			margin: 0;
 			width: 100%;
 
-			@media (max-width: 480px) {
+			@media (max-width: 640px) {
 				float: none;
 			}
 
@@ -434,7 +434,7 @@
 				justify-content: initial;
 				margin: .45em 0 .6em;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					justify-content: center;
 				}
 			}
@@ -444,7 +444,7 @@
 				margin: 0;
 				text-align: left;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					text-align: center;
 				}
 			}
@@ -459,7 +459,7 @@
 			.entry-content {
 				width: 64.009433962264%;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					width: 100%;
 				}
 			}
@@ -485,7 +485,7 @@
 			margin: 0;
 			width: 42.452830188679%;
 
-			@media (max-width: 480px) {
+			@media (max-width: 640px) {
 				float: none;
 				margin-bottom: 1.8em;
 				text-align: center;
@@ -498,7 +498,7 @@
 			margin: 0;
 			width: 100%;
 
-			@media (max-width: 480px) {
+			@media (max-width: 640px) {
 				float: none;
 			}
 
@@ -506,7 +506,7 @@
 				justify-content: initial;
 				margin: .45em 0 .6em;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					justify-content: center;
 				}
 			}
@@ -516,7 +516,7 @@
 				margin: 0;
 				text-align: left;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					text-align: center;
 				}
 			}
@@ -524,7 +524,7 @@
 			.entry-summary {
 				margin-top: 0.5em;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					text-align: center;
 				}
 			}
@@ -536,7 +536,7 @@
 			.entry-content {
 				width: 54.009433962264%;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					width: 100%;
 				}
 			}
@@ -548,7 +548,7 @@
 			.entry-thumbnail {
 				width: 34.452830188679%;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					float: none;
 					margin-bottom: 1.8em;
 					text-align: center;
@@ -562,7 +562,7 @@
 				.entry-content {
 					width: 64.009433962264%;
 
-					@media (max-width: 480px) {
+					@media (max-width: 640px) {
 						float: none;
 						width: 100%;
 					}
