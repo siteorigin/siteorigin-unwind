@@ -1829,7 +1829,7 @@ a {
   .left-medium-loop article .entry-thumbnail {
     float: left;
     margin: 0;
-    width: 34.452830188679%; }
+    width: 42.452830188679%; }
     @media (max-width: 640px) {
       .left-medium-loop article .entry-thumbnail {
         float: none;
@@ -1860,10 +1860,26 @@ a {
     .left-medium-loop article .entry-content .entry-summary {
       margin-top: 0.5em; }
   .left-medium-loop article.has-post-thumbnail .entry-content {
-    width: 64.009433962264%; }
+    width: 54.009433962264%; }
     @media (max-width: 640px) {
       .left-medium-loop article.has-post-thumbnail .entry-content {
         width: 100%; } }
+
+.no-active-sidebar .left-medium-loop article .entry-thumbnail {
+  width: 34.452830188679%; }
+  @media (max-width: 640px) {
+    .no-active-sidebar .left-medium-loop article .entry-thumbnail {
+      float: none;
+      margin-bottom: 1.8em;
+      text-align: center;
+      width: 100%; } }
+
+.no-active-sidebar .left-medium-loop article.has-post-thumbnail .entry-content {
+  width: 64.009433962264%; }
+  @media (max-width: 640px) {
+    .no-active-sidebar .left-medium-loop article.has-post-thumbnail .entry-content {
+      float: none;
+      width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Search Results Template
@@ -2379,5 +2395,3 @@ object {
             .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button, .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button, #page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button {
               font-size: 11.7328px;
               font-size: 0.7333rem; } }
-
-/*# sourceMappingURL=sass/maps/style.css.map */

@@ -411,7 +411,7 @@
 		.entry-thumbnail {
 			float: left;
 			margin: 0;
-			width: 34.452830188679%;
+			width: 42.452830188679%;
 
 			@media (max-width: 640px) {
 				float: none;
@@ -457,9 +457,36 @@
 		&.has-post-thumbnail {
 
 			.entry-content {
+				width: 54.009433962264%;
+
+				@media (max-width: 640px) {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.no-active-sidebar .left-medium-loop {
+	article {
+		.entry-thumbnail {
+			width: 34.452830188679%;
+
+			@media (max-width: 640px) {
+				float: none;
+				margin-bottom: 1.8em;
+				text-align: center;
+				width: 100%;
+			}
+		}
+
+		&.has-post-thumbnail {
+
+			.entry-content {
 				width: 64.009433962264%;
 
 				@media (max-width: 640px) {
+					float: none;
 					width: 100%;
 				}
 			}
