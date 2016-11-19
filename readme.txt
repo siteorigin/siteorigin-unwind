@@ -21,6 +21,10 @@ SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully respons
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+== Documentation ==
+
+[Documentation](https://siteorigin.com/unwind-documentation/) is available on siteorigin.com.
+
 == Support ==
 
 [Support](http://siteorigin.com/thread/) is available on siteorigin.com.
