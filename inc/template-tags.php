@@ -112,7 +112,7 @@ function siteorigin_unwind_comment( $comment, $args, $depth ) {
 		<div class="comment-box">
 			<?php if ( $type == 'comment' ) : ?>
 				<div class="avatar-container">
-					<?php echo get_avatar( get_comment_author_email(), 80 ) ?>
+					<?php echo get_avatar( get_comment_author_email(), 70 ) ?>
 				</div>
 			<?php endif; ?>
 

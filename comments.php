@@ -53,7 +53,6 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'callback' => 'siteorigin_unwind_comment',
-					'avatar_size' => 70,
 					'short_ping' => true,
 				) );
 			?>
