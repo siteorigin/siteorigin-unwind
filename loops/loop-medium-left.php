@@ -6,8 +6,6 @@
  * @since siteorigin-unwind 0.9
  * @license GPL 2.0
  */
-
-$post_class = siteorigin_setting( 'blog_search_fallback' ) ? 'has-fallback-image' : '';
 ?>
 
 <?php
@@ -25,14 +23,12 @@ if ( have_posts() ) :
 	/* Start the Loop */
 	while ( have_posts() ) : the_post(); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>
-			<?php if ( has_post_thumbnail() || siteorigin_setting( 'blog_search_fallback' ) ) : ?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="entry-thumbnail">
 					<a href="<?php the_permalink(); ?>">
 						<?php if ( has_post_thumbnail() ) : ?>
 							<?php the_post_thumbnail( '360x238-crop' ); ?>
-						<?php elseif ( siteorigin_setting( 'blog_search_fallback' ) ) : ?>
-							<?php echo wp_get_attachment_image( siteorigin_setting( 'blog_search_fallback' ), '360x238-crop', false, '' ); ?>
 						<?php endif; ?>
 					</a>
 				</div>
