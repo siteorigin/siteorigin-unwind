@@ -235,6 +235,10 @@
       font-family: "Lato", sans-serif;
       padding: 9px 9px 8px; }
 
+.woocommerce.archive .page-title {
+  font-size: 20px;
+  padding: 40px 0; }
+
 /*--------------------------------------------------------------
 # WooCommerce Single Product
 --------------------------------------------------------------*/

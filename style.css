@@ -988,6 +988,9 @@ a {
   .woocommerce .woocommerce-breadcrumb .breadcrumb_last {
     color: #adadad; }
 
+.woocommerce .woocommerce-breadcrumb {
+  margin-bottom: 35px; }
+
 .breadcrumbs.bcn a,
 .breadcrumbs.bcn span {
   padding: 0; }
