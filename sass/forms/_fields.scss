@@ -19,7 +19,7 @@ textarea {
 
 	&:focus {
 		color: $color__text-medium;
-		outline: none; 
+		outline: none;
 	}
 }
 
@@ -43,13 +43,13 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"] {
-	@include font-size(0.9333);
+	font-size: 14px;
 	outline: none;
-	padding: .43em 1.7857em;
+	padding: 5px 15px;
 }
 
 textarea {
 	outline: none;
-	padding: 0.9285em 1.7857em;
+	padding: 5px 15px;
 	width: 100%;
 }
