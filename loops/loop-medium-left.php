@@ -6,7 +6,6 @@
  * @since siteorigin-unwind 0.9
  * @license GPL 2.0
  */
-
 ?>
 
 <?php
@@ -20,7 +19,7 @@ if ( have_posts() ) :
 
 	<div class="left-medium-loop">
 
-	<?php 
+	<?php
 	/* Start the Loop */
 	while ( have_posts() ) : the_post(); ?>
 
@@ -28,7 +27,9 @@ if ( have_posts() ) :
 			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="entry-thumbnail">
 					<a href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail( '360x238-crop' ); ?>
+						<?php if ( has_post_thumbnail() ) : ?>
+							<?php the_post_thumbnail( '360x238-crop' ); ?>
+						<?php endif; ?>
 					</a>
 				</div>
 			<?php endif; ?>

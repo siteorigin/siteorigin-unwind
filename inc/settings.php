@@ -178,27 +178,32 @@ function siteorigin_unwind_settings_init() {
 				),
 				'display_date' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display date on single and archive posts.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Date on single and archive posts.', 'siteorigin-unwind' ),
 				),
 				'display_category' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display categories on single and archive posts.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Categories on single and archive posts.', 'siteorigin-unwind' ),
 				),
 				'display_comments' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display comments link on single and archive posts.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Comments link on single and archive posts.', 'siteorigin-unwind' ),
 				),
 				'display_tags' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display tags on single posts.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Tags on single posts.', 'siteorigin-unwind' ),
 				),
 				'display_related_posts' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display related posts on single post.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Related posts on single post.', 'siteorigin-unwind' ),
 				),
 				'display_author_box' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display author box on single post.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Author box on single post.', 'siteorigin-unwind' ),
+				),
+				'search_fallback' => array(
+					'type' => 'media',
+					'label' => __( 'Search fallback image', 'siteorigin-unwind' ),
+					'description' => esc_html__( "Used for blog posts with no featured image.", 'siteorigin-unwind' ),
 				),
 			)
 		),
@@ -788,6 +793,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_display_category']      = true;
 	$defaults['blog_display_comments']      = true;
 	$defaults['blog_display_tags']          = true;
+	$defaults['blog_search_fallback']       = false;
 
 	// Footer settings.
 	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );

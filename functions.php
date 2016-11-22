@@ -127,7 +127,7 @@ function siteorigin_unwind_setup() {
 
 	/**
 	 * Support SiteOrigin Page Builder plugin.
-	 */	
+	 */
 	add_theme_support( 'siteorigin-panels', array(
 	) );
 
@@ -187,7 +187,7 @@ function siteorigin_unwind_widgets_init() {
 			'before_title' 	=> '<h2 class="widget-title heading-strike">',
 			'after_title' 	=> '</h2>',
 		) );
-	}	
+	}
 }
 add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
 
@@ -220,11 +220,11 @@ add_action( 'wp_enqueue_scripts', 'siteorigin_unwind_scripts' );
 if ( ! function_exists( 'siteorigin_unwind_post_class_filter' ) ) :
 /**
 * Filter post classes as required.
-* @link https://codex.wordpress.org/Function_Reference/post_class. 
+* @link https://codex.wordpress.org/Function_Reference/post_class.
 */
 function siteorigin_unwind_post_class_filter( $classes ) {
 	$classes[] = 'post';
-	
+
 	// Resolves structured data issue in core. See https://core.trac.wordpress.org/ticket/28482.
 	if ( is_page() ) {
 		$class_key = array_search( 'hentry', $classes );
