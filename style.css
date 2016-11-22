@@ -481,6 +481,7 @@ input[type="submit"] {
   font-size: 0.8666rem;
   line-height: 1;
   letter-spacing: .1em;
+  outline-style: none;
   padding: 1em 1.923em;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
