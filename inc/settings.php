@@ -262,6 +262,7 @@ function siteorigin_unwind_font_settings( $settings ) {
 	$settings['fonts_details']  = array(
 		'name'    => 'Lato',
 		'weights' => array(
+			300,
 			400
 		),
 	);
