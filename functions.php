@@ -163,7 +163,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'main-sidebar',
-		'description'   => esc_html__( 'Visible on posts and pages that use the Default or Full Width, With Sidebar layout.' ),
+		'description'   => esc_html__( 'Visible on posts and pages that use the Default or Full Width, With Sidebar layout.', 'siteorigin-unwind' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
@@ -173,7 +173,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'siteorigin-unwind' ),
 		'id'            => 'footer-sidebar',
-		'description'   => esc_html__( 'A column will be automatically assigned to each widget inserted' ),
+		'description'   => esc_html__( 'A column will be automatically assigned to each widget inserted', 'siteorigin-unwind' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
