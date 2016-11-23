@@ -135,7 +135,10 @@ function siteorigin_unwind_setup() {
 	 */
 	add_theme_support( 'siteorigin-template-settings' );
 
-	if( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
+	/**
+	 * Add the theme's custom WooCommerce functions.
+	 */
+	if ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
 		require get_template_directory() . '/woocommerce/functions.php';
 	}
 }
