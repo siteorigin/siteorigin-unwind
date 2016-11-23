@@ -32,14 +32,19 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_jetpack_setup' );
  * Custom render function for Infinite Scroll.
  */
 function siteorigin_unwind_infinite_scroll_render() {
-	while ( have_posts() ) {
-		the_post();
-		if ( is_search() ) :
-		    get_template_part( 'template-parts/content', 'search' );
-		else :
-		    get_template_part( 'template-parts/content', get_post_format() );
-		endif;
-	}
+	if ( is_search() ) : ?>
+		<div class="left-medium-loop"><?php
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( 'template-parts/content', 'search' );
+			} ?>
+		</div><!-- .left-medium-loop --><?php
+	else :
+		while ( have_posts() ) {
+			the_post();
+			get_template_part( 'template-parts/content', get_post_format() );
+		}
+	endif;
 }
 
 /**

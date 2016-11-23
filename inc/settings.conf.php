@@ -9,12 +9,12 @@ return array(
 		'branding_accent_dark' => 'color__primary-accent-dark',
 
 		// Fonts.
-		'fonts_details' => 'font__detail',
+		'fonts_details' => 'font__details',
 		'fonts_main' => 'font__main',
 		'fonts_headings' => 'font__headings',
 		'fonts_text_light' => 'color__text-light',
 		'fonts_text_medium' => 'color__text-medium',
-		'fonts_text_dark' => 'color__text-dark',		
+		'fonts_text_dark' => 'color__text-dark',
 
 		// Header.
 		'masthead_padding' => 'masthead__padding',
