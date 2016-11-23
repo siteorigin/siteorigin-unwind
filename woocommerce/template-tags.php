@@ -6,28 +6,51 @@
  * @since siteorigin-unwind 0.9
  * @license GPL 2.0
  */
+if( ! function_exists( 'siteorigin_unwind_woocommerce_change_hooks' ) ) :
+function siteorigin_unwind_woocommerce_change_hooks() {
+	// Move the result count
+	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+	add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 35 );
 
-// Move the result count
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 35 );
+	// Use a custom upsell function to change number of items.
+	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+	add_action( 'woocommerce_after_single_product_summary', 'siteorigin_unwind_woocommerce_output_upsells', 15 );
 
-// Use a custom upsell function to change number of items.
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
-add_action( 'woocommerce_after_single_product_summary', 'siteorigin_unwind_woocommerce_output_upsells', 15 );
+	// Remove the cross sell display.
+	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
-// Remove the cross sell display.
-remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+	// Modify Archive Content
+	remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+	remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 5 );
+	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 15 );
+	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 
-// Modify Archive Content
-remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
-add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 5 );
-add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 15 );
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+	add_action( 'woocommerce_before_shop_loop_item_title', 'siteorigin_unwind_woocommerce_loop_item_image', 10 );
 
-add_action( 'woocommerce_before_shop_loop_item_title', 'siteorigin_unwind_woocommerce_loop_item_image', 10 );
+	remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+	remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 5 );
+	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 15 );
+	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+}
+endif;
+add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_change_hooks' );
+
+if( ! function_exists( 'siteorigin_unwind_woocommerce_product_hooks' ) ) :
+function siteorigin_unwind_woocommerce_product_hooks() {
+	// Archive title area
+	if ( !is_product() ) :
+		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+		add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 8, 0 );
+	endif;
+}
+endif;
+add_action('template_redirect', 'siteorigin_unwind_woocommerce_product_hooks' );
 
 // Quick view action hooks
 add_action( 'siteorigin_unwind_woocommerce_quick_view_images', 'siteorigin_unwind_woocommerce_quick_view_image', 5 );

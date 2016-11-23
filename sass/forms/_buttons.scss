@@ -10,7 +10,8 @@ input[type="submit"] {
 	font-family: $font__details;
 	@include font-size(0.8666);
 	line-height: 1;
-	letter-spacing: .1em; 
+	letter-spacing: .1em;
+	outline-style: none;
 	padding: 1em 1.923em;
 	@include transition(0.3s);
 	text-decoration: none;

@@ -178,27 +178,32 @@ function siteorigin_unwind_settings_init() {
 				),
 				'display_date' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display date on single and archive posts.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Date on single and archive posts.', 'siteorigin-unwind' ),
 				),
 				'display_category' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display categories on single and archive posts.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Categories on single and archive posts.', 'siteorigin-unwind' ),
 				),
 				'display_comments' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display comments link on single and archive posts.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Comments link on single and archive posts.', 'siteorigin-unwind' ),
 				),
 				'display_tags' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display tags on single posts.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Tags on single posts.', 'siteorigin-unwind' ),
 				),
 				'display_related_posts' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display related posts on single post.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Related posts on single post.', 'siteorigin-unwind' ),
 				),
 				'display_author_box' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display author box on single post.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Author box on single post.', 'siteorigin-unwind' ),
+				),
+				'search_fallback' => array(
+					'type' => 'media',
+					'label' => __( 'Search fallback image', 'siteorigin-unwind' ),
+					'description' => esc_html__( "Used for blog posts with no featured image.", 'siteorigin-unwind' ),
 				),
 			)
 		),
@@ -257,6 +262,7 @@ function siteorigin_unwind_font_settings( $settings ) {
 	$settings['fonts_details']  = array(
 		'name'    => 'Lato',
 		'weights' => array(
+			300,
 			400
 		),
 	);
@@ -302,11 +308,15 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	abbr,acronym {
 	border-bottom: 1px dotted ${fonts_text_medium};
 	}
+	table {
+	.font( ${fonts_details} );
+	}
 	table thead th {
 	color: ${fonts_text_dark};
 	}
 	.button,#page #infinite-handle span button,button,input[type="button"],input[type="reset"],input[type="submit"] {
 	color: ${fonts_text_dark};
+	.font( ${fonts_details} );
 	}
 	.button:hover,#page #infinite-handle span button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover {
 	border-color: ${branding_accent};
@@ -333,6 +343,7 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	.main-navigation li a {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	.main-navigation li:hover > a,.main-navigation li.focus > a {
 	color: ${fonts_text_dark};
@@ -348,6 +359,7 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	#mobile-navigation ul li a {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	#mobile-navigation ul li .dropdown-toggle .svg-icon-submenu path {
 	fill: ${fonts_text_medium};
@@ -358,6 +370,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.comment-navigation a:hover,.posts-navigation a:hover,.post-navigation a:hover {
 	border-color: ${branding_accent};
 	color: ${branding_accent};
+	}
+	.posts-navigation .nav-links,.comment-navigation .nav-links {
+	font-family: ${fonts_details} !important;
 	}
 	.pagination .page-numbers {
 	color: ${fonts_text_medium};
@@ -373,6 +388,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	background: ${branding_accent};
 	border-color: ${branding_accent};
 	}
+	.pagination .next,.pagination .prev {
+	.font( ${fonts_details} );
+	}
 	.post-navigation {
 	.font( ${fonts_main} );
 	}
@@ -384,9 +402,11 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	.post-navigation a .sub-title {
 	color: ${fonts_text_light};
+	.font( ${fonts_details} );
 	}
 	.breadcrumbs,.woocommerce .woocommerce-breadcrumb {
 	color: ${fonts_text_light};
+	.font( ${fonts_details} );
 	}
 	.breadcrumbs a,.woocommerce .woocommerce-breadcrumb a {
 	color: ${fonts_text_dark};
@@ -406,6 +426,15 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#secondary .widget a:hover,#colophon .widget a:hover {
 	color: ${branding_accent};
 	}
+	.widget_categories {
+	color: ${fonts_text_light};
+	}
+	.widget_categories a {
+	color: ${fonts_text_medium};
+	}
+	.widget_categories a:hover {
+	color: ${fonts_text_dark};
+	}
 	.widget #wp-calendar caption {
 	color: ${fonts_text_dark};
 	.font( ${fonts_main} );
@@ -419,6 +448,15 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.widget_recent_entries .post-date {
 	color: ${fonts_text_light};
 	}
+	.recent-posts-extended h3 {
+	color: ${fonts_text_medium};
+	}
+	.recent-posts-extended h3 a:hover {
+	color: ${fonts_text_dark};
+	}
+	.recent-posts-extended time {
+	color: ${fonts_text_light};
+	}
 	#secondary .widget_search .search-form button[type="submit"] svg,#colophon .widget_search .search-form button[type="submit"] svg {
 	fill: ${fonts_text_medium};
 	}
@@ -426,23 +464,30 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	color: ${fonts_text_medium};
 	}
 	#page .widget_tag_cloud a:hover {
-	background: ${fonts_text_medium};
-	border-color: ${fonts_text_medium};
+	background: ${branding_accent};
+	border-color: ${branding_accent};
 	}
 	#masthead {
 	margin-bottom: ${masthead_bottom_margin};
+	}
+	#masthead .site-branding .site-title {
+	.font( ${fonts_details} );
 	}
 	#masthead .site-branding .site-title a {
 	color: ${fonts_text_dark};
 	}
 	#fullscreen-search h3 {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	#fullscreen-search form input[type="search"] {
 	color: ${fonts_text_medium};
 	}
 	#fullscreen-search form button[type="submit"] svg {
 	fill: ${fonts_text_light};
+	}
+	.entry-meta,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta {
+	.font( ${fonts_details} );
 	}
 	.entry-meta span,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta span {
 	color: ${fonts_text_light};
@@ -458,6 +503,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	.more-link {
 	color: ${fonts_text_dark};
+	}
+	.more-link .more-text {
+	.font( ${fonts_details} );
 	}
 	.more-link .more-text:hover {
 	border: 2px solid ${branding_accent};
@@ -484,6 +532,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	.archive .container > .page-header,.search .container > .page-header {
 	margin-bottom: ${masthead_bottom_margin};
+	}
+	.archive .container > .page-header .page-title,.search .container > .page-header .page-title {
+	.font( ${fonts_details} );
 	}
 	.page-title {
 	color: ${fonts_text_dark};
@@ -523,12 +574,14 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	.comment-list li.comment .comment-reply-link {
 	color: ${fonts_text_dark};
+	.font( ${fonts_details} );
 	}
 	.comment-list li.comment .comment-reply-link:hover {
 	color: ${branding_accent};
 	}
 	.comment-reply-title #cancel-comment-reply-link {
 	color: ${fonts_text_light};
+	.font( ${fonts_details} );
 	}
 	.comment-reply-title #cancel-comment-reply-link:hover {
 	color: ${branding_accent};
@@ -541,6 +594,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	#commentform .comment-notes a:hover,#commentform .logged-in-as a:hover {
 	color: ${fonts_text_dark};
+	}
+	#commentform .comment-subscription-form label {
+	color: ${fonts_text_medium};
 	}
 	#colophon {
 	margin-top: ${footer_top_margin};
@@ -629,6 +685,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.woocommerce .woocommerce-pagination .page-numbers li .current {
 	background: ${branding_accent};
 	border-color: ${branding_accent};
+	}
+	.woocommerce .woocommerce-pagination .page-numbers li .next,.woocommerce .woocommerce-pagination .page-numbers li .prev {
+	.font( ${fonts_details} );
 	}
 	.woocommerce.single-product #content div.product span.onsale {
 	background-color: ${branding_accent};
@@ -722,22 +781,63 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover {
 	background-color: ${branding_accent};
 	}
-	.woocommerce .widget-area .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget-area .widget_price_filter .ui-slider .ui-slider-handle {
+	.woocommerce .widget-area#secondary .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget-area#secondary .widget_price_filter .ui-slider .ui-slider-handle {
 	background-color: ${branding_accent};
 	}
-	.woocommerce .widget-area .widget_price_filter .price_slider_amount .button {
+	.woocommerce .widget-area#secondary .widget_price_filter .price_slider_amount .button {
 	color: ${fonts_text_medium};
 	}
-	.woocommerce .widget-area .widget_price_filter .price_slider_amount .button:hover {
+	.woocommerce .widget-area#secondary .widget_price_filter .price_slider_amount .button:hover {
 	border-color: ${branding_accent_dark};
 	color: ${branding_accent_dark};
 	}
-	.woocommerce .widget-area .widget_product_tag_cloud a {
+	.woocommerce .widget-area#secondary .widget_product_tag_cloud a {
 	color: ${fonts_text_medium};
 	}
-	.woocommerce .widget-area .widget_product_tag_cloud a:hover {
-	background: ${fonts_text_medium};
-	border-color: ${fonts_text_medium};
+	.woocommerce .widget-area#secondary .widget_product_tag_cloud a:hover {
+	background: ${branding_accent};
+	border-color: ${branding_accent};
+	}
+	.woocommerce .widget-area#secondary .widget_products .product_list_widget li .amount,.woocommerce .widget-area#secondary .widget_recent_reviews .product_list_widget li .amount,.woocommerce .widget-area#secondary .widget_top_rated_products .product_list_widget li .amount {
+	color: ${branding_accent};
+	}
+	.woocommerce .widget-area#secondary .widget_products .product_list_widget li del,.woocommerce .widget-area#secondary .widget_recent_reviews .product_list_widget li del,.woocommerce .widget-area#secondary .widget_top_rated_products .product_list_widget li del {
+	color: ${fonts_text_light};
+	}
+	.woocommerce .widget-area#secondary .widget_products .product_list_widget li del .amount,.woocommerce .widget-area#secondary .widget_recent_reviews .product_list_widget li del .amount,.woocommerce .widget-area#secondary .widget_top_rated_products .product_list_widget li del .amount {
+	color: ${fonts_text_light};
+	}
+	.woocommerce .widget-area#secondary .widget_product_search .search-form button[type="submit"] svg {
+	fill: ${fonts_text_medium};
+	}
+	.woocommerce .widget-area#secondary .widget_shopping_cart li .quantity .amount {
+	color: ${branding_accent};
+	}
+	.woocommerce .widget-area#secondary .widget_shopping_cart li .remove {
+	color: ${fonts_text_light} !important;
+	}
+	.woocommerce .widget-area#secondary .widget_shopping_cart li .remove:hover {
+	color: ${fonts_text_dark} !important;
+	}
+	.woocommerce .widget-area#secondary .widget_shopping_cart .buttons .button.checkout {
+	background: ${branding_accent};
+	border-color: ${branding_accent};
+	}
+	.woocommerce .widget-area#secondary .widget_shopping_cart .buttons .button.checkout:hover {
+	background: ${branding_accent_dark};
+	border-color: ${branding_accent_dark};
+	}
+	.woocommerce .widget-area#secondary .widget_layered_nav li a:before {
+	color: ${fonts_text_light} !important;
+	}
+	.woocommerce .widget-area#secondary .widget_layered_nav li a:hover:before {
+	color: ${fonts_text_dark} !important;
+	}
+	.woocommerce .widget-area#secondary .widget_layered_nav_filters li a:before {
+	color: ${fonts_text_light} !important;
+	}
+	.woocommerce .widget-area#secondary .widget_layered_nav_filters li a:hover:before {
+	color: ${fonts_text_dark} !important;
 	}';
 	return $css;
 }
@@ -788,6 +888,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_display_category']      = true;
 	$defaults['blog_display_comments']      = true;
 	$defaults['blog_display_tags']          = true;
+	$defaults['blog_search_fallback']       = false;
 
 	// Footer settings.
 	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );

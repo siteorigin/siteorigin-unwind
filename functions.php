@@ -15,10 +15,9 @@ define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
 // Load theme specific files.
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/jetpack.php';
-include get_template_directory() . '/inc/settings/settings.php';
+require get_template_directory() . '/inc/settings/settings.php';
 require get_template_directory() . '/inc/settings.php';
 require get_template_directory() . '/inc/template-tags.php';
-include get_template_directory() . '/woocommerce/functions.php';
 
 if ( ! function_exists( 'siteorigin_unwind_setup' ) ) :
 /**
@@ -127,7 +126,7 @@ function siteorigin_unwind_setup() {
 
 	/**
 	 * Support SiteOrigin Page Builder plugin.
-	 */	
+	 */
 	add_theme_support( 'siteorigin-panels', array(
 	) );
 
@@ -135,6 +134,13 @@ function siteorigin_unwind_setup() {
 	 * Use the SiteOrigin archive theme settings.
 	 */
 	add_theme_support( 'siteorigin-template-settings' );
+
+	/**
+	 * Add the theme's custom WooCommerce functions.
+	 */
+	if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
+		require get_template_directory() . '/woocommerce/functions.php';
+	}
 }
 endif; // siteorigin_unwind_setup.
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
@@ -146,10 +152,10 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
  *
  * @global int $content_width
  */
-function siteorigin_uwnind_content_width() {
+function siteorigin_unwind_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'siteorigin_uwnind_content_width', 1140 );
 }
-add_action( 'after_setup_theme', 'siteorigin_uwnind_content_width', 0 );
+add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );
 
 /**
  * Register widget area.
@@ -160,7 +166,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'siteorigin-unwind' ),
 		'id'            => 'main-sidebar',
-		'description'   => esc_html__( 'Visible on posts and pages that use the Default or Full Width, With Sidebar layout.' ),
+		'description'   => esc_html__( 'Visible on posts and pages that use the Default or Full Width, With Sidebar layout.', 'siteorigin-unwind' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
@@ -170,7 +176,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'siteorigin-unwind' ),
 		'id'            => 'footer-sidebar',
-		'description'   => esc_html__( 'A column will be automatically assigned to each widget inserted' ),
+		'description'   => esc_html__( 'A column will be automatically assigned to each widget inserted', 'siteorigin-unwind' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
@@ -187,7 +193,7 @@ function siteorigin_unwind_widgets_init() {
 			'before_title' 	=> '<h2 class="widget-title heading-strike">',
 			'after_title' 	=> '</h2>',
 		) );
-	}	
+	}
 }
 add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
 
@@ -199,9 +205,12 @@ function siteorigin_unwind_scripts() {
 	wp_enqueue_style( 'siteorigin-unwind-style', get_stylesheet_uri() );
 
 	// Flexslider.
-	if ( ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) || ( function_exists( 'is_woocommerce' ) && is_woocommerce() && is_product() ) ) {
-		wp_enqueue_style( 'siteorigin-unwind-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
-		wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
+	wp_register_style( 'siteorigin-unwind-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
+	wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
+
+	if ( ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) || ( function_exists( 'is_woocommerce' ) && is_woocommerce() && is_product() ) || ( is_single() && has_post_format( 'gallery' ) ) ) {
+		wp_enqueue_style( 'siteorigin-unwind-flexslider' );
+		wp_enqueue_script( 'jquery-flexslider' );
 	}
 
 	// Theme JavaScript.
@@ -217,14 +226,22 @@ function siteorigin_unwind_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'siteorigin_unwind_scripts' );
 
+/**
+ * Enqueue the Flexslider scripts and styles.
+ */
+function siteorigin_unwind_enqueue_flexslider() {
+	wp_enqueue_style( 'siteorigin-unwind-flexslider' );
+	wp_enqueue_script( 'jquery-flexslider' );
+}
+
 if ( ! function_exists( 'siteorigin_unwind_post_class_filter' ) ) :
 /**
 * Filter post classes as required.
-* @link https://codex.wordpress.org/Function_Reference/post_class. 
+* @link https://codex.wordpress.org/Function_Reference/post_class.
 */
 function siteorigin_unwind_post_class_filter( $classes ) {
 	$classes[] = 'post';
-	
+
 	// Resolves structured data issue in core. See https://core.trac.wordpress.org/ticket/28482.
 	if ( is_page() ) {
 		$class_key = array_search( 'hentry', $classes );

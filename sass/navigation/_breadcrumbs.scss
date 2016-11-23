@@ -2,21 +2,21 @@
 .breadcrumbs,
 .woocommerce .woocommerce-breadcrumb {
 	color: $color__text-light;
-	font-family: $font__details; 
-	font-size: 12px; 
+	font-family: $font__details;
+	font-size: 12px;
 	line-height: normal;
-	margin-bottom: 24px; 
+	margin-bottom: 24px;
 	text-transform: uppercase;
-	
+
 	a {
 		color: $color__text-dark;
-		
+
 		&:hover {
 			color: $color__primary-accent;
 		}
 	}
 
-	a, 
+	a,
 	span {
 		padding: 0 4px;
 	}
@@ -26,9 +26,13 @@
 	}
 }
 
+.woocommerce .woocommerce-breadcrumb {
+	margin-bottom: 35px;
+}
+
 // Breadcrumb NavXT.
 .breadcrumbs.bcn {
-	
+
 	a,
 	span {
 		padding: 0;

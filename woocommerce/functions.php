@@ -7,13 +7,8 @@
  * @license GPL 2.0
  */
 
-function siteorigin_unwind_woocommerce_change_hooks() {
-
-	// Load template related functions.
-	include get_template_directory() . '/woocommerce/template-tags.php';
-
-}
-add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_change_hooks' );
+// Load template related functions.
+include get_template_directory() . '/woocommerce/template-tags.php';
 
 function siteorigin_unwind_woocommerce_add_to_cart_text( $text ) {
 	return $text;

@@ -7,7 +7,7 @@
 
 .page-header,
 .page article:first-of-type .entry-header {
-	margin-bottom: 2em; 
+	margin-bottom: 2em;
 }
 
 .entry {
@@ -29,7 +29,7 @@
 	span {
 		color: $color__text-light;
 		@include font-size(0.8);
-		
+
 		@media (max-width: 480px) {
 			@include font-size(0.7333);
 		}
@@ -59,7 +59,7 @@
 	line-height: normal;
 	margin: 0.5em 0 0;
 	text-align: center;
-	
+
 	@media (max-width: 480px) {
 		@include font-size(1.6);
 	}
@@ -135,10 +135,10 @@
 	}
 
 	.page-links-title ~ a span {
-		background: #fff; 
+		background: #fff;
 		border-color: $color__border-button;
 		color: $color__text-medium;
-		
+
 		&:hover {
 			background: $color__primary-accent;
 			border: 1px solid $color__primary-accent;
@@ -197,9 +197,9 @@
 }
 
 .archive .taxonomy-description {
-	margin-top: .4666em; 
+	margin-top: .4666em;
 	text-align: center;
-	
+
 	p:last-of-type,
 	p:only-of-type {
 		margin-bottom: 0;
@@ -291,18 +291,18 @@
 
 			&:first-child {
 				margin-right: 3.5%;
-				
+
 				@media (max-width: 480px) {
-					margin-right: 0; 
+					margin-right: 0;
 				}
 			}
 
 			&:last-child {
 				margin-left: 3.5%;
-				
+
 				@media (max-width: 480px) {
-					margin-left: 0; 
-				}				
+					margin-left: 0;
+				}
 			}
 
 			&:only-child {
@@ -413,7 +413,7 @@
 			margin: 0;
 			width: 42.452830188679%;
 
-			@media (max-width: 480px) {
+			@media (max-width: 640px) {
 				float: none;
 				margin-bottom: 1.8em;
 				text-align: center;
@@ -426,7 +426,7 @@
 			margin: 0;
 			width: 100%;
 
-			@media (max-width: 480px) {
+			@media (max-width: 640px) {
 				float: none;
 			}
 
@@ -434,7 +434,7 @@
 				justify-content: initial;
 				margin: .45em 0 .6em;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					justify-content: center;
 				}
 			}
@@ -444,7 +444,7 @@
 				margin: 0;
 				text-align: left;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					text-align: center;
 				}
 			}
@@ -459,8 +459,140 @@
 			.entry-content {
 				width: 54.009433962264%;
 
-				@media (max-width: 480px) {
+				@media (max-width: 640px) {
 					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.no-active-sidebar .left-medium-loop {
+	article {
+		.entry-thumbnail {
+			width: 34.452830188679%;
+
+			@media (max-width: 640px) {
+				float: none;
+				margin-bottom: 1.8em;
+				text-align: center;
+				width: 100%;
+			}
+		}
+
+		&.has-post-thumbnail {
+
+			.entry-content {
+				width: 64.009433962264%;
+
+				@media (max-width: 640px) {
+					float: none;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Search Results Template
+--------------------------------------------------------------*/
+.search-results {
+
+	article {
+		@include clearfix;
+		margin-bottom: 60px;
+
+		@media (max-width: 1024px) {
+			margin-bottom: 1.4667em;
+		}
+
+		.entry-thumbnail {
+			float: left;
+			margin: 0;
+			width: 42.452830188679%;
+
+			@media (max-width: 640px) {
+				float: none;
+				margin-bottom: 1.8em;
+				text-align: center;
+				width: 100%;
+			}
+		}
+
+		.entry-content {
+			float: right;
+			margin: 0;
+			width: 100%;
+
+			@media (max-width: 640px) {
+				float: none;
+			}
+
+			.entry-meta {
+				justify-content: initial;
+				margin: .45em 0 .6em;
+
+				@media (max-width: 640px) {
+					justify-content: center;
+				}
+			}
+
+			.entry-title {
+				@include font-size(1.6);
+				margin: 0;
+				text-align: left;
+
+				@media (max-width: 640px) {
+					text-align: center;
+				}
+			}
+
+			.entry-summary {
+				margin-top: 0.5em;
+
+				@media (max-width: 640px) {
+					text-align: center;
+				}
+			}
+		}
+
+		&.has-post-thumbnail,
+		&.has-fallback-image {
+
+			.entry-content {
+				width: 54.009433962264%;
+
+				@media (max-width: 640px) {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&.no-active-sidebar {
+		article {
+			.entry-thumbnail {
+				width: 34.452830188679%;
+
+				@media (max-width: 640px) {
+					float: none;
+					margin-bottom: 1.8em;
+					text-align: center;
+					width: 100%;
+				}
+			}
+
+			&.has-post-thumbnail,
+			&.has-fallback-image {
+
+				.entry-content {
+					width: 64.009433962264%;
+
+					@media (max-width: 640px) {
+						float: none;
+						width: 100%;
+					}
 				}
 			}
 		}
