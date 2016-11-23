@@ -39,13 +39,13 @@ jQuery( function($){
 
 	}
 
-	function triggerQuantityButtons() {
-		$('table.shop_table, .product form.cart').each(function(i, el) {
+	$.fn.triggerQuantityButtons = function() {
+		return this.each( function(i, el) {
 			quantityButtons(el);
 		});
 	}
 
-	triggerQuantityButtons();
+	$('table.shop_table, .product form.cart').triggerQuantityButtons();
 
 	$('table.shop_table').removeClass('shop_table_responsive');
 
@@ -117,15 +117,18 @@ jQuery( function($){
 		var $container = '#quick-view-container';
 		var $content = '#product-quick-view';
 
-		var id = $(this).attr('data-product-id');
+		var id = $(this).attr( 'data-product-id' );
 
 		$.post(
 			so_unwind_data.ajaxurl,
 			{ action: 'so_product_quick_view', product_id: id },
 			function( data ) {
-				$(document).find($container).find($content).html(data);
+				$(document).find( $container ).find( $content ).html(data);
+				$(document).find( '#product-quick-view .cart' ).triggerQuantityButtons();
 			}
 		);
+
+
 
 		if( $(document).find( $container ).is(':hidden') ) {
 			$(document).find( $container ).find( $content ).empty();
@@ -134,10 +137,10 @@ jQuery( function($){
 		$(document).find($container).fadeIn(300);
 
 		$(window).mouseup( function (e) {
-		    var container = $($content);
-		    if ( ( !container.is(e.target) && container.has(e.target).length === 0 ) || $( '.quickview-close-icon' ) ) {
-		        $($container).fadeOut(300);
-		    }
+			var container = $($content);
+			if ( ( !container.is(e.target) && container.has(e.target).length === 0 ) || $( '.quickview-close-icon' ).is(e.target) ) {
+				$($container).fadeOut(300);
+			}
 		});
 
 	} );

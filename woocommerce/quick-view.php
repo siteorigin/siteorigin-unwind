@@ -1,6 +1,6 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+// if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 while ( have_posts() ) : the_post();
 
@@ -26,7 +26,7 @@ while ( have_posts() ) : the_post();
 
 			<div class="product-info-wrapper">
 
-				<span class="quickview-close-icon">X</span>
+				<span class="quickview-close-icon">+</span>
 
 				<a href="<?php the_permalink(); ?>">
 					<?php

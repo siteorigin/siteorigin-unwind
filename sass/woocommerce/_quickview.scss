@@ -41,12 +41,13 @@
 
 		.quickview-close-icon {
 			position: absolute;
-			right: 0;
-			top: 0;
-			margin: 10px 10px 0 0;
-			color: rgba(0,0,0,0.8);
-			font-size: 1em;
+			right: 20px;
+			top: 20px;
+			line-height: 0.5;
+			color: rgba(0,0,0,0.5);
+			font-size: 30px;
 			cursor: pointer;
+			@include transform( rotate(45deg) );
 		}
 
 		.product-content-wrapper {
@@ -80,15 +81,16 @@
 					text-decoration: none;
 				}
 
+				.product_title {
+					text-align: left;
+					margin-bottom: 10px;
+				}
+
 				.price {
-					margin: 0;
+					margin: 15px 0;
 					color: $color__primary-accent;
 					font-family: $font__details;
-					font-size: 1.2em;
-					line-height: 2.5;
-					position: absolute;
-					top: 22px;
-					right: 20px;
+					font-size: 20px;
 
 					del {
 						opacity: 0.5;
@@ -96,6 +98,21 @@
 
 					ins {
 						background: none;
+					}
+				}
+
+				.price {
+					font-size: 20px;
+					margin-bottom: 15px;
+
+					del,
+					del .amount {
+						color: $color__text-light;
+					}
+
+					.amount,
+					ins {
+						color: $color__primary-accent;
 					}
 				}
 
@@ -116,8 +133,70 @@
 					}
 				}
 
-				.single_add_to_cart_button {
-					float: left;
+				.quantity.button-controls {
+					@include clearfix;
+
+					.qty {
+						-moz-appearance: textfield;
+						border-color: $color__text-light;
+						border-radius: 0;
+						border-width: 1px;
+						color: $color__text-medium;
+						float: left;
+						height: 40px;
+						padding: 0;
+						width: 40px;
+
+						&::-webkit-inner-spin-button,
+						&::-webkit-outer-spin-button {
+							-webkit-appearance: none;
+							margin: 0;
+						}
+					}
+
+					.add,
+					.subtract {
+						background: #f9f9f9;
+						border-color: $color__text-light;
+						border-radius: 0;
+						border-width: 1px;
+						float: left;
+						height: 40px;
+						padding: 6px 10px;
+						width: 40px;
+
+						&:hover {
+							background: darken( #f9f9f9, 20%);
+						}
+					}
+
+					.subtract {
+						border-right: none;
+					}
+
+					.add {
+						border-left: none;
+					}
+				}
+
+				button {
+					background-color: $color__primary-accent;
+					border-radius: 0;
+					font-size: 14px;
+					margin-left: 15px;
+					outline: none;
+					padding: 13px 20px;
+					text-transform: uppercase;
+
+					&:hover {
+						background-color: $color__primary-accent-dark;
+					}
+				}
+
+				.woocommerce-product-rating {
+					a {
+						display: inline-block;
+					}
 				}
 			}
 		}

@@ -32,12 +32,12 @@ add_action( 'woocommerce_before_shop_loop_item_title', 'siteorigin_unwind_woocom
 // Quick view action hooks
 add_action( 'siteorigin_unwind_woocommerce_quick_view_images', 'siteorigin_unwind_woocommerce_quick_view_image', 5 );
 add_action( 'siteorigin_unwind_woocommerce_quick_view_title', 'woocommerce_template_single_title', 5 );
-add_action( 'siteorigin_unwind_woocommerce_quick_view_title', 'woocommerce_template_loop_rating', 15 );
+add_action( 'siteorigin_unwind_woocommerce_quick_view_title', 'woocommerce_template_single_rating', 15 );
 add_action( 'siteorigin_unwind_woocommerce_quick_view_content', 'woocommerce_template_single_price', 10 );
 add_action( 'siteorigin_unwind_woocommerce_quick_view_content', 'woocommerce_template_single_excerpt', 15 );
 add_action( 'siteorigin_unwind_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );
 
-if( ! function_exists( 'siteorigin_unwind_woocommerce_description_title' ) ) :
+if ( ! function_exists( 'siteorigin_unwind_woocommerce_description_title' ) ) :
 // Remove the Product Description Title
 function siteorigin_unwind_woocommerce_description_title() {
 	return '';
@@ -45,7 +45,7 @@ function siteorigin_unwind_woocommerce_description_title() {
 endif;
 add_filter( 'woocommerce_product_description_heading', 'siteorigin_unwind_woocommerce_description_title' );
 
-if( ! function_exists( 'siteorigin_unwind_woocommerce_loop_item_image' ) ) :
+if ( ! function_exists( 'siteorigin_unwind_woocommerce_loop_item_image' ) ) :
 /**
  * The image section for the products in loop
  */
@@ -75,11 +75,11 @@ if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view_image' ) ) :
  * Displays image in the product quick view.
  */
 function siteorigin_unwind_woocommerce_quick_view_image() {
-	echo woocommerce_get_product_thumbnail( 'full' );
+	echo woocommerce_get_product_thumbnail( 'shop_single' );
 }
 endif;
 
-if( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view' ) ) :
+if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view' ) ) :
 /**
  * Setup quick view modal in the footer.
  */
