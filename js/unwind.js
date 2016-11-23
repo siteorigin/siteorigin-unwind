@@ -28,6 +28,9 @@ jQuery( function($){
 				animation: "slide",
 				controlNav: false
 			} );
+			$( '.gallery-format-slider' ).flexslider( {
+				animation: "slide"
+			} );
 		}
 	} );
 
