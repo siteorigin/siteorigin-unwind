@@ -15,10 +15,9 @@ define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
 // Load theme specific files.
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/jetpack.php';
-include get_template_directory() . '/inc/settings/settings.php';
+require get_template_directory() . '/inc/settings/settings.php';
 require get_template_directory() . '/inc/settings.php';
 require get_template_directory() . '/inc/template-tags.php';
-include get_template_directory() . '/woocommerce/functions.php';
 
 if ( ! function_exists( 'siteorigin_unwind_setup' ) ) :
 /**
@@ -135,6 +134,10 @@ function siteorigin_unwind_setup() {
 	 * Use the SiteOrigin archive theme settings.
 	 */
 	add_theme_support( 'siteorigin-template-settings' );
+
+	if( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
+		require get_template_directory() . '/woocommerce/functions.php';
+	}
 }
 endif; // siteorigin_unwind_setup.
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
