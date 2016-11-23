@@ -1,6 +1,5 @@
 .flexslider.gallery-format-slider {
 	border: none;
-	margin-bottom: 0;
 
 	.flex-direction-nav a {
 
@@ -28,22 +27,22 @@
 
 	.flex-direction-nav {
 
-		@media (max-width: 860px) {
+			@media (max-width: 860px) {
 
-			.flex-prev {
-				left: 0;
+				.flex-prev {
+					left: 0;
+				}
+
+				.flex-next {
+					right: 0;
+				}
 			}
 
-			.flex-next {
-				right: 0;
-			}
-		}
-
-		a {
-			height: 50px;
-			top: 49.166%;
-			margin-top: -25px;
-			width: 40px;
+			a {
+				height: 50px;
+				top: 49.166%;
+				margin-top: -25px;
+				width: 40px;
 
 			&:before {
 				background: none;
@@ -59,19 +58,16 @@
 	}
 
 	.flex-control-nav {
-		position: relative;
-		bottom: 25px;
-
 		li {
 			padding: 0;
 
 			a {
-				background-color: rgba(255, 255, 255, 0.5);
+				background-color: rgba(0, 0, 0, 0.5);
 				height: 9px;
 				width: 9px;
 
 				&.flex-active {
-					background-color: rgba(255, 255, 255, 0.9);
+					background-color: rgba(0, 0, 0, 0.9);
 				}
 			}
 		}
