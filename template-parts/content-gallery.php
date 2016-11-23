@@ -8,7 +8,7 @@
  */
 
 $gallery = get_post_gallery( get_the_ID(), false );
-if( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
+if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
 	add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
 }
 
@@ -29,7 +29,7 @@ $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content 
 
 	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) && $gallery != '' ) : ?>
 		<div class="entry-thumbnail">
-			<?php the_post_thumbnail() ?>
+			<?php the_post_thumbnail(); ?>
 		</div>
 	<?php else : ?>
 		<div class="flexslider gallery-format-slider">
