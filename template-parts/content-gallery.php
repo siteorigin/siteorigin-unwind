@@ -8,6 +8,10 @@
  */
 
 $gallery = get_post_gallery( get_the_ID(), false );
+if( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
+	add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
+}
+
 $content = siteorigin_unwind_strip_gallery( get_the_content() );
 $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
 ?>
