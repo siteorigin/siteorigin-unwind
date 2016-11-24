@@ -28,7 +28,7 @@ Tags: one-column, two-columns, custom-background, custom-colors, custom-header, 
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
 ----------------------------------------------------------------
-Please don't edit below, changes will be lost during the theme
+Please don't edit below, changes will be lost during the theme 
 update process. If you need to make CSS modifications try
 https://wordpress.org/plugins/so-css/.
 --------------------------------------------------------------*/
@@ -1388,7 +1388,7 @@ a {
   #masthead .top-bar-sentinel {
     box-sizing: border-box; }
   #masthead .site-branding {
-    padding: 4em 0;
+    padding: 60px 0;
     text-align: center; }
     #masthead .site-branding .site-title {
       font-family: "Lato", sans-serif;

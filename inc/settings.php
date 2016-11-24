@@ -292,8 +292,9 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  * @return string
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
-	// Custom CSS Code
-	$css .= '/* style */
+// Custom CSS Code
+$css .= '/* style */
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/dktgiD/sass/style.css ***/
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -470,6 +471,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#masthead {
 	margin-bottom: ${masthead_bottom_margin};
 	}
+	#masthead .site-branding {
+	padding: ${masthead_padding} 0;
+	}
 	#masthead .site-branding .site-title {
 	.font( ${fonts_details} );
 	}
@@ -620,6 +624,7 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	color: ${fonts_text_dark};
 	}
 	/* woocommerce */
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/dktgiD/sass/woocommerce.css ***/
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper {
 	color: ${fonts_text_medium};
 	}
