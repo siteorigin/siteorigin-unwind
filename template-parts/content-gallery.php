@@ -14,16 +14,22 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 
 $content = siteorigin_unwind_strip_gallery( get_the_content() );
 $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
+
+$post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>
 
 	<header class="entry-header">
 		<div class="entry-meta">
 			<?php siteorigin_unwind_post_meta(); ?>
 		</div><!-- .entry-meta -->
-		<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php if ( is_singular() ) : ?>
+			<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php endif; ?>
+		<?php else : ?>
+			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
@@ -55,7 +61,9 @@ $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content 
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php siteorigin_unwind_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php if ( is_singular() ) : ?>
+		<footer class="entry-footer">
+			<?php siteorigin_unwind_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+	<?php endif; ?>
 </article><!-- #post-## -->
