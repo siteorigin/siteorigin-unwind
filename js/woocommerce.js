@@ -111,6 +111,7 @@ jQuery( function($){
 		$$.hide();
 	} );
 
+	//Quick View Modal
 	$( '.product-quick-view-button' ).click( function(e) {
 		e.preventDefault();
 
@@ -128,18 +129,23 @@ jQuery( function($){
 			}
 		);
 
-
-
 		if( $(document).find( $container ).is(':hidden') ) {
 			$(document).find( $container ).find( $content ).empty();
 		}
 
 		$(document).find($container).fadeIn(300);
 
+		// Disable scrolling when quick view is open
+		$( 'body' ).css( 'margin-right', ( window.innerWidth - $( 'body' ).width() ) + 'px' );
+		$( 'body' ).css( 'overflow', 'hidden' );
+
 		$(window).mouseup( function (e) {
 			var container = $($content);
 			if ( ( !container.is(e.target) && container.has(e.target).length === 0 ) || $( '.quickview-close-icon' ).is(e.target) ) {
 				$($container).fadeOut(300);
+				// Enable scrolling
+				$( 'body' ).css( 'overflow', '' );
+				$( 'body' ).css( 'margin-right', '' );
 			}
 		});
 
