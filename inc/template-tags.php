@@ -258,7 +258,11 @@ function siteorigin_unwind_post_meta() {
 	} ?>
 
 	<?php if ( siteorigin_setting( 'blog_display_date' ) ) { ?>
-		<span class="entry-date"><?php the_time( 'M d, Y' ); ?></span>
+		<span class="entry-date">
+			<?php echo ( ! is_singular() ) ? '<a href="' . get_the_permalink() . '" title="' . the_title_attribute( 'echo=0' ) .'">' : ''; ?>
+				<?php the_time( 'M d, Y' ); ?>
+			<?php echo ( ! is_singular() ) ? '</a>' : ''; ?>
+		</span>
 	<?php } ?>
 
 
