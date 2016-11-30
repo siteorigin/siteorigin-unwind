@@ -2453,3 +2453,9 @@ object {
       width: 7px; }
       .flexslider.gallery-format-slider .flex-control-nav li a.flex-active {
         background-color: rgba(0, 0, 0, 0.7); }
+
+/*--------------------------------------------------------------
+## Video format
+--------------------------------------------------------------*/
+.entry-video {
+  margin-bottom: 35px; }
