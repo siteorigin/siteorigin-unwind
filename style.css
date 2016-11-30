@@ -1364,7 +1364,11 @@ a {
 .page-layout-full-width-sidebar .site-content .container {
   max-width: 100%; }
 
-.page-layout-no-masthead-margin #masthead {
+.page-layout-no-masthead-margin #masthead,
+.page-layout-no-masthead-margin.archive #masthead {
+  margin-bottom: 0; }
+
+.page-layout-no-masthead-margin.archive .container > .page-header, .page-layout-no-masthead-margin.search .container > .page-header {
   margin-bottom: 0; }
 
 .page-layout-no-footer-margin #colophon {

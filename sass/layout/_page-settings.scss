@@ -14,8 +14,20 @@
     }
 }
 
-.page-layout-no-masthead-margin #masthead {
-	margin-bottom: 0;
+.page-layout-no-masthead-margin {
+
+	#masthead,
+	&.archive #masthead {
+		margin-bottom: 0;
+	}
+
+	&.archive,
+	&.search {
+		
+		.container > .page-header {
+			margin-bottom: 0;
+		}
+	}
 }
 
 .page-layout-no-footer-margin #colophon {

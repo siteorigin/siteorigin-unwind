@@ -851,3 +851,150 @@
   .woocommerce .widget-area#secondary .widget_layered_nav_filters li a:hover:before {
     background: transparent;
     color: #2d2d2d !important; }
+
+/*--------------------------------------------------------------
+# WooCommerce Quickview
+--------------------------------------------------------------*/
+.woocommerce a.product-quick-view-button {
+  margin-right: 1px; }
+
+.woocommerce #quick-view-container {
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  display: none;
+  height: 100vh;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99999; }
+  .woocommerce #quick-view-container .quick-view {
+    background: white;
+    bottom: 0;
+    display: inline-block;
+    height: 500px;
+    left: 0;
+    margin: auto;
+    max-width: 1040px;
+    min-width: 300px;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    vertical-align: middle;
+    width: 100%; }
+    @media (max-width: 1100px) {
+      .woocommerce #quick-view-container .quick-view {
+        width: 85%; } }
+  .woocommerce #quick-view-container .quickview-close-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    line-height: 0.5;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 30px;
+    cursor: pointer;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper {
+    width: 50%;
+    float: left; }
+    @media (max-width: 600px) {
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper {
+        width: 100%;
+        float: none; } }
+    .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper img {
+      vertical-align: middle; }
+  .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper {
+    width: 50%;
+    float: right;
+    padding: 20px;
+    position: relative; }
+    @media (max-width: 600px) {
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper {
+        width: 100%;
+        float: none; } }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper a {
+      text-decoration: none; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .product_title {
+      text-align: left;
+      margin-bottom: 10px; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
+      margin: 15px 0;
+      color: #24c48a;
+      font-family: "Lato", sans-serif;
+      font-size: 20px; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price del {
+        opacity: 0.5; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price ins {
+        background: none; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
+      font-size: 20px;
+      margin-bottom: 15px; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price del,
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price del .amount {
+        color: #adadad; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price .amount,
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price ins {
+        color: #24c48a; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .star-rating {
+      float: none; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .cart {
+      padding-bottom: 20px; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .cart .quantity {
+        display: inline-block;
+        float: left;
+        margin: -1px 6px 0 0; }
+        .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .cart .quantity input {
+          padding: 5px 6px; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .qty {
+      -moz-appearance: textfield;
+      border-color: #adadad;
+      border-radius: 0;
+      border-width: 1px;
+      color: #626262;
+      float: left;
+      height: 40px;
+      padding: 0;
+      width: 40px; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .qty::-webkit-inner-spin-button, .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .qty::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add,
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract {
+      background: #f9f9f9;
+      border-color: #adadad;
+      border-radius: 0;
+      border-width: 1px;
+      float: left;
+      height: 40px;
+      padding: 6px 10px;
+      width: 40px; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add:hover,
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract:hover {
+        background: #c6c6c6; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract {
+      border-right: none; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add {
+      border-left: none; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper button {
+      background-color: #24c48a;
+      border-radius: 0;
+      font-size: 14px;
+      margin-left: 15px;
+      outline: none;
+      padding: 13px 20px;
+      text-transform: uppercase; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper button:hover {
+        background-color: #00a76a; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .woocommerce-product-rating a {
+      display: inline-block; }
