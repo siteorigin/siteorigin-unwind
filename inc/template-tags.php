@@ -491,3 +491,75 @@ function siteorigin_unwind_strip_gallery( $content ) {
 	return $content;
 }
 endif;
+
+if ( ! function_exists( 'siteorigin_unwind_get_video' ) ) :
+/**
+ * Get the video from the current post
+ */
+function siteorigin_unwind_get_video() {
+	$first_url    = '';
+	$first_video  = '';
+
+	$i = 0;
+
+	preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', get_the_content(), $urls );
+
+	foreach ( $urls[0] as $url ) {
+		$i++;
+
+		if ( 1 === $i ) {
+			$first_url = trim( $url );
+		}
+
+		$oembed = wp_oembed_get( esc_url( $url ) );
+
+		if ( ! $oembed ) continue;
+
+		$first_video = $oembed;
+
+		break;
+	}
+
+	return ( '' !== $first_video ) ? $first_video : false;
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_filter_video' ) ) :
+/**
+ * Removes the video from the page
+ */
+function siteorigin_unwind_filter_video( $content ) {
+	if ( siteorigin_unwind_get_video() ) {
+		preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', $content, $urls );
+
+		if ( ! empty( $urls[0] ) ) {
+			$content = str_replace( $urls[0], '', $content );
+		}
+
+		return $content;
+	}
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_get_image' ) ) :
+/**
+ * Removes the first image from the page
+ */
+function siteorigin_unwind_get_image() {
+	$first_image = '';
+
+	$output = preg_match_all( '/<img[^>]+\>/i', get_the_content(), $images );
+	$first_image = $images[0][0];
+
+	return ( '' !== $first_image ) ? $first_image : false;
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_strip_image' ) ) :
+/**
+ * Removes the first image from the page
+ */
+function siteorigin_unwind_strip_image( $content ) {
+	return preg_replace( '/<img[^>]+\>/i', '', $content, 1 );
+}
+endif;

@@ -2405,7 +2405,7 @@ object {
               font-size: 0.7333rem; } }
 
 /*--------------------------------------------------------------
-## Gallery format Slider
+## Post format
 --------------------------------------------------------------*/
 .flexslider.gallery-format-slider {
   border: none; }
@@ -2453,3 +2453,7 @@ object {
       width: 7px; }
       .flexslider.gallery-format-slider .flex-control-nav li a.flex-active {
         background-color: rgba(0, 0, 0, 0.7); }
+
+.entry-video,
+.entry-image {
+  margin: 35px 0; }

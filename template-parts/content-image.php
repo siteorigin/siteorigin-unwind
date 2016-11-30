@@ -1,19 +1,11 @@
 <?php
 /**
- * Template part for displaying gallery format posts.
+ * Template part for displaying image format posts.
  *
  * @package siteorigin-unwind
  * @since siteorigin-unwind 0.1
  * @license GPL 2.0
  */
-
-$gallery = get_post_gallery( get_the_ID(), false );
-if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
-	add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
-}
-
-$content = siteorigin_unwind_strip_gallery( get_the_content() );
-$content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
 
 $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 ?>
@@ -33,15 +25,9 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( $gallery != '' ) : ?>
-		<div class="flexslider gallery-format-slider">
-			<ul class="slides gallery-format-slides">
-				<?php foreach ( $gallery['src'] as $image ) : ?>
-					<li class="gallery-format-slide">
-						<img src="<?php echo $image; ?>">
-					</li>
-				<?php endforeach; ?>
-			<ul>
+	<?php if ( siteorigin_unwind_get_image() ) : ?>
+		<div class="entry-image">
+			<?php echo siteorigin_unwind_get_image(); ?>
 		</div>
 	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
 		<div class="entry-thumbnail">
@@ -56,7 +42,8 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php echo $content; ?>
+		<?php echo apply_filters( 'the_content', siteorigin_unwind_strip_image( get_the_content() ) ); ?>
+		<?php //echo the_content(); ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',

@@ -1,3 +1,4 @@
+// Gallery Format
 .flexslider.gallery-format-slider {
 	border: none;
 
@@ -72,4 +73,10 @@
 			}
 		}
 	}
+}
+
+// Video and Image Format
+.entry-video,
+.entry-image {
+	margin: 35px 0;
 }
