@@ -57,7 +57,7 @@
 	color: $color__text-dark;
 	@include font-size(2.1333);
 	line-height: normal;
-	margin: 0.5em 0 0;
+	margin: 0.5em 0 35px;
 	text-align: center;
 
 	@media (max-width: 480px) {
@@ -80,7 +80,7 @@
 
 .entry-thumbnail {
 
-	margin: 35px 0;
+	margin: 0 0 35px;
 
 	img {
 		max-width: 100%;
