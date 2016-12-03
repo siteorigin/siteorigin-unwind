@@ -847,6 +847,7 @@ a {
   .comment-navigation .nav-previous span,
   .posts-navigation .nav-previous span,
   .post-navigation .nav-previous span {
+    font-family: Verdana, Geneva, sans-serif;
     margin-right: .2em; }
 
 .comment-navigation .nav-next,
@@ -859,6 +860,7 @@ a {
   .comment-navigation .nav-next span,
   .posts-navigation .nav-next span,
   .post-navigation .nav-next span {
+    font-family: Verdana, Geneva, sans-serif;
     margin-left: .2em; }
 
 .comment-navigation a,

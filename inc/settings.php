@@ -294,7 +294,7 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
 function siteorigin_unwind_settings_custom_css( $css ) {
 // Custom CSS Code
 $css .= '/* style */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/dktgiD/sass/style.css ***/
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/Zhdv4J/sass/style.css ***/
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -624,7 +624,7 @@ $css .= '/* style */
 	color: ${fonts_text_dark};
 	}
 	/* woocommerce */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/dktgiD/sass/woocommerce.css ***/
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/Zhdv4J/sass/woocommerce.css ***/
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper {
 	color: ${fonts_text_medium};
 	}
@@ -651,6 +651,10 @@ $css .= '/* style */
 	}
 	.woocommerce ul.products li.product span.onsale {
 	background-color: ${branding_accent};
+	.font( ${fonts_details} );
+	}
+	.woocommerce ul.products li.product h3:hover {
+	color: ${fonts_text_medium};
 	}
 	.woocommerce ul.products li.product .price {
 	color: ${branding_accent};
@@ -690,9 +694,6 @@ $css .= '/* style */
 	.woocommerce .woocommerce-pagination .page-numbers li .current {
 	background: ${branding_accent};
 	border-color: ${branding_accent};
-	}
-	.woocommerce .woocommerce-pagination .page-numbers li .next,.woocommerce .woocommerce-pagination .page-numbers li .prev {
-	.font( ${fonts_details} );
 	}
 	.woocommerce.single-product #content div.product span.onsale {
 	background-color: ${branding_accent};
@@ -843,6 +844,29 @@ $css .= '/* style */
 	}
 	.woocommerce .widget-area#secondary .widget_layered_nav_filters li a:hover:before {
 	color: ${fonts_text_dark} !important;
+	}
+	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
+	color: ${branding_accent};
+	.font( ${fonts_details} );
+	}
+	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price del,.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price del .amount {
+	color: ${fonts_text_light};
+	}
+	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price .amount,.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price ins {
+	color: ${branding_accent};
+	}
+	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .qty {
+	border-color: ${fonts_text_light};
+	color: ${fonts_text_medium};
+	}
+	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add,.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract {
+	border-color: ${fonts_text_light};
+	}
+	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper button {
+	background-color: ${branding_accent};
+	}
+	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper button:hover {
+	background-color: ${branding_accent_dark};
 	}';
 	return $css;
 }

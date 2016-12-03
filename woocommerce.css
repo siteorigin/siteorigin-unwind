@@ -261,7 +261,7 @@
       color: #fff; }
     .woocommerce .woocommerce-pagination .page-numbers li .next,
     .woocommerce .woocommerce-pagination .page-numbers li .prev {
-      font-family: "Lato", sans-serif;
+      font-family: Verdana, Geneva, sans-serif;
       padding: 9px 9px 8px; }
 
 .woocommerce.archive .page-title {
