@@ -217,7 +217,7 @@
     .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button {
       background: #fff;
       border: 2px solid #fff;
-      bottom: 90px;
+      bottom: 20%;
       color: #2d2d2d; }
       .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover {
         border: 2px solid #2d2d2d; }
@@ -225,7 +225,7 @@
       background: transparent;
       border: 2px solid #fff;
       color: #fff;
-      top: 100px; }
+      top: 20%; }
       .woocommerce ul.products li.product .loop-product-thumbnail .product-quick-view-button:hover {
         background: #fff;
         color: #2d2d2d; }
