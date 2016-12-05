@@ -1,6 +1,10 @@
 == Changelog ==
 
-= 1.0 =
+= 0.9.4 - 05 December 2016 =
+* Added TinyColor credit to theme readme file.
+
+= 0.9.3 - 21 October 2016 =
+* Added missing translation domains.
 
 = 0.9.2 - 9 October 2016 =
 * Added missing translation function to widget area descriptions.
