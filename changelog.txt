@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 0.9.5 - 05 December 2016 =
+* Prefix image sizes.
+
 = 0.9.4 - 05 December 2016 =
 * Added TinyColor credit to theme readme file.
 
