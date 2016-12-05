@@ -80,6 +80,10 @@ Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 Source: https://github.com/necolas/normalize.css/
 
+TinyColor, Copyright (c), Brian Grinstead
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+Source: https://github.com/bgrins/TinyColor
+
 == SiteOrigin Settings ==
 
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header. 
