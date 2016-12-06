@@ -1492,6 +1492,8 @@ a {
         @media (max-width: 480px) {
           #fullscreen-search form button[type="submit"] svg {
             display: none; } }
+        #fullscreen-search form button[type="submit"] svg:last-child {
+          display: none; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
