@@ -276,6 +276,9 @@
 /*--------------------------------------------------------------
 # WooCommerce Single Product
 --------------------------------------------------------------*/
+.woocommerce.single-product #content div.product .star-rating span:before {
+  color: #24c48a; }
+
 .woocommerce.single-product #content div.product span.onsale {
   background-color: #24c48a;
   border-radius: 0;
@@ -413,6 +416,30 @@
     .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs li:before, .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs li:after {
       border: none;
       box-shadow: none; }
+
+.woocommerce.single-product #content div.product #reviews #comments .woocommerce-Reviews-title {
+  font-size: 18px; }
+
+.woocommerce.single-product #content div.product #reviews #comments ol.commentlist li.comment {
+  padding: 25px 0;
+  border-bottom: 1px solid #f4f4f4; }
+  .woocommerce.single-product #content div.product #reviews #comments ol.commentlist li.comment .comment_container img.avatar {
+    border-radius: 50%;
+    border-width: 0;
+    padding: 0;
+    top: 25px;
+    width: 60px; }
+  .woocommerce.single-product #content div.product #reviews #comments ol.commentlist li.comment .comment_container .comment-text {
+    border-width: 0;
+    margin-left: 75px;
+    padding: 0; }
+    .woocommerce.single-product #content div.product #reviews #comments ol.commentlist li.comment .comment_container .comment-text .comment-meta {
+      color: #adadad; }
+      .woocommerce.single-product #content div.product #reviews #comments ol.commentlist li.comment .comment_container .comment-text .comment-meta .comment-author {
+        color: #2d2d2d;
+        margin-bottom: 0; }
+      .woocommerce.single-product #content div.product #reviews #comments ol.commentlist li.comment .comment_container .comment-text .comment-meta .comment-date {
+        margin-bottom: 5px; }
 
 .woocommerce.single-product #content div.product .related h2 {
   font-size: 20px; }
