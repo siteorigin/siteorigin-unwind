@@ -274,24 +274,34 @@
 .woocommerce.single-product #content div.product span.onsale {
   background-color: #24c48a;
   border-radius: 0;
-  left: 4px;
+  font-family: "Lato", sans-serif;
+  left: 0;
   line-height: normal;
+  margin: 0;
   min-height: 0;
   padding: 6px 15px;
   text-transform: uppercase;
-  top: 4px;
+  top: 0;
   z-index: 10; }
 
 .woocommerce.single-product #content div.product .entry-summary {
   margin-top: 0; }
   .woocommerce.single-product #content div.product .entry-summary .product_title {
-    font-size: 30px;
+    font-size: 24px;
     text-align: left;
-    margin: 20px 0; }
+    margin: 20px 0 0; }
   .woocommerce.single-product #content div.product .entry-summary .woocommerce-product-rating {
-    margin-bottom: 0; }
+    margin-bottom: 20px; }
+    .woocommerce.single-product #content div.product .entry-summary .woocommerce-product-rating .woocommerce .star-rating {
+      font-size: 14px; }
+    .woocommerce.single-product #content div.product .entry-summary .woocommerce-product-rating .woocommerce-review-link {
+      color: #adadad;
+      font-size: 13px; }
+      .woocommerce.single-product #content div.product .entry-summary .woocommerce-product-rating .woocommerce-review-link:hover {
+        color: #24c48a; }
   .woocommerce.single-product #content div.product .entry-summary .price {
-    font-size: 20px;
+    font-size: 24px;
+    line-height: normal;
     margin-bottom: 15px; }
     .woocommerce.single-product #content div.product .entry-summary .price del,
     .woocommerce.single-product #content div.product .entry-summary .price del .amount {
@@ -299,8 +309,8 @@
     .woocommerce.single-product #content div.product .entry-summary .price .amount,
     .woocommerce.single-product #content div.product .entry-summary .price ins {
       color: #24c48a; }
-  .woocommerce.single-product #content div.product .entry-summary .description p {
-    color: #626262; }
+  .woocommerce.single-product #content div.product .entry-summary div[itemprop="description"] {
+    font-size: 14px; }
   .woocommerce.single-product #content div.product .entry-summary .cart {
     border-bottom: 1px solid #f4f4f4;
     margin-bottom: 0;
@@ -308,9 +318,9 @@
     .woocommerce.single-product #content div.product .entry-summary .cart button {
       background-color: #24c48a;
       border-radius: 0;
-      font-size: 14px;
-      margin-left: 15px;
-      padding: 13px 20px;
+      font-size: 13px;
+      margin-left: 6px;
+      padding: 14px 20px 13px;
       text-transform: uppercase; }
       .woocommerce.single-product #content div.product .entry-summary .cart button:hover {
         background-color: #00a76a; }
@@ -343,13 +353,15 @@
       width: 40px; }
       .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add:hover,
       .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract:hover {
-        background: #c6c6c6; }
+        color: #fff;
+        background: #626262; }
     .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract {
       border-right: none; }
     .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add {
       border-left: none; }
   .woocommerce.single-product #content div.product .entry-summary .product_meta {
     border-bottom: 1px solid #f4f4f4;
+    font-size: 14px;
     padding: 30px 0; }
     .woocommerce.single-product #content div.product .entry-summary .product_meta span {
       color: #adadad;
@@ -358,6 +370,7 @@
         color: #2d2d2d; }
 
 .woocommerce.single-product #content div.product .images .product-images-slider {
+  border: 0;
   margin-bottom: 20px; }
 
 .woocommerce.single-product #content div.product .images .product-images-carousel {
@@ -395,6 +408,9 @@
     .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs li:before, .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs li:after {
       border: none;
       box-shadow: none; }
+
+.woocommerce.single-product #content div.product .related h2 {
+  font-size: 20px; }
 
 /*--------------------------------------------------------------
 # WooCommerce Checkout
