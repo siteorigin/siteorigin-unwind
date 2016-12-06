@@ -2,7 +2,8 @@
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.woocommerce #respond input#submit {
 	border: 2px solid;
 	border-color: $color__border-button;
 	background: #fff;
@@ -20,7 +21,7 @@ input[type="submit"] {
 	&:hover {
 		background: #fff;
 		border-color: $color__primary-accent;
-		color: $color__primary-accent; 
+		color: $color__primary-accent;
 	}
 
 	&:active,

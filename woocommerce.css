@@ -441,6 +441,12 @@
       .woocommerce.single-product #content div.product #reviews #comments ol.commentlist li.comment .comment_container .comment-text .comment-meta .comment-date {
         margin-bottom: 5px; }
 
+.woocommerce.single-product #content div.product #reviews .comment-respond .comment-reply-title {
+  margin-top: 40px; }
+
+.woocommerce.single-product #content div.product #reviews .comment-respond .comment-form-rating {
+  margin: 30px 0; }
+
 .woocommerce.single-product #content div.product .related h2 {
   font-size: 20px; }
 
