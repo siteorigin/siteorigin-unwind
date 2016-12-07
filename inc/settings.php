@@ -294,7 +294,7 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
 function siteorigin_unwind_settings_custom_css( $css ) {
 // Custom CSS Code
 $css .= '/* style */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/Zhdv4J/sass/style.css ***/
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/nb8PO2/sass/style.css ***/
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -315,15 +315,15 @@ $css .= '/* style */
 	table thead th {
 	color: ${fonts_text_dark};
 	}
-	.button,#page #infinite-handle span button,button,input[type="button"],input[type="reset"],input[type="submit"] {
+	.button,#page #infinite-handle span button,button,input[type="button"],input[type="reset"],input[type="submit"],.woocommerce #respond input#submit {
 	color: ${fonts_text_dark};
 	.font( ${fonts_details} );
 	}
-	.button:hover,#page #infinite-handle span button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover {
+	.button:hover,#page #infinite-handle span button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,.woocommerce #respond input#submit:hover {
 	border-color: ${branding_accent};
 	color: ${branding_accent};
 	}
-	.button:active,#page #infinite-handle span button:active,.button:focus,#page #infinite-handle span button:focus,button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus {
+	.button:active,#page #infinite-handle span button:active,.button:focus,#page #infinite-handle span button:focus,button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus,.woocommerce #respond input#submit:active,.woocommerce #respond input#submit:focus {
 	border-color: ${branding_accent};
 	color: ${branding_accent};
 	}
@@ -490,6 +490,24 @@ $css .= '/* style */
 	#fullscreen-search form button[type="submit"] svg {
 	fill: ${fonts_text_light};
 	}
+	@-webkit-keyframes "spin" {
+	from {
+	}
+	to {
+	}
+	}
+	@-moz-keyframes "spin" {
+	from {
+	}
+	to {
+	}
+	}
+	@keyframes "spin" {
+	from {
+	}
+	to {
+	}
+	}
 	.entry-meta,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta {
 	.font( ${fonts_details} );
 	}
@@ -624,7 +642,7 @@ $css .= '/* style */
 	color: ${fonts_text_dark};
 	}
 	/* woocommerce */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/Zhdv4J/sass/woocommerce.css ***/
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/nb8PO2/sass/woocommerce.css ***/
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper {
 	color: ${fonts_text_medium};
 	}
@@ -677,6 +695,13 @@ $css .= '/* style */
 	.woocommerce ul.products li.product .loop-product-thumbnail .product-quick-view-button:hover {
 	color: ${fonts_text_dark};
 	}
+	.woocommerce ul.products li.product .loop-product-thumbnail a.added_to_cart {
+	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
+	}
+	.woocommerce ul.products li.product .loop-product-thumbnail a.added_to_cart:hover {
+	border: 2px solid ${fonts_text_dark};
+	}
 	.woocommerce .woocommerce-pagination .page-numbers li a,.woocommerce .woocommerce-pagination .page-numbers li span {
 	color: ${fonts_text_medium};
 	}
@@ -695,17 +720,24 @@ $css .= '/* style */
 	background: ${branding_accent};
 	border-color: ${branding_accent};
 	}
+	.woocommerce.single-product #content div.product .star-rating span:before {
+	color: ${branding_accent};
+	}
 	.woocommerce.single-product #content div.product span.onsale {
 	background-color: ${branding_accent};
+	.font( ${fonts_details} );
+	}
+	.woocommerce.single-product #content div.product .entry-summary .woocommerce-product-rating .woocommerce-review-link {
+	color: ${fonts_text_light};
+	}
+	.woocommerce.single-product #content div.product .entry-summary .woocommerce-product-rating .woocommerce-review-link:hover {
+	color: ${branding_accent};
 	}
 	.woocommerce.single-product #content div.product .entry-summary .price del,.woocommerce.single-product #content div.product .entry-summary .price del .amount {
 	color: ${fonts_text_light};
 	}
 	.woocommerce.single-product #content div.product .entry-summary .price .amount,.woocommerce.single-product #content div.product .entry-summary .price ins {
 	color: ${branding_accent};
-	}
-	.woocommerce.single-product #content div.product .entry-summary .description p {
-	color: ${fonts_text_medium};
 	}
 	.woocommerce.single-product #content div.product .entry-summary .cart button {
 	background-color: ${branding_accent};
@@ -720,6 +752,9 @@ $css .= '/* style */
 	.woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add,.woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract {
 	border-color: ${fonts_text_light};
 	}
+	.woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add:hover,.woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract:hover {
+	background: ${fonts_text_medium};
+	}
 	.woocommerce.single-product #content div.product .entry-summary .product_meta span {
 	color: ${fonts_text_light};
 	}
@@ -728,6 +763,12 @@ $css .= '/* style */
 	}
 	.woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs li.active {
 	border-bottom: 2px solid ${fonts_text_medium};
+	}
+	.woocommerce.single-product #content div.product #reviews #comments ol.commentlist li.comment .comment_container .comment-text .comment-meta {
+	color: ${fonts_text_light};
+	}
+	.woocommerce.single-product #content div.product #reviews #comments ol.commentlist li.comment .comment_container .comment-text .comment-meta .comment-author {
+	color: ${fonts_text_dark};
 	}
 	.woocommerce form.login input.button,.woocommerce form.checkout_coupon input.button {
 	background-color: ${branding_accent};
