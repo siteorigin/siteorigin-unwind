@@ -205,9 +205,6 @@ function siteorigin_unwind_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'siteorigin-unwind-style', get_stylesheet_uri() );
 
-	// Theme JavaScript.
-	wp_enqueue_script( 'siteorigin-unwind-script', get_template_directory_uri() . '/js/unwind' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );	
-
 	// Flexslider.
 	wp_register_style( 'siteorigin-unwind-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 	wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
@@ -219,6 +216,9 @@ function siteorigin_unwind_scripts() {
 
 	// FitVids.
 	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ) );
+
+	// Theme JavaScript.
+	wp_enqueue_script( 'siteorigin-unwind-script', get_template_directory_uri() . '/js/unwind' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ) );		
 
 	// Skip link focus fix.
 	wp_enqueue_script( 'siteorigin-unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
