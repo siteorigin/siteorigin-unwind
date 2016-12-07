@@ -25,7 +25,7 @@ $verified = wc_review_is_from_verified_owner( $comment->comment_ID );
 
 if ( '0' === $comment->comment_approved ) { ?>
 
-	<p class="meta"><em><?php esc_attr_e( 'Your comment is awaiting approval', 'woocommerce' ); ?></em></p>
+	<p class="meta"><em><?php esc_attr_e( 'Your comment is awaiting approval', 'siteorigin-unwind' ); ?></em></p>
 
 <?php } else { ?>
 
@@ -34,7 +34,7 @@ if ( '0' === $comment->comment_approved ) { ?>
 			<strong itemprop="author"><?php comment_author(); ?></strong> <?php
 
 			if ( 'yes' === get_option( 'woocommerce_review_rating_verification_label' ) && $verified ) {
-				echo '<em class="verified">(' . esc_attr__( 'verified owner', 'woocommerce' ) . ')</em> ';
+				echo '<em class="verified">(' . esc_attr__( 'verified owner', 'siteorigin-unwind' ) . ')</em> ';
 			}
 			?>
 		</p>
