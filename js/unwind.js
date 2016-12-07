@@ -3,26 +3,26 @@
  *
  * Handles the primary JavaScript functions for the theme.
  */
-jQuery( function($){
+jQuery( function( $ ) {
 
 	// no-js Body Class.
-	$('body.no-js').removeClass('no-js');
-	if( $('body').hasClass('css3-animations') ) {
+	$ ( 'body.no-js' ).removeClass( 'no-js' );
+	if ( $( 'body' ).hasClass( 'css3-animations' ) ) {
 
-		var resetMenu = function(){
-			$('.main-navigation ul ul').each( function(){
-				var $$ = $(this);
-				var width = Math.max.apply(Math, $$.find('> li > a').map( function(){ return $(this).width(); } ).get());
-				$$.find('> li > a').width( width );
+		var resetMenu = function() {
+			$( '.main-navigation ul ul' ).each( function() {
+				var $$ = $( this );
+				var width = Math.max.apply(Math, $$.find( '> li > a' ).map( function() { return $( this ).width(); } ).get() );
+				$$.find( '> li > a' ).width( width );
 			} );
 		};
 		resetMenu();
-		$(window).resize( resetMenu );
+		$( window ).resize( resetMenu );
 
-	}
+	}	
 
 	// Featured posts slider.
-	$(document).ready( function() {
+	$( document ).ready( function() {
 		if ( $.isFunction( $.fn.flexslider ) ) {
 			$( '.featured-posts-slider' ).flexslider( {
 				animation: "slide",
@@ -34,13 +34,18 @@ jQuery( function($){
 		}
 	} );
 
+    // Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
+    if ( typeof $.fn.fitVids !== 'undefined' ) {
+        $( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
+    }	
+
 	// Fullscreen search.
-	$( '#search-button' ).click( function(e) {
+	$( '#search-button' ).click( function( e ) {
 		e.preventDefault();
-		var $$ = $(this);
+		var $$ = $( this );
 		$$.toggleClass( 'close-search' );
 
-		$( "input[type='search']" ).each( function () { $(this).attr( 'size', $(this).attr( 'placeholder' ).length ); } );
+		$( "input[type='search']" ).each( function () { $( this ).attr( 'size', $( this ).attr( 'placeholder' ).length ); } );
 
 		var fullscreenSearch = function() {
 			vpw = $( window ).width();
