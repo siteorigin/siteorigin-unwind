@@ -60,9 +60,9 @@ SiteOrigin Unwind WordPress Theme is derived from Underscores WordPress Theme, C
 
 == Images ==
 
-Theme screenshot image with lake and mountains sourced from https://unsplash.com by Blake Richard Verdoorn (https://unsplash.com/photos/eRQPWFijcx4) licensed under CC0 1.0 Universal (CC0 1.0) (http://creativecommons.org/publicdomain/zero/1.0/).
+Theme screenshot image with lake and mountains sourced from https://unsplash.com by [Blake Richard Verdoorn](https://unsplash.com/photos/eRQPWFijcx4) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
 
-Theme screenshot image with scooter sourced from https://pixabay.com by Unsplash (https://pixabay.com/en/scooter-italy-vintage-old-green-593155/) licensed under CC0 Public Domain (https://creativecommons.org/publicdomain/zero/1.0/).
+Theme screenshot image with scooter sourced from https://pixabay.com by [Unsplash](https://pixabay.com/en/scooter-italy-vintage-old-green-593155/) licensed under [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
 
 SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and copyright 2016 SiteOrigin.
 
