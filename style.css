@@ -472,7 +472,8 @@ table {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.woocommerce #respond input#submit {
   border: 2px solid;
   border-color: #ebebeb;
   background: #fff;
@@ -493,7 +494,8 @@ input[type="submit"] {
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
-  input[type="submit"]:hover {
+  input[type="submit"]:hover,
+  .woocommerce #respond input#submit:hover {
     background: #fff;
     border-color: #24c48a;
     color: #24c48a; }
@@ -505,7 +507,9 @@ input[type="submit"] {
   input[type="reset"]:active,
   input[type="reset"]:focus,
   input[type="submit"]:active,
-  input[type="submit"]:focus {
+  input[type="submit"]:focus,
+  .woocommerce #respond input#submit:active,
+  .woocommerce #respond input#submit:focus {
     border-color: #24c48a;
     color: #24c48a; }
 
@@ -1493,6 +1497,43 @@ a {
         @media (max-width: 480px) {
           #fullscreen-search form button[type="submit"] svg {
             display: none; } }
+        #fullscreen-search form button[type="submit"] svg:last-child {
+          display: none; }
+          #fullscreen-search form button[type="submit"] svg:last-child path {
+            -webkit-animation: spin 2s linear infinite;
+            -moz-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+            -webkit-transform-origin: 50% 50%;
+            -moz-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            -o-transform-origin: 50% 50%;
+            transform-origin: 50% 50%; }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg); } }
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 /*--------------------------------------------------------------
 ## Posts and pages

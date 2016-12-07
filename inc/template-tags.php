@@ -436,6 +436,14 @@ function siteorigin_unwind_display_icon( $type ) {
 			<?php endif;
 			break;
 
+			case 'fullscreen-loading' :
+				?>
+				<svg version="1.1" class="svg-icon-search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+				  <path id="icon_loading" data-name="icon loading" class="cls-1" d="M13,26A13,13,0,1,1,26,13,13,13,0,0,1,13,26ZM13,4a9,9,0,1,0,4.88,16.551,1.925,1.925,0,0,1-.466-0.308l-5.656-5.657a2.006,2.006,0,0,1,0-2.828h0a2.006,2.006,0,0,1,2.828,0l5.656,5.657a1.926,1.926,0,0,1,.309.466A8.987,8.987,0,0,0,13,4Z"/>
+				</svg>
+				<?php
+				break;
+
 		case 'search' :
 			if ( siteorigin_setting( 'icons_search' ) ): ?>
 				<?php siteorigin_unwind_custom_icon( 'icons_search', 'svg-icon-search' ); ?>

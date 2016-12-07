@@ -130,7 +130,7 @@
 			span.onsale {
 				background-color: $color__primary-accent;
 				border-radius: 0;
-				font-family: $font__details; 
+				font-family: $font__details;
 				font-size: 12px;
 				left: 0;
 				right: auto;
@@ -148,9 +148,9 @@
 
 			h3 {
 				font-size: 14px;
-				padding: 17px 0 0; 
+				padding: 17px 0 0;
 				text-align: center;
-				
+
 				&:hover {
 					color: $color__text-medium;
 				}
@@ -209,6 +209,15 @@
 
 					&:hover {
 						border: 2px solid $color__text-dark;
+					}
+
+					&.loading {
+						&:after {
+							margin-left: .53em;
+							position: relative;
+							right: 0;
+							top: 0;
+						}
 					}
 				}
 
@@ -271,7 +280,7 @@
 
 				.next,
 				.prev {
-					font-family: Verdana, Geneva, sans-serif; 
+					font-family: Verdana, Geneva, sans-serif;
 					padding: 9px 9px 8px;
 				}
 			}

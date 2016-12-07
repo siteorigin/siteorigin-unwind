@@ -65,6 +65,11 @@ jQuery( function($){
 
 	} );
 
+	$( '#fullscreen-search-form' ).submit( function() {
+		$(this).find( 'button svg' ).hide();
+		$(this).find( 'button svg:last-child' ).show();
+	} );
+
 	// Close fullscreen search with escape key.
 	$( document ).keyup( function(e) {
 		if ( e.keyCode == 27 ) { // escape key maps to keycode `27`

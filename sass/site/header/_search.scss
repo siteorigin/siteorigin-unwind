@@ -5,25 +5,25 @@
 	position: absolute;
 	top: 61px;
 	z-index: 10;
-	
+
 	.container {
 		left: 50%;
-		max-width: 658px; 
+		max-width: 658px;
 		position: absolute;
 		top: 139px;
 		transform: translate(-50%, -50%);
 	}
-	
+
 	h3 {
 		color: $color__text-medium;
 		font-family: $font__details;
 		@include font-size(1.0666);
 		font-weight: 400;
 		letter-spacing: .2em;
-		text-align: center; 
-		text-transform: uppercase; 
-	}	
-	
+		text-align: center;
+		text-transform: uppercase;
+	}
+
 	form {
 		position: relative;
 
@@ -32,14 +32,14 @@
 			border: 0;
 			color: $color__text-medium;
 			display: inline-block;
-			font-size: 32px; 
+			font-size: 32px;
 			max-width: 493px;
 			outline: none;
-			
+
 			@media (max-width: 768px) {
 				font-size: 24px;
-				max-width: 100%; 
-				padding-left: 0; 
+				max-width: 100%;
+				padding-left: 0;
 			}
 		}
 
@@ -50,25 +50,43 @@
 			padding: 0;
 			position: absolute;
 			right: 0;
-			top: 32px;  
-			
+			top: 32px;
+
 			@media (max-width: 768px) {
 				top: 24px;
 			}
-			
+
 			svg {
 				fill: $color__text-light;
 				height: 31px;
 				width: 32px;
-				
+
 				@media (max-width: 768px) {
-					height: 24px;  
+					height: 24px;
 				}
 
 				@media (max-width: 480px) {
-					display: none; 
+					display: none;
+				}
+
+				&:last-child {
+					display: none;
+
+					path {
+						@include animation( spin 2s linear infinite );
+						@include transform-origin( 50% 50% );
+					}
 				}
 			}
 		}
+	}
+}
+
+@include keyframes( spin ) {
+	from {
+		@include transform( rotate( 0deg ) );
+	}
+	to {
+		@include transform( rotate( 360deg ) );
 	}
 }
