@@ -204,7 +204,7 @@
 				.add_to_cart_button {
 					background: #fff;
 					border: 2px solid #fff;
-					bottom: 20%;
+					bottom: 30%;
 					color: $color__text-dark;
 
 					&:hover {
@@ -212,6 +212,7 @@
 					}
 
 					&.loading {
+
 						&:after {
 							margin-left: .53em;
 							position: relative;
@@ -225,11 +226,35 @@
 					background: transparent;
 					border: 2px solid #fff;
 					color: #fff;
-					top: 20%;
+					top: 30%;
 
 					&:hover {
 						background: #fff;
 						color: $color__text-dark;
+					}
+				}
+
+				a.added_to_cart {
+					background: #fff;
+					border: 2px solid #fff;
+					border-bottom: 0;
+					bottom: 0;
+					box-sizing: border-box;
+					color: $color__text-medium; 
+					font-family: $font__details;
+					font-size: 13px;
+					left: 50%; 
+					letter-spacing: 1px;
+					line-height: normal;
+					margin: 0;
+					padding: 12px 15px;
+					position: absolute;
+					@include transform( translateX( -50% ) );
+					text-transform: uppercase;
+					
+					&:hover {
+						border: 2px solid $color__text-dark;
+						border-bottom: 0; 
 					}
 				}
 			}
