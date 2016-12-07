@@ -9,8 +9,8 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION', 'dev' );
-define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
+define('SITEORIGIN_THEME_VERSION', 'dev');
+define('SITEORIGIN_THEME_JS_PREFIX', '');
 
 // Load theme specific files.
 require get_template_directory() . '/inc/extras.php';
