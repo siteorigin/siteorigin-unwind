@@ -1,7 +1,7 @@
 == Changelog ==
 
-= 0.9.6 - 06 December 2016 =
-* Wide ranging enhancements to styling, settings and WooCommerce integration.
+= 1.0 - 08 December 2016 =
+* Wide ranging enhancements to styling, settings, post formats and WooCommerce integration.
 
 = 0.9.5 - 05 December 2016 =
 * Prefix image sizes.

@@ -2,10 +2,10 @@
 
 Contributors: siteorigin
 
-Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, sticky-post, theme-options, translation-ready, blog, e-commerce
+Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
 Requires at least: 4.1
-Tested up to: 4.6.1
+Tested up to: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,19 +70,19 @@ SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and co
 
 Bourbon, Copyright 2011 thoughtbot, inc.
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)
-Source: https://github.com/thoughtbot/bourbon
+[Source](https://github.com/thoughtbot/bourbon)
 
 FlexSlider, Copyright 2012 WooThemes
 Free to use under the GPLv2 license
-Source: http://www.woothemes.com/flexslider/
+[Source](http://www.woothemes.com/flexslider/)
 
 Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)
-Source: https://github.com/necolas/normalize.css/
+[Source](https://github.com/necolas/normalize.css/)
 
 TinyColor, Copyright (c), Brian Grinstead
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)
-Source: https://github.com/bgrins/TinyColor
+[Source](https://github.com/bgrins/TinyColor)
 
 == SiteOrigin Settings ==
 
