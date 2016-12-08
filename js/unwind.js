@@ -137,22 +137,16 @@ jQuery( function( $ ) {
 				adminBarOffset = $( '.demo_store' ).outerHeight() + $( '.demo_store' ).offset().top - $( document ).scrollTop();
 			}
 
-			if( top + adminBarOffset > $tb.offset().top ) {
-
-				$tbs.show().css({
-					'height': $tb.outerHeight(),
-					'margin-bottom' : $tb.css('margin-bottom')
-				});
-				$tb.css({
-					'position': 'fixed',
-					'top': adminBarOffset,
-					'left': 0 - self.pageXOffset+'px',
-					'width': '100%',
-				});
-			}
-			else {
-				$tbs.hide();
-			}
+			$tbs.show().css({
+				'height': $tb.outerHeight(),
+				'margin-bottom' : $tb.css('margin-bottom')
+			});
+			$tb.css({
+				'position': 'fixed',
+				'top': adminBarOffset,
+				'left': 0 - self.pageXOffset+'px',
+				'width': '100%',
+			});
 		};
 		smSetup();
 		$(window).resize( smSetup ).scroll( smSetup );
