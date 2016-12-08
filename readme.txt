@@ -68,10 +68,6 @@ SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and co
 
 == Bundled Resources ==
 
-Bourbon, Copyright 2011 thoughtbot, inc.
-Licensed under the [MIT License](http://opensource.org/licenses/MIT)
-[Source](https://github.com/thoughtbot/bourbon)
-
 FitVids, Copyright 2013, [Chris Coyier](http://css-tricks.com) and [Dave Rupert](http://daverupert.com)
 Licensed under the WTFPL license
 [Source](https://github.com/davatron5000/FitVids.js/)
