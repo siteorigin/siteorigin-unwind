@@ -48,8 +48,8 @@ jQuery( function( $ ) {
 		$( "input[type='search']" ).each( function () { $( this ).attr( 'size', $( this ).attr( 'placeholder' ).length ); } );
 
 		var fullscreenSearch = function() {
-			vpw = $( window ).width();
-			vph = $( window ).height();
+			var vpw = $( window ).width(),
+				vph = $( window ).height();
 			$( '#fullscreen-search' ).css( { 'height': vph - 60 + 'px', 'width': vpw + 'px' } );
 		};
 		fullscreenSearch();
