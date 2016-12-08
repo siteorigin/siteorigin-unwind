@@ -16,7 +16,7 @@
 
 get_header(); ?>
 
-	<?php if ( siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) : ?>
+	<?php if ( siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts() ) : ?>
 
 		<?php get_template_part( 'template-parts/featured', 'slider' ); ?>
 

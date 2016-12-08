@@ -32,7 +32,7 @@ function siteorigin_unwind_body_classes( $classes ) {
 	}
 
 	// Homepage slider.
-	if ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) {
+	if ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts() ) {
 		$classes[] = 'homepage-has-slider';
 	}
 
