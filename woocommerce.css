@@ -1,6 +1,9 @@
 /*--------------------------------------------------------------
 # WooCommerce Layout
 --------------------------------------------------------------*/
+.woocommerce-demo-store #page {
+  margin-top: 57px; }
+
 .woocommerce-page #container {
   float: right;
   margin: 0 0 0 -25.61404%;
