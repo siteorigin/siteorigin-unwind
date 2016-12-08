@@ -1143,6 +1143,10 @@ a {
 
 #secondary .widget {
   margin-bottom: 4em; }
+  #secondary .widget::after {
+    clear: both;
+    content: "";
+    display: table; }
 
 /*--------------------------------------------------------------
 ## Categories Widget

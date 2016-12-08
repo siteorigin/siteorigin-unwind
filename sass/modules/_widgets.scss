@@ -54,6 +54,7 @@
 #secondary {
 
 	.widget {
+		@include clearfix();
 		margin-bottom: 4em;
 	}
 }
