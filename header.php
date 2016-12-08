@@ -32,12 +32,6 @@
 			<div class="top-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
 				<div class="container">
 
-					<nav id="site-navigation" class="main-navigation" role="navigation">
-						<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-					</nav><!-- #site-navigation -->
-					<div id="mobile-navigation"></div>
-
 					<div class="social-search">
 						<?php $widget = siteorigin_setting( 'masthead_social_widget' ); ?>
 						<?php if ( ! empty( $widget['networks'] ) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) : ?>
@@ -49,6 +43,13 @@
 							<span class="close"><?php siteorigin_unwind_display_icon( 'close' ); ?></span>
 						</button>
 					</div>
+
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+						<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					</nav><!-- #site-navigation -->
+					<div id="mobile-navigation"></div>
+
 				</div><!-- .container -->
 
 				<div id="fullscreen-search">

@@ -596,7 +596,6 @@ a {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  clear: both;
   float: left; }
   .main-navigation::after {
     clear: both;
