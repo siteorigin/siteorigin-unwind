@@ -64,11 +64,18 @@
 	margin-top: 57px;
 }
 
-@media( max-width: 480px ) {
-	.admin-bar p.demo_store {
-		top: 0 !important;
+
+.admin-bar p.demo_store {
+	@media( max-width: 782px ) {
+		top: 46px !important;
 	}
 
+	@media( max-width: 480px ) {
+		top: 0 !important;
+	}
+}
+
+@media( max-width: 480px ) {
 	.woocommerce-demo-store #page {
 		margin-top: 0;
 	}
