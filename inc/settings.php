@@ -1043,7 +1043,7 @@ function siteorigin_unwind_setup_page_setting_defaults( $defaults, $type, $id ){
 		$defaults['page_title'] = false;
 	}
 
-	if( function_exists( 'is_woocommerce' ) && ( is_cart() || is_checkout() || is_checkout_pay_page() ) ) {
+	if ( function_exists( 'is_woocommerce' ) && ( is_cart() || is_checkout() || is_checkout_pay_page() ) ) {
 		// Default layouts for WooCommerce pages
 		$settings['layout'] = 'no-sidebar';
 	}
