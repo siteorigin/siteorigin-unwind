@@ -1061,3 +1061,25 @@ function siteorigin_unwind_page_settings_panels_defaults( $settings ){
 	return $settings;
 }
 add_filter( 'siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults' );
+
+/**
+ * Adds everything we need for the Unwind About page.
+ */
+function siteorigin_unwind_about_page( $about ) {
+
+	$about['documentation_url'] = 'https://siteorigin.com/unwind-documentation/';
+	$about['review'] = true;
+
+	$about['description'] = esc_html__( 'SiteOrigin Unwind is our latest, flexible multipurpose theme. It\'s fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with various plugins. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though Unwind\'s WooCommerce integration.', 'siteorigin-unwind' );
+
+	$about['sections'] = array(
+		'free',
+		'customize',
+		'page-builder',
+		'support',
+		'github',
+	);
+
+	return $about;
+}
+add_filter( 'siteorigin_about_page', 'siteorigin_unwind_about_page' );
