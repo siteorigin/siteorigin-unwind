@@ -1,7 +1,3 @@
-.woocommerce-demo-store #page {
-	margin-top: 57px;
-}
-
 .woocommerce-page #container {
 	float: right;
 	margin: 0 0 0 (-$size__site-sidebar);
@@ -61,5 +57,19 @@
 		float: none;
 		margin: 0;
 		width: auto;
+	}
+}
+
+.woocommerce-demo-store #page {
+	margin-top: 57px;
+}
+
+@media( max-width: 480px ) {
+	.admin-bar p.demo_store {
+		top: 0 !important;
+	}
+
+	.woocommerce-demo-store #page {
+		margin-top: 0;
 	}
 }

@@ -131,9 +131,11 @@ jQuery( function( $ ) {
 				'width': null,
 			});
 
-			var adminBarOffset =
-				( $( '#wpadminbar' ).css('position') === 'fixed' ? $('#wpadminbar').outerHeight() : 0 ) +
-				( $( 'body.woocommerce-demo-store' ).length ? $( '.demo_store' ).outerHeight() : 0 );
+			var adminBarOffset = $( '#wpadminbar' ).css('position') === 'fixed' ? $('#wpadminbar').outerHeight() : 0;
+
+			if( $( 'body' ).hasClass( 'woocommerce-demo-store' ) ) {
+				adminBarOffset = $( '.demo_store' ).outerHeight() + $( '.demo_store' ).offset().top - $( document ).scrollTop();
+			}
 
 			if( top + adminBarOffset > $tb.offset().top ) {
 
@@ -155,11 +157,6 @@ jQuery( function( $ ) {
 		smSetup();
 		$(window).resize( smSetup ).scroll( smSetup );
 
-	}
-
-	// WooCommerce demo store support
-	if( $( 'body' ).hasClass( 'woocommerce-demo-store' ) ) {
-		$( '#page' ).css( 'margin-top', $( '.demo_store' ).outerHeight() );
 	}
 
 } );
