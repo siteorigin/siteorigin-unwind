@@ -167,10 +167,8 @@
   margin: 0 1.75% 27px;
   width: 31%; }
   .woocommerce ul.products li.product:nth-of-type(3n+1) {
-    background: blue;
     margin-left: 0; }
   .woocommerce ul.products li.product:nth-of-type(3n+3) {
-    background: red;
     margin-right: 0; }
   @media (max-width: 768px) {
     .woocommerce ul.products li.product {
