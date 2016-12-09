@@ -40,7 +40,7 @@ function siteorigin_unwind_author_box() { ?>
 					<?php echo get_the_author(); ?>
 				</a>
 			</span>
-			<div><?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?></div>
+			<div><?php echo wp_kses_post( get_the_author_meta( 'description' ) ); ?></div>
 		</div>
 	</div>
 <?php }
