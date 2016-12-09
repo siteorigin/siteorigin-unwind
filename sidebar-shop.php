@@ -14,6 +14,6 @@ if ( ! in_array( siteorigin_page_setting( 'layout', 'default' ), array( 'default
 if ( is_product() ) return;
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
+<aside id="secondary" class="shop-widgets widget-area" role="complementary">
 	<?php dynamic_sidebar( 'shop-sidebar' ); ?>
 </aside><!-- #secondary -->

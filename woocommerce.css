@@ -28,14 +28,9 @@
       margin: 0;
       width: auto; } }
 
-.woocommerce-page .container .widget-area {
+.woocommerce-page .container .shop-widgets.widget-area {
   float: left;
-  padding-left: 0;
-  padding-right: 40px; }
-  @media (max-width: 768px) {
-    .woocommerce-page .container .widget-area {
-      float: none;
-      padding-right: 0; } }
+  padding: 0 40px 0 0; }
 
 .woocommerce-page.single-product #container {
   float: none;
@@ -68,6 +63,10 @@
 .woocommerce .woocommerce-ordering {
   cursor: pointer;
   margin-bottom: 40px; }
+  @media (max-width: 680px) {
+    .woocommerce .woocommerce-ordering {
+      float: left;
+      margin-bottom: 35px; } }
   .woocommerce .woocommerce-ordering .ordering-selector-wrapper {
     border: 1px solid #ebebeb;
     box-sizing: border-box;
@@ -159,22 +158,30 @@
 .woocommerce .woocommerce-result-count {
   color: #626262;
   font-size: 14px; }
+  @media (max-width: 680px) {
+    .woocommerce .woocommerce-result-count {
+      margin-bottom: 40px;
+      width: 100%; } }
 
 .woocommerce ul.products li.product {
-  margin: 0 0 25px 0;
-  width: 100%; }
-  .woocommerce ul.products li.product.first {
-    margin: 0 0 25px 0; }
-  .woocommerce ul.products li.product.last {
-    margin: 0 0 25px 1%; }
-  @media (min-width: 321px) {
+  margin: 0 1.75% 27px;
+  width: 31%; }
+  .woocommerce ul.products li.product:nth-of-type(3n+1) {
+    background: blue;
+    margin-left: 0; }
+  .woocommerce ul.products li.product:nth-of-type(3n+3) {
+    background: red;
+    margin-right: 0; }
+  @media (max-width: 768px) {
     .woocommerce ul.products li.product {
-      margin: 0 1% 27px 1%;
-      width: 31.333%; }
-      .woocommerce ul.products li.product.first {
-        margin: 0 2% 27px 0; }
-      .woocommerce ul.products li.product.last {
-        margin: 0 0 27px 2%; } }
+      clear: none;
+      float: left; }
+      .woocommerce ul.products li.product:nth-child(2n) {
+        float: left; } }
+  @media (max-width: 480px) {
+    .woocommerce ul.products li.product {
+      margin: 0 0 27px;
+      width: 100%; } }
   .woocommerce ul.products li.product span.onsale {
     background-color: #24c48a;
     border-radius: 0;

@@ -17,6 +17,7 @@
 }
 
 .woocommerce-page .container {
+
 	#content {
 		float: right;
 		margin: 0 0 0 $size__site-sidebar;
@@ -34,19 +35,14 @@
 		}
 	}
 
-	.widget-area {
+	.shop-widgets.widget-area {
 		float: left;
-		padding-left: 0;
-		padding-right: 40px;
-
-		@media (max-width: 768px) {
-			float: none;
-			padding-right: 0;
-		}
+		padding: 0 40px 0 0;
 	}
 }
 
 .woocommerce-page.single-product {
+
 	#container {
 		float: none;
 		margin: 0;
