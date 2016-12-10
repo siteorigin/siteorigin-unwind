@@ -1,6 +1,7 @@
 .woocommerce.single-product #content div.product {
 
 	.star-rating {
+
 		span:before {
 			color: $color__primary-accent;
 		}
@@ -183,6 +184,7 @@
 	}
 
 	.woocommerce-tabs {
+
 		.wc-tabs {
 			margin-bottom: 30px;
 			padding-left: 0;
@@ -195,13 +197,19 @@
 			li {
 				background: transparent;
 				border: none;
+				font-family: $font__details; 
 				font-size: 12px;
+				letter-spacing: 1px;
 				margin: 0;
 				margin-right: 30px;
 				padding: 0;
 
 				&.active {
 					border-bottom: 2px solid $color__text-medium;
+					
+					a {
+						color: $color__text-dark; 
+					}					
 				}
 
 				&:before,
@@ -209,17 +217,25 @@
 					border: none;
 					box-shadow: none;
 				}
+
+				a {
+					color: $color__text-light; 
+				}				
 			}
 		}
 	}
 
 	#reviews {
+
 		#comments {
+		
 			.woocommerce-Reviews-title {
 				font-size: 18px;
+				margin: 30px 0 5px;
 			}
 
 			ol.commentlist {
+
 				li.comment {
 					padding: 25px 0;
 					border-bottom: 1px solid $color__background-hr;
@@ -230,13 +246,13 @@
 							border-radius: 50%;
 							border-width: 0;
 							padding: 0;
-							top: 25px;
-							width: 60px;
+							top: 30px;
+							width: 70px;
 						}
 
 						.comment-text {
 							border-width: 0;
-							margin-left: 75px;
+							margin-left: 95px;
 							padding: 0;
 
 							.comment-meta {
@@ -244,12 +260,19 @@
 
 								.comment-author {
 									color: $color__text-dark;
+									font-size: 14px; 
 									margin-bottom: 0;
 								}
 
 								.comment-date {
+									color: $color__text-light;
+									font-size: 13px; 
 									margin-bottom: 5px;
 								}
+							}
+
+							.description {
+								font-size: 14px; 
 							}
 						}
 					}
@@ -258,8 +281,10 @@
 		}
 
 		.comment-respond {
+
 			.comment-reply-title {
-				margin-top: 40px;
+				display: block;
+				margin: 33px 0 7px;
 			}
 
 			.comment-form-rating {

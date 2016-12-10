@@ -142,6 +142,7 @@
 		color: $color__text-dark;
 		display: block;
 		@include font-size(0.8666);
+		font-weight: 700; 
 		line-height: normal;
 		margin-bottom: .5em; 
 	}
