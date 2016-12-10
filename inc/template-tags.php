@@ -224,11 +224,11 @@ if ( ! function_exists( 'siteorigin_unwind_read_more_link' ) ) :
  * Filter the read more link.
  */
 function siteorigin_unwind_read_more_link() {
-	$read_more_text = siteorigin_setting( 'blog_read_more' ) ? esc_html( siteorigin_setting( 'blog_read_more' ) ) : esc_html__( 'Continue reading', 'ultra' );
+	$read_more_text = esc_html__( 'Continue reading', 'siteorigin-unwind' );
 	return '<a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</a></span>';
 }
-add_filter( 'the_content_more_link', 'siteorigin_unwind_read_more_link' );
 endif;
+add_filter( 'the_content_more_link', 'siteorigin_unwind_read_more_link' );
 
 if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ) :
 /**
