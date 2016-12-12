@@ -87,7 +87,7 @@ function siteorigin_unwind_setup() {
 	) );
 
 	// Custom image sizes.
-	add_image_size( 'siteorigin-unwind-300x200-crop', 300, 200, true );
+	add_image_size( 'siteorigin-unwind-263x174-crop', 263, 174, true );
 	add_image_size( 'siteorigin-unwind-360x238-crop', 360, 238, true );
 
 	// Set up the WordPress core custom background feature.

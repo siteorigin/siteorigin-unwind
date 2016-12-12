@@ -361,7 +361,7 @@ function siteorigin_unwind_related_posts( $post_id ) {
 							<li>
 								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 									<?php if ( has_post_thumbnail() ) :?>
-										<?php the_post_thumbnail( 'related-post' ); ?>
+										<?php the_post_thumbnail( 'siteorigin-unwind-263x174-crop' ); ?>
 									<?php endif; ?>
 									<h3 class="related-post-title"><?php the_title(); ?></h3>
 									<p class="related-post-date"><?php the_time( 'M d, Y' ); ?></p>
