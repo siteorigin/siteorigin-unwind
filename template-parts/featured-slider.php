@@ -21,13 +21,12 @@ if ( empty( $slider ) ) return;
 
 	<ul class="slides featured-posts-slides">
 
-		<?php foreach ( $slider as $post ) : setup_postdata( $post ); ?>
+		<?php foreach ( $slider as $post ) :
+			setup_postdata( $post );
+			$thumbnail = has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : false;
+			?>
 
-			<?php if ( has_post_thumbnail() ) :
-				$thumbnail = wp_get_attachment_url( get_post_thumbnail_id() );
-			endif; ?>
-
-			<li class="featured-post-slide"<?php if ( has_post_thumbnail() ) : ?>style="background-image: url( '<?php echo $thumbnail; ?>' );" <?php endif; ?>>
+			<li class="featured-post-slide" <?php if( ! empty( $thumbnail ) ) echo 'style="background-image: url( \''  . esc_url( $thumbnail ) . '\' )"'; ?>>
 
 				<header class="slide-content <?php echo ( siteorigin_setting( 'blog_featured_slider_overlay' ) ? 'slide-overlay' : '' ) ?>">
 					<a class="slide-entry-link" href="<?php the_permalink(); ?>"></a>
@@ -49,10 +48,6 @@ if ( empty( $slider ) ) return;
 				</header>
 
 			</li>
-
-			<?php if ( has_post_thumbnail() ) :
-				$thumbnail = '';
-			endif; ?>
 
 		<?php endforeach; ?>
 
