@@ -50,6 +50,10 @@ if ( empty( $slider ) ) return;
 
 			</li>
 
+			<?php if ( has_post_thumbnail() ) :
+				$thumbnail = '';
+			endif; ?>
+
 		<?php endforeach; ?>
 
 	</ul>
