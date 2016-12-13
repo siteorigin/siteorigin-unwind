@@ -168,6 +168,10 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'checkbox',
 					'label' => __( 'Jetpack Featured Content slider on blog home page.', 'siteorigin-unwind' ),
 				),
+				'featured_slider_overlay' => array(
+					'type' => 'checkbox',
+					'label' => __( 'Jetpack Featured Content slider with overlay.', 'siteorigin-unwind' ),
+				),
 				'featured_archive' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Featured image on archive pages.', 'siteorigin-unwind' ),
@@ -935,7 +939,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 
 	// The masthead defaults.
 	$defaults['masthead_social_widget'] = '';
-	$defaults['masthead_padding'] = '60px';
+	$defaults['masthead_padding']       = '60px';
 	$defaults['masthead_bottom_margin'] = '80px';
 
 	// Navigation defaults.
@@ -949,16 +953,17 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['icons_close_search']      = false;
 
 	// Blog settings.
-	$defaults['blog_featured_slider']       = false;
-	$defaults['blog_featured_archive']      = true;
-	$defaults['blog_featured_single']       = true;
-	$defaults['blog_display_related_posts'] = true;
-	$defaults['blog_display_author_box']    = true;
-	$defaults['blog_display_date']          = true;
-	$defaults['blog_display_category']      = true;
-	$defaults['blog_display_comments']      = true;
-	$defaults['blog_display_tags']          = true;
-	$defaults['blog_search_fallback']       = false;
+	$defaults['blog_featured_slider']         = false;
+	$defaults['blog_featured_slider_overlay'] = false;
+	$defaults['blog_featured_archive']        = true;
+	$defaults['blog_featured_single']         = true;
+	$defaults['blog_display_related_posts']   = true;
+	$defaults['blog_display_author_box']      = true;
+	$defaults['blog_display_date']            = true;
+	$defaults['blog_display_category']        = true;
+	$defaults['blog_display_comments']        = true;
+	$defaults['blog_display_tags']            = true;
+	$defaults['blog_search_fallback']         = false;
 
 	// Footer settings.
 	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );
