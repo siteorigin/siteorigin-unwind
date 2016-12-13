@@ -27,7 +27,7 @@ if ( empty( $slider ) ) return;
 				$thumbnail = wp_get_attachment_url( get_post_thumbnail_id() );
 			endif; ?>
 
-			<li class="featured-post-slide" style="background-image: url( '<?php echo $thumbnail; ?>' );">
+			<li class="featured-post-slide"<?php if ( has_post_thumbnail() ) : ?>style="background-image: url( '<?php echo $thumbnail; ?>' );" <?php endif; ?>>
 
 				<header class="slide-content <?php echo ( siteorigin_setting( 'blog_featured_slider_overlay' ) ? 'slide-overlay' : '' ) ?>">
 					<a class="slide-entry-link" href="<?php the_permalink(); ?>"></a>
