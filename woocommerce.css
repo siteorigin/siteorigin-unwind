@@ -499,13 +499,43 @@
 
 .woocommerce.single-product #content div.product #reviews .comment-respond .comment-reply-title {
   display: block;
-  margin: 33px 0 7px; }
+  margin: 33px 0 37px; }
 
 .woocommerce.single-product #content div.product #reviews .comment-respond .comment-form-rating {
   margin: 30px 0; }
 
+.woocommerce.single-product #content div.product #reviews .comment-respond p {
+  line-height: normal;
+  margin-bottom: 2em; }
+
+.woocommerce.single-product #content div.product #reviews .comment-respond #comment {
+  min-height: 140px; }
+
+.woocommerce.single-product #content div.product #reviews .comment-respond .comment-form-author,
+.woocommerce.single-product #content div.product #reviews .comment-respond .comment-form-email {
+  box-sizing: border-box;
+  float: left;
+  width: 31%; }
+  @media (max-width: 768px) {
+    .woocommerce.single-product #content div.product #reviews .comment-respond .comment-form-author,
+    .woocommerce.single-product #content div.product #reviews .comment-respond .comment-form-email {
+      width: 100%; } }
+  .woocommerce.single-product #content div.product #reviews .comment-respond .comment-form-author input,
+  .woocommerce.single-product #content div.product #reviews .comment-respond .comment-form-email input {
+    width: 100%; }
+
+.woocommerce.single-product #content div.product #reviews .comment-respond .comment-form-email {
+  margin: 0 3.5% 2em; }
+  @media (max-width: 768px) {
+    .woocommerce.single-product #content div.product #reviews .comment-respond .comment-form-email {
+      margin: 0 0 2em; } }
+
+.woocommerce.single-product #content div.product #reviews .comment-respond .form-submit {
+  margin-bottom: 49px; }
+
 .woocommerce.single-product #content div.product .related h2 {
-  font-size: 20px; }
+  font-size: 20px;
+  margin-bottom: 29px; }
 
 /*--------------------------------------------------------------
 # WooCommerce Checkout

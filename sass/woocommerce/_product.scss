@@ -284,12 +284,48 @@
 
 			.comment-reply-title {
 				display: block;
-				margin: 33px 0 7px;
+				margin: 33px 0 37px;
 			}
 
 			.comment-form-rating {
 				margin: 30px 0;
 			}
+
+			p {
+				line-height: normal;
+				margin-bottom: 2em; 
+			}			
+
+			#comment {
+				min-height: 140px;
+			}
+
+			.comment-form-author, 
+			.comment-form-email {
+				box-sizing: border-box;
+				float: left;
+				width: 31%;
+
+				@media (max-width: 768px) {
+					width: 100%;
+				}
+
+				input {
+					width: 100%;
+				}
+			}
+
+			.comment-form-email {
+				margin: 0 3.5% 2em;
+				
+				@media (max-width: 768px) {
+					margin: 0 0 2em;
+				} 
+			}		
+
+			.form-submit {
+				margin-bottom: 49px; 
+			}	
 		}
 	}
 
@@ -297,6 +333,7 @@
 
 		h2 {
 			font-size: 20px;
+			margin-bottom: 29px; 
 		}
 	}
 }

@@ -48,8 +48,8 @@ function siteorigin_unwind_woocommerce_loop_shop_columns() {
 add_filter( 'loop_shop_columns', 'siteorigin_unwind_woocommerce_loop_shop_columns' );
 
 function siteorigin_unwind_woocommerce_related_product_args( $args ) {
-	$args['columns'] = 3;
-	$args['posts_per_page'] = 3;
+	$args['columns'] = 4;
+	$args['posts_per_page'] = 4;
 	return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', 'siteorigin_unwind_woocommerce_related_product_args' );

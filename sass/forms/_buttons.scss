@@ -4,9 +4,10 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .woocommerce #respond input#submit {
+	background: #fff;
 	border: 2px solid;
 	border-color: $color__border-button;
-	background: #fff;
+	border-radius: 0;
 	color: $color__text-dark;
 	font-family: $font__details;
 	@include font-size(0.8666);

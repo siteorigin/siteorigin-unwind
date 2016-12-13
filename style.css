@@ -474,9 +474,10 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .woocommerce #respond input#submit {
+  background: #fff;
   border: 2px solid;
   border-color: #ebebeb;
-  background: #fff;
+  border-radius: 0;
   color: #2d2d2d;
   font-family: "Lato", sans-serif;
   font-size: 13.8656px;
