@@ -29,7 +29,7 @@ if ( empty( $slider ) ) return;
 
 			<li class="featured-post-slide" style="background-image: url( '<?php echo $thumbnail; ?>' );">
 
-				<header class="slide-content">
+				<header class="slide-content <?php echo ( siteorigin_setting( 'blog_featured_slider_overlay' ) ? 'slide-overlay' : '' ) ?>">
 					<a class="slide-entry-link" href="<?php the_permalink(); ?>"></a>
 					<div class="slide-inner">
 						<div class="slide-inner-cell">

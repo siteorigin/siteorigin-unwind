@@ -1,6 +1,6 @@
 .flexslider.featured-posts-slider {
 	border: none;
-	
+
 	&:hover {
 
 		.flex-direction-nav a {
@@ -9,17 +9,17 @@
 				background-color: rgba(0, 0, 0, 0.4);
 				background-image: url('images/arrow-left.svg');
 				background-position: 13px 15px;
-				background-repeat: no-repeat;  
-				opacity: 1; 
+				background-repeat: no-repeat;
+				opacity: 1;
 			}
 
 			&.flex-next:before {
 				background-color: rgba(0, 0, 0, 0.4);
 				background-image: url('images/arrow-right.svg');
 				background-position: 16px 15px;
-				background-repeat: no-repeat;  
-				opacity: 1; 
-			}			
+				background-repeat: no-repeat;
+				opacity: 1;
+			}
 		}
 
 		.flex-direction-nav .flex-prev:hover,
@@ -29,41 +29,40 @@
 	}
 
 	.flex-direction-nav {
-		
+
 			@media (max-width: 860px) {
 
 				.flex-prev {
-					left: 0; 
+					left: 0;
 				}
 
 				.flex-next {
 					right: 0;
-				}			
+				}
 			}
 
 			a {
-				height: 50px; 
+				height: 50px;
 				top: 49.166%;
 				margin-top: -25px;
 				width: 40px;
 
 			&:before {
-				background: none; 
+				background: none;
 				content: "";
 				height: 50px;
 				opacity: 0;
 				padding: 0;
 				@include transition(1s);
 				transition-property: opacity;
-				width: 40px; 
+				width: 40px;
 			}
 		}
 	}
-	 
+
 	.featured-posts-slides {
-	
+
 		.featured-post-slide {
-			background-color: $color__text-medium;
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
@@ -88,6 +87,10 @@
 				width: 100%;
 				z-index: 3;
 
+				&.slide-overlay {
+					background-color: rgba( 0, 0, 0, 0.5);
+				}
+
 				.slide-entry-link {
 					display: block;
 					height: 100%;
@@ -107,24 +110,24 @@
 
 				.slide-inner-cell {
 					display: table-cell;
-					padding-top: 157px; 
+					padding-top: 157px;
 					width: 100%;
-					
+
 					@media (max-width: 768px) {
-						padding-top: 77px; 
+						padding-top: 77px;
 					}
 
 					@media (max-width: 480px) {
-						padding-top: 27px;  
+						padding-top: 27px;
 					}
 				}
 
 				.entry-meta {
 					@extend .entry-meta;
-					letter-spacing: .3em; 
-					
+					letter-spacing: .3em;
+
 					span {
-						color: #fff; 
+						color: #fff;
 					}
 
 					@media (max-width: 480px) {
@@ -138,7 +141,7 @@
 					margin: 1em 0 1.65em;
 					position: relative;
 					z-index: 3;
-					
+
 					@media (max-width: 480px) {
 						@include font-size(1.2);
 						margin: 0 0 1.2em;
@@ -153,20 +156,20 @@
 					z-index: 3;
 
 					.button {
-						background: transparent; 
+						background: transparent;
 						border-color: #fff;
-						color: #fff; 
-						letter-spacing: .2em; 
-						
+						color: #fff;
+						letter-spacing: .2em;
+
 						&:hover {
 							background: #fff;
-							color: $color__text-dark;  
-						}		
+							color: $color__text-dark;
+						}
 
 						@media (max-width: 480px) {
 							@include font-size(0.7333);
-						}				
-					}					
+						}
+					}
 				}
 			}
 		}

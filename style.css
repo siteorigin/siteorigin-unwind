@@ -2367,7 +2367,6 @@ object {
       transition-property: opacity;
       width: 40px; }
   .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide {
-    background-color: #626262;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -2388,6 +2387,8 @@ object {
       overflow: hidden;
       width: 100%;
       z-index: 3; }
+      .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content.slide-overlay {
+        background-color: rgba(0, 0, 0, 0.5); }
       .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .slide-entry-link {
         display: block;
         height: 100%;
