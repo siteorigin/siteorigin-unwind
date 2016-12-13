@@ -209,7 +209,7 @@ function siteorigin_unwind_scripts() {
 	wp_register_style( 'siteorigin-unwind-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 	wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
 
-	if ( ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts( 5 ) ) || ( function_exists( 'is_woocommerce' ) && is_product() ) || ( is_single() && has_post_format( 'gallery' ) ) ) {
+	if ( ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts() ) || ( function_exists( 'is_woocommerce' ) && is_product() ) || ( is_single() && has_post_format( 'gallery' ) ) ) {
 		wp_enqueue_style( 'siteorigin-unwind-flexslider' );
 		wp_enqueue_script( 'jquery-flexslider' );
 	}
