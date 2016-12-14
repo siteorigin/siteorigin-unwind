@@ -533,24 +533,31 @@
 .woocommerce.single-product #content div.product #reviews #respond .form-submit {
   margin-bottom: 49px; }
 
+.woocommerce.single-product #content div.product .up-sells h2,
 .woocommerce.single-product #content div.product .related h2 {
   font-size: 20px;
   margin-bottom: 29px; }
 
+.woocommerce.single-product #content div.product .up-sells ul.products li.product,
 .woocommerce.single-product #content div.product .related ul.products li.product {
   margin: 0 1.28% 27px;
   width: 23.071%; }
+  .woocommerce.single-product #content div.product .up-sells ul.products li.product:first-of-type,
   .woocommerce.single-product #content div.product .related ul.products li.product:first-of-type {
     margin-left: 0; }
+  .woocommerce.single-product #content div.product .up-sells ul.products li.product:last-of-type,
   .woocommerce.single-product #content div.product .related ul.products li.product:last-of-type {
     margin-right: 0; }
   @media (max-width: 768px) {
+    .woocommerce.single-product #content div.product .up-sells ul.products li.product,
     .woocommerce.single-product #content div.product .related ul.products li.product {
       clear: none;
       float: left; }
+      .woocommerce.single-product #content div.product .up-sells ul.products li.product:nth-child(2n),
       .woocommerce.single-product #content div.product .related ul.products li.product:nth-child(2n) {
         float: left; } }
   @media (max-width: 480px) {
+    .woocommerce.single-product #content div.product .up-sells ul.products li.product,
     .woocommerce.single-product #content div.product .related ul.products li.product {
       margin: 0 0 27px;
       width: 100%; } }

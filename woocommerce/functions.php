@@ -61,7 +61,7 @@ function siteorigin_unwind_woocommerce_related_product_args( $args ) {
 }
 add_filter( 'woocommerce_output_related_products_args', 'siteorigin_unwind_woocommerce_related_product_args' );
 
-if ( ! function_exists('siteorigin_unwind_woocommerce_output_upsells' ) ) {
+if ( ! function_exists( 'siteorigin_unwind_woocommerce_output_upsells' ) ) {
 	/*
 	 * Change number of upsells output.
 	 *
