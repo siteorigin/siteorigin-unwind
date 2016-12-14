@@ -1487,10 +1487,10 @@ a {
       padding: 0;
       position: absolute;
       right: 0;
-      top: 32px; }
+      top: 16px; }
       @media (max-width: 768px) {
         #fullscreen-search form button[type="submit"] {
-          top: 24px; } }
+          top: 14px; } }
       #fullscreen-search form button[type="submit"] svg {
         fill: #adadad;
         height: 31px;
