@@ -62,6 +62,7 @@
 
 
 .admin-bar p.demo_store {
+
 	@media( max-width: 782px ) {
 		top: 46px !important;
 	}
@@ -72,6 +73,7 @@
 }
 
 @media( max-width: 480px ) {
+
 	.woocommerce-demo-store #page {
 		margin-top: 0;
 	}

@@ -1,0 +1,25 @@
+.woocommerce #respond input#submit.disabled,
+.woocommerce #respond input#submit:disabled,
+.woocommerce #respond input#submit:disabled[disabled],
+.woocommerce a.button.disabled,
+.woocommerce a.button:disabled,
+.woocommerce a.button:disabled[disabled],
+.woocommerce button.button.disabled,
+.woocommerce button.button:disabled,
+.woocommerce button.button:disabled[disabled],
+.woocommerce input.button.disabled,
+.woocommerce input.button:disabled,
+.woocommerce input.button:disabled[disabled] {
+	padding: 1em 1.923em;
+}
+
+.woocommerce a.button,
+.woocommerce a.button.alt {
+	background-color: $color__primary-accent;
+	border: 0;
+	color: #fff;
+	
+	&:hover {
+		background-color: $color__primary-accent-dark;
+	}	
+}

@@ -1,7 +1,8 @@
 .woocommerce {
+
 	.widget-area#secondary {
 
-		// Pricing filter
+		// Pricing filter.
 		.widget_price_filter {
 			.ui-slider {
 				background-color: $color__background-hr;
@@ -57,8 +58,9 @@
 			}
 		}
 
-		// Product Tag Cloud
+		// Product Tag Cloud.
 		.widget_product_tag_cloud {
+			
 			a {
 				border: 1px solid $color__background-hr;
 				color: $color__text-medium;
@@ -77,11 +79,12 @@
 			}
 		}
 
-		// Products and Review Widget
+		// Products and Review Widget.
 		.widget_products,
 		.widget_recent_reviews,
 		.widget_top_rated_products {
 			.product_list_widget {
+
 				li {
 					padding-bottom: 25px;
 					padding-top: 0;
@@ -121,8 +124,9 @@
 			}
 		}
 
-		// Search Field
+		// Search Field.
 		.widget_product_search {
+
 			.search-form {
 				position: relative;
 
@@ -150,6 +154,7 @@
 		}
 
 		.widget_shopping_cart {
+
 			li {
 				border-bottom: none;
 				padding-bottom: 25px;
@@ -196,6 +201,7 @@
 			}
 
 			.buttons {
+
 				.button {
 					background: transparent;
 					border: 2px solid $color__background-hr-dark;
@@ -221,8 +227,11 @@
 		}
 
 		.widget_layered_nav {
+
 			li {
+
 				a {
+
 					&:before {
 						background: transparent;
 						color: $color__text-light !important;
@@ -237,6 +246,7 @@
 		}
 
 		.widget_layered_nav_filters {
+
 			li {
 				border-bottom: none;
 				padding: 0;
