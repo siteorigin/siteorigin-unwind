@@ -537,6 +537,24 @@
   font-size: 20px;
   margin-bottom: 29px; }
 
+.woocommerce.single-product #content div.product .related ul.products li.product {
+  margin: 0 1.28% 27px;
+  width: 23.071%; }
+  .woocommerce.single-product #content div.product .related ul.products li.product:first-of-type {
+    margin-left: 0; }
+  .woocommerce.single-product #content div.product .related ul.products li.product:last-of-type {
+    margin-right: 0; }
+  @media (max-width: 768px) {
+    .woocommerce.single-product #content div.product .related ul.products li.product {
+      clear: none;
+      float: left; }
+      .woocommerce.single-product #content div.product .related ul.products li.product:nth-child(2n) {
+        float: left; } }
+  @media (max-width: 480px) {
+    .woocommerce.single-product #content div.product .related ul.products li.product {
+      margin: 0 0 27px;
+      width: 100%; } }
+
 /*--------------------------------------------------------------
 # WooCommerce Checkout
 --------------------------------------------------------------*/

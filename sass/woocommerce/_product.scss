@@ -335,5 +335,35 @@
 			font-size: 20px;
 			margin-bottom: 29px; 
 		}
+
+		ul.products {
+
+			li.product {
+				margin: 0 1.28% 27px;
+				width: 23.071%;
+				
+				&:first-of-type {
+					margin-left: 0;
+				}
+
+				&:last-of-type {
+					margin-right: 0; 
+				}			
+				
+				@media (max-width: 768px) {
+					clear: none; 
+					float: left;
+					
+					&:nth-child(2n) {
+						float: left;
+					}
+				}
+
+				@media (max-width: 480px) {
+					margin: 0 0 27px;
+					width: 100%; 
+				}
+			}
+		}	
 	}
 }
