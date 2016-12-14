@@ -6,9 +6,9 @@
  * @since siteorigin-unwind 0.9
  * @license GPL 2.0
  */
-if( ! function_exists( 'siteorigin_unwind_woocommerce_change_hooks' ) ) :
+if ( ! function_exists( 'siteorigin_unwind_woocommerce_change_hooks' ) ) :
 function siteorigin_unwind_woocommerce_change_hooks() {
-	// Move the result count
+	// Move the result count.
 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 	add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 35 );
 
@@ -19,7 +19,7 @@ function siteorigin_unwind_woocommerce_change_hooks() {
 	// Remove the cross sell display.
 	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
-	// Modify Archive Content
+	// Modify archive content.
 	remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
 	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
 	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
@@ -43,8 +43,8 @@ add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_change_hooks' );
 
 if( ! function_exists( 'siteorigin_unwind_woocommerce_product_hooks' ) ) :
 function siteorigin_unwind_woocommerce_product_hooks() {
-	// Archive title area
-	if ( !is_product() ) :
+	// Archive title area.
+	if ( ! is_product() ) :
 		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 		add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 8, 0 );
 	endif;
@@ -52,7 +52,7 @@ function siteorigin_unwind_woocommerce_product_hooks() {
 endif;
 add_action('template_redirect', 'siteorigin_unwind_woocommerce_product_hooks' );
 
-// Quick view action hooks
+// Quick view action hooks.
 add_action( 'siteorigin_unwind_woocommerce_quick_view_images', 'siteorigin_unwind_woocommerce_quick_view_image', 5 );
 add_action( 'siteorigin_unwind_woocommerce_quick_view_title', 'woocommerce_template_single_title', 5 );
 add_action( 'siteorigin_unwind_woocommerce_quick_view_title', 'woocommerce_template_single_rating', 15 );
@@ -61,7 +61,7 @@ add_action( 'siteorigin_unwind_woocommerce_quick_view_content', 'woocommerce_tem
 add_action( 'siteorigin_unwind_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );
 
 if ( ! function_exists( 'siteorigin_unwind_woocommerce_description_title' ) ) :
-// Remove the Product Description Title
+// Remove the product description title.
 function siteorigin_unwind_woocommerce_description_title() {
 	return '';
 }
@@ -70,7 +70,7 @@ add_filter( 'woocommerce_product_description_heading', 'siteorigin_unwind_woocom
 
 if ( ! function_exists( 'siteorigin_unwind_woocommerce_loop_item_image' ) ) :
 /**
- * The image section for the products in loop
+ * The image section for the products in loop.
  */
 function siteorigin_unwind_woocommerce_loop_item_image() { ?>
 	<div class="loop-product-thumbnail">
@@ -89,7 +89,7 @@ if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view_button' ) ) :
  */
 function siteorigin_unwind_woocommerce_quick_view_button() {
 	global $product;
-	echo '<a href="#" id="product-id-' . $product->id . '" class="button product-quick-view-button" data-product-id="' . $product->id . '">' . __( 'Quick View', 'siteorigin-unwind') . '</a>';
+	echo '<a href="#" id="product-id-' . $product->id . '" class="button product-quick-view-button" data-product-id="' . $product->id . '">' . esc_html__( 'Quick View', 'siteorigin-unwind') . '</a>';
 }
 endif;
 
