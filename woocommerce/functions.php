@@ -42,9 +42,16 @@ function siteorigin_unwind_woocommerce_enqueue_scripts() {
 }
 add_filter( 'wp_enqueue_scripts', 'siteorigin_unwind_woocommerce_enqueue_scripts' );
 
+if ( ! function_exists( 'siteorigin_unwind_woocommerce_loop_shop_columns' ) ) :
+/*
+ * Change number of products per row.
+ *
+ * @link https://docs.woocommerce.com/document/change-number-of-products-per-row/
+ */	
 function siteorigin_unwind_woocommerce_loop_shop_columns() {
 	return 3;
 }
+endif;
 add_filter( 'loop_shop_columns', 'siteorigin_unwind_woocommerce_loop_shop_columns' );
 
 function siteorigin_unwind_woocommerce_related_product_args( $args ) {
@@ -55,9 +62,13 @@ function siteorigin_unwind_woocommerce_related_product_args( $args ) {
 add_filter( 'woocommerce_output_related_products_args', 'siteorigin_unwind_woocommerce_related_product_args' );
 
 if ( ! function_exists('siteorigin_unwind_woocommerce_output_upsells' ) ) {
-
-	function siteorigin_unwind_woocommerce_output_upsells(){
-		woocommerce_upsell_display( -1, 3 );
+	/*
+	 * Change number of upsells output.
+	 *
+	 * @link https://docs.woocommerce.com/document/change-number-of-upsells-output/
+	 */
+	function siteorigin_unwind_woocommerce_output_upsells() {
+		woocommerce_upsell_display( 4, 4 );
 	}
 }
 

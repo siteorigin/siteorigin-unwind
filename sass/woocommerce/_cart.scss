@@ -1,4 +1,5 @@
 .woocommerce-cart {
+
 	.woocommerce-message,
 	.woocommerce-info {
 		border-top: none;
@@ -9,29 +10,31 @@
 	}
 
 	form {
+	
 		table.shop_table {
-			padding: 2em;
 			border-radius: 0;
+			padding: 2em;
+			
 
 			@media screen and (max-width: 768px) {
 				padding: 1em;
 			}
 
-			// Styling quantity field
+			// Styling quantity field.
 			.quantity.button-controls {
 				@include clearfix;
 
 				.qty {
+					-moz-appearance: textfield;
+				    border-color: $color__text-light;
 					border-radius: 0;
-					width: 2em;
+					border-width: 1px;
+					color: $color__text-medium;
 					float: left;
 					height: 26px;
 					padding: 0;
-					-moz-appearance: textfield;
-					border-color: $color__text-light;
-					border-width: 1px;
-					color: $color__text-medium;
-
+					width: 2em;
+					
 					&::-webkit-inner-spin-button,
 					&::-webkit-outer-spin-button {
 						-webkit-appearance: none;
@@ -63,11 +66,16 @@
 			}
 
 			thead {
+
 				th {
+					font-size: 0.85em;
 					font-weight: normal;
 					text-transform: uppercase;
-					font-size: 0.85em;
 				}
+			}
+
+			tr {
+				background: none;
 			}
 
 			.product-remove {
@@ -91,6 +99,7 @@
 
 				a {
 					vertical-align: middle;
+					
 					img {
 						width: auto;
 					}
@@ -102,10 +111,11 @@
 			}
 
 			.product-name {
+
 				a {
-					text-decoration: none;
 					color: $color__text-dark;
 					font-weight: bold;
+					text-decoration: none;
 
 					&:hover {
 						color: $color__primary-accent;
@@ -115,6 +125,7 @@
 
 			.product-price {
 				width: 150px;
+				
 				.amount{
 					font-weight: bold;
 				}
@@ -133,6 +144,7 @@
 			}
 
 			@media screen and (max-width: 768px) {
+
 				.add,
 				.subtract {
 					display: none;
@@ -141,6 +153,7 @@
 
 			.product-subtotal {
 				width: 150px;
+				
 				.amount{
 					font-weight: bold;
 				}
@@ -168,14 +181,15 @@
 				}
 
 				.coupon {
+
 					input.input-text {
-						height: 36px;
 						border-radius: 0;
+						height: 36px;
 						width: 200px !important;
 
 						@media screen and (max-width: 768px) {
-							width: 100% !important;
 							margin-bottom: 10px;
+							width: 100% !important;
 						}
 					}
 				}
@@ -184,6 +198,7 @@
 	}
 
 	.cart-collaterals {
+
 		.cart_totals {
 			float: none;
 			width: 100%;
@@ -192,21 +207,23 @@
 				border: none;
 
 				tr {
+
 					th {
-						padding-left: 0;
-						width: 150px;
 						border-top: none;
 						border-bottom: 1px solid $color__background-hr;
+						padding-left: 0;
+						width: 150px;
 					}
 
 					td {
-						padding-right: 0;
-						text-align: right;
 						border-top: none;
 						border-bottom: 1px solid $color__background-hr;
+						padding-right: 0;
+						text-align: right;
 					}
 
 					&.shipping {
+
 						p {
 							margin-top: 0.25em;
 							margin-bottom: 0;
@@ -217,6 +234,7 @@
 						}
 
 						.shipping-calculator-form {
+
 							.shipping-calculator-button {
 								color: $color__primary-accent;
 
@@ -224,11 +242,12 @@
 									color: $color__primary-accent;
 								}
 							}
+
 							.button {
 								background-color: $color__primary-accent;
-								color: #fff;
 								border-radius: 0;
-
+								color: #fff;
+								
 								&:hover {
 									background-color: $color__primary-accent;
 								}
@@ -244,22 +263,23 @@
 		}
 	}
 
-	.wc-proceed-to-checkout{
+	.wc-proceed-to-checkout {
+
 		a.checkout-button {
-			display: inline-block;
 			background-color: $color__primary-accent;
-			color: #fff;
 			border-radius: 0;
-			font-size: 1em;
+			color: #fff;
+			display: inline-block;
 			float: right;
+			font-size: 1em;
 
 			&:hover {
 				background-color: $color__primary-accent;
 			}
 
 			@media screen and (max-width: 768px) {
-				width: 100%;
 				margin-bottom: 10px;
+				width: 100%;
 			}
 		}
 	}
