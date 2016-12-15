@@ -3,7 +3,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.woocommerce #respond input#submit {
+.woocommerce #respond input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button {
 	background: #fff;
 	border: 2px solid;
 	border-color: $color__border-button;
@@ -12,10 +15,10 @@ input[type="submit"],
 	font-family: $font__details;
 	@include font-size(0.8666);
 	line-height: 1;
-	letter-spacing: .1em;
+	letter-spacing: 1.5px;
 	outline-style: none;
 	padding: 1em 1.923em;
-	@include transition(0.3s);
+	transition: 0.3s;
 	text-decoration: none;
 	text-transform: uppercase;
 

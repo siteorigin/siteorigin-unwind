@@ -1,5 +1,9 @@
 .woocommerce-cart {
 
+	.entry-title {
+		font-size: 24px; 
+	}
+
 	.woocommerce-message,
 	.woocommerce-info {
 		border-top: none;
@@ -8,77 +12,43 @@
 			color: $color__primary-accent;
 		}
 	}
-
-	form {
 	
-		table.shop_table {
-			border-radius: 0;
-			padding: 2em;
-			
+	table.shop_table {
+		border-radius: 0;
+		font-family: $font__main; 
+		padding: 15px 30px;
+		
+		@media (max-width: 768px) {
+			padding: 1em;
+		}		
+		
+		tr {
+			background: none;
+		}
 
-			@media screen and (max-width: 768px) {
-				padding: 1em;
+		td {
+			padding: 0;
+		}		
+		
+		thead {
+			font-family: $font__details;
+			font-size: 12px; 
+
+			th {
+				font-size: 12px; 
 			}
+		}
 
-			// Styling quantity field.
-			.quantity.button-controls {
-				@include clearfix;
+		tbody {
 
-				.qty {
-					-moz-appearance: textfield;
-				    border-color: $color__text-light;
-					border-radius: 0;
-					border-width: 1px;
-					color: $color__text-medium;
-					float: left;
-					height: 26px;
-					padding: 0;
-					width: 2em;
-					
-					&::-webkit-inner-spin-button,
-					&::-webkit-outer-spin-button {
-						-webkit-appearance: none;
-						margin: 0;
-					}
-				}
-
-				.add,
-				.subtract {
-					border-radius: 0;
-					border-color: $color__text-light;
-					border-width: 1px;
-					background: #f9f9f9;
-					float: left;
-					padding: 6px 10px;
-
-					&:hover {
-						background: darken( #f9f9f9, 20%);
-					}
-				}
-
-				.subtract {
-					border-right: none;
-				}
-
-				.add {
-					border-left: none;
-				}
-			}
-
-			thead {
-
-				th {
-					font-size: 0.85em;
-					font-weight: normal;
-					text-transform: uppercase;
-				}
-			}
-
-			tr {
-				background: none;
+			td {
+				color: $color__text-dark;
+				font-size: 14px;
+				font-weight: 700; 
 			}
 
 			.product-remove {
+				padding-left: 10px; 
 				width: 30px;
 
 				a {
@@ -94,44 +64,96 @@
 			}
 
 			.product-thumbnail {
-				width:85px;
-				padding: 6px 0;
+				line-height: 0;
+				padding: 20px;
+				width: 116px; 
 
 				a {
-					vertical-align: middle;
-					
+					display: inline-block;
+					line-height: 0;
+										
 					img {
-						width: auto;
+						width: 76px;
 					}
 				}
 
-				@media screen and (max-width: 768px) {
+				@media (max-width: 768px) {
 					display: none;
 				}
 			}
 
-			.product-name {
+			.product-name { 
+				font-size: 14px;
 
 				a {
 					color: $color__text-dark;
-					font-weight: bold;
+					font-weight: 700;
 					text-decoration: none;
-
-					&:hover {
-						color: $color__primary-accent;
-					}
 				}
 			}
 
 			.product-price {
 				width: 150px;
 				
-				.amount{
+				.amount {
+					font-size: 14px; 
 					font-weight: bold;
 				}
 
 				@media screen and (max-width: 768px) {
 					display: none;
+				}
+			}								
+
+			// Styling quantity field.
+			.quantity.button-controls {
+				@include clearfix;
+				
+				input {
+					height: 32px;
+					width: 32px;
+				}
+
+				.qty {
+					-moz-appearance: textfield;
+				    border-color: $color__text-light;
+					border-radius: 0;
+					border-width: 1px;
+					color: $color__text-medium;
+					float: left;
+					font-family: $font__details; 
+					padding: 0;
+					width: 38px;
+
+					
+					&::-webkit-inner-spin-button,
+					&::-webkit-outer-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
+				}
+
+				.add,
+				.subtract {
+					border-radius: 0;
+					border-color: $color__text-light;
+					border-width: 1px;
+					background: #f9f9f9;
+					float: left;
+					padding: 0;
+					
+					&:hover {
+						background: darken( #f9f9f9, 20%);
+						color: $color__text-medium;
+					}
+				}
+
+				.subtract {
+					border-right: none;
+				}
+
+				.add {
+					border-left: none;
 				}
 			}
 
@@ -143,7 +165,7 @@
 				}
 			}
 
-			@media screen and (max-width: 768px) {
+			@media (max-width: 768px) {
 
 				.add,
 				.subtract {
@@ -153,108 +175,107 @@
 
 			.product-subtotal {
 				width: 150px;
-				
-				.amount{
-					font-weight: bold;
-				}
 
 				@media screen and (max-width: 768px) {
 					width: 60px;
 				}
-			}
+			}			
 
-			td.actions {
-				padding: 2em 0 0 0;
+		}		
 
-				input.button {
-					background-color: $color__primary-accent;
-					color: #fff;
-					border-radius: 0;
+		td.actions {
+			padding: 2em 0 0 0;
 
-					&:hover {
-						background-color: $color__primary-accent;
-					}
+			input.button {
+				background-color: $color__primary-accent;
+				border: none;
+				color: #fff;
 
-					@media screen and (max-width: 768px) {
-						width: 100% !important;
-					}
+				&:hover {
+					background: $color__primary-accent-dark;
 				}
 
-				.coupon {
+				@media (max-width: 768px) {
+					width: 100% !important;
+				}
+			}
 
-					input.input-text {
-						border-radius: 0;
-						height: 36px;
-						width: 200px !important;
+			.coupon {
 
-						@media screen and (max-width: 768px) {
-							margin-bottom: 10px;
-							width: 100% !important;
-						}
+				input.input-text {
+					border-radius: 0;
+					height: 36px;
+					font-size: 13px;
+					padding: 18px 15px; 
+					width: 200px !important;
+
+					@media (max-width: 768px) {
+						margin-bottom: 10px;
+						width: 100% !important;
 					}
 				}
 			}
 		}
 	}
+}
 
-	.cart-collaterals {
+.cart-collaterals {
 
-		.cart_totals {
-			float: none;
-			width: 100%;
+	.cart_totals {
+		float: none;
+		width: 100%;
 
-			table {
-				border: none;
+		table {
+			border: none;
 
-				tr {
+			tr {
 
-					th {
-						border-top: none;
-						border-bottom: 1px solid $color__background-hr;
-						padding-left: 0;
-						width: 150px;
+				th {
+					border-top: none;
+					border-bottom: 1px solid $color__background-hr;
+					padding-left: 0;
+					width: 150px;
+				}
+
+				td {
+					border-top: none;
+					border-bottom: 1px solid $color__background-hr;
+					padding-right: 0;
+					text-align: right;
+				}
+
+				&.shipping {
+
+					p {
+						margin-top: 0.25em;
+						margin-bottom: 0;
+
+						a {
+							text-decoration: none;
+						}
 					}
 
-					td {
-						border-top: none;
-						border-bottom: 1px solid $color__background-hr;
-						padding-right: 0;
-						text-align: right;
-					}
+					.shipping-calculator-form {
 
-					&.shipping {
+						.shipping-calculator-button {
+							color: $color__primary-accent;
 
-						p {
-							margin-top: 0.25em;
-							margin-bottom: 0;
-
-							a {
-								text-decoration: none;
+							&:hover {
+								color: $color__primary-accent;
 							}
 						}
 
-						.shipping-calculator-form {
-
-							.shipping-calculator-button {
-								color: $color__primary-accent;
-
-								&:hover {
-									color: $color__primary-accent;
-								}
+						.button {
+							background-color: $color__primary-accent;
+							border-radius: 0;
+							color: #fff;
+							
+							&:hover {
+								background-color: $color__primary-accent;
 							}
 
-							.button {
-								background-color: $color__primary-accent;
-								border-radius: 0;
-								color: #fff;
-								
-								&:hover {
-									background-color: $color__primary-accent;
-								}
-
-								@media screen and (max-width: 768px) {
-									width: 100% !important;
-								}
+							@media screen and (max-width: 768px) {
+								width: 100% !important;
 							}
 						}
 					}
@@ -266,16 +287,8 @@
 	.wc-proceed-to-checkout {
 
 		a.checkout-button {
-			background-color: $color__primary-accent;
-			border-radius: 0;
-			color: #fff;
-			display: inline-block;
 			float: right;
 			font-size: 1em;
-
-			&:hover {
-				background-color: $color__primary-accent;
-			}
 
 			@media screen and (max-width: 768px) {
 				margin-bottom: 10px;
