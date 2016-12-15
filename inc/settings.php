@@ -144,19 +144,19 @@ function siteorigin_unwind_settings_init() {
 			'fields' => array(
 				'menu' => array(
 					'type' => 'media',
-					'label' => __( 'Mobile menu icon', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Mobile menu icon', 'siteorigin-unwind' ),
 				),
 				'fullscreen_search' => array(
 					'type' => 'media',
-					'label' => __( 'Fullscreen search icon', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Fullscreen search icon', 'siteorigin-unwind' ),
 				),
 				'search' => array(
 					'type' => 'media',
-					'label' => __( 'Menu search icon', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Menu search icon', 'siteorigin-unwind' ),
 				),
 				'close_search' => array(
 					'type' => 'media',
-					'label' => __( 'Menu close search icon', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Menu close search icon', 'siteorigin-unwind' ),
 				),
 			),
 		),
@@ -166,11 +166,11 @@ function siteorigin_unwind_settings_init() {
 			'fields' => array(
 				'featured_slider' => array(
 					'type' => 'checkbox',
-					'label' => __( 'Jetpack Featured Content slider on blog home page.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Jetpack Featured Content slider on blog home page.', 'siteorigin-unwind' ),
 				),
 				'featured_slider_overlay' => array(
 					'type' => 'checkbox',
-					'label' => __( 'Jetpack Featured Content slider with overlay.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Jetpack Featured Content slider image overlay. Slider must first be enabled.', 'siteorigin-unwind' ),
 				),
 				'featured_archive' => array(
 					'type' => 'checkbox',
