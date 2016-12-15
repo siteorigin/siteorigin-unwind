@@ -1071,3 +1071,26 @@ function siteorigin_unwind_page_settings_panels_defaults( $settings ){
 	return $settings;
 }
 add_filter( 'siteorigin_page_settings_panels_home_defaults', 'siteorigin_unwind_page_settings_panels_defaults' );
+
+function siteorigin_unwind_about_page_sections( $about ) {
+	$about['documentation_url'] = 'https://siteorigin.com/unwind-documentation/';
+
+	$about[ 'video_thumbnail' ] = array(
+		get_template_directory_uri() . '/admin/about/stills/still-1.jpg',
+	);
+
+	$about['description'] = __( "Unwind changes the rules when it comes to WooCommerce. We're giving you loads of features that are typically only found premium WooCommerce themes.", 'siteorigin-unwind' );
+
+	$about[ 'review' ] = true;
+
+	$about[ 'sections' ] = array(
+		'free',
+		'woocommerce',
+		'support',
+		'page-builder',
+		'github',
+	);
+
+	return $about;
+}
+add_filter( 'siteorigin_about_page', 'siteorigin_unwind_about_page_sections' );
