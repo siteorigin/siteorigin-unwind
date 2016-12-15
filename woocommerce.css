@@ -75,13 +75,24 @@
   padding: 1em 1.923em; }
 
 .woocommerce a.button,
-.woocommerce a.button.alt {
+.woocommerce a.button.alt,
+.woocommerce.single-product .cart button {
   background-color: #24c48a;
-  border: 0;
+  border: 1px solid #24c48a;
   color: #fff; }
   .woocommerce a.button:hover,
-  .woocommerce a.button.alt:hover {
-    background-color: #00a76a; }
+  .woocommerce a.button.alt:hover,
+  .woocommerce.single-product .cart button:hover {
+    background-color: #00a76a;
+    border-color: #00a76a;
+    color: #fff; }
+  .woocommerce a.button:active, .woocommerce a.button:focus,
+  .woocommerce a.button.alt:active,
+  .woocommerce a.button.alt:focus,
+  .woocommerce.single-product .cart button:active,
+  .woocommerce.single-product .cart button:focus {
+    border-color: #24c48a;
+    color: #fff; }
 
 /*--------------------------------------------------------------
 # WooCommerce Archive
@@ -393,15 +404,12 @@
     border-bottom: 1px solid #f4f4f4;
     margin-bottom: 0;
     padding-bottom: 30px; }
-    .woocommerce.single-product #content div.product .entry-summary .cart button {
-      background-color: #24c48a;
-      border-radius: 0;
-      font-size: 13px;
-      margin-left: 6px;
-      padding: 14px 20px 13px;
-      text-transform: uppercase; }
-      .woocommerce.single-product #content div.product .entry-summary .cart button:hover {
-        background-color: #00a76a; }
+    .woocommerce.single-product #content div.product .entry-summary .cart .variations {
+      font-family: "Merriweather", serif; }
+      .woocommerce.single-product #content div.product .entry-summary .cart .variations td {
+        padding: 0; }
+    .woocommerce.single-product #content div.product .entry-summary .cart .woocommerce-variation-price {
+      margin-bottom: 20px; }
     .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls::after {
       clear: both;
       content: "";
@@ -737,7 +745,8 @@
     font-family: "Lato", sans-serif;
     font-size: 12px; }
     .woocommerce-cart table.shop_table thead th {
-      font-size: 12px; }
+      font-size: 12px;
+      padding-left: 0; }
   .woocommerce-cart table.shop_table tbody td {
     color: #2d2d2d;
     font-size: 14px;
@@ -852,17 +861,21 @@
 .cart-collaterals .cart_totals {
   float: none;
   width: 100%; }
+  .cart-collaterals .cart_totals h2 {
+    font-size: 24px; }
   .cart-collaterals .cart_totals table {
     border: none; }
     .cart-collaterals .cart_totals table tr th {
-      border-top: none;
+      border-top-width: 0;
       border-bottom: 1px solid #f4f4f4;
+      color: #2d2d2d;
+      font-size: 14px;
       padding-left: 0;
       width: 150px; }
     .cart-collaterals .cart_totals table tr td {
-      border-top: none;
+      border-top-width: 0;
       border-bottom: 1px solid #f4f4f4;
-      padding-right: 0;
+      padding: 9px 0 9px 12px;
       text-align: right; }
     .cart-collaterals .cart_totals table tr.shipping p {
       margin-top: 0.25em;

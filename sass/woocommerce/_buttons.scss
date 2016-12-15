@@ -14,12 +14,21 @@
 }
 
 .woocommerce a.button,
-.woocommerce a.button.alt {
+.woocommerce a.button.alt,
+.woocommerce.single-product .cart button {
 	background-color: $color__primary-accent;
-	border: 0;
+	border: 1px solid $color__primary-accent;
 	color: #fff;
 	
 	&:hover {
 		background-color: $color__primary-accent-dark;
+		border-color: $color__primary-accent-dark;
+		color: #fff;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__primary-accent;
+		color: #fff;
 	}	
 }

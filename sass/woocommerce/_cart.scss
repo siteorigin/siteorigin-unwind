@@ -35,7 +35,8 @@
 			font-size: 12px; 
 
 			th {
-				font-size: 12px; 
+				font-size: 12px;
+				padding-left: 0;
 			}
 		}
 
@@ -103,7 +104,7 @@
 				@media screen and (max-width: 768px) {
 					display: none;
 				}
-			}								
+			}						
 
 			// Styling quantity field.
 			.quantity.button-controls {
@@ -224,6 +225,10 @@
 	.cart_totals {
 		float: none;
 		width: 100%;
+		
+		h2 {
+			font-size: 24px; 
+		}
 
 		table {
 			border: none;
@@ -231,16 +236,18 @@
 			tr {
 
 				th {
-					border-top: none;
+					border-top-width: 0;
 					border-bottom: 1px solid $color__background-hr;
+					color: $color__text-dark;
+					font-size: 14px; 
 					padding-left: 0;
 					width: 150px;
 				}
 
 				td {
-					border-top: none;
+					border-top-width: 0;
 					border-bottom: 1px solid $color__background-hr;
-					padding-right: 0;
+    				padding: 9px 0 9px 12px;
 					text-align: right;
 				}
 

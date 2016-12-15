@@ -6,7 +6,8 @@ input[type="submit"],
 .woocommerce #respond input#submit, 
 .woocommerce a.button, 
 .woocommerce button.button, 
-.woocommerce input.button {
+.woocommerce input.button,
+.woocommerce.single-product .cart button {
 	background: #fff;
 	border: 2px solid;
 	border-color: $color__border-button;
