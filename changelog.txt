@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.1 - 15 December 2016 =
+* Fixed theme image size bugs.
+* Fixed read more filter function bug.
+* Added an overlay setting to the Jetpack Featured Content slider.
+* Various WooCommerce style improvements.
+* Added theme about page.
+
 = 1.0.0 - 09 December 2016 =
 * Wide ranging enhancements to styling, settings, post formats and WooCommerce integration.
 
@@ -16,8 +23,8 @@
 * Added missing translation function to widget area descriptions.
 
 = 0.9.1 - 04 October 2016 =
-* Remove page title conditional.
-* Remove sidebar conditional.
+* Removed page title conditional.
+* Removed sidebar conditional.
 
 = 0.9 - 02 October 2016 =
 * Various changes to prepare for release.
