@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.0.2 - 19 December 2016 =
+* WooCommerce cart page style improvements.
+* WooCommerce checkout page style improvements.
+
 = 1.0.1 - 15 December 2016 =
 * Fixed theme image size bugs.
 * Fixed read more filter function bug.
