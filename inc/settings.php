@@ -35,6 +35,11 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Logo', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Logo displayed in your header.', 'siteorigin-unwind' )
 				),
+				'retina_logo'      => array(
+					'type'        => 'media',
+					'label'       => __( 'Retina Logo', 'siteorigin-unwind' ),
+					'description' => __( 'A double sized logo to use on retina devices.', 'siteorigin-unwind' )
+				),
 				'site_description' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Site Description', 'siteorigin-unwind' ),

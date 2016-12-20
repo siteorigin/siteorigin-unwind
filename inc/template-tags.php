@@ -162,6 +162,37 @@ function siteorigin_unwind_display_logo() {
 }
 endif;
 
+/**
+ * Display a retina ready logo
+ */
+function siteorigin_unwind_display_retina_logo( $attr ){
+	$logo = siteorigin_setting( 'branding_logo' );
+	$retina = siteorigin_setting( 'branding_retina_logo' );
+
+	if( !empty( $retina ) ) {
+
+		$srcset = array();
+
+		$logo_src = wp_get_attachment_image_src( $logo, 'full' );
+		$retina_src = wp_get_attachment_image_src( $retina, 'full' );
+
+		if( !empty( $logo_src ) ) {
+			$srcset[] = $logo_src[0] . ' 1x';
+		}
+
+		if( !empty( $logo_src ) ) {
+			$srcset[] = $retina_src[0] . ' 2x';
+		}
+
+		if( ! empty( $srcset ) ) {
+			$attr['srcset'] = implode( ',', $srcset );
+		}
+	}
+
+	return $attr;
+}
+add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
+
 if ( ! function_exists( 'siteorigin_unwind_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
