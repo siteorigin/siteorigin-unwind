@@ -45,6 +45,12 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Site Description', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Show your site description below your site title or logo.', 'siteorigin-unwind' )
 				),
+				'attribution' => array(
+					'type' => 'checkbox',
+					'label' => __( 'Display SiteOrigin Attribution', 'siteorigin-unwind' ),
+					'description' => __( 'Choose if the link to SiteOrigin is displayed in your footer.', 'siteorigin-unwind' ),
+					'teaser' => true,
+				),
 				'accent' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Accent Color', 'siteorigin-unwind' ),
@@ -934,6 +940,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	// Branding defaults.
 	$defaults['branding_logo']             = false;
 	$defaults['branding_site_description'] = false;
+	$defaults['branding_attribution']      = true;
 	$defaults['branding_accent']           = '#24c48a';
 	$defaults['branding_accent_dark']      = '#00a76a';
 

@@ -270,7 +270,7 @@ function siteorigin_unwind_premium_setup() {
 	// No Attribution addon.
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
 		'filter'  => 'siteorigin_unwind_footer_credits',
-		'enabled' => siteorigin_setting( 'branding_attribution' ),
+		'enabled' => ! siteorigin_setting( 'branding_attribution' ),
 		'siteorigin_setting' => 'branding_attribution'
 	) );
 
