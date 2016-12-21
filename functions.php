@@ -128,6 +128,7 @@ function siteorigin_unwind_setup() {
 	 * Support SiteOrigin Page Builder plugin.
 	 */
 	add_theme_support( 'siteorigin-panels', array(
+		'home-page'  => true,
 	) );
 
 	/**
