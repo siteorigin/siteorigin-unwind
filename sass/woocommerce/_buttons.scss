@@ -14,12 +14,22 @@
 }
 
 .woocommerce a.button,
-.woocommerce a.button.alt {
+.woocommerce a.button.alt,
+.woocommerce.single-product .cart button,
+.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button {
 	background-color: $color__primary-accent;
-	border: 0;
+	border: 1px solid $color__primary-accent;
 	color: #fff;
 	
 	&:hover {
 		background-color: $color__primary-accent-dark;
+		border-color: $color__primary-accent-dark;
+		color: #fff;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__primary-accent;
+		color: #fff;
 	}	
 }

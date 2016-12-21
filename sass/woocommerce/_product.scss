@@ -71,18 +71,17 @@
 			border-bottom: 1px solid $color__background-hr;
 			margin-bottom: 0;
 			padding-bottom: 30px;
-
-			button {
-				background-color: $color__primary-accent;
-				border-radius: 0;
-				font-size: 13px;
-				margin-left: 6px;
-				padding: 14px 20px 13px;
-				text-transform: uppercase;
-
-				&:hover {
-					background-color: $color__primary-accent-dark;
+			
+			.variations {
+				font-family: $font__main;
+				
+				td {
+					padding: 0; 
 				}
+			}
+
+			.woocommerce-variation-price {
+				margin-bottom: 20px;
 			}
 
 			.quantity.button-controls {
@@ -118,8 +117,8 @@
 					width: 40px;
 
 					&:hover {
-						color: #fff;
 						background: $color__text-medium;
+						color: #fff;
 					}
 				}
 

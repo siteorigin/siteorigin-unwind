@@ -1,8 +1,15 @@
+.woocommerce-checkout .entry-title {
+	font-size: 24px;		
+}
+
 .woocommerce {
+
 	.woocommerce-info {
-		padding-left: 2em !important;
 		border-top: 0;
-		margin-bottom: 0.5em !important;
+		color: $color__text-dark;
+		font-size: 14px; 
+		margin-bottom: 10px !important;
+		padding: 13px 15px 12px !important;
 
 		&:before {
 			content: '';
@@ -15,14 +22,14 @@
 
 	form.login,
 	form.checkout_coupon {
-		margin: 0.5em 0;
-		border-radius: 0;
 		border-color: $color__background-hr;
+		border-radius: 0;
+		margin: 0.5em 0;
 		padding: 10px 20px;
 
 		input.input-text {
-			padding: 0.5em;
 			border-radius: 0;
+			padding: 0.5em;
 		}
 
 		.form-row {
@@ -31,9 +38,9 @@
 
 		input.button {
 			background-color: $color__primary-accent;
+			border-radius: 0;
 			color: #fff;
 			margin-right: 1.2em;
-			border-radius: 0;
 
 			&:hover {
 				background-color: $color__primary-accent;
@@ -46,30 +53,33 @@
 	}
 
 	.woocommerce-checkout {
-		.checkout-details {
-			width: 48%;
-			float: left;
-			margin-top: 2em;
 
-			@media screen and (max-width: 768px) {
-				width: 100%;
+		.checkout-details {
+			float: left;
+			margin-top: 51px;
+			width: 48.6842%;
+
+			@media (max-width: 768px) {
 				float: none;
+				width: 100%;
 			}
 
 			h3 {
-				font-size: 1.5em;
+				font-size: 24px;
+				margin: 0 0 6px;
 
 				label {
-					font-size: 0.8em;
+					font-size: 13px;
 				}
 			}
 
 			.form-row {
-				margin-bottom: 1em;
+				margin: 0 0 4px;
 
 				label {
-					line-height: 1.75;
-					font-size: 0.9em;
+					color: $color__text-dark;
+					font-size: 13px;
+					margin: 13px 0 1px;					
 
 					abbr {
 						color: inherit;
@@ -78,57 +88,94 @@
 
 				input.input-text,
 				textarea.input-text {
-					padding: 0.5em;
-					border-radius: 0;
+					font-size: 13px; 
+					padding: 11px 13px 10px;
+				}
+
+				textarea.input-text {
+					min-height: 90px;
+				}
+
+				[class*="_select"] {
+					font-size: 13px;
+					
+					a {
+						border-color: $color__background-hr-dark;
+					}
+				}
+
+				&.woocommerce-validated input.input-text {
+					border-color: $color__primary-accent; 
 				}
 			}
 		}
 
 		.order-details {
-			width: 48%;
-			float: right;
 			border: 1px solid $color__background-hr;
-			padding: 0 1em;
-			margin-top: 2em;
+			float: right;
+			margin-top: 30px;
+			padding: 30px;
+			width: 48.6842%;
 
 			@media screen and (max-width: 768px) {
-				width: 100%;
 				float: none;
+				width: 100%;
 			}
 
 			h3 {
-				font-size: 1.5em;
+				font-size: 24px;
+				line-height: 1; 
+				margin: 0 0 20px;
 			}
 
 			.woocommerce-checkout-review-order {
+				color: $color__text-dark; 
+				font-size: 14px;
+
 				.woocommerce-checkout-review-order-table {
 					border: none;
 					border-bottom: 1px solid $color__background-hr;
+					font-family: $font__main; 
 					margin-bottom: 0;
-
-					td {
-						border-top: 1px solid $color__background-hr;
-					}
-
+					
 					.product-name {
 						width: 70%;
-						padding: 10px 12px 10px 0;
 					}
 
 					.product-total {
-						width: 30%;
 						text-align: right;
-						padding: 10px 0 10px 12px;
+						width: 30%;
+					}						
+					
+					tr {
+						background: none;
+					}
+					
+					td {
+						border-top: 1px solid $color__background-hr;					
+					}					
+					
+					thead tr th {
+						padding: 10px 0 12px;
+					}
+					
+					tbody tr td {
+						padding: 13px 0 12px;
+						
+						dl {
+							margin: 0;
+						}
+						
+						dd {
+							margin: 0;
+						}
 					}
 
-					tfoot{
+					tfoot {
+
 						th {
 							border-top: 1px solid $color__background-hr;
-							padding: 10px 12px 10px 0;
-						}
-
-						td {
-							padding: 10px 0 10px 12px;
+							padding: 13px 0 12px;
 						}
 
 						.cart-subtotal,
@@ -151,6 +198,10 @@
 							border-bottom: 1px solid $color__background-hr;
 							padding: 0.5em 0;
 						}
+
+						label {
+							font-size: 13px; 
+						}
 					}
 
 					.payment_box {
@@ -168,18 +219,8 @@
 
 					.place-order {
 						float: left;
-						padding: 1em 0;
-
-						.button {
-							background-color: $color__primary-accent;
-							color: #fff;
-							margin-right: 1.2em;
-							border-radius: 0;
-
-							&:hover {
-								background-color: $color__primary-accent;
-							}
-						}
+						margin: 4px 0 0; 
+						padding: 0;
 					}
 				}
 			}

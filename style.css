@@ -478,7 +478,8 @@ input[type="submit"],
 .woocommerce button.button,
 .woocommerce #page #infinite-handle span button, #page #infinite-handle span
 .woocommerce button,
-.woocommerce input.button {
+.woocommerce input.button,
+.woocommerce.single-product .cart button {
   background: #fff;
   border: 2px solid;
   border-color: #ebebeb;
@@ -504,7 +505,8 @@ input[type="submit"],
   .woocommerce button.button:hover,
   .woocommerce #page #infinite-handle span button:hover, #page #infinite-handle span
   .woocommerce button:hover,
-  .woocommerce input.button:hover {
+  .woocommerce input.button:hover,
+  .woocommerce.single-product .cart button:hover {
     background: #fff;
     border-color: #24c48a;
     color: #24c48a; }
@@ -528,7 +530,9 @@ input[type="submit"],
   .woocommerce #page #infinite-handle span button:focus, #page #infinite-handle span
   .woocommerce button:focus,
   .woocommerce input.button:active,
-  .woocommerce input.button:focus {
+  .woocommerce input.button:focus,
+  .woocommerce.single-product .cart button:active,
+  .woocommerce.single-product .cart button:focus {
     border-color: #24c48a;
     color: #24c48a; }
 

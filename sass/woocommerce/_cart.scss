@@ -35,7 +35,8 @@
 			font-size: 12px; 
 
 			th {
-				font-size: 12px; 
+				font-size: 12px;
+				padding-left: 0;
 			}
 		}
 
@@ -90,6 +91,14 @@
 					font-weight: 700;
 					text-decoration: none;
 				}
+
+				.variation {
+					color: $color__text-medium;
+				}
+
+				dd {
+					margin: 0;
+				}
 			}
 
 			.product-price {
@@ -103,7 +112,7 @@
 				@media screen and (max-width: 768px) {
 					display: none;
 				}
-			}								
+			}						
 
 			// Styling quantity field.
 			.quantity.button-controls {
@@ -143,8 +152,8 @@
 					padding: 0;
 					
 					&:hover {
-						background: darken( #f9f9f9, 20%);
-						color: $color__text-medium;
+						background: $color__text-medium;
+						color: #fff;
 					}
 				}
 
@@ -219,11 +228,16 @@
 	}
 }
 
-.cart-collaterals {
+.woocommerce .cart-collaterals {
 
 	.cart_totals {
 		float: none;
 		width: 100%;
+		
+		h2 {
+			font-size: 24px;
+			margin-bottom: 5px;
+		}
 
 		table {
 			border: none;
@@ -231,16 +245,21 @@
 			tr {
 
 				th {
-					border-top: none;
+					border-top-width: 0;
 					border-bottom: 1px solid $color__background-hr;
-					padding-left: 0;
+					color: $color__text-dark;
+					font-size: 14px;
+					line-height: 1;
+					margin: 0;
+					padding: 20px 0 18px;
 					width: 150px;
 				}
 
 				td {
-					border-top: none;
+					border-top-width: 0;
 					border-bottom: 1px solid $color__background-hr;
-					padding-right: 0;
+					line-height: 1;
+    				padding: 20px 0 18px;
 					text-align: right;
 				}
 
@@ -285,6 +304,7 @@
 	}
 
 	.wc-proceed-to-checkout {
+		padding: 24px 0;
 
 		a.checkout-button {
 			float: right;
