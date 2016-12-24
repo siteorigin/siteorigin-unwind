@@ -411,13 +411,11 @@
   .woocommerce.single-product #content div.product .entry-summary .price {
     font-size: 24px;
     line-height: normal;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    color: #24c48a; }
     .woocommerce.single-product #content div.product .entry-summary .price del,
     .woocommerce.single-product #content div.product .entry-summary .price del .amount {
       color: #adadad; }
-    .woocommerce.single-product #content div.product .entry-summary .price .amount,
-    .woocommerce.single-product #content div.product .entry-summary .price ins {
-      color: #24c48a; }
   .woocommerce.single-product #content div.product .entry-summary div[itemprop="description"] {
     font-size: 14px; }
   .woocommerce.single-product #content div.product .entry-summary .cart {

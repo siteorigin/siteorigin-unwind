@@ -51,15 +51,11 @@
 			font-size: 24px;
 			line-height: normal;
 			margin-bottom: 15px;
+			color: $color__primary-accent;
 
 			del,
 			del .amount {
 				color: $color__text-light;
-			}
-
-			.amount,
-			ins {
-				color: $color__primary-accent;
 			}
 		}
 
@@ -71,12 +67,12 @@
 			border-bottom: 1px solid $color__background-hr;
 			margin-bottom: 0;
 			padding-bottom: 30px;
-			
+
 			.variations {
 				font-family: $font__main;
-				
+
 				td {
-					padding: 0; 
+					padding: 0;
 				}
 			}
 
@@ -196,7 +192,7 @@
 			li {
 				background: transparent;
 				border: none;
-				font-family: $font__details; 
+				font-family: $font__details;
 				font-size: 12px;
 				letter-spacing: 1px;
 				margin: 0;
@@ -205,10 +201,10 @@
 
 				&.active {
 					border-bottom: 2px solid $color__text-medium;
-					
+
 					a {
-						color: $color__text-dark; 
-					}					
+						color: $color__text-dark;
+					}
 				}
 
 				&:before,
@@ -218,8 +214,8 @@
 				}
 
 				a {
-					color: $color__text-light; 
-				}				
+					color: $color__text-light;
+				}
 			}
 		}
 	}
@@ -227,7 +223,7 @@
 	#reviews {
 
 		#comments {
-		
+
 			.woocommerce-Reviews-title {
 				font-size: 18px;
 				margin: 30px 0 5px;
@@ -259,19 +255,19 @@
 
 								.comment-author {
 									color: $color__text-dark;
-									font-size: 14px; 
+									font-size: 14px;
 									margin-bottom: 0;
 								}
 
 								.comment-date {
 									color: $color__text-light;
-									font-size: 13px; 
+									font-size: 13px;
 									margin-bottom: 5px;
 								}
 							}
 
 							.description {
-								font-size: 14px; 
+								font-size: 14px;
 							}
 						}
 					}
@@ -292,14 +288,14 @@
 
 			p {
 				line-height: normal;
-				margin-bottom: 2em; 
-			}			
+				margin-bottom: 2em;
+			}
 
 			#comment {
 				min-height: 140px;
 			}
 
-			.comment-form-author, 
+			.comment-form-author,
 			.comment-form-email {
 				box-sizing: border-box;
 				float: left;
@@ -316,14 +312,14 @@
 
 			.comment-form-email {
 				margin: 0 3.5% 2em;
-				
+
 				@media (max-width: 768px) {
 					margin: 0 0 2em;
-				} 
-			}		
+				}
+			}
 
 			.form-submit {
-				margin-bottom: 49px;			
+				margin-bottom: 49px;
 			}
 		}
 	}
@@ -333,7 +329,7 @@
 
 		h2 {
 			font-size: 20px;
-			margin-bottom: 29px; 
+			margin-bottom: 29px;
 		}
 
 		ul.products {
@@ -341,19 +337,19 @@
 			li.product {
 				margin: 0 1.28% 27px;
 				width: 23.071%;
-				
+
 				&:first-of-type {
 					margin-left: 0;
 				}
 
 				&:last-of-type {
-					margin-right: 0; 
-				}			
-				
+					margin-right: 0;
+				}
+
 				@media (max-width: 768px) {
-					clear: none; 
+					clear: none;
 					float: left;
-					
+
 					&:nth-child(2n) {
 						float: left;
 					}
@@ -361,9 +357,9 @@
 
 				@media (max-width: 480px) {
 					margin: 0 0 27px;
-					width: 100%; 
+					width: 100%;
 				}
 			}
-		}	
+		}
 	}
 }
