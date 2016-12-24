@@ -10,7 +10,14 @@
 .woocommerce input.button.disabled,
 .woocommerce input.button:disabled,
 .woocommerce input.button:disabled[disabled] {
+	background-color: $color__primary-accent;
+	border: 1px solid $color__primary-accent;
+	color: #fff;
 	padding: 1em 1.923em;
+
+	&:hover {
+		color: #fff;
+	}
 }
 
 .woocommerce a.button,
@@ -20,7 +27,7 @@
 	background-color: $color__primary-accent;
 	border: 1px solid $color__primary-accent;
 	color: #fff;
-	
+
 	&:hover {
 		background-color: $color__primary-accent-dark;
 		border-color: $color__primary-accent-dark;
@@ -31,5 +38,5 @@
 	&:focus {
 		border-color: $color__primary-accent;
 		color: #fff;
-	}	
+	}
 }

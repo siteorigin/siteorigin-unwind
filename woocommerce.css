@@ -72,7 +72,23 @@
 .woocommerce input.button.disabled,
 .woocommerce input.button:disabled,
 .woocommerce input.button:disabled[disabled] {
+  background-color: #24c48a;
+  border: 1px solid #24c48a;
+  color: #fff;
   padding: 1em 1.923em; }
+  .woocommerce #respond input#submit.disabled:hover,
+  .woocommerce #respond input#submit:disabled:hover,
+  .woocommerce #respond input#submit:disabled[disabled]:hover,
+  .woocommerce a.button.disabled:hover,
+  .woocommerce a.button:disabled:hover,
+  .woocommerce a.button:disabled[disabled]:hover,
+  .woocommerce button.button.disabled:hover,
+  .woocommerce button.button:disabled:hover,
+  .woocommerce button.button:disabled[disabled]:hover,
+  .woocommerce input.button.disabled:hover,
+  .woocommerce input.button:disabled:hover,
+  .woocommerce input.button:disabled[disabled]:hover {
+    color: #fff; }
 
 .woocommerce a.button,
 .woocommerce a.button.alt,
