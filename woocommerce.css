@@ -377,6 +377,16 @@
 /*--------------------------------------------------------------
 # WooCommerce Single Product
 --------------------------------------------------------------*/
+.woocommerce.single-product .woocommerce-message {
+  border-top: none; }
+  .woocommerce.single-product .woocommerce-message:before {
+    color: #24c48a; }
+
+.woocommerce.single-product #content div.product .woocommerce-message {
+  border-top: none; }
+  .woocommerce.single-product #content div.product .woocommerce-message:before {
+    color: #24c48a; }
+
 .woocommerce.single-product #content div.product .star-rating span:before {
   color: #24c48a; }
 
