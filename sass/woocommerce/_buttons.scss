@@ -1,15 +1,15 @@
-.woocommerce #respond input#submit.disabled,
-.woocommerce #respond input#submit:disabled,
-.woocommerce #respond input#submit:disabled[disabled],
-.woocommerce a.button.disabled,
-.woocommerce a.button:disabled,
-.woocommerce a.button:disabled[disabled],
-.woocommerce button.button.disabled,
-.woocommerce button.button:disabled,
-.woocommerce button.button:disabled[disabled],
-.woocommerce input.button.disabled,
-.woocommerce input.button:disabled,
-.woocommerce input.button:disabled[disabled] {
+.woocommerce.woocommerce-page #respond input#submit.alt.disabled,
+.woocommerce.woocommerce-page #respond input#submit.alt:disabled,
+.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],
+.woocommerce.woocommerce-page a.button.alt.disabled,
+.woocommerce.woocommerce-page a.button.alt:disabled,
+.woocommerce.woocommerce-page a.button.alt:disabled[disabled],
+.woocommerce.woocommerce-page button.button.alt.disabled,
+.woocommerce.woocommerce-page button.button.alt:disabled,
+.woocommerce.woocommerce-page button.button.alt:disabled[disabled],
+.woocommerce.woocommerce-page input.button.alt.disabled,
+.woocommerce.woocommerce-page input.button.alt:disabled,
+.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
 	background-color: $color__primary-accent;
 	border: 1px solid $color__primary-accent;
 	color: #fff;
