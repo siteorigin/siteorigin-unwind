@@ -137,6 +137,11 @@ function siteorigin_unwind_settings_init() {
 		'navigation' => array(
 			'title' => esc_html__( 'Navigation', 'siteorigin-unwind' ),
 			'fields' => array(
+				'search'        => array(
+					'type'        => 'checkbox',
+					'label'       => __( 'Menu search', 'siteorigin-unwind' ),
+					'description' => __( 'Display search in main menu', 'siteorigin-unwind' ),
+				),
 				'sticky' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Sticky menu', 'siteorigin-unwind' ),
@@ -979,6 +984,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['masthead_bottom_margin'] = '80px';
 
 	// Navigation defaults.
+	$defaults['navigation_search'] = true;
 	$defaults['navigation_sticky'] = true;
 	$defaults['navigation_post']   = true;
 
