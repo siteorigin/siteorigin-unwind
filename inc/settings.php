@@ -275,12 +275,12 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 
 	$wc_settings = array(
 		'woocommerce' => array(
-			'title'  => esc_html__( 'WooCommerce', 'siteorigin-unwind' ),
+			'title' => esc_html__( 'WooCommerce', 'siteorigin-unwind' ),
 			'fields' => array(
 
 				'display_quick_view' => array(
-					'type'        => 'checkbox',
-					'label'       => esc_html__( 'Display Quick View button on hover.', 'siteorigin-unwind' ),
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display Quick View button on hover.', 'siteorigin-unwind' ),
 				)
 
 			)
