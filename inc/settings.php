@@ -270,6 +270,27 @@ function siteorigin_unwind_settings_init() {
 }
 add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
 
+function siteorigin_unwind_woocommerce_settings( $settings ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
+
+	$wc_settings = array(
+		'woocommerce' => array(
+			'title'  => __( 'WooCommerce', 'siteorigin-unwind' ),
+			'fields' => array(
+
+				'display_quick_view' => array(
+					'type'        => 'checkbox',
+					'label'       => __( 'Display Quick View button', 'siteorigin-unwind' ),
+				)
+
+			)
+		)
+	);
+
+	return array_merge( $settings, $wc_settings);
+}
+add_filter( 'siteorigin_unwind_settings_array', 'siteorigin_unwind_woocommerce_settings' );
+
 /**
  * Tell the settings framework which settings we're using as fonts.
  *
@@ -1013,6 +1034,9 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['footer_top_padding']  = '80px';
 	$defaults['footer_side_padding'] = '40px';
 	$defaults['footer_top_margin']   = '80px';
+
+	// WooCommerce
+	$defaults['woocommerce_display_quick_view'] = true;
 
 	return $defaults;
 }
