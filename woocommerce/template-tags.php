@@ -78,7 +78,9 @@ function siteorigin_unwind_woocommerce_loop_item_image() { ?>
 		<?php woocommerce_template_loop_product_thumbnail(); ?>
 		<?php woocommerce_template_loop_product_link_close(); ?>
 		<?php woocommerce_template_loop_add_to_cart(); ?>
-		<?php siteorigin_unwind_woocommerce_quick_view_button(); ?>
+		<?php if ( siteorigin_setting( 'woocommerce_display_quick_view' ) ) {
+			siteorigin_unwind_woocommerce_quick_view_button();
+		} ?>
 	</div>
 <?php }
 endif;
@@ -107,10 +109,12 @@ if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view' ) ) :
  * Setup quick view modal in the footer.
  */
 function siteorigin_unwind_woocommerce_quick_view() { ?>
-	<!-- WooCommerce Quick View -->
-	<div id="quick-view-container">
-		<div id="product-quick-view" class="quick-view"></div>
-	</div>
+	<?php if ( siteorigin_setting( 'woocommerce_display_quick_view' ) ) : ?>
+		<!-- WooCommerce Quick View -->
+		<div id="quick-view-container">
+			<div id="product-quick-view" class="quick-view"></div>
+		</div>
+	<?php endif; ?>
 <?php }
 endif;
 add_action( 'wp_footer', 'siteorigin_unwind_woocommerce_quick_view', 100 );

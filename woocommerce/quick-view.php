@@ -10,12 +10,12 @@ while ( have_posts() ) : the_post();
 	/**
 	 * Adds the product-quick-view class to the quick view post.
 	 */
-	function siteorigin_unwind_woocommerce_quick_view_class($classes) {
+	function siteorigin_unwind_woocommerce_quick_view_class( $classes ) {
 		$classes[] = "product-quick-view";
 		return $classes;
 	}
 	endif;
-	add_filter('post_class', 'siteorigin_unwind_woocommerce_quick_view_class');
+	add_filter( 'post_class', 'siteorigin_unwind_woocommerce_quick_view_class' );
 
 	?>
 	<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
