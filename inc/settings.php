@@ -35,10 +35,10 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Logo', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Logo displayed in your header.', 'siteorigin-unwind' )
 				),
-				'retina_logo'      => array(
-					'type'        => 'media',
-					'label'       => __( 'Retina Logo', 'siteorigin-unwind' ),
-					'description' => __( 'A double sized logo to use on retina devices.', 'siteorigin-unwind' )
+				'retina_logo' => array(
+					'type' => 'media',
+					'label' => esc_html__( 'Retina Logo', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'A double sized logo to use on retina devices.', 'siteorigin-unwind' )
 				),
 				'site_description' => array(
 					'type' => 'checkbox',
@@ -47,8 +47,8 @@ function siteorigin_unwind_settings_init() {
 				),
 				'attribution' => array(
 					'type' => 'checkbox',
-					'label' => __( 'Display SiteOrigin Attribution', 'siteorigin-unwind' ),
-					'description' => __( 'Choose if the link to SiteOrigin is displayed in your footer.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Display SiteOrigin Attribution', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Choose if the link to SiteOrigin is displayed in your footer.', 'siteorigin-unwind' ),
 					'teaser' => true,
 				),
 				'accent' => array(
@@ -137,6 +137,11 @@ function siteorigin_unwind_settings_init() {
 		'navigation' => array(
 			'title' => esc_html__( 'Navigation', 'siteorigin-unwind' ),
 			'fields' => array(
+				'search' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Menu search', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display search in main menu.', 'siteorigin-unwind' ),
+				),
 				'sticky' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Sticky menu', 'siteorigin-unwind' ),
@@ -253,10 +258,10 @@ function siteorigin_unwind_settings_init() {
 					'live'	=> true,
 				),
 
-				'top_margin'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Top Margin', 'siteorigin-unwind' ),
-					'live'	=> true,
+				'top_margin' => array(
+					'type' => 'measurement',
+					'label' => esc_html__( 'Top Margin', 'siteorigin-unwind' ),
+					'live' => true,
 				),
 			),
 		),
@@ -264,6 +269,27 @@ function siteorigin_unwind_settings_init() {
 	) ) );
 }
 add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
+
+function siteorigin_unwind_woocommerce_settings( $settings ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
+
+	$wc_settings = array(
+		'woocommerce' => array(
+			'title' => esc_html__( 'WooCommerce', 'siteorigin-unwind' ),
+			'fields' => array(
+
+				'display_quick_view' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display Quick View button on hover.', 'siteorigin-unwind' ),
+				)
+
+			)
+		)
+	);
+
+	return array_merge( $settings, $wc_settings);
+}
+add_filter( 'siteorigin_unwind_settings_array', 'siteorigin_unwind_woocommerce_settings' );
 
 /**
  * Tell the settings framework which settings we're using as fonts.
@@ -979,6 +1005,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['masthead_bottom_margin'] = '80px';
 
 	// Navigation defaults.
+	$defaults['navigation_search'] = true;
 	$defaults['navigation_sticky'] = true;
 	$defaults['navigation_post']   = true;
 
@@ -1007,6 +1034,9 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['footer_top_padding']  = '80px';
 	$defaults['footer_side_padding'] = '40px';
 	$defaults['footer_top_margin']   = '80px';
+
+	// WooCommerce
+	$defaults['woocommerce_display_quick_view'] = true;
 
 	return $defaults;
 }

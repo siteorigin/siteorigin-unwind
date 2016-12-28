@@ -38,10 +38,12 @@
 							<?php the_widget( 'SiteOrigin_Widget_SocialMediaButtons_Widget', $widget ); ?>
 							<span class="v-line"></span>
 						<?php endif; ?>
-						<button id="search-button" class="search-toggle">
-							<span class="open"><?php siteorigin_unwind_display_icon( 'search' ); ?></span>
-							<span class="close"><?php siteorigin_unwind_display_icon( 'close' ); ?></span>
-						</button>
+						<?php if ( siteorigin_setting( 'navigation_search' ) ) : ?>
+							<button id="search-button" class="search-toggle">
+								<span class="open"><?php siteorigin_unwind_display_icon( 'search' ); ?></span>
+								<span class="close"><?php siteorigin_unwind_display_icon( 'close' ); ?></span>
+							</button>
+						<?php endif; ?>
 					</div>
 
 					<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -52,9 +54,11 @@
 
 				</div><!-- .container -->
 
-				<div id="fullscreen-search">
-					<?php get_template_part( 'template-parts/searchform-fullscreen' ); ?>
-				</div>
+				<?php if ( siteorigin_setting( 'navigation_search' ) ) : ?>
+					<div id="fullscreen-search">
+						<?php get_template_part( 'template-parts/searchform-fullscreen' ); ?>
+					</div>
+				<?php endif; ?>
 			</div><!-- .top-bar -->
 
 			<div class="container">
