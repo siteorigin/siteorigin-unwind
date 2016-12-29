@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 1.0.3 - 29 December 2016 =
+* Added retina logo setting.
+* Added menu search setting.
+* Added support for SiteOrigin Premium No Attribution module.
+* Added WooCommerce quick view setting.
+* Added styling for WooCommerce disabled button state.
+* Fixed styling for WooCommerce product pricing.
+* Added styling for WooCommerce added to cart message.
+* Added check to ensure Jetpack Responsive Videos and FitVids don't output together.
+
 = 1.0.2 - 19 December 2016 =
 * WooCommerce cart page style improvements.
 * WooCommerce checkout page style improvements.
