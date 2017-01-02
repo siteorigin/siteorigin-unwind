@@ -1,7 +1,8 @@
 <?php
 /**
  * Compatibility with Page Builder by SiteOrigin.
- * @link 
+ *
+ * @link https://wordpress.org/plugins/siteorigin-panels/
  *
  * @package siteorigin-unwind
  * @since siteorigin-unwind 1.0.4
@@ -13,13 +14,13 @@
  */
 function siteorigin_unwind_panels_lite_localization( $loc ) {
     return wp_parse_args( array(
-        'page_builder'         => __( 'Page Builder', 'siteorigin-unwind' ),
-        'home_page_title'      => __( 'Custom Home Page Builder', 'siteorigin-unwind' ),
-        'home_page_menu'       => __( 'Home Page', 'siteorigin-unwind' ),
-        'install_plugin'       => __( 'Install Page Builder Plugin', 'siteorigin-unwind' ),
-        'on_text'              => __( 'On', 'siteorigin-unwind' ),
-        'off_text'             => __( 'Off', 'siteorigin-unwind' ),
-        'home_install_message' => __( 'SiteOrigin North supports Page Builder to create beautifully proportioned column based content.', 'siteorigin-unwind' ),
+        'page_builder'         => esc_html__( 'Page Builder', 'siteorigin-unwind' ),
+        'home_page_title'      => esc_html__( 'Custom Home Page Builder', 'siteorigin-unwind' ),
+        'home_page_menu'       => esc_html__( 'Home Page', 'siteorigin-unwind' ),
+        'install_plugin'       => esc_html__( 'Install Page Builder Plugin', 'siteorigin-unwind' ),
+        'on_text'              => esc_html__( 'On', 'siteorigin-unwind' ),
+        'off_text'             => esc_html__( 'Off', 'siteorigin-unwind' ),
+        'home_install_message' => esc_html__( 'SiteOrigin North supports Page Builder to create beautifully proportioned column based content.', 'siteorigin-unwind' ),
         // Longer message to display to a user about installing the plugin.
         'home_disable_message' => '',
         // Message about disabling the custom home page if the user doesn't want to use it.
