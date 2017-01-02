@@ -1,6 +1,7 @@
 <?php
 /**
  * Compatibility with Page Builder by SiteOrigin.
+ * @link 
  *
  * @package siteorigin-unwind
  * @since siteorigin-unwind 1.0.4
@@ -43,7 +44,7 @@ function siteorigin_unwind_filter_post_loop_widget( $templates ) {
     foreach ( $templates as $template ) {
         if ( in_array( $template, $disallowed_template_patterns ) ) {
             $key = array_search( $template, $templates );
-        if ( false !== $key ) {
+            if ( false !== $key ) {
                 unset( $templates[$key] );
             }
         }
