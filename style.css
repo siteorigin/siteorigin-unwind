@@ -2403,6 +2403,8 @@ object {
       .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide {
         height: 155px; } }
     .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
       height: 100%;
       left: 0;
       position: absolute;
