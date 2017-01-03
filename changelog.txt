@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.0.4 - 04 January 2016 =
+* Fixed posts slider overlay lag in Chrome.
+* Added posts slider as a loop file for use in the Post Loop widget and Page Builder.
+* Removed the background color from the WooCommerce product variations table.
+
 = 1.0.3 - 29 December 2016 =
 * Added retina logo setting.
 * Added menu search setting.
