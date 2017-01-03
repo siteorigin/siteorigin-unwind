@@ -79,6 +79,7 @@
 			}
 
 			.slide-content {
+				@include backface-visibility(hidden);
 				height: 100%;
 				left: 0;
 				position: absolute;
