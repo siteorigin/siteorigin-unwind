@@ -1,7 +1,12 @@
 <?php
 /**
  * Loop Name: Posts Slider
+ *
+ * @package siteorigin-unwind
+ * @since siteorigin-unwind 1.0.4
+ * @license GPL 2.0
  */
+
 
 wp_enqueue_style( 'siteorigin-unwind-flexslider' );
 wp_enqueue_script( 'jquery-flexslider' );
