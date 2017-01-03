@@ -186,7 +186,7 @@ function siteorigin_unwind_settings_init() {
 				),
 				'featured_slider_overlay' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Jetpack Featured Content slider image overlay. Slider must first be enabled.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Jetpack Featured Content slider image overlay. Also applies to slider in Post Loop widget.', 'siteorigin-unwind' ),
 				),
 				'featured_archive' => array(
 					'type' => 'checkbox',
