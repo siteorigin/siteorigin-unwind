@@ -434,6 +434,8 @@
     padding-bottom: 30px; }
     .woocommerce.single-product #content div.product .entry-summary .cart .variations {
       font-family: "Merriweather", serif; }
+      .woocommerce.single-product #content div.product .entry-summary .cart .variations tr {
+        background: none; }
       .woocommerce.single-product #content div.product .entry-summary .cart .variations td {
         padding: 0; }
     .woocommerce.single-product #content div.product .entry-summary .cart .woocommerce-variation-price {

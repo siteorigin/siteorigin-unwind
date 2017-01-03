@@ -1,4 +1,5 @@
 .woocommerce.single-product {
+
 	.woocommerce-message {
 		border-top: none;
 
@@ -87,6 +88,10 @@
 
 				.variations {
 					font-family: $font__main;
+					
+					tr {
+						background: none;
+					}
 
 					td {
 						padding: 0;
