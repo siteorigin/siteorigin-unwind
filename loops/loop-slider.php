@@ -2,9 +2,11 @@
 /**
  * Loop Name: Posts Slider
  */
-?>
 
-<?php if ( have_posts() ) : ?>
+wp_enqueue_style( 'siteorigin-unwind-flexslider' );
+wp_enqueue_script( 'jquery-flexslider' );
+
+if ( have_posts() ) : ?>
 
 	<div class="flexslider featured-posts-slider">
 		<ul class="slides featured-posts-slides">
