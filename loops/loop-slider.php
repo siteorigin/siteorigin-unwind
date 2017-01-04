@@ -2,6 +2,8 @@
 /**
  * Loop Name: Posts Slider
  *
+ * Post loop for use with the SiteOrigin Post Loop widget in Page Builder.
+ *
  * @package siteorigin-unwind
  * @since siteorigin-unwind 1.0.4
  * @license GPL 2.0
