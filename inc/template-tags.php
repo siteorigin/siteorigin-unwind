@@ -291,7 +291,7 @@ function siteorigin_unwind_post_meta() {
 	<?php if ( siteorigin_setting( 'blog_display_date' ) ) { ?>
 		<span class="entry-date">
 			<?php echo ( ! is_singular() ) ? '<a href="' . get_the_permalink() . '" title="' . the_title_attribute( 'echo=0' ) .'">' : ''; ?>
-				<?php the_time( 'M d, Y' ); ?>
+				<?php the_time( apply_filters( 'siteorigin_unwind_filter_date_format', 'M d, Y' ) ); ?>
 			<?php echo ( ! is_singular() ) ? '</a>' : ''; ?>
 		</span>
 	<?php } ?>
@@ -395,7 +395,7 @@ function siteorigin_unwind_related_posts( $post_id ) {
 										<?php the_post_thumbnail( 'siteorigin-unwind-263x174-crop' ); ?>
 									<?php endif; ?>
 									<h3 class="related-post-title"><?php the_title(); ?></h3>
-									<p class="related-post-date"><?php the_time( 'M d, Y' ); ?></p>
+									<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_unwind_filter_date_format', 'M d, Y' ) ); ?></p>
 								</a>
 							</li>
 						<?php endwhile; ?>
