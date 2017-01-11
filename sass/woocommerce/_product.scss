@@ -88,7 +88,7 @@
 
 				.variations {
 					font-family: $font__main;
-					
+
 					tr {
 						background: none;
 					}
@@ -193,8 +193,33 @@
 					width: 28px;
 
 					&:before {
+						background: none;
+						background-color: rgba(0, 0, 0, 0.5);
+						background-position: 10px 7px;
+						background-repeat: no-repeat;
+						content: "";
 						font-size: 15px;
+						height: 50px;
 						padding: 3px 10px;
+						width: 40px;
+					}
+
+					&.flex-prev:before {
+						background-image: url('images/arrow-left.svg');
+					}
+
+					&.flex-next:before {
+						background-image: url('images/arrow-right.svg');
+					}
+
+					@media (max-width: 860px) {
+						&.flex-prev {
+							left: 0;
+						}
+
+						&.flex-next {
+							right: 0;
+						}
 					}
 				}
 			}
