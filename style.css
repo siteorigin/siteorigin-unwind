@@ -753,9 +753,6 @@ a {
 --------------------------------------------------------------*/
 .main-navigation ul {
   display: none; }
-  @media (min-width: 769px) {
-    .main-navigation ul {
-      display: block; } }
 
 .menu-toggle {
   display: block;
@@ -764,9 +761,6 @@ a {
   line-height: 60px;
   outline: none;
   padding: 0; }
-  @media (min-width: 769px) {
-    .menu-toggle {
-      display: none; } }
   .menu-toggle .svg-icon-menu {
     vertical-align: middle;
     width: 22px; }
@@ -779,9 +773,6 @@ a {
   top: 61px;
   width: 100%;
   z-index: 10; }
-  @media (min-width: 769px) {
-    #mobile-navigation {
-      display: none !important; } }
   #mobile-navigation ul {
     list-style: none;
     margin: 0;
