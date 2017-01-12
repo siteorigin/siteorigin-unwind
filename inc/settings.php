@@ -228,6 +228,17 @@ function siteorigin_unwind_settings_init() {
 			)
 		),
 
+		'responsive'  => array(
+			'title'  => __( 'Responsive', 'siteorigin-unwind' ),
+			'fields' => array(
+				'menu_breakpoint' => array(
+					'label'       => __( 'Menu Breakpoint', 'siteorigin-unwind' ),
+					'type'        => 'text',
+					'description' => __( 'Screen width in px.', 'siteorigin-unwind' )
+				),
+			)
+		),
+
 		'footer' => array(
 			'title' => esc_html__( 'Footer', 'siteorigin-unwind' ),
 			'fields' => array(
@@ -978,6 +989,39 @@ $css .= '/* style */
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
 
+if ( ! function_exists( 'siteorigin_unwind_menu_breakpoint_css' ) ) :
+/**
+ * Add CSS for mobile menu breakpoint
+ */
+function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
+	$breakpoint = isset( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) ? $settings[ 'theme_settings_responsive_menu_breakpoint' ] : 768;
+
+	$css .= '@media screen and (max-width: ' . intval( $breakpoint ) . 'px) {
+		.main-navigation .menu-toggle {
+			display: block;
+		}
+		.main-navigation ul {
+			display: none;
+		}
+	}
+	@media screen and (min-width: ' . ( 1 + $breakpoint ) . 'px) {
+		#mobile-navigation {
+			display: none !important;
+		}
+
+		.main-navigation ul {
+			display: block;
+		}
+
+		.main-navigation .menu-toggle {
+			display: none;
+		}
+	}';
+	return $css;
+}
+endif;
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_menu_breakpoint_css', 10, 2 );
+
 /**
  * Add default settings.
  *
@@ -1027,6 +1071,9 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_display_comments']        = true;
 	$defaults['blog_display_tags']            = true;
 	$defaults['blog_search_fallback']         = false;
+
+	// Responsive
+	$defaults['responsive_menu_breakpoint'] = '768';
 
 	// Footer settings.
 	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );
