@@ -147,6 +147,11 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Sticky menu', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Stick menu to top of screen.', 'siteorigin-unwind' ),
 				),
+				'mobile_menu_collapse' => array(
+					'label'       => esc_html__( 'Mobile Menu Collapse', 'siteorigin-unwind' ),
+					'type'        => 'number',
+					'description' => esc_html__( 'The screen width in pixels when the primary menu changes to a mobile menu.', 'siteorigin-unwind' )
+				),				
 				'post' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post navigation', 'siteorigin-unwind' ),
@@ -222,19 +227,8 @@ function siteorigin_unwind_settings_init() {
 				),
 				'search_fallback' => array(
 					'type' => 'media',
-					'label' => __( 'Search fallback image', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Search fallback image', 'siteorigin-unwind' ),
 					'description' => esc_html__( "Used for blog posts with no featured image.", 'siteorigin-unwind' ),
-				),
-			)
-		),
-
-		'responsive'  => array(
-			'title'  => __( 'Responsive', 'siteorigin-unwind' ),
-			'fields' => array(
-				'menu_breakpoint' => array(
-					'label'       => __( 'Menu Breakpoint', 'siteorigin-unwind' ),
-					'type'        => 'text',
-					'description' => __( 'Screen width in px.', 'siteorigin-unwind' )
 				),
 			)
 		),
@@ -991,10 +985,10 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom
 
 if ( ! function_exists( 'siteorigin_unwind_menu_breakpoint_css' ) ) :
 /**
- * Add CSS for mobile menu breakpoint
+ * Add CSS for mobile menu breakpoint.
  */
 function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
-	$breakpoint = isset( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) ? $settings[ 'theme_settings_responsive_menu_breakpoint' ] : 768;
+	$breakpoint = isset( $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] ) ? $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] : 768;
 
 	$css .= '@media screen and (max-width: ' . intval( $breakpoint ) . 'px) {
 		.main-navigation .menu-toggle {
@@ -1049,9 +1043,10 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['masthead_bottom_margin'] = '80px';
 
 	// Navigation defaults.
-	$defaults['navigation_search'] = true;
-	$defaults['navigation_sticky'] = true;
-	$defaults['navigation_post']   = true;
+	$defaults['navigation_search'] 					= true;
+	$defaults['navigation_sticky'] 					= true;
+	$defaults['navigation_mobile_menu_collapse'] 	= 768;
+	$defaults['navigation_post']   					= true;
 
 	// Icons.
 	$defaults['icons_menu']              = false;
@@ -1071,9 +1066,6 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_display_comments']        = true;
 	$defaults['blog_display_tags']            = true;
 	$defaults['blog_search_fallback']         = false;
-
-	// Responsive
-	$defaults['responsive_menu_breakpoint'] = '768';
 
 	// Footer settings.
 	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );
