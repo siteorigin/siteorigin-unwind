@@ -57,5 +57,4 @@ function siteorigin_unwind_infinite_scroll_render() {
         remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
     }
 }
-
 add_action( 'loop_start', 'siteorigin_unwind_remove_share' );
