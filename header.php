@@ -49,6 +49,22 @@
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+						<?php if( class_exists('Woocommerce') && !( is_cart() || is_checkout() ) && siteorigin_setting('woocommerce_display_mini_cart') ): ?>
+							<?php global $woocommerce; ?>
+							<ul class="shopping-cart">
+								<li>
+									<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url();?>">
+										<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
+										<span class="north-icon-cart"></span>
+										<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
+										<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
+									</a>
+									<ul class="shopping-cart-dropdown" id="cart-drop">
+										<?php the_widget('WC_Widget_Cart');?>
+									</ul>
+								</li>
+							</ul>
+						<?php endif; ?>
 					</nav><!-- #site-navigation -->
 					<div id="mobile-navigation"></div>
 

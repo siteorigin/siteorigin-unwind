@@ -280,7 +280,12 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 
 				'display_quick_view' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display Quick View button on hover.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Display quick view button on hover.', 'siteorigin-unwind' ),
+				),
+
+				'display_mini_cart' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display mini cart in masthead.', 'siteorigin-unwind' ),
 				)
 
 			)
@@ -1037,6 +1042,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 
 	// WooCommerce
 	$defaults['woocommerce_display_quick_view'] = true;
+	$defaults['woocommerce_display_mini_cart']  = true;
 
 	return $defaults;
 }

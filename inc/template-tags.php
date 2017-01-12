@@ -505,6 +505,14 @@ function siteorigin_unwind_display_icon( $type ) {
 			<?php endif;
 			break;
 
+		case 'cart':
+			?>
+			<svg version="1.1" class="svg-icon-cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="32" viewBox="0 0 27 32">
+				<path id="shopping_cart_icon" data-name="shopping cart icon" class="cls-1" d="M906.859,20A3.994,3.994,0,1,0,899,19a3.933,3.933,0,0,0,.142,1H897.09a6,6,0,1,1,11.82,0h-2.051ZM914,19H892l-3,24h28Zm-20.217,2h18.434l2.539,20H891.244Z" transform="translate(-889 -13)"/>
+			</svg>
+			<?php
+			break;
+
 	}
 }
 endif;
