@@ -55,7 +55,7 @@
 								<li>
 									<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url();?>">
 										<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
-										<span class="north-icon-cart"></span>
+										<?php siteorigin_unwind_display_icon( 'cart' ); ?>
 										<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
 										<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
 									</a>

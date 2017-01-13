@@ -2,6 +2,10 @@
 	@include clearfix;
 	float: left;
 
+	> div {
+		display: inline-block;
+	}
+
 	ul {
 		display: none;
 		list-style: none;

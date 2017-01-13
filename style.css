@@ -624,6 +624,8 @@ a {
     clear: both;
     content: "";
     display: table; }
+  .main-navigation > div {
+    display: inline-block; }
   .main-navigation ul {
     display: none;
     list-style: none;

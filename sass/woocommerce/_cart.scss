@@ -1,7 +1,7 @@
 .woocommerce-cart {
 
 	.entry-title {
-		font-size: 24px; 
+		font-size: 24px;
 	}
 
 	.woocommerce-message,
@@ -12,27 +12,27 @@
 			color: $color__primary-accent;
 		}
 	}
-	
+
 	table.shop_table {
 		border-radius: 0;
-		font-family: $font__main; 
+		font-family: $font__main;
 		padding: 15px 30px;
-		
+
 		@media (max-width: 768px) {
 			padding: 1em;
-		}		
-		
+		}
+
 		tr {
 			background: none;
 		}
 
 		td {
 			padding: 0;
-		}		
-		
+		}
+
 		thead {
 			font-family: $font__details;
-			font-size: 12px; 
+			font-size: 12px;
 
 			th {
 				font-size: 12px;
@@ -45,11 +45,11 @@
 			td {
 				color: $color__text-dark;
 				font-size: 14px;
-				font-weight: 700; 
+				font-weight: 700;
 			}
 
 			.product-remove {
-				padding-left: 10px; 
+				padding-left: 10px;
 				width: 30px;
 
 				a {
@@ -67,12 +67,12 @@
 			.product-thumbnail {
 				line-height: 0;
 				padding: 20px;
-				width: 116px; 
+				width: 116px;
 
 				a {
 					display: inline-block;
 					line-height: 0;
-										
+
 					img {
 						width: 76px;
 					}
@@ -83,7 +83,7 @@
 				}
 			}
 
-			.product-name { 
+			.product-name {
 				font-size: 14px;
 
 				a {
@@ -103,21 +103,21 @@
 
 			.product-price {
 				width: 150px;
-				
+
 				.amount {
-					font-size: 14px; 
+					font-size: 14px;
 					font-weight: bold;
 				}
 
 				@media screen and (max-width: 768px) {
 					display: none;
 				}
-			}						
+			}
 
 			// Styling quantity field.
 			.quantity.button-controls {
 				@include clearfix;
-				
+
 				input {
 					height: 32px;
 					width: 32px;
@@ -130,11 +130,11 @@
 					border-width: 1px;
 					color: $color__text-medium;
 					float: left;
-					font-family: $font__details; 
+					font-family: $font__details;
 					padding: 0;
 					width: 38px;
 
-					
+
 					&::-webkit-inner-spin-button,
 					&::-webkit-outer-spin-button {
 						-webkit-appearance: none;
@@ -150,7 +150,7 @@
 					background: #f9f9f9;
 					float: left;
 					padding: 0;
-					
+
 					&:hover {
 						background: $color__text-medium;
 						color: #fff;
@@ -188,9 +188,9 @@
 				@media screen and (max-width: 768px) {
 					width: 60px;
 				}
-			}			
+			}
 
-		}		
+		}
 
 		td.actions {
 			padding: 2em 0 0 0;
@@ -215,7 +215,7 @@
 					border-radius: 0;
 					height: 36px;
 					font-size: 13px;
-					padding: 18px 15px; 
+					padding: 18px 15px;
 					width: 200px !important;
 
 					@media (max-width: 768px) {
@@ -233,7 +233,7 @@
 	.cart_totals {
 		float: none;
 		width: 100%;
-		
+
 		h2 {
 			font-size: 24px;
 			margin-bottom: 5px;
@@ -288,7 +288,7 @@
 							background-color: $color__primary-accent;
 							border-radius: 0;
 							color: #fff;
-							
+
 							&:hover {
 								background-color: $color__primary-accent;
 							}
@@ -313,6 +313,45 @@
 			@media screen and (max-width: 768px) {
 				margin-bottom: 10px;
 				width: 100%;
+			}
+		}
+	}
+}
+
+.main-navigation {
+	.shopping-cart {
+		bottom: 15px;
+		display: inline-block;
+		line-height: 1;
+		position: relative;
+
+		> li {
+			padding: 0;
+		}
+
+		.shopping-cart-link {
+			line-height: 1;
+			position: relative;
+
+			.shopping-cart-text {
+				display: none;
+			}
+
+			.shopping-cart-count {
+				background: $color__primary-accent;
+				border-radius: 9px;
+				color: #fff;
+				font-size: 9px;
+				padding: 4px 5px;
+				position: absolute;
+				right: -10px;
+				top: 0;
+			}
+
+			.svg-icon-cart {
+				path {
+					fill: $color__text-medium;
+				}
 			}
 		}
 	}

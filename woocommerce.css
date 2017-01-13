@@ -983,6 +983,30 @@
         margin-bottom: 10px;
         width: 100%; } }
 
+.main-navigation .shopping-cart {
+  bottom: 15px;
+  display: inline-block;
+  line-height: 1;
+  position: relative; }
+  .main-navigation .shopping-cart > li {
+    padding: 0; }
+  .main-navigation .shopping-cart .shopping-cart-link {
+    line-height: 1;
+    position: relative; }
+    .main-navigation .shopping-cart .shopping-cart-link .shopping-cart-text {
+      display: none; }
+    .main-navigation .shopping-cart .shopping-cart-link .shopping-cart-count {
+      background: #24c48a;
+      border-radius: 9px;
+      color: #fff;
+      font-size: 9px;
+      padding: 4px 5px;
+      position: absolute;
+      right: -10px;
+      top: 0; }
+    .main-navigation .shopping-cart .shopping-cart-link .svg-icon-cart path {
+      fill: #626262; }
+
 /*--------------------------------------------------------------
 # WooCommerce Widgets
 --------------------------------------------------------------*/
