@@ -1006,6 +1006,82 @@
       top: 0; }
     .main-navigation .shopping-cart .shopping-cart-link .svg-icon-cart path {
       fill: #626262; }
+  .main-navigation .shopping-cart .shopping-cart-dropdown {
+    width: 300px; }
+    .main-navigation .shopping-cart .shopping-cart-dropdown .mini_cart_item a {
+      white-space: normal; }
+
+.widget_shopping_cart_content {
+  padding: 20px; }
+  .widget_shopping_cart_content .cart_list .empty {
+    margin: 15px 15px; }
+  .widget_shopping_cart_content .cart_list .mini_cart_item {
+    position: relative;
+    margin: 0 0 15px 0;
+    box-sizing: border-box; }
+    .widget_shopping_cart_content .cart_list .mini_cart_item a {
+      margin: 0;
+      padding: 0 0 15px 0 !important; }
+    .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_img {
+      width: 64px; }
+      .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_img img {
+        vertical-align: middle; }
+    .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details {
+      margin-left: 80px;
+      position: absolute;
+      top: 0; }
+      .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_product {
+        line-height: 1.5em;
+        margin: 0 0 7px 0;
+        color: #2d2d2d; }
+      .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_cost {
+        margin: 0;
+        color: #24c48a; }
+    .widget_shopping_cart_content .cart_list .mini_cart_item:last-child {
+      margin-bottom: 0; }
+  .widget_shopping_cart_content .total {
+    border-top: none !important;
+    margin: 10px 0 0 0;
+    padding: 5px 0 !important;
+    font-size: 13px; }
+    .widget_shopping_cart_content .total strong {
+      font-weight: normal; }
+    .widget_shopping_cart_content .total span {
+      font-weight: bold; }
+  .widget_shopping_cart_content .buttons {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0 0 0;
+    padding-top: 0; }
+    .widget_shopping_cart_content .buttons a {
+      font-weight: normal;
+      border-radius: 0px;
+      font-size: 12px;
+      padding: 10px;
+      line-height: 1em;
+      box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.25);
+      font-family: "Merriweather", serif;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-shadow: none;
+      -webkit-transition: 0.085s;
+      -moz-transition: 0.085s;
+      transition: 0.085s;
+      min-width: inherit;
+      width: 49%; }
+      .widget_shopping_cart_content .buttons a.mini_cart_view {
+        background: transparent;
+        border: 1px solid #2d2d2d;
+        color: #2d2d2d; }
+      .widget_shopping_cart_content .buttons a.mini_cart_checkout {
+        background: #24c48a;
+        border: 1px solid #24c48a;
+        color: #fff; }
+      .widget_shopping_cart_content .buttons a:hover {
+        background: #00a76a;
+        color: #fff;
+        border-color: #00a76a;
+        box-shadow: none; }
 
 /*--------------------------------------------------------------
 # WooCommerce Widgets
