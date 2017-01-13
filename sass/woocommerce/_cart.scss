@@ -356,6 +356,7 @@
 		}
 
 		.shopping-cart-dropdown {
+			top: 36px;
 			width: 300px;
 
 			.mini_cart_item a {
@@ -374,9 +375,9 @@
 		}
 
 		.mini_cart_item {
-			position: relative;
-			margin: 0 0 15px 0;
 			box-sizing: border-box;
+			margin: 0 0 15px 0;
+			position: relative;
 
 			a {
 				margin: 0;
@@ -397,14 +398,17 @@
 				top: 0;
 
 				.mini_cart_product {
+					color: $color__text-dark;
 					line-height: 1.5em;
 					margin: 0 0 7px 0;
-					color: $color__text-dark;
 				}
 
 				.mini_cart_cost {
 					margin: 0;
-					color: $color__primary-accent;
+
+					.amount {
+						color: $color__primary-accent;
+					}
 				}
 			}
 
@@ -416,9 +420,9 @@
 
 	.total {
 		border-top: none !important;
+		font-size: 13px;
 		margin: 10px 0 0 0;
 		padding: 5px 0 !important;
-		font-size: 13px;
 
 		strong {
 			font-weight: normal;
@@ -430,29 +434,28 @@
 	}
 
 	.buttons {
-		text-align: center;
-		text-transform: uppercase;
 		margin: 10px 0 0 0;
 		padding-top: 0;
+		text-align: center;
+		text-transform: uppercase;
 
 		a {
-			font-weight: normal;
-			border-radius: 0px;
-			font-size: 12px;
-			padding: 10px;
-			line-height: 1em;
-			box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.25);
-			font-family: $font__headings;
-			text-decoration: none;
-			text-transform: uppercase;
-			text-shadow: none;
 			@include transition(0.085s);
+			border-radius: 0px;
+			font-family: $font__headings;
+			font-size: 12px;
+			font-weight: normal;
+			line-height: 1;
 			min-width: inherit;
+			padding: 10px;
+			text-decoration: none;
+			text-shadow: none;
+			text-transform: uppercase;
 			width: 49%;
 
 			&.mini_cart_view {
 				background: transparent;
-				border: 1px solid $color__text-dark;
+				border: 2px solid #dadada;
 				color: $color__text-dark;
 			}
 
@@ -464,9 +467,8 @@
 
 			&:hover {
 				background: $color__primary-accent-dark;
-				color: #fff;
 				border-color: $color__primary-accent-dark;
-				box-shadow: none;
+				color: #fff;
 			}
 		}
 	}
