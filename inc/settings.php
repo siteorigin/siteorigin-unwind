@@ -189,8 +189,8 @@ function siteorigin_unwind_settings_init() {
 					'type'	=> 'select',
 					'label'	=> esc_html__( 'Main Sidebar Position', 'siteorigin-unwind' ),
 					'options' => array(
-						'left'  => esc_html__( 'Left', 'siteorigin-unwind' ),
 						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
+						'left'  => esc_html__( 'Left', 'siteorigin-unwind' ),
 					),
 				),
 			)
@@ -1069,7 +1069,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['icons_close_search']      = false;
 
 	// Layout
-	$defaults['layout_main_sidebar'] = 'left';
+	$defaults['layout_main_sidebar'] = 'right';
 
 	// Blog settings.
 	$defaults['blog_featured_slider']         = false;

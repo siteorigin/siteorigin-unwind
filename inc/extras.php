@@ -70,8 +70,8 @@ function siteorigin_unwind_body_classes( $classes ) {
 	}
 
 	// If the main sidebar is to be placed on the Right
-	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'right' ) {
-		$classes[] = 'main-sidebar-right';
+	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'left' ) {
+		$classes[] = 'main-sidebar-left';
 	}
 
 	return $classes;
