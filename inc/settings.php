@@ -300,7 +300,15 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 				'display_quick_view' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Display Quick View button on hover.', 'siteorigin-unwind' ),
-				)
+				),
+				'shop_sidebar'	=> array(
+					'type'	=> 'select',
+					'label'	=> esc_html__( 'Shop Sidebar Position', 'siteorigin-unwind' ),
+					'options' => array(
+						'left'  => esc_html__( 'Left', 'siteorigin-unwind' ),
+						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
+					),
+				),
 
 			)
 		)
@@ -1093,6 +1101,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 
 	// WooCommerce
 	$defaults['woocommerce_display_quick_view'] = true;
+	$defaults['woocommerce_shop_sidebar']       = 'right';
 
 	return $defaults;
 }
