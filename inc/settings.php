@@ -1101,7 +1101,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 
 	// WooCommerce
 	$defaults['woocommerce_display_quick_view'] = true;
-	$defaults['woocommerce_shop_sidebar']       = 'right';
+	$defaults['woocommerce_shop_sidebar']       = 'left';
 
 	return $defaults;
 }

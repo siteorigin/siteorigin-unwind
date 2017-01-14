@@ -75,7 +75,7 @@ function siteorigin_unwind_body_classes( $classes ) {
 	}
 
 	// If the shop sidebar is to be placed on the right
-	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'right' ) {
+	if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'right' ) {
 		$classes[] = 'shop-sidebar-right';
 	}
 
