@@ -69,6 +69,11 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'sticky-menu';
 	}
 
+	// If the main sidebar is to be placed on the Right
+	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'right' ) {
+		$classes[] = 'main-sidebar-right';
+	}
+
 	return $classes;
 }
 endif;
