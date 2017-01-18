@@ -290,7 +290,8 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 
 				'display_mini_cart' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display mini cart in masthead.', 'siteorigin-unwind' ),
+					'label'       => esc_html__( 'Display Cart', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display WooCommerce cart in the main menu', 'siteorigin-unwind' ),
 				)
 
 			)
