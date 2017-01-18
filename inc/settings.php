@@ -151,7 +151,7 @@ function siteorigin_unwind_settings_init() {
 					'label'       => esc_html__( 'Mobile Menu Collapse', 'siteorigin-unwind' ),
 					'type'        => 'number',
 					'description' => esc_html__( 'The screen width in pixels when the primary menu changes to a mobile menu.', 'siteorigin-unwind' )
-				),				
+				),
 				'post' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post navigation', 'siteorigin-unwind' ),
@@ -999,7 +999,7 @@ function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
 		.main-navigation .menu-toggle {
 			display: block;
 		}
-		.main-navigation ul {
+		.main-navigation > div ul {
 			display: none;
 		}
 	}
@@ -1008,7 +1008,7 @@ function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
 			display: none !important;
 		}
 
-		.main-navigation ul {
+		.main-navigation > div ul {
 			display: block;
 		}
 
