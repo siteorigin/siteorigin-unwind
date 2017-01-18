@@ -1051,6 +1051,32 @@
     .main-navigation .shopping-cart .shopping-cart-dropdown .mini_cart_item a {
       white-space: normal; }
 
+#mobile-navigation .shopping-cart-link {
+  background: #f4f4f4;
+  border-bottom: 1px solid #ebebeb;
+  color: #626262;
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-size: 12.8px;
+  font-size: 0.8rem;
+  letter-spacing: .1em;
+  line-height: 42px;
+  padding: 0 10px;
+  position: relative;
+  width: 100%;
+  text-transform: uppercase; }
+  #mobile-navigation .shopping-cart-link svg {
+    height: 20px;
+    position: relative;
+    top: 4px; }
+  #mobile-navigation .shopping-cart-link .shopping-cart-count {
+    background: #24c48a;
+    border-radius: 9px;
+    color: #fff;
+    font-size: 9px;
+    margin-left: 10px;
+    padding: 4px 5px; }
+
 .woocommerce .widget_shopping_cart_content .cart_list .empty {
   margin: 15px 15px; }
 
