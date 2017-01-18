@@ -151,7 +151,7 @@ function siteorigin_unwind_settings_init() {
 					'label'       => esc_html__( 'Mobile Menu Collapse', 'siteorigin-unwind' ),
 					'type'        => 'number',
 					'description' => esc_html__( 'The screen width in pixels when the primary menu changes to a mobile menu.', 'siteorigin-unwind' )
-				),				
+				),
 				'post' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post navigation', 'siteorigin-unwind' ),
@@ -180,6 +180,20 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Menu close search icon', 'siteorigin-unwind' ),
 				),
 			),
+		),
+
+		'layout' => array(
+			'title' => esc_html__( 'Layout', 'siteorigin-unwind' ),
+			'fields' => array(
+				'main_sidebar'	=> array(
+					'type'	=> 'select',
+					'label'	=> esc_html__( 'Main Sidebar Position', 'siteorigin-unwind' ),
+					'options' => array(
+						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
+						'left'  => esc_html__( 'Left', 'siteorigin-unwind' ),
+					),
+				),
+			)
 		),
 
 		'blog' => array(
@@ -286,7 +300,15 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 				'display_quick_view' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Display Quick View button on hover.', 'siteorigin-unwind' ),
-				)
+				),
+				'shop_sidebar'	=> array(
+					'type'	=> 'select',
+					'label'	=> esc_html__( 'Shop Sidebar Position', 'siteorigin-unwind' ),
+					'options' => array(
+						'left'  => esc_html__( 'Left', 'siteorigin-unwind' ),
+						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
+					),
+				),
 
 			)
 		)
@@ -1043,16 +1065,19 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['masthead_bottom_margin'] = '80px';
 
 	// Navigation defaults.
-	$defaults['navigation_search'] 					= true;
-	$defaults['navigation_sticky'] 					= true;
-	$defaults['navigation_mobile_menu_collapse'] 	= 768;
-	$defaults['navigation_post']   					= true;
+	$defaults['navigation_search']               = true;
+	$defaults['navigation_sticky']               = true;
+	$defaults['navigation_mobile_menu_collapse'] = 768;
+	$defaults['navigation_post']                 = true;
 
 	// Icons.
 	$defaults['icons_menu']              = false;
 	$defaults['icons_fullscreen_search'] = false;
 	$defaults['icons_search']            = false;
 	$defaults['icons_close_search']      = false;
+
+	// Layout
+	$defaults['layout_main_sidebar'] = 'right';
 
 	// Blog settings.
 	$defaults['blog_featured_slider']         = false;
@@ -1076,6 +1101,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 
 	// WooCommerce
 	$defaults['woocommerce_display_quick_view'] = true;
+	$defaults['woocommerce_shop_sidebar']       = 'left';
 
 	return $defaults;
 }

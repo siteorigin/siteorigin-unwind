@@ -3,7 +3,12 @@
 	margin: 0 0 0 (-$size__site-sidebar);
 	width: $size__site-main;
 
-	@at-root .no-active-wc-sidebar.woocommerce-page #container {
+	@at-root .shop-sidebar-right#{&} {
+		float: left;
+		margin: 0 (-$size__site-sidebar) 0 0;
+	}
+
+	@at-root .no-active-wc-sidebar#{&} {
 		float: none;
 		margin: 0;
 		width: auto;
@@ -22,7 +27,12 @@
 		float: right;
 		margin: 0 0 0 $size__site-sidebar;
 
-		@at-root .no-active-wc-sidebar.woocommerce-page #content {
+		@at-root .shop-sidebar-right#{&} {
+			float: left;
+			margin: 0 $size__site-sidebar 0 0;
+		}
+
+		@at-root .no-active-wc-sidebar#{&} {
 			float: none;
 			margin: 0;
 			width: auto;
@@ -38,6 +48,11 @@
 	.shop-widgets.widget-area {
 		float: left;
 		padding: 0 40px 0 0;
+
+		@at-root .shop-sidebar-right#{&} {
+			float: right;
+			padding: 0 0 0 40px;
+		}
 	}
 }
 
