@@ -319,6 +319,7 @@
 }
 
 .main-navigation {
+
 	.shopping-cart {
 		bottom: 15px;
 		display: none;
@@ -360,7 +361,7 @@
 		}
 
 		.widget_shopping_cart_content {
-			padding: 20px;
+			padding: 20px 20px 30px;
 		}
 
 		.shopping-cart-link {
@@ -374,16 +375,21 @@
 
 			.shopping-cart-count {
 				background: $color__primary-accent;
-				border-radius: 9px;
+				border-radius: 50%;
 				color: #fff;
-				font-size: 9px;
-				padding: 4px 5px;
+				height: 20px; 
+				font-family: 'Lato', sans-serif; 
+				font-size: 11px;
+				padding-top: 4px;
 				position: absolute;
-				right: -8px;
-				top: -20px;
+				right: -11px;
+				text-align: center; 
+				top: -17px;
+				width: 20px;
 			}
 
 			.svg-icon-cart {
+
 				path {
 					fill: $color__text-medium;
 				}
@@ -402,20 +408,21 @@
 }
 
 #mobile-navigation {
+
 	.shopping-cart-link {
 		background: $color__background-light;
 		border-bottom: 1px solid $color__background-hr-dark;
 		color: $color__text-medium;
 		display: block;
 		font-family: $font__details;
-		@include font-size(0.8);
+		font-size: 12px; 
 		letter-spacing: .1em;
 		line-height: 42px;
 		padding: 0 10px;
 		position: relative;
-		width: 100%;
 		text-transform: uppercase;
-
+		width: 100%;
+		
 		svg {
 			height: 20px;
 			position: relative;
@@ -424,37 +431,42 @@
 
 		.shopping-cart-count {
 			background: $color__primary-accent;
-			border-radius: 9px;
+			border-radius: 50%;
 			color: #fff;
 			font-size: 9px;
-			margin-left: 10px;
-			padding: 4px 5px;
+			height: 18px;
+			line-height: normal;
+			margin-left: 8px;  
+			padding-top: 3px;
+			position: absolute;
+			text-align: center;
+			top: 12px;
+			width: 18px; 
 		}
 	}
 }
 
 .woocommerce {
+
 	.widget_shopping_cart_content {
-		.cart_list{
-			.empty {
-				margin: 15px 15px;
-			}
+
+		.cart_list {
 
 			.mini_cart_item {
 				border-bottom: 1px solid $color__background-hr;
 				box-sizing: border-box;
+				@include clearfix;
 				margin: 0 0 13px 0;
 				padding: 0 0 13px 0;
 				position: relative;
-				@include clearfix;
 
 				a {
 					margin: 0;
 
 					&.remove {
 						background: transparent;
-						color: $color__text-dark !important;
-						font-size: 15px;
+						color: $color__text-medium !important;
+						font-size: 14px;
 						float: right;
 						left: auto !important;
 						right: 0;
@@ -462,7 +474,7 @@
 					}
 
 					&:not(.remove) {
-						color: $color__text-dark;
+						color: $color__text-medium;
 						display: block;
 						font-weight: normal;
 						line-height: 1.5em;
@@ -472,14 +484,14 @@
 
 				img {
 					float: left;
+					margin-right: 10px;
 					vertical-align: middle;
 					width: 64px;
-					margin-right: 10px;
 				}
 
 				.quantity {
 					display: inline;
-					font-size: 13px;
+					font-size: 14px;
 					margin: 0;
 
 					.amount {
@@ -495,7 +507,9 @@
 
 		.total {
 			border-top: none !important;
-			margin: 10px 0 0 0;
+			color: $color__text-medium;
+			font-size: 14px; 
+			margin: 14px 0 0 0;
 			padding: 5px 0 !important;
 
 			strong {
@@ -503,46 +517,35 @@
 			}
 
 			span {
-				font-weight: bold;
+				color: $color__text-dark;
+				font-weight: 700;
 			}
 		}
 
 		.buttons {
-			margin: 10px 0 0 0;
+			margin: 14px 0 0 0;
 			padding-top: 0;
 			text-align: center;
 			text-transform: uppercase;
 
 			a {
-				@include transition(0.085s);
-				border-radius: 0px;
-				font-family: $font__headings;
-				font-size: 12px;
-				font-weight: normal;
-				line-height: 1;
-				min-width: inherit;
-				padding: 10px;
-				text-decoration: none;
-				text-shadow: none;
-				text-transform: uppercase;
-				width: 49%;
+				padding: 12px 1.5em;
+				width: 49%; 
 
-				&.wc-forward {
+				&.wc-forward:first-of-type {
 					background: transparent;
 					border: 2px solid #dadada;
 					color: $color__text-dark;
-
-					&.checkout {
-						background: $color__primary-accent;
-						border: 1px solid $color__primary-accent;
-						color: #fff;
-					}
 
 					&:hover {
 						background: $color__primary-accent-dark;
 						border-color: $color__primary-accent-dark;
 						color: #fff;
 					}
+				}
+
+				&.checkout {
+					padding: 13px 1.5em;
 				}
 			}
 		}
