@@ -3,7 +3,7 @@
 	.woocommerce-ordering {
 		cursor: pointer;
 		margin-bottom: 40px;
-		
+
 		@media (max-width: 680px) {
 			float: left;
 			margin-bottom: 35px;
@@ -28,8 +28,8 @@
 			svg {
 				float: right;
 				margin: 0 -3px 0 10px;
-				@include transform( rotate(0deg) );
-				@include transition (all 0.15s ease-in);
+				@include transform(rotate(-90deg));
+				@include transition(all 0.15s ease-in);
 
 				path {
 					fill: $color__text-medium;
@@ -38,13 +38,12 @@
 
 			&:hover {
 				color: $color__text-dark;
-				.north-icon-next {
-					color: $color__text-dark;
-					@include transform( rotate(90deg) );
-				}
 
-				path {
-					fill: $color__text-dark;
+				svg {
+					@include transform(rotate(0deg));
+					path {
+						fill: $color__text-dark;
+					}
 				}
 			}
 
@@ -104,10 +103,10 @@
 	.woocommerce-result-count {
 		color: $color__text-medium;
 		font-size: 14px;
-		
+
 		@media (max-width: 680px) {
 			margin-bottom: 40px;
-			width: 100%; 
+			width: 100%;
 		}
 	}
 
@@ -116,19 +115,19 @@
 		li.product {
 			margin: 0 1.75% 27px;
 			width: 31%;
-			
+
 			&:nth-of-type(3n+1) {
 				margin-left: 0;
 			}
 
 			&:nth-of-type(3n+3) {
-				margin-right: 0; 
-			}			
-			
+				margin-right: 0;
+			}
+
 			@media (max-width: 768px) {
-				clear: none; 
+				clear: none;
 				float: left;
-				
+
 				&:nth-child(2n) {
 					float: left;
 				}
@@ -136,7 +135,7 @@
 
 			@media (max-width: 480px) {
 				margin: 0 0 27px;
-				width: 100%; 
+				width: 100%;
 			}
 
 			span.onsale {
@@ -252,10 +251,10 @@
 					border-bottom: 0;
 					bottom: 0;
 					box-sizing: border-box;
-					color: $color__text-medium; 
+					color: $color__text-medium;
 					font-family: $font__details;
 					font-size: 13px;
-					left: 50%; 
+					left: 50%;
 					letter-spacing: 1px;
 					line-height: normal;
 					margin: 0;
@@ -263,10 +262,10 @@
 					position: absolute;
 					@include transform( translateX( -50% ) );
 					text-transform: uppercase;
-					
+
 					&:hover {
 						border: 2px solid $color__text-dark;
-						border-bottom: 0; 
+						border-bottom: 0;
 					}
 				}
 			}

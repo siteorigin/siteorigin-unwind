@@ -65,3 +65,21 @@
 	clear: both;
 	width: $size__site-main;
 }
+
+// Setting to position sidebar on the left
+.main-sidebar-left {
+	.content-area {
+		float: right;
+		margin: 0 0 0 (-$size__site-sidebar);
+	}
+
+	.site-main {
+		margin: 0 0 0 $size__site-sidebar;
+	}
+
+	.site-content .widget-area {
+		float: left;
+		padding-left: 0;
+		padding-right: 40px;
+	}
+}
