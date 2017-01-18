@@ -999,7 +999,8 @@ function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
 		.main-navigation .menu-toggle {
 			display: block;
 		}
-		.main-navigation > div ul {
+		.main-navigation > div ul,
+		.main-navigation .shopping-cart {
 			display: none;
 		}
 	}
@@ -1007,11 +1008,12 @@ function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
 		#mobile-navigation {
 			display: none !important;
 		}
-
 		.main-navigation > div ul {
 			display: block;
 		}
-
+		.main-navigation .shopping-cart {
+			display: inline-block;
+		}
 		.main-navigation .menu-toggle {
 			display: none;
 		}

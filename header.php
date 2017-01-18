@@ -49,7 +49,7 @@
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-						<?php if( class_exists('Woocommerce') && !( is_cart() || is_checkout() ) && siteorigin_setting('woocommerce_display_mini_cart') ): ?>
+						<?php if ( class_exists( 'Woocommerce' ) && !( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_mini_cart' ) ): ?>
 							<?php global $woocommerce; ?>
 							<ul class="shopping-cart">
 								<li>
