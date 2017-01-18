@@ -47,7 +47,7 @@ if ( ! function_exists( 'siteorigin_unwind_woocommerce_loop_shop_columns' ) ) :
  * Change number of products per row.
  *
  * @link https://docs.woocommerce.com/document/change-number-of-products-per-row/
- */	
+ */
 function siteorigin_unwind_woocommerce_loop_shop_columns() {
 	return 3;
 }
@@ -91,3 +91,20 @@ function siteorigin_unwind_woocommerce_tag_cloud_widget() {
 	return $args;
 }
 add_filter( 'woocommerce_product_tag_cloud_widget_args', 'siteorigin_unwind_woocommerce_tag_cloud_widget' );
+
+if( !function_exists('siteorigin_unwind_woocommerce_update_cart_count') ) :
+/**
+ * Update cart count with the masthead cart icon.
+ */
+function siteorigin_unwind_woocommerce_update_cart_count( $fragments ) {
+	ob_start();
+	?>
+	<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
+	<?php
+
+	$fragments['span.shopping-cart-count'] = ob_get_clean();
+
+	return $fragments;
+}
+endif;
+add_filter('add_to_cart_fragments', 'siteorigin_unwind_woocommerce_update_cart_count');

@@ -19,7 +19,7 @@ jQuery( function( $ ) {
 		resetMenu();
 		$( window ).resize( resetMenu );
 
-	}	
+	}
 
 	// Featured posts slider.
 	$( document ).ready( function() {
@@ -37,7 +37,7 @@ jQuery( function( $ ) {
     // Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
     if ( typeof $.fn.fitVids !== 'undefined' ) {
         $( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
-    }	
+    }
 
 	// Fullscreen search.
 	$( '#search-button' ).click( function( e ) {
@@ -97,6 +97,10 @@ jQuery( function( $ ) {
 			$mobileMenu = $mobileMenuDiv
 				.append( $( '.main-navigation ul' ).first().clone() )
 				.appendTo( $mobileMenuDiv ).hide();
+		}
+
+		if ( $( '.main-navigation .shopping-cart' ).length ) {
+			$mobileMenu.append( $( '.main-navigation .shopping-cart .shopping-cart-link' ).clone() );
 		}
 
 		$mobileMenu.slideToggle( 'fast' );

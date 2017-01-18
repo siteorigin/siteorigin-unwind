@@ -299,7 +299,12 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 
 				'display_quick_view' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display Quick View button on hover.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Display quick view button on hover.', 'siteorigin-unwind' ),
+				),
+				'display_mini_cart' => array(
+					'type' => 'checkbox',
+					'label'       => esc_html__( 'Display Cart', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display WooCommerce cart in the main menu', 'siteorigin-unwind' ),
 				),
 				'shop_sidebar'	=> array(
 					'type'	=> 'select',
@@ -1016,7 +1021,9 @@ function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
 		.main-navigation .menu-toggle {
 			display: block;
 		}
-		.main-navigation ul {
+		.main-navigation > div,
+		.main-navigation > div ul,
+		.main-navigation .shopping-cart {
 			display: none;
 		}
 	}
@@ -1024,11 +1031,12 @@ function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
 		#mobile-navigation {
 			display: none !important;
 		}
-
-		.main-navigation ul {
+		.main-navigation > div ul {
 			display: block;
 		}
-
+		.main-navigation .shopping-cart {
+			display: inline-block;
+		}
 		.main-navigation .menu-toggle {
 			display: none;
 		}
@@ -1101,6 +1109,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 
 	// WooCommerce
 	$defaults['woocommerce_display_quick_view'] = true;
+	$defaults['woocommerce_display_mini_cart']  = true;
 	$defaults['woocommerce_shop_sidebar']       = 'left';
 
 	return $defaults;
