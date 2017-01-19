@@ -222,7 +222,7 @@ function siteorigin_unwind_settings_init() {
 						'full' => esc_html__( 'Full Post', 'siteorigin-unwind' ),
 						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-unwind' ),
 					),
-					'description' => __('Choose how to display posts on post archive when using default blog layout.', 'siteorigin-unwind'),
+					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag.', 'siteorigin-unwind'),
 				),
 				'display_date' => array(
 					'type' => 'checkbox',
