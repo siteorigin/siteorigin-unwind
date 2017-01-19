@@ -47,7 +47,34 @@
 	}
 
 	#masthead-widgets {
-		margin: 15px auto;
+		@include clearfix;
+		margin: 60px auto;
+		
+		.widgets {
+
+			@for $i from 1 through 10 {
+				$margin: ($i - 1) * 2.5;
+				&.widgets-#{$i} .widget {
+					width: (100% - $margin) / $i;
+				}
+			}
+
+			.widget {
+				box-sizing: content-box;
+				margin-right: 2.5%;
+				float: left;
+
+				&:last-of-type {
+					margin-right: 0 !important;
+				}
+
+				@media (max-width: 768px) {
+					float: none;
+					margin: 0 0 4em;
+					width: 100% !important;
+				}
+			}
+		}
 	}
 }
 
