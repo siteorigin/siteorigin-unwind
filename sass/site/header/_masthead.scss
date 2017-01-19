@@ -27,7 +27,7 @@
 			margin: 0;
 			text-align: center;
 			text-transform: uppercase;
-			
+
 			@media (max-width: 480px) {
 				@include font-size(3.2);
 			}
@@ -44,6 +44,11 @@
 			margin-bottom: 0;
 			text-align: center;
 		}
+	}
+
+	#masthead-widgets {
+		margin: 15px auto;
+		padding: 0;
 	}
 }
 

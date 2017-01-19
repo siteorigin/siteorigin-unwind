@@ -1455,6 +1455,9 @@ a {
       line-height: 1.7142;
       margin-bottom: 0;
       text-align: center; }
+  #masthead #masthead-widgets {
+    margin: 15px auto;
+    padding: 0; }
 
 .archive #masthead,
 .search #masthead {

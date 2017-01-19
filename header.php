@@ -77,14 +77,22 @@
 				<?php endif; ?>
 			</div><!-- .top-bar -->
 
-			<div class="container">
-				<div class="site-branding">
-					<?php siteorigin_unwind_display_logo(); ?>
-					<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
-						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-					<?php endif ?>
-				</div><!-- .site-branding -->
-			</div><!-- .container -->
+
+			<?php if ( ! is_active_sidebar( 'masthead-sidebar' ) ) : ?>
+				<div class="container">
+					<div class="site-branding">
+						<?php siteorigin_unwind_display_logo(); ?>
+						<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
+							<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+						<?php endif ?>
+					</div><!-- .site-branding -->
+				</div><!-- .container -->
+			<?php else : ?>
+				<div id="masthead-widgets" class="container">
+					<?php dynamic_sidebar( 'masthead-sidebar' ); ?>
+				</div><!-- #masthead-widgets -->
+			<?php endif; ?>
+
 
 		</header><!-- #masthead -->
 	<?php endif; ?>
