@@ -32,7 +32,8 @@
 
 	<div class="entry-content">
 		<?php
-			the_content();
+			if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) the_excerpt();
+			else the_content();
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',
