@@ -19,10 +19,8 @@
       width: auto; } }
 
 .woocommerce-page .container #content {
-  float: right;
   margin: 0 0 0 25.61404%; }
   .shop-sidebar-right.woocommerce-page .container #content {
-    float: left;
     margin: 0 25.61404% 0 0; }
   .no-active-wc-sidebar.woocommerce-page .container #content {
     float: none;
