@@ -397,6 +397,9 @@
   .woocommerce.single-product #content div.product .woocommerce-message:before {
     color: #24c48a; }
 
+.woocommerce.single-product #content div.product .out-of-stock {
+  color: #24c48a; }
+
 .woocommerce.single-product #content div.product .star-rating span:before {
   color: #24c48a; }
 
@@ -1432,6 +1435,8 @@
         color: #24c48a; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .star-rating {
       float: none; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .out-of-stock {
+      color: #24c48a; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .cart {
       padding-bottom: 20px; }
       .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .cart .quantity {

@@ -120,6 +120,10 @@
 					float: none;
 				}
 
+				.out-of-stock {
+					color: $color__primary-accent;
+				}
+
 				.cart {
 					padding-bottom: 20px;
 					.quantity {
