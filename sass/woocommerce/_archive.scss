@@ -86,7 +86,6 @@
 				@include transition (all 0.15s ease-in);
 				@include transform-origin(center top);
 				@include transform( scale(0.95) );
-
 			}
 
 			&:hover {
@@ -230,6 +229,12 @@
 							right: 0;
 							top: 0;
 						}
+					}
+				}
+
+				.ajax_add_to_cart {
+					&:not(.add_to_cart_button) {
+						display: none;
 					}
 				}
 
