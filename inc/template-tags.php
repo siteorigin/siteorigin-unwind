@@ -584,6 +584,8 @@ function siteorigin_unwind_filter_video( $content ) {
 		}
 
 		return $content;
+	} else {
+		return $content;
 	}
 }
 endif;
