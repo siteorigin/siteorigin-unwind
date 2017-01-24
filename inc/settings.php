@@ -222,7 +222,7 @@ function siteorigin_unwind_settings_init() {
 						'full' => esc_html__( 'Full Post', 'siteorigin-unwind' ),
 						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-unwind' ),
 					),
-					'description' => __('Choose how to display posts on post archive when using default blog layout.', 'siteorigin-unwind'),
+					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag.', 'siteorigin-unwind'),
 				),
 				'display_date' => array(
 					'type' => 'checkbox',
@@ -312,14 +312,14 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 				),
 				'display_mini_cart' => array(
 					'type' => 'checkbox',
-					'label'       => esc_html__( 'Display Cart', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Display Cart', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Display WooCommerce cart in the main menu', 'siteorigin-unwind' ),
 				),
-				'shop_sidebar'	=> array(
-					'type'	=> 'select',
-					'label'	=> esc_html__( 'Shop Sidebar Position', 'siteorigin-unwind' ),
+				'shop_sidebar' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Shop Sidebar Position', 'siteorigin-unwind' ),
 					'options' => array(
-						'left'  => esc_html__( 'Left', 'siteorigin-unwind' ),
+						'left' => esc_html__( 'Left', 'siteorigin-unwind' ),
 						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
 					),
 				),
@@ -328,7 +328,7 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 		)
 	);
 
-	return array_merge( $settings, $wc_settings);
+	return array_merge( $settings, $wc_settings );
 }
 add_filter( 'siteorigin_unwind_settings_array', 'siteorigin_unwind_woocommerce_settings' );
 

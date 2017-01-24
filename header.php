@@ -49,18 +49,18 @@
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-						<?php if ( class_exists( 'Woocommerce' ) && !( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_mini_cart' ) ): ?>
+						<?php if ( class_exists( 'Woocommerce' ) && ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_mini_cart' ) ): ?>
 							<?php global $woocommerce; ?>
 							<ul class="shopping-cart">
 								<li>
-									<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url();?>">
-										<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
+									<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
+										<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-unwind' ); ?></span>
 										<?php siteorigin_unwind_display_icon( 'cart' ); ?>
-										<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
+										<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-unwind' ); ?></span>
 										<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
 									</a>
 									<ul class="shopping-cart-dropdown" id="cart-drop">
-										<?php the_widget('WC_Widget_Cart');?>
+										<?php the_widget( 'WC_Widget_Cart' );?>
 									</ul>
 								</li>
 							</ul>
@@ -77,14 +77,31 @@
 				<?php endif; ?>
 			</div><!-- .top-bar -->
 
-			<div class="container">
-				<div class="site-branding">
-					<?php siteorigin_unwind_display_logo(); ?>
-					<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
-						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-					<?php endif ?>
-				</div><!-- .site-branding -->
-			</div><!-- .container -->
+
+			<?php if ( ! is_active_sidebar( 'masthead-sidebar' ) ) : ?>
+				<div class="container">
+					<div class="site-branding">
+						<?php siteorigin_unwind_display_logo(); ?>
+						<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
+							<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+						<?php endif ?>
+					</div><!-- .site-branding -->
+				</div><!-- .container -->
+			<?php else : ?>
+				<div id="masthead-widgets" class="container">
+					<?php
+					if ( is_active_sidebar( 'masthead-sidebar' ) ) {
+						$siteorigin_unwind_masthead_sidebars = wp_get_sidebars_widgets();
+						?>
+						<div class="widgets widgets-<?php echo count( $siteorigin_unwind_masthead_sidebars['masthead-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Masthead Sidebar', 'siteorigin-unwind' ); ?>">
+							<?php dynamic_sidebar( 'masthead-sidebar' ); ?>
+						</div>
+						<?php
+					}
+					?>					
+				</div><!-- #masthead-widgets -->
+			<?php endif; ?>
+
 
 		</header><!-- #masthead -->
 	<?php endif; ?>
