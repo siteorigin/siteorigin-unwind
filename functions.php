@@ -196,6 +196,16 @@ function siteorigin_unwind_widgets_init() {
 			'after_title' 	=> '</h2>',
 		) );
 	}
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Masthead', 'siteorigin-unwind' ),
+		'id'            => 'masthead-sidebar',
+		'description'   => esc_html__( 'Replaces the logo and description.', 'siteorigin-unwind' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title heading-strike">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
 

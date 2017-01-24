@@ -47,6 +47,10 @@ jQuery( function($){
 
 	$('table.shop_table, .product form.cart').triggerQuantityButtons();
 
+	$( document ).on( 'updated_cart_totals', function(){
+		$('table.shop_table, .product form.cart').triggerQuantityButtons();
+	});
+
 	$('table.shop_table').removeClass('shop_table_responsive');
 
 	// Product images slider.

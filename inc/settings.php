@@ -147,6 +147,11 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Sticky menu', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Stick menu to top of screen.', 'siteorigin-unwind' ),
 				),
+				'mobile_menu_collapse' => array(
+					'label'       => esc_html__( 'Mobile Menu Collapse', 'siteorigin-unwind' ),
+					'type'        => 'number',
+					'description' => esc_html__( 'The screen width in pixels when the primary menu changes to a mobile menu.', 'siteorigin-unwind' )
+				),
 				'post' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post navigation', 'siteorigin-unwind' ),
@@ -177,6 +182,20 @@ function siteorigin_unwind_settings_init() {
 			),
 		),
 
+		'layout' => array(
+			'title' => esc_html__( 'Layout', 'siteorigin-unwind' ),
+			'fields' => array(
+				'main_sidebar'	=> array(
+					'type'	=> 'select',
+					'label'	=> esc_html__( 'Main Sidebar Position', 'siteorigin-unwind' ),
+					'options' => array(
+						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
+						'left'  => esc_html__( 'Left', 'siteorigin-unwind' ),
+					),
+				),
+			)
+		),
+
 		'blog' => array(
 			'title' => esc_html__( 'Blog', 'siteorigin-unwind' ),
 			'fields' => array(
@@ -195,6 +214,15 @@ function siteorigin_unwind_settings_init() {
 				'featured_single' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Featured image on single post.', 'siteorigin-unwind' ),
+				),
+				'archive_content'	=> array(
+					'type'	=> 'select',
+					'label'	=> esc_html__( 'Post Content', 'siteorigin-unwind' ),
+					'options' => array(
+						'full' => esc_html__( 'Full Post', 'siteorigin-unwind' ),
+						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-unwind' ),
+					),
+					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag.', 'siteorigin-unwind'),
 				),
 				'display_date' => array(
 					'type' => 'checkbox',
@@ -222,7 +250,7 @@ function siteorigin_unwind_settings_init() {
 				),
 				'search_fallback' => array(
 					'type' => 'media',
-					'label' => __( 'Search fallback image', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Search fallback image', 'siteorigin-unwind' ),
 					'description' => esc_html__( "Used for blog posts with no featured image.", 'siteorigin-unwind' ),
 				),
 			)
@@ -280,14 +308,27 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 
 				'display_quick_view' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display Quick View button on hover.', 'siteorigin-unwind' ),
-				)
+					'label' => esc_html__( 'Display quick view button on hover.', 'siteorigin-unwind' ),
+				),
+				'display_mini_cart' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display Cart', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display WooCommerce cart in the main menu', 'siteorigin-unwind' ),
+				),
+				'shop_sidebar' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Shop Sidebar Position', 'siteorigin-unwind' ),
+					'options' => array(
+						'left' => esc_html__( 'Left', 'siteorigin-unwind' ),
+						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
+					),
+				),
 
 			)
 		)
 	);
 
-	return array_merge( $settings, $wc_settings);
+	return array_merge( $settings, $wc_settings );
 }
 add_filter( 'siteorigin_unwind_settings_array', 'siteorigin_unwind_woocommerce_settings' );
 
@@ -978,6 +1019,42 @@ $css .= '/* style */
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
 
+if ( ! function_exists( 'siteorigin_unwind_menu_breakpoint_css' ) ) :
+/**
+ * Add CSS for mobile menu breakpoint.
+ */
+function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
+	$breakpoint = isset( $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] ) ? $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] : 768;
+
+	$css .= '@media screen and (max-width: ' . intval( $breakpoint ) . 'px) {
+		.main-navigation .menu-toggle {
+			display: block;
+		}
+		.main-navigation > div,
+		.main-navigation > div ul,
+		.main-navigation .shopping-cart {
+			display: none;
+		}
+	}
+	@media screen and (min-width: ' . ( 1 + $breakpoint ) . 'px) {
+		#mobile-navigation {
+			display: none !important;
+		}
+		.main-navigation > div ul {
+			display: block;
+		}
+		.main-navigation .shopping-cart {
+			display: inline-block;
+		}
+		.main-navigation .menu-toggle {
+			display: none;
+		}
+	}';
+	return $css;
+}
+endif;
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_menu_breakpoint_css', 10, 2 );
+
 /**
  * Add default settings.
  *
@@ -1005,9 +1082,10 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['masthead_bottom_margin'] = '80px';
 
 	// Navigation defaults.
-	$defaults['navigation_search'] = true;
-	$defaults['navigation_sticky'] = true;
-	$defaults['navigation_post']   = true;
+	$defaults['navigation_search']               = true;
+	$defaults['navigation_sticky']               = true;
+	$defaults['navigation_mobile_menu_collapse'] = 768;
+	$defaults['navigation_post']                 = true;
 
 	// Icons.
 	$defaults['icons_menu']              = false;
@@ -1015,11 +1093,15 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['icons_search']            = false;
 	$defaults['icons_close_search']      = false;
 
+	// Layout
+	$defaults['layout_main_sidebar'] = 'right';
+
 	// Blog settings.
 	$defaults['blog_featured_slider']         = false;
 	$defaults['blog_featured_slider_overlay'] = false;
 	$defaults['blog_featured_archive']        = true;
 	$defaults['blog_featured_single']         = true;
+	$defaults['blog_archive_content']         = 'full';
 	$defaults['blog_display_related_posts']   = true;
 	$defaults['blog_display_author_box']      = true;
 	$defaults['blog_display_date']            = true;
@@ -1037,6 +1119,8 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 
 	// WooCommerce
 	$defaults['woocommerce_display_quick_view'] = true;
+	$defaults['woocommerce_display_mini_cart']  = true;
+	$defaults['woocommerce_shop_sidebar']       = 'left';
 
 	return $defaults;
 }

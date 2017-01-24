@@ -1,5 +1,19 @@
 == Changelog ==
 
+= 1.0.5 - 24 January 2016 =
+* Added a date format filter.
+* Styled WooCommerce product thumbnail navigation.
+* Added setting to adjust mobile menu collapse point.
+* Added WooCommerce mini-cart to menu and corresponding theme setting.
+* Added setting to change the position of the site sidebar.
+* Added setting to change the position of the WooCommerce sidebar.
+* Added blog setting to change full content to excerpt.
+* Added masthead sidebar area which replaces the logo and site title.
+* Fixed edge case display bug with Jetpack Sharing on single posts.
+* Fixed display bug for out of stock WooCommerce products.
+* Fixed quanitity change button bug in WooCommerce cart.
+* Fixed WooCommerce display bug appearing when a limited amounts of products display.
+
 = 1.0.4 - 04 January 2016 =
 * Fixed posts slider overlay lag in Chrome.
 * Added posts slider as a loop file for use in the Post Loop widget and Page Builder.
