@@ -208,7 +208,8 @@
 ## Search Widget
 --------------------------------------------------------------*/
 #secondary .widget_search,
-#colophon .widget_search {
+#colophon .widget_search,
+#masthead-widgets .widget_search {
 
 	.search-form {
 		position: relative;
@@ -270,6 +271,7 @@
 }
 
 #secondary .widget_tag_cloud,
-#colophon .widget_tag_cloud {
+#colophon .widget_tag_cloud,
+#masthead-widgets .widget_tag_cloud {
 	@include font-size(0.9285); // 14px base.
 }
