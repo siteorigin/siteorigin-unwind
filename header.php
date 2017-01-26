@@ -89,19 +89,12 @@
 				</div><!-- .container -->
 			<?php else : ?>
 				<div id="masthead-widgets" class="container">
-					<?php
-					if ( is_active_sidebar( 'masthead-sidebar' ) ) {
-						$siteorigin_unwind_masthead_sidebars = wp_get_sidebars_widgets();
-						?>
-						<div class="widgets widgets-<?php echo count( $siteorigin_unwind_masthead_sidebars['masthead-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Masthead Sidebar', 'siteorigin-unwind' ); ?>">
-							<?php dynamic_sidebar( 'masthead-sidebar' ); ?>
-						</div>
-						<?php
-					}
-					?>					
+					<?php $siteorigin_unwind_masthead_sidebars = wp_get_sidebars_widgets(); ?>
+					<div class="widgets widgets-<?php echo count( $siteorigin_unwind_masthead_sidebars['masthead-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Masthead Sidebar', 'siteorigin-unwind' ); ?>">
+						<?php dynamic_sidebar( 'masthead-sidebar' ); ?>
+					</div>				
 				</div><!-- #masthead-widgets -->
 			<?php endif; ?>
-
 
 		</header><!-- #masthead -->
 	<?php endif; ?>
