@@ -99,7 +99,7 @@ jQuery( function( $ ) {
 				.appendTo( $mobileMenuDiv ).hide();
 		}
 
-		if ( $( '.main-navigation .shopping-cart' ).length ) {
+		if ( $( '.main-navigation .shopping-cart' ).length && ! $mobileMenuDiv.find( '.shopping-cart-link' ).length ) {
 			$mobileMenu.append( $( '.main-navigation .shopping-cart .shopping-cart-link' ).clone() );
 		}
 
