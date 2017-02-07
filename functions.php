@@ -11,6 +11,7 @@
 
 define('SITEORIGIN_THEME_VERSION', 'dev');
 define('SITEORIGIN_THEME_JS_PREFIX', '');
+define('SITEORIGIN_THEME_CSS_PREFIX', '');
 
 // Load theme specific files.
 require get_template_directory() . '/inc/extras.php';
@@ -214,8 +215,8 @@ add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
  */
 function siteorigin_unwind_scripts() {
 	// Theme stylesheet.
-	wp_enqueue_style( 'siteorigin-unwind-style', get_stylesheet_uri() );
-
+	wp_enqueue_style( 'siteorigin-unwind-style', get_template_directory_uri() . '/style' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
+	
 	// Flexslider.
 	wp_register_style( 'siteorigin-unwind-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 	wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
