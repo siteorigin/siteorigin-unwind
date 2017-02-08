@@ -19,7 +19,7 @@ jQuery( function( $ ) {
 		resetMenu();
 		$( window ).resize( resetMenu );
 
-	}	
+	}
 
 	// Featured posts slider.
 	$( document ).ready( function() {
@@ -37,7 +37,7 @@ jQuery( function( $ ) {
     // Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
     if ( typeof $.fn.fitVids !== 'undefined' ) {
         $( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
-    }	
+    }
 
 	// Fullscreen search.
 	$( '#search-button' ).click( function( e ) {
@@ -84,7 +84,7 @@ jQuery( function( $ ) {
 
 	// Mobile menu.
 	var $mobileMenu = false;
-	$( '#mobile-menu-button' ).click( function(e){
+	$( '#mobile-menu-button' ).click( function(e) {
 		e.preventDefault();
 
 		$( '#search-button.close-search' ).trigger( 'click' );
@@ -99,14 +99,20 @@ jQuery( function( $ ) {
 				.appendTo( $mobileMenuDiv ).hide();
 		}
 
+		if ( $( '.main-navigation .shopping-cart' ).length && ! $mobileMenuDiv.find( '.shopping-cart-link' ).length ) {
+			$mobileMenu.append( $( '.main-navigation .shopping-cart .shopping-cart-link' ).clone() );
+		}
+
 		$mobileMenu.slideToggle( 'fast' );
 
-		$mobileMenu.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false"><svg version="1.1" class="svg-icon-submenu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><path d="M30.054 14.429l-13.25 13.232q-0.339 0.339-0.804 0.339t-0.804-0.339l-13.25-13.232q-0.339-0.339-0.339-0.813t0.339-0.813l2.964-2.946q0.339-0.339 0.804-0.339t0.804 0.339l9.482 9.482 9.482-9.482q0.339-0.339 0.804-0.339t0.804 0.339l2.964 2.946q0.339 0.339 0.339 0.813t-0.339 0.813z"></path></svg></button>' );
-		$mobileMenuDiv.find( '.menu-item-has-children a' ).width('100%');
-		$mobileMenuDiv.find( '.dropdown-toggle' ).click( function( e ) {
-			e.preventDefault();
-			$( this ).next( '.children, .sub-menu' ).slideToggle( 'fast' );
-		} );
+		$mobileMenu.find( '.menu-item-has-children > a:not(.has-dropdown-button)' ).addClass( 'has-dropdown-button' ).after( '<button class="dropdown-toggle" aria-expanded="false"><svg version="1.1" class="svg-icon-submenu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><path d="M30.054 14.429l-13.25 13.232q-0.339 0.339-0.804 0.339t-0.804-0.339l-13.25-13.232q-0.339-0.339-0.339-0.813t0.339-0.813l2.964-2.946q0.339-0.339 0.804-0.339t0.804 0.339l9.482 9.482 9.482-9.482q0.339-0.339 0.804-0.339t0.804 0.339l2.964 2.946q0.339 0.339 0.339 0.813t-0.339 0.813z"></path></svg></button>' );
+
+		$mobileMenu.find( '.menu-item-has-children a' ).width('100%');
+	} );
+
+	$( '#mobile-navigation' ).on( 'click', '.dropdown-toggle', function( e ) {
+		e.preventDefault();
+		$( this ).next( 'ul' ).slideToggle( '300ms' );
 	} );
 
 	// Sticky menu.

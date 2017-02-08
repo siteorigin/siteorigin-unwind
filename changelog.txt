@@ -1,5 +1,34 @@
 == Changelog ==
 
+= 1.0.5 - 24 January 2016 =
+* Added a date format filter.
+* Styled WooCommerce product thumbnail navigation.
+* Added setting to adjust mobile menu collapse point.
+* Added WooCommerce mini-cart to menu and corresponding theme setting.
+* Added setting to change the position of the site sidebar.
+* Added setting to change the position of the WooCommerce sidebar.
+* Added blog setting to change full content to excerpt.
+* Added masthead sidebar area which replaces the logo and site title.
+* Fixed edge case display bug with Jetpack Sharing on single posts.
+* Fixed display bug for out of stock WooCommerce products.
+* Fixed quanitity change button bug in WooCommerce cart.
+* Fixed WooCommerce display bug appearing when a limited amounts of products display.
+
+= 1.0.4 - 04 January 2016 =
+* Fixed posts slider overlay lag in Chrome.
+* Added posts slider as a loop file for use in the Post Loop widget and Page Builder.
+* Removed the background color from the WooCommerce product variations table.
+
+= 1.0.3 - 29 December 2016 =
+* Added retina logo setting.
+* Added menu search setting.
+* Added support for SiteOrigin Premium No Attribution module.
+* Added WooCommerce quick view setting.
+* Added styling for WooCommerce disabled button state.
+* Fixed styling for WooCommerce product pricing.
+* Added styling for WooCommerce added to cart message.
+* Added check to ensure Jetpack Responsive Videos and FitVids don't output together.
+
 = 1.0.2 - 19 December 2016 =
 * WooCommerce cart page style improvements.
 * WooCommerce checkout page style improvements.
