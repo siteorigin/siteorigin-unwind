@@ -653,6 +653,50 @@
       margin: 0 0 27px;
       width: 100%; } }
 
+.variations select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 1px solid #ebebeb;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #626262;
+  cursor: pointer;
+  font-size: 0.85em;
+  line-height: 1.2;
+  outline: none;
+  padding: 10px; }
+
+.variations .reset_variations {
+  text-transform: uppercase; }
+
+.variations svg {
+  position: relative;
+  right: 40px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: all 0.15s ease-in;
+  -moz-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+  z-index: -1; }
+  .variations svg path {
+    fill: #626262; }
+
+.variations select:hover + svg {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .variations select:hover + svg path {
+    fill: #2d2d2d; }
+
 /*--------------------------------------------------------------
 # WooCommerce Checkout
 --------------------------------------------------------------*/

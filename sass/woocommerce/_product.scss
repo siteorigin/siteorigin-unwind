@@ -415,3 +415,42 @@
 		}
 	}
 }
+
+.variations {
+	select {
+		@include appearance(none);
+		background: transparent;
+		border: 1px solid $color__background-hr-dark;
+		border-radius: 0;
+		box-sizing: border-box;
+		color: $color__text-medium;
+		cursor: pointer;
+		font-size: 0.85em;
+		line-height: 1.2;
+		outline: none;
+		padding: 10px;
+	}
+
+	.reset_variations {
+		text-transform: uppercase;
+	}
+
+	svg {
+		position: relative;
+		right: 40px;
+		@include transform(rotate(-90deg));
+		@include transition(all 0.15s ease-in);
+		z-index: -1;
+
+		path {
+			fill: $color__text-medium;
+		}
+	}
+
+	select:hover + svg {
+		@include transform(rotate(0deg));
+		path {
+			fill: $color__text-dark;
+		}
+	}
+}

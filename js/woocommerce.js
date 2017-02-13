@@ -155,4 +155,6 @@ jQuery( function($){
 
 	} );
 
+	$( so_unwind_data.chevron_down ).insertAfter( '.variations select' );
+
 } );
