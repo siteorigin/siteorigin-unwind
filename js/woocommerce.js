@@ -130,6 +130,8 @@ jQuery( function($){
 			function( data ) {
 				$(document).find( $container ).find( $content ).html(data);
 				$(document).find( '#product-quick-view .cart' ).triggerQuantityButtons();
+				$(document).find( '#product-quick-view .variations_form' ).wc_variation_form();
+				$(document).find( '#product-quick-view .variations_form' ).trigger( 'check_variations' );
 			}
 		);
 

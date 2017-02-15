@@ -211,6 +211,31 @@
 					}
 				}
 			}
+
+			.variations {
+				border: none;
+				margin-bottom: 15px;
+
+				td {
+					padding-top: 0;
+					padding-bottom: 0;
+
+					select {
+						max-width: 100%;
+						min-width: 75%;
+					}
+
+					.reset_variations {
+						margin-left: 10px;
+					}
+				}
+			}
+
+			.single_variation_wrap {
+				.woocommerce-variation-price {
+					margin: 15px 0;
+				}
+			}
 		}
 	}
 }
