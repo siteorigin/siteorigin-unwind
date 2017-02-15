@@ -26,8 +26,6 @@ while ( have_posts() ) : the_post();
 
 			<div class="product-info-wrapper">
 
-				<span class="quickview-close-icon">+</span>
-
 				<a href="<?php the_permalink(); ?>">
 					<?php
 					do_action( 'siteorigin_unwind_woocommerce_quick_view_title' );
@@ -37,6 +35,8 @@ while ( have_posts() ) : the_post();
 				<?php do_action( 'siteorigin_unwind_woocommerce_quick_view_content' ); ?>
 
 			</div>
+
+			<span class="quickview-close-icon">+</span>
 
 		</div>
 
