@@ -1559,6 +1559,8 @@
     .woocommerce #quick-view-container .product-content-wrapper .variations td {
       padding-top: 0;
       padding-bottom: 0; }
+      .woocommerce #quick-view-container .product-content-wrapper .variations td.label {
+        padding: 1.1999em 0; }
       .woocommerce #quick-view-container .product-content-wrapper .variations td select {
         max-width: 100%;
         min-width: 75%; }

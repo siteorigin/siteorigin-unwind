@@ -220,6 +220,10 @@
 					padding-top: 0;
 					padding-bottom: 0;
 
+					&.label {
+						padding: 1.1999em 0;
+					}
+
 					select {
 						max-width: 100%;
 						min-width: 75%;
