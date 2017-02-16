@@ -668,7 +668,9 @@
   font-size: 0.85em;
   line-height: 1.2;
   outline: none;
-  padding: 10px; }
+  padding: 10px;
+  position: relative;
+  z-index: 1; }
 
 .variations .reset_variations {
   text-transform: uppercase; }
@@ -683,8 +685,7 @@
   transform: rotate(-90deg);
   -webkit-transition: all 0.15s ease-in;
   -moz-transition: all 0.15s ease-in;
-  transition: all 0.15s ease-in;
-  z-index: -1; }
+  transition: all 0.15s ease-in; }
   .variations svg path {
     fill: #626262; }
 
