@@ -377,13 +377,13 @@
 				background: $color__primary-accent;
 				border-radius: 50%;
 				color: #fff;
-				height: 20px; 
-				font-family: 'Lato', sans-serif; 
+				height: 20px;
+				font-family: 'Lato', sans-serif;
 				font-size: 11px;
 				padding-top: 4px;
 				position: absolute;
 				right: -11px;
-				text-align: center; 
+				text-align: center;
 				top: -17px;
 				width: 20px;
 			}
@@ -415,14 +415,14 @@
 		color: $color__text-medium;
 		display: block;
 		font-family: $font__details;
-		font-size: 12px; 
+		font-size: 12px;
 		letter-spacing: .1em;
 		line-height: 42px;
 		padding: 0 10px;
 		position: relative;
 		text-transform: uppercase;
 		width: 100%;
-		
+
 		svg {
 			height: 20px;
 			position: relative;
@@ -436,12 +436,12 @@
 			font-size: 9px;
 			height: 18px;
 			line-height: normal;
-			margin-left: 8px;  
+			margin-left: 8px;
 			padding-top: 3px;
 			position: absolute;
 			text-align: center;
 			top: 12px;
-			width: 18px; 
+			width: 18px;
 		}
 	}
 }
@@ -508,7 +508,7 @@
 		.total {
 			border-top: none !important;
 			color: $color__text-medium;
-			font-size: 14px; 
+			font-size: 14px;
 			margin: 14px 0 0 0;
 			padding: 5px 0 !important;
 
@@ -530,7 +530,7 @@
 
 			a {
 				padding: 12px 1.5em;
-				width: 49%; 
+				width: 49%;
 
 				&.wc-forward:first-of-type {
 					background: transparent;
@@ -546,6 +546,10 @@
 
 				&.checkout {
 					padding: 13px 1.5em;
+
+					&:hover {
+						color: #fff;
+					}
 				}
 			}
 		}
