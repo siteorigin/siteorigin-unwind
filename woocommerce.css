@@ -1097,6 +1097,13 @@
     top: 12px;
     width: 18px; }
 
+.mega-menu-primary .main-navigation #mega-menu-wrap-primary {
+  display: inline-block; }
+
+.mega-menu-primary .main-navigation .shopping-cart {
+  bottom: 0;
+  top: 10px; }
+
 .woocommerce .widget_shopping_cart_content .cart_list .mini_cart_item {
   border-bottom: 1px solid #f4f4f4;
   box-sizing: border-box;
