@@ -115,6 +115,18 @@ jQuery( function($){
 		$$.hide();
 	} );
 
+	// Open dropdown on click
+	$( '.ordering-selector-wrapper' ).click( function() {
+		$(this).toggleClass( 'open-dropdown' );
+	} );
+
+	// Closing dropdown on click outside dropdown wrapper
+	$( window ).click( function(e) {
+		if ( !$(e.target).closest('.ordering-selector-wrapper.open-dropdown').length ) {
+			$( '.ordering-selector-wrapper.open-dropdown' ).removeClass( 'open-dropdown' );
+		}
+	})
+
 	// Display variation images
 	$( '.variations' ).on( 'change', 'select', function() {
 		$( '.product-images-carousel' ).find( '.product-featured-image' ).click();

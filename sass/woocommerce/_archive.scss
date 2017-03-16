@@ -38,13 +38,6 @@
 
 			&:hover {
 				color: $color__text-dark;
-
-				svg {
-					@include transform(rotate(0deg));
-					path {
-						fill: $color__text-dark;
-					}
-				}
 			}
 
 			.ordering-dropdown-container {
@@ -88,12 +81,20 @@
 				@include transform( scale(0.95) );
 			}
 
-			&:hover {
+			&.open-dropdown {
 
 				.ordering-dropdown {
 					opacity: 1;
 					visibility: visible;
 					@include transform( scale(1) );
+				}
+
+				svg {
+					@include transform( rotate(0deg) );
+
+					path {
+						fill: $color__text-dark;
+					}
 				}
 			}
 		}
