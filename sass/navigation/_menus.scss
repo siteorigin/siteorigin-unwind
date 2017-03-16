@@ -106,6 +106,14 @@
 		.current-menu-ancestor > a {
 		}
 	}
+
+	.mega-menu {
+		.mega-menu-megamenu {
+			ul.mega-sub-menu {
+				@include transform( scaleY(1) );
+			}
+		}
+	}
 }
 
 /*--------------------------------------------------------------
