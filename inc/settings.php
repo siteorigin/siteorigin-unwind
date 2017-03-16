@@ -718,8 +718,23 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button:hover,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button:hover,#page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button:hover {
 	color: ${fonts_text_dark};
-	}
-	/* woocommerce */
+	}';
+	return $css;
+}
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
+
+if ( ! function_exists( 'siteorigin_unwind_wc_settings_custom_css' ) ) :
+/**
+ * Add custom CSS for the theme woocommerce elements
+ *
+ * @param $css
+ *
+ * @return string
+ */
+function siteorigin_unwind_wc_settings_custom_css( $css ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
+	// Custom WooCommerce CSS Code
+	$css .= '/* woocommerce */
 	.woocommerce.woocommerce-page #respond input#submit.alt.disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],.woocommerce.woocommerce-page a.button.alt.disabled,.woocommerce.woocommerce-page a.button.alt:disabled,.woocommerce.woocommerce-page a.button.alt:disabled[disabled],.woocommerce.woocommerce-page button.button.alt.disabled,.woocommerce.woocommerce-page button.button.alt:disabled,.woocommerce.woocommerce-page button.button.alt:disabled[disabled],.woocommerce.woocommerce-page input.button.alt.disabled,.woocommerce.woocommerce-page input.button.alt:disabled,.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
 	background-color: ${branding_accent};
 	border: 1px solid ${branding_accent};
@@ -1075,7 +1090,8 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}';
 	return $css;
 }
-add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
+endif;
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_wc_settings_custom_css' );
 
 if ( ! function_exists( 'siteorigin_unwind_menu_breakpoint_css' ) ) :
 /**
