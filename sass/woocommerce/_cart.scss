@@ -559,6 +559,10 @@
 
 				&.checkout {
 					padding: 13px 1.5em;
+
+					&:hover {
+						color: #fff;
+					}
 				}
 			}
 		}

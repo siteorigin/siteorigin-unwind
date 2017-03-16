@@ -1179,6 +1179,8 @@
         color: #fff; }
     .woocommerce .widget_shopping_cart_content .buttons a.checkout {
       padding: 13px 1.5em; }
+      .woocommerce .widget_shopping_cart_content .buttons a.checkout:hover {
+        color: #fff; }
 
 /*--------------------------------------------------------------
 # WooCommerce Widgets
