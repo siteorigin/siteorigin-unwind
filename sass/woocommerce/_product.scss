@@ -415,3 +415,47 @@
 		}
 	}
 }
+
+.variations {
+	select {
+		@include appearance(none);
+		background: transparent;
+		border: 1px solid $color__background-hr-dark;
+		border-radius: 0;
+		box-sizing: border-box;
+		color: $color__text-medium;
+		cursor: pointer;
+		font-size: 0.85em;
+		line-height: 1.2;
+		margin-bottom: 15px;
+		outline: none;
+		padding: 10px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.reset_variations {
+		font-family: $font__details;
+		text-transform: uppercase;
+	}
+
+	svg {
+		position: relative;
+		right: 40px;
+
+		path {
+			fill: $color__text-medium;
+		}
+	}
+
+	select:hover + svg {
+		path {
+			fill: $color__text-dark;
+		}
+	}
+
+	tr,
+	tr:nth-child(2n+2) {
+		background: transparent;
+	}
+}

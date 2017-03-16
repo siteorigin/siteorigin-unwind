@@ -491,7 +491,6 @@
 						display: block;
 						font-weight: normal;
 						line-height: 1.5em;
-						padding-bottom: 5px;
 					}
 				}
 
@@ -503,9 +502,10 @@
 				}
 
 				.quantity {
-					display: inline;
+					display: block;
 					font-size: 14px;
 					margin: 0;
+					padding-top: 5px;
 
 					.amount {
 						color: $color__primary-accent;
@@ -514,6 +514,23 @@
 
 				&:last-child {
 					margin-bottom: 0;
+				}
+
+				.variation {
+					border: none;
+					display: inline-block;
+					font-size: 14px;
+					margin: 0;
+					padding: 0;
+					padding-top: 5px;
+
+					.variation-color {
+						margin-bottom: 0;
+						padding-bottom: 0;
+					}
+					dd {
+						margin-left: 15px;
+					}
 				}
 			}
 		}
