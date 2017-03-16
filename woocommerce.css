@@ -672,36 +672,28 @@
   cursor: pointer;
   font-size: 0.85em;
   line-height: 1.2;
+  margin-bottom: 15px;
   outline: none;
   padding: 10px;
   position: relative;
   z-index: 1; }
 
 .variations .reset_variations {
+  font-family: "Lato", sans-serif;
   text-transform: uppercase; }
 
 .variations svg {
   position: relative;
-  right: 40px;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  -webkit-transition: all 0.15s ease-in;
-  -moz-transition: all 0.15s ease-in;
-  transition: all 0.15s ease-in; }
+  right: 40px; }
   .variations svg path {
     fill: #626262; }
 
-.variations select:hover + svg {
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg); }
-  .variations select:hover + svg path {
-    fill: #2d2d2d; }
+.variations select:hover + svg path {
+  fill: #2d2d2d; }
+
+.variations tr,
+.variations tr:nth-child(2n+2) {
+  background: transparent; }
 
 /*--------------------------------------------------------------
 # WooCommerce Checkout
