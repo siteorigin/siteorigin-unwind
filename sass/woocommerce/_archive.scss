@@ -192,14 +192,16 @@
 					}
 
 					.add_to_cart_button,
-					.product-quick-view-button {
+					.product-quick-view-button,
+					.product_type_grouped {
 						opacity: 1;
 						visibility: visible;
 					}
 				}
 
 				.add_to_cart_button,
-				.product-quick-view-button {
+				.product-quick-view-button,
+				.product_type_grouped {
 					border-radius: 0;
 					font-size: 13px;
 					left: 50%;
@@ -211,7 +213,8 @@
 					visibility: hidden;
 				}
 
-				.add_to_cart_button {
+				.add_to_cart_button,
+				.product_type_grouped {
 					background: #fff;
 					border: 2px solid #fff;
 					bottom: 30%;

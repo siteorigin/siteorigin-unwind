@@ -279,11 +279,13 @@
     .woocommerce ul.products li.product .loop-product-thumbnail:hover img {
       opacity: 0.25; }
     .woocommerce ul.products li.product .loop-product-thumbnail:hover .add_to_cart_button,
-    .woocommerce ul.products li.product .loop-product-thumbnail:hover .product-quick-view-button {
+    .woocommerce ul.products li.product .loop-product-thumbnail:hover .product-quick-view-button,
+    .woocommerce ul.products li.product .loop-product-thumbnail:hover .product_type_grouped {
       opacity: 1;
       visibility: visible; }
     .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button,
-    .woocommerce ul.products li.product .loop-product-thumbnail .product-quick-view-button {
+    .woocommerce ul.products li.product .loop-product-thumbnail .product-quick-view-button,
+    .woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped {
       border-radius: 0;
       font-size: 13px;
       left: 50%;
@@ -297,14 +299,17 @@
       -o-transform: translateX(-50%);
       transform: translateX(-50%);
       visibility: hidden; }
-    .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button {
+    .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button,
+    .woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped {
       background: #fff;
       border: 2px solid #fff;
       bottom: 30%;
       color: #2d2d2d; }
-      .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover {
+      .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover,
+      .woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped:hover {
         border: 2px solid #2d2d2d; }
-      .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button.loading:after {
+      .woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button.loading:after,
+      .woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped.loading:after {
         margin-left: .53em;
         position: relative;
         right: 0;
@@ -1096,6 +1101,13 @@
     text-align: center;
     top: 12px;
     width: 18px; }
+
+.mega-menu-primary .main-navigation #mega-menu-wrap-primary {
+  display: inline-block; }
+
+.mega-menu-primary .main-navigation .shopping-cart {
+  bottom: 0;
+  top: 10px; }
 
 .woocommerce .widget_shopping_cart_content .cart_list .mini_cart_item {
   border-bottom: 1px solid #f4f4f4;
