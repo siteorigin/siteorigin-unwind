@@ -179,6 +179,7 @@
 
 						&:hover {
 							background: darken( #f9f9f9, 20%);
+							color: $color__text-medium;
 						}
 					}
 
@@ -193,6 +194,7 @@
 
 				button {
 					background-color: $color__primary-accent;
+					border: none;
 					border-radius: 0;
 					font-size: 14px;
 					margin-left: 15px;
@@ -221,7 +223,10 @@
 					padding-bottom: 0;
 
 					&.label {
-						padding: 1.1999em 0;
+						font-family: $font__main; 
+						font-weight: 700; 
+						padding: 0;
+						vertical-align: top;
 					}
 
 					select {
@@ -230,6 +235,7 @@
 					}
 
 					.reset_variations {
+						font-size: 12px; 
 						margin-left: 10px;
 					}
 				}

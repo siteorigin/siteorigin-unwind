@@ -1543,13 +1543,15 @@
       width: 40px; }
       .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add:hover,
       .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract:hover {
-        background: #c6c6c6; }
+        background: #c6c6c6;
+        color: #626262; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract {
       border-right: none; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add {
       border-left: none; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper button {
       background-color: #24c48a;
+      border: none;
       border-radius: 0;
       font-size: 14px;
       margin-left: 15px;
@@ -1567,11 +1569,15 @@
       padding-top: 0;
       padding-bottom: 0; }
       .woocommerce #quick-view-container .product-content-wrapper .variations td.label {
-        padding: 1.1999em 0; }
+        font-family: "Merriweather", serif;
+        font-weight: 700;
+        padding: 0;
+        vertical-align: top; }
       .woocommerce #quick-view-container .product-content-wrapper .variations td select {
         max-width: 100%;
         min-width: 75%; }
       .woocommerce #quick-view-container .product-content-wrapper .variations td .reset_variations {
+        font-size: 12px;
         margin-left: 10px; }
   .woocommerce #quick-view-container .product-content-wrapper .single_variation_wrap .woocommerce-variation-price {
     margin: 15px 0; }
