@@ -446,6 +446,19 @@
 	}
 }
 
+.mega-menu-primary {
+	.main-navigation {
+		#mega-menu-wrap-primary {
+			display: inline-block;
+		}
+
+		.shopping-cart {
+			bottom: 0;
+			top: 10px;
+		}
+	}
+}
+
 .woocommerce {
 
 	.widget_shopping_cart_content {
