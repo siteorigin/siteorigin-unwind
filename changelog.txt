@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.6 - 16 March 2016 =
+* Switched to minified CSS files.
+* Updated settings framework.
+* Updated styling for WooCommerce variable products.
+* Corrected Max Mega Menu output, fixed mini-cart alignment.
+* Changed WooCommerce Customizer CSS to only output when WooCommerce active.
+
 = 1.0.5 - 24 January 2016 =
 * Added a date format filter.
 * Styled WooCommerce product thumbnail navigation.
