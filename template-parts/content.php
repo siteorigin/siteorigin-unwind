@@ -25,7 +25,7 @@
 	<?php if( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink() ?>">
-				<?php the_post_thumbnail() ?>
+				<?php the_post_thumbnail( 'post-thumbnail', ['class' => 'aligncenter'] ) ?>
 			</a>
 		</div>
 	<?php endif; ?>
