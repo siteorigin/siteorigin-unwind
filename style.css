@@ -744,10 +744,6 @@ a {
       display: block; }
   .social-search .widget {
     display: inline-block; }
-    .social-search .widget .sow-social-media-button {
-      color: inherit;
-      margin: 0;
-      padding: 0 0 0 6px; }
   .social-search .v-line {
     background: #ebebeb;
     display: inline-block;
