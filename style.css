@@ -2265,8 +2265,9 @@ a {
 ## Site Footer
 --------------------------------------------------------------*/
 #colophon {
-  border-top: 1px solid #ebebeb;
   margin-top: 80px; }
+  #colophon.footer-active-sidebar {
+    border-top: 1px solid #ebebeb; }
   #colophon .widgets {
     padding: 80px 0; }
     #colophon .widgets::after {

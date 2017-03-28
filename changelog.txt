@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.0.7 - 28 March 2016 =
+* Fixed top bar social media icon inheritance bug.
+* Update build script to prevent z-index reduction.
+* Prevent footer border from outputting when no widgets are present.
+
 = 1.0.6 - 16 March 2016 =
 * Switched to minified CSS files.
 * Updated settings framework.
