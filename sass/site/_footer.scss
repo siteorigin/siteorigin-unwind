@@ -1,6 +1,9 @@
 #colophon {
-	border-top: 1px solid $color__background-hr-dark;
 	margin-top: $footer__top-margin;
+	
+	&.footer-active-sidebar {
+		border-top: 1px solid $color__background-hr-dark;
+	}	
 
 	.widgets {
 		@include clearfix();

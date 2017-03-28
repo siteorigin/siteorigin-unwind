@@ -15,7 +15,7 @@
 		</div><!-- .container -->
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer' ?>" role="contentinfo">
+	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer'; if ( is_active_sidebar( 'footer-sidebar' ) ) echo ' footer-active-sidebar'; ?>" role="contentinfo">
 
 		<?php if ( siteorigin_page_setting( 'display_footer_widgets', true ) ) : ?>
 			<div class="container">
