@@ -2351,12 +2351,17 @@ a {
 /*--------------------------------------------------------------
 ## Related Posts
 --------------------------------------------------------------*/
+.site-content #jp-relatedposts .jp-relatedposts-headline {
+  font-size: 1em; }
+
 .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
-  opacity: 1; }
+  opacity: 1;
+  padding-top: .3333em; }
   .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 {
     margin-top: 1em; }
     .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a {
       color: #2d2d2d;
+      font-weight: 700;
       line-height: normal; }
       .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a:hover {
         color: #626262;
