@@ -45,7 +45,33 @@
 
 	.jp-relatedposts-items .jp-relatedposts-post {
 		opacity: 1;
-		padding-top: .3333em;
+		margin: 0; 
+		padding: .3333em 0 0;
+		width: 31%;
+		
+		@media (max-width: 780px) {
+			width: 100%;
+		}
+
+		&:first-child {
+			margin-right: 2.4%;
+
+			@media (max-width: 480px) {
+				margin-right: 0;
+			}
+		}			 
+
+		&:last-child {
+			margin-left: 2.4%;
+
+			@media (max-width: 480px) {
+				margin-left: 0;
+			}
+		}
+
+		&:only-child {
+			margin: 0;
+		}
 
 		h4 {
 			margin-top: 1em;

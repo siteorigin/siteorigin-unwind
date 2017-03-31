@@ -2356,7 +2356,24 @@ a {
 
 .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
   opacity: 1;
-  padding-top: .3333em; }
+  margin: 0;
+  padding: .3333em 0 0;
+  width: 31%; }
+  @media (max-width: 780px) {
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+      width: 100%; } }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:first-child {
+    margin-right: 2.4%; }
+    @media (max-width: 480px) {
+      .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:first-child {
+        margin-right: 0; } }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:last-child {
+    margin-left: 2.4%; }
+    @media (max-width: 480px) {
+      .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:last-child {
+        margin-left: 0; } }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:only-child {
+    margin: 0; }
   .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 {
     margin-top: 1em; }
     .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a {
