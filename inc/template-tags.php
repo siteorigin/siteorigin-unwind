@@ -615,7 +615,7 @@ function siteorigin_unwind_strip_image( $content ) {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_unwind_strip_image' ) ) :
+if ( ! function_exists( 'siteorigin_unwind_jetpackme_related_posts_headline' ) ) :
 /**
  * Changing the jetpack related posts title
  */
