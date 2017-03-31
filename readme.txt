@@ -38,6 +38,7 @@ SiteOrigin Unwind includes support for:
 * Breadcrumb NavXT
 * Jetpack Featured Content
 * Jetpack Infinite Scroll
+* Jetpack Related Posts
 * Jetpack Responsive Videos
 * SiteOrigin CSS
 * SiteOrigin Page Builder
