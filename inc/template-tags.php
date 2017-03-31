@@ -372,7 +372,7 @@ if ( ! function_exists( 'siteorigin_unwind_related_posts' ) ) :
 function siteorigin_unwind_related_posts( $post_id ) {
 	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin.
 		related_posts();
-	} elseif ( class_exists( 'Jetpack_RelatedPosts' ) {
+	} elseif ( class_exists( 'Jetpack_RelatedPosts' ) ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop
 		$categories = get_the_category( $post_id );
