@@ -114,6 +114,11 @@
 			}
 		}
 	}
+
+	@at-root .header-design-3 & {
+		display: inline-block;
+		float: none;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -181,6 +186,20 @@
 		line-height: 60px;
 		margin: 0 8px;
 		width: 1px;
+	}
+
+	@at-root .header-design-3 & {
+		float: none;
+
+
+		.v-line {
+			display: none;
+		}
+
+		.search-toggle {
+			float: right;
+			line-height: 45px;
+		}
 	}
 }
 

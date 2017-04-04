@@ -708,6 +708,9 @@ a {
     -ms-transform: scaleY(1);
     -o-transform: scaleY(1);
     transform: scaleY(1); }
+  .header-design-3 .main-navigation {
+    display: inline-block;
+    float: none; }
 
 /*--------------------------------------------------------------
 ## Social and Search Icons
@@ -751,6 +754,13 @@ a {
     line-height: 60px;
     margin: 0 8px;
     width: 1px; }
+  .header-design-3 .social-search {
+    float: none; }
+    .header-design-3 .social-search .v-line {
+      display: none; }
+    .header-design-3 .social-search .search-toggle {
+      float: right;
+      line-height: 45px; }
 
 /*--------------------------------------------------------------
 ## Mobile Menu
@@ -1521,6 +1531,13 @@ a {
   .home #masthead {
     border-bottom: none;
     margin-bottom: 0; }
+  #masthead .main-navigation-bar {
+    border-top: 1px solid #ebebeb;
+    text-align: center; }
+    #masthead .main-navigation-bar::after {
+      clear: both;
+      content: "";
+      display: table; }
 
 .archive #masthead,
 .search #masthead {

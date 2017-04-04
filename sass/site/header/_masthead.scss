@@ -86,6 +86,12 @@
 		border-bottom: none;
 		margin-bottom: 0;
 	}
+
+	.main-navigation-bar {
+		border-top: 1px solid $color__background-hr-dark;
+		@include clearfix;
+		text-align: center;
+	}
 }
 
 // Archive and search pages.
