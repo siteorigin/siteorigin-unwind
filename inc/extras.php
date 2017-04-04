@@ -41,6 +41,10 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'is_mobile';
 	}
 
+	// Active header template
+
+	$classes[] = 'header-design-' . siteorigin_setting( 'masthead_design' );
+
 	// Add a no-js class which we'll remove as required.
 	$classes[] = 'no-js';
 

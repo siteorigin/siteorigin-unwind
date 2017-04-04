@@ -1515,6 +1515,9 @@ a {
           float: none;
           margin: 0 0 4em;
           width: 100% !important; } }
+  .home #masthead {
+    border-bottom: none;
+    margin-bottom: 0; }
 
 .archive #masthead,
 .search #masthead {
