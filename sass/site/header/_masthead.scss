@@ -49,6 +49,21 @@
 			margin-bottom: 0;
 			text-align: center;
 		}
+
+		@at-root .header-design-4 & {
+			display: inline-block;
+			padding: $masthead__padding/2 0;
+			text-align: left;
+
+			.site-title {
+				@include font-size(2.5);
+				text-align: left;
+
+				@media (max-width: 480px) {
+					@include font-size(1.8);
+				}
+			}
+		}
 	}
 
 	#masthead-widgets {

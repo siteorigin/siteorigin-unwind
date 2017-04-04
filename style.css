@@ -711,6 +711,12 @@ a {
   .header-design-3 .main-navigation {
     display: inline-block;
     float: none; }
+  .header-design-4 .main-navigation {
+    display: inline-block;
+    float: right;
+    padding: 30px 0; }
+    .header-design-4 .main-navigation > div li a {
+      line-height: 30px; }
 
 /*--------------------------------------------------------------
 ## Social and Search Icons
@@ -754,11 +760,14 @@ a {
     line-height: 60px;
     margin: 0 8px;
     width: 1px; }
-  .header-design-3 .social-search {
+  .header-design-3 .social-search,
+  .header-design-4 .social-search {
     float: none; }
-    .header-design-3 .social-search .v-line {
+    .header-design-3 .social-search .v-line,
+    .header-design-4 .social-search .v-line {
       display: none; }
-    .header-design-3 .social-search .search-toggle {
+    .header-design-3 .social-search .search-toggle,
+    .header-design-4 .social-search .search-toggle {
       float: right;
       line-height: 45px; }
 
@@ -787,6 +796,8 @@ a {
   top: 61px;
   width: 100%;
   z-index: 10; }
+  .header-design-4 #mobile-navigation {
+    top: 100px; }
   #mobile-navigation ul {
     list-style: none;
     margin: 0;
@@ -1491,6 +1502,18 @@ a {
       line-height: 1.7142;
       margin-bottom: 0;
       text-align: center; }
+    .header-design-4 #masthead .site-branding {
+      display: inline-block;
+      padding: 30px 0;
+      text-align: left; }
+      .header-design-4 #masthead .site-branding .site-title {
+        font-size: 40px;
+        font-size: 2.5rem;
+        text-align: left; }
+        @media (max-width: 480px) {
+          .header-design-4 #masthead .site-branding .site-title {
+            font-size: 28.8px;
+            font-size: 1.8rem; } }
   #masthead #masthead-widgets {
     margin: 60px auto; }
     #masthead #masthead-widgets::after {

@@ -329,6 +329,10 @@
 		padding-left: 0;
 		position: relative;
 
+		@at-root .header-design-4 & {
+			bottom: 0;
+		}
+
 		> li {
 			padding: 0;
 
