@@ -8,6 +8,11 @@
 		@include clearfix;
 		position: relative;
 		z-index: 9999;
+
+		@at-root .header-design-2 & {
+			border-bottom: none;
+			border-top: 1px solid $color__background-hr-dark;
+		}
 	}
 
 	.top-bar-sentinel {

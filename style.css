@@ -1450,6 +1450,9 @@ a {
       clear: both;
       content: "";
       display: table; }
+    .header-design-2 #masthead .top-bar {
+      border-bottom: none;
+      border-top: 1px solid #ebebeb; }
   #masthead .top-bar-sentinel {
     box-sizing: border-box; }
   #masthead .site-branding {
