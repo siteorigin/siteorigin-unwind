@@ -116,10 +116,10 @@ function siteorigin_unwind_settings_init() {
 					'type'	=> 'select',
 					'label'	=> esc_html__( 'Header Design', 'siteorigin-unwind' ),
 					'options' => array(
-						'header-1' => esc_html__( 'Header 1', 'siteorigin-unwind' ),
-						'header-2'  => esc_html__( 'Header 2', 'siteorigin-unwind' ),
-						'header-3' => esc_html__( 'Header 3', 'siteorigin-unwind' ),
-						'header-4'  => esc_html__( 'Header 4', 'siteorigin-unwind' ),
+						'1' => esc_html__( 'Header 1', 'siteorigin-unwind' ),
+						'2' => esc_html__( 'Header 2', 'siteorigin-unwind' ),
+						'3' => esc_html__( 'Header 3', 'siteorigin-unwind' ),
+						'4' => esc_html__( 'Header 4', 'siteorigin-unwind' ),
 					),
 				),
 				'social_widget' => array(
@@ -1161,7 +1161,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['fonts_text_dark']   = '#2d2d2d';
 
 	// The masthead defaults.
-	$defaults['masthead_design']        = 'header-1';
+	$defaults['masthead_design']        = '1';
 	$defaults['masthead_social_widget'] = '';
 	$defaults['masthead_padding']       = '60px';
 	$defaults['masthead_bottom_margin'] = '80px';
