@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $post, $product;
-$gallery = $product->get_gallery_attachment_ids();
+$gallery = $product->get_gallery_image_ids();
 ?>
 
 <div class="images images-slider">
