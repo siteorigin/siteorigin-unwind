@@ -108,3 +108,11 @@ function siteorigin_unwind_woocommerce_update_cart_count( $fragments ) {
 }
 endif;
 add_filter( 'add_to_cart_fragments', 'siteorigin_unwind_woocommerce_update_cart_count' );
+
+if ( ! function_exists( 'siteorigin_unwind_wc_columns' ) ) :
+// Change number of products per row
+function siteorigin_unwind_wc_columns() {
+	return siteorigin_setting( 'woocommerce_archive_columns' );
+}
+endif;
+add_filter( 'loop_shop_columns', 'siteorigin_unwind_wc_columns' );
