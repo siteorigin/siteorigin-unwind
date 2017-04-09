@@ -1,0 +1,105 @@
+/*--------------------------------------------------------------
+## Infinite Scroll
+--------------------------------------------------------------*/
+// Globally hidden elements when Infinite Scroll is supported and in use. 
+.infinite-scroll .posts-navigation, // Older / Newer Posts Navigation (always hidden).
+.infinite-scroll.neverending .site-footer { // Theme Footer (when set to scrolling.
+	display: none;
+}
+
+// When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before.
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+#page #infinite-handle {
+	text-align: center;
+
+	span {
+    	background: inherit;
+    	border-radius: initial;
+    	color: inherit;
+    	cursor: pointer;
+    	font-size: inherit;
+	    padding: inherit;
+
+		button {
+			@extend .button;
+		}
+	}
+}
+
+.infinite-scroll .infinite-loader .spinner {
+	margin: 0 auto;
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Related Posts
+--------------------------------------------------------------*/
+.site-content #jp-relatedposts {
+
+	.jp-relatedposts-headline {
+		font-size: 1em; 
+	}
+
+	.jp-relatedposts-items .jp-relatedposts-post {
+		opacity: 1;
+		margin: 0; 
+		padding: .3333em 0 0;
+		width: 31%;
+		
+		@media (max-width: 780px) {
+			width: 100%;
+		}
+
+		&:first-child {
+			margin-right: 2.4%;
+
+			@media (max-width: 480px) {
+				margin-right: 0;
+			}
+		}			 
+
+		&:last-child {
+			margin-left: 2.4%;
+
+			@media (max-width: 480px) {
+				margin-left: 0;
+			}
+		}
+
+		&:only-child {
+			margin: 0;
+		}
+
+		h4 {
+			margin-top: 1em;
+			
+			a {
+				color: $color__text-dark;
+				font-weight: 700; 
+				line-height: normal;
+			
+				&:hover {
+					color: $color__text-medium;
+					text-decoration: none;
+				}
+			}	
+		}
+
+		&:hover .jp-relatedposts-post-title a {
+			text-decoration: none;
+		}
+
+		p {
+			color: $color__text-light;
+			font-size: .8666rem;
+			opacity: 1;
+			
+			&:last-of-type {
+				margin-bottom: 1.9833em; 
+			} 	
+		}
+	}
+}

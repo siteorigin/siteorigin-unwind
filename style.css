@@ -23,7 +23,7 @@ Tags: one-column, two-columns, custom-background, custom-colors, custom-header, 
 # Clearings
 # Widgets
 # Content
-# Infinite scroll
+# Jetpack
 # Media
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -2322,7 +2322,10 @@ a {
     padding: 0 40px; }
 
 /*--------------------------------------------------------------
-# Infinite scroll
+# Jetpack
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Infinite Scroll
 --------------------------------------------------------------*/
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -2344,6 +2347,50 @@ a {
 .infinite-scroll .infinite-loader .spinner {
   margin: 0 auto;
   text-align: center; }
+
+/*--------------------------------------------------------------
+## Related Posts
+--------------------------------------------------------------*/
+.site-content #jp-relatedposts .jp-relatedposts-headline {
+  font-size: 1em; }
+
+.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+  opacity: 1;
+  margin: 0;
+  padding: .3333em 0 0;
+  width: 31%; }
+  @media (max-width: 780px) {
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+      width: 100%; } }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:first-child {
+    margin-right: 2.4%; }
+    @media (max-width: 480px) {
+      .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:first-child {
+        margin-right: 0; } }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:last-child {
+    margin-left: 2.4%; }
+    @media (max-width: 480px) {
+      .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:last-child {
+        margin-left: 0; } }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:only-child {
+    margin: 0; }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 {
+    margin-top: 1em; }
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a {
+      color: #2d2d2d;
+      font-weight: 700;
+      line-height: normal; }
+      .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a:hover {
+        color: #626262;
+        text-decoration: none; }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a {
+    text-decoration: none; }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post p {
+    color: #adadad;
+    font-size: .8666rem;
+    opacity: 1; }
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post p:last-of-type {
+      margin-bottom: 1.9833em; }
 
 /*--------------------------------------------------------------
 # Media
