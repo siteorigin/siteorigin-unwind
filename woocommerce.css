@@ -645,8 +645,8 @@
 .woocommerce.single-product #content div.product #reviews #respond .form-submit {
   margin-bottom: 49px; }
 
-.woocommerce.single-product #content div.product .up-sells h2,
-.woocommerce.single-product #content div.product .related h2 {
+.woocommerce.single-product #content div.product .up-sells h3,
+.woocommerce.single-product #content div.product .related h3 {
   font-size: 20px;
   margin-bottom: 29px; }
 
