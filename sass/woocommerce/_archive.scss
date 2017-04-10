@@ -224,7 +224,8 @@
 
 					.add_to_cart_button,
 					.product-quick-view-button,
-					.product_type_grouped {
+					.product_type_grouped,
+					.product_type_variable {
 						opacity: 1;
 						visibility: visible;
 					}
@@ -232,7 +233,8 @@
 
 				.add_to_cart_button,
 				.product-quick-view-button,
-				.product_type_grouped {
+				.product_type_grouped,
+				.product_type_variable {
 					border-radius: 0;
 					font-size: 13px;
 					left: 50%;
