@@ -306,6 +306,13 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 			'title' => esc_html__( 'WooCommerce', 'siteorigin-unwind' ),
 			'fields' => array(
 
+				'archive_columns' => array(
+					'type' => 'range',
+					'label' => esc_html__( 'Number of columns on archive pages.', 'siteorigin-unwind' ),
+					'min' => 2,
+					'max' => 5,
+					'step' => 1
+				),
 				'display_quick_view' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Display quick view button on hover.', 'siteorigin-unwind' ),
@@ -1192,6 +1199,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['footer_top_margin']   = '80px';
 
 	// WooCommerce
+	$defaults['woocommerce_archive_columns']    = 3;
 	$defaults['woocommerce_display_quick_view'] = true;
 	$defaults['woocommerce_display_mini_cart']  = true;
 	$defaults['woocommerce_shop_sidebar']       = 'left';
