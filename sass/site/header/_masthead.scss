@@ -13,6 +13,34 @@
 			border-bottom: none;
 			border-top: 1px solid $color__background-hr-dark;
 		}
+
+		@at-root {
+			.sticky-menu:not(.top-bar-out) & {
+				position: relative;
+				top: auto;
+			}
+
+			.sticky-menu.top-bar-out & {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				@include clearfix;
+			}
+
+			.sticky-menu.top-bar-out.admin-bar & {
+				top: 32px;
+
+				@media screen and (max-width: 782px) {
+					top: 46px;
+				}
+
+				@media screen and (max-width: 600px) {
+					position: absolute;
+					top: auto;
+				}
+			}
+		}
 	}
 
 	.top-bar-sentinel {

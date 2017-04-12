@@ -1474,6 +1474,27 @@ a {
     .header-design-2 #masthead .top-bar {
       border-bottom: none;
       border-top: 1px solid #ebebeb; }
+    .sticky-menu:not(.top-bar-out) #masthead .top-bar {
+      position: relative;
+      top: auto; }
+    .sticky-menu.top-bar-out #masthead .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%; }
+      .sticky-menu.top-bar-out #masthead .top-bar::after {
+        clear: both;
+        content: "";
+        display: table; }
+    .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
+      top: 32px; }
+      @media screen and (max-width: 782px) {
+        .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
+          top: 46px; } }
+      @media screen and (max-width: 600px) {
+        .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
+          position: absolute;
+          top: auto; } }
   #masthead .top-bar-sentinel {
     box-sizing: border-box; }
   #masthead .site-branding {
