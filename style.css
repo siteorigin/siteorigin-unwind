@@ -1478,6 +1478,8 @@ a {
       position: relative;
       top: auto; }
     .sticky-menu.top-bar-out #masthead .top-bar {
+      border-top: none;
+      border-bottom: 1px solid #ebebeb;
       position: fixed;
       top: 0;
       left: 0;

@@ -21,6 +21,8 @@
 			}
 
 			.sticky-menu.top-bar-out & {
+				border-top: none;
+				border-bottom: 1px solid $color__background-hr-dark;
 				position: fixed;
 				top: 0;
 				left: 0;

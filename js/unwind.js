@@ -141,10 +141,10 @@ jQuery( function( $ ) {
 				$tbs = $( '<div class="top-bar-sentinel"></div>' ).insertAfter( $tb );
 			}
 			// Toggle .topbar-out with visibility of top-bar in the viewport
-			if ( $( 'body' ).hasClass( 'sticky-menu' ) && ! $mh.unwindIsVisible() ) {
+			if ( $( 'body' ).hasClass( 'sticky-menu' ) && ! $tbs.unwindIsVisible() ) {
 				$( 'body' ).addClass( 'top-bar-out' );
 			}
-			if ( $( 'body' ).hasClass( 'top-bar-out' ) && $mh.unwindIsVisible() ) {
+			if ( $( 'body' ).hasClass( 'top-bar-out' ) && $tbs.unwindIsVisible() ) {
 				$( 'body' ).removeClass( 'top-bar-out' );
 			}
 		}
