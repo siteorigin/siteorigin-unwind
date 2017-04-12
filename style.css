@@ -1462,6 +1462,8 @@ a {
 #masthead {
   border-bottom: 1px solid #ebebeb;
   margin-bottom: 80px; }
+  .header-design-2 #masthead {
+    border-bottom: none; }
   #masthead .top-bar {
     background: #fff;
     border-bottom: 1px solid #ebebeb;
@@ -1472,7 +1474,6 @@ a {
       content: "";
       display: table; }
     .header-design-2 #masthead .top-bar {
-      border-bottom: none;
       border-top: 1px solid #ebebeb; }
     .sticky-menu:not(.top-bar-out) #masthead .top-bar {
       position: relative;

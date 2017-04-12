@@ -2,6 +2,10 @@
 	border-bottom: 1px solid $color__background-hr-dark;
 	margin-bottom: $masthead__bottom-margin;
 
+	@at-root .header-design-2 & {
+		border-bottom: none;
+	}
+
 	.top-bar {
 		background: #fff;
 		border-bottom: 1px solid $color__background-hr-dark;
@@ -10,7 +14,6 @@
 		z-index: 9999;
 
 		@at-root .header-design-2 & {
-			border-bottom: none;
 			border-top: 1px solid $color__background-hr-dark;
 		}
 
