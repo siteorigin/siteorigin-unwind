@@ -18,7 +18,6 @@ jQuery( function( $ ) {
 		};
 		resetMenu();
 		$( window ).resize( resetMenu );
-
 	}
 
 	// Check if an element is visible in the viewport
@@ -60,8 +59,10 @@ jQuery( function( $ ) {
 
 		var fullscreenSearch = function() {
 			var vpw = $( window ).width(),
-				vph = $( window ).height();
-			$( '#fullscreen-search' ).css( { 'height': vph - 60 + 'px', 'width': vpw + 'px' } );
+				vph = $( window ).height(),
+				tb = $( '.top-bar' ),
+				tbpos = tb.position().top + tb.outerHeight();
+			$( '#fullscreen-search' ).css( { 'top': tbpos + 'px', 'height': vph - tbpos + 'px', 'width': vpw + 'px' } );
 		};
 		fullscreenSearch();
 		$( window ).resize( fullscreenSearch );

@@ -1603,8 +1603,7 @@ a {
   background: rgba(255, 255, 255, 0.97);
   display: none;
   left: 0;
-  position: absolute;
-  top: 61px;
+  position: fixed;
   z-index: 10; }
   #fullscreen-search .container {
     left: 50%;
