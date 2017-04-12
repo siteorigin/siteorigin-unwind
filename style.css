@@ -1475,6 +1475,8 @@ a {
       display: table; }
     .header-design-2 #masthead .top-bar {
       border-top: 1px solid #ebebeb; }
+    .home.header-design-2 #masthead .top-bar {
+      border-bottom: none; }
     .sticky-menu:not(.top-bar-out) #masthead .top-bar {
       position: relative;
       top: auto; }

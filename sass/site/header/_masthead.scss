@@ -17,6 +17,10 @@
 			border-top: 1px solid $color__background-hr-dark;
 		}
 
+		@at-root .home.header-design-2 & {
+			border-bottom: none;
+		}
+
 		@at-root {
 			.sticky-menu:not(.top-bar-out) & {
 				position: relative;
