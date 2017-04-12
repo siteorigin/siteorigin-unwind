@@ -5,7 +5,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.6.3
+ * @version     3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $post, $product, $woocommerce;
-$gallery = $product->get_gallery_attachment_ids();
+$gallery = $product->get_gallery_image_ids();
 $image_link  = wp_get_attachment_url( get_post_thumbnail_id() );
 
 if ( $gallery || $image_link ) { ?>

@@ -5,7 +5,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.6.3
+ * @version     3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $post, $product;
-$gallery = $product->get_gallery_attachment_ids();
+$gallery = $product->get_gallery_image_ids();
 ?>
 
 <div class="images images-slider">

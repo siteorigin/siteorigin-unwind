@@ -83,6 +83,10 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'shop-sidebar-right';
 	}
 
+	if ( siteorigin_setting( 'woocommerce_archive_columns' ) ) {
+		$classes[] = 'wc-columns-' . siteorigin_setting( 'woocommerce_archive_columns' );
+	}
+
 	return $classes;
 }
 endif;
