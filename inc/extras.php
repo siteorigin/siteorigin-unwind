@@ -74,12 +74,12 @@ function siteorigin_unwind_body_classes( $classes ) {
 	}
 
 	// If the main sidebar is to be placed on the left
-	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'left' ) {
+	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'left' && is_active_sidebar( 'main-sidebar' ) ) {
 		$classes[] = 'main-sidebar-left';
 	}
 
 	// If the shop sidebar is to be placed on the right
-	if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'right' ) {
+	if ( function_exists( 'is_woocommerce' ) && siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'right' && is_active_sidebar( 'shop-sidebar' ) ) {
 		$classes[] = 'shop-sidebar-right';
 	}
 
