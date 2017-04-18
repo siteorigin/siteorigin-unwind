@@ -708,6 +708,15 @@ a {
     -ms-transform: scaleY(1);
     -o-transform: scaleY(1);
     transform: scaleY(1); }
+  .header-design-3 .main-navigation {
+    display: inline-block;
+    float: none; }
+  .header-design-4 .main-navigation {
+    display: inline-block;
+    float: right;
+    padding: 30px 0; }
+    .header-design-4 .main-navigation > div li a {
+      line-height: 30px; }
 
 /*--------------------------------------------------------------
 ## Social and Search Icons
@@ -751,6 +760,16 @@ a {
     line-height: 60px;
     margin: 0 8px;
     width: 1px; }
+  .header-design-3 .social-search,
+  .header-design-4 .social-search {
+    float: none; }
+    .header-design-3 .social-search .v-line,
+    .header-design-4 .social-search .v-line {
+      display: none; }
+    .header-design-3 .social-search .search-toggle,
+    .header-design-4 .social-search .search-toggle {
+      float: right;
+      line-height: 45px; }
 
 /*--------------------------------------------------------------
 ## Mobile Menu
@@ -777,6 +796,8 @@ a {
   top: 61px;
   width: 100%;
   z-index: 10; }
+  .header-design-4 #mobile-navigation {
+    top: 100px; }
   #mobile-navigation ul {
     list-style: none;
     margin: 0;
@@ -1441,6 +1462,8 @@ a {
 #masthead {
   border-bottom: 1px solid #ebebeb;
   margin-bottom: 80px; }
+  .header-design-2 #masthead {
+    border-bottom: none; }
   #masthead .top-bar {
     background: #fff;
     border-bottom: 1px solid #ebebeb;
@@ -1450,6 +1473,33 @@ a {
       clear: both;
       content: "";
       display: table; }
+    .header-design-2 #masthead .top-bar {
+      border-top: 1px solid #ebebeb; }
+    .home.header-design-2 #masthead .top-bar {
+      border-bottom: none; }
+    .sticky-menu:not(.top-bar-out) #masthead .top-bar {
+      position: relative;
+      top: auto; }
+    .sticky-menu.top-bar-out #masthead .top-bar {
+      border-top: none;
+      border-bottom: 1px solid #ebebeb;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%; }
+      .sticky-menu.top-bar-out #masthead .top-bar::after {
+        clear: both;
+        content: "";
+        display: table; }
+    .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
+      top: 32px; }
+      @media screen and (max-width: 782px) {
+        .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
+          top: 46px; } }
+      @media screen and (max-width: 600px) {
+        .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
+          position: absolute;
+          top: auto; } }
   #masthead .top-bar-sentinel {
     box-sizing: border-box; }
   #masthead .site-branding {
@@ -1478,6 +1528,18 @@ a {
       line-height: 1.7142;
       margin-bottom: 0;
       text-align: center; }
+    .header-design-4 #masthead .site-branding {
+      display: inline-block;
+      padding: 30px 0;
+      text-align: left; }
+      .header-design-4 #masthead .site-branding .site-title {
+        font-size: 40px;
+        font-size: 2.5rem;
+        text-align: left; }
+        @media (max-width: 480px) {
+          .header-design-4 #masthead .site-branding .site-title {
+            font-size: 28.8px;
+            font-size: 1.8rem; } }
   #masthead #masthead-widgets {
     margin: 60px auto; }
     #masthead #masthead-widgets::after {
@@ -1515,6 +1577,16 @@ a {
           float: none;
           margin: 0 0 4em;
           width: 100% !important; } }
+  .home #masthead {
+    border-bottom: none;
+    margin-bottom: 0; }
+  #masthead .main-navigation-bar {
+    border-top: 1px solid #ebebeb;
+    text-align: center; }
+    #masthead .main-navigation-bar::after {
+      clear: both;
+      content: "";
+      display: table; }
 
 .archive #masthead,
 .search #masthead {
@@ -1534,8 +1606,7 @@ a {
   background: rgba(255, 255, 255, 0.97);
   display: none;
   left: 0;
-  position: absolute;
-  top: 61px;
+  position: fixed;
   z-index: 10; }
   #fullscreen-search .container {
     left: 50%;

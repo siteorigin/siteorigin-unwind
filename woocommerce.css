@@ -1072,6 +1072,8 @@
   margin: 0;
   padding-left: 0;
   position: relative; }
+  .header-design-4 .main-navigation .shopping-cart {
+    bottom: 0; }
   .main-navigation .shopping-cart > li {
     padding: 0; }
     .main-navigation .shopping-cart > li:hover .shopping-cart-dropdown, .main-navigation .shopping-cart > li.focus .shopping-cart-dropdown {

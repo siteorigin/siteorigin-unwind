@@ -114,6 +114,21 @@
 			}
 		}
 	}
+
+	@at-root .header-design-3 & {
+		display: inline-block;
+		float: none;
+	}
+
+	@at-root .header-design-4 & {
+		display: inline-block;
+		float: right;
+		padding: $masthead__padding/2 0;
+
+		> div li a {
+			line-height: 30px;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
@@ -182,6 +197,22 @@
 		margin: 0 8px;
 		width: 1px;
 	}
+
+	@at-root {
+		.header-design-3 &,
+		.header-design-4 & {
+			float: none;
+
+			.v-line {
+				display: none;
+			}
+
+			.search-toggle {
+				float: right;
+				line-height: 45px;
+			}
+		}
+	}
 }
 
 /*--------------------------------------------------------------
@@ -215,6 +246,10 @@
 	top: 61px;
 	width: 100%;
 	z-index: 10;
+
+	@at-root .header-design-4 & {
+		top: 100px;
+	}
 
 	ul {
 		list-style: none;
