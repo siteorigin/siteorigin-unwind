@@ -134,9 +134,15 @@
 		}
 	}
 
-	@at-root .home & {
-		border-bottom: none;
-		margin-bottom: 0;
+	@at-root {
+		.home & {
+			border-bottom: none;
+			margin-bottom: 60px;
+		}
+		.archive &,
+		.search & {
+			margin-bottom: 60px;
+		}
 	}
 
 	.main-navigation-bar {
@@ -144,12 +150,6 @@
 		@include clearfix;
 		text-align: center;
 	}
-}
-
-// Archive and search pages.
-.archive #masthead,
-.search #masthead {
-	margin-bottom: 60px;
 }
 
 .homepage-has-slider {

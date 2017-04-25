@@ -1579,7 +1579,10 @@ a {
           width: 100% !important; } }
   .home #masthead {
     border-bottom: none;
-    margin-bottom: 0; }
+    margin-bottom: 60px; }
+  .archive #masthead,
+  .search #masthead {
+    margin-bottom: 60px; }
   #masthead .main-navigation-bar {
     border-top: 1px solid #ebebeb;
     text-align: center; }
@@ -1587,10 +1590,6 @@ a {
       clear: both;
       content: "";
       display: table; }
-
-.archive #masthead,
-.search #masthead {
-  margin-bottom: 60px; }
 
 .homepage-has-slider #masthead {
   border-bottom: none;
