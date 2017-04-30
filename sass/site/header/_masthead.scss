@@ -17,7 +17,7 @@
 			border-top: 1px solid $color__background-hr-dark;
 		}
 
-		@at-root .home.header-design-2 & {
+		@at-root .homepage-has-slider.header-design-2 & {
 			border-bottom: none;
 		}
 
@@ -135,10 +135,7 @@
 	}
 
 	@at-root {
-		.home & {
-			border-bottom: none;
-			margin-bottom: 60px;
-		}
+		.home &,
 		.archive &,
 		.search & {
 			margin-bottom: 60px;
