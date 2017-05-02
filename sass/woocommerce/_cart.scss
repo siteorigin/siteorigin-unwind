@@ -566,6 +566,10 @@
 			a {
 				padding: 12px 1.5em;
 				width: 49%;
+				
+				&:last-of-type {
+					margin-right: 0; 
+				}
 
 				&.wc-forward:first-of-type {
 					background: transparent;

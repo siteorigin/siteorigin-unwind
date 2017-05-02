@@ -1249,6 +1249,8 @@
   .woocommerce .widget_shopping_cart_content .buttons a {
     padding: 12px 1.5em;
     width: 49%; }
+    .woocommerce .widget_shopping_cart_content .buttons a:last-of-type {
+      margin-right: 0; }
     .woocommerce .widget_shopping_cart_content .buttons a.wc-forward:first-of-type {
       background: transparent;
       border: 2px solid #dadada;
