@@ -91,7 +91,7 @@ if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view_button' ) ) :
  */
 function siteorigin_unwind_woocommerce_quick_view_button() {
 	global $product;
-	echo '<a href="#" id="product-id-' . $product->id . '" class="button product-quick-view-button" data-product-id="' . $product->id . '">' . esc_html__( 'Quick View', 'siteorigin-unwind') . '</a>';
+	echo '<a href="#" id="product-id-' . $product->get_id() . '" class="button product-quick-view-button" data-product-id="' . $product->get_id() . '">' . esc_html__( 'Quick View', 'siteorigin-unwind') . '</a>';
 }
 endif;
 
