@@ -112,6 +112,16 @@ function siteorigin_unwind_settings_init() {
 		'masthead' => array(
 			'title' => esc_html__( 'Header', 'siteorigin-unwind' ),
 			'fields' => array(
+				'design'	=> array(
+					'type'	=> 'select',
+					'label'	=> esc_html__( 'Header Design', 'siteorigin-unwind' ),
+					'options' => array(
+						'1' => esc_html__( 'Menu above header', 'siteorigin-unwind' ),
+						'2' => esc_html__( 'Menu below header', 'siteorigin-unwind' ),
+						'3' => esc_html__( 'Menu centered below header', 'siteorigin-unwind' ),
+						'4' => esc_html__( 'Menu in line with logo', 'siteorigin-unwind' ),
+					),
+				),
 				'social_widget' => array(
 					'type' => 'widget',
 					'widget_class' => 'SiteOrigin_Widget_SocialMediaButtons_Widget',
@@ -306,6 +316,14 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 			'title' => esc_html__( 'WooCommerce', 'siteorigin-unwind' ),
 			'fields' => array(
 
+				'archive_columns' => array(
+					'type' => 'range',
+					'label' => esc_html__( 'Number of Products per Row', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-unwind' ),
+					'min' => 2,
+					'max' => 5,
+					'step' => 1
+				),
 				'display_quick_view' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Display quick view button on hover.', 'siteorigin-unwind' ),
@@ -1151,6 +1169,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['fonts_text_dark']   = '#2d2d2d';
 
 	// The masthead defaults.
+	$defaults['masthead_design']        = '1';
 	$defaults['masthead_social_widget'] = '';
 	$defaults['masthead_padding']       = '60px';
 	$defaults['masthead_bottom_margin'] = '80px';
@@ -1192,6 +1211,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['footer_top_margin']   = '80px';
 
 	// WooCommerce
+	$defaults['woocommerce_archive_columns']    = 3;
 	$defaults['woocommerce_display_quick_view'] = true;
 	$defaults['woocommerce_display_mini_cart']  = true;
 	$defaults['woocommerce_shop_sidebar']       = 'left';

@@ -18,8 +18,18 @@ jQuery( function( $ ) {
 		};
 		resetMenu();
 		$( window ).resize( resetMenu );
-
 	}
+
+	// Check if an element is visible in the viewport
+	$.fn.unwindIsVisible = function() {
+		var rect = this[0].getBoundingClientRect();
+		return (
+			rect.bottom >= 0 &&
+			rect.right >= 0 &&
+			rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+			rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+	};
 
 	// Featured posts slider.
 	$( document ).ready( function() {
@@ -49,8 +59,10 @@ jQuery( function( $ ) {
 
 		var fullscreenSearch = function() {
 			var vpw = $( window ).width(),
-				vph = $( window ).height();
-			$( '#fullscreen-search' ).css( { 'height': vph - 60 + 'px', 'width': vpw + 'px' } );
+				vph = $( window ).height(),
+				tb = $( '.top-bar' ),
+				tbpos = tb.position().top + tb.outerHeight();
+			$( '#fullscreen-search' ).css( { 'top': tbpos + 'px', 'height': vph - tbpos + 'px', 'width': vpw + 'px' } );
 		};
 		fullscreenSearch();
 		$( window ).resize( fullscreenSearch );
@@ -115,48 +127,31 @@ jQuery( function( $ ) {
 		$( this ).next( 'ul' ).slideToggle( '300ms' );
 	} );
 
-	// Sticky menu.
-	if( $('.top-bar').hasClass('sticky-menu') && !$('body').hasClass('is-mobile') ) {
+	// Sticky menu
+	if ( $( '.top-bar' ).hasClass( 'sticky-menu' ) ) {
 		var $tbs = false,
-			pageTop = $('#page').offset().top,
-			$tb = $('.top-bar');
+			tbTop = false,
+			pageTop = $( '#page' ).offset().top,
+			$tb = $( '.top-bar' ),
+			$mh = $( '#masthead' ),
+			$wpab = $( '#wpadminbar' );
 
-		var smSetup = function () {
-			pageTop = $('#page').offset().top;
+		var smSetup = function() {
 
-			if ($tbs === false) {
-				$tbs = $('<div class="top-bar-sentinel"></div>').insertAfter($tb);
+			if ( $tbs === false ) {
+				$tbs = $( '<div class="top-bar-sentinel"></div>' ).insertAfter( $tb );
 			}
-
-
-			var top  = window.pageYOffset || document.documentElement.scrollTop;
-			$tb.css({
-				'position': 'relative',
-				'top': 0,
-				'left': 0,
-				'width': null,
-			});
-
-			var adminBarOffset = $( '#wpadminbar' ).css('position') === 'fixed' ? $('#wpadminbar').outerHeight() : 0;
-
-			if( $( 'body' ).hasClass( 'woocommerce-demo-store' ) ) {
-				adminBarOffset = $( '.demo_store' ).outerHeight() + $( '.demo_store' ).offset().top - $( document ).scrollTop();
+			// Toggle .topbar-out with visibility of top-bar in the viewport
+			if ( $( 'body' ).hasClass( 'sticky-menu' ) && ! $tbs.unwindIsVisible() ) {
+				$( 'body' ).addClass( 'top-bar-out' );
 			}
-
-			$tbs.show().css({
-				'height': $tb.outerHeight(),
-				'margin-bottom' : $tb.css('margin-bottom')
-			});
-			$tb.css({
-				'position': 'fixed',
-				'top': adminBarOffset,
-				'left': 0 - self.pageXOffset+'px',
-				'width': '100%',
-			});
-		};
+			if ( $( 'body' ).hasClass( 'top-bar-out' ) && $tbs.unwindIsVisible() ) {
+				$( 'body' ).removeClass( 'top-bar-out' );
+			}
+		}
 		smSetup();
-		$(window).resize( smSetup ).scroll( smSetup );
 
+		$( window ).resize( smSetup ).scroll( smSetup );
 	}
 
 } );
