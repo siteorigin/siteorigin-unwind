@@ -23,7 +23,7 @@ Tags: one-column, two-columns, custom-background, custom-colors, custom-header, 
 # Clearings
 # Widgets
 # Content
-# Infinite scroll
+# Jetpack
 # Media
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -708,6 +708,15 @@ a {
     -ms-transform: scaleY(1);
     -o-transform: scaleY(1);
     transform: scaleY(1); }
+  .header-design-3 .main-navigation {
+    display: inline-block;
+    float: none; }
+  .header-design-4 .main-navigation {
+    display: inline-block;
+    float: right;
+    padding: 30px 0; }
+    .header-design-4 .main-navigation > div li a {
+      line-height: 30px; }
 
 /*--------------------------------------------------------------
 ## Social and Search Icons
@@ -751,6 +760,16 @@ a {
     line-height: 60px;
     margin: 0 8px;
     width: 1px; }
+  .header-design-3 .social-search,
+  .header-design-4 .social-search {
+    float: none; }
+    .header-design-3 .social-search .v-line,
+    .header-design-4 .social-search .v-line {
+      display: none; }
+    .header-design-3 .social-search .search-toggle,
+    .header-design-4 .social-search .search-toggle {
+      float: right;
+      line-height: 45px; }
 
 /*--------------------------------------------------------------
 ## Mobile Menu
@@ -777,6 +796,8 @@ a {
   top: 61px;
   width: 100%;
   z-index: 10; }
+  .header-design-4 #mobile-navigation {
+    top: 100px; }
   #mobile-navigation ul {
     list-style: none;
     margin: 0;
@@ -1441,6 +1462,8 @@ a {
 #masthead {
   border-bottom: 1px solid #ebebeb;
   margin-bottom: 80px; }
+  .header-design-2 #masthead {
+    border-bottom: none; }
   #masthead .top-bar {
     background: #fff;
     border-bottom: 1px solid #ebebeb;
@@ -1450,6 +1473,33 @@ a {
       clear: both;
       content: "";
       display: table; }
+    .header-design-2 #masthead .top-bar {
+      border-top: 1px solid #ebebeb; }
+    .homepage-has-slider.header-design-2 #masthead .top-bar {
+      border-bottom: none; }
+    .sticky-menu:not(.top-bar-out) #masthead .top-bar {
+      position: relative;
+      top: auto; }
+    .sticky-menu.top-bar-out #masthead .top-bar {
+      border-top: none;
+      border-bottom: 1px solid #ebebeb;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%; }
+      .sticky-menu.top-bar-out #masthead .top-bar::after {
+        clear: both;
+        content: "";
+        display: table; }
+    .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
+      top: 32px; }
+      @media screen and (max-width: 782px) {
+        .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
+          top: 46px; } }
+      @media screen and (max-width: 600px) {
+        .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
+          position: absolute;
+          top: auto; } }
   #masthead .top-bar-sentinel {
     box-sizing: border-box; }
   #masthead .site-branding {
@@ -1478,6 +1528,18 @@ a {
       line-height: 1.7142;
       margin-bottom: 0;
       text-align: center; }
+    .header-design-4 #masthead .site-branding {
+      display: inline-block;
+      padding: 30px 0;
+      text-align: left; }
+      .header-design-4 #masthead .site-branding .site-title {
+        font-size: 40px;
+        font-size: 2.5rem;
+        text-align: left; }
+        @media (max-width: 480px) {
+          .header-design-4 #masthead .site-branding .site-title {
+            font-size: 28.8px;
+            font-size: 1.8rem; } }
   #masthead #masthead-widgets {
     margin: 60px auto; }
     #masthead #masthead-widgets::after {
@@ -1515,10 +1577,17 @@ a {
           float: none;
           margin: 0 0 4em;
           width: 100% !important; } }
-
-.archive #masthead,
-.search #masthead {
-  margin-bottom: 60px; }
+  .home #masthead,
+  .archive #masthead,
+  .search #masthead {
+    margin-bottom: 60px; }
+  #masthead .main-navigation-bar {
+    border-top: 1px solid #ebebeb;
+    text-align: center; }
+    #masthead .main-navigation-bar::after {
+      clear: both;
+      content: "";
+      display: table; }
 
 .homepage-has-slider #masthead {
   border-bottom: none;
@@ -1534,8 +1603,7 @@ a {
   background: rgba(255, 255, 255, 0.97);
   display: none;
   left: 0;
-  position: absolute;
-  top: 61px;
+  position: fixed;
   z-index: 10; }
   #fullscreen-search .container {
     left: 50%;
@@ -2322,7 +2390,10 @@ a {
     padding: 0 40px; }
 
 /*--------------------------------------------------------------
-# Infinite scroll
+# Jetpack
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Infinite Scroll
 --------------------------------------------------------------*/
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -2344,6 +2415,50 @@ a {
 .infinite-scroll .infinite-loader .spinner {
   margin: 0 auto;
   text-align: center; }
+
+/*--------------------------------------------------------------
+## Related Posts
+--------------------------------------------------------------*/
+.site-content #jp-relatedposts .jp-relatedposts-headline {
+  font-size: 1em; }
+
+.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+  opacity: 1;
+  margin: 0;
+  padding: .3333em 0 0;
+  width: 31%; }
+  @media (max-width: 780px) {
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+      width: 100%; } }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:first-child {
+    margin-right: 2.4%; }
+    @media (max-width: 480px) {
+      .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:first-child {
+        margin-right: 0; } }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:last-child {
+    margin-left: 2.4%; }
+    @media (max-width: 480px) {
+      .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:last-child {
+        margin-left: 0; } }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:only-child {
+    margin: 0; }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 {
+    margin-top: 1em; }
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a {
+      color: #2d2d2d;
+      font-weight: 700;
+      line-height: normal; }
+      .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a:hover {
+        color: #626262;
+        text-decoration: none; }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a {
+    text-decoration: none; }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post p {
+    color: #adadad;
+    font-size: .8666rem;
+    opacity: 1; }
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post p:last-of-type {
+      margin-bottom: 1.9833em; }
 
 /*--------------------------------------------------------------
 # Media

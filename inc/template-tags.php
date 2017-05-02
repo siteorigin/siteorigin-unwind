@@ -193,6 +193,37 @@ function siteorigin_unwind_display_retina_logo( $attr ){
 }
 add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 
+if ( ! function_exists( 'siteorigin_unwind_main_navigation' ) ) :
+/**
+ * Display the main menu.
+ */
+function siteorigin_unwind_main_navigation() {
+	?>
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+		<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+		<?php if ( class_exists( 'Woocommerce' ) && ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_mini_cart' ) ): ?>
+			<?php global $woocommerce; ?>
+			<ul class="shopping-cart">
+				<li>
+					<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
+						<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-unwind' ); ?></span>
+						<?php siteorigin_unwind_display_icon( 'cart' ); ?>
+						<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-unwind' ); ?></span>
+						<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
+					</a>
+					<ul class="shopping-cart-dropdown" id="cart-drop">
+						<?php the_widget( 'WC_Widget_Cart' );?>
+					</ul>
+				</li>
+			</ul>
+		<?php endif; ?>
+	</nav><!-- #site-navigation -->
+	<div id="mobile-navigation"></div>
+	<?php
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -372,6 +403,8 @@ if ( ! function_exists( 'siteorigin_unwind_related_posts' ) ) :
 function siteorigin_unwind_related_posts( $post_id ) {
 	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin.
 		related_posts();
+	} elseif ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop
 		$categories = get_the_category( $post_id );
 		$first_cat = $categories[0]->cat_ID;
@@ -612,3 +645,31 @@ function siteorigin_unwind_strip_image( $content ) {
 	return preg_replace( '/<img[^>]+\>/i', '', $content, 1 );
 }
 endif;
+
+if ( ! function_exists( 'siteorigin_unwind_jetpackme_related_posts_headline' ) ) :
+/**
+ * Changing the jetpack related posts title
+ */
+function siteorigin_unwind_jetpackme_related_posts_headline( $headline ) {
+	$headline = sprintf(
+	    '<h2 class="jp-relatedposts-headline related-posts heading-strike">%s</h2>',
+	    esc_html( 'You may also like', 'siteorigin-unwind' )
+	);
+	return $headline;
+}
+endif;
+add_filter( 'jetpack_relatedposts_filter_headline', 'siteorigin_unwind_jetpackme_related_posts_headline' );
+
+if ( ! function_exists( 'siteorigin_unwind_jetpackme_remove_rp' ) ) :
+/**
+ * Removing jetpack related posts from the bottom of posts
+ */
+function siteorigin_unwind_jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+endif;
+add_filter( 'wp', 'siteorigin_unwind_jetpackme_remove_rp', 20 );

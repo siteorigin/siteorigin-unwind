@@ -213,9 +213,10 @@
 
 				input.input-text {
 					border-radius: 0;
-					height: 36px;
+					box-sizing: border-box;
 					font-size: 13px;
-					padding: 18px 15px;
+					min-height: 38px; 
+					padding: 5px 15px;
 					width: 200px !important;
 
 					@media (max-width: 768px) {
@@ -328,6 +329,10 @@
 		margin: 0;
 		padding-left: 0;
 		position: relative;
+
+		@at-root .header-design-4 & {
+			bottom: 0;
+		}
 
 		> li {
 			padding: 0;
@@ -561,6 +566,10 @@
 			a {
 				padding: 12px 1.5em;
 				width: 49%;
+				
+				&:last-of-type {
+					margin-right: 0; 
+				}
 
 				&.wc-forward:first-of-type {
 					background: transparent;

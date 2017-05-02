@@ -79,7 +79,7 @@ add_filter( 'woocommerce_cart_item_thumbnail', 'cart_item_thumbnail', 10, 3 );
 
 function cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
 	// Create the product object.
-	$product = get_product( $cart_item['product_id'] );
+	$product = wc_get_product( $cart_item['product_id'] );
 	return $product->get_image( 'cart_item_image_size' );
 }
 
@@ -108,3 +108,11 @@ function siteorigin_unwind_woocommerce_update_cart_count( $fragments ) {
 }
 endif;
 add_filter( 'add_to_cart_fragments', 'siteorigin_unwind_woocommerce_update_cart_count' );
+
+if ( ! function_exists( 'siteorigin_unwind_wc_columns' ) ) :
+// Change number of products per row
+function siteorigin_unwind_wc_columns() {
+	return siteorigin_setting( 'woocommerce_archive_columns' );
+}
+endif;
+add_filter( 'loop_shop_columns', 'siteorigin_unwind_wc_columns' );

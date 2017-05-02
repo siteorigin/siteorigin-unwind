@@ -2,12 +2,54 @@
 	border-bottom: 1px solid $color__background-hr-dark;
 	margin-bottom: $masthead__bottom-margin;
 
+	@at-root .header-design-2 & {
+		border-bottom: none;
+	}
+
 	.top-bar {
 		background: #fff;
 		border-bottom: 1px solid $color__background-hr-dark;
 		@include clearfix;
 		position: relative;
 		z-index: 9999;
+
+		@at-root .header-design-2 & {
+			border-top: 1px solid $color__background-hr-dark;
+		}
+
+		@at-root .homepage-has-slider.header-design-2 & {
+			border-bottom: none;
+		}
+
+		@at-root {
+			.sticky-menu:not(.top-bar-out) & {
+				position: relative;
+				top: auto;
+			}
+
+			.sticky-menu.top-bar-out & {
+				border-top: none;
+				border-bottom: 1px solid $color__background-hr-dark;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				@include clearfix;
+			}
+
+			.sticky-menu.top-bar-out.admin-bar & {
+				top: 32px;
+
+				@media screen and (max-width: 782px) {
+					top: 46px;
+				}
+
+				@media screen and (max-width: 600px) {
+					position: absolute;
+					top: auto;
+				}
+			}
+		}
 	}
 
 	.top-bar-sentinel {
@@ -44,12 +86,27 @@
 			margin-bottom: 0;
 			text-align: center;
 		}
+
+		@at-root .header-design-4 & {
+			display: inline-block;
+			padding: $masthead__padding/2 0;
+			text-align: left;
+
+			.site-title {
+				@include font-size(2.5);
+				text-align: left;
+
+				@media (max-width: 480px) {
+					@include font-size(1.8);
+				}
+			}
+		}
 	}
 
 	#masthead-widgets {
 		@include clearfix;
 		margin: 60px auto;
-		
+
 		.widgets {
 
 			@for $i from 1 through 10 {
@@ -76,12 +133,20 @@
 			}
 		}
 	}
-}
 
-// Archive and search pages.
-.archive #masthead,
-.search #masthead {
-	margin-bottom: 60px;
+	@at-root {
+		.home &,
+		.archive &,
+		.search & {
+			margin-bottom: 60px;
+		}
+	}
+
+	.main-navigation-bar {
+		border-top: 1px solid $color__background-hr-dark;
+		@include clearfix;
+		text-align: center;
+	}
 }
 
 .homepage-has-slider {
