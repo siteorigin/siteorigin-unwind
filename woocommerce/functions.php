@@ -79,7 +79,7 @@ add_filter( 'woocommerce_cart_item_thumbnail', 'cart_item_thumbnail', 10, 3 );
 
 function cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
 	// Create the product object.
-	$product = get_product( $cart_item['product_id'] );
+	$product = wc_get_product( $cart_item['product_id'] );
 	return $product->get_image( 'cart_item_image_size' );
 }
 
