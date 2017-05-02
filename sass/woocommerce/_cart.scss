@@ -213,9 +213,10 @@
 
 				input.input-text {
 					border-radius: 0;
-					height: 36px;
+					box-sizing: border-box;
 					font-size: 13px;
-					padding: 18px 15px;
+					min-height: 38px; 
+					padding: 5px 15px;
 					width: 200px !important;
 
 					@media (max-width: 768px) {
