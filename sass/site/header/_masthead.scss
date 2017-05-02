@@ -17,7 +17,7 @@
 			border-top: 1px solid $color__background-hr-dark;
 		}
 
-		@at-root .home.header-design-2 & {
+		@at-root .homepage-has-slider.header-design-2 & {
 			border-bottom: none;
 		}
 
@@ -134,9 +134,12 @@
 		}
 	}
 
-	@at-root .home & {
-		border-bottom: none;
-		margin-bottom: 0;
+	@at-root {
+		.home &,
+		.archive &,
+		.search & {
+			margin-bottom: 60px;
+		}
 	}
 
 	.main-navigation-bar {
@@ -144,12 +147,6 @@
 		@include clearfix;
 		text-align: center;
 	}
-}
-
-// Archive and search pages.
-.archive #masthead,
-.search #masthead {
-	margin-bottom: 60px;
 }
 
 .homepage-has-slider {

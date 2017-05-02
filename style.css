@@ -1475,7 +1475,7 @@ a {
       display: table; }
     .header-design-2 #masthead .top-bar {
       border-top: 1px solid #ebebeb; }
-    .home.header-design-2 #masthead .top-bar {
+    .homepage-has-slider.header-design-2 #masthead .top-bar {
       border-bottom: none; }
     .sticky-menu:not(.top-bar-out) #masthead .top-bar {
       position: relative;
@@ -1577,9 +1577,10 @@ a {
           float: none;
           margin: 0 0 4em;
           width: 100% !important; } }
-  .home #masthead {
-    border-bottom: none;
-    margin-bottom: 0; }
+  .home #masthead,
+  .archive #masthead,
+  .search #masthead {
+    margin-bottom: 60px; }
   #masthead .main-navigation-bar {
     border-top: 1px solid #ebebeb;
     text-align: center; }
@@ -1587,10 +1588,6 @@ a {
       clear: both;
       content: "";
       display: table; }
-
-.archive #masthead,
-.search #masthead {
-  margin-bottom: 60px; }
 
 .homepage-has-slider #masthead {
   border-bottom: none;
