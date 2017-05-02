@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.0.8 - 28 March 2016 =
+* Added support for Jetpack Related Posts.
+* Added three new header layouts. Setting found at Customize > Theme Settings > Header.
+* Updated WooCommerce template files and styling for new versions.
+* Fixed WooCommerce coupon code display bug in Firefox.
+
 = 1.0.7 - 28 March 2016 =
 * Fixed top bar social media icon inheritance bug.
 * Update build script to prevent z-index reduction.
