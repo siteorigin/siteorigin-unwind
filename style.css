@@ -1447,6 +1447,7 @@ a {
   max-width: 100%; }
 
 .page-layout-no-masthead-margin #masthead,
+.page-layout-no-masthead-margin.home #masthead,
 .page-layout-no-masthead-margin.archive #masthead {
   margin-bottom: 0; }
 
