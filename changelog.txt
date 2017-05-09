@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.9 - 09 May 2017 =
+* Fixed Page Settings: Header Bottom Margin setting bug on home, archive and search results page.
+
 = 1.0.8 - 02 May 2017 =
 * Added support for Jetpack Related Posts.
 * Added three new header layouts. Setting found at Customize > Theme Settings > Header.
