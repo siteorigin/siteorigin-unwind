@@ -522,42 +522,10 @@
       .woocommerce.single-product #content div.product .entry-summary .product_meta span a {
         color: #2d2d2d; }
 
-.woocommerce.single-product #content div.product .images .product-images-slider {
-  border: 0;
-  margin-bottom: 20px; }
-
-.woocommerce.single-product #content div.product .images .product-images-carousel {
-  border: 0;
-  padding: 0 30px; }
-  .woocommerce.single-product #content div.product .images .product-images-carousel .slide {
-    cursor: pointer;
-    opacity: 0.7; }
-    .woocommerce.single-product #content div.product .images .product-images-carousel .slide.flex-active-slide {
-      cursor: default;
-      opacity: 1; }
-  .woocommerce.single-product #content div.product .images .product-images-carousel .flex-direction-nav a {
-    height: 30px;
-    margin: -20px 0 0;
-    width: 28px; }
-    .woocommerce.single-product #content div.product .images .product-images-carousel .flex-direction-nav a:before {
-      background: none;
-      background-color: rgba(0, 0, 0, 0.5);
-      background-position: 10px 7px;
-      background-repeat: no-repeat;
-      content: "";
-      font-size: 15px;
-      height: 50px;
-      padding: 3px 10px;
-      width: 40px; }
-    .woocommerce.single-product #content div.product .images .product-images-carousel .flex-direction-nav a.flex-prev:before {
-      background-image: url("images/arrow-left.svg"); }
-    .woocommerce.single-product #content div.product .images .product-images-carousel .flex-direction-nav a.flex-next:before {
-      background-image: url("images/arrow-right.svg"); }
-    @media (max-width: 860px) {
-      .woocommerce.single-product #content div.product .images .product-images-carousel .flex-direction-nav a.flex-prev {
-        left: 0; }
-      .woocommerce.single-product #content div.product .images .product-images-carousel .flex-direction-nav a.flex-next {
-        right: 0; } }
+.woocommerce.single-product #content div.product .images .flex-control-nav {
+  margin-top: 10px; }
+  .woocommerce.single-product #content div.product .images .flex-control-nav li img {
+    padding: 10px; }
 
 .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs {
   margin-bottom: 30px;
