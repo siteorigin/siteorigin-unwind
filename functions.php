@@ -120,6 +120,16 @@ function siteorigin_unwind_setup() {
 	 * See https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/#section-3
 	 */
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-slider' );
+
+	if ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) :
+		add_theme_support( 'wc-product-gallery-zoom' );
+	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox' ) :
+		add_theme_support( 'wc-product-gallery-lightbox' );
+	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom-lightbox' ) :
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+	endif;
 
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist.
@@ -217,7 +227,7 @@ add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
 function siteorigin_unwind_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'siteorigin-unwind-style', get_template_directory_uri() . '/style' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
-	
+
 	// Flexslider.
 	wp_register_style( 'siteorigin-unwind-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 	wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
