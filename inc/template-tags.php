@@ -202,7 +202,7 @@ function siteorigin_unwind_main_navigation() {
 	<nav id="site-navigation" class="main-navigation" role="navigation">
 		<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		<?php if ( class_exists( 'Woocommerce' ) && ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_mini_cart' ) ): ?>
+		<?php if ( class_exists( 'Woocommerce' ) && ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_mini_cart' ) ) : ?>
 			<?php global $woocommerce; ?>
 			<ul class="shopping-cart">
 				<li>
@@ -210,7 +210,7 @@ function siteorigin_unwind_main_navigation() {
 						<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-unwind' ); ?></span>
 						<?php siteorigin_unwind_display_icon( 'cart' ); ?>
 						<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-unwind' ); ?></span>
-						<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
+						<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count; ?></span>
 					</a>
 					<ul class="shopping-cart-dropdown" id="cart-drop">
 						<?php the_widget( 'WC_Widget_Cart' );?>

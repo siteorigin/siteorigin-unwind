@@ -1,18 +1,27 @@
 == Changelog ==
 
-= 1.0.7 - 28 March 2016 =
+= 1.0.9 - 09 May 2017 =
+* Fixed Page Settings. Header Bottom Margin setting bug on home, archive and search results page.
+
+= 1.0.8 - 02 May 2017 =
+* Added support for Jetpack Related Posts.
+* Added three new header layouts. Setting found at Customize > Theme Settings > Header.
+* Updated WooCommerce template files and styling for new versions.
+* Fixed WooCommerce coupon code display bug in Firefox.
+
+= 1.0.7 - 28 March 2017 =
 * Fixed top bar social media icon inheritance bug.
 * Update build script to prevent z-index reduction.
 * Prevent footer border from outputting when no widgets are present.
 
-= 1.0.6 - 16 March 2016 =
+= 1.0.6 - 16 March 2017 =
 * Switched to minified CSS files.
 * Updated settings framework.
 * Updated styling for WooCommerce variable products.
 * Corrected Max Mega Menu output, fixed mini-cart alignment.
 * Changed WooCommerce Customizer CSS to only output when WooCommerce active.
 
-= 1.0.5 - 24 January 2016 =
+= 1.0.5 - 24 January 2017 =
 * Added a date format filter.
 * Styled WooCommerce product thumbnail navigation.
 * Added setting to adjust mobile menu collapse point.
@@ -26,7 +35,7 @@
 * Fixed quanitity change button bug in WooCommerce cart.
 * Fixed WooCommerce display bug appearing when a limited amounts of products display.
 
-= 1.0.4 - 04 January 2016 =
+= 1.0.4 - 04 January 2017 =
 * Fixed posts slider overlay lag in Chrome.
 * Added posts slider as a loop file for use in the Post Loop widget and Page Builder.
 * Removed the background color from the WooCommerce product variations table.
