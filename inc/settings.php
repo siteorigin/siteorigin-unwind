@@ -323,7 +323,7 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 						'slider' => esc_html__( 'Gallery Slider', 'siteorigin-unwind' ),
 						'slider-lightbox' => esc_html__( 'Gallery Slider + Lightbox', 'siteorigin-unwind' ),
 						'slider-zoom' => esc_html__( 'Gallery Slider + Zoom', 'siteorigin-unwind' ),
-						'slider-zoom-lightbox' => esc_html__( 'Gallery Slider + Lightbox + Zoom', 'siteorigin-unwind' ),
+						'slider-lightbox-zoom' => esc_html__( 'Gallery Slider + Lightbox + Zoom', 'siteorigin-unwind' ),
 					),
 				),
 				'archive_columns' => array(
