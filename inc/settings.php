@@ -321,9 +321,9 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 					'label' => esc_html__( 'Product Gallery', 'siteorigin-unwind' ),
 					'options' => array(
 						'slider' => esc_html__( 'Gallery Slider', 'siteorigin-unwind' ),
-						'slider-zoom' => esc_html__( 'Gallery Slider + Zoom', 'siteorigin-unwind' ),
-						'slider-zoom-lightbox' => esc_html__( 'Gallery Slider + Zoom + Lightbox', 'siteorigin-unwind' ),
 						'slider-lightbox' => esc_html__( 'Gallery Slider + Lightbox', 'siteorigin-unwind' ),
+						'slider-zoom' => esc_html__( 'Gallery Slider + Zoom', 'siteorigin-unwind' ),
+						'slider-zoom-lightbox' => esc_html__( 'Gallery Slider + Lightbox + Zoom', 'siteorigin-unwind' ),
 					),
 				),
 				'archive_columns' => array(
@@ -1221,7 +1221,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['footer_top_margin']   = '80px';
 
 	// WooCommerce
-	$defaults['woocommerce_product_gallery']    = 'slider';
+	$defaults['woocommerce_product_gallery']    = 'slider-lightbox';
 	$defaults['woocommerce_archive_columns']    = 3;
 	$defaults['woocommerce_display_quick_view'] = true;
 	$defaults['woocommerce_display_mini_cart']  = true;

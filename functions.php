@@ -122,13 +122,13 @@ function siteorigin_unwind_setup() {
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'wc-product-gallery-slider' );
 
-	if ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) :
-		add_theme_support( 'wc-product-gallery-zoom' );
-	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox' ) :
+	if ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox' ) :
 		add_theme_support( 'wc-product-gallery-lightbox' );
-	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom-lightbox' ) :
+	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) :
 		add_theme_support( 'wc-product-gallery-zoom' );
+	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox-zoom' ) :
 		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-zoom' );
 	endif;
 
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
