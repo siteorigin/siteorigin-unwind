@@ -92,16 +92,16 @@ function siteorigin_unwind_woocommerce_related_product_args( $args ) {
 }
 add_filter( 'woocommerce_output_related_products_args', 'siteorigin_unwind_woocommerce_related_product_args' );
 
-if ( ! function_exists( 'siteorigin_unwind_woocommerce_output_upsells' ) ) {
-	/*
-	 * Change number of upsells output.
-	 *
-	 * @link https://docs.woocommerce.com/document/change-number-of-upsells-output/
-	 */
-	function siteorigin_unwind_woocommerce_output_upsells() {
-		woocommerce_upsell_display( 4, 4 );
-	}
+if ( ! function_exists( 'siteorigin_unwind_woocommerce_output_upsells' ) ) :
+/*
+ * Change number of upsells output.
+ *
+ * @link https://docs.woocommerce.com/document/change-number-of-upsells-output/
+ */
+function siteorigin_unwind_woocommerce_output_upsells() {
+	woocommerce_upsell_display( 4, 4 );
 }
+endif;
 
 function siteorigin_unwind_cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
 	// Create the product object.
