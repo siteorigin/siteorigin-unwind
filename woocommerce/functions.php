@@ -10,6 +10,37 @@
 // Load template related functions.
 include get_template_directory() . '/woocommerce/template-tags.php';
 
+function siteorigin_unwind_woocommerce_setup() {
+
+	/**
+	 * Add support for WooCommerce.
+	 * @link https://docs.woocommerce.com/document/declare-woocommerce-support-in-third-party-theme/
+	 */
+	add_theme_support( 'woocommerce' );
+
+	/**
+	 * Add support for WooCommerce galleries.
+	 * @link https://woocommerce.wordpress.com/2017/02/28/adding-support-for-woocommerce-2-7s-new-gallery-feature-to-your-theme/
+	 */
+	add_theme_support( 'wc-product-gallery-slider' );
+
+	if ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox' ) {
+		add_theme_support( 'wc-product-gallery-lightbox' );
+	}
+	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) {
+		add_theme_support( 'wc-product-gallery-zoom' );
+	}
+	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox-zoom' ) {
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+	}
+
+	// Modifying cart product image size.
+	add_image_size( 'cart_item_image_size', 80, 80, true );	
+
+}
+add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_setup' );
+
 function siteorigin_unwind_woocommerce_add_to_cart_text( $text ) {
 	return $text;
 }
@@ -61,27 +92,23 @@ function siteorigin_unwind_woocommerce_related_product_args( $args ) {
 }
 add_filter( 'woocommerce_output_related_products_args', 'siteorigin_unwind_woocommerce_related_product_args' );
 
-if ( ! function_exists( 'siteorigin_unwind_woocommerce_output_upsells' ) ) {
-	/*
-	 * Change number of upsells output.
-	 *
-	 * @link https://docs.woocommerce.com/document/change-number-of-upsells-output/
-	 */
-	function siteorigin_unwind_woocommerce_output_upsells() {
-		woocommerce_upsell_display( 4, 4 );
-	}
+if ( ! function_exists( 'siteorigin_unwind_woocommerce_output_upsells' ) ) :
+/*
+ * Change number of upsells output.
+ *
+ * @link https://docs.woocommerce.com/document/change-number-of-upsells-output/
+ */
+function siteorigin_unwind_woocommerce_output_upsells() {
+	woocommerce_upsell_display( 4, 4 );
 }
+endif;
 
-// Modifying cart product image size.
-add_image_size( 'cart_item_image_size', 80, 80, true );
-
-add_filter( 'woocommerce_cart_item_thumbnail', 'cart_item_thumbnail', 10, 3 );
-
-function cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
+function siteorigin_unwind_cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
 	// Create the product object.
 	$product = wc_get_product( $cart_item['product_id'] );
 	return $product->get_image( 'cart_item_image_size' );
 }
+add_filter( 'woocommerce_cart_item_thumbnail', 'siteorigin_unwind_cart_item_thumbnail', 10, 3 );
 
 function siteorigin_unwind_woocommerce_tag_cloud_widget() {
 	$args['unit'] = 'px';

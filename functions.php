@@ -115,12 +115,6 @@ function siteorigin_unwind_setup() {
 	add_filter( 'term_description', 'shortcode_unautop' );
 	add_filter( 'term_description', 'do_shortcode' );
 
-	/*
-	 * Add WooCommerce support.
-	 * See https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/#section-3
-	 */
-	add_theme_support( 'woocommerce' );
-
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist.
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
@@ -217,12 +211,12 @@ add_action( 'widgets_init', 'siteorigin_unwind_widgets_init' );
 function siteorigin_unwind_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'siteorigin-unwind-style', get_template_directory_uri() . '/style' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
-	
+
 	// Flexslider.
 	wp_register_style( 'siteorigin-unwind-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 	wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
 
-	if ( ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts() ) || ( function_exists( 'is_woocommerce' ) && is_product() ) || ( is_single() && has_post_format( 'gallery' ) ) ) {
+	if ( ( is_home() && siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts() ) || ( is_single() && has_post_format( 'gallery' ) ) ) {
 		wp_enqueue_style( 'siteorigin-unwind-flexslider' );
 		wp_enqueue_script( 'jquery-flexslider' );
 	}

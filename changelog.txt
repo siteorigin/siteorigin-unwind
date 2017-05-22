@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.0.10 - 22 May 2017 =
+* Updated WooCommerce gallery to slideshow and lightbox.
+* Added setting for all WooCommerce gallery combinations.
+
 = 1.0.9 - 09 May 2017 =
 * Fixed Page Settings. Header Bottom Margin setting bug on home, archive and search results page.
 
