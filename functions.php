@@ -115,22 +115,6 @@ function siteorigin_unwind_setup() {
 	add_filter( 'term_description', 'shortcode_unautop' );
 	add_filter( 'term_description', 'do_shortcode' );
 
-	/*
-	 * Add WooCommerce support.
-	 * See https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/#section-3
-	 */
-	add_theme_support( 'woocommerce' );
-	add_theme_support( 'wc-product-gallery-slider' );
-
-	if ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox' ) :
-		add_theme_support( 'wc-product-gallery-lightbox' );
-	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) :
-		add_theme_support( 'wc-product-gallery-zoom' );
-	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox-zoom' ) :
-		add_theme_support( 'wc-product-gallery-lightbox' );
-		add_theme_support( 'wc-product-gallery-zoom' );
-	endif;
-
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist.
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
