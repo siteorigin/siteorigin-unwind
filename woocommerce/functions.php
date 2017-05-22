@@ -7,6 +7,29 @@
  * @license GPL 2.0
  */
 
+/**
+ * Add support for WooCommerce.
+ * @link https://docs.woocommerce.com/document/declare-woocommerce-support-in-third-party-theme/
+ */
+add_theme_support( 'woocommerce' );
+
+/**
+ * Add support for WooCommerce galleries.
+ * @link https://woocommerce.wordpress.com/2017/02/28/adding-support-for-woocommerce-2-7s-new-gallery-feature-to-your-theme/
+ */
+add_theme_support( 'wc-product-gallery-slider' );
+
+if ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox' ) {
+	add_theme_support( 'wc-product-gallery-lightbox' );
+}
+elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) {
+	add_theme_support( 'wc-product-gallery-zoom' );
+}
+elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox-zoom' ) {
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+}
+
 // Load template related functions.
 include get_template_directory() . '/woocommerce/template-tags.php';
 
