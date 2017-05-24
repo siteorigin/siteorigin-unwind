@@ -225,6 +225,14 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Featured image on single post.', 'siteorigin-unwind' ),
 				),
+				'archive_columns' => array(
+					'type' => 'range',
+					'label' => esc_html__( 'Number of Post per Row', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Set the number of posts per row on archive pages.', 'siteorigin-unwind' ),
+					'min' => 1,
+					'max' => 3,
+					'step' => 1
+				),
 				'archive_content'	=> array(
 					'type'	=> 'select',
 					'label'	=> esc_html__( 'Post Content', 'siteorigin-unwind' ),
@@ -1204,6 +1212,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_featured_slider_overlay'] = false;
 	$defaults['blog_featured_archive']        = true;
 	$defaults['blog_featured_single']         = true;
+	$defaults['blog_archive_columns']         = 1;
 	$defaults['blog_archive_content']         = 'full';
 	$defaults['blog_display_related_posts']   = true;
 	$defaults['blog_display_author_box']      = true;

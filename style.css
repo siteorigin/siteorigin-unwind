@@ -923,6 +923,11 @@ a {
     border-color: #24c48a;
     color: #24c48a; }
 
+.blog-columns-2 .posts-navigation,
+.blog-columns-3 .posts-navigation {
+  float: left;
+  width: 100%; }
+
 .posts-navigation .nav-links,
 .comment-navigation .nav-links {
   font-size: 13.8656px;
@@ -1872,6 +1877,30 @@ a {
   padding-bottom: 5em; }
   .archive-entry:last-of-type {
     margin-bottom: 5.5em; }
+  .blog-columns-2 .archive-entry {
+    float: left;
+    width: 45%; }
+    .blog-columns-2 .archive-entry::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .blog-columns-2 .archive-entry:nth-child(2n+1) {
+      margin-right: 10%; }
+  .blog-columns-3 .archive-entry {
+    float: left;
+    margin-right: 3.8%;
+    width: 30.8%; }
+    .blog-columns-3 .archive-entry::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .blog-columns-3 .archive-entry:nth-child(3n) {
+      margin-right: 0; }
+  @media (max-width: 768px) {
+    .archive-entry .archive-entry {
+      float: none;
+      margin-right: 0;
+      width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Pages

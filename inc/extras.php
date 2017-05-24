@@ -86,6 +86,11 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'wc-columns-' . siteorigin_setting( 'woocommerce_archive_columns' );
 	}
 
+	// Blog columns.
+	if ( siteorigin_setting( 'blog_archive_columns' ) ) {
+		$classes[] = 'blog-columns-' . siteorigin_setting( 'blog_archive_columns' );
+	}
+
 	return $classes;
 }
 endif;

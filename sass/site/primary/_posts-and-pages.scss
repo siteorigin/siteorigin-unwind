@@ -214,6 +214,35 @@
 	&:last-of-type {
 		margin-bottom: 5.5em;
 	}
+
+	@at-root .blog-columns-2 & {
+		float: left;
+		width: 45%;
+		@include clearfix;
+
+		&:nth-child(2n+1) {
+			margin-right: 10%;
+		}
+	}
+
+	@at-root .blog-columns-3 & {
+		float: left;
+		margin-right: 3.8%;
+		width: 30.8%;
+		@include clearfix;
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.archive-entry {
+			float: none;
+			margin-right: 0;
+			width: 100%;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
