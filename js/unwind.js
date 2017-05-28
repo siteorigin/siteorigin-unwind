@@ -128,25 +128,25 @@ jQuery( function( $ ) {
 	} );
 
 	// Sticky menu
-	if ( $( '.top-bar' ).hasClass( 'sticky-menu' ) ) {
-		var $tbs = false,
+	if ( $( '.sticky-bar' ).hasClass( 'sticky-menu' ) ) {
+		var $sbs = false,
 			tbTop = false,
 			pageTop = $( '#page' ).offset().top,
-			$tb = $( '.top-bar' ),
+			$sb = $( '.sticky-bar' ),
 			$mh = $( '#masthead' ),
 			$wpab = $( '#wpadminbar' );
 
 		var smSetup = function() {
 
-			if ( $tbs === false ) {
-				$tbs = $( '<div class="top-bar-sentinel"></div>' ).insertAfter( $tb );
+			if ( $sbs === false ) {
+				$sbs = $( '<div class="sticky-bar-sentinel"></div>' ).insertAfter( $sb );
 			}
 			// Toggle .topbar-out with visibility of top-bar in the viewport
-			if ( $( 'body' ).hasClass( 'sticky-menu' ) && ! $tbs.unwindIsVisible() ) {
-				$( 'body' ).addClass( 'top-bar-out' );
+			if ( $( 'body' ).hasClass( 'sticky-menu' ) && ! $sbs.unwindIsVisible() ) {
+				$( 'body' ).addClass( 'sticky-bar-out' );
 			}
-			if ( $( 'body' ).hasClass( 'top-bar-out' ) && $tbs.unwindIsVisible() ) {
-				$( 'body' ).removeClass( 'top-bar-out' );
+			if ( $( 'body' ).hasClass( 'sticky-bar-out' ) && $sbs.unwindIsVisible() ) {
+				$( 'body' ).removeClass( 'sticky-bar-out' );
 			}
 		}
 		smSetup();

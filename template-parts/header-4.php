@@ -1,4 +1,4 @@
-<div class="top-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
+<div class="top-bar">
     <div class="container">
 
         <div class="social-search">
@@ -23,13 +23,14 @@
         </div>
     <?php endif; ?>
 </div><!-- .top-bar -->
-
-<div class="container">
-    <div class="site-branding">
-        <?php siteorigin_unwind_display_logo(); ?>
-        <?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
-            <p class="site-description"><?php bloginfo( 'description' ); ?></p>
-        <?php endif ?>
-    </div><!-- .site-branding -->
-    <?php siteorigin_unwind_main_navigation() ?>
-</div><!-- .container -->
+<div class="main-navigation-bar sticky-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
+    <div class="container">
+        <div class="site-branding">
+            <?php siteorigin_unwind_display_logo(); ?>
+            <?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
+                <p class="site-description"><?php bloginfo( 'description' ); ?></p>
+            <?php endif ?>
+        </div><!-- .site-branding -->
+        <?php siteorigin_unwind_main_navigation() ?>
+    </div><!-- .container -->
+</div>

@@ -1,4 +1,4 @@
-<div class="top-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
+<div class="top-bar sticky-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
     <div class="container">
 
         <div class="social-search">
