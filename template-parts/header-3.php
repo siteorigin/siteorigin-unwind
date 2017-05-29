@@ -1,4 +1,4 @@
-<div class="top-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
+<div class="top-bar">
     <div class="container">
 
         <div class="social-search">
@@ -42,7 +42,7 @@
     </div><!-- #masthead-widgets -->
 <?php endif; ?>
 
-<div class="main-navigation-bar">
+<div class="main-navigation-bar sticky-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
     <div class="container">
         <?php siteorigin_unwind_main_navigation() ?>
     </div>

@@ -6,6 +6,44 @@
 		border-bottom: none;
 	}
 
+	// Sticky-menu
+	.sticky-bar {
+		background: #fff;
+		@include clearfix;
+		position: relative;
+		z-index: 5;
+
+		@at-root {
+			.sticky-menu:not( .sticky-bar-out ) & {
+				position: relative;
+				top: auto;
+			}
+
+			.sticky-menu.sticky-bar-out & {
+				border-top: none;
+				border-bottom: 1px solid $color__background-hr-dark;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				@include clearfix;
+			}
+
+			.sticky-menu.sticky-bar-out.admin-bar & {
+				top: 32px;
+
+				@media screen and (max-width: 782px) {
+					top: 46px;
+				}
+
+				@media screen and (max-width: 600px) {
+					position: absolute;
+					top: auto;
+				}
+			}
+		}
+	}
+
 	.top-bar {
 		background: #fff;
 		border-bottom: 1px solid $color__background-hr-dark;
@@ -19,36 +57,6 @@
 
 		@at-root .homepage-has-slider.header-design-2 & {
 			border-bottom: none;
-		}
-
-		@at-root {
-			.sticky-menu:not(.top-bar-out) & {
-				position: relative;
-				top: auto;
-			}
-
-			.sticky-menu.top-bar-out & {
-				border-top: none;
-				border-bottom: 1px solid $color__background-hr-dark;
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				@include clearfix;
-			}
-
-			.sticky-menu.top-bar-out.admin-bar & {
-				top: 32px;
-
-				@media screen and (max-width: 782px) {
-					top: 46px;
-				}
-
-				@media screen and (max-width: 600px) {
-					position: absolute;
-					top: auto;
-				}
-			}
 		}
 	}
 
@@ -146,6 +154,10 @@
 		border-top: 1px solid $color__background-hr-dark;
 		@include clearfix;
 		text-align: center;
+
+		@at-root .header-design-4 & {
+			border-top: none;
+		}
 	}
 }
 

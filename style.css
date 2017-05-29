@@ -1465,6 +1465,37 @@ a {
   margin-bottom: 80px; }
   .header-design-2 #masthead {
     border-bottom: none; }
+  #masthead .sticky-bar {
+    background: #fff;
+    position: relative;
+    z-index: 5; }
+    #masthead .sticky-bar::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .sticky-menu:not(.sticky-bar-out) #masthead .sticky-bar {
+      position: relative;
+      top: auto; }
+    .sticky-menu.sticky-bar-out #masthead .sticky-bar {
+      border-top: none;
+      border-bottom: 1px solid #ebebeb;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%; }
+      .sticky-menu.sticky-bar-out #masthead .sticky-bar::after {
+        clear: both;
+        content: "";
+        display: table; }
+    .sticky-menu.sticky-bar-out.admin-bar #masthead .sticky-bar {
+      top: 32px; }
+      @media screen and (max-width: 782px) {
+        .sticky-menu.sticky-bar-out.admin-bar #masthead .sticky-bar {
+          top: 46px; } }
+      @media screen and (max-width: 600px) {
+        .sticky-menu.sticky-bar-out.admin-bar #masthead .sticky-bar {
+          position: absolute;
+          top: auto; } }
   #masthead .top-bar {
     background: #fff;
     border-bottom: 1px solid #ebebeb;
@@ -1478,29 +1509,6 @@ a {
       border-top: 1px solid #ebebeb; }
     .homepage-has-slider.header-design-2 #masthead .top-bar {
       border-bottom: none; }
-    .sticky-menu:not(.top-bar-out) #masthead .top-bar {
-      position: relative;
-      top: auto; }
-    .sticky-menu.top-bar-out #masthead .top-bar {
-      border-top: none;
-      border-bottom: 1px solid #ebebeb;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%; }
-      .sticky-menu.top-bar-out #masthead .top-bar::after {
-        clear: both;
-        content: "";
-        display: table; }
-    .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
-      top: 32px; }
-      @media screen and (max-width: 782px) {
-        .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
-          top: 46px; } }
-      @media screen and (max-width: 600px) {
-        .sticky-menu.top-bar-out.admin-bar #masthead .top-bar {
-          position: absolute;
-          top: auto; } }
   #masthead .top-bar-sentinel {
     box-sizing: border-box; }
   #masthead .site-branding {
@@ -1589,6 +1597,8 @@ a {
       clear: both;
       content: "";
       display: table; }
+    .header-design-4 #masthead .main-navigation-bar {
+      border-top: none; }
 
 .homepage-has-slider #masthead {
   border-bottom: none;
