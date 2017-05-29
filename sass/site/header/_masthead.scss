@@ -155,7 +155,9 @@
 		@include clearfix;
 		text-align: center;
 
-
+		@at-root .header-design-4 & {
+			border-top: none;
+		}
 	}
 }
 

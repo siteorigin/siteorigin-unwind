@@ -1597,6 +1597,8 @@ a {
       clear: both;
       content: "";
       display: table; }
+    .header-design-4 #masthead .main-navigation-bar {
+      border-top: none; }
 
 .homepage-has-slider #masthead {
   border-bottom: none;
