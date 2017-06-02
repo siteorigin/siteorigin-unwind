@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.11 - 29 May 2017 =
+* Resolved sticky menu bar bugs in the new header layouts.
+
 = 1.0.10 - 22 May 2017 =
 * Updated WooCommerce gallery to slideshow and lightbox.
 * Added setting for all WooCommerce gallery combinations.

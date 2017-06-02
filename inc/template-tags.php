@@ -292,6 +292,20 @@ function siteorigin_unwind_read_more_link() {
 endif;
 add_filter( 'the_content_more_link', 'siteorigin_unwind_read_more_link' );
 
+if ( ! function_exists( 'siteorigin_unwind_excerpt_more' ) ) :
+/**
+ * Add a more link to the excerpt.
+ */
+function siteorigin_unwind_excerpt_more( $more ) {
+	if ( is_search() ) return;
+	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more', true ) ) {
+		$read_more_text = esc_html__( 'Continue reading', 'siteorigin-unwind' );
+		return '<a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</a></span>';
+	}
+}
+endif;
+add_filter( 'excerpt_more', 'siteorigin_unwind_excerpt_more' );
+
 if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time, category and comment count.
