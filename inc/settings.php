@@ -237,7 +237,7 @@ function siteorigin_unwind_settings_init() {
 				'excerpt_more' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-unwind' ),
-					'description' => esc_html__( "Display the Read More link below the post excerpt.", 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display the Read More link below the post excerpt.', 'siteorigin-unwind' ),
 				),
 				'display_date' => array(
 					'type' => 'checkbox',
