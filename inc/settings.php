@@ -234,6 +234,11 @@ function siteorigin_unwind_settings_init() {
 					),
 					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag.', 'siteorigin-unwind'),
 				),
+				'excerpt_more' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display the Read More link below the post excerpt.', 'siteorigin-unwind' ),
+				),
 				'display_date' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Date on single and archive posts.', 'siteorigin-unwind' ),
@@ -1205,6 +1210,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_featured_archive']        = true;
 	$defaults['blog_featured_single']         = true;
 	$defaults['blog_archive_content']         = 'full';
+	$defaults['blog_excerpt_more']         	  = false;
 	$defaults['blog_display_related_posts']   = true;
 	$defaults['blog_display_author_box']      = true;
 	$defaults['blog_display_date']            = true;

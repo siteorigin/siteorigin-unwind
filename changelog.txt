@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.0.12 - 13 June 2017 =
+* Add new blog theme setting to allow for the more link to be inserted after the excerpt.
+* Resolved small display bug with the Menu in line with logo header layout.
+* Added the ability to close the WooCommerce Quick View using the escape key.
+
 = 1.0.11 - 29 May 2017 =
 * Resolved sticky menu bar bugs in the new header layouts.
 
