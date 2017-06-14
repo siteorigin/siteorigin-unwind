@@ -11,7 +11,7 @@
 		background: #fff;
 		@include clearfix;
 		position: relative;
-		z-index: 5;
+		z-index: 25;
 
 		@at-root {
 			.sticky-menu:not( .sticky-bar-out ) & {
