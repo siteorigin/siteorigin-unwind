@@ -1468,7 +1468,7 @@ a {
   #masthead .sticky-bar {
     background: #fff;
     position: relative;
-    z-index: 5; }
+    z-index: 25; }
     #masthead .sticky-bar::after {
       clear: both;
       content: "";
