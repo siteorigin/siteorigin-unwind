@@ -1195,11 +1195,11 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['masthead_bottom_margin'] = '80px';
 
 	// Navigation defaults.
-	$defaults['navigation_search']				 = true;
+	$defaults['navigation_search']               = true;
 	$defaults['navigation_sticky']               = true;
 	$defaults['navigation_mobile_menu_collapse'] = 768;
 	$defaults['navigation_post']                 = true;
-	$defaults['navigation_scroll_to_top']		 = false;			
+	$defaults['navigation_scroll_to_top']        = false;			
 
 	// Icons.
 	$defaults['icons_menu']              = false;
