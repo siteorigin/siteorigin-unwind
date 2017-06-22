@@ -139,7 +139,7 @@ jQuery( function( $ ) {
 		var smSetup = function() {
 
 			if ( $sbs === false ) {
-				$sbs = $( '<div class="sticky-bar-sentinel"></div>' ).insertAfter( $sb );
+				$sbs = $( '<div class="sticky-bar-sentinel"></div>' ).insertBefore( $sb );
 			}
 			// Toggle .topbar-out with visibility of top-bar in the viewport
 			if ( $( 'body' ).hasClass( 'sticky-menu' ) && ! $sbs.unwindIsVisible() ) {
