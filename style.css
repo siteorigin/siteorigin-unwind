@@ -654,6 +654,8 @@ a {
         transform: scaleY(0);
         visibility: hidden;
         z-index: 99999; }
+        .header-design-4 .main-navigation > div ul ul {
+          top: 33px; }
         .main-navigation > div ul ul ul {
           left: 100%;
           top: 0; }
