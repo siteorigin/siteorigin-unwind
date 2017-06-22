@@ -135,8 +135,7 @@ jQuery( function( $ ) {
 			if ( ! $( '#scroll-to-top' ).hasClass( 'show' ) ) {
 				$( '#scroll-to-top' ).css( 'pointer-events', 'auto' ).addClass( 'show' );
 			}
-		}
-		else {
+		} else {
 			if ( $( '#scroll-to-top' ).hasClass( 'show' ) ) {
 				$( '#scroll-to-top' ).css( 'pointer-events', 'none' ).removeClass( 'show' );
 			}
