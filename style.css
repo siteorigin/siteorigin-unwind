@@ -1046,6 +1046,37 @@ a {
   padding: 0 2px; }
 
 /*--------------------------------------------------------------
+## Scroll to Top
+--------------------------------------------------------------*/
+#scroll-to-top {
+  background: rgba(0, 0, 0, 0.4);
+  bottom: 20px;
+  cursor: pointer;
+  height: 44px;
+  line-height: 0;
+  opacity: 0;
+  padding-top: 17px;
+  position: fixed;
+  right: 20px;
+  transform: scale(0, 0);
+  transition: .3s;
+  text-align: center;
+  width: 50px;
+  z-index: 101; }
+  #scroll-to-top svg path {
+    fill: #fff; }
+  #scroll-to-top img,
+  #scroll-to-top svg {
+    display: inline-block;
+    height: 11px;
+    width: 18px; }
+  #scroll-to-top:hover {
+    background: rgba(0, 0, 0, 0.65); }
+  #scroll-to-top.show {
+    opacity: 1;
+    transform: scale(1, 1); }
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */

@@ -498,7 +498,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_display_icon' ) ) :
 /**
- * Displays svg icons.
+ * Displays SVG icons.
  */
 function siteorigin_unwind_display_icon( $type ) {
 
@@ -559,6 +559,14 @@ function siteorigin_unwind_display_icon( $type ) {
 			</svg>
 			<?php
 			break;
+
+		case 'up-arrow':
+			?>
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="55" height="32" viewBox="0 0 55 32">
+				<path fill="#fff" d="M50.276 32l-22.829-22.829-22.829 22.829-4.553-4.553 27.382-27.415 27.415 27.415z"></path>
+			</svg>
+			<?php
+			break;			
 
 	}
 }
