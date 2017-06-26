@@ -88,6 +88,10 @@
 			}
 		}
 
+        a, img {
+            display: block;
+        }
+
 		.site-description {
 			@include font-size(0.9333);
 			line-height: 1.7142;
