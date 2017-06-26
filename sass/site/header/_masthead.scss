@@ -1,6 +1,8 @@
 #masthead {
 	border-bottom: 1px solid $color__background-hr-dark;
 	margin-bottom: $masthead__bottom-margin;
+	z-index: 101;
+    	position: relative;
 
 	@at-root .header-design-2 & {
 		border-bottom: none;
