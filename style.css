@@ -1058,7 +1058,7 @@ a {
   padding-top: 17px;
   position: fixed;
   right: 20px;
-  transform: scale(0, 0);
+  transform: scale(0);
   transition: .3s;
   text-align: center;
   width: 50px;
@@ -1074,7 +1074,7 @@ a {
     background: rgba(0, 0, 0, 0.65); }
   #scroll-to-top.show {
     opacity: 1;
-    transform: scale(1, 1); }
+    transform: scale(1); }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -1495,7 +1495,9 @@ a {
 --------------------------------------------------------------*/
 #masthead {
   border-bottom: 1px solid #ebebeb;
-  margin-bottom: 80px; }
+  margin-bottom: 80px;
+  z-index: 101;
+  position: relative; }
   .header-design-2 #masthead {
     border-bottom: none; }
   #masthead .sticky-bar {
@@ -1564,6 +1566,8 @@ a {
       #masthead .site-branding .site-title a {
         color: #2d2d2d;
         text-decoration: none; }
+    #masthead .site-branding a, #masthead .site-branding img {
+      display: block; }
     #masthead .site-branding .site-description {
       font-size: 14.9328px;
       font-size: 0.9333rem;
