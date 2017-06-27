@@ -127,6 +127,26 @@ jQuery( function( $ ) {
 		$( this ).next( 'ul' ).slideToggle( '300ms' );
 	} );
 
+	// Scroll to top.
+	var sttWindowScroll = function () {
+		var top = window.pageYOffset || document.documentElement.scrollTop;
+
+		if ( top > $( '#masthead' ).outerHeight() ) {
+			if ( ! $( '#scroll-to-top' ).hasClass( 'show' ) ) {
+				$( '#scroll-to-top' ).css( 'pointer-events', 'auto' ).addClass( 'show' );
+			}
+		} else {
+			if ( $( '#scroll-to-top' ).hasClass( 'show' ) ) {
+				$( '#scroll-to-top' ).css( 'pointer-events', 'none' ).removeClass( 'show' );
+			}
+		}
+	};
+	sttWindowScroll();
+	$( window ).scroll( sttWindowScroll );
+	$( '#scroll-to-top' ).click( function () {
+		$( 'html, body' ).animate( { scrollTop: 0 } );
+	} );	
+
 	// Sticky menu
 	if ( $( '.sticky-bar' ).hasClass( 'sticky-menu' ) ) {
 		var $sbs = false,
@@ -139,7 +159,7 @@ jQuery( function( $ ) {
 		var smSetup = function() {
 
 			if ( $sbs === false ) {
-				$sbs = $( '<div class="sticky-bar-sentinel"></div>' ).insertAfter( $sb );
+				$sbs = $( '<div class="sticky-bar-sentinel"></div>' ).insertBefore( $sb );
 			}
 			// Toggle .topbar-out with visibility of top-bar in the viewport
 			if ( $( 'body' ).hasClass( 'sticky-menu' ) && ! $sbs.unwindIsVisible() ) {

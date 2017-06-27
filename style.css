@@ -654,6 +654,8 @@ a {
         transform: scaleY(0);
         visibility: hidden;
         z-index: 99999; }
+        .header-design-4 .main-navigation > div ul ul {
+          top: 33px; }
         .main-navigation > div ul ul ul {
           left: 100%;
           top: 0; }
@@ -1042,6 +1044,37 @@ a {
 
 .breadcrumbs.bcn span {
   padding: 0 2px; }
+
+/*--------------------------------------------------------------
+## Scroll to Top
+--------------------------------------------------------------*/
+#scroll-to-top {
+  background: rgba(0, 0, 0, 0.4);
+  bottom: 20px;
+  cursor: pointer;
+  height: 44px;
+  line-height: 0;
+  opacity: 0;
+  padding-top: 17px;
+  position: fixed;
+  right: 20px;
+  transform: scale(0);
+  transition: .3s;
+  text-align: center;
+  width: 50px;
+  z-index: 101; }
+  #scroll-to-top svg path {
+    fill: #fff; }
+  #scroll-to-top img,
+  #scroll-to-top svg {
+    display: inline-block;
+    height: 11px;
+    width: 18px; }
+  #scroll-to-top:hover {
+    background: rgba(0, 0, 0, 0.65); }
+  #scroll-to-top.show {
+    opacity: 1;
+    transform: scale(1); }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -1468,7 +1501,7 @@ a {
   #masthead .sticky-bar {
     background: #fff;
     position: relative;
-    z-index: 25; }
+    z-index: 101; }
     #masthead .sticky-bar::after {
       clear: both;
       content: "";
@@ -1531,6 +1564,8 @@ a {
       #masthead .site-branding .site-title a {
         color: #2d2d2d;
         text-decoration: none; }
+    #masthead .site-branding a {
+      display: inline-block; }
     #masthead .site-branding .site-description {
       font-size: 14.9328px;
       font-size: 0.9333rem;

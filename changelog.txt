@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.14 - 27 June 2017 =
+* Improved sticky menu initiation.
+* Fixed drop down menu position in header layout layout 4 (Menu in line with logo).
+* Added a Scroll to Top button. Turned off by default. Setting found at Customize > Theme Settings > Navigation.
+* Further fix to header z-index issue.
+* Removed extra logo margin incorrectly displaying.
+
 = 1.0.13 - 19 June 2017 =
 * Fixed mini-cart overflow issue.
 * Fixed header z-index issue.

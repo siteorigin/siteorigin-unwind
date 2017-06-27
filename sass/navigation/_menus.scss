@@ -25,6 +25,10 @@
 				visibility: hidden;
 				z-index: 99999;
 
+				@at-root .header-design-4 & {
+					top: 33px;
+				}
+
 				ul {
 					left: 100%;
 					top: 0;

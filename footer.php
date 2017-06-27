@@ -52,6 +52,13 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php if ( siteorigin_setting( 'navigation_scroll_to_top' ) ) : ?>
+	<div id="scroll-to-top">
+		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-unwind' ); ?></span>
+		<?php siteorigin_unwind_display_icon( 'up-arrow' ); ?>
+	</div>
+<?php endif; ?>
+
 <?php wp_footer(); ?>
 
 </body>
