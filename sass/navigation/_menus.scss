@@ -399,6 +399,14 @@ $sel: '';
 	}
 }
 
+.blog-columns-2,
+.blog-columns-3 {
+	.posts-navigation {
+		float: left;
+		width: 100%;
+	}
+}
+
 // Archive and comments: next and previous page navigation.
 .posts-navigation .nav-links,
 .comment-navigation .nav-links {
