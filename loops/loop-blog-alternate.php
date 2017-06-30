@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop Name: Blog Grid
+ * Loop Name: Blog Alternate
  *
  * @package siteorigin-unwind
  * @license GPL 2.0
@@ -22,7 +22,7 @@ if ( have_posts() ) :
 	/* Start the Loop */
 	while ( have_posts() ) : the_post();
 
-		get_template_part( 'template-parts/content', 'grid' );
+		get_template_part( 'template-parts/content', 'alternate' );
 
 	endwhile;
 

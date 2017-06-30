@@ -171,18 +171,15 @@
 ## Blog Layouts
 --------------------------------------------------------------*/
 .blog-layout-grid {
-
 	.site-main {
-		@include clearfix;
-
 		.archive-entry {
 			border-bottom: none;
 			display: inline-block;
-			vertical-align: top;
-			padding-bottom: 0;
-			width: 32%;
 			margin-left: -4px;
 			margin-right: 2%;
+			padding-bottom: 0;
+			vertical-align: top;
+			width: 32%;
 
 			&:nth-child(3n+3) {
 				margin-right: 0;
@@ -199,20 +196,20 @@
 			}
 
 			.entry-thumbnail {
-				position: relative;
 				margin-bottom: 20px;
+				position: relative;
 
 				.entry-cats {
-					position: absolute;
 					left: 10px;
+					position: absolute;
 					top: 10px;
 
 					a {
-						text-transform: uppercase;
-						color: #e0e0e0;
-						padding: 5px;
 						background: #303030;
+						color: #e0e0e0;
 						font-size: 11px;
+						padding: 5px;
+						text-transform: uppercase;
 					}
 				}
 			}
@@ -225,8 +222,92 @@
 
 			@media (max-width: 640px) {
 				display: block;
-				width: 100%;
 				margin: 0;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.blog-layout-alternate {
+	.site-main {
+		.archive-entry {
+			@include clearfix;
+
+			.entry-meta {
+				@include justify-content(left);
+			}
+
+			.entry-title {
+				@include font-size(2);
+				margin: 0.2em 0 10px;
+				text-align: left;
+			}
+
+			.entry-thumbnail {
+				margin-bottom: 0;
+				width: 35%;
+				float: left;
+				position: relative;
+
+				.entry-cats {
+					left: 10px;
+					position: absolute;
+					top: 10px;
+
+					a {
+						background: #303030;
+						color: #e0e0e0;
+						font-size: 11px;
+						padding: 5px;
+						text-transform: uppercase;
+					}
+				}
+			}
+
+			.entry-content {
+				width: 60%;
+				margin-left: 5%;
+				float: right;
+
+				p {
+					margin-bottom: 0;
+				}
+			}
+
+			@media (max-width: 640px) {
+				display: block;
+				margin: 0;
+				width: 100%;
+			}
+
+			&:nth-child(even) {
+				.entry-thumbnail {
+					float: right;
+				}
+
+				.entry-content {
+					float: left;
+					margin-left: 0;
+					margin-right: 5%;
+				}
+			}
+
+			@media (max-width: 640px) {
+				margin-bottom: 5em;
+
+				.entry-thumbnail {
+					float: none;
+					width: 100%;
+					margin-bottom: 20px;
+				}
+
+				.entry-content {
+					float: none;
+					margin-left: 0;
+					margin-right: 0;
+					width: 100%;
+				}
 			}
 		}
 	}
