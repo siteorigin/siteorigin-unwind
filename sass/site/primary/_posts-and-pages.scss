@@ -168,6 +168,71 @@
 }
 
 /*--------------------------------------------------------------
+## Blog Layouts
+--------------------------------------------------------------*/
+.blog-layout-grid {
+
+	.site-main {
+		@include clearfix;
+
+		.archive-entry {
+			border-bottom: none;
+			display: inline-block;
+			vertical-align: top;
+			padding-bottom: 0;
+			width: 32%;
+			margin-left: -4px;
+			margin-right: 2%;
+
+			&:nth-child(3n+3) {
+				margin-right: 0;
+			}
+
+			.entry-meta {
+				@include justify-content(left);
+			}
+
+			.entry-title {
+				@include font-size(1.33);
+				margin: 0.2em 0 5px;
+				text-align: left;
+			}
+
+			.entry-thumbnail {
+				position: relative;
+				margin-bottom: 20px;
+
+				.entry-cats {
+					position: absolute;
+					left: 10px;
+					top: 10px;
+
+					a {
+						text-transform: uppercase;
+						color: #e0e0e0;
+						padding: 5px;
+						background: #303030;
+						font-size: 11px;
+					}
+				}
+			}
+
+			.entry-content {
+				p {
+					margin-bottom: 0;
+				}
+			}
+
+			@media (max-width: 640px) {
+				display: block;
+				width: 100%;
+				margin: 0;
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
 ## Archives & Search Results
 --------------------------------------------------------------*/
 .archive,

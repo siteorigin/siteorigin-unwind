@@ -55,6 +55,10 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'no-active-wc-sidebar';
 	}
 
+	if ( siteorigin_setting( 'blog_archive_layout' ) ) {
+		$classes[] = 'blog-layout-' . siteorigin_setting( 'blog_archive_layout' );
+	}
+
 	// Add the page setting classes.
 	$page_settings = siteorigin_page_setting();
 

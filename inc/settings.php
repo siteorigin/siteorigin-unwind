@@ -235,7 +235,6 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Post Layout', 'siteorigin-unwind' ),
 					'options' => array(
 						'default' => esc_html__( 'Default', 'siteorigin-unwind' ),
-						'masonry'  => esc_html__( 'Masonry', 'siteorigin-unwind' ),
 						'grid'  => esc_html__( 'Grid', 'siteorigin-unwind' ),
 						'left-info'  => esc_html__( 'Left Info', 'siteorigin-unwind' ),
 						'alternate'  => esc_html__( 'Alternate', 'siteorigin-unwind' ),
@@ -249,7 +248,7 @@ function siteorigin_unwind_settings_init() {
 						'full' => esc_html__( 'Full Post', 'siteorigin-unwind' ),
 						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-unwind' ),
 					),
-					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag.', 'siteorigin-unwind'),
+					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag. Applies for the default post layout only.', 'siteorigin-unwind'),
 				),
 				'excerpt_more' => array(
 					'type' => 'checkbox',

@@ -310,7 +310,7 @@ if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time, category and comment count.
  */
-function siteorigin_unwind_post_meta() {
+function siteorigin_unwind_post_meta( $cats = true ) {
 
 	/* translators: used between list items, there is a space after the comma */
 	$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-unwind' ) );
@@ -342,7 +342,7 @@ function siteorigin_unwind_post_meta() {
 	<?php } ?>
 
 
-	<?php if ( $categories_list && siteorigin_unwind_categorized_blog() && siteorigin_setting( 'blog_display_category' ) ) {
+	<?php if ( $categories_list && siteorigin_unwind_categorized_blog() && siteorigin_setting( 'blog_display_category' ) && $cats == true ) {
 		printf( '<span class="entry-category">' . esc_html__( '%1$s', 'siteorigin-unwind' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 	} ?>
 
@@ -566,7 +566,7 @@ function siteorigin_unwind_display_icon( $type ) {
 				<path fill="#fff" d="M50.276 32l-22.829-22.829-22.829 22.829-4.553-4.553 27.382-27.415 27.415 27.415z"></path>
 			</svg>
 			<?php
-			break;			
+			break;
 
 	}
 }
