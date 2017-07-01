@@ -236,10 +236,9 @@ function siteorigin_unwind_settings_init() {
 					'options' => array(
 						'default' => esc_html__( 'Default', 'siteorigin-unwind' ),
 						'grid'  => esc_html__( 'Grid', 'siteorigin-unwind' ),
-						'left-info'  => esc_html__( 'Left Info', 'siteorigin-unwind' ),
 						'alternate'  => esc_html__( 'Alternate', 'siteorigin-unwind' ),
 					),
-					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag.', 'siteorigin-unwind'),
+					'description' => esc_html__('Choose how to display your posts on the blog and archive pages.', 'siteorigin-unwind'),
 				),
 				'archive_content' => array(
 					'type' => 'select',
