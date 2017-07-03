@@ -10,18 +10,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-entry' ); ?>>
 
-	<div class="entry-thumbnail">
-		<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
+	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
+		<div class="entry-thumbnail">
 			<a href="<?php the_permalink() ?>">
 				<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'aligncenter' ) ); ?>
 			</a>
-		<?php endif; ?>
-
-		<div class="entry-cats">
-			<?php the_category( ' ' ); ?>
+			<div class="entry-cats">
+				<?php the_category( ' ' ); ?>
+			</div>
 		</div>
-	</div>
-
+	<?php endif; ?>
 
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
@@ -35,7 +33,8 @@
 
 	<div class="entry-content">
 		<?php
-			the_excerpt();
+			if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) the_excerpt();
+			else the_content();
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',
@@ -44,7 +43,6 @@
 				'link_after'  => '</span>',
 			) );
 		?>
-		<p><a href="<?php the_permalink() ?>"><?php echo esc_html__( 'Continue Reading', 'siteorigin-unwind' ) ?> &rarr;</a></p>
 	</div><!-- .entry-content -->
 
 </article>
