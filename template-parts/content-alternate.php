@@ -3,6 +3,7 @@
  * Template part for displaying alternate posts
  *
  * @package siteorigin-unwind
+ * @since siteorigin-unwind 1.1 
  * @license GPL 2.0
  */
 ?>
@@ -10,7 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-entry' ); ?>>
 
 	<div class="entry-thumbnail">
-		<?php if( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
+		<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
 			<a href="<?php the_permalink() ?>">
 				<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'aligncenter' ) ); ?>
 			</a>
