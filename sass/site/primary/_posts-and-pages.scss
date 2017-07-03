@@ -175,15 +175,21 @@
 	.archive-entry {
 		border-bottom: none;
 		float: left;
-		margin-right: 30px;
+		margin-right: 3.5%;
 		padding-bottom: 0;
 		vertical-align: top;
-		width: 30.97%;
+		width: 31%;	
 
 		&:nth-child(3n+3) {
 			clear: right;
 			margin-right: 0;
 		}
+
+		@media (max-width: 640px) {
+			display: block;
+			margin: 0;
+			width: 100%;
+		}			
 
 		.entry-meta {
 			@include justify-content(left);
@@ -217,18 +223,31 @@
 			}
 		}
 
-		.entry-content {
-
-			p {
-				margin-bottom: 0;
-			}
-		}
-
-		@media (max-width: 640px) {
-			display: block;
-			margin: 0;
-			width: 100%;
-		}
+		.more-link {
+		    display: block;
+		    color: $color__primary-accent;
+		    font-size: 0.9333em; 
+		    text-align: left;
+		    text-decoration: none;
+		    text-transform: none;
+		    padding-top: 1.9833em;
+		    
+			&:hover {
+				color: $color__text-medium;
+			}		    
+		    
+		    .more-text {
+				border: none;
+    			font-family: $font__main; 
+    			letter-spacing: normal;
+    			padding: 0;
+    			
+    			&:after {
+    				content: '\279E';
+    				margin-left: 7px; 
+    			}
+		    }
+		}		
 	}
 }
 
