@@ -232,7 +232,7 @@ function siteorigin_unwind_settings_init() {
 				),
 				'archive_layout' => array(
 					'type' => 'select',
-					'label' => esc_html__( 'Post Layout', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Blog Archive Layout', 'siteorigin-unwind' ),
 					'options' => array(
 						'default' => esc_html__( 'Default', 'siteorigin-unwind' ),
 						'grid'  => esc_html__( 'Grid', 'siteorigin-unwind' ),
