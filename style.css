@@ -1885,13 +1885,13 @@ a {
 --------------------------------------------------------------*/
 .blog-layout-grid .archive-entry {
   border-bottom: none;
-  display: inline-block;
-  margin-right: 2%;
-  margin-left: -4px;
+  float: left;
+  margin-right: 30px;
   padding-bottom: 0;
   vertical-align: top;
-  width: 32%; }
+  width: 30.97%; }
   .blog-layout-grid .archive-entry:nth-child(3n+3) {
+    clear: right;
     margin-right: 0; }
   .blog-layout-grid .archive-entry .entry-meta {
     -webkit-box-pack: left;
@@ -1904,22 +1904,25 @@ a {
     justify-content: left;
     -ms-flex-pack: left; }
   .blog-layout-grid .archive-entry .entry-title {
-    font-size: 21.28px;
-    font-size: 1.33rem;
-    margin: 0.2em 0 5px;
+    font-size: 17.0656px;
+    font-size: 1.0666rem;
+    margin: 10px 0 9px;
     text-align: left; }
   .blog-layout-grid .archive-entry .entry-thumbnail {
-    margin-bottom: 20px;
+    margin-bottom: 17px;
     position: relative; }
     .blog-layout-grid .archive-entry .entry-thumbnail .entry-cats {
-      left: 10px;
+      left: 12px;
       position: absolute;
-      top: 10px; }
+      top: 12px; }
       .blog-layout-grid .archive-entry .entry-thumbnail .entry-cats a {
-        background: #303030;
-        color: #e0e0e0;
+        background: #06090b;
+        color: #fff;
+        font-family: "Lato", sans-serif;
         font-size: 11px;
-        padding: 5px;
+        line-height: normal;
+        letter-spacing: .1em;
+        padding: 7px 9px;
         text-transform: uppercase; }
   .blog-layout-grid .archive-entry .entry-content p {
     margin-bottom: 0; }
@@ -1957,14 +1960,17 @@ a {
   position: relative;
   width: 35%; }
   .blog-layout-alternate .archive-entry .entry-thumbnail .entry-cats {
-    left: 10px;
+    left: 12px;
     position: absolute;
-    top: 10px; }
+    top: 12px; }
     .blog-layout-alternate .archive-entry .entry-thumbnail .entry-cats a {
-      background: #303030;
-      color: #e0e0e0;
+      background: #06090b;
+      color: #fff;
+      font-family: "Lato", sans-serif;
       font-size: 11px;
-      padding: 5px;
+      line-height: normal;
+      letter-spacing: .1em;
+      padding: 7px 9px;
       text-transform: uppercase; }
 
 .blog-layout-alternate .archive-entry .entry-content {

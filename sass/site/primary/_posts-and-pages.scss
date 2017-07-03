@@ -174,14 +174,14 @@
 
 	.archive-entry {
 		border-bottom: none;
-		display: inline-block;
-		margin-right: 2%;
-		margin-left: -4px;
+		float: left;
+		margin-right: 30px;
 		padding-bottom: 0;
 		vertical-align: top;
-		width: 32%;
+		width: 30.97%;
 
 		&:nth-child(3n+3) {
+			clear: right;
 			margin-right: 0;
 		}
 
@@ -190,25 +190,28 @@
 		}
 
 		.entry-title {
-			@include font-size(1.33);
-			margin: 0.2em 0 5px;
+			@include font-size(1.0666);
+			margin: 10px 0 9px;
 			text-align: left;
 		}
 
 		.entry-thumbnail {
-			margin-bottom: 20px;
+			margin-bottom: 17px;
 			position: relative;
 
 			.entry-cats {
-				left: 10px;
+				left: 12px;
 				position: absolute;
-				top: 10px;
+				top: 12px;
 
 				a {
-					background: #303030;
-					color: #e0e0e0;
+					background: #06090b;
+					color: #fff;
+					font-family: $font__details; 
 					font-size: 11px;
-					padding: 5px;
+					line-height: normal;
+					letter-spacing: .1em;
+					padding: 7px 9px;
 					text-transform: uppercase;
 				}
 			}
@@ -251,15 +254,18 @@
 			width: 35%;
 
 			.entry-cats {
-				left: 10px;
+				left: 12px;
 				position: absolute;
-				top: 10px;
+				top: 12px;
 
 				a {
-					background: #303030;
-					color: #e0e0e0;
+					background: #06090b;
+					color: #fff;
+					font-family: $font__details; 
 					font-size: 11px;
-					padding: 5px;
+					line-height: normal;
+					letter-spacing: .1em;
+					padding: 7px 9px;
 					text-transform: uppercase;
 				}
 			}
