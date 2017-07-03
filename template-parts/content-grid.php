@@ -13,7 +13,7 @@
 	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink() ?>">
-				<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'aligncenter' ) ); ?>
+				<?php the_post_thumbnail( 'siteorigin-unwind-360x238-crop' ); ?>
 			</a>
 			<div class="entry-cats">
 				<?php the_category( ' ' ); ?>
