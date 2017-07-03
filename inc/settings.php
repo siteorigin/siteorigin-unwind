@@ -171,7 +171,7 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Scroll to Top', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Display scroll to top button.', 'siteorigin-unwind' ),
-				),				
+				),
 			),
 		),
 
@@ -230,14 +230,24 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Featured image on single post.', 'siteorigin-unwind' ),
 				),
-				'archive_content'	=> array(
-					'type'	=> 'select',
-					'label'	=> esc_html__( 'Post Content', 'siteorigin-unwind' ),
+				'archive_layout' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Post Layout', 'siteorigin-unwind' ),
+					'options' => array(
+						'default' => esc_html__( 'Default', 'siteorigin-unwind' ),
+						'grid'  => esc_html__( 'Grid', 'siteorigin-unwind' ),
+						'alternate'  => esc_html__( 'Alternate', 'siteorigin-unwind' ),
+					),
+					'description' => esc_html__('Choose how to display your posts on the blog and archive pages.', 'siteorigin-unwind'),
+				),
+				'archive_content' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Post Content', 'siteorigin-unwind' ),
 					'options' => array(
 						'full' => esc_html__( 'Full Post', 'siteorigin-unwind' ),
 						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-unwind' ),
 					),
-					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag.', 'siteorigin-unwind'),
+					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag. Applies for the default post layout only.', 'siteorigin-unwind'),
 				),
 				'excerpt_more' => array(
 					'type' => 'checkbox',
@@ -1199,7 +1209,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['navigation_sticky']               = true;
 	$defaults['navigation_mobile_menu_collapse'] = 768;
 	$defaults['navigation_post']                 = true;
-	$defaults['navigation_scroll_to_top']        = false;			
+	$defaults['navigation_scroll_to_top']        = false;
 
 	// Icons.
 	$defaults['icons_menu']              = false;
@@ -1215,6 +1225,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_featured_slider_overlay'] = false;
 	$defaults['blog_featured_archive']        = true;
 	$defaults['blog_featured_single']         = true;
+	$defaults['blog_archive_layout']          = 'default';
 	$defaults['blog_archive_content']         = 'full';
 	$defaults['blog_excerpt_more']         	  = false;
 	$defaults['blog_display_related_posts']   = true;
