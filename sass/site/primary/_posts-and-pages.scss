@@ -171,11 +171,12 @@
 ## Blog Layouts
 --------------------------------------------------------------*/
 .blog-layout-grid {
+
 	.archive-entry {
 		border-bottom: none;
 		display: inline-block;
-		margin-left: -4px;
 		margin-right: 2%;
+		margin-left: -4px;
 		padding-bottom: 0;
 		vertical-align: top;
 		width: 32%;
@@ -214,6 +215,7 @@
 		}
 
 		.entry-content {
+
 			p {
 				margin-bottom: 0;
 			}
@@ -228,6 +230,7 @@
 }
 
 .blog-layout-alternate {
+
 	.archive-entry {
 		@include clearfix;
 
@@ -279,18 +282,20 @@
 		}
 
 		&:nth-child(even) {
+
 			.entry-thumbnail {
 				float: right;
 			}
 
 			.entry-content {
 				float: left;
-				margin-left: 0;
 				margin-right: 5%;
+				margin-left: 0;
 			}
 		}
 
 		@media (max-width: 640px) {
+
 			margin-bottom: 5em;
 
 			.entry-thumbnail {
@@ -301,8 +306,8 @@
 
 			.entry-content {
 				float: none;
-				margin-left: 0;
 				margin-right: 0;
+				margin-left: 0;
 				width: 100%;
 			}
 		}
