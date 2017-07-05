@@ -188,7 +188,7 @@
 
 		@media (max-width: 640px) {
 			display: block;
-			margin: 0;
+			margin-right: 0;
 			width: 100%;
 		}			
 
@@ -210,6 +210,7 @@
 				left: 12px;
 				position: absolute;
 				top: 12px;
+				max-width: 92%; 
 
 				a {
 					background: #06090b;
@@ -220,6 +221,7 @@
 					letter-spacing: .1em;
 					padding: 7px 9px;
 					text-transform: uppercase;
+					word-wrap: break-word;
 				}
 			}
 		}
