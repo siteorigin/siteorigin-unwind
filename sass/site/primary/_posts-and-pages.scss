@@ -182,11 +182,15 @@
 		width: 31%;	
 
 		&:nth-child(3n+3) {
-			clear: right;
 			margin-right: 0;
 		}
 
+		&:nth-child(3n+4) {
+			clear: left;
+		}		
+
 		@media (max-width: 640px) {
+			clear: none;
 			display: block;
 			margin-right: 0;
 			width: 100%;
@@ -210,17 +214,18 @@
 				left: 12px;
 				position: absolute;
 				top: 12px;
-				max-width: 92%; 
+				max-width: 92%;
 
 				a,
 				span {
 					background: #06090b;
 					color: #fff;
+					display: inline-block;
 					font-family: $font__details; 
 					font-size: 11px;
 					line-height: normal;
 					letter-spacing: .1em;
-					margin-right: 5px; 
+					margin: 0 5px 5px 0; 
 					padding: 7px 9px;
 					text-transform: uppercase;
 					word-wrap: break-word;
