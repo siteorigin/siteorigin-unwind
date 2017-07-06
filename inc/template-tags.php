@@ -292,6 +292,16 @@ function siteorigin_unwind_read_more_link() {
 endif;
 add_filter( 'the_content_more_link', 'siteorigin_unwind_read_more_link' );
 
+if ( ! function_exists( 'siteorigin_unwind_excerpt_length' ) ) :
+/**
+ * Filter the excerpt length.
+ */
+function siteorigin_unwind_excerpt_length( $length ) {
+	return siteorigin_setting( 'blog_excerpt_length' );
+}
+add_filter( 'excerpt_length', 'siteorigin_unwind_excerpt_length', 10 );
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_excerpt_more' ) ) :
 /**
  * Add a more link to the excerpt.

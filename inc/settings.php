@@ -249,6 +249,11 @@ function siteorigin_unwind_settings_init() {
 					),
 					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag. Applies for the default post layout only.', 'siteorigin-unwind'),
 				),
+				'excerpt_length' => array(
+					'type' => 'number',
+					'label' => esc_html__( 'Excerpt Length', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'If no manual post excerpt is added one will be generated. Choose how many words it should be.', 'siteorigin-unwind' ),
+				),				
 				'excerpt_more' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-unwind' ),
@@ -1227,6 +1232,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_featured_single']         = true;
 	$defaults['blog_archive_layout']          = 'default';
 	$defaults['blog_archive_content']         = 'full';
+	$defaults['blog_excerpt_length']          = 55;
 	$defaults['blog_excerpt_more']         	  = false;
 	$defaults['blog_display_related_posts']   = true;
 	$defaults['blog_display_author_box']      = true;
