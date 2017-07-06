@@ -329,7 +329,7 @@ function siteorigin_unwind_post_meta( $cats = true ) {
 		$comments = NULL;
 	} ?>
 
-	<?php if ( is_sticky() && is_home() && ! is_paged() ) {
+	<?php if ( is_sticky() && is_home() && ! is_paged() && ! siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) {
 		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
 	} ?>
 
@@ -351,6 +351,22 @@ function siteorigin_unwind_post_meta( $cats = true ) {
 	} ?>
 
 <?php }
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_thumbnail_meta' ) ) :
+/**
+ * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
+ */
+function siteorigin_unwind_thumbnail_meta() {
+	echo '<div class="thumbnail-meta">';
+	if ( is_sticky() && is_home() && ! is_paged() ) {
+		echo '<span>' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
+	}
+	if ( has_category() ) {
+		the_category( ' ' );
+	}
+	echo '</div>';
+}
 endif;
 
 if ( ! function_exists( 'siteorigin_unwind_posts_navigation' ) ) :

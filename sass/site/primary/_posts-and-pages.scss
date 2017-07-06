@@ -206,19 +206,21 @@
 			margin: 0 auto 17px;
 			position: relative;
 
-			.entry-cats {
+			.thumbnail-meta {
 				left: 12px;
 				position: absolute;
 				top: 12px;
 				max-width: 92%; 
 
-				a {
+				a,
+				span {
 					background: #06090b;
 					color: #fff;
 					font-family: $font__details; 
 					font-size: 11px;
 					line-height: normal;
 					letter-spacing: .1em;
+					margin-right: 5px; 
 					padding: 7px 9px;
 					text-transform: uppercase;
 					word-wrap: break-word;
@@ -282,12 +284,13 @@
 			position: relative;
 			width: 35%;
 
-			.entry-cats {
+			.thumbnail-meta {
 				left: 12px;
 				position: absolute;
 				top: 12px;
 
-				a {
+				a,
+				span {
 					background: #06090b;
 					color: #fff;
 					font-family: $font__details; 

@@ -15,9 +15,7 @@
 			<a href="<?php the_permalink() ?>">
 				<?php the_post_thumbnail( 'siteorigin-unwind-360x238-crop' ); ?>
 			</a>
-			<div class="entry-cats">
-				<?php the_category( ' ' ); ?>
-			</div>
+			<?php siteorigin_unwind_thumbnail_meta(); ?>
 		</div>
 	<?php endif; ?>
 
