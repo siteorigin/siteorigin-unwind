@@ -4,8 +4,8 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
-Requires at least: 4.1
-Tested up to: 4.7
+Requires at least: 4.7
+Tested up to: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,17 +35,17 @@ SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully respons
 
 SiteOrigin Unwind includes support for:
 
-* Breadcrumb NavXT
-* Jetpack Featured Content
-* Jetpack Infinite Scroll
-* Jetpack Related Posts
-* Jetpack Responsive Videos
-* SiteOrigin CSS
-* SiteOrigin Page Builder
-* SiteOrigin Widgets Bundle 
-* WooCommerce
-* Yet Another Related Posts Plugin (YARPP)
-* Yoast Breadcrumbs
+* [Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
+* [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
+* [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
+* [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
+* [Jetpack Responsive Videos](https://jetpack.com/support/responsive-videos/)
+* [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
+* [SiteOrigin Page Builder](https://wordpress.org/plugins/siteorigin-panels/)
+* [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
+* [WooCommerce](https://wordpress.org/plugins/woocommerce/)
+* [Yet Another Related Posts Plugin (YARPP)](https://wordpress.org/plugins/yet-another-related-posts-plugin/)
+* [Yoast Breadcrumbs](https://wordpress.org/plugins/wordpress-seo/)
 
 == License ==
 
