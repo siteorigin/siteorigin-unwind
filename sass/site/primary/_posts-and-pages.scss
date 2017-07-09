@@ -181,13 +181,29 @@
 		vertical-align: top;
 		width: 31%;	
 
-		&:nth-child(3n+3) {
-			margin-right: 0;
-		}
+		@media (min-width: 890px) {
 
-		&:nth-child(3n+4) {
-			clear: left;
-		}		
+			&:nth-child(3n+3) {
+				margin-right: 0;			
+			}
+
+			&:nth-child(3n+4) {
+				clear: left;
+			}			
+		}			
+
+		@media (max-width: 890px) {
+			width: 48.25%;
+			
+			&:nth-child(2n) {
+				background: red;
+				margin-right: 0; 
+			}		
+			
+			&:nth-child(3n) {
+				clear: right;
+			}
+		}
 
 		@media (max-width: 640px) {
 			clear: none;
@@ -689,7 +705,9 @@
 }
 
 .no-active-sidebar .left-medium-loop {
+
 	article {
+	
 		.entry-thumbnail {
 			width: 34.452830188679%;
 
