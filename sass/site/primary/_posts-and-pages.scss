@@ -180,37 +180,73 @@
 		padding-bottom: 0;
 		vertical-align: top;
 		width: 31%;	
+		
+		@at-root body:not(.no-active-sidebar) & {		
 
-		@media (min-width: 890px) {
+			@media (min-width: 1175px) {
 
-			&:nth-child(3n+3) {
-				margin-right: 0;			
-			}
+				&:nth-child(3n+3) {
+					margin-right: 0;			
+				}
 
-			&:nth-child(3n+4) {
-				clear: left;
+				&:nth-child(3n+4) {
+					clear: left;
+				}			
 			}			
-		}			
 
-		@media (max-width: 890px) {
-			width: 48.25%;
-			
-			&:nth-child(2n) {
-				background: red;
-				margin-right: 0; 
-			}		
-			
-			&:nth-child(3n) {
-				clear: right;
+			@media (max-width: 1175px) {
+				width: 48.25%;
+				
+				&:nth-child(2n) {
+					margin-right: 0; 
+				}		
+				
+				&:nth-child(3n) {
+					clear: right;
+				}
 			}
+
+			@media (max-width: 640px) {
+				clear: none;
+				display: block;
+				margin-right: 0;
+				width: 100%;
+			}			
 		}
 
-		@media (max-width: 640px) {
-			clear: none;
-			display: block;
-			margin-right: 0;
-			width: 100%;
-		}			
+		@at-root .no-active-sidebar & {
+
+			@media (min-width: 890px) {
+
+				&:nth-child(3n+3) {
+					margin-right: 0;			
+				}
+
+				&:nth-child(3n+4) {
+					clear: left;
+				}			
+			}			
+
+			@media (max-width: 890px) {
+				width: 48.25%;
+				
+				&:nth-child(2n) {
+					margin-right: 0; 
+				}		
+				
+				&:nth-child(3n) {
+					clear: right;
+				}
+			}
+
+			@media (max-width: 640px) {
+				clear: none;
+				display: block;
+				margin-right: 0;
+				width: 100%;
+			}			
+
+		}					
 
 		.entry-meta {
 			@include justify-content(left);
