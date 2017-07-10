@@ -1,6 +1,6 @@
 == Changelog ==
 
-= 1.1 - 10 July 2017 =
+= 1.1.0 - 10 July 2017 =
 * Added two new blog layouts, Grid and Alternate.
 * Added a post excerpt length setting.
 
