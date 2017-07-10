@@ -372,10 +372,25 @@ function siteorigin_unwind_thumbnail_meta() {
 	if ( is_sticky() && is_home() && ! is_paged() ) {
 		echo '<span>' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
 	}
-	if ( has_category() ) {
-		the_category( ' ' );
-	}
+	siteorigin_unwind_three_categories();
 	echo '</div>';
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_three_categories' ) ) :
+/**
+ * Display only the first 3 categories
+ */
+function siteorigin_unwind_three_categories() {
+	if ( has_category() ) {
+		$categories = array_slice( get_the_category(), 0, 3 );
+
+		foreach ( $categories as $category ) {
+			if ( $category ) {
+				echo '<a href="' . get_category_link( $category->term_id ) . '">' . $category->cat_name . '</a>';
+			}
+		}
+	}
 }
 endif;
 
