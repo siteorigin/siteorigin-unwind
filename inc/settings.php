@@ -427,8 +427,8 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  * @return string
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
-	// Custom CSS Code
-	$css .= '/* style */
+// Custom CSS Code
+$css .= '/* style */
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -482,6 +482,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	.main-navigation > div li:hover > a,.main-navigation > div li.focus > a {
 	color: ${fonts_text_dark};
+	}
+	.header-design-4 .main-navigation {
+	padding: ${masthead_padding}/2 0;
 	}
 	.social-search .search-toggle .open .svg-icon-search path {
 	fill: ${fonts_text_medium};
@@ -614,6 +617,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#masthead .site-branding .site-title a {
 	color: ${fonts_text_dark};
 	}
+	.header-design-4 #masthead .site-branding {
+	padding: ${masthead_padding}/2 0;
+	}
 	#fullscreen-search h3 {
 	color: ${fonts_text_medium};
 	.font( ${fonts_details} );
@@ -623,6 +629,24 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	#fullscreen-search form button[type="submit"] svg {
 	fill: ${fonts_text_light};
+	}
+	@-webkit-keyframes "spin" {
+	from {
+	}
+	to {
+	}
+	}
+	@-moz-keyframes "spin" {
+	from {
+	}
+	to {
+	}
+	}
+	@keyframes "spin" {
+	from {
+	}
+	to {
+	}
 	}
 	.entry-meta {
 	.font( ${fonts_details} );
@@ -667,6 +691,30 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	.tags-list a:hover {
 	background: ${fonts_text_medium};
+	}
+	.blog-layout-grid .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-grid .archive-entry .entry-thumbnail .thumbnail-meta span {
+	.font( ${fonts_details} );
+	}
+	.blog-layout-grid .archive-entry .more-link {
+	color: ${branding_accent};
+	}
+	.blog-layout-grid .archive-entry .more-link:hover {
+	color: ${fonts_text_medium};
+	}
+	.blog-layout-grid .archive-entry .more-link .more-text {
+	.font( ${fonts_main} );
+	}
+	.blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta span {
+	.font( ${fonts_details} );
+	}
+	.blog-layout-alternate .archive-entry .entry-content .more-link {
+	color: ${branding_accent};
+	}
+	.blog-layout-alternate .archive-entry .entry-content .more-link:hover {
+	color: ${fonts_text_medium};
+	}
+	.blog-layout-alternate .archive-entry .entry-content .more-link .more-text {
+	.font( ${fonts_main} );
 	}
 	.archive .container > .page-header,.search .container > .page-header {
 	margin-bottom: ${masthead_bottom_margin};
@@ -751,6 +799,15 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#colophon.unconstrained-footer .container {
 	padding: 0 ${footer_side_padding};
 	}
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a {
+	color: ${fonts_text_dark};
+	}
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a:hover {
+	color: ${fonts_text_medium};
+	}
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post p {
+	color: ${fonts_text_light};
+	}
 	.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button:hover,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button:hover,#page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button:hover {
 	color: ${fonts_text_dark};
 	}';
@@ -769,7 +826,7 @@ if ( ! function_exists( 'siteorigin_unwind_wc_settings_custom_css' ) ) :
 function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
 	// Custom WooCommerce CSS Code
-	$css .= '	/* woocommerce */
+	$css .= ' /* woocommerce */
 	.woocommerce.woocommerce-page #respond input#submit.alt.disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],.woocommerce.woocommerce-page a.button.alt.disabled,.woocommerce.woocommerce-page a.button.alt:disabled,.woocommerce.woocommerce-page a.button.alt:disabled[disabled],.woocommerce.woocommerce-page button.button.alt.disabled,.woocommerce.woocommerce-page button.button.alt:disabled,.woocommerce.woocommerce-page button.button.alt:disabled[disabled],.woocommerce.woocommerce-page input.button.alt.disabled,.woocommerce.woocommerce-page input.button.alt:disabled,.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
 	background-color: ${branding_accent};
 	border: 1px solid ${branding_accent};
@@ -810,7 +867,7 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	background-color: ${branding_accent};
 	.font( ${fonts_details} );
 	}
-	.woocommerce ul.products li.product h3:hover {
+	.woocommerce ul.products li.product .woocommerce-loop-product__title:hover {
 	color: ${fonts_text_medium};
 	}
 	.woocommerce ul.products li.product .price {
@@ -825,10 +882,10 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	.woocommerce ul.products li.product .loop-product-thumbnail {
 	background: ${branding_accent_dark};
 	}
-	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped {
+	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_variable {
 	color: ${fonts_text_dark};
 	}
-	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped:hover {
+	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_variable:hover {
 	border: 2px solid ${fonts_text_dark};
 	}
 	.woocommerce ul.products li.product .loop-product-thumbnail .product-quick-view-button:hover {
