@@ -171,7 +171,7 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Scroll to Top', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Display scroll to top button.', 'siteorigin-unwind' ),
-				),				
+				),
 			),
 		),
 
@@ -230,15 +230,30 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Featured image on single post.', 'siteorigin-unwind' ),
 				),
-				'archive_content'	=> array(
-					'type'	=> 'select',
-					'label'	=> esc_html__( 'Post Content', 'siteorigin-unwind' ),
+				'archive_layout' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Blog Archive Layout', 'siteorigin-unwind' ),
+					'options' => array(
+						'default' => esc_html__( 'Default', 'siteorigin-unwind' ),
+						'grid'  => esc_html__( 'Grid', 'siteorigin-unwind' ),
+						'alternate'  => esc_html__( 'Alternate', 'siteorigin-unwind' ),
+					),
+					'description' => esc_html__('Choose how to display your posts on the blog and archive pages.', 'siteorigin-unwind'),
+				),
+				'archive_content' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Post Content', 'siteorigin-unwind' ),
 					'options' => array(
 						'full' => esc_html__( 'Full Post', 'siteorigin-unwind' ),
 						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-unwind' ),
 					),
-					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag.', 'siteorigin-unwind'),
+					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag. Applies for the default post layout only.', 'siteorigin-unwind'),
 				),
+				'excerpt_length' => array(
+					'type' => 'number',
+					'label' => esc_html__( 'Excerpt Length', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'If no manual post excerpt is added one will be generated. Choose how many words it should be.', 'siteorigin-unwind' ),
+				),				
 				'excerpt_more' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-unwind' ),
@@ -412,8 +427,8 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  * @return string
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
-	// Custom CSS Code
-	$css .= '/* style */
+// Custom CSS Code
+$css .= '/* style */
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -467,6 +482,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	.main-navigation > div li:hover > a,.main-navigation > div li.focus > a {
 	color: ${fonts_text_dark};
+	}
+	.header-design-4 .main-navigation {
+	padding: ${masthead_padding}/2 0;
 	}
 	.social-search .search-toggle .open .svg-icon-search path {
 	fill: ${fonts_text_medium};
@@ -599,6 +617,9 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#masthead .site-branding .site-title a {
 	color: ${fonts_text_dark};
 	}
+	.header-design-4 #masthead .site-branding {
+	padding: ${masthead_padding}/2 0;
+	}
 	#fullscreen-search h3 {
 	color: ${fonts_text_medium};
 	.font( ${fonts_details} );
@@ -608,6 +629,24 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	#fullscreen-search form button[type="submit"] svg {
 	fill: ${fonts_text_light};
+	}
+	@-webkit-keyframes "spin" {
+	from {
+	}
+	to {
+	}
+	}
+	@-moz-keyframes "spin" {
+	from {
+	}
+	to {
+	}
+	}
+	@keyframes "spin" {
+	from {
+	}
+	to {
+	}
 	}
 	.entry-meta {
 	.font( ${fonts_details} );
@@ -652,6 +691,30 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	}
 	.tags-list a:hover {
 	background: ${fonts_text_medium};
+	}
+	.blog-layout-grid .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-grid .archive-entry .entry-thumbnail .thumbnail-meta span {
+	.font( ${fonts_details} );
+	}
+	.blog-layout-grid .archive-entry .more-link {
+	color: ${branding_accent};
+	}
+	.blog-layout-grid .archive-entry .more-link:hover {
+	color: ${fonts_text_medium};
+	}
+	.blog-layout-grid .archive-entry .more-link .more-text {
+	.font( ${fonts_main} );
+	}
+	.blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta span {
+	.font( ${fonts_details} );
+	}
+	.blog-layout-alternate .archive-entry .entry-content .more-link {
+	color: ${branding_accent};
+	}
+	.blog-layout-alternate .archive-entry .entry-content .more-link:hover {
+	color: ${fonts_text_medium};
+	}
+	.blog-layout-alternate .archive-entry .entry-content .more-link .more-text {
+	.font( ${fonts_main} );
 	}
 	.archive .container > .page-header,.search .container > .page-header {
 	margin-bottom: ${masthead_bottom_margin};
@@ -736,6 +799,15 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#colophon.unconstrained-footer .container {
 	padding: 0 ${footer_side_padding};
 	}
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a {
+	color: ${fonts_text_dark};
+	}
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a:hover {
+	color: ${fonts_text_medium};
+	}
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post p {
+	color: ${fonts_text_light};
+	}
 	.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button:hover,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button:hover,#page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button:hover {
 	color: ${fonts_text_dark};
 	}';
@@ -754,7 +826,7 @@ if ( ! function_exists( 'siteorigin_unwind_wc_settings_custom_css' ) ) :
 function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
 	// Custom WooCommerce CSS Code
-	$css .= '	/* woocommerce */
+	$css .= ' /* woocommerce */
 	.woocommerce.woocommerce-page #respond input#submit.alt.disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],.woocommerce.woocommerce-page a.button.alt.disabled,.woocommerce.woocommerce-page a.button.alt:disabled,.woocommerce.woocommerce-page a.button.alt:disabled[disabled],.woocommerce.woocommerce-page button.button.alt.disabled,.woocommerce.woocommerce-page button.button.alt:disabled,.woocommerce.woocommerce-page button.button.alt:disabled[disabled],.woocommerce.woocommerce-page input.button.alt.disabled,.woocommerce.woocommerce-page input.button.alt:disabled,.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
 	background-color: ${branding_accent};
 	border: 1px solid ${branding_accent};
@@ -795,7 +867,7 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	background-color: ${branding_accent};
 	.font( ${fonts_details} );
 	}
-	.woocommerce ul.products li.product h3:hover {
+	.woocommerce ul.products li.product .woocommerce-loop-product__title:hover {
 	color: ${fonts_text_medium};
 	}
 	.woocommerce ul.products li.product .price {
@@ -810,10 +882,10 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	.woocommerce ul.products li.product .loop-product-thumbnail {
 	background: ${branding_accent_dark};
 	}
-	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped {
+	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_variable {
 	color: ${fonts_text_dark};
 	}
-	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped:hover {
+	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_variable:hover {
 	border: 2px solid ${fonts_text_dark};
 	}
 	.woocommerce ul.products li.product .loop-product-thumbnail .product-quick-view-button:hover {
@@ -1199,7 +1271,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['navigation_sticky']               = true;
 	$defaults['navigation_mobile_menu_collapse'] = 768;
 	$defaults['navigation_post']                 = true;
-	$defaults['navigation_scroll_to_top']        = false;			
+	$defaults['navigation_scroll_to_top']        = false;
 
 	// Icons.
 	$defaults['icons_menu']              = false;
@@ -1215,7 +1287,9 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_featured_slider_overlay'] = false;
 	$defaults['blog_featured_archive']        = true;
 	$defaults['blog_featured_single']         = true;
+	$defaults['blog_archive_layout']          = 'default';
 	$defaults['blog_archive_content']         = 'full';
+	$defaults['blog_excerpt_length']          = 55;
 	$defaults['blog_excerpt_more']         	  = false;
 	$defaults['blog_display_related_posts']   = true;
 	$defaults['blog_display_author_box']      = true;

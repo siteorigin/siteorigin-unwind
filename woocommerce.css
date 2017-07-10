@@ -1110,6 +1110,8 @@
     width: 300px; }
     .main-navigation .shopping-cart .shopping-cart-dropdown .mini_cart_item a {
       white-space: normal; }
+    .main-navigation .shopping-cart .shopping-cart-dropdown .woocommerce-mini-cart__empty-message {
+      margin-bottom: -5px; }
 
 #mobile-navigation .shopping-cart-link {
   background: #f4f4f4;
