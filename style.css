@@ -1960,7 +1960,7 @@ a {
         font-size: 11px;
         line-height: normal;
         letter-spacing: .1em;
-        margin: 0 0 4px 0;
+        margin: 0 4px 4px 0;
         padding: 7px 9px;
         text-transform: uppercase;
         word-wrap: break-word; }
@@ -2025,7 +2025,7 @@ a {
         font-size: 11px;
         line-height: normal;
         letter-spacing: .1em;
-        margin: 0 0 4px 0;
+        margin: 0 4px 4px 0;
         padding: 7px 9px;
         text-transform: uppercase;
         word-wrap: break-word; }
