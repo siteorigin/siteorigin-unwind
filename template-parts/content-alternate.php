@@ -10,17 +10,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-entry' ); ?>>
 
-	<div class="entry-thumbnail">
-		<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
+	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
+		<div class="entry-thumbnail">
 			<a href="<?php the_permalink() ?>">
-				<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'aligncenter' ) ); ?>
+				<?php the_post_thumbnail( 'siteorigin-unwind-360x238-crop' ); ?>
 			</a>
-		<?php endif; ?>
-
-		<div class="entry-cats">
-			<?php the_category( ' ' ); ?>
+			<?php siteorigin_unwind_thumbnail_meta(); ?>
 		</div>
-	</div>
+	<?php endif; ?>
 
 	<div class="entry-content">
 
@@ -44,7 +41,6 @@
 				'link_after'  => '</span>',
 			) );
 		?>
-		<p><a href="<?php the_permalink() ?>"><?php echo esc_html__( 'Continue Reading', 'siteorigin-unwind' ) ?> &rarr;</a></p>
 	</div><!-- .entry-content -->
 
 </article>
