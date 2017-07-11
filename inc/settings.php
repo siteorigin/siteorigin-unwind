@@ -1290,7 +1290,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_archive_layout']          = 'default';
 	$defaults['blog_archive_content']         = 'full';
 	$defaults['blog_excerpt_length']          = 55;
-	$defaults['blog_excerpt_more']         	  = false;
+	$defaults['blog_excerpt_more']            = true;
 	$defaults['blog_display_related_posts']   = true;
 	$defaults['blog_display_author_box']      = true;
 	$defaults['blog_display_date']            = true;
