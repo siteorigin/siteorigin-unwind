@@ -250,6 +250,10 @@
 
 		.entry-meta {
 			@include justify-content(left);
+			
+			span:not(:last-child):after {
+				padding: 0 .2em;
+			}			
 		}
 
 		.entry-title {

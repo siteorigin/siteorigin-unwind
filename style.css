@@ -1951,6 +1951,8 @@ a {
     -o-justify-content: left;
     justify-content: left;
     -ms-flex-pack: left; }
+    .blog-layout-grid .archive-entry .entry-meta span:not(:last-child):after {
+      padding: 0 .2em; }
   .blog-layout-grid .archive-entry .entry-title {
     font-size: 17.0656px;
     font-size: 1.0666rem;
