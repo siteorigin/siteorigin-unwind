@@ -427,8 +427,9 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  * @return string
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
-// Custom CSS Code
-$css .= '/* style */
+	// Custom CSS Code
+	$css .= '/* style */
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/bewOWv/sass/style.css ***/
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -484,7 +485,7 @@ $css .= '/* style */
 	color: ${fonts_text_dark};
 	}
 	.header-design-4 .main-navigation {
-	padding: ${masthead_padding}/2 0;
+	padding: .calc( #{$masthead__padding/2}) 0;
 	}
 	.social-search .search-toggle .open .svg-icon-search path {
 	fill: ${fonts_text_medium};
@@ -618,7 +619,7 @@ $css .= '/* style */
 	color: ${fonts_text_dark};
 	}
 	.header-design-4 #masthead .site-branding {
-	padding: ${masthead_padding}/2 0;
+	padding: .calc( #{$masthead__padding/2}) 0;
 	}
 	#fullscreen-search h3 {
 	color: ${fonts_text_medium};
@@ -826,7 +827,7 @@ if ( ! function_exists( 'siteorigin_unwind_wc_settings_custom_css' ) ) :
 function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
 	// Custom WooCommerce CSS Code
-	$css .= ' /* woocommerce */
+	$css .= '	/* woocommerce */
 	.woocommerce.woocommerce-page #respond input#submit.alt.disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],.woocommerce.woocommerce-page a.button.alt.disabled,.woocommerce.woocommerce-page a.button.alt:disabled,.woocommerce.woocommerce-page a.button.alt:disabled[disabled],.woocommerce.woocommerce-page button.button.alt.disabled,.woocommerce.woocommerce-page button.button.alt:disabled,.woocommerce.woocommerce-page button.button.alt:disabled[disabled],.woocommerce.woocommerce-page input.button.alt.disabled,.woocommerce.woocommerce-page input.button.alt:disabled,.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
 	background-color: ${branding_accent};
 	border: 1px solid ${branding_accent};
