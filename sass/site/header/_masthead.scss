@@ -101,9 +101,9 @@
 
 		@at-root .header-design-4 & {
 			display: inline-block;
-			padding: $masthead__padding/2 0;
 			float: left;
-
+			padding: calc(#{$masthead__padding/2}) 0;
+			
 			.site-title {
 				@include font-size(2.5);
 				text-align: left;

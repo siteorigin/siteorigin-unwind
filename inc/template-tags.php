@@ -292,13 +292,25 @@ function siteorigin_unwind_read_more_link() {
 endif;
 add_filter( 'the_content_more_link', 'siteorigin_unwind_read_more_link' );
 
+if ( ! function_exists( 'siteorigin_unwind_excerpt_length' ) ) :
+/**
+ * Filter the excerpt length.
+ */
+function siteorigin_unwind_excerpt_length( $length ) {
+	return siteorigin_setting( 'blog_excerpt_length' );
+}
+add_filter( 'excerpt_length', 'siteorigin_unwind_excerpt_length', 10 );
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_excerpt_more' ) ) :
 /**
  * Add a more link to the excerpt.
  */
 function siteorigin_unwind_excerpt_more( $more ) {
 	if ( is_search() ) return;
-	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more', true ) ) {
+	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more', true ) || 
+		siteorigin_setting( 'blog_archive_layout' ) == 'grid' && siteorigin_setting( 'blog_excerpt_more', true ) || 
+		siteorigin_setting( 'blog_archive_layout' ) == 'alternate' && siteorigin_setting( 'blog_excerpt_more', true ) ) {
 		$read_more_text = esc_html__( 'Continue reading', 'siteorigin-unwind' );
 		return '<a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</a></span>';
 	}
@@ -329,7 +341,7 @@ function siteorigin_unwind_post_meta( $cats = true ) {
 		$comments = NULL;
 	} ?>
 
-	<?php if ( is_sticky() && is_home() && ! is_paged() ) {
+	<?php if ( is_sticky() && is_home() && ! is_paged() && ! siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) {
 		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
 	} ?>
 
@@ -351,6 +363,37 @@ function siteorigin_unwind_post_meta( $cats = true ) {
 	} ?>
 
 <?php }
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_thumbnail_meta' ) ) :
+/**
+ * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
+ */
+function siteorigin_unwind_thumbnail_meta() {
+	echo '<div class="thumbnail-meta">';
+	if ( is_sticky() && is_home() && ! is_paged() ) {
+		echo '<span>' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
+	}
+	siteorigin_unwind_three_categories();
+	echo '</div>';
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_three_categories' ) ) :
+/**
+ * Display only the first 3 categories
+ */
+function siteorigin_unwind_three_categories() {
+	if ( has_category() ) {
+		$categories = array_slice( get_the_category(), 0, 3 );
+
+		foreach ( $categories as $category ) {
+			if ( $category ) {
+				echo '<a href="' . get_category_link( $category->term_id ) . '">' . $category->cat_name . '</a>';
+			}
+		}
+	}
+}
 endif;
 
 if ( ! function_exists( 'siteorigin_unwind_posts_navigation' ) ) :
