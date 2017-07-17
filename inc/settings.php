@@ -485,7 +485,7 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	color: ${fonts_text_dark};
 	}
 	.header-design-4 .main-navigation {
-	padding: .calc( #{$masthead__padding/2}) 0;
+	padding: calc( ${masthead_padding} /2) 0;
 	}
 	.social-search .search-toggle .open .svg-icon-search path {
 	fill: ${fonts_text_medium};
@@ -619,7 +619,7 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	color: ${fonts_text_dark};
 	}
 	.header-design-4 #masthead .site-branding {
-	padding: .calc( #{$masthead__padding/2}) 0;
+	padding: calc( ${masthead_padding} /2) 0;
 	}
 	#fullscreen-search h3 {
 	color: ${fonts_text_medium};

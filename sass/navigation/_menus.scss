@@ -129,7 +129,7 @@
 	@at-root .header-design-4 & {
 		display: inline-block;
 		float: right;
-		padding: calc(#{$masthead__padding/2}) 0;
+		padding: calc(#{$masthead__padding} /2) 0;
 
 		> div li a {
 			line-height: 30px;
