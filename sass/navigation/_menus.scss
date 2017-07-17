@@ -21,7 +21,7 @@
 				top: 50px;
 				@include transition (all 0.1s ease-in-out);
 				@include transform-origin(center top);
-				@include transform( scaleY(0) );
+				@include transform(scaleY(0));
 				visibility: hidden;
 				z-index: 99999;
 
