@@ -735,9 +735,9 @@ a {
       display: block; }
       .social-search .search-toggle .open .svg-icon-search {
         height: 16px;
-        width: 17px;
         position: relative;
-        top: 5px; }
+        top: 5px;
+        width: 17px; }
         .social-search .search-toggle .open .svg-icon-search path {
           fill: #626262; }
     .social-search .search-toggle .close {

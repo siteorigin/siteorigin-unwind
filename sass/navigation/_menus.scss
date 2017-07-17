@@ -155,15 +155,16 @@
 
 			.svg-icon-search {
 				height: 16px;
-				width: 17px;
 				position: relative;
 				top: 5px;
+				width: 17px;
 
 				path {
 					fill: $color__text-medium;
 				}
 			}
 		}
+
 		.close {
 			display: none;
 
