@@ -617,7 +617,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_strip_gallery' ) ) :
 /**
- * Remove gallery
+ * Remove gallery.
  */
 function siteorigin_unwind_strip_gallery( $content ) {
 	preg_match_all( '/' . get_shortcode_regex() . '/s', $content, $matches, PREG_SET_ORDER );
