@@ -444,6 +444,53 @@
 	}
 }
 
+.blog-layout-left-info {
+	.site-main {
+		.archive-entry {
+
+			.entry-meta {
+				@include justify-content(left);
+			}
+
+			.entry-title {
+				@include font-size(1.33);
+				margin: 0.2em 0 5px;
+				text-align: left;
+			}
+
+			.entry-thumbnail {
+				margin-bottom: 20px;
+				position: relative;
+
+				.entry-cats {
+					left: 10px;
+					position: absolute;
+					top: 10px;
+
+					a {
+						background: #303030;
+						color: #e0e0e0;
+						font-size: 11px;
+						padding: 5px;
+						text-transform: uppercase;
+					}
+				}
+			}
+
+			.entry-content {
+				p {
+					margin-bottom: 0;
+				}
+			}
+
+			@media (max-width: 640px) {
+				display: block;
+				margin: 0;
+				width: 100%;
+			}
+		}
+	}
+}
 /*--------------------------------------------------------------
 ## Archives & Search Results
 --------------------------------------------------------------*/

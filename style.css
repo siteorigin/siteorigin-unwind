@@ -29,7 +29,7 @@ Tags: one-column, two-columns, custom-background, custom-colors, custom-header, 
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
 ----------------------------------------------------------------
-Please don't edit below, changes will be lost during the theme
+Please don't edit below, changes will be lost during the theme 
 update process. If you need to make CSS modifications try
 https://wordpress.org/plugins/so-css/.
 --------------------------------------------------------------*/
@@ -2095,6 +2095,46 @@ a {
     margin-left: 3.5%; }
   .blog-layout-alternate .archive-entry:nth-of-type(2n) .entry-content {
     float: left; }
+
+.blog-layout-left-info .site-main .archive-entry .entry-meta {
+  -webkit-box-pack: left;
+  -moz-box-pack: left;
+  box-pack: left;
+  -webkit-justify-content: left;
+  -moz-justify-content: left;
+  -ms-justify-content: left;
+  -o-justify-content: left;
+  justify-content: left;
+  -ms-flex-pack: left; }
+
+.blog-layout-left-info .site-main .archive-entry .entry-title {
+  font-size: 21.28px;
+  font-size: 1.33rem;
+  margin: 0.2em 0 5px;
+  text-align: left; }
+
+.blog-layout-left-info .site-main .archive-entry .entry-thumbnail {
+  margin-bottom: 20px;
+  position: relative; }
+  .blog-layout-left-info .site-main .archive-entry .entry-thumbnail .entry-cats {
+    left: 10px;
+    position: absolute;
+    top: 10px; }
+    .blog-layout-left-info .site-main .archive-entry .entry-thumbnail .entry-cats a {
+      background: #303030;
+      color: #e0e0e0;
+      font-size: 11px;
+      padding: 5px;
+      text-transform: uppercase; }
+
+.blog-layout-left-info .site-main .archive-entry .entry-content p {
+  margin-bottom: 0; }
+
+@media (max-width: 640px) {
+  .blog-layout-left-info .site-main .archive-entry {
+    display: block;
+    margin: 0;
+    width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Archives & Search Results
