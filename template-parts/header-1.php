@@ -15,7 +15,7 @@
             <?php endif; ?>
         </div>
 
-        <?php siteorigin_unwind_main_navigation() ?>
+        <?php siteorigin_unwind_main_navigation(); ?>
 
     </div><!-- .container -->
 
