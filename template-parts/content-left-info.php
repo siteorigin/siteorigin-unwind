@@ -29,6 +29,10 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 
 	<div class="entry-header">
 
+		<div class="entry-meta">
+			<?php siteorigin_unwind_post_meta(); ?>
+		</div><!-- .entry-meta -->
+
 		<p class="entry-time">
 			<span class="meta-text"><?php esc_html_e( 'Posted on ', 'siteorigin-unwind' ); ?></span>
 			<?php the_time( apply_filters( 'siteorigin_unwind_date_format', 'M d, Y' ) ); ?>

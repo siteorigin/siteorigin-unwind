@@ -2103,6 +2103,8 @@ a {
 
 .blog-layout-left-info .archive-entry .entry-header {
   margin-left: 25%; }
+  .blog-layout-left-info .archive-entry .entry-header .entry-meta {
+    display: none; }
   .blog-layout-left-info .archive-entry .entry-header .entry-time {
     font-size: 14.4px;
     font-size: 0.9rem;
@@ -2139,10 +2141,20 @@ a {
   margin-bottom: 0; }
 
 @media (max-width: 640px) {
-  .blog-layout-left-info .archive-entry {
-    display: block;
-    margin: 0;
-    width: 100%; } }
+  .blog-layout-left-info .archive-entry .entry-header {
+    margin-left: 0; }
+    .blog-layout-left-info .archive-entry .entry-header .entry-meta {
+      display: block; }
+    .blog-layout-left-info .archive-entry .entry-header .entry-time {
+      display: none; }
+    .blog-layout-left-info .archive-entry .entry-header .entry-title {
+      text-align: center; }
+  .blog-layout-left-info .archive-entry .entry-left-info,
+  .blog-layout-left-info .archive-entry .entry-content {
+    width: 100%;
+    float: none; }
+  .blog-layout-left-info .archive-entry .entry-left-info {
+    display: none; } }
 
 /*--------------------------------------------------------------
 ## Archives & Search Results

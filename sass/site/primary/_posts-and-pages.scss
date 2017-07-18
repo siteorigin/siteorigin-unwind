@@ -451,6 +451,10 @@
 		.entry-header {
 			margin-left: 25%;
 
+			.entry-meta {
+				display: none;
+			}
+
 			.entry-time {
 				@include font-size(0.9);
 				color: $color__text-light;
@@ -504,9 +508,27 @@
 		}
 
 		@media ( max-width: 640px ) {
-			display: block;
-			margin: 0;
-			width: 100%;
+			.entry-header {
+				margin-left: 0;
+
+				.entry-meta {
+					display: block;
+				}
+				.entry-time {
+					display: none;
+				}
+				.entry-title {
+					text-align: center;
+				}
+			}
+			.entry-left-info,
+			.entry-content {
+				width: 100%;
+				float: none;
+			}
+			.entry-left-info {
+				display: none;
+			}
 		}
 	}
 }
