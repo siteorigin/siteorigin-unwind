@@ -87,9 +87,8 @@
 	}
 }
 
-.more-link {
+.more-link-wrapper {
 	display: block;
-	color: $color__text-dark;
 	@include font-size(0.8666);
 	text-align: center;
 	text-decoration: none;
@@ -99,12 +98,16 @@
 	.more-text {
 		border-top: 2px solid $color__background-hr-dark;
 		border-bottom: 2px solid $color__background-hr-dark;
+		color: $color__text-dark;
+		cursor: pointer;
+		display: inline-block;
 		font-family: $font__details;
 		letter-spacing: 1px;
 		padding: 10px 0;
 
-		&:hover {
+		@at-root .more-link:hover .more-text {
 			border: 2px solid $color__primary-accent;
+			color: $color__primary-accent;
 			padding: 10px 12px;
 		}
 	}

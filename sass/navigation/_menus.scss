@@ -394,7 +394,6 @@ $sel: '';
 		padding: 1em 1.923em;
 		text-decoration: none;
 		text-transform: uppercase;
-		@include transition(0.3s);
 
 		&:hover {
 			border-color: $color__primary-accent;
