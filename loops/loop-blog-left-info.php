@@ -17,14 +17,18 @@ if ( have_posts() ) :
 		</header>
 
 	<?php
-	endif;
+	endif; ?>
 
-	/* Start the Loop */
-	while ( have_posts() ) : the_post();
+	<div class="blog-layout-left-info">
+		<?php
+		/* Start the Loop */
+		while ( have_posts() ) : the_post();
 
-		get_template_part( 'template-parts/content', 'left-info' );
+			get_template_part( 'template-parts/content', 'left-info' );
 
-	endwhile;
+		endwhile;
+		?>
+	</div><?php
 
 	siteorigin_unwind_posts_navigation();
 

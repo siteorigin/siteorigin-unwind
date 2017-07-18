@@ -6,6 +6,7 @@
  * @license GPL 2.0
  */
 
+$num_comments = get_comments_number();
 if ( comments_open() ) {
 	if ( $num_comments == 0 ) {
 		$comments = esc_html__( 'Post a Comment', 'siteorigin-unwind' );
@@ -29,7 +30,7 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 	<div class="entry-header">
 
 		<p class="entry-time">
-			<?php _e( 'Posted on ', 'siteorigin-unwind' ); ?>
+			<span class="meta-text"><?php esc_html_e( 'Posted on ', 'siteorigin-unwind' ); ?></span>
 			<?php the_time( apply_filters( 'siteorigin_unwind_date_format', 'M d, Y' ) ); ?>
 		</p>
 
@@ -40,24 +41,24 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 	<div class="entry-left-info">
 
 		<div class="entry-author-avatar">
-			<?php echo get_avatar( get_the_author_meta( 'ID' ), 120 ); ?>
+			<?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?>
 		</div>
 
 		<div class="entry-author-link">
-			<span class="meta-text"><?php _e( 'Written by', 'siteorigin-unwind' ); ?></span><br />
+			<span class="meta-text"><?php esc_html_e( 'Written by', 'siteorigin-unwind' ); ?></span><br />
 			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
 				<?php echo get_the_author(); ?>
 			</a>
 		</div>
 
 		<div class="entry-categories">
-			<span class="meta-text"><?php _e( 'Posted in', 'siteorigin-unwind' ); ?></span><br />
+			<span class="meta-text"><?php esc_html_e( 'Posted in', 'siteorigin-unwind' ); ?></span><br />
 			<?php the_category( ', ', '', '' ); ?>
 		</div>
 
 		<?php if ( $comments ) : ?>
 			<div class="entry-comments">
-				<span class="meta-text"><?php _e( 'Comments', 'siteorigin-unwind' ); ?></span><br />
+				<span class="meta-text"><?php esc_html_e( 'Comments', 'siteorigin-unwind' ); ?></span><br />
 				<a href="<?php get_comments_link(); ?>"><?php echo $comments; ?></a>
 			</div>
 		<?php endif; ?>
@@ -90,10 +91,6 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 					<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'aligncenter' ) ); ?>
 				</a>
 			<?php endif; ?>
-
-			<div class="entry-cats">
-				<?php the_category( ' ' ); ?>
-			</div>
 		</div>
 
 		<?php
@@ -106,7 +103,7 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 				'link_after'  => '</span>',
 			) );
 		?>
-		<p><a href="<?php the_permalink() ?>"><?php echo esc_html__( 'Continue Reading', 'siteorigin-unwind' ) ?> &rarr;</a></p>
+		<p class="more-link"><a class="more-text" href="<?php the_permalink() ?>"><?php echo esc_html__( 'Continue Reading', 'siteorigin-unwind' ); ?></a></p>
 
 	</div><!-- .entry-content -->
 

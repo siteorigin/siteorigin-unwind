@@ -2096,42 +2096,50 @@ a {
   .blog-layout-alternate .archive-entry:nth-of-type(2n) .entry-content {
     float: left; }
 
-.blog-layout-left-info .site-main .archive-entry .entry-meta {
-  -webkit-box-pack: left;
-  -moz-box-pack: left;
-  box-pack: left;
-  -webkit-justify-content: left;
-  -moz-justify-content: left;
-  -ms-justify-content: left;
-  -o-justify-content: left;
-  justify-content: left;
-  -ms-flex-pack: left; }
+.blog-layout-left-info .archive-entry::after {
+  clear: both;
+  content: "";
+  display: table; }
 
-.blog-layout-left-info .site-main .archive-entry .entry-title {
-  font-size: 21.28px;
-  font-size: 1.33rem;
-  margin: 0.2em 0 5px;
-  text-align: left; }
+.blog-layout-left-info .archive-entry .entry-header {
+  margin-left: 25%; }
+  .blog-layout-left-info .archive-entry .entry-header .entry-time {
+    font-size: 14.4px;
+    font-size: 0.9rem;
+    color: #adadad;
+    margin-bottom: 0;
+    text-transform: uppercase; }
+  .blog-layout-left-info .archive-entry .entry-header .entry-title {
+    text-align: left;
+    font-size: 34.1328px;
+    font-size: 2.1333rem;
+    margin: 5px 0 15px 0; }
 
-.blog-layout-left-info .site-main .archive-entry .entry-thumbnail {
-  margin-bottom: 20px;
-  position: relative; }
-  .blog-layout-left-info .site-main .archive-entry .entry-thumbnail .entry-cats {
-    left: 10px;
-    position: absolute;
+.blog-layout-left-info .archive-entry .entry-left-info {
+  width: 25%;
+  float: left; }
+  .blog-layout-left-info .archive-entry .entry-left-info img {
+    border-radius: 50%; }
+  .blog-layout-left-info .archive-entry .entry-left-info .meta-text {
+    color: #adadad;
+    position: relative;
     top: 10px; }
-    .blog-layout-left-info .site-main .archive-entry .entry-thumbnail .entry-cats a {
-      background: #303030;
-      color: #e0e0e0;
-      font-size: 11px;
-      padding: 5px;
-      text-transform: uppercase; }
+  .blog-layout-left-info .archive-entry .entry-left-info a {
+    color: #2d2d2d;
+    font-weight: bold;
+    font-family: "Lato", sans-serif; }
 
-.blog-layout-left-info .site-main .archive-entry .entry-content p {
+.blog-layout-left-info .archive-entry .entry-content {
+  width: 75%;
+  float: right; }
+  .blog-layout-left-info .archive-entry .entry-content .gallery-format-slides ul {
+    margin: 0; }
+
+.blog-layout-left-info .archive-entry .entry-content p {
   margin-bottom: 0; }
 
 @media (max-width: 640px) {
-  .blog-layout-left-info .site-main .archive-entry {
+  .blog-layout-left-info .archive-entry {
     display: block;
     margin: 0;
     width: 100%; } }
