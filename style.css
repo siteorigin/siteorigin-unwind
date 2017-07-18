@@ -2096,6 +2096,66 @@ a {
   .blog-layout-alternate .archive-entry:nth-of-type(2n) .entry-content {
     float: left; }
 
+.blog-layout-left-info .archive-entry::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.blog-layout-left-info .archive-entry .entry-header {
+  margin-left: 25%; }
+  .blog-layout-left-info .archive-entry .entry-header .entry-meta {
+    display: none; }
+  .blog-layout-left-info .archive-entry .entry-header .entry-time {
+    font-size: 14.4px;
+    font-size: 0.9rem;
+    color: #adadad;
+    margin-bottom: 0;
+    text-transform: uppercase; }
+  .blog-layout-left-info .archive-entry .entry-header .entry-title {
+    text-align: left;
+    font-size: 34.1328px;
+    font-size: 2.1333rem;
+    margin: 5px 0 15px 0; }
+
+.blog-layout-left-info .archive-entry .entry-left-info {
+  width: 25%;
+  float: left; }
+  .blog-layout-left-info .archive-entry .entry-left-info img {
+    border-radius: 50%; }
+  .blog-layout-left-info .archive-entry .entry-left-info .meta-text {
+    color: #adadad;
+    position: relative;
+    top: 10px; }
+  .blog-layout-left-info .archive-entry .entry-left-info a {
+    color: #2d2d2d;
+    font-weight: bold;
+    font-family: "Lato", sans-serif; }
+
+.blog-layout-left-info .archive-entry .entry-content {
+  width: 75%;
+  float: right; }
+  .blog-layout-left-info .archive-entry .entry-content .gallery-format-slides ul {
+    margin: 0; }
+
+.blog-layout-left-info .archive-entry .entry-content p {
+  margin-bottom: 0; }
+
+@media (max-width: 640px) {
+  .blog-layout-left-info .archive-entry .entry-header {
+    margin-left: 0; }
+    .blog-layout-left-info .archive-entry .entry-header .entry-meta {
+      display: block; }
+    .blog-layout-left-info .archive-entry .entry-header .entry-time {
+      display: none; }
+    .blog-layout-left-info .archive-entry .entry-header .entry-title {
+      text-align: center; }
+  .blog-layout-left-info .archive-entry .entry-left-info,
+  .blog-layout-left-info .archive-entry .entry-content {
+    width: 100%;
+    float: none; }
+  .blog-layout-left-info .archive-entry .entry-left-info {
+    display: none; } }
+
 /*--------------------------------------------------------------
 ## Archives & Search Results
 --------------------------------------------------------------*/
