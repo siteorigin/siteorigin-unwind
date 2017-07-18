@@ -287,7 +287,7 @@ if ( ! function_exists( 'siteorigin_unwind_read_more_link' ) ) :
  */
 function siteorigin_unwind_read_more_link() {
 	$read_more_text = esc_html__( 'Continue reading', 'siteorigin-unwind' );
-	return '<a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</a></span>';
+		return '<div class="more-link-wrapper"><a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</span></a></div>';
 }
 endif;
 add_filter( 'the_content_more_link', 'siteorigin_unwind_read_more_link' );
@@ -308,9 +308,11 @@ if ( ! function_exists( 'siteorigin_unwind_excerpt_more' ) ) :
  */
 function siteorigin_unwind_excerpt_more( $more ) {
 	if ( is_search() ) return;
-	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more', true ) || siteorigin_setting( 'blog_archive_layout' ) == 'grid' && siteorigin_setting( 'blog_excerpt_more', true ) || siteorigin_setting( 'blog_archive_layout' ) == 'alternate' && siteorigin_setting( 'blog_excerpt_more', true ) ) {
+	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more', true ) ||
+		siteorigin_setting( 'blog_archive_layout' ) == 'grid' && siteorigin_setting( 'blog_excerpt_more', true ) ||
+		siteorigin_setting( 'blog_archive_layout' ) == 'alternate' && siteorigin_setting( 'blog_excerpt_more', true ) ) {
 		$read_more_text = esc_html__( 'Continue reading', 'siteorigin-unwind' );
-		return '<a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</a></span>';
+		return '<div class="more-link-wrapper"><a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</span></a></div>';
 	}
 }
 endif;
@@ -615,7 +617,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_strip_gallery' ) ) :
 /**
- * Remove gallery
+ * Remove gallery.
  */
 function siteorigin_unwind_strip_gallery( $content ) {
 	preg_match_all( '/' . get_shortcode_regex() . '/s', $content, $matches, PREG_SET_ORDER );
@@ -676,9 +678,8 @@ function siteorigin_unwind_filter_video( $content ) {
 		preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', $content, $urls );
 
 		if ( ! empty( $urls[0] ) ) {
-			$content = str_replace( $urls[0], '', $content );
+			$content = str_replace( $urls[0][0], '', $content );
 		}
-
 		return $content;
 	} else {
 		return $content;

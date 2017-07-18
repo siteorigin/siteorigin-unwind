@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.1 - 18 July 2017 =
+* Added new Offset blog layout.
+* Updated settings framework to resolve "Menu in line with logo" settings padding bug.
+
 = 1.1.0 - 10 July 2017 =
 * Added two new blog layouts, Grid and Alternate.
 * Added a post excerpt length setting.

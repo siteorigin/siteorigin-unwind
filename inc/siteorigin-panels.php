@@ -34,8 +34,11 @@ add_filter( 'siteorigin_panels_lite_localization', 'siteorigin_unwind_panels_lit
 function siteorigin_unwind_filter_post_loop_widget( $templates ) {
     $disallowed_template_patterns = array(
         'template-parts/content.php',
+        'template-parts/content-alternate.php',
         'template-parts/content-gallery.php',
+        'template-parts/content-grid.php',
         'template-parts/content-image.php',
+        'template-parts/content-offset.php',
         'template-parts/content-none.php',
         'template-parts/content-page.php',
         'template-parts/content-search.php',

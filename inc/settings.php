@@ -236,6 +236,7 @@ function siteorigin_unwind_settings_init() {
 					'options' => array(
 						'default' => esc_html__( 'Default', 'siteorigin-unwind' ),
 						'grid'  => esc_html__( 'Grid', 'siteorigin-unwind' ),
+						'offset'  => esc_html__( 'Offset', 'siteorigin-unwind' ),
 						'alternate'  => esc_html__( 'Alternate', 'siteorigin-unwind' ),
 					),
 					'description' => esc_html__('Choose how to display your posts on the blog and archive pages.', 'siteorigin-unwind'),
@@ -253,7 +254,7 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'number',
 					'label' => esc_html__( 'Excerpt Length', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'If no manual post excerpt is added one will be generated. Choose how many words it should be.', 'siteorigin-unwind' ),
-				),				
+				),
 				'excerpt_more' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-unwind' ),
@@ -427,8 +428,8 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  * @return string
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
-// Custom CSS Code
-$css .= '/* style */
+	// Custom CSS Code
+	$css .= '/* style */
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -484,7 +485,7 @@ $css .= '/* style */
 	color: ${fonts_text_dark};
 	}
 	.header-design-4 .main-navigation {
-	padding: ${masthead_padding}/2 0;
+	padding: calc( ${masthead_padding} /2) 0;
 	}
 	.social-search .search-toggle .open .svg-icon-search path {
 	fill: ${fonts_text_medium};
@@ -618,7 +619,7 @@ $css .= '/* style */
 	color: ${fonts_text_dark};
 	}
 	.header-design-4 #masthead .site-branding {
-	padding: ${masthead_padding}/2 0;
+	padding: calc( ${masthead_padding} /2) 0;
 	}
 	#fullscreen-search h3 {
 	color: ${fonts_text_medium};
@@ -663,14 +664,13 @@ $css .= '/* style */
 	.entry-title a:hover {
 	color: ${fonts_text_medium};
 	}
-	.more-link {
+	.more-link-wrapper .more-text {
 	color: ${fonts_text_dark};
-	}
-	.more-link .more-text {
 	.font( ${fonts_details} );
 	}
-	.more-link .more-text:hover {
+	.more-link:hover .more-text {
 	border: 2px solid ${branding_accent};
+	color: ${branding_accent};
 	}
 	.page-links .page-links-title {
 	color: ${fonts_text_dark};
@@ -715,6 +715,19 @@ $css .= '/* style */
 	}
 	.blog-layout-alternate .archive-entry .entry-content .more-link .more-text {
 	.font( ${fonts_main} );
+	}
+	.blog-layout-offset .archive-entry .entry-header .entry-time {
+	color: ${fonts_text_light};
+	.font( ${fonts_details} );
+	}
+	.blog-layout-offset .archive-entry .entry-offset .meta-text {
+	color: ${fonts_text_light};
+	}
+	.blog-layout-offset .archive-entry .entry-offset a {
+	color: ${fonts_text_dark};
+	}
+	.blog-layout-offset .archive-entry .entry-offset a:hover {
+	color: ${fonts_text_medium};
 	}
 	.archive .container > .page-header,.search .container > .page-header {
 	margin-bottom: ${masthead_bottom_margin};
@@ -826,7 +839,7 @@ if ( ! function_exists( 'siteorigin_unwind_wc_settings_custom_css' ) ) :
 function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
 	// Custom WooCommerce CSS Code
-	$css .= ' /* woocommerce */
+	$css .= '/* woocommerce */
 	.woocommerce.woocommerce-page #respond input#submit.alt.disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],.woocommerce.woocommerce-page a.button.alt.disabled,.woocommerce.woocommerce-page a.button.alt:disabled,.woocommerce.woocommerce-page a.button.alt:disabled[disabled],.woocommerce.woocommerce-page button.button.alt.disabled,.woocommerce.woocommerce-page button.button.alt:disabled,.woocommerce.woocommerce-page button.button.alt:disabled[disabled],.woocommerce.woocommerce-page input.button.alt.disabled,.woocommerce.woocommerce-page input.button.alt:disabled,.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
 	background-color: ${branding_accent};
 	border: 1px solid ${branding_accent};
@@ -1290,7 +1303,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['blog_archive_layout']          = 'default';
 	$defaults['blog_archive_content']         = 'full';
 	$defaults['blog_excerpt_length']          = 55;
-	$defaults['blog_excerpt_more']         	  = false;
+	$defaults['blog_excerpt_more']            = true;
 	$defaults['blog_display_related_posts']   = true;
 	$defaults['blog_display_author_box']      = true;
 	$defaults['blog_display_date']            = true;
