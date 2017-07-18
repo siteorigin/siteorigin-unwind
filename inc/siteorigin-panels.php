@@ -38,6 +38,7 @@ function siteorigin_unwind_filter_post_loop_widget( $templates ) {
         'template-parts/content-gallery.php',
         'template-parts/content-grid.php',
         'template-parts/content-image.php',
+        'template-parts/content-offset.php',
         'template-parts/content-none.php',
         'template-parts/content-page.php',
         'template-parts/content-search.php',

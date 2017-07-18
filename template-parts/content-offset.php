@@ -1,8 +1,9 @@
 <?php
 /**
- * Template part for displaying left info posts
+ * Template part for displaying offset posts.
  *
  * @package siteorigin-unwind
+ * @since siteorigin-unwind 1.1.1 
  * @license GPL 2.0
  */
 
@@ -31,7 +32,7 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 
 		<div class="entry-meta">
 			<?php siteorigin_unwind_post_meta(); ?>
-		</div><!-- .entry-meta -->
+		</div><!-- .entry-meta -->	
 
 		<p class="entry-time">
 			<span class="meta-text"><?php esc_html_e( 'Posted on ', 'siteorigin-unwind' ); ?></span>
@@ -42,27 +43,29 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 
 	</div>
 
-	<div class="entry-left-info">
+	<div class="entry-offset">
 
 		<div class="entry-author-avatar">
-			<?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?>
+			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+				<?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?>
+			</a>
 		</div>
 
 		<div class="entry-author-link">
-			<span class="meta-text"><?php esc_html_e( 'Written by', 'siteorigin-unwind' ); ?></span><br />
+			<span class="meta-text"><?php esc_html_e( 'Written by', 'siteorigin-unwind' ); ?></span>
 			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
 				<?php echo get_the_author(); ?>
 			</a>
 		</div>
 
 		<div class="entry-categories">
-			<span class="meta-text"><?php esc_html_e( 'Posted in', 'siteorigin-unwind' ); ?></span><br />
+			<span class="meta-text"><?php esc_html_e( 'Posted in', 'siteorigin-unwind' ); ?></span>
 			<?php the_category( ', ', '', '' ); ?>
 		</div>
 
 		<?php if ( $comments ) : ?>
 			<div class="entry-comments">
-				<span class="meta-text"><?php esc_html_e( 'Comments', 'siteorigin-unwind' ); ?></span><br />
+				<span class="meta-text"><?php esc_html_e( 'Comments', 'siteorigin-unwind' ); ?></span>
 				<a href="<?php get_comments_link(); ?>"><?php echo $comments; ?></a>
 			</div>
 		<?php endif; ?>
@@ -98,7 +101,8 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 		</div>
 
 		<?php
-			the_excerpt();
+			if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) the_excerpt();
+			else the_content();
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',
@@ -107,7 +111,6 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 				'link_after'  => '</span>',
 			) );
 		?>
-		<p class="more-link"><a class="more-text" href="<?php the_permalink() ?>"><?php echo esc_html__( 'Continue Reading', 'siteorigin-unwind' ); ?></a></p>
 
 	</div><!-- .entry-content -->
 

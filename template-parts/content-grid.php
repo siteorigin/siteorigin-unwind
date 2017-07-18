@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying grid posts
+ * Template part for displaying grid posts.
  *
  * @package siteorigin-unwind
  * @since siteorigin-unwind 1.1 

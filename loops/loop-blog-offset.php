@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop Name: Blog Left Info
+ * Loop Name: Blog Offset
  *
  * @package siteorigin-unwind
  * @license GPL 2.0
@@ -19,12 +19,12 @@ if ( have_posts() ) :
 	<?php
 	endif; ?>
 
-	<div class="blog-layout-left-info">
+	<div class="blog-layout-offset">
 		<?php
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', 'left-info' );
+			get_template_part( 'template-parts/content', 'offset' );
 
 		endwhile;
 		?>

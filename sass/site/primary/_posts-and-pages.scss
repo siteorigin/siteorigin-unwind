@@ -79,7 +79,6 @@
 }
 
 .entry-thumbnail {
-
 	margin: 0 0 35px;
 
 	img {
@@ -444,94 +443,113 @@
 	}
 }
 
-.blog-layout-left-info {
+.blog-layout-offset {
+
 	.archive-entry {
 		@include clearfix;
 
 		.entry-header {
-			margin-left: 25%;
-
+			margin-left: 23%;
+			
+			@media (max-width: 768px) {
+				margin-left: 0; 
+			}			
+			
 			.entry-meta {
 				display: none;
+				
+				@media (max-width: 768px) {
+					display: block;
+				}				
 			}
 
 			.entry-time {
-				@include font-size(0.9);
 				color: $color__text-light;
-				margin-bottom: 0;
+				@include font-size(0.8);
+				font-family: $font__details;
+				letter-spacing: .1em;
+				margin-bottom: 16px;
 				text-transform: uppercase;
-
+				
+				@media (max-width: 768px) {
+					display: none;
+				}
 			}
+
 			.entry-title {
-				text-align: left;
 				@include font-size(2.1333);
-				margin: 5px 0 15px 0;
+				text-align: left;
+				margin: 0 0 31px;
+				
+				@media (max-width: 768px) {
+					margin: 0.5em 0 35px;
+					text-align: center;
+				}	
+
+				@media (max-width: 480px) {
+					@include font-size(1.6);
+				}							
 			}
 		}
 
-		.entry-left-info {
-			width: 25%;
+		.entry-offset {
+			box-sizing: border-box;
 			float: left;
+			padding-right: 30px; 
+			width: 23%;
+			
+			@media (max-width: 768px) {
+				display: none;
+			}			
+			
+			div {
+				line-height: normal;
+				margin-bottom: 13px; 
+			}
 
 			img {
 				border-radius: 50%;
+				margin-bottom: 3px; 
 			}
 
 			.meta-text {
+				display: block;
 				color: $color__text-light;
-				position: relative;
-				top: 10px;
+				@include font-size(.8666);
+				line-height: normal; 
+				margin-bottom: 2px; 
 			}
 
 			a {
 				color: $color__text-dark;
+				@include font-size(.9333);
 				font-weight: bold;
-				font-family: $font__details;
+				
+				&:hover {
+					color: $color__text-medium;
+				}
 			}
 		}
 
 		.entry-content {
-			width: 75%;
 			float: right;
+			width: 77%;
+			
+			@media (max-width: 768px) {
+				float: none;
+				width: 100%; 
+			}			
 
 			.gallery-format-slides {
+
 				ul {
 					margin: 0;
 				}
 			}
 		}
-
-		.entry-content {
-			p {
-				margin-bottom: 0;
-			}
-		}
-
-		@media ( max-width: 640px ) {
-			.entry-header {
-				margin-left: 0;
-
-				.entry-meta {
-					display: block;
-				}
-				.entry-time {
-					display: none;
-				}
-				.entry-title {
-					text-align: center;
-				}
-			}
-			.entry-left-info,
-			.entry-content {
-				width: 100%;
-				float: none;
-			}
-			.entry-left-info {
-				display: none;
-			}
-		}
 	}
 }
+
 /*--------------------------------------------------------------
 ## Archives & Search Results
 --------------------------------------------------------------*/
