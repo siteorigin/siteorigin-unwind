@@ -363,6 +363,10 @@
 			@include transform( scaleY(0) );
 			visibility: hidden;
 			z-index: 9999;
+
+			@at-root .header-design-4 & {
+				right: 0;
+			}
 		}
 
 		.widget_shopping_cart_content {
