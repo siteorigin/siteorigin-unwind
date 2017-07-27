@@ -1078,6 +1078,8 @@
     transform: scaleY(0);
     visibility: hidden;
     z-index: 9999; }
+    .header-design-4 .main-navigation .shopping-cart .shopping-cart-dropdown {
+      right: 0; }
   .main-navigation .shopping-cart .widget_shopping_cart_content {
     padding: 20px 20px 30px; }
     .main-navigation .shopping-cart .widget_shopping_cart_content .product_list_widget {
