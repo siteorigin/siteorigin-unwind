@@ -293,6 +293,12 @@
 					margin-right: 5px;
 				}
 			}
+
+			.gallery-format-slides {
+				ul {
+					margin: 0;
+				}
+			}
 		}
 
 		p:only-of-type,
@@ -381,6 +387,12 @@
 			}
 		}
 
+		.gallery-format-slides {
+			ul {
+				margin: 0;
+			}
+		}
+
 		.entry-content {
 			float: right;
 			width: 54%;
@@ -453,17 +465,17 @@
 
 		.entry-header {
 			margin-left: 23%;
-			
+
 			@media (max-width: 768px) {
-				margin-left: 0; 
-			}			
-			
+				margin-left: 0;
+			}
+
 			.entry-meta {
 				display: none;
-				
+
 				@media (max-width: 768px) {
 					display: block;
-				}				
+				}
 			}
 
 			.entry-time {
@@ -473,7 +485,7 @@
 				letter-spacing: .1em;
 				margin-bottom: 16px;
 				text-transform: uppercase;
-				
+
 				@media (max-width: 768px) {
 					display: none;
 				}
@@ -483,51 +495,51 @@
 				@include font-size(2.1333);
 				text-align: left;
 				margin: 0 0 31px;
-				
+
 				@media (max-width: 768px) {
 					margin: 0.5em 0 35px;
 					text-align: center;
-				}	
+				}
 
 				@media (max-width: 480px) {
 					@include font-size(1.6);
-				}							
+				}
 			}
 		}
 
 		.entry-offset {
 			box-sizing: border-box;
 			float: left;
-			padding-right: 30px; 
+			padding-right: 30px;
 			width: 23%;
-			
+
 			@media (max-width: 768px) {
 				display: none;
-			}			
-			
+			}
+
 			div {
 				line-height: normal;
-				margin-bottom: 13px; 
+				margin-bottom: 13px;
 			}
 
 			img {
 				border-radius: 50%;
-				margin-bottom: 3px; 
+				margin-bottom: 3px;
 			}
 
 			.meta-text {
 				display: block;
 				color: $color__text-light;
 				@include font-size(.8666);
-				line-height: normal; 
-				margin-bottom: 2px; 
+				line-height: normal;
+				margin-bottom: 2px;
 			}
 
 			a {
 				color: $color__text-dark;
 				@include font-size(.9333);
 				font-weight: bold;
-				
+
 				&:hover {
 					color: $color__text-medium;
 				}
@@ -537,11 +549,11 @@
 		.entry-content {
 			float: right;
 			width: 77%;
-			
+
 			@media (max-width: 768px) {
 				float: none;
-				width: 100%; 
-			}			
+				width: 100%;
+			}
 
 			.gallery-format-slides {
 
