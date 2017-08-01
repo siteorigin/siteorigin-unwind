@@ -29,7 +29,9 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 				</div>
 			<?php elseif ( get_post_format() == 'image' && siteorigin_unwind_get_image() ) : ?>
 				<div class="entry-image">
-					<?php echo siteorigin_unwind_get_image(); ?>
+					<a href="<?php the_permalink() ?>">
+						<?php echo siteorigin_unwind_get_image(); ?>
+					</a>
 				</div>
 			<?php elseif ( get_post_format() == 'video' && siteorigin_unwind_get_video() ) : ?>
 				<div class="entry-video">
