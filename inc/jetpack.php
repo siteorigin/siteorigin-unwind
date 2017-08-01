@@ -9,23 +9,40 @@
  * @license GPL 2.0
  */
 
+if ( ! function_exists( 'siteorigin_unwind_jetpack_setup' ) ) :
 /**
  * Jetpack setup function.
  *
- * See: https://jetpack.me/support/infinite-scroll/
- * See: https://jetpack.me/support/responsive-videos/
  */
 function siteorigin_unwind_jetpack_setup() {
-	// Add theme support for Infinite Scroll.
+	/*
+	 * Enable support for Jetpack Featured Content.
+	 * See https://jetpack.com/support/featured-content/
+	 */
+	add_theme_support( 'featured-content', array(
+		'filter'     => 'siteorigin_unwind_get_featured_posts',
+		'max_posts'  => 5,
+		'post_types' => array( 'post' ),
+	) );
+
+	/*
+	 * Enable support for Jetpack Infinite Scroll.
+	 * See https://jetpack.com/support/infinite-scroll/
+	 */	
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'render'    => 'siteorigin_unwind_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
-	// Add theme support for Responsive Videos.
+	/*
+	 * Enable support for Jetpack Responsive Videos.
+	 * See https://jetpack.com/support/responsive-videos/
+	 */	
 	add_theme_support( 'jetpack-responsive-videos' );
 }
+endif;
+// siteorigin_unwind_jetpack_setup
 add_action( 'after_setup_theme', 'siteorigin_unwind_jetpack_setup' );
 
 /**
