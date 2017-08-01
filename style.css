@@ -1984,6 +1984,8 @@ a {
   .blog-layout-grid .archive-entry p:only-of-type,
   .blog-layout-grid .archive-entry p:last-of-type {
     margin-bottom: 0; }
+  .blog-layout-grid .archive-entry .more-link-wrapper {
+    padding-top: 0; }
   .blog-layout-grid .archive-entry .more-link {
     display: block;
     text-align: left;
@@ -2069,21 +2071,26 @@ a {
       font-size: 1.6rem;
       margin: 10px 0 9px;
       text-align: left; }
+    .blog-layout-alternate .archive-entry .entry-content p:only-of-type,
+    .blog-layout-alternate .archive-entry .entry-content p:last-of-type {
+      margin-bottom: 0; }
+    .blog-layout-alternate .archive-entry .entry-content .more-link-wrapper {
+      padding-top: 0; }
     .blog-layout-alternate .archive-entry .entry-content .more-link {
       display: block;
-      color: #24c48a;
-      font-size: 0.9333em;
       text-align: left;
       text-decoration: none;
       text-transform: none;
       padding-top: 5px; }
-      .blog-layout-alternate .archive-entry .entry-content .more-link:hover {
-        color: #626262; }
       .blog-layout-alternate .archive-entry .entry-content .more-link .more-text {
         border: none;
+        color: #24c48a;
         font-family: "Merriweather", serif;
+        font-size: 1.0769em;
         letter-spacing: normal;
         padding: 0; }
+        .blog-layout-alternate .archive-entry .entry-content .more-link .more-text:hover {
+          color: #626262; }
         .blog-layout-alternate .archive-entry .entry-content .more-link .more-text:after {
           content: '\279E';
           position: relative;
