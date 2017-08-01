@@ -1986,19 +1986,19 @@ a {
     margin-bottom: 0; }
   .blog-layout-grid .archive-entry .more-link {
     display: block;
-    color: #24c48a;
-    font-size: 0.9333em;
     text-align: left;
     text-decoration: none;
     text-transform: none;
     padding-top: 5px; }
-    .blog-layout-grid .archive-entry .more-link:hover {
-      color: #626262; }
     .blog-layout-grid .archive-entry .more-link .more-text {
       border: none;
+      color: #24c48a;
       font-family: "Merriweather", serif;
+      font-size: 1.0769em;
       letter-spacing: normal;
       padding: 0; }
+      .blog-layout-grid .archive-entry .more-link .more-text:hover {
+        color: #626262; }
       .blog-layout-grid .archive-entry .more-link .more-text:after {
         content: '\279E';
         position: relative;

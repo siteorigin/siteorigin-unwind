@@ -302,22 +302,22 @@
 
 		.more-link {
 		    display: block;
-		    color: $color__primary-accent;
-		    font-size: 0.9333em;
 		    text-align: left;
 		    text-decoration: none;
 		    text-transform: none;
 			padding-top: 5px;
 
-			&:hover {
-				color: $color__text-medium;
-			}
-
 		    .more-text {
 				border: none;
+				color: $color__primary-accent;
     			font-family: $font__main;
+    			font-size: 1.0769em; 
     			letter-spacing: normal;
     			padding: 0;
+    			
+				&:hover {
+					color: $color__text-medium;
+				}    			
 
     			&:after {
     				content: '\279E';
