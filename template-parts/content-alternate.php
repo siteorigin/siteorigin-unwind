@@ -6,6 +6,7 @@
  * @since siteorigin-unwind 1.1
  * @license GPL 2.0
  */
+
 $gallery = get_post_gallery( get_the_ID(), false );
 if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
 	add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
