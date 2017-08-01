@@ -1981,6 +1981,8 @@ a {
         word-wrap: break-word; }
       .blog-layout-grid .archive-entry .entry-thumbnail .thumbnail-meta span {
         margin-right: 5px; }
+    .blog-layout-grid .archive-entry .entry-thumbnail .gallery-format-slides ul {
+      margin: 0; }
   .blog-layout-grid .archive-entry p:only-of-type,
   .blog-layout-grid .archive-entry p:last-of-type {
     margin-bottom: 0; }
@@ -2048,6 +2050,8 @@ a {
         word-wrap: break-word; }
       .blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta span {
         margin-right: 5px; }
+  .blog-layout-alternate .archive-entry .gallery-format-slides ul {
+    margin: 0; }
   .blog-layout-alternate .archive-entry .entry-content {
     float: right;
     width: 54%; }

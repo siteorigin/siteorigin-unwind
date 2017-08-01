@@ -3,7 +3,7 @@
  * Template part for displaying offset posts.
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 1.1.1 
+ * @since siteorigin-unwind 1.1.1
  * @license GPL 2.0
  */
 
@@ -32,12 +32,14 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 
 		<div class="entry-meta">
 			<?php siteorigin_unwind_post_meta(); ?>
-		</div><!-- .entry-meta -->	
+		</div><!-- .entry-meta -->
 
-		<p class="entry-time">
-			<span class="meta-text"><?php esc_html_e( 'Posted on ', 'siteorigin-unwind' ); ?></span>
-			<?php the_time( apply_filters( 'siteorigin_unwind_date_format', 'M d, Y' ) ); ?>
-		</p>
+		<?php if ( siteorigin_setting( 'blog_display_date' ) ) : ?>
+			<p class="entry-time">
+				<span class="meta-text"><?php esc_html_e( 'Posted on ', 'siteorigin-unwind' ); ?></span>
+				<?php the_time( apply_filters( 'siteorigin_unwind_date_format', 'M d, Y' ) ); ?>
+			</p>
+		<?php endif; ?>
 
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -58,12 +60,14 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 			</a>
 		</div>
 
-		<div class="entry-categories">
-			<span class="meta-text"><?php esc_html_e( 'Posted in', 'siteorigin-unwind' ); ?></span>
-			<?php the_category( ', ', '', '' ); ?>
-		</div>
+		<?php if ( siteorigin_setting( 'blog_display_category' ) ) : ?>
+			<div class="entry-categories">
+				<span class="meta-text"><?php esc_html_e( 'Posted in', 'siteorigin-unwind' ); ?></span>
+				<?php the_category( ', ', '', '' ); ?>
+			</div>
+		<?php endif; ?>
 
-		<?php if ( $comments ) : ?>
+		<?php if ( $comments && siteorigin_setting( 'blog_display_comments' ) ) : ?>
 			<div class="entry-comments">
 				<span class="meta-text"><?php esc_html_e( 'Comments', 'siteorigin-unwind' ); ?></span>
 				<a href="<?php get_comments_link(); ?>"><?php echo $comments; ?></a>
@@ -87,7 +91,9 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 				</div>
 			<?php elseif ( get_post_format() == 'image' && siteorigin_unwind_get_image() ) : ?>
 				<div class="entry-image">
-					<?php echo siteorigin_unwind_get_image(); ?>
+					<a href="<?php the_permalink() ?>">
+						<?php echo siteorigin_unwind_get_image(); ?>
+					</a>
 				</div>
 			<?php elseif ( get_post_format() == 'video' && siteorigin_unwind_get_video() ) : ?>
 				<div class="entry-video">
