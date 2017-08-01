@@ -13,6 +13,8 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 
 if ( ( get_post_format() == 'gallery' && $gallery != '' ) || ( get_post_format() == 'image' && siteorigin_unwind_get_image() ) || ( get_post_format() == 'video' && siteorigin_unwind_get_video() ) || has_post_thumbnail() ) {
 	$entry_thumb = 'active-entry-thumb';
+} else {
+	$entry_thumb = '';
 }
 ?>
 
