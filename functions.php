@@ -99,16 +99,6 @@ function siteorigin_unwind_setup() {
 	) ) );
 
 	/*
-	 * Enable support for Jetpack Featured Content.
-	 * See https://jetpack.com/support/featured-content/
-	 */
-	add_theme_support( 'featured-content', array(
-		'filter'     => 'siteorigin_unwind_get_featured_posts',
-		'max_posts'  => 5,
-		'post_types' => array( 'post' ),
-	) );
-
-	/*
 	 * Allow shortcodes to be use in category descriptions.
 	 * See https://developer.wordpress.org/reference/functions/term_description/
 	 */

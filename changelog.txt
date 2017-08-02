@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.2 - 01 August 2017 =
+* Changed mini-cart drop-down direction when used with menu in line with logo header layout.
+* Added post formats outputs for alternate and grid blog layouts.
+
 = 1.1.1 - 18 July 2017 =
 * Added new Offset blog layout.
 * Updated settings framework to resolve "Menu in line with logo" settings padding bug.

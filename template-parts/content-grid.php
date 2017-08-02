@@ -3,18 +3,42 @@
  * Template part for displaying grid posts.
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 1.1 
+ * @since siteorigin-unwind 1.1
  * @license GPL 2.0
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-entry' ); ?>>
 
-	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
+	<?php if ( siteorigin_setting( 'blog_featured_archive' ) && siteorigin_unwind_archive_post_media() ) : ?>
 		<div class="entry-thumbnail">
-			<a href="<?php the_permalink() ?>">
-				<?php the_post_thumbnail( 'siteorigin-unwind-360x238-crop' ); ?>
-			</a>
+			<?php if ( get_post_format() == 'gallery' && siteorigin_unwind_get_gallery() ) : ?>
+				<?php $gallery = siteorigin_unwind_get_gallery(); ?>
+				<div class="flexslider gallery-format-slider">
+					<ul class="slides gallery-format-slides">
+						<?php foreach ( $gallery['src'] as $image ) : ?>
+							<li class="gallery-format-slide">
+								<img src="<?php echo $image; ?>">
+							</li>
+						<?php endforeach; ?>
+					<ul>
+				</div>
+			<?php elseif ( get_post_format() == 'image' && siteorigin_unwind_get_image() ) : ?>
+				<div class="entry-image">
+					<a href="<?php the_permalink() ?>">
+						<?php echo siteorigin_unwind_get_image(); ?>
+					</a>
+				</div>
+			<?php elseif ( get_post_format() == 'video' && siteorigin_unwind_get_video() ) : ?>
+				<div class="entry-video">
+					<?php echo siteorigin_unwind_get_video(); ?>
+				</div>
+			<?php elseif ( has_post_thumbnail() ) : ?>
+				<a href="<?php the_permalink() ?>">
+					<?php the_post_thumbnail( 'siteorigin-unwind-360x238-crop', array( 'class' => 'aligncenter' ) ); ?>
+				</a>
+			<?php endif; ?>
+
 			<?php siteorigin_unwind_thumbnail_meta(); ?>
 		</div>
 	<?php endif; ?>

@@ -163,7 +163,7 @@ function siteorigin_unwind_display_logo() {
 endif;
 
 /**
- * Display a retina ready logo
+ * Display a retina ready logo.
  */
 function siteorigin_unwind_display_retina_logo( $attr ){
 	$logo = siteorigin_setting( 'branding_logo' );
@@ -703,10 +703,39 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_strip_image' ) ) :
 /**
- * Removes the first image from the page
+ * Removes the first image from the page.
  */
 function siteorigin_unwind_strip_image( $content ) {
 	return preg_replace( '/<img[^>]+\>/i', '', $content, 1 );
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_get_gallery' ) ) :
+/**
+ * Get gallery from content for gallery format posts.
+ */
+function siteorigin_unwind_get_gallery() {
+	$gallery = get_post_gallery( get_the_ID(), false );
+	if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
+		add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
+	}
+
+	return ( '' !== $gallery ) ? $gallery : false;
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_archive_post_media' ) ) :
+/**
+ * Check if archive post has format media or thumbnail.
+ */
+function siteorigin_unwind_archive_post_media() {
+
+	if ( ( get_post_format() == 'gallery' && siteorigin_unwind_get_gallery() ) || ( get_post_format() == 'image' && siteorigin_unwind_get_image() ) || ( get_post_format() == 'video' && siteorigin_unwind_get_video() ) || has_post_thumbnail() ) {
+		$entry_thumb = 'active-entry-thumb';
+	} else {
+		$entry_thumb = '';
+	}
+	return $entry_thumb;
 }
 endif;
 
