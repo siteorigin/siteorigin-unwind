@@ -79,7 +79,8 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 	<div class="entry-content">
 
 		<div class="entry-thumbnail">
-			<?php if ( get_post_format() == 'gallery' && $gallery != '' ) : ?>
+			<?php if ( get_post_format() == 'gallery' && siteorigin_unwind_get_gallery() ) : ?>
+				<?php $gallery = siteorigin_unwind_get_gallery(); ?>
 				<div class="flexslider gallery-format-slider">
 					<ul class="slides gallery-format-slides">
 						<?php foreach ( $gallery['src'] as $image ) : ?>

@@ -6,15 +6,14 @@
  * @since siteorigin-unwind 1.1
  * @license GPL 2.0
  */
-
-siteorigin_unwind_archive_gallery_post();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-entry' ); ?>>
 
-	<?php if ( siteorigin_setting( 'blog_featured_archive' ) && $entry_thumb == 'active-entry-thumb' ) : ?>
+	<?php if ( siteorigin_setting( 'blog_featured_archive' ) && siteorigin_unwind_archive_post_media() ) : ?>
 		<div class="entry-thumbnail">
-			<?php if ( get_post_format() == 'gallery' && $gallery != '' ) : ?>
+			<?php if ( get_post_format() == 'gallery' && siteorigin_unwind_get_gallery() ) : ?>
+				<?php $gallery = siteorigin_unwind_get_gallery(); ?>
 				<div class="flexslider gallery-format-slider">
 					<ul class="slides gallery-format-slides">
 						<?php foreach ( $gallery['src'] as $image ) : ?>
