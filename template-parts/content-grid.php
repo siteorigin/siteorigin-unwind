@@ -6,24 +6,14 @@
  * @since siteorigin-unwind 1.1
  * @license GPL 2.0
  */
-
-$gallery = get_post_gallery( get_the_ID(), false );
-if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
-	add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
-}
-
-if ( ( get_post_format() == 'gallery' && $gallery != '' ) || ( get_post_format() == 'image' && siteorigin_unwind_get_image() ) || ( get_post_format() == 'video' && siteorigin_unwind_get_video() ) || has_post_thumbnail() ) {
-	$entry_thumb = 'active-entry-thumb';
-} else {
-	$entry_thumb = '';
-}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-entry' ); ?>>
 
-	<?php if ( siteorigin_setting( 'blog_featured_archive' ) && $entry_thumb == 'active-entry-thumb' ) : ?>
+	<?php if ( siteorigin_setting( 'blog_featured_archive' ) && siteorigin_unwind_archive_post_media() ) : ?>
 		<div class="entry-thumbnail">
-			<?php if ( get_post_format() == 'gallery' && $gallery != '' ) : ?>
+			<?php if ( get_post_format() == 'gallery' && siteorigin_unwind_get_gallery() ) : ?>
+				<?php $gallery = siteorigin_unwind_get_gallery(); ?>
 				<div class="flexslider gallery-format-slider">
 					<ul class="slides gallery-format-slides">
 						<?php foreach ( $gallery['src'] as $image ) : ?>

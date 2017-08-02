@@ -7,11 +7,6 @@
  * @license GPL 2.0
  */
 
-$gallery = get_post_gallery( get_the_ID(), false );
-if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
-	add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
-}
-
 $content = siteorigin_unwind_strip_gallery( get_the_content() );
 $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
 
@@ -33,7 +28,8 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( $gallery != '' ) : ?>
+	<?php if ( siteorigin_unwind_get_gallery() ) : ?>
+		<?php $gallery = siteorigin_unwind_get_gallery(); ?>
 		<div class="flexslider gallery-format-slider">
 			<ul class="slides gallery-format-slides">
 				<?php foreach ( $gallery['src'] as $image ) : ?>

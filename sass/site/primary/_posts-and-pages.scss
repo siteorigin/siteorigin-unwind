@@ -267,6 +267,15 @@
 		.entry-thumbnail {
 			margin: 0 auto 17px;
 			position: relative;
+			
+			.entry-video,
+			.entry-image {
+				margin-bottom: 0;
+			}
+
+			.flexslider {
+				margin-bottom: 40px; 
+			}
 
 			.thumbnail-meta {
 				left: 12px;
@@ -295,6 +304,7 @@
 			}
 
 			.gallery-format-slides {
+
 				ul {
 					margin: 0;
 				}
@@ -357,6 +367,11 @@
 			margin: 0 3.5% 0 0;
 			position: relative;
 			width: 42.5%;
+			
+			.entry-video,
+			.entry-image {
+				margin-bottom: 0;
+			}			
 
 			@media (max-width: 640px) {
 				float: none;
