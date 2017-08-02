@@ -1961,6 +1961,11 @@ a {
   .blog-layout-grid .archive-entry .entry-thumbnail {
     margin: 0 auto 17px;
     position: relative; }
+    .blog-layout-grid .archive-entry .entry-thumbnail .entry-video,
+    .blog-layout-grid .archive-entry .entry-thumbnail .entry-image {
+      margin-bottom: 0; }
+    .blog-layout-grid .archive-entry .entry-thumbnail .flexslider {
+      margin-bottom: 40px; }
     .blog-layout-grid .archive-entry .entry-thumbnail .thumbnail-meta {
       left: 12px;
       position: absolute;
@@ -2025,6 +2030,9 @@ a {
     margin: 0 3.5% 0 0;
     position: relative;
     width: 42.5%; }
+    .blog-layout-alternate .archive-entry .entry-thumbnail .entry-video,
+    .blog-layout-alternate .archive-entry .entry-thumbnail .entry-image {
+      margin-bottom: 0; }
     @media (max-width: 640px) {
       .blog-layout-alternate .archive-entry .entry-thumbnail {
         float: none;

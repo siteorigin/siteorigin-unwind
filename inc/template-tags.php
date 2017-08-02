@@ -712,7 +712,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_get_gallery' ) ) :
 /**
- * Get gallery from content for gallery format posts
+ * Get gallery from content for gallery format posts.
  */
 function siteorigin_unwind_get_gallery() {
 	$gallery = get_post_gallery( get_the_ID(), false );
@@ -726,7 +726,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_archive_post_media' ) ) :
 /**
- * Check if archive post has format media or thumbnail
+ * Check if archive post has format media or thumbnail.
  */
 function siteorigin_unwind_archive_post_media() {
 
@@ -738,7 +738,6 @@ function siteorigin_unwind_archive_post_media() {
 	return $entry_thumb;
 }
 endif;
-
 
 if ( ! function_exists( 'siteorigin_unwind_jetpackme_related_posts_headline' ) ) :
 /**
