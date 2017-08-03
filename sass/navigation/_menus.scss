@@ -253,6 +253,14 @@
 	top: 61px;
 	width: 100%;
 	z-index: 10;
+	
+	@at-root .header-design-2 & {
+		top: 60px;
+	}	
+
+	@at-root .header-design-3 & {
+		top: 60px;
+	}	
 
 	@at-root .header-design-4 & {
 		top: 100px;

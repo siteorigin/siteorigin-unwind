@@ -77,6 +77,7 @@
 			margin: 0;
 			text-align: center;
 			text-transform: uppercase;
+			word-break: break-all;
 
 			@media (max-width: 480px) {
 				@include font-size(3.2);
