@@ -238,6 +238,7 @@ function siteorigin_unwind_settings_init() {
 						'grid'  => esc_html__( 'Grid', 'siteorigin-unwind' ),
 						'offset'  => esc_html__( 'Offset', 'siteorigin-unwind' ),
 						'alternate'  => esc_html__( 'Alternate', 'siteorigin-unwind' ),
+						'masonry'  => esc_html__( 'Masonry', 'siteorigin-unwind' ),
 					),
 					'description' => esc_html__('Choose how to display your posts on the blog and archive pages.', 'siteorigin-unwind'),
 				),

@@ -145,7 +145,7 @@ jQuery( function( $ ) {
 	$( window ).scroll( sttWindowScroll );
 	$( '#scroll-to-top' ).click( function () {
 		$( 'html, body' ).animate( { scrollTop: 0 } );
-	} );	
+	} );
 
 	// Sticky menu
 	if ( $( '.sticky-bar' ).hasClass( 'sticky-menu' ) ) {
@@ -175,3 +175,15 @@ jQuery( function( $ ) {
 	}
 
 } );
+
+( function($) {
+	$(window).load( function() {
+		// Handle masonry blog layout
+		if ( $( '.blog-layout-masonry' ).length ) {
+			$( '.blog-layout-masonry' ).masonry( {
+				itemSelector: '.archive-entry',
+				columnWidth: '.archive-entry'
+			} );
+		}
+	} );
+} )(jQuery);
