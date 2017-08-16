@@ -703,6 +703,16 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.blog-layout-grid .archive-entry .more-link .more-text:hover {
 	color: ${fonts_text_medium};
 	}
+	.blog-layout-masonry .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-masonry .archive-entry .entry-thumbnail .thumbnail-meta span {
+	.font( ${fonts_details} );
+	}
+	.blog-layout-masonry .archive-entry .more-link .more-text {
+	color: ${branding_accent};
+	.font( ${fonts_main} );
+	}
+	.blog-layout-masonry .archive-entry .more-link .more-text:hover {
+	color: ${fonts_text_medium};
+	}
 	.blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta span {
 	.font( ${fonts_details} );
 	}
