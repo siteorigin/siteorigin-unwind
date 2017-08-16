@@ -798,6 +798,10 @@ a {
   top: 61px;
   width: 100%;
   z-index: 10; }
+  .header-design-2 #mobile-navigation {
+    top: 60px; }
+  .header-design-3 #mobile-navigation {
+    top: 60px; }
   .header-design-4 #mobile-navigation {
     top: 100px; }
   #mobile-navigation ul {
@@ -1567,7 +1571,8 @@ a {
       line-height: normal;
       margin: 0;
       text-align: center;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      word-break: break-all; }
       @media (max-width: 480px) {
         #masthead .site-branding .site-title {
           font-size: 51.2px;
@@ -2838,6 +2843,9 @@ a {
     font-size: 0.8666rem;
     padding: 45px 0;
     text-align: center; }
+    @media (max-width: 480px) {
+      #colophon .site-info {
+        word-break: break-all; } }
     #colophon .site-info a {
       color: inherit;
       text-decoration: none; }
