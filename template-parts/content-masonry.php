@@ -37,7 +37,7 @@
 					</div>
 				<?php elseif ( has_post_thumbnail() ) : ?>
 					<a href="<?php the_permalink() ?>">
-						<?php the_post_thumbnail( 'siteorigin-unwind-360x238-crop', array( 'class' => 'aligncenter' ) ); ?>
+						<?php the_post_thumbnail( '', array( 'class' => 'aligncenter' ) ); ?>
 					</a>
 				<?php endif; ?>
 
