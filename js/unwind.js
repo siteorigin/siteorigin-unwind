@@ -176,9 +176,9 @@ jQuery( function( $ ) {
 
 } );
 
-( function($) {
-	$(window).load( function() {
-		// Handle masonry blog layout
+( function( $ ) {
+	$( window ).load( function() {
+		// Handle masonry blog layout.
 		if ( $( '.blog-layout-masonry' ).length ) {
 			$( '.blog-layout-masonry' ).masonry( {
 				itemSelector: '.archive-entry',
@@ -186,4 +186,4 @@ jQuery( function( $ ) {
 			} );
 		}
 	} );
-} )(jQuery);
+} )( jQuery );
