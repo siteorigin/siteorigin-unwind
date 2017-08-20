@@ -3,7 +3,7 @@
  * Template part for displaying masonry posts.
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 1.1
+ * @since siteorigin-unwind 1.1.3
  * @license GPL 2.0
  */
 ?>
