@@ -165,7 +165,16 @@
 
 					a {
 						color: $color__text-dark;
+						
+						&:hover {
+							color: $color__text-light;
+						}
 					}
+				}
+
+				.sku {
+					color: $color__text-dark; 
+					display: inline-block;
 				}
 			}
 		}
