@@ -185,6 +185,7 @@
 				margin-top: 10px;
 
 				li {
+
 					img {
 						padding: 10px;
 					}
@@ -387,6 +388,7 @@
 }
 
 .variations {
+
 	select {
 		@include appearance(none);
 		background: transparent;
@@ -419,6 +421,7 @@
 	}
 
 	select:hover + svg {
+		
 		path {
 			fill: $color__text-dark;
 		}
