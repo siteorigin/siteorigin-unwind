@@ -3,6 +3,7 @@
 = 1.1.3 - 21 August 2017 =
 * Added Masonry blog layout.
 * Removed the WooCommerce archive hover add to cart and quick view buttons from mobile.
+* Adjusted the sticky navigation for the admin bar when logged in.
 
 = 1.1.2 - 01 August 2017 =
 * Changed mini-cart drop-down direction when used with menu in line with logo header layout.
