@@ -23,12 +23,15 @@ jQuery( function( $ ) {
 	// Check if an element is visible in the viewport
 	$.fn.unwindIsVisible = function() {
 		var rect = this[0].getBoundingClientRect();
-		return (
-			rect.bottom >= 0 &&
-			rect.right >= 0 &&
-			rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-			rect.left <= (window.innerWidth || document.documentElement.clientWidth)
-		);
+		return ( rect.bottom >= 0 );
+	};
+
+	// Check if element is are overlapping the wp admin bar
+	$.fn.unwindAdminIsVisible = function() {
+		var wpab = $( '#wpadminbar' );
+		var el1 = wpab[0].getBoundingClientRect();
+		var el2 = this[0].getBoundingClientRect();
+		return ! ( el1.bottom < el2.top );
 	};
 
 	// Featured posts slider.
@@ -162,10 +165,16 @@ jQuery( function( $ ) {
 				$sbs = $( '<div class="sticky-bar-sentinel"></div>' ).insertBefore( $sb );
 			}
 			// Toggle .topbar-out with visibility of top-bar in the viewport
-			if ( $( 'body' ).hasClass( 'sticky-menu' ) && ! $sbs.unwindIsVisible() ) {
+			if ( $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'sticky-menu' ) && $sbs.unwindAdminIsVisible() ) {
 				$( 'body' ).addClass( 'sticky-bar-out' );
 			}
-			if ( $( 'body' ).hasClass( 'sticky-bar-out' ) && $sbs.unwindIsVisible() ) {
+			if ( ! $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'sticky-menu' ) && ! $sbs.unwindIsVisible() ) {
+				$( 'body' ).addClass( 'sticky-bar-out' );
+			}
+			if ( $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'sticky-bar-out' ) && ! $sbs.unwindAdminIsVisible() ) {
+				$( 'body' ).removeClass( 'sticky-bar-out' );
+			}
+			if ( ! $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'sticky-bar-out' ) && $sbs.unwindIsVisible() ) {
 				$( 'body' ).removeClass( 'sticky-bar-out' );
 			}
 		}
