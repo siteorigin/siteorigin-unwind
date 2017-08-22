@@ -223,6 +223,7 @@
 
 						@at-root .is_mobile#{&} {
 							opacity: 1;
+							visibility: visible;
 						}
 					}
 
