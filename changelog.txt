@@ -4,6 +4,7 @@
 * Added Masonry blog layout.
 * Removed the WooCommerce archive hover add to cart and quick view buttons from mobile.
 * Adjusted the sticky navigation for the admin bar when logged in.
+* Minor style fixes for the WooCommerce mini-cart when header layout 4 is used.
 
 = 1.1.2 - 01 August 2017 =
 * Changed mini-cart drop-down direction when used with menu in line with logo header layout.
