@@ -22,16 +22,12 @@ jQuery( function( $ ) {
 
 	// Check if an element is visible in the viewport
 	$.fn.unwindIsVisible = function() {
-		var rect = this[0].getBoundingClientRect();
-		return ( rect.bottom >= 0 );
+		return ( this[0].getBoundingClientRect().bottom >= 0 );
 	};
 
 	// Check if element is are overlapping the wp admin bar
 	$.fn.unwindAdminIsVisible = function() {
-		var wpab = $( '#wpadminbar' );
-		var el1 = wpab[0].getBoundingClientRect();
-		var el2 = this[0].getBoundingClientRect();
-		return ! ( el1.bottom < el2.top );
+		return ! ( $( '#wpadminbar' )[0].getBoundingClientRect().bottom < this[0].getBoundingClientRect().top );
 	};
 
 	// Featured posts slider.
