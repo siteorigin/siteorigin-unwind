@@ -1513,6 +1513,9 @@ a {
   margin-bottom: 80px; }
   .header-design-2 #masthead {
     border-bottom: none; }
+  .header-design-1 #masthead .sticky-bar-sentinel {
+    position: relative;
+    top: 1px; }
   #masthead .sticky-bar {
     background: #fff;
     position: relative;
