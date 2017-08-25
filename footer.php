@@ -23,7 +23,7 @@
 				if ( is_active_sidebar( 'footer-sidebar' ) ) {
 					$siteorigin_unwind_sidebars = wp_get_sidebars_widgets();
 					?>
-					<div class="widgets widgets-<?php echo count( $siteorigin_unwind_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Footer Sidebar', 'siteorigin-unwind' ); ?>">
+					<div class="widgets widgets-<?php echo count( $siteorigin_unwind_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_attr_e( 'Footer Sidebar', 'siteorigin-unwind' ); ?>">
 						<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 					</div>
 					<?php
