@@ -118,15 +118,15 @@ function siteorigin_unwind_comment( $comment, $args, $depth ) {
 
 			<div class="comment-container">
 				<div class="info">
-					<span class="author"><?php comment_author_link() ?></span><br>
-					<span class="date"><?php comment_date() ?></span>
+					<span class="author"><?php comment_author_link(); ?></span><br>
+					<span class="date"><?php comment_date(); ?></span>
 				</div>
 
 				<div class="comment-content content">
 					<?php comment_text() ?>
 				</div>
 
-				<?php if($depth <= $args['max_depth']) : ?>
+				<?php if ( $depth <= $args['max_depth'] ) : ?>
 					<?php comment_reply_link( array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ?>
 				<?php endif; ?>
 			</div>
@@ -355,7 +355,7 @@ function siteorigin_unwind_post_meta( $cats = true ) {
 
 
 	<?php if ( $categories_list && siteorigin_unwind_categorized_blog() && siteorigin_setting( 'blog_display_category' ) && $cats == true ) {
-		printf( '<span class="entry-category">' . esc_html__( '%1$s', 'siteorigin-unwind' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		printf( '<span class="entry-category">' . '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
 	} ?>
 
 	<?php if ( $comments && siteorigin_setting( 'blog_display_comments' ) ) {
