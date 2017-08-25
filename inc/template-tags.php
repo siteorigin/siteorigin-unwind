@@ -359,7 +359,7 @@ function siteorigin_unwind_post_meta( $cats = true ) {
 	} ?>
 
 	<?php if ( $comments && siteorigin_setting( 'blog_display_comments' ) ) {
-		echo '<span class="entry-comments"><a href="' . get_comments_link() .'">'. $comments.'</a></span>';
+		echo '<span class="entry-comments"><a href="' . get_comments_link() .'">' . $comments . '</a></span>';
 	} ?>
 
 <?php }
