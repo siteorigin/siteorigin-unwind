@@ -5,15 +5,15 @@ Contributors: siteorigin
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
-Tested up to: 4.8
+Tested up to: 4.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SiteOrigin Unwind is our latest, flexible multipurpose feature stunning WooCommerce integration.
+Unwind is a flexible multi-purpose theme for creators, offering clean lines, crisp typography and unparalleled WooCommerce integration. 
 
 == Description ==
 
-SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with various plugins. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though Unwind's WooCommerce integration.
+Unwind is a modern theme for creators. A stunning integrated posts slider, clean lines and crisp typography make it the perfect canvas for bloggers. Complete WooCommerce integration usually only found in premium themes makes Unwind ideal for selling. We know standing out from the crowd is important. Unwind now offers four header layouts and five blog layouts, making it easy to create a unique look and feel to suit your brand. Unwind is fully responsive and mobile ready, it also features a bold full screen search, smooth back to top button and integrations for all of your favourite plugins like Jetpack Infinite Scroll and Page Builder by SiteOrigin. For assistance, check out our <a href="https://siteorigin.com/unwind-documentation/">theme documentation</a> (https://siteorigin.com/unwind-documentation/) or ask a question on our <a href="https://siteorigin.com/thread/">support forum</a> (https://siteorigin.com/thread/).
 
 == Installation ==
 	
