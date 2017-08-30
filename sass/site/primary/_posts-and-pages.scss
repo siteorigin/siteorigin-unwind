@@ -6,8 +6,12 @@
 }
 
 .page-header,
-.page article:first-of-type .entry-header {
+.page article .entry-header {
 	margin-bottom: 2em;
+}
+
+.page .widget_siteorigin-panels-postloop article .entry-header {
+	margin-bottom: 0;
 }
 
 .entry {
