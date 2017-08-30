@@ -3,29 +3,13 @@ Theme Name: SiteOrigin Unwind
 Author: SiteOrigin
 Author URI: https://siteorigin.com/
 Theme URI: https://siteorigin.com/theme/unwind/
-Description: SiteOrigin Unwind is our latest, flexible multipurpose theme. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with various plugins. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though Unwind's WooCommerce integration. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
+Description: Unwind is a modern theme for creators. A stunning integrated posts slider, clean lines and crisp typography make it the perfect canvas for bloggers. Complete WooCommerce integration usually only found in premium themes makes Unwind ideal for selling. We know standing out from the crowd is important. Unwind now offers four header layouts and five blog layouts, making it easy to create a unique look and feel to suit your brand. Unwind is fully responsive and mobile ready, it also features a bold full screen search, smooth back to top button and integrations for all of your favourite plugins like Jetpack Infinite Scroll and Page Builder by SiteOrigin. For assistance, check out our <a href="https://siteorigin.com/unwind-documentation/">theme documentation</a> (https://siteorigin.com/unwind-documentation/) or ask a question on our <a href="https://siteorigin.com/thread/">support forum</a> (https://siteorigin.com/thread/).
 Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: siteorigin-unwind
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, sticky-post, theme-options, translation-ready, blog, e-commerce
 */
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-# Jetpack
-# Media
---------------------------------------------------------------*/
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
 ----------------------------------------------------------------
@@ -798,6 +782,10 @@ a {
   top: 61px;
   width: 100%;
   z-index: 10; }
+  .header-design-2 #mobile-navigation {
+    top: 60px; }
+  .header-design-3 #mobile-navigation {
+    top: 60px; }
   .header-design-4 #mobile-navigation {
     top: 100px; }
   #mobile-navigation ul {
@@ -1509,6 +1497,9 @@ a {
   margin-bottom: 80px; }
   .header-design-2 #masthead {
     border-bottom: none; }
+  .header-design-1 #masthead .sticky-bar-sentinel {
+    position: relative;
+    top: 1px; }
   #masthead .sticky-bar {
     background: #fff;
     position: relative;
@@ -1567,7 +1558,8 @@ a {
       line-height: normal;
       margin: 0;
       text-align: center;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      word-break: break-all; }
       @media (max-width: 480px) {
         #masthead .site-branding .site-title {
           font-size: 51.2px;
@@ -2013,6 +2005,104 @@ a {
         position: relative;
         right: -7px;
         top: 1px; }
+
+.blog-layout-masonry {
+  margin-left: -15px;
+  margin-right: -15px; }
+  .blog-layout-masonry .archive-entry {
+    border-bottom: none;
+    float: left;
+    margin-right: 0;
+    margin-bottom: 53px;
+    padding-bottom: 0;
+    vertical-align: top;
+    width: 33.333%; }
+    .blog-layout-masonry .archive-entry .masonry-entry-content {
+      padding: 0 15px; }
+    @media (max-width: 890px) {
+      .no-active-sidebar .blog-layout-masonry .archive-entry {
+        width: 50%; } }
+    @media (max-width: 640px) {
+      .no-active-sidebar .blog-layout-masonry .archive-entry {
+        width: 100%; } }
+    @media (max-width: 1175px) {
+      body:not(.no-active-sidebar) .blog-layout-masonry .archive-entry {
+        width: 50%; } }
+    @media (max-width: 640px) {
+      body:not(.no-active-sidebar) .blog-layout-masonry .archive-entry {
+        width: 100%; } }
+    .blog-layout-masonry .archive-entry .entry-meta {
+      -webkit-box-pack: left;
+      -moz-box-pack: left;
+      box-pack: left;
+      -webkit-justify-content: left;
+      -moz-justify-content: left;
+      -ms-justify-content: left;
+      -o-justify-content: left;
+      justify-content: left;
+      -ms-flex-pack: left; }
+      .blog-layout-masonry .archive-entry .entry-meta span:not(:last-child):after {
+        padding: 0 .2em; }
+    .blog-layout-masonry .archive-entry .entry-title {
+      font-size: 17.0656px;
+      font-size: 1.0666rem;
+      margin: 10px 0 9px;
+      text-align: left; }
+    .blog-layout-masonry .archive-entry .entry-thumbnail {
+      margin: 0 auto 17px;
+      position: relative; }
+      .blog-layout-masonry .archive-entry .entry-thumbnail .entry-video,
+      .blog-layout-masonry .archive-entry .entry-thumbnail .entry-image {
+        margin-bottom: 0; }
+      .blog-layout-masonry .archive-entry .entry-thumbnail .flexslider {
+        margin-bottom: 40px; }
+      .blog-layout-masonry .archive-entry .entry-thumbnail .thumbnail-meta {
+        left: 12px;
+        position: absolute;
+        top: 12px;
+        max-width: 92%; }
+        .blog-layout-masonry .archive-entry .entry-thumbnail .thumbnail-meta a,
+        .blog-layout-masonry .archive-entry .entry-thumbnail .thumbnail-meta span {
+          background: #06090b;
+          color: #fff;
+          display: inline-block;
+          font-family: "Lato", sans-serif;
+          font-size: 11px;
+          line-height: normal;
+          letter-spacing: .1em;
+          margin: 0 4px 4px 0;
+          padding: 7px 9px;
+          text-transform: uppercase;
+          word-wrap: break-word; }
+        .blog-layout-masonry .archive-entry .entry-thumbnail .thumbnail-meta span {
+          margin-right: 5px; }
+      .blog-layout-masonry .archive-entry .entry-thumbnail .gallery-format-slides ul {
+        margin: 0; }
+    .blog-layout-masonry .archive-entry p:only-of-type,
+    .blog-layout-masonry .archive-entry p:last-of-type {
+      margin-bottom: 0; }
+    .blog-layout-masonry .archive-entry .more-link-wrapper {
+      padding-top: 0; }
+    .blog-layout-masonry .archive-entry .more-link {
+      display: block;
+      text-align: left;
+      text-decoration: none;
+      text-transform: none;
+      padding-top: 5px; }
+      .blog-layout-masonry .archive-entry .more-link .more-text {
+        border: none;
+        color: #24c48a;
+        font-family: "Merriweather", serif;
+        font-size: 1.0769em;
+        letter-spacing: normal;
+        padding: 0; }
+        .blog-layout-masonry .archive-entry .more-link .more-text:hover {
+          color: #626262; }
+        .blog-layout-masonry .archive-entry .more-link .more-text:after {
+          content: '\279E';
+          position: relative;
+          right: -7px;
+          top: 1px; }
 
 .blog-layout-alternate .archive-entry {
   margin-bottom: 60px;
@@ -2740,6 +2830,9 @@ a {
     font-size: 0.8666rem;
     padding: 45px 0;
     text-align: center; }
+    @media (max-width: 480px) {
+      #colophon .site-info {
+        word-break: break-all; } }
     #colophon .site-info a {
       color: inherit;
       text-decoration: none; }

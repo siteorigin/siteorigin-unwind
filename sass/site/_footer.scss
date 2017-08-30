@@ -39,6 +39,10 @@
 		@include font-size(0.8666);
 		padding: 45px 0;
 		text-align: center;
+		
+		@media (max-width: 480px) {
+			word-break: break-all;
+		}
 
 		a {
 			color: inherit;

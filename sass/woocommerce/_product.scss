@@ -165,7 +165,16 @@
 
 					a {
 						color: $color__text-dark;
+						
+						&:hover {
+							color: $color__text-light;
+						}
 					}
+				}
+
+				.sku {
+					color: $color__text-dark; 
+					display: inline-block;
 				}
 			}
 		}
@@ -176,6 +185,7 @@
 				margin-top: 10px;
 
 				li {
+
 					img {
 						padding: 10px;
 					}
@@ -378,6 +388,7 @@
 }
 
 .variations {
+
 	select {
 		@include appearance(none);
 		background: transparent;
@@ -410,6 +421,7 @@
 	}
 
 	select:hover + svg {
+		
 		path {
 			fill: $color__text-dark;
 		}

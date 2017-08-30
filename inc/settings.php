@@ -238,6 +238,7 @@ function siteorigin_unwind_settings_init() {
 						'grid'  => esc_html__( 'Grid', 'siteorigin-unwind' ),
 						'offset'  => esc_html__( 'Offset', 'siteorigin-unwind' ),
 						'alternate'  => esc_html__( 'Alternate', 'siteorigin-unwind' ),
+						'masonry'  => esc_html__( 'Masonry', 'siteorigin-unwind' ),
 					),
 					'description' => esc_html__('Choose how to display your posts on the blog and archive pages.', 'siteorigin-unwind'),
 				),
@@ -695,26 +696,32 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.blog-layout-grid .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-grid .archive-entry .entry-thumbnail .thumbnail-meta span {
 	.font( ${fonts_details} );
 	}
-	.blog-layout-grid .archive-entry .more-link {
+	.blog-layout-grid .archive-entry .more-link .more-text {
 	color: ${branding_accent};
+	.font( ${fonts_main} );
 	}
-	.blog-layout-grid .archive-entry .more-link:hover {
+	.blog-layout-grid .archive-entry .more-link .more-text:hover {
 	color: ${fonts_text_medium};
 	}
-	.blog-layout-grid .archive-entry .more-link .more-text {
+	.blog-layout-masonry .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-masonry .archive-entry .entry-thumbnail .thumbnail-meta span {
+	.font( ${fonts_details} );
+	}
+	.blog-layout-masonry .archive-entry .more-link .more-text {
+	color: ${branding_accent};
 	.font( ${fonts_main} );
+	}
+	.blog-layout-masonry .archive-entry .more-link .more-text:hover {
+	color: ${fonts_text_medium};
 	}
 	.blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta span {
 	.font( ${fonts_details} );
 	}
-	.blog-layout-alternate .archive-entry .entry-content .more-link {
-	color: ${branding_accent};
-	}
-	.blog-layout-alternate .archive-entry .entry-content .more-link:hover {
-	color: ${fonts_text_medium};
-	}
 	.blog-layout-alternate .archive-entry .entry-content .more-link .more-text {
+	color: ${branding_accent};
 	.font( ${fonts_main} );
+	}
+	.blog-layout-alternate .archive-entry .entry-content .more-link .more-text:hover {
+	color: ${fonts_text_medium};
 	}
 	.blog-layout-offset .archive-entry .entry-header .entry-time {
 	color: ${fonts_text_light};

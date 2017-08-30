@@ -220,6 +220,11 @@
 
 					img {
 						opacity: 0.25;
+
+						@at-root .is_mobile#{&} {
+							opacity: 1;
+							visibility: visible;
+						}
 					}
 
 					.add_to_cart_button,
@@ -228,6 +233,14 @@
 					.product_type_variable {
 						opacity: 1;
 						visibility: visible;
+					}
+
+					* {
+						
+						@at-root .is_mobile#{&} {
+							opacity: 0;
+							visibility: hidden;
+						}
 					}
 				}
 
