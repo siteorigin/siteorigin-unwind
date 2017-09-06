@@ -367,14 +367,17 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_thumbnail_meta' ) ) :
 /**
- * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
+ * Print HTML with meta information for the sticky status and post categories.
  */
 function siteorigin_unwind_thumbnail_meta() {
+	if ( ! ( is_sticky() || siteorigin_setting( 'blog_display_category' ) ) ) return;
 	echo '<div class="thumbnail-meta">';
 	if ( is_sticky() && is_home() && ! is_paged() ) {
 		echo '<span>' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
 	}
-	siteorigin_unwind_three_categories();
+	if ( siteorigin_setting( 'blog_display_category' ) ) {
+		siteorigin_unwind_three_categories();
+	}
 	echo '</div>';
 }
 endif;
