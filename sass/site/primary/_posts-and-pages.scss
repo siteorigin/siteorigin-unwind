@@ -68,9 +68,9 @@
 		@include font-size(1.6);
 	}
 
-	@at-root .page .entry-title {
-		margin: 0;
-	}
+	// @at-root .page .archive-entry:not(.default-layout):not(.grid-layout) .entry-title {
+	// 	margin: 0;
+	// }
 
 	a {
 		color: inherit;
