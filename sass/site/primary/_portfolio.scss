@@ -1,0 +1,132 @@
+/*--------------------------------------------------------------
+### Portfolio Loop
+--------------------------------------------------------------*/
+.portfolio-loop {
+	.jetpack-portfolio {
+		float: left;
+		margin-bottom: 30px;
+		margin-right: 3.5%;
+		position: relative;
+		vertical-align: top;
+		width: 31%;
+
+		@at-root body:not(.no-active-sidebar) & {
+
+			@media (min-width: 1175px) {
+
+				&:nth-child(3n+3) {
+					margin-right: 0;
+				}
+
+				&:nth-child(3n+4) {
+					clear: left;
+				}
+			}
+
+			@media (max-width: 1175px) {
+				width: 48.25%;
+
+				&:nth-child(2n) {
+					margin-right: 0;
+				}
+
+				&:nth-child(3n) {
+					clear: right;
+				}
+			}
+
+			@media (max-width: 640px) {
+				clear: none;
+				display: block;
+				margin-right: 0;
+				width: 100%;
+			}
+		}
+
+		@at-root .no-active-sidebar & {
+
+			@media (min-width: 890px) {
+
+				&:nth-child(3n+3) {
+					margin-right: 0;
+				}
+
+				&:nth-child(3n+4) {
+					clear: left;
+				}
+			}
+
+			@media (max-width: 890px) {
+				width: 48.25%;
+
+				&:nth-child(2n) {
+					margin-right: 0;
+				}
+
+				&:nth-child(3n) {
+					clear: right;
+				}
+			}
+
+			@media (max-width: 640px) {
+				clear: none;
+				display: block;
+				margin-right: 0;
+				width: 100%;
+			}
+
+		}
+
+		.entry-thumbnail {
+			margin: 0;
+		}
+
+		.entry-overlay {
+			background-color: rgba( 265, 265, 265, 0.9 );
+			height: 100%;
+			//opacity: 0;
+			position: absolute;
+			top: 0;
+			transition: 0.3s;
+			//visibility: hidden;
+			width: 100%;
+
+			.entry-title {
+				bottom: 60%;
+				color: $color__text-dark;
+				font-size: 16px;
+				font-weight: bold;
+				margin: 0;
+				position: absolute;
+				text-align: center;
+				width: 100%;
+			}
+
+			.entry-divider {
+				border: solid $color__text-dark 1px;
+				bottom: 55%;
+				left: 50%;
+				position: absolute;
+				width: 30px;
+				@include transform( translateX( -50% ) );
+			}
+
+			.entry-project-type {
+				color: $color__text-light;
+				font-size: 12px;
+				position: absolute;
+				text-align: center;
+				text-transform: uppercase;
+				top: 48%;
+				width: 100%;
+			}
+		}
+
+		&:hover {
+			.entry-overlay {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}
