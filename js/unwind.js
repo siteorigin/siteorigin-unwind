@@ -43,10 +43,10 @@ jQuery( function( $ ) {
 		}
 	} );
 
-    // Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
-    if ( typeof $.fn.fitVids !== 'undefined' ) {
-        $( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
-    }
+	// Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
+	if ( typeof $.fn.fitVids !== 'undefined' ) {
+		$( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
+	}
 
 	// Fullscreen search.
 	$( '#search-button' ).click( function( e ) {
@@ -183,6 +183,7 @@ jQuery( function( $ ) {
 
 ( function( $ ) {
 	$( window ).load( function() {
+
 		// Handle masonry blog layout.
 		if ( $( '.blog-layout-masonry' ).length ) {
 			$( '.blog-layout-masonry' ).masonry( {
@@ -190,5 +191,23 @@ jQuery( function( $ ) {
 				columnWidth: '.archive-entry'
 			} );
 		}
+
+		// Portfolio loop filter
+		var $container = $( '.portfolio-loop' );
+		$container.isotope( {
+			filter: '*',
+			layoutMode: 'fitRows',
+			resizable: false,
+		} );
+		$( '.portfolio-filter-terms button' ).click( function() {
+			var selector = $( this ).attr( 'data-filter' );
+			$container.isotope( {
+				filter: selector,
+			} );
+			$( '.portfolio-filter-terms button' ).removeClass( 'active' );
+			$( this ).addClass( 'active' );
+			return false;
+		} );
+
 	} );
 } )( jQuery );

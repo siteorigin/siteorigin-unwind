@@ -10,6 +10,17 @@
 wp_enqueue_script( 'jquery-isotope' );
 ?>
 
+<div class="portfolio-filter-terms">
+	<button data-filter="*" class="active"><?php echo __( 'All', 'siteorigin-unwind' ); ?></button>
+	<?php
+	$taxonomy = 'jetpack-portfolio-type';
+	$tax_terms = get_terms( $taxonomy );
+	foreach ( $tax_terms as $tax_term ) { ?>
+		<button data-filter=".<?php echo $tax_term->slug; ?>"><?php echo $tax_term->slug; ?></button>
+	<?php }
+	?>
+</div>
+
 <div class="portfolio-loop">
 	<?php
 		if ( get_query_var( 'paged' ) ) :

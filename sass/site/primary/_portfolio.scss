@@ -1,6 +1,26 @@
 /*--------------------------------------------------------------
 ### Portfolio Loop
 --------------------------------------------------------------*/
+.portfolio-filter-terms {
+	margin-bottom: 25px;
+
+	button {
+		border-width: 0px;
+		color: $color__text-light;
+		padding: 0 0 10px 0;
+		margin-right: 30px;
+
+		&:hover {
+			color: $color__text-dark;
+		}
+
+		&.active {
+			border-bottom: 2px $color__text-dark solid;
+			color: $color__text-dark;
+		}
+	}
+}
+
 .portfolio-loop {
 	.jetpack-portfolio {
 		float: left;

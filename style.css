@@ -2619,6 +2619,19 @@ a {
 /*--------------------------------------------------------------
 ### Portfolio Loop
 --------------------------------------------------------------*/
+.portfolio-filter-terms {
+  margin-bottom: 25px; }
+  .portfolio-filter-terms button {
+    border-width: 0px;
+    color: #adadad;
+    padding: 0 0 10px 0;
+    margin-right: 30px; }
+    .portfolio-filter-terms button:hover {
+      color: #2d2d2d; }
+    .portfolio-filter-terms button.active {
+      border-bottom: 2px #2d2d2d solid;
+      color: #2d2d2d; }
+
 .portfolio-loop .jetpack-portfolio {
   float: left;
   margin-bottom: 30px;

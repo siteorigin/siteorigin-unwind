@@ -24,12 +24,7 @@ if ( $terms && ! is_wp_error( $terms ) ) :
 
 endif; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<!-- <header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<p class="iw-so-project-type <?php echo $align; ?>"><?php echo $filtering; ?></p>
-	</header><!-- .entry-header -->
+<article id="post-<?php the_ID(); ?> <?php echo $types; ?>" <?php post_class( $types ); ?>>
 
 	<div class="entry-thumbnail">
 		<?php the_post_thumbnail( 'siteorigin-unwind-500x500-crop' ); ?>
