@@ -183,13 +183,13 @@ jQuery( function( $ ) {
 	$( '#portfolio-loop' ).on( 'click', '.load-more a', function(e) {
 		e.preventDefault();
 		var link = $(this).attr( 'href' );
-		$('.load-more').addClass( 'loading' );
+		$('.load-more').addClass( 'loading' ).find( 'a' ).remove();
 		$.get( link, function(data) {
 			var $post = $( "#portfolio-loop #projects-container ", data ).html(),
 				$content = $( $post );
 			$( '#projects-container' ).append( $content ).isotope( 'appended', $content );
 		} );
-		$( '.load-more' ).removeClass( 'loading' ).find( 'a' ).replaceWith( $(this).load( link + ' .load-more a' ) );
+		$( '.load-more' ).removeClass( 'loading' ).load( link + ' .load-more a' );
 	} );
 
 } );
