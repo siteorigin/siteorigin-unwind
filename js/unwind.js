@@ -207,12 +207,14 @@ jQuery( function( $ ) {
 
 		// Portfolio loop filter
 		var $container = $( '#projects-container' );
-		$container.isotope( {
-			itemSelector: '.post',
-			filter: '*',
-			layoutMode: 'fitRows',
-			resizable: true,
-		} );
+		if ( $( '.portfolio-filter-terms' ).length ) {
+			$container.isotope( {
+				itemSelector: '.post',
+				filter: '*',
+				layoutMode: 'fitRows',
+				resizable: true,
+			} );
+		}
 
 		$( '.portfolio-filter-terms button' ).click( function() {
 			var selector = $( this ).attr( 'data-filter' );

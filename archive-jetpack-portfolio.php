@@ -22,17 +22,11 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) : ?>
 
-				<div class="load-more-wrapper">
-					<div class="load-more-container">
+				<?php while ( have_posts() ) : the_post();
 
-						<?php while ( have_posts() ) : the_post();
+					get_template_part( 'template-parts/content', 'portfolio' );
 
-							get_template_part( 'template-parts/content', 'portfolio' );
-
-						endwhile; ?>
-
-					</div>
-				</div>
+				endwhile; ?>
 
 				<?php siteorigin_unwind_posts_navigation();
 
