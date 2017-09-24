@@ -103,3 +103,16 @@ function siteorigin_unwind_excerpt_read_more( $more ) {
 }
 endif;
 add_filter( 'excerpt_more', 'siteorigin_unwind_excerpt_read_more' );
+
+
+if ( ! function_exists( 'siteorigin_unwind_portfolio_load_more' ) ) :
+/**
+ * Add Portfolio load more button
+ */
+function siteorigin_unwind_portfolio_load_more( $query ) { ?>
+	<div class="load-more">
+		<?php echo get_next_posts_link( __( 'Load More', 'siteorigin-unwind' ), $query->max_num_pages ); ?>
+		<span class="loading"><?php echo __( 'Loading...' ); ?></span>
+	</div><?php
+}
+endif;

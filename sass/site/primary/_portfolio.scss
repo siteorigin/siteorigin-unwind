@@ -21,8 +21,8 @@
 	}
 }
 
-.portfolio-loop {
-	.jetpack-portfolio {
+.site-main {
+	.jetpack-portfolio.post {
 		float: left;
 		margin-bottom: 30px;
 		margin-right: 3.5%;
@@ -104,12 +104,17 @@
 		.entry-overlay {
 			background-color: rgba( 265, 265, 265, 0.9 );
 			height: 100%;
-			//opacity: 0;
+			opacity: 0;
 			position: absolute;
 			top: 0;
 			transition: 0.3s;
-			//visibility: hidden;
+			visibility: hidden;
 			width: 100%;
+
+			.entry-link {
+				height: 100%;
+				width: 100%;
+			}
 
 			.entry-title {
 				bottom: 60%;

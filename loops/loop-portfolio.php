@@ -21,36 +21,36 @@ wp_enqueue_script( 'jquery-isotope' );
 	?>
 </div>
 
-<div class="portfolio-loop">
+<div class="portfolio-loop" id="portfolio-loop">
 	<?php
-		if ( get_query_var( 'paged' ) ) :
-			$paged = get_query_var( 'paged' );
-		elseif ( get_query_var( 'page' ) ) :
-			$paged = get_query_var( 'page' );
-		else :
-			$paged = -1;
-		endif;
 
-		$args = array(
-			'post_type'      => 'jetpack-portfolio',
-			'paged'          => $paged,
-		);
+	$args = array(
+		'post_type' => 'jetpack-portfolio',
+		'paged'     => $paged,
+	);
 
-		$project_query = new WP_Query ( $args );
+	$portfolio_query = new WP_Query ( $args );
 
-		if ( post_type_exists( 'jetpack-portfolio' ) && $project_query -> have_posts() ) :
+	if ( post_type_exists( 'jetpack-portfolio' ) && $portfolio_query -> have_posts() ) : ?>
 
-			while ( $project_query -> have_posts() ) : $project_query -> the_post();
+		<div id="projects-container">
+
+			<?php
+			while ( $portfolio_query -> have_posts() ) : $portfolio_query -> the_post();
 
 				get_template_part( 'template-parts/content', 'portfolio' );
 
-			endwhile;
+			endwhile; ?>
 
-			wp_reset_postdata();
+		</div>
 
-		else :
+		<?php siteorigin_unwind_portfolio_load_more( $portfolio_query );
 
-			get_template_part( 'template-parts/content', 'none' );
+		wp_reset_postdata();
+
+	else :
+
+		get_template_part( 'template-parts/content', 'none' );
 
 	endif; ?>
 </div>

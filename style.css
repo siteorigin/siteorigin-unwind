@@ -2632,7 +2632,7 @@ a {
       border-bottom: 2px #2d2d2d solid;
       color: #2d2d2d; }
 
-.portfolio-loop .jetpack-portfolio {
+.site-main .jetpack-portfolio.post {
   float: left;
   margin-bottom: 30px;
   margin-right: 3.5%;
@@ -2640,51 +2640,56 @@ a {
   vertical-align: top;
   width: 31%; }
   @media (min-width: 1175px) {
-    body:not(.no-active-sidebar) .portfolio-loop .jetpack-portfolio:nth-child(3n+3) {
+    body:not(.no-active-sidebar) .site-main .jetpack-portfolio.post:nth-child(3n+3) {
       margin-right: 0; }
-    body:not(.no-active-sidebar) .portfolio-loop .jetpack-portfolio:nth-child(3n+4) {
+    body:not(.no-active-sidebar) .site-main .jetpack-portfolio.post:nth-child(3n+4) {
       clear: left; } }
   @media (max-width: 1175px) {
-    body:not(.no-active-sidebar) .portfolio-loop .jetpack-portfolio {
+    body:not(.no-active-sidebar) .site-main .jetpack-portfolio.post {
       width: 48.25%; }
-      body:not(.no-active-sidebar) .portfolio-loop .jetpack-portfolio:nth-child(2n) {
+      body:not(.no-active-sidebar) .site-main .jetpack-portfolio.post:nth-child(2n) {
         margin-right: 0; }
-      body:not(.no-active-sidebar) .portfolio-loop .jetpack-portfolio:nth-child(3n) {
+      body:not(.no-active-sidebar) .site-main .jetpack-portfolio.post:nth-child(3n) {
         clear: right; } }
   @media (max-width: 640px) {
-    body:not(.no-active-sidebar) .portfolio-loop .jetpack-portfolio {
+    body:not(.no-active-sidebar) .site-main .jetpack-portfolio.post {
       clear: none;
       display: block;
       margin-right: 0;
       width: 100%; } }
   @media (min-width: 890px) {
-    .no-active-sidebar .portfolio-loop .jetpack-portfolio:nth-child(3n+3) {
+    .no-active-sidebar .site-main .jetpack-portfolio.post:nth-child(3n+3) {
       margin-right: 0; }
-    .no-active-sidebar .portfolio-loop .jetpack-portfolio:nth-child(3n+4) {
+    .no-active-sidebar .site-main .jetpack-portfolio.post:nth-child(3n+4) {
       clear: left; } }
   @media (max-width: 890px) {
-    .no-active-sidebar .portfolio-loop .jetpack-portfolio {
+    .no-active-sidebar .site-main .jetpack-portfolio.post {
       width: 48.25%; }
-      .no-active-sidebar .portfolio-loop .jetpack-portfolio:nth-child(2n) {
+      .no-active-sidebar .site-main .jetpack-portfolio.post:nth-child(2n) {
         margin-right: 0; }
-      .no-active-sidebar .portfolio-loop .jetpack-portfolio:nth-child(3n) {
+      .no-active-sidebar .site-main .jetpack-portfolio.post:nth-child(3n) {
         clear: right; } }
   @media (max-width: 640px) {
-    .no-active-sidebar .portfolio-loop .jetpack-portfolio {
+    .no-active-sidebar .site-main .jetpack-portfolio.post {
       clear: none;
       display: block;
       margin-right: 0;
       width: 100%; } }
-  .portfolio-loop .jetpack-portfolio .entry-thumbnail {
+  .site-main .jetpack-portfolio.post .entry-thumbnail {
     margin: 0; }
-  .portfolio-loop .jetpack-portfolio .entry-overlay {
+  .site-main .jetpack-portfolio.post .entry-overlay {
     background-color: rgba(255, 255, 255, 0.9);
     height: 100%;
+    opacity: 0;
     position: absolute;
     top: 0;
     transition: 0.3s;
+    visibility: hidden;
     width: 100%; }
-    .portfolio-loop .jetpack-portfolio .entry-overlay .entry-title {
+    .site-main .jetpack-portfolio.post .entry-overlay .entry-link {
+      height: 100%;
+      width: 100%; }
+    .site-main .jetpack-portfolio.post .entry-overlay .entry-title {
       bottom: 60%;
       color: #2d2d2d;
       font-size: 16px;
@@ -2693,7 +2698,7 @@ a {
       position: absolute;
       text-align: center;
       width: 100%; }
-    .portfolio-loop .jetpack-portfolio .entry-overlay .entry-divider {
+    .site-main .jetpack-portfolio.post .entry-overlay .entry-divider {
       border: solid #2d2d2d 1px;
       bottom: 55%;
       left: 50%;
@@ -2704,7 +2709,7 @@ a {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
-    .portfolio-loop .jetpack-portfolio .entry-overlay .entry-project-type {
+    .site-main .jetpack-portfolio.post .entry-overlay .entry-project-type {
       color: #adadad;
       font-size: 12px;
       position: absolute;
@@ -2712,7 +2717,7 @@ a {
       text-transform: uppercase;
       top: 48%;
       width: 100%; }
-  .portfolio-loop .jetpack-portfolio:hover .entry-overlay {
+  .site-main .jetpack-portfolio.post:hover .entry-overlay {
     opacity: 1;
     visibility: visible; }
 

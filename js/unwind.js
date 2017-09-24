@@ -193,11 +193,12 @@ jQuery( function( $ ) {
 		}
 
 		// Portfolio loop filter
-		var $container = $( '.portfolio-loop' );
+		var $container = $( '#projects-container' );
 		$container.isotope( {
+			itemSelector: '.post',
 			filter: '*',
 			layoutMode: 'fitRows',
-			resizable: false,
+			resizable: true,
 		} );
 		$( '.portfolio-filter-terms button' ).click( function() {
 			var selector = $( this ).attr( 'data-filter' );
@@ -211,3 +212,19 @@ jQuery( function( $ ) {
 
 	} );
 } )( jQuery );
+
+jQuery( function( $ ) {
+	// Setup the load more button in portfolio widget loop
+	$( '#portfolio-loop' ).on( 'click', '.load-more a', function(e) {
+		e.preventDefault();
+		var link = $(this).attr( 'href' );
+		$('.load-more').addClass( 'loading' );
+		$.get( link, function(data) {
+			var $post = $( "#portfolio-loop #projects-container ", data ).html(),
+				$content = $( $post );
+			$( '#projects-container' ).append( $content ).isotope( 'appended', $content );
+		} );
+		$( '.load-more' ).removeClass( 'loading' ).find( 'a' ).replaceWith( $(this).load( link + ' .load-more a' ) );
+	} );
+
+} );
