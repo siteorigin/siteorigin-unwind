@@ -179,6 +179,19 @@ jQuery( function( $ ) {
 		$( window ).resize( smSetup ).scroll( smSetup );
 	}
 
+	// Setup the load more button in portfolio widget loop
+	$( '#portfolio-loop' ).on( 'click', '.load-more a', function(e) {
+		e.preventDefault();
+		var link = $(this).attr( 'href' );
+		$('.load-more').addClass( 'loading' );
+		$.get( link, function(data) {
+			var $post = $( "#portfolio-loop #projects-container ", data ).html(),
+				$content = $( $post );
+			$( '#projects-container' ).append( $content ).isotope( 'appended', $content );
+		} );
+		$( '.load-more' ).removeClass( 'loading' ).find( 'a' ).replaceWith( $(this).load( link + ' .load-more a' ) );
+	} );
+
 } );
 
 ( function( $ ) {
@@ -200,6 +213,7 @@ jQuery( function( $ ) {
 			layoutMode: 'fitRows',
 			resizable: true,
 		} );
+
 		$( '.portfolio-filter-terms button' ).click( function() {
 			var selector = $( this ).attr( 'data-filter' );
 			$container.isotope( {
@@ -212,19 +226,3 @@ jQuery( function( $ ) {
 
 	} );
 } )( jQuery );
-
-jQuery( function( $ ) {
-	// Setup the load more button in portfolio widget loop
-	$( '#portfolio-loop' ).on( 'click', '.load-more a', function(e) {
-		e.preventDefault();
-		var link = $(this).attr( 'href' );
-		$('.load-more').addClass( 'loading' );
-		$.get( link, function(data) {
-			var $post = $( "#portfolio-loop #projects-container ", data ).html(),
-				$content = $( $post );
-			$( '#projects-container' ).append( $content ).isotope( 'appended', $content );
-		} );
-		$( '.load-more' ).removeClass( 'loading' ).find( 'a' ).replaceWith( $(this).load( link + ' .load-more a' ) );
-	} );
-
-} );
