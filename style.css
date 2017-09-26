@@ -1559,7 +1559,8 @@ a {
       margin: 0;
       text-align: center;
       text-transform: uppercase;
-      word-break: break-all; }
+      word-break: break-all;
+      word-break: break-word; }
       @media (max-width: 480px) {
         #masthead .site-branding .site-title {
           font-size: 51.2px;
