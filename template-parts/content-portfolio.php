@@ -22,9 +22,11 @@ if ( $terms && ! is_wp_error( $terms ) ) :
 
 	$types = join( " ", $filtering_links );
 
+	$classes = $types . ' archive-project';
+
 endif; ?>
 
-<article id="post-<?php the_ID(); ?> <?php echo $types; ?>" <?php post_class( $types ); ?>>
+<article id="post-<?php the_ID(); ?> <?php echo $types; ?>" <?php post_class( $classes ); ?>>
 
 	<div class="entry-thumbnail">
 		<?php the_post_thumbnail( 'siteorigin-unwind-500x500-crop' ); ?>

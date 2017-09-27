@@ -2655,7 +2655,7 @@ a {
     .post-type-archive-jetpack-portfolio .site-main {
       margin: 0; } }
 
-.site-main .jetpack-portfolio.post {
+.archive-project {
   float: left;
   margin-bottom: 30px;
   margin-right: 1.1667%;
@@ -2664,30 +2664,30 @@ a {
   vertical-align: top;
   width: 31%; }
   @media (max-width: 1175px) {
-    body:not(.no-active-sidebar) .site-main .jetpack-portfolio.post {
+    body:not(.no-active-sidebar) .archive-project {
       margin-right: 0.875%;
       margin-left: 0.875%;
       width: 48.25%; } }
   @media (max-width: 640px) {
-    body:not(.no-active-sidebar) .site-main .jetpack-portfolio.post {
+    body:not(.no-active-sidebar) .archive-project {
       clear: none;
       display: block;
       margin-right: 0;
       width: 100%; } }
   @media (max-width: 890px) {
-    .no-active-sidebar .site-main .jetpack-portfolio.post {
+    .no-active-sidebar .archive-project {
       margin-right: 0.875%;
       margin-left: 0.875%;
       width: 48.25%; } }
   @media (max-width: 640px) {
-    .no-active-sidebar .site-main .jetpack-portfolio.post {
+    .no-active-sidebar .archive-project {
       clear: none;
       display: block;
       margin-right: 0;
       width: 100%; } }
-  .site-main .jetpack-portfolio.post .entry-thumbnail {
+  .archive-project .entry-thumbnail {
     margin: 0; }
-  .site-main .jetpack-portfolio.post .entry-overlay {
+  .archive-project .entry-overlay {
     background-color: rgba(255, 255, 255, 0.9);
     height: 100%;
     opacity: 0;
@@ -2696,10 +2696,10 @@ a {
     transition: 0.3s;
     visibility: hidden;
     width: 100%; }
-    .site-main .jetpack-portfolio.post .entry-overlay .entry-link {
+    .archive-project .entry-overlay .entry-link {
       height: 100%;
       width: 100%; }
-    .site-main .jetpack-portfolio.post .entry-overlay .entry-title {
+    .archive-project .entry-overlay .entry-title {
       bottom: 60%;
       color: #2d2d2d;
       font-size: 16px;
@@ -2708,7 +2708,7 @@ a {
       position: absolute;
       text-align: center;
       width: 100%; }
-    .site-main .jetpack-portfolio.post .entry-overlay .entry-divider {
+    .archive-project .entry-overlay .entry-divider {
       border: solid #2d2d2d 1px;
       bottom: 55%;
       left: 50%;
@@ -2719,7 +2719,7 @@ a {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
-    .site-main .jetpack-portfolio.post .entry-overlay .entry-project-type {
+    .archive-project .entry-overlay .entry-project-type {
       color: #adadad;
       font-size: 12px;
       position: absolute;
@@ -2727,7 +2727,7 @@ a {
       text-transform: uppercase;
       top: 48%;
       width: 100%; }
-  .site-main .jetpack-portfolio.post:hover .entry-overlay {
+  .archive-project:hover .entry-overlay {
     opacity: 1;
     visibility: visible; }
 
@@ -2758,6 +2758,9 @@ a {
     opacity: 1;
     visibility: visible; }
 
+/*--------------------------------------------------------------
+### Projects Loop
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
