@@ -35,7 +35,7 @@ get_header(); ?>
 			endif;
 
 			if ( ! is_attachment() && siteorigin_setting( 'blog_display_related_posts' ) ) :
-				siteorigin_unwind_related_posts( $post->ID );
+				siteorigin_unwind_related_projects( $post->ID );
 			endif;
 
 			// If comments are open or we have at least one comment, load up the comment template.

@@ -28,7 +28,7 @@ function siteorigin_unwind_jetpack_setup() {
 	/*
 	 * Enable support for Jetpack Infinite Scroll.
 	 * See https://jetpack.com/support/infinite-scroll/
-	 */	
+	 */
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'render'    => 'siteorigin_unwind_infinite_scroll_render',
@@ -38,7 +38,7 @@ function siteorigin_unwind_jetpack_setup() {
 	/*
 	 * Enable support for Jetpack Responsive Videos.
 	 * See https://jetpack.com/support/responsive-videos/
-	 */	
+	 */
 	add_theme_support( 'jetpack-responsive-videos' );
 }
 endif;
@@ -75,3 +75,14 @@ function siteorigin_unwind_infinite_scroll_render() {
     }
 }
 add_action( 'loop_start', 'siteorigin_unwind_remove_share' );
+
+if ( ! function_exists( 'siteorigin_unwind_jetpack_related_projects' ) ) :
+/**
+ * Displays jetpack related posts for projects
+ */
+function siteorigin_unwind_jetpack_related_projects( $allowed_post_types ) {
+	$allowed_post_type[] = 'jetpack-portfolio';
+	return $allowed_post_type;
+}
+endif;
+add_filter( 'rest_api_allowed_post_types', 'siteorigin_unwind_jetpack_related_projects' );
