@@ -10,16 +10,18 @@
 wp_enqueue_script( 'jquery-isotope' );
 ?>
 
-<div class="portfolio-filter-terms">
-	<button data-filter="*" class="active"><?php echo __( 'All', 'siteorigin-unwind' ); ?></button>
-	<?php
-	$taxonomy = 'jetpack-portfolio-type';
-	$tax_terms = get_terms( $taxonomy );
-	foreach ( $tax_terms as $tax_term ) { ?>
-		<button data-filter=".<?php echo $tax_term->slug; ?>"><?php echo $tax_term->slug; ?></button>
-	<?php }
-	?>
-</div>
+<?php if ( post_type_exists( 'jetpack-portfolio' ) ) : ?>
+	<div class="portfolio-filter-terms">
+		<button data-filter="*" class="active"><?php echo __( 'All', 'siteorigin-unwind' ); ?></button>
+		<?php
+		$taxonomy = 'jetpack-portfolio-type';
+		$tax_terms = get_terms( $taxonomy );
+		foreach ( $tax_terms as $tax_term ) { ?>
+			<button data-filter=".<?php echo $tax_term->slug; ?>"><?php echo $tax_term->slug; ?></button>
+		<?php }
+		?>
+	</div>
+<?php endif; ?>
 
 <div class="portfolio-loop" id="portfolio-loop">
 	<?php
