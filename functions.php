@@ -91,6 +91,7 @@ function siteorigin_unwind_setup() {
 	// Custom image sizes.
 	add_image_size( 'siteorigin-unwind-263x174-crop', 263, 174, true );
 	add_image_size( 'siteorigin-unwind-360x238-crop', 360, 238, true );
+	add_image_size( 'siteorigin-unwind-500x500-crop', 500, 500, true );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'siteorigin_unwind_custom_background_args', array(
@@ -121,6 +122,11 @@ function siteorigin_unwind_setup() {
 	 * Use the SiteOrigin archive theme settings.
 	 */
 	add_theme_support( 'siteorigin-template-settings' );
+
+	/**
+	 * Support Jetpack's portfolio post type.
+	 */
+	add_theme_support( 'jetpack-portfolio' );
 
 }
 endif; // siteorigin_unwind_setup.
@@ -213,7 +219,11 @@ function siteorigin_unwind_scripts() {
 
 	// FitVids.
 	if ( ! class_exists( 'Jetpack' ) ) {
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), 1.1, true );
+		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
+	}
+
+	if ( post_type_exists( 'jetpack-portfolio' ) ) {
+		wp_register_script( 'jquery-isotope', get_template_directory_uri() . '/js/isotope.pkgd' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '3.0.4', true );
 	}
 
 	// Theme JavaScript.
