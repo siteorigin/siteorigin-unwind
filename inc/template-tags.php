@@ -524,7 +524,7 @@ function siteorigin_unwind_related_projects( $post_id ) {
 	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop
-		$categories = get_the_terms( $post->ID, 'jetpack-portfolio-type' );
+		$categories = get_the_terms( $post_id, 'jetpack-portfolio-type' );
 		$first_cat = $categories[0]->term_id;
 		$args=array(
 			'tax_query' => array(
