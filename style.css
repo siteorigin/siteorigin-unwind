@@ -2763,9 +2763,12 @@ a {
     opacity: 1;
     visibility: visible; }
 
-/*--------------------------------------------------------------
-### Projects Loop
---------------------------------------------------------------*/
+.related-projects-section {
+  padding-bottom: 1.3333em; }
+  .related-projects-section .related-projects {
+    font-size: 1em;
+    text-transform: uppercase; }
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/

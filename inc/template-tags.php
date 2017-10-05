@@ -541,7 +541,7 @@ function siteorigin_unwind_related_projects( $post_id ) {
 		$related_posts = new WP_Query( $args ); ?>
 
 		<div class="related-projects-section">
-			<h2 class="heading-strike"><?php esc_html_e( 'You may also like', 'siteorigin-unwind' ); ?></h2>
+			<h2 class="related-projects heading-strike"><?php esc_html_e( 'You may also like', 'siteorigin-unwind' ); ?></h2>
 			<?php if ( $related_posts ) : ?>
 				<div class="related-projects">
 					<?php if ( $related_posts->have_posts() ) : ?>

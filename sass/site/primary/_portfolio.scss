@@ -191,6 +191,11 @@
 		}
 	}
 }
-/*--------------------------------------------------------------
-### Projects Loop
---------------------------------------------------------------*/
+.related-projects-section {
+	padding-bottom: 1.3333em;
+
+	.related-projects {
+		font-size: 1em;
+		text-transform: uppercase;
+	}
+}
