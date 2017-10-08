@@ -43,10 +43,10 @@ jQuery( function( $ ) {
 		}
 	} );
 
-    // Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
-    if ( typeof $.fn.fitVids !== 'undefined' ) {
-        $( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
-    }
+	// Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
+	if ( typeof $.fn.fitVids !== 'undefined' ) {
+		$( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
+	}
 
 	// Fullscreen search.
 	$( '#search-button' ).click( function( e ) {
@@ -179,10 +179,24 @@ jQuery( function( $ ) {
 		$( window ).resize( smSetup ).scroll( smSetup );
 	}
 
+	// Setup the load more button in portfolio widget loop
+	$( '#portfolio-loop' ).on( 'click', '.load-more a', function(e) {
+		e.preventDefault();
+		var link = $(this).attr( 'href' );
+		$('.load-more').addClass( 'loading' ).find( 'a' ).remove();
+		$.get( link, function(data) {
+			var $post = $( "#portfolio-loop #projects-container ", data ).html(),
+				$content = $( $post );
+			$( '#projects-container' ).append( $content ).isotope( 'appended', $content );
+		} );
+		$( '.load-more' ).removeClass( 'loading' ).load( link + ' .load-more a' );
+	} );
+
 } );
 
 ( function( $ ) {
 	$( window ).load( function() {
+
 		// Handle masonry blog layout.
 		if ( $( '.blog-layout-masonry' ).length ) {
 			$( '.blog-layout-masonry' ).masonry( {
@@ -190,5 +204,27 @@ jQuery( function( $ ) {
 				columnWidth: '.archive-entry'
 			} );
 		}
+
+		// Portfolio loop filter
+		var $container = $( '#projects-container' );
+		if ( $( '.portfolio-filter-terms' ).length ) {
+			$container.isotope( {
+				itemSelector: '.post',
+				filter: '*',
+				layoutMode: 'fitRows',
+				resizable: true,
+			} );
+		}
+
+		$( '.portfolio-filter-terms button' ).click( function() {
+			var selector = $( this ).attr( 'data-filter' );
+			$container.isotope( {
+				filter: selector,
+			} );
+			$( '.portfolio-filter-terms button' ).removeClass( 'active' );
+			$( this ).addClass( 'active' );
+			return false;
+		} );
+
 	} );
 } )( jQuery );

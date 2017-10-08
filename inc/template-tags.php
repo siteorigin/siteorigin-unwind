@@ -322,7 +322,7 @@ if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time, category and comment count.
  */
-function siteorigin_unwind_post_meta( $cats = true ) {
+function siteorigin_unwind_post_meta( $cats = true, $post_id = '' ) {
 
 	/* translators: used between list items, there is a space after the comma */
 	$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-unwind' ) );
@@ -353,9 +353,22 @@ function siteorigin_unwind_post_meta( $cats = true ) {
 		</span>
 	<?php } ?>
 
+	<?php if ( siteorigin_setting( 'blog_display_category' ) ) {
 
-	<?php if ( $categories_list && siteorigin_unwind_categorized_blog() && siteorigin_setting( 'blog_display_category' ) && $cats == true ) {
-		printf( '<span class="entry-category">' . '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
+		if ( 'jetpack-portfolio' == get_post_type() ) {
+
+			$portfolio_terms = get_the_term_list( $post_id, 'jetpack-portfolio-type', '', ', ', '' );
+			if ( $portfolio_terms ) {
+				printf( '<span class="entry-category">' . '%1$s' . '</span>', $portfolio_terms );
+			}
+
+		} else {
+
+			if ( $categories_list && siteorigin_unwind_categorized_blog() && $cats == true ) {
+				printf( '<span class="entry-category">' . '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+
+		}
 	} ?>
 
 	<?php if ( $comments && siteorigin_setting( 'blog_display_comments' ) ) {
@@ -458,7 +471,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_related_posts' ) ) :
 /**
- * Displays the author box in single posts
+ * Displays related posts in single posts
  */
 function siteorigin_unwind_related_posts( $post_id ) {
 	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin.
@@ -496,6 +509,49 @@ function siteorigin_unwind_related_posts( $post_id ) {
 				</ol>
 			<?php else : ?>
 				<p><?php esc_html_e( 'No related posts.', 'siteorigin-unwind' ); ?></p>
+			<?php endif; ?>
+		</div>
+		<?php wp_reset_query();
+	}
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_related_projects ' ) ) :
+/**
+ * Displays related posts in single projects
+ */
+function siteorigin_unwind_related_projects( $post_id ) {
+	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+		echo do_shortcode( '[jetpack-related-posts]' );
+	} else { // The fallback loop
+		$categories = get_the_terms( $post_id, 'jetpack-portfolio-type' );
+		$first_cat = $categories[0]->term_id;
+		$args=array(
+			'tax_query' => array(
+		        array (
+		            'taxonomy' => 'jetpack-portfolio-type',
+		            'field' => 'term_id',
+		            'terms' => $first_cat,
+		        )
+		    ),
+			'post__not_in' => array( $post_id ),
+			'posts_per_page' => 3,
+			'ignore_sticky_posts' => -1
+		);
+		$related_posts = new WP_Query( $args ); ?>
+
+		<div class="related-projects-section">
+			<h2 class="related-projects heading-strike"><?php esc_html_e( 'You may also like', 'siteorigin-unwind' ); ?></h2>
+			<?php if ( $related_posts ) : ?>
+				<div class="related-projects">
+					<?php if ( $related_posts->have_posts() ) : ?>
+						<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
+							<?php get_template_part( 'template-parts/content', 'portfolio' ); ?>
+						<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
+			<?php else : ?>
+				<p><?php esc_html_e( 'No related projects.', 'siteorigin-unwind' ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php wp_reset_query();

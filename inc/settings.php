@@ -763,6 +763,33 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.author-box .author-description .post-author-title a:hover {
 	color: ${fonts_text_medium};
 	}
+	.portfolio-filter-terms button {
+	color: ${fonts_text_light};
+	}
+	.portfolio-filter-terms button:hover {
+	color: ${fonts_text_dark};
+	}
+	.portfolio-filter-terms button.active {
+	border-bottom: 2px ${fonts_text_dark} solid;
+	color: ${fonts_text_dark};
+	}
+	.site-main .jetpack-portfolio.post .entry-overlay .entry-title {
+	color: ${fonts_text_dark};
+	}
+	.site-main .jetpack-portfolio.post .entry-overlay .entry-divider {
+	border: solid ${fonts_text_dark} 1px;
+	}
+	.site-main .jetpack-portfolio.post .entry-overlay .entry-project-type {
+	color: ${fonts_text_light};
+	}
+	.load-more a,.load-more span {
+	color: ${fonts_text_medium};
+	font-family: ${fonts_details} !important;
+	}
+	.load-more a:hover {
+	border-color: ${branding_accent};
+	color: ${branding_accent};
+	}
 	.comment-list li.comment {
 	color: ${fonts_text_medium};
 	}
