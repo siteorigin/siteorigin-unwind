@@ -12,7 +12,7 @@
 
 	<header class="entry-header">
 		<div class="entry-meta">
-			<?php siteorigin_unwind_post_meta(); ?>
+			<?php siteorigin_unwind_post_meta( true, get_the_id() ); ?>
 		</div><!-- .entry-meta -->
 		<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

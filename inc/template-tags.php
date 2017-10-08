@@ -322,7 +322,7 @@ if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time, category and comment count.
  */
-function siteorigin_unwind_post_meta( $cats = true ) {
+function siteorigin_unwind_post_meta( $cats = true, $post_id = '' ) {
 
 	/* translators: used between list items, there is a space after the comma */
 	$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-unwind' ) );
@@ -357,7 +357,7 @@ function siteorigin_unwind_post_meta( $cats = true ) {
 
 		if ( 'jetpack-portfolio' == get_post_type() ) {
 
-			$portfolio_terms = get_the_term_list( $post->ID, 'jetpack-portfolio-type', '', ', ', '' );
+			$portfolio_terms = get_the_term_list( $post_id, 'jetpack-portfolio-type', '', ', ', '' );
 			if ( $portfolio_terms ) {
 				printf( '<span class="entry-category">' . '%1$s' . '</span>', $portfolio_terms );
 			}
