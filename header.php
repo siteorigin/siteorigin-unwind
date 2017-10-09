@@ -30,7 +30,7 @@
 		<header id="masthead" class="site-header" role="banner">
 
 			<?php if ( class_exists( 'Woocommerce' ) && is_store_notice_showing() ) {
-				woocommerce_unwind_demo_store();
+				siteorigin_unwind_wc_demo_store();
 			} ?>
 
 			<?php get_template_part( 'template-parts/header', siteorigin_setting( 'masthead_design' ) ); ?>

@@ -137,7 +137,7 @@ endif;
 add_filter( 'add_to_cart_fragments', 'siteorigin_unwind_woocommerce_update_cart_count' );
 
 if ( ! function_exists( 'siteorigin_unwind_wc_columns' ) ) :
-// Change number of products per row
+// Change number of products per row.
 function siteorigin_unwind_wc_columns() {
 	return siteorigin_setting( 'woocommerce_archive_columns' );
 }
@@ -147,7 +147,7 @@ add_filter( 'loop_shop_columns', 'siteorigin_unwind_wc_columns' );
 /**
  * Move the demo store banner to the top bar if enabled.
  */
-function woocommerce_unwind_demo_store() {
+function siteorigin_unwind_wc_demo_store() {
 	if ( ! is_store_notice_showing() ) {
 		return;
 	}
@@ -155,8 +155,8 @@ function woocommerce_unwind_demo_store() {
 	$notice = get_option( 'woocommerce_demo_store_notice' );
 
 	if ( empty( $notice ) ) {
-		$notice = __( 'This is a demo store for testing purposes &mdash; no orders shall be fulfilled.', 'woocommerce' );
+		$notice = esc_html__( 'This is a demo store for testing purposes &mdash; no orders shall be fulfilled.', 'siteorigin-unwind' );
 	}
 
-	echo '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'woocommerce' ) . '</a></p>';
+	echo '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'siteorigin-unwind' ) . '</a></p>';
 }
