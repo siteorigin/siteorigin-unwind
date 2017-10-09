@@ -36,7 +36,7 @@ function siteorigin_unwind_woocommerce_setup() {
 	}
 
 	// Modifying cart product image size.
-	add_image_size( 'cart_item_image_size', 80, 80, true );	
+	add_image_size( 'cart_item_image_size', 80, 80, true );
 
 }
 add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_setup' );
@@ -143,3 +143,20 @@ function siteorigin_unwind_wc_columns() {
 }
 endif;
 add_filter( 'loop_shop_columns', 'siteorigin_unwind_wc_columns' );
+
+/**
+ * Move the demo store banner to the top bar if enabled.
+ */
+function woocommerce_unwind_demo_store() {
+	if ( ! is_store_notice_showing() ) {
+		return;
+	}
+
+	$notice = get_option( 'woocommerce_demo_store_notice' );
+
+	if ( empty( $notice ) ) {
+		$notice = __( 'This is a demo store for testing purposes &mdash; no orders shall be fulfilled.', 'woocommerce' );
+	}
+
+	echo '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'woocommerce' ) . '</a></p>';
+}

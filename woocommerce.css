@@ -49,8 +49,24 @@
   margin: 0;
   width: auto; }
 
-.woocommerce-demo-store #page {
-  margin-top: 57px; }
+.woocommerce-store-notice,
+p.demo_store {
+  position: relative;
+  background: #24c48a;
+  box-shadow: none;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  top: 0; }
+  .woocommerce-store-notice .woocommerce-store-notice__dismiss-link,
+  p.demo_store .woocommerce-store-notice__dismiss-link {
+    padding-left: 15px; }
+
+.admin-bar p.demo_store {
+  top: 0; }
 
 @media (max-width: 782px) {
   .admin-bar p.demo_store {
