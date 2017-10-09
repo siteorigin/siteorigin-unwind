@@ -37,6 +37,8 @@ function siteorigin_unwind_woocommerce_change_hooks() {
 	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 5 );
 	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 15 );
 	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+	remove_action( 'wp_footer', 'woocommerce_demo_store' );
 }
 endif;
 add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_change_hooks' );

@@ -69,10 +69,27 @@
 	}
 }
 
-.woocommerce-demo-store #page {
-	margin-top: 57px;
+.woocommerce-store-notice,
+p.demo_store {
+	position: relative;
+	background: $color__primary-accent;
+	box-shadow: none;
+	color: #fff;
+	font-family: $font__details;
+	font-size: 13px;
+	padding: 15px;
+	position: relative;
+	text-align: center;
+	top: 0;
+
+	.woocommerce-store-notice__dismiss-link {
+		padding-left: 15px;
+	}
 }
 
+.admin-bar p.demo_store {
+	top: 0;
+}
 
 .admin-bar p.demo_store {
 
