@@ -28,13 +28,23 @@ if ( post_password_required() ) {
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title heading-strike">
 			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'siteorigin-unwind' ) ),
-					number_format_i18n( get_comments_number() ),
+			$comment_count = get_comments_number();
+			if ( 1 === $comment_count ) {
+				printf(
+					/* Translators: 1: title. */
+					esc_html_e( '1 Comment', 'siteorigin-corp' ),
 					'<span>' . get_the_title() . '</span>'
 				);
+			} else {
+				printf( // WPCS: XSS OK.
+					/* Translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s Comment', '%1$s Comments', $comment_count, 'comments title', 'siteorigin-corp' ) ),
+					number_format_i18n( $comment_count ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			}
 			?>
-		</h2>
+		</h2><!--. comments-title -->
 
 		<?php 
 			$args = array(
