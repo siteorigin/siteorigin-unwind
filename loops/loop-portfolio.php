@@ -12,7 +12,7 @@ wp_enqueue_script( 'jquery-isotope' );
 
 <?php if ( post_type_exists( 'jetpack-portfolio' ) ) : ?>
 	<div class="portfolio-filter-terms">
-		<button data-filter="*" class="active"><?php echo __( 'All', 'siteorigin-unwind' ); ?></button>
+		<button data-filter="*" class="active"><?php echo esc_html__( 'All', 'siteorigin-unwind' ); ?></button>
 		<?php
 		$taxonomy = 'jetpack-portfolio-type';
 		$tax_terms = get_terms( $taxonomy );
