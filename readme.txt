@@ -77,6 +77,10 @@ FlexSlider, Copyright 2012 WooThemes
 Free to use under the GPLv2 license
 [Source](http://www.woothemes.com/flexslider/)
 
+Isotope PACKAGED, Copyright 2017 Metafizzy
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+[Source](http://isotope.metafizzy.co)
+
 Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 [Source](https://github.com/necolas/normalize.css/)
