@@ -21,7 +21,7 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'project' );
 
-			if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy'  )  && function_exists( 'sharing_display' ) ) : ?>
+			if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy' )  && function_exists( 'sharing_display' ) ) : ?>
 				<h2 class="share-this heading-strike"><?php esc_html_e( 'Share This', 'siteorigin-unwind' ); ?></h2>
 				<?php echo sharing_display();
 			endif;
