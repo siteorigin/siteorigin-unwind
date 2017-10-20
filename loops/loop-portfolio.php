@@ -7,10 +7,10 @@
  * @license GPL 2.0
  */
 
-wp_enqueue_script( 'jquery-isotope' );
 ?>
 
-<?php if ( post_type_exists( 'jetpack-portfolio' ) ) : ?>
+<?php if ( post_type_exists( 'jetpack-portfolio' ) && ! ( is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) ) : ?>
+	<?php wp_enqueue_script( 'jquery-isotope' ); ?>
 	<div class="portfolio-filter-terms">
 		<button data-filter="*" class="active"><?php echo esc_html__( 'All', 'siteorigin-unwind' ); ?></button>
 		<?php
