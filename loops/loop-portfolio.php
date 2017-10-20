@@ -3,7 +3,7 @@
  * Loop Name: Portfolio
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 1.1.5
+ * @since siteorigin-unwind 1.2
  * @license GPL 2.0
  */
 
@@ -55,4 +55,4 @@ wp_enqueue_script( 'jquery-isotope' );
 		get_template_part( 'template-parts/content', 'none' );
 
 	endif; ?>
-</div>
+</div><!-- .portfolio-loop -->
