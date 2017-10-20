@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 0.1
+ * @since siteorigin-unwind 1.2
  * @license GPL 2.0
  */
 
@@ -17,7 +17,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
 			<?php
 			if ( have_posts() ) : ?>
