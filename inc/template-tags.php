@@ -232,9 +232,9 @@ function siteorigin_unwind_entry_footer( $post_id = '' ) {
 	if ( 'post' === get_post_type() && siteorigin_setting( 'blog_display_tags' ) ) { ?>
 		<span class="tags-list"><?php the_tags( '', '', '' ); ?></span>
 	<?php }
-	$portfolio_terms = get_the_term_list( $post_id, 'jetpack-portfolio-type', '', '', '' );
-	if ( 'jetpack-portfolio' == get_post_type() && $portfolio_terms ) { 
-		printf( '<span class="tags-list">' . '%1$s' . '</span>', $portfolio_terms );
+	$portfolio_tags = get_the_term_list( $post_id, 'jetpack-portfolio-tag', '', '', '' );
+	if ( 'jetpack-portfolio' == get_post_type() && $portfolio_tags ) {
+		printf( '<span class="tags-list">' . '%1$s' . '</span>', $portfolio_tags );
 	}
 }
 endif;
