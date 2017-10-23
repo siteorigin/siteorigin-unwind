@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Post_Type_Templates
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 0.1
+ * @since siteorigin-unwind 1.2
  * @license GPL 2.0
  */
 
@@ -14,14 +14,14 @@ get_header(); ?>
 	<?php siteorigin_unwind_breadcrumbs(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
 		<?php
 		while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content', 'project' );
 
-			if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy'  )  && function_exists( 'sharing_display' ) ) : ?>
+			if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy' )  && function_exists( 'sharing_display' ) ) : ?>
 				<h2 class="share-this heading-strike"><?php esc_html_e( 'Share This', 'siteorigin-unwind' ); ?></h2>
 				<?php echo sharing_display();
 			endif;

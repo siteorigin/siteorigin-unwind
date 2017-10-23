@@ -226,20 +226,16 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_entry_footer' ) ) :
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Prints HTML with meta information for tags.
  */
-function siteorigin_unwind_entry_footer() {
-	// Hide category and tag text for pages.
+function siteorigin_unwind_entry_footer( $post_id = '' ) {
 	if ( 'post' === get_post_type() && siteorigin_setting( 'blog_display_tags' ) ) { ?>
-		<span class="tags-list"><?php the_tags('', '', ''); ?></span>
+		<span class="tags-list"><?php the_tags( '', '', '' ); ?></span>
 	<?php }
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-unwind' ), esc_html__( '1 Comment', 'siteorigin-unwind' ), esc_html__( '% Comments', 'siteorigin-unwind' ) );
-		echo '</span>';
+	$portfolio_terms = get_the_term_list( $post_id, 'jetpack-portfolio-type', '', '', '' );
+	if ( 'jetpack-portfolio' == get_post_type() && $portfolio_terms ) { 
+		printf( '<span class="tags-list">' . '%1$s' . '</span>', $portfolio_terms );
 	}
-
 }
 endif;
 

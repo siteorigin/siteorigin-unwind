@@ -51,19 +51,28 @@
 
 .woocommerce-store-notice,
 p.demo_store {
-  position: relative;
   background: #24c48a;
   box-shadow: none;
   color: #fff;
-  font-family: "Lato", sans-serif;
   font-size: 13px;
-  padding: 15px;
+  line-height: 1;
+  padding: 20px;
   position: relative;
   text-align: center;
   top: 0; }
   .woocommerce-store-notice .woocommerce-store-notice__dismiss-link,
   p.demo_store .woocommerce-store-notice__dismiss-link {
-    padding-left: 15px; }
+    color: #fff;
+    text-decoration: underline; }
+  .woocommerce-store-notice:after,
+  p.demo_store:after {
+    bottom: -14px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 14px 14px -14px inset;
+    content: "";
+    height: 14px;
+    left: 0;
+    position: absolute;
+    width: 100%; }
 
 .admin-bar p.demo_store {
   top: 0; }

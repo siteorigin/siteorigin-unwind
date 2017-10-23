@@ -3,16 +3,16 @@
  * Loop Name: Portfolio
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 1.1.5
+ * @since siteorigin-unwind 1.2
  * @license GPL 2.0
  */
 
-wp_enqueue_script( 'jquery-isotope' );
 ?>
 
-<?php if ( post_type_exists( 'jetpack-portfolio' ) ) : ?>
+<?php if ( post_type_exists( 'jetpack-portfolio' ) && ! ( is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) ) : ?>
+	<?php wp_enqueue_script( 'jquery-isotope' ); ?>
 	<div class="portfolio-filter-terms">
-		<button data-filter="*" class="active"><?php echo __( 'All', 'siteorigin-unwind' ); ?></button>
+		<button data-filter="*" class="active"><?php echo esc_html__( 'All', 'siteorigin-unwind' ); ?></button>
 		<?php
 		$taxonomy = 'jetpack-portfolio-type';
 		$tax_terms = get_terms( $taxonomy );
@@ -55,4 +55,4 @@ wp_enqueue_script( 'jquery-isotope' );
 		get_template_part( 'template-parts/content', 'none' );
 
 	endif; ?>
-</div>
+</div><!-- .portfolio-loop -->

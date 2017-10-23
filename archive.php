@@ -17,9 +17,15 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
-			<?php get_template_part( 'loops/loop', 'blog-' . siteorigin_setting( 'blog_archive_layout' ) ); ?>
+			<?php
+				if ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
+					get_template_part( 'loops/loop', 'portfolio' );
+				} else {
+					get_template_part( 'loops/loop', 'blog-' . siteorigin_setting( 'blog_archive_layout' ) );
+				}
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

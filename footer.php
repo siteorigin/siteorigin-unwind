@@ -15,7 +15,7 @@
 		</div><!-- .container -->
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer'; if ( is_active_sidebar( 'footer-sidebar' ) ) echo ' footer-active-sidebar'; ?>" role="contentinfo">
+	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer'; if ( is_active_sidebar( 'footer-sidebar' ) ) echo ' footer-active-sidebar'; ?>">
 
 		<?php if ( siteorigin_page_setting( 'display_footer_widgets', true ) ) : ?>
 			<div class="container">
@@ -23,7 +23,7 @@
 				if ( is_active_sidebar( 'footer-sidebar' ) ) {
 					$siteorigin_unwind_sidebars = wp_get_sidebars_widgets();
 					?>
-					<div class="widgets widgets-<?php echo count( $siteorigin_unwind_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_attr_e( 'Footer Sidebar', 'siteorigin-unwind' ); ?>">
+					<div class="widgets widgets-<?php echo count( $siteorigin_unwind_sidebars['footer-sidebar'] ) ?>" aria-label="<?php esc_attr_e( 'Footer Sidebar', 'siteorigin-unwind' ); ?>">
 						<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 					</div>
 					<?php

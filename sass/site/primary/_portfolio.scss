@@ -130,8 +130,8 @@
 			bottom: 55%;
 			left: 50%;
 			position: absolute;
-			width: 30px;
 			@include transform( translateX( -50% ) );
+			width: 30px;
 		}
 
 		.entry-project-type {
@@ -146,6 +146,7 @@
 	}
 
 	&:hover {
+
 		.entry-overlay {
 			opacity: 1;
 			visibility: visible;
@@ -180,6 +181,7 @@
 	}
 
 	&.loading {
+
 		a {
 			opacity: 0;
 			visibility: hidden;

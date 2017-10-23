@@ -2719,12 +2719,12 @@ a {
       bottom: 55%;
       left: 50%;
       position: absolute;
-      width: 30px;
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
-      transform: translateX(-50%); }
+      transform: translateX(-50%);
+      width: 30px; }
     .archive-project .entry-overlay .entry-project-type {
       color: #adadad;
       font-size: 12px;
