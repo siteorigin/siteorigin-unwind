@@ -2623,7 +2623,8 @@ a {
 .portfolio-filter-terms {
   margin-bottom: 25px; }
   .portfolio-filter-terms button {
-    border-width: 0px;
+    border: none;
+    border-bottom: 2px solid #fff;
     color: #adadad;
     padding: 0 0 10px 0;
     margin-right: 30px; }
