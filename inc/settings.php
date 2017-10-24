@@ -1418,6 +1418,13 @@ function siteorigin_unwind_page_settings( $settings, $type, $id ) {
 		'description'    => esc_html__( 'Display the header.', 'siteorigin-unwind' )
 	);
 
+	$settings['display_topbar'] = array(
+		'type'           => 'checkbox',
+		'label'          => esc_html__( 'Masthead', 'siteorigin-unwind' ),
+		'checkbox_label' => esc_html__( 'Display', 'siteorigin-unwind' ),
+		'description'    => esc_html__( 'Remove the header but leave the top bar in place.', 'siteorigin-unwind' )
+	);
+
 	$settings['display_footer_widgets'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Footer Widgets', 'siteorigin-unwind' ),
@@ -1434,11 +1441,12 @@ add_action( 'siteorigin_page_settings', 'siteorigin_unwind_page_settings', 10, 3
  */
 function siteorigin_unwind_setup_page_setting_defaults( $defaults, $type, $id ){
 	// All the basic default settings.
-	$defaults['layout']              	= 'default';
-	$defaults['page_title']          	= true;
-	$defaults['masthead_margin']     	= true;
-	$defaults['footer_margin']       	= true;
+	$defaults['layout']                 = 'default';
+	$defaults['page_title']             = true;
+	$defaults['masthead_margin']        = true;
+	$defaults['footer_margin']          = true;
 	$defaults['display_masthead']       = true;
+	$defaults['display_topbar']         = true;
 	$defaults['display_footer_widgets'] = true;
 
 	// Specific default settings for different types.
