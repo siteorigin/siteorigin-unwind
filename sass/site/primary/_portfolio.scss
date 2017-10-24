@@ -8,15 +8,17 @@
 		border: none; 
 		border-bottom: 2px solid #fff;
 		color: $color__text-light;
-		padding: 0 0 10px 0;
-		margin-right: 30px;
+		font-size: 12px; 
+		letter-spacing: 1px;
+		padding: 0 0 12px 0;
+		margin-right: 34px;
 
 		&:hover {
 			color: $color__text-dark;
 		}
 
 		&.active {
-			border-bottom: 2px $color__text-dark solid;
+			border-bottom: 2px solid $color__text-dark;
 			color: $color__text-dark;
 		}
 	}
@@ -98,60 +100,70 @@
 
 	.entry-thumbnail {
 		margin: 0;
+		
+		a {
+			display: block;
+			line-height: 0; 
+		}
 	}
 
 	.entry-overlay {
-		background-color: rgba( 265, 265, 265, 0.9 );
 		height: 100%;
+    	left: 0;
+    	position: absolute;
+    	top: 0;
+    	transition: .3s;
+    	width: 100%;
+    	z-index: 0;
+    	
+		@at-root .entry-thumbnail:hover .entry-overlay {
+			background-color: rgba(265, 265, 265, .9);
+			border: 2px solid $color__text-light; 
+		}
+	}    
+	
+	.entry-content {
 		opacity: 0;
-		position: absolute;
-		top: 0;
-		transition: 0.3s;
+		transition: .3s;
 		visibility: hidden;
-		width: 100%;
-
-		.entry-link {
-			height: 100%;
-			width: 100%;
-		}
-
-		.entry-title {
-			bottom: 60%;
-			color: $color__text-dark;
-			font-size: 16px;
-			font-weight: bold;
-			margin: 0;
-			position: absolute;
-			text-align: center;
-			width: 100%;
-		}
-
-		.entry-divider {
-			border: solid $color__text-dark 1px;
-			bottom: 55%;
-			left: 50%;
-			position: absolute;
-			@include transform( translateX( -50% ) );
-			width: 30px;
-		}
-
-		.entry-project-type {
-			color: $color__text-light;
-			font-size: 12px;
-			position: absolute;
-			text-align: center;
-			text-transform: uppercase;
-			top: 48%;
-			width: 100%;
-		}
-	}
-
-	&:hover {
-
-		.entry-overlay {
+		z-index: 5;
+	
+		@at-root .entry-thumbnail:hover .entry-content {
 			opacity: 1;
 			visibility: visible;
-		}
+		}		
+	}	
+	
+	.entry-title {
+		bottom: 60%;
+		color: $color__text-dark;
+		font-size: 16px;
+		font-weight: bold;
+		margin: 0;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}
+
+	.entry-divider {
+		border: solid $color__text-dark 1px;
+		bottom: 55.5%;
+		left: 50%;
+		position: absolute;
+		@include transform(translateX(-50%));
+		width: 30px;
+	}
+
+	.entry-project-type {
+		color: $color__text-light;
+		font-family: $font__details; 
+		font-size: 12px;
+		letter-spacing: 1px; 
+		position: absolute;
+		text-align: center;
+		text-transform: uppercase;
+		top: 52%;
+		width: 100%;
 	}
 }
 
