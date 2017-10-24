@@ -1,6 +1,6 @@
 == Changelog ==
 
-= 1.2 - 20 October 2017 =
+= 1.1.5 - October 2017 =
 
 = 1.1.4 - 06 September 2017 =
 * Resolve post header spacing issue in Post Loop widget templates.

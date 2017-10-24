@@ -46,6 +46,15 @@ endif;
 add_action( 'after_setup_theme', 'siteorigin_unwind_jetpack_setup' );
 
 /**
+ * Remove the Jetpack stylesheets we don't require.
+ *
+ */
+function siteorigin_unwind_remove_jetpack_css() {
+	wp_deregister_style( 'jetpack-portfolio-style' );
+}
+add_action( 'wp_footer', 'siteorigin_unwind_remove_jetpack_css' );
+
+/**
  * Custom render function for Infinite Scroll.
  */
 function siteorigin_unwind_infinite_scroll_render() {
@@ -56,6 +65,11 @@ function siteorigin_unwind_infinite_scroll_render() {
 				get_template_part( 'template-parts/content', 'search' );
 			} ?>
 		</div><!-- .left-medium-loop --><?php
+	elseif ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) :
+		while ( have_posts() ) {
+			the_post();
+			get_template_part( 'template-parts/content', 'portfolio' );
+		}
 	else :
 		while ( have_posts() ) {
 			the_post();

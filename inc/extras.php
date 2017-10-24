@@ -21,11 +21,6 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// Add a CSS3 animations class.
 	$classes[] = 'css3-animations';
 
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
-
 	// Add a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -103,16 +98,3 @@ function siteorigin_unwind_excerpt_read_more( $more ) {
 }
 endif;
 add_filter( 'excerpt_more', 'siteorigin_unwind_excerpt_read_more' );
-
-
-if ( ! function_exists( 'siteorigin_unwind_portfolio_load_more' ) ) :
-/**
- * Add Portfolio load more button
- */
-function siteorigin_unwind_portfolio_load_more( $query ) { ?>
-	<div class="load-more">
-		<?php echo get_next_posts_link( __( 'Load More', 'siteorigin-unwind' ), $query->max_num_pages ); ?>
-		<span class="loading"><?php echo __( 'Loading...' ); ?></span>
-	</div><?php
-}
-endif;
