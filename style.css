@@ -2638,30 +2638,25 @@ a {
       color: #2d2d2d; }
 
 .portfolio-loop #projects-container,
-.post-type-archive-jetpack-portfolio .site-main,
 .related-projects {
   margin-right: -1.1667%;
   margin-left: -1.1667%; }
   @media (max-width: 1175px) {
     body:not(.no-active-sidebar) .portfolio-loop #projects-container, body:not(.no-active-sidebar)
-    .post-type-archive-jetpack-portfolio .site-main, body:not(.no-active-sidebar)
     .related-projects {
       margin-right: -0.875%;
       margin-left: -0.875%; } }
   @media (max-width: 640px) {
     body:not(.no-active-sidebar) .portfolio-loop #projects-container, body:not(.no-active-sidebar)
-    .post-type-archive-jetpack-portfolio .site-main, body:not(.no-active-sidebar)
     .related-projects {
       margin: 0; } }
   @media (max-width: 890px) {
     .no-active-sidebar .portfolio-loop #projects-container, .no-active-sidebar
-    .post-type-archive-jetpack-portfolio .site-main, .no-active-sidebar
     .related-projects {
       margin-right: -0.875%;
       margin-left: -0.875%; } }
   @media (max-width: 640px) {
     .no-active-sidebar .portfolio-loop #projects-container, .no-active-sidebar
-    .post-type-archive-jetpack-portfolio .site-main, .no-active-sidebar
     .related-projects {
       margin: 0; } }
 

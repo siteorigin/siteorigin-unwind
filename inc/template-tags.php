@@ -233,7 +233,7 @@ function siteorigin_unwind_entry_footer( $post_id = '' ) {
 		<span class="tags-list"><?php the_tags( '', '', '' ); ?></span>
 	<?php }
 	$portfolio_terms = get_the_term_list( $post_id, 'jetpack-portfolio-tag', '', '', '' );
-	if ( 'jetpack-portfolio' == get_post_type() && $portfolio_terms ) { 
+	if ( 'jetpack-portfolio' == get_post_type() && $portfolio_terms ) {
 		printf( '<span class="tags-list">' . '%1$s' . '</span>', $portfolio_terms );
 	}
 }
