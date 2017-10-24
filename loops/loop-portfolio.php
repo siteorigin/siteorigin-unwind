@@ -46,9 +46,7 @@
 
 		</div>
 
-		<?php siteorigin_unwind_portfolio_load_more( $portfolio_query );
-
-		wp_reset_postdata();
+		<?php siteorigin_unwind_posts_navigation();
 
 	else :
 
