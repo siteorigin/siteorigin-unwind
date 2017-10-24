@@ -56,6 +56,11 @@ function siteorigin_unwind_infinite_scroll_render() {
 				get_template_part( 'template-parts/content', 'search' );
 			} ?>
 		</div><!-- .left-medium-loop --><?php
+	elseif ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) :
+		while ( have_posts() ) {
+			the_post();
+			get_template_part( 'template-parts/content', 'portfolio' );
+		}
 	else :
 		while ( have_posts() ) {
 			the_post();
