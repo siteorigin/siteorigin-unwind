@@ -2761,10 +2761,46 @@ a {
 --------------------------------------------------------------*/
 .jetpack-portfolio-shortcode .portfolio-entry {
   border-bottom: 2px solid #f4f4f4;
+  float: left;
   margin-bottom: 5em;
   padding-bottom: 5em; }
   .jetpack-portfolio-shortcode .portfolio-entry:last-of-type {
     margin-bottom: 5.5em; }
+  .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2 {
+    margin-right: 3.5%;
+    width: 48.25%; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2:nth-child(2n+2) {
+      margin-right: 0; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2:nth-child(2n+3) {
+      clear: left; }
+  .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3 {
+    margin-right: 3.5%;
+    width: 31%; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3:nth-child(3n+3) {
+      margin-right: 0; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3:nth-child(3n+4) {
+      clear: left; }
+  .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4 {
+    margin-right: 3.5%;
+    width: 22.375%; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4:nth-child(4n+4) {
+      margin-right: 0; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4:nth-child(4n+5) {
+      clear: left; }
+  .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5 {
+    margin-right: 3.5%;
+    width: 17.2%; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5:nth-child(5n+5) {
+      margin-right: 0; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5:nth-child(5n+6) {
+      clear: left; }
+  .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6 {
+    margin-right: 3.5%;
+    width: 13.75%; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6:nth-child(6n+6) {
+      margin-right: 0; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6:nth-child(6n+7) {
+      clear: left; }
 
 .jetpack-portfolio-shortcode .portfolio-featured-image {
   display: block;

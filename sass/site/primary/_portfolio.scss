@@ -181,12 +181,78 @@
 
 	.portfolio-entry {
 		border-bottom: 2px solid $color__background-hr;
+		float: left;
 		margin-bottom: 5em;
 		padding-bottom: 5em;
 
 		&:last-of-type {
 			margin-bottom: 5.5em;
 		}
+
+		&.portfolio-entry-column-2 {
+			margin-right: 3.5%;
+			width: 48.25%;
+		
+			&:nth-child(2n+2) {
+				margin-right: 0;
+			}
+
+			&:nth-child(2n+3) {
+				clear: left;
+			}					
+		}
+
+		&.portfolio-entry-column-3 {
+			margin-right: 3.5%;
+			width: 31%;
+		
+			&:nth-child(3n+3) {
+				margin-right: 0;
+			}
+
+			&:nth-child(3n+4) {
+				clear: left;
+			}						
+		}	
+
+		&.portfolio-entry-column-4 {
+			margin-right: 3.5%;
+			width: 22.375%;
+		
+			&:nth-child(4n+4) {
+				margin-right: 0;
+			}
+
+			&:nth-child(4n+5) {
+				clear: left;
+			}				
+		}	
+
+		&.portfolio-entry-column-5 {
+			margin-right: 3.5%;
+			width: 17.2%;
+		
+			&:nth-child(5n+5) {
+				margin-right: 0;
+			}
+
+			&:nth-child(5n+6) {
+				clear: left;
+			}				
+		}	
+
+		&.portfolio-entry-column-6 {
+			margin-right: 3.5%;
+			width: 13.75%;
+		
+			&:nth-child(6n+6) {
+				margin-right: 0;
+			}
+
+			&:nth-child(6n+7) {
+				clear: left;
+			}				
+		}			
 	}
 	
 	.portfolio-featured-image {
