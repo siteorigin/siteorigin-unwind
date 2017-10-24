@@ -31,7 +31,7 @@
 		'paged'     => $paged,
 	);
 
-	$portfolio_query = new WP_Query ( $args );
+	$portfolio_query = new WP_Query( $args );
 
 	if ( post_type_exists( 'jetpack-portfolio' ) && $portfolio_query -> have_posts() ) : ?>
 
