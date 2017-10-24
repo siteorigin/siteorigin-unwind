@@ -622,6 +622,7 @@ a {
         opacity: 0;
         padding: 0;
         position: absolute;
+        text-align: left;
         top: 50px;
         -webkit-transition: all 0.1s ease-in-out;
         -moz-transition: all 0.1s ease-in-out;
