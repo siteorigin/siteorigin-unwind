@@ -180,14 +180,18 @@
 .jetpack-portfolio-shortcode {
 
 	.portfolio-entry {
-		border-bottom: 2px solid $color__background-hr;
 		float: left;
-		margin-bottom: 5em;
-		padding-bottom: 5em;
-
+		margin-bottom: 53px;
+		
 		&:last-of-type {
 			margin-bottom: 5.5em;
 		}
+
+		&.portfolio-entry-column-1 {
+			border-bottom: 2px solid $color__background-hr;
+			margin-bottom: 5em;
+			padding-bottom: 5em;				
+		}		
 
 		&.portfolio-entry-column-2 {
 			margin-right: 3.5%;
@@ -258,40 +262,41 @@
 	.portfolio-featured-image {
 		display: block;
 		line-height: 0;
-		margin-bottom: 35px; 
+		margin-bottom: 17px;
+		
+		img {
+			display: block;
+			margin: 0 auto;
+		} 
 	}
 
 	.portfolio-entry-title {
-		color: $color__text-dark;
-		@include font-size(2.1333);
-		line-height: normal;
-		margin: 0 0 .5em;
-		text-align: center;
-
-		@media (max-width: 480px) {
-			@include font-size(1.6);
-		}
-
+		@include font-size(1.0666);
+		margin: 0;
+		text-align: left;
+		
 		a {
-			color: inherit;
+			color: $color__text-dark;
 			text-decoration: none;
 
 			&:hover {
 				color: $color__text-medium;
 			}
 		}
+
+		@at-root .portfolio-entry-column-1 .portfolio-entry-title {
+			@include font-size(2.1333);
+			text-align: center;		
+		}			
 	}
 
 	.portfolio-entry-meta {
 		color: $color__text-light;
-		@include display(flex);
 		font-family: $font__details;
 		@include font-size(0.8);
-		@include justify-content(center);
 		letter-spacing: .1em;
 		line-height: normal;
-		margin-bottom: 35px; 
-		text-align: center;
+		margin: 10px 0 9px;
 		text-transform: uppercase;
 		
 		@media (max-width: 480px) {
@@ -307,12 +312,18 @@
 			}
 		}
 
-		.project-tags {
+		@at-root .portfolio-entry-column-1 .portfolio-entry-meta {
+			@include display(flex);
+			@include justify-content(center);
+			margin-bottom: 35px;
+			
+			.project-tags {
 
-			&:before {
-				content: '\00a0\00a0/\00a0\00a0';
-				padding: 0 .4166em;			
-			}
-		}		
+				&:before {
+					content: '\00a0\00a0/\00a0\00a0';
+					padding: 0 .4166em;			
+				}
+			}				
+		}				
 	}	
 }

@@ -2760,12 +2760,14 @@ a {
 ### Portfolio Shortcode
 --------------------------------------------------------------*/
 .jetpack-portfolio-shortcode .portfolio-entry {
-  border-bottom: 2px solid #f4f4f4;
   float: left;
-  margin-bottom: 5em;
-  padding-bottom: 5em; }
+  margin-bottom: 53px; }
   .jetpack-portfolio-shortcode .portfolio-entry:last-of-type {
     margin-bottom: 5.5em; }
+  .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-1 {
+    border-bottom: 2px solid #f4f4f4;
+    margin-bottom: 5em;
+    padding-bottom: 5em; }
   .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2 {
     margin-right: 3.5%;
     width: 48.25%; }
@@ -2805,50 +2807,34 @@ a {
 .jetpack-portfolio-shortcode .portfolio-featured-image {
   display: block;
   line-height: 0;
-  margin-bottom: 35px; }
+  margin-bottom: 17px; }
+  .jetpack-portfolio-shortcode .portfolio-featured-image img {
+    display: block;
+    margin: 0 auto; }
 
 .jetpack-portfolio-shortcode .portfolio-entry-title {
-  color: #2d2d2d;
-  font-size: 34.1328px;
-  font-size: 2.1333rem;
-  line-height: normal;
-  margin: 0 0 .5em;
-  text-align: center; }
-  @media (max-width: 480px) {
-    .jetpack-portfolio-shortcode .portfolio-entry-title {
-      font-size: 25.6px;
-      font-size: 1.6rem; } }
+  font-size: 17.0656px;
+  font-size: 1.0666rem;
+  margin: 0;
+  text-align: left; }
   .jetpack-portfolio-shortcode .portfolio-entry-title a {
-    color: inherit;
+    color: #2d2d2d;
     text-decoration: none; }
     .jetpack-portfolio-shortcode .portfolio-entry-title a:hover {
       color: #626262; }
+  .portfolio-entry-column-1 .portfolio-entry-title {
+    font-size: 34.1328px;
+    font-size: 2.1333rem;
+    text-align: center; }
 
 .jetpack-portfolio-shortcode .portfolio-entry-meta {
   color: #adadad;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
   font-family: "Lato", sans-serif;
   font-size: 12.8px;
   font-size: 0.8rem;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center;
   letter-spacing: .1em;
   line-height: normal;
-  margin-bottom: 35px;
-  text-align: center;
+  margin: 10px 0 9px;
   text-transform: uppercase; }
   @media (max-width: 480px) {
     .jetpack-portfolio-shortcode .portfolio-entry-meta {
@@ -2859,9 +2845,27 @@ a {
     text-decoration: none; }
     .jetpack-portfolio-shortcode .portfolio-entry-meta a:hover {
       color: #24c48a; }
-  .jetpack-portfolio-shortcode .portfolio-entry-meta .project-tags:before {
-    content: '\00a0\00a0/\00a0\00a0';
-    padding: 0 .4166em; }
+  .portfolio-entry-column-1 .portfolio-entry-meta {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    margin-bottom: 35px; }
+    .portfolio-entry-column-1 .portfolio-entry-meta .project-tags:before {
+      content: '\00a0\00a0/\00a0\00a0';
+      padding: 0 .4166em; }
 
 /*--------------------------------------------------------------
 ## Asides
