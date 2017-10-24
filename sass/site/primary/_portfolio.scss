@@ -165,45 +165,6 @@
 	}
 }
 
-.load-more {
-	text-align: center;
-
-	a,
-	span {
-		@include font-size(0.8666);
-		border: 2px solid $color__background-hr-dark;
-		color: $color__text-medium;
-		display: inline-block;
-		font-family: $font__details !important;
-		letter-spacing: .1em;
-		padding: 1em 1.923em;
-		text-decoration: none;
-		text-transform: uppercase;
-	}
-
-	a:hover {
-		border-color: $color__primary-accent;
-		color: $color__primary-accent;
-	}
-
-	span {
-		opacity: 0;
-		visibility: hidden;
-	}
-
-	&.loading {
-
-		a {
-			opacity: 0;
-			visibility: hidden;
-		}
-
-		span {
-			opacity: 1;
-			visibility: visible;
-		}
-	}
-}
 .related-projects-section {
 	padding-bottom: 1.3333em;
 

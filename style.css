@@ -2750,33 +2750,6 @@ a {
     top: 52%;
     width: 100%; }
 
-.load-more {
-  text-align: center; }
-  .load-more a,
-  .load-more span {
-    font-size: 13.8656px;
-    font-size: 0.8666rem;
-    border: 2px solid #ebebeb;
-    color: #626262;
-    display: inline-block;
-    font-family: "Lato", sans-serif !important;
-    letter-spacing: .1em;
-    padding: 1em 1.923em;
-    text-decoration: none;
-    text-transform: uppercase; }
-  .load-more a:hover {
-    border-color: #24c48a;
-    color: #24c48a; }
-  .load-more span {
-    opacity: 0;
-    visibility: hidden; }
-  .load-more.loading a {
-    opacity: 0;
-    visibility: hidden; }
-  .load-more.loading span {
-    opacity: 1;
-    visibility: visible; }
-
 .related-projects-section {
   padding-bottom: 1.3333em; }
   .related-projects-section .related-projects {
