@@ -180,52 +180,123 @@
 .jetpack-portfolio-shortcode {
 
 	.portfolio-entry {
-		border-bottom: 2px solid $color__background-hr;
-		margin-bottom: 5em;
-		padding-bottom: 5em;
-
+		float: left;
+		margin-bottom: 53px;
+		
 		&:last-of-type {
 			margin-bottom: 5.5em;
 		}
+
+		&.portfolio-entry-column-1 {
+			border-bottom: 2px solid $color__background-hr;
+			margin-bottom: 5em;
+			padding-bottom: 5em;				
+		}		
+
+		&.portfolio-entry-column-2 {
+			margin-right: 3.5%;
+			width: 48.25%;
+		
+			&:nth-child(2n+2) {
+				margin-right: 0;
+			}
+
+			&:nth-child(2n+3) {
+				clear: left;
+			}					
+		}
+
+		&.portfolio-entry-column-3 {
+			margin-right: 3.5%;
+			width: 31%;
+		
+			&:nth-child(3n+3) {
+				margin-right: 0;
+			}
+
+			&:nth-child(3n+4) {
+				clear: left;
+			}						
+		}	
+
+		&.portfolio-entry-column-4 {
+			margin-right: 3.5%;
+			width: 22.375%;
+		
+			&:nth-child(4n+4) {
+				margin-right: 0;
+			}
+
+			&:nth-child(4n+5) {
+				clear: left;
+			}				
+		}	
+
+		&.portfolio-entry-column-5 {
+			margin-right: 3.5%;
+			width: 17.2%;
+		
+			&:nth-child(5n+5) {
+				margin-right: 0;
+			}
+
+			&:nth-child(5n+6) {
+				clear: left;
+			}				
+		}	
+
+		&.portfolio-entry-column-6 {
+			margin-right: 3.5%;
+			width: 13.75%;
+		
+			&:nth-child(6n+6) {
+				margin-right: 0;
+			}
+
+			&:nth-child(6n+7) {
+				clear: left;
+			}				
+		}			
 	}
 	
 	.portfolio-featured-image {
 		display: block;
 		line-height: 0;
-		margin-bottom: 35px; 
+		margin-bottom: 17px;
+		
+		img {
+			display: block;
+			margin: 0 auto;
+		} 
 	}
 
 	.portfolio-entry-title {
-		color: $color__text-dark;
-		@include font-size(2.1333);
-		line-height: normal;
-		margin: 0 0 .5em;
-		text-align: center;
-
-		@media (max-width: 480px) {
-			@include font-size(1.6);
-		}
-
+		@include font-size(1.0666);
+		margin: 0;
+		text-align: left;
+		
 		a {
-			color: inherit;
+			color: $color__text-dark;
 			text-decoration: none;
 
 			&:hover {
 				color: $color__text-medium;
 			}
 		}
+
+		@at-root .portfolio-entry-column-1 .portfolio-entry-title {
+			@include font-size(2.1333);
+			text-align: center;		
+		}			
 	}
 
 	.portfolio-entry-meta {
 		color: $color__text-light;
-		@include display(flex);
 		font-family: $font__details;
 		@include font-size(0.8);
-		@include justify-content(center);
 		letter-spacing: .1em;
 		line-height: normal;
-		margin-bottom: 35px; 
-		text-align: center;
+		margin: 10px 0 9px;
 		text-transform: uppercase;
 		
 		@media (max-width: 480px) {
@@ -241,12 +312,18 @@
 			}
 		}
 
-		.project-tags {
+		@at-root .portfolio-entry-column-1 .portfolio-entry-meta {
+			@include display(flex);
+			@include justify-content(center);
+			margin-bottom: 35px;
+			
+			.project-tags {
 
-			&:before {
-				content: '\00a0\00a0/\00a0\00a0';
-				padding: 0 .4166em;			
-			}
-		}		
+				&:before {
+					content: '\00a0\00a0/\00a0\00a0';
+					padding: 0 .4166em;			
+				}
+			}				
+		}				
 	}	
 }
