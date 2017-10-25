@@ -180,16 +180,17 @@ jQuery( function( $ ) {
 	}
 
 	// Setup the load more button in portfolio widget loop
-	$( '#portfolio-loop' ).on( 'click', '.load-more a', function(e) {
-		e.preventDefault();
-		var link = $(this).attr( 'href' );
-		$('.load-more').addClass( 'loading' ).find( 'a' ).remove();
-		$.get( link, function(data) {
-			var $post = $( "#portfolio-loop #projects-container ", data ).html(),
-				$content = $( $post );
-			$( '#projects-container' ).append( $content ).isotope( 'appended', $content );
-		} );
-		$( '.load-more' ).removeClass( 'loading' ).load( link + ' .load-more a' );
+	$infinite_scroll = 0;
+	$( document.body ).on( 'post-load', function() {
+		var $container = $( '#portfolio-loop' );
+
+		$infinite_scroll = $infinite_scroll + 1;
+		var $container = $( '#projects-container' ),
+			$selector = $( '#infinite-view-' + $infinite_scroll ),
+			$elements = $selector.find( '.jetpack-portfolio.post' );
+
+		$elements.hide();
+		$container.append( $elements ).isotope( 'appended', $elements );
 	} );
 
 } );
