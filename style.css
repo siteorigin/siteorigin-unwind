@@ -2637,6 +2637,9 @@ a {
       border-bottom: 2px solid #2d2d2d;
       color: #2d2d2d; }
 
+.portfolio-loop {
+  margin-bottom: 5.5em; }
+
 .portfolio-loop #projects-container,
 .related-projects {
   margin-right: -1.1667%;
