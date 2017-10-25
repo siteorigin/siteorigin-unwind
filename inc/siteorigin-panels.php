@@ -42,6 +42,8 @@ function siteorigin_unwind_filter_post_loop_widget( $templates ) {
         'template-parts/content-offset.php',
         'template-parts/content-none.php',
         'template-parts/content-page.php',
+        'template-parts/content-portfolio.php',
+        'template-parts/content-project.php',
         'template-parts/content-search.php',
         'template-parts/content-single.php',
         'template-parts/content-video.php'
