@@ -2637,8 +2637,8 @@ a {
       border-bottom: 2px solid #2d2d2d;
       color: #2d2d2d; }
 
-.portfolio-loop {
-  padding-bottom: 3.5em; }
+.portfolio-loop #projects-container {
+  margin-bottom: 3.5em; }
 
 .portfolio-loop #projects-container,
 .related-projects {
