@@ -770,24 +770,36 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	color: ${fonts_text_dark};
 	}
 	.portfolio-filter-terms button.active {
-	border-bottom: 2px ${fonts_text_dark} solid;
+	border-bottom: 2px solid ${fonts_text_dark};
 	color: ${fonts_text_dark};
 	}
-	.archive-project .entry-overlay .entry-title {
+	.entry-thumbnail:hover .entry-overlay {
+	border: 2px solid ${fonts_text_light};
+	}
+	.archive-project .entry-title {
 	color: ${fonts_text_dark};
 	}
-	.archive-project .entry-overlay .entry-divider {
+	.archive-project .entry-divider {
 	border: solid ${fonts_text_dark} 1px;
 	}
-	.archive-project .entry-overlay .entry-project-type {
+	.archive-project .entry-project-type {
+	color: ${fonts_text_light};
+	.font( ${fonts_details} );
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry-title a {
+	color: ${fonts_text_dark};
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry-title a:hover {
+	color: ${fonts_text_medium};
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry-meta {
+	color: ${fonts_text_light};
+	.font( ${fonts_details} );
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry-meta a {
 	color: ${fonts_text_light};
 	}
-	.load-more a,.load-more span {
-	color: ${fonts_text_medium};
-	font-family: ${fonts_details} !important;
-	}
-	.load-more a:hover {
-	border-color: ${branding_accent};
+	.jetpack-portfolio-shortcode .portfolio-entry-meta a:hover {
 	color: ${branding_accent};
 	}
 	.comment-list li.comment {
@@ -876,7 +888,6 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	$css .= '/* woocommerce */
 	.woocommerce-store-notice,p.demo_store {
 	background: ${branding_accent};
-	.font( ${fonts_details} );
 	}
 	.woocommerce.woocommerce-page #respond input#submit.alt.disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],.woocommerce.woocommerce-page a.button.alt.disabled,.woocommerce.woocommerce-page a.button.alt:disabled,.woocommerce.woocommerce-page a.button.alt:disabled[disabled],.woocommerce.woocommerce-page button.button.alt.disabled,.woocommerce.woocommerce-page button.button.alt:disabled,.woocommerce.woocommerce-page button.button.alt:disabled[disabled],.woocommerce.woocommerce-page input.button.alt.disabled,.woocommerce.woocommerce-page input.button.alt:disabled,.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
 	background-color: ${branding_accent};
