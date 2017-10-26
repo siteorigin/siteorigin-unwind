@@ -2696,8 +2696,7 @@ a {
   .archive-project .entry-thumbnail {
     margin: 0; }
     .archive-project .entry-thumbnail a {
-      display: block;
-      line-height: 0; }
+      display: block; }
   .archive-project .entry-overlay {
     height: 100%;
     left: 0;
