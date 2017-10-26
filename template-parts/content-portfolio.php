@@ -3,7 +3,7 @@
  * Template part for displaying portfolio projects in portfolio loop.
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 1.1.5
+ * @since siteorigin-unwind 1.2
  * @license GPL 2.0
  */
 

@@ -3,7 +3,7 @@
  * Template part for displaying project posts.
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 0.1
+ * @since siteorigin-unwind 1.2
  * @license GPL 2.0
  */
 ?>
