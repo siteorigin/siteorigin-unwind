@@ -5,7 +5,6 @@
 * Fix blog meta categories setting bug.
 * Added styling and position support for the WooCommerce store notice.
 * Added Jetpack Portfolio support.
-* Added a page setting to remove the header but leave the top bar in place.
 
 = 1.1.4 - 06 September 2017 =
 * Resolve post header spacing issue in Post Loop widget templates.
