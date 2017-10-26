@@ -21,11 +21,6 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// Add a CSS3 animations class.
 	$classes[] = 'css3-animations';
 
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
-
 	// Add a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';

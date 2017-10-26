@@ -69,10 +69,37 @@
 	}
 }
 
-.woocommerce-demo-store #page {
-	margin-top: 57px;
+.woocommerce-store-notice,
+p.demo_store {
+	background: $color__primary-accent;
+	box-shadow: none;
+	color: #fff;
+	font-size: 13px;
+	line-height: 1; 
+	padding: 20px;
+	position: relative;
+	text-align: center;
+	top: 0;
+
+	.woocommerce-store-notice__dismiss-link {
+		color: #fff; 
+		text-decoration: underline;
+	}
+
+	&:after {
+		bottom: -14px;
+ 		box-shadow: rgba(0, 0, 0, .25) 0 14px 14px -14px inset;
+  		content: "";
+  		height: 14px;
+  		left: 0;
+  		position: absolute;
+  		width: 100%;
+	}	
 }
 
+.admin-bar p.demo_store {
+	top: 0;
+}
 
 .admin-bar p.demo_store {
 

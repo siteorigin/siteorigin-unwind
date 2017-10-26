@@ -43,10 +43,10 @@ jQuery( function( $ ) {
 		}
 	} );
 
-    // Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
-    if ( typeof $.fn.fitVids !== 'undefined' ) {
-        $( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
-    }
+	// Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
+	if ( typeof $.fn.fitVids !== 'undefined' ) {
+		$( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
+	}
 
 	// Fullscreen search.
 	$( '#search-button' ).click( function( e ) {
@@ -179,10 +179,25 @@ jQuery( function( $ ) {
 		$( window ).resize( smSetup ).scroll( smSetup );
 	}
 
+	// Setup the load more button in portfolio widget loop
+	$infinite_scroll = 0;
+	$( document.body ).on( 'post-load', function() {
+		var $container = $( '#portfolio-loop' );
+
+		$infinite_scroll = $infinite_scroll + 1;
+		var $container = $( '#projects-container' ),
+			$selector = $( '#infinite-view-' + $infinite_scroll ),
+			$elements = $selector.find( '.jetpack-portfolio.post' );
+
+		$elements.hide();
+		$container.append( $elements ).isotope( 'appended', $elements );
+	} );
+
 } );
 
 ( function( $ ) {
 	$( window ).load( function() {
+
 		// Handle masonry blog layout.
 		if ( $( '.blog-layout-masonry' ).length ) {
 			$( '.blog-layout-masonry' ).masonry( {
@@ -190,5 +205,27 @@ jQuery( function( $ ) {
 				columnWidth: '.archive-entry'
 			} );
 		}
+
+		// Portfolio loop filter.
+		var $container = $( '#projects-container' );
+		if ( $( '.portfolio-filter-terms' ).length ) {
+			$container.isotope( {
+				itemSelector: '.post',
+				filter: '*',
+				layoutMode: 'fitRows',
+				resizable: true,
+			} );
+		}
+
+		$( '.portfolio-filter-terms button' ).click( function() {
+			var selector = $( this ).attr( 'data-filter' );
+			$container.isotope( {
+				filter: selector,
+			} );
+			$( '.portfolio-filter-terms button' ).removeClass( 'active' );
+			$( this ).addClass( 'active' );
+			return false;
+		} );
+
 	} );
 } )( jQuery );

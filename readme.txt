@@ -5,7 +5,7 @@ Contributors: siteorigin
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
-Tested up to: 4.8.1
+Tested up to: 4.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,10 @@ Licensed under the WTFPL license
 FlexSlider, Copyright 2012 WooThemes
 Free to use under the GPLv2 license
 [Source](http://www.woothemes.com/flexslider/)
+
+Isotope PACKAGED, Copyright 2017 Metafizzy
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+[Source](http://isotope.metafizzy.co)
 
 Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)

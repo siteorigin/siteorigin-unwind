@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.2 - 26 October 2017 =
+* Small styling fix for loops in Post Loop widget.
+* Fix blog meta categories setting bug.
+* Added styling and position support for the WooCommerce store notice.
+* Added Jetpack Portfolio support.
+
 = 1.1.4 - 06 September 2017 =
 * Resolve post header spacing issue in Post Loop widget templates.
 * Fix missing category meta setting in the grid, alternate and masonry layouts.
