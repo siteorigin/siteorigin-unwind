@@ -12,6 +12,11 @@
 		letter-spacing: 1px;
 		padding: 0 0 12px 0;
 		margin-right: 34px;
+		
+		@media (max-width: 768px) {
+			padding: 0 0 5px 0;
+			margin: 0 10px 5px 0; 
+		}		
 
 		&:hover {
 			color: $color__text-dark;
