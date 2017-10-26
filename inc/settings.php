@@ -1462,7 +1462,7 @@ add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_s
  *
  * @return mixed
  */
-function siteorigin_unwind_page_settings_panels_defaults( $settings ){
+function siteorigin_unwind_page_settings_panels_defaults( $settings ) {
 	$settings['layout']     = 'no-sidebar';
 	$settings['page_title'] = false;
 
