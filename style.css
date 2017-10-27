@@ -3035,7 +3035,8 @@ a {
 #commentform .comment-subscription-form {
   margin: 0 0 8px; }
   #commentform .comment-subscription-form label {
-    color: #626262; }
+    color: #626262;
+    font-weight: normal; }
 
 /*--------------------------------------------------------------
 ## Site Footer
