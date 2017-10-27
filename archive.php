@@ -20,11 +20,34 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php
-				if ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
-					get_template_part( 'loops/loop', 'portfolio' );
-				} else {
-					get_template_part( 'loops/loop', 'blog-' . siteorigin_setting( 'blog_archive_layout' ) );
-				}
+			if ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
+
+				if ( have_posts() ) : ?>
+
+					<div class="portfolio-archive-layout">
+						<?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
+
+							get_template_part( 'template-parts/content', 'portfolio' );
+
+						endwhile;
+						?>
+					</div><?php
+
+					siteorigin_unwind_posts_navigation();
+
+				else :
+
+					get_template_part( 'template-parts/content', 'none' );
+
+				endif;
+
+			} else {
+
+				get_template_part( 'loops/loop', 'blog-' . siteorigin_setting( 'blog_archive_layout' ) );
+
+			}
 			?>
 
 		</main><!-- #main -->

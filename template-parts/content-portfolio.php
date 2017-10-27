@@ -10,19 +10,20 @@
 // Get Jetpack Portfolio taxonomy terms for portfolio filtering.
 $terms = get_the_terms( $post->ID, 'jetpack-portfolio-type' );
 
-if ( $terms && ! is_wp_error( $terms ) ) :
+if ( ! is_wp_error( $terms ) ) :
 
 	$filtering_links = array();
 
-	foreach ( $terms as $term ) {
-		$filtering_links[] = $term->slug;
+	if ( $terms ) {
+		foreach ( $terms as $term ) {
+			$filtering_links[] = $term->slug;
+		}
 	}
 
 	$filtering = join( ", ", $filtering_links );
+	$types = $filtering ? join( " ", $filtering_links ) : ' ';
 
-	$types = join( " ", $filtering_links );
-
-	$classes = $types . ' archive-project';
+	$classes = 'archive-project ' . $types;
 
 endif; ?>
 
@@ -34,8 +35,8 @@ endif; ?>
 			<div class="entry-content">
 				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 				<div class="entry-divider"></div>
-				<span class="entry-project-type"><?php echo $filtering; ?></span>					
-			</div>		
+				<span class="entry-project-type"><?php echo $filtering; ?></span>
+			</div>
 			<?php the_post_thumbnail( 'siteorigin-unwind-500x500-crop' ); ?>
 		</a>
 	</div><!-- .entry-thumbnail -->
