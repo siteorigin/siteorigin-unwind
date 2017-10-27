@@ -780,6 +780,7 @@ a {
 #mobile-navigation {
   left: 0;
   position: absolute;
+  text-align: left;
   top: 61px;
   width: 100%;
   z-index: 10; }
@@ -2355,11 +2356,11 @@ a {
 .share-this {
   font-size: 13px; }
 
-.single-post .sharedaddy .sd-content {
+.single .sharedaddy .sd-content {
   padding: 1em 0 1.5em;
   text-align: center;
   width: 100%; }
-  .single-post .sharedaddy .sd-content ul {
+  .single .sharedaddy .sd-content ul {
     display: inline-block; }
 
 /*--------------------------------------------------------------
@@ -2631,14 +2632,18 @@ a {
     letter-spacing: 1px;
     padding: 0 0 12px 0;
     margin-right: 34px; }
+    @media (max-width: 768px) {
+      .portfolio-filter-terms button {
+        padding: 0 0 5px 0;
+        margin: 0 10px 5px 0; } }
     .portfolio-filter-terms button:hover {
       color: #2d2d2d; }
     .portfolio-filter-terms button.active {
       border-bottom: 2px solid #2d2d2d;
       color: #2d2d2d; }
 
-.portfolio-loop {
-  margin-bottom: 5.5em; }
+.portfolio-loop #projects-container {
+  margin-bottom: 3.5em; }
 
 .portfolio-loop #projects-container,
 .related-projects {
@@ -2652,7 +2657,8 @@ a {
   @media (max-width: 640px) {
     body:not(.no-active-sidebar) .portfolio-loop #projects-container, body:not(.no-active-sidebar)
     .related-projects {
-      margin: 0; } }
+      margin-right: 0;
+      margin-left: 0; } }
   @media (max-width: 890px) {
     .no-active-sidebar .portfolio-loop #projects-container, .no-active-sidebar
     .related-projects {
@@ -2744,11 +2750,13 @@ a {
     position: absolute;
     text-align: center;
     text-transform: uppercase;
-    top: 52%;
+    top: 47.5%;
     width: 100%; }
 
 .related-projects-section {
-  padding-bottom: 1.3333em; }
+  float: left;
+  padding-bottom: 1.3333em;
+  width: 100%; }
   .related-projects-section .related-projects {
     font-size: 1em;
     text-transform: uppercase; }
@@ -2892,6 +2900,8 @@ a {
     width: auto;
     display: block;
     color: #626262; }
+    .comment-list li.comment:last-of-type {
+      margin-bottom: 3.8em; }
     .comment-list li.comment .comment-box {
       padding: 2em 0;
       border-bottom: 1px solid #ebebeb; }
@@ -2955,7 +2965,6 @@ a {
   border-bottom: 1px solid #ebebeb;
   font-size: 14.9328px;
   font-size: 0.9333rem;
-  margin-top: 3.8em;
   padding-bottom: 0.8666em;
   text-transform: uppercase; }
   .comment-reply-title #cancel-comment-reply-link {
@@ -3029,7 +3038,8 @@ a {
 #commentform .comment-subscription-form {
   margin: 0 0 8px; }
   #commentform .comment-subscription-form label {
-    color: #626262; }
+    color: #626262;
+    font-weight: normal; }
 
 /*--------------------------------------------------------------
 ## Site Footer

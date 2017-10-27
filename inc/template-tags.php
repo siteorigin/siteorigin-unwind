@@ -514,12 +514,12 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_related_projects ' ) ) :
 /**
- * Displays related posts in single projects
+ * Displays related posts in single projects.
  */
 function siteorigin_unwind_related_projects( $post_id ) {
 	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
-	} else { // The fallback loop
+	} else { // The fallback loop.
 		$categories = get_the_terms( $post_id, 'jetpack-portfolio-type' );
 		$first_cat = $categories[0]->term_id;
 		$args=array(

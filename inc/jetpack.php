@@ -35,6 +35,12 @@ function siteorigin_unwind_jetpack_setup() {
 		'footer'    => 'page',
 	) );
 
+	/**
+	 * Enable support for Jetpack Portfolio custom post type.
+	 * See https://jetpack.com/support/custom-content-types/
+	 */
+	add_theme_support( 'jetpack-portfolio' );	
+
 	/*
 	 * Enable support for Jetpack Responsive Videos.
 	 * See https://jetpack.com/support/responsive-videos/

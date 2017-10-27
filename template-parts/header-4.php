@@ -23,7 +23,6 @@
         </div>
     <?php endif; ?>
 </div><!-- .top-bar -->
-
 <div class="main-navigation-bar sticky-bar <?php if ( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>">
     <div class="container">
         <div class="site-branding">

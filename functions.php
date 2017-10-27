@@ -122,11 +122,6 @@ function siteorigin_unwind_setup() {
 	 */
 	add_theme_support( 'siteorigin-template-settings' );
 
-	/**
-	 * Support Jetpack's portfolio post type.
-	 */
-	add_theme_support( 'jetpack-portfolio' );
-
 }
 endif; // siteorigin_unwind_setup.
 add_action( 'after_setup_theme', 'siteorigin_unwind_setup' );
