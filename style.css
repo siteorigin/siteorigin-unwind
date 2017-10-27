@@ -2657,7 +2657,8 @@ a {
   @media (max-width: 640px) {
     body:not(.no-active-sidebar) .portfolio-loop #projects-container, body:not(.no-active-sidebar)
     .related-projects {
-      margin: 0; } }
+      margin-right: 0;
+      margin-left: 0; } }
   @media (max-width: 890px) {
     .no-active-sidebar .portfolio-loop #projects-container, .no-active-sidebar
     .related-projects {
@@ -2753,7 +2754,9 @@ a {
     width: 100%; }
 
 .related-projects-section {
-  padding-bottom: 1.3333em; }
+  float: left;
+  padding-bottom: 1.3333em;
+  width: 100%; }
   .related-projects-section .related-projects {
     font-size: 1em;
     text-transform: uppercase; }

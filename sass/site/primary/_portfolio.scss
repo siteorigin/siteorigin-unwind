@@ -46,7 +46,8 @@
 		}
 
 		@media (max-width: 640px) {
-			margin: 0;
+			margin-right: 0;
+			margin-left: 0;  
 		}
 	}
 
@@ -173,8 +174,10 @@
 }
 
 .related-projects-section {
+	float: left;
 	padding-bottom: 1.3333em;
-
+	width: 100%; 
+	
 	.related-projects {
 		font-size: 1em;
 		text-transform: uppercase;
