@@ -22,7 +22,7 @@
 		?>
 	</div>
 <?php endif; ?>
-hahahaha
+
 <div class="portfolio-loop" id="portfolio-loop">
 	<?php
 
