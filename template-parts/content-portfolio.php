@@ -3,7 +3,7 @@
  * Template part for displaying portfolio projects in portfolio loop.
  *
  * @package siteorigin-unwind
- * @since siteorigin-unwind 1.1.5
+ * @since siteorigin-unwind 1.2
  * @license GPL 2.0
  */
 
@@ -34,7 +34,7 @@ endif; ?>
 			<div class="entry-content">
 				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 				<div class="entry-divider"></div>
-				<p class="entry-project-type"><?php echo $filtering; ?></p>					
+				<span class="entry-project-type"><?php echo $filtering; ?></span>					
 			</div>		
 			<?php the_post_thumbnail( 'siteorigin-unwind-500x500-crop' ); ?>
 		</a>

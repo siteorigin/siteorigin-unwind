@@ -206,7 +206,7 @@ jQuery( function( $ ) {
 			} );
 		}
 
-		// Portfolio loop filter
+		// Portfolio loop filter.
 		var $container = $( '#projects-container' );
 		if ( $( '.portfolio-filter-terms' ).length ) {
 			$container.isotope( {
