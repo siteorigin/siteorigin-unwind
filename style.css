@@ -2670,12 +2670,9 @@ a {
       margin: 0; } }
 
 .archive-project {
-  float: left;
-  margin-bottom: 30px;
   margin-right: 1.1667%;
+  margin-bottom: 30px;
   margin-left: 1.1667%;
-  position: relative;
-  vertical-align: top;
   width: 31%; }
   @media (max-width: 1175px) {
     body:not(.no-active-sidebar) .archive-project {
@@ -2760,6 +2757,10 @@ a {
   .related-projects-section .related-projects {
     font-size: 1em;
     text-transform: uppercase; }
+    .related-projects-section .related-projects article {
+      float: left;
+      position: relative;
+      vertical-align: top; }
 
 /*--------------------------------------------------------------
 ### Portfolio Shortcode

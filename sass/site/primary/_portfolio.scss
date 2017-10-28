@@ -65,12 +65,9 @@
 }
 
 .archive-project {
-	float: left;
-	margin-bottom: 30px;
 	margin-right: 1.1667%;
+	margin-bottom: 30px;
 	margin-left: 1.1667%;
-	position: relative;
-	vertical-align: top;
 	width: 31%;
 
 	@at-root body:not(.no-active-sidebar) & {
@@ -181,6 +178,12 @@
 	.related-projects {
 		font-size: 1em;
 		text-transform: uppercase;
+	
+		article {
+			float: left;
+			position: relative;
+			vertical-align: top;			
+		}
 	}
 }
 
