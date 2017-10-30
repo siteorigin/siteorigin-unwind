@@ -123,9 +123,9 @@ function siteorigin_unwind_comment( $comment, $args, $depth ) {
 				</div>
 
 				<div class="comment-content content">
-					<?php if( ! $comment->comment_approved ) : ?>
+					<?php if ( ! $comment->comment_approved ) : ?>
 						<p class="comment-awaiting-moderation">
-							<?php _e( 'Your comment is awaiting moderation.', 'siteorigin-unwind' ); ?>
+							<?php esc_html_e( 'Your comment is awaiting moderation.', 'siteorigin-unwind' ); ?>
 						</p>
 					<?php endif; ?>
 					<?php comment_text() ?>
