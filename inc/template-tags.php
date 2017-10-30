@@ -123,6 +123,11 @@ function siteorigin_unwind_comment( $comment, $args, $depth ) {
 				</div>
 
 				<div class="comment-content content">
+					<?php if ( ! $comment->comment_approved ) : ?>
+						<p class="comment-awaiting-moderation">
+							<?php esc_html_e( 'Your comment is awaiting moderation.', 'siteorigin-unwind' ); ?>
+						</p>
+					<?php endif; ?>
 					<?php comment_text() ?>
 				</div>
 
@@ -514,12 +519,12 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_related_projects ' ) ) :
 /**
- * Displays related posts in single projects
+ * Displays related posts in single projects.
  */
 function siteorigin_unwind_related_projects( $post_id ) {
 	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
-	} else { // The fallback loop
+	} else { // The fallback loop.
 		$categories = get_the_terms( $post_id, 'jetpack-portfolio-type' );
 		$first_cat = $categories[0]->term_id;
 		$args=array(
@@ -538,7 +543,7 @@ function siteorigin_unwind_related_projects( $post_id ) {
 
 		<div class="related-projects-section">
 			<h2 class="related-projects heading-strike"><?php esc_html_e( 'You may also like', 'siteorigin-unwind' ); ?></h2>
-			<?php if ( $related_posts ) : ?>
+			<?php if ( $related_posts->have_posts() ) : ?>
 				<div class="related-projects">
 					<?php if ( $related_posts->have_posts() ) : ?>
 						<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>

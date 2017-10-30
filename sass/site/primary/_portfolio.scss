@@ -12,6 +12,11 @@
 		letter-spacing: 1px;
 		padding: 0 0 12px 0;
 		margin-right: 34px;
+		
+		@media (max-width: 768px) {
+			padding: 0 0 5px 0;
+			margin: 0 10px 5px 0; 
+		}		
 
 		&:hover {
 			color: $color__text-dark;
@@ -24,8 +29,8 @@
 	}
 }
 
-.portfolio-loop {
-    margin-bottom: 5.5em;
+.portfolio-loop #projects-container {
+	margin-bottom: 3.5em;
 }
 
 .portfolio-loop #projects-container,
@@ -41,7 +46,8 @@
 		}
 
 		@media (max-width: 640px) {
-			margin: 0;
+			margin-right: 0;
+			margin-left: 0;  
 		}
 	}
 
@@ -59,12 +65,9 @@
 }
 
 .archive-project {
-	float: left;
-	margin-bottom: 30px;
 	margin-right: 1.1667%;
+	margin-bottom: 30px;
 	margin-left: 1.1667%;
-	position: relative;
-	vertical-align: top;
 	width: 31%;
 
 	@at-root body:not(.no-active-sidebar) & {
@@ -162,17 +165,25 @@
 		position: absolute;
 		text-align: center;
 		text-transform: uppercase;
-		top: 52%;
+		top: 47.5%;
 		width: 100%;
 	}
 }
 
 .related-projects-section {
+	float: left;
 	padding-bottom: 1.3333em;
-
+	width: 100%; 
+	
 	.related-projects {
 		font-size: 1em;
 		text-transform: uppercase;
+	
+		article {
+			float: left;
+			position: relative;
+			vertical-align: top;			
+		}
 	}
 }
 
