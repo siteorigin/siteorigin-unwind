@@ -35,6 +35,9 @@
 
 		.comment-container {
 			margin-left: 6em;
+			.comment-awaiting-moderation {
+				font-style: italic;
+			}
 		}
 
 		&.pingback {
