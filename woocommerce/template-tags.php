@@ -37,6 +37,8 @@ function siteorigin_unwind_woocommerce_change_hooks() {
 	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 5 );
 	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 15 );
 	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+	remove_action( 'wp_footer', 'woocommerce_demo_store' );
 }
 endif;
 add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_change_hooks' );
@@ -78,7 +80,9 @@ function siteorigin_unwind_woocommerce_loop_item_image() { ?>
 		<?php woocommerce_template_loop_product_thumbnail(); ?>
 		<?php woocommerce_template_loop_product_link_close(); ?>
 		<?php woocommerce_template_loop_add_to_cart(); ?>
-		<?php siteorigin_unwind_woocommerce_quick_view_button(); ?>
+		<?php if ( siteorigin_setting( 'woocommerce_display_quick_view' ) ) {
+			siteorigin_unwind_woocommerce_quick_view_button();
+		} ?>
 	</div>
 <?php }
 endif;
@@ -89,7 +93,7 @@ if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view_button' ) ) :
  */
 function siteorigin_unwind_woocommerce_quick_view_button() {
 	global $product;
-	echo '<a href="#" id="product-id-' . $product->id . '" class="button product-quick-view-button" data-product-id="' . $product->id . '">' . esc_html__( 'Quick View', 'siteorigin-unwind') . '</a>';
+	echo '<a href="#" id="product-id-' . $product->get_id() . '" class="button product-quick-view-button" data-product-id="' . $product->get_id() . '">' . esc_html__( 'Quick View', 'siteorigin-unwind') . '</a>';
 }
 endif;
 
@@ -107,10 +111,12 @@ if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view' ) ) :
  * Setup quick view modal in the footer.
  */
 function siteorigin_unwind_woocommerce_quick_view() { ?>
-	<!-- WooCommerce Quick View -->
-	<div id="quick-view-container">
-		<div id="product-quick-view" class="quick-view"></div>
-	</div>
+	<?php if ( siteorigin_setting( 'woocommerce_display_quick_view' ) ) : ?>
+		<!-- WooCommerce Quick View -->
+		<div id="quick-view-container">
+			<div id="product-quick-view" class="quick-view"></div>
+		</div>
+	<?php endif; ?>
 <?php }
 endif;
 add_action( 'wp_footer', 'siteorigin_unwind_woocommerce_quick_view', 100 );

@@ -118,15 +118,15 @@ function siteorigin_unwind_comment( $comment, $args, $depth ) {
 
 			<div class="comment-container">
 				<div class="info">
-					<span class="author"><?php comment_author_link() ?></span><br>
-					<span class="date"><?php comment_date() ?></span>
+					<span class="author"><?php comment_author_link(); ?></span><br>
+					<span class="date"><?php comment_date(); ?></span>
 				</div>
 
 				<div class="comment-content content">
 					<?php comment_text() ?>
 				</div>
 
-				<?php if($depth <= $args['max_depth']) : ?>
+				<?php if ( $depth <= $args['max_depth'] ) : ?>
 					<?php comment_reply_link( array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ?>
 				<?php endif; ?>
 			</div>
@@ -163,7 +163,7 @@ function siteorigin_unwind_display_logo() {
 endif;
 
 /**
- * Display a retina ready logo
+ * Display a retina ready logo.
  */
 function siteorigin_unwind_display_retina_logo( $attr ){
 	$logo = siteorigin_setting( 'branding_logo' );
@@ -193,22 +193,49 @@ function siteorigin_unwind_display_retina_logo( $attr ){
 }
 add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 
+if ( ! function_exists( 'siteorigin_unwind_main_navigation' ) ) :
+/**
+ * Display the main menu.
+ */
+function siteorigin_unwind_main_navigation() {
+	?>
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+		<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+		<?php if ( class_exists( 'Woocommerce' ) && ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_mini_cart' ) ) : ?>
+			<?php global $woocommerce; ?>
+			<ul class="shopping-cart">
+				<li>
+					<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
+						<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-unwind' ); ?></span>
+						<?php siteorigin_unwind_display_icon( 'cart' ); ?>
+						<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-unwind' ); ?></span>
+						<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count; ?></span>
+					</a>
+					<ul class="shopping-cart-dropdown" id="cart-drop">
+						<?php the_widget( 'WC_Widget_Cart' );?>
+					</ul>
+				</li>
+			</ul>
+		<?php endif; ?>
+	</nav><!-- #site-navigation -->
+	<div id="mobile-navigation"></div>
+	<?php
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_entry_footer' ) ) :
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Prints HTML with meta information for tags.
  */
-function siteorigin_unwind_entry_footer() {
-	// Hide category and tag text for pages.
+function siteorigin_unwind_entry_footer( $post_id = '' ) {
 	if ( 'post' === get_post_type() && siteorigin_setting( 'blog_display_tags' ) ) { ?>
-		<span class="tags-list"><?php the_tags('', '', ''); ?></span>
+		<span class="tags-list"><?php the_tags( '', '', '' ); ?></span>
 	<?php }
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-unwind' ), esc_html__( '1 Comment', 'siteorigin-unwind' ), esc_html__( '% Comments', 'siteorigin-unwind' ) );
-		echo '</span>';
+	$portfolio_terms = get_the_term_list( $post_id, 'jetpack-portfolio-tag', '', '', '' );
+	if ( 'jetpack-portfolio' == get_post_type() && $portfolio_terms ) {
+		printf( '<span class="tags-list">' . '%1$s' . '</span>', $portfolio_terms );
 	}
-
 }
 endif;
 
@@ -256,16 +283,42 @@ if ( ! function_exists( 'siteorigin_unwind_read_more_link' ) ) :
  */
 function siteorigin_unwind_read_more_link() {
 	$read_more_text = esc_html__( 'Continue reading', 'siteorigin-unwind' );
-	return '<a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</a></span>';
+		return '<div class="more-link-wrapper"><a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</span></a></div>';
 }
 endif;
 add_filter( 'the_content_more_link', 'siteorigin_unwind_read_more_link' );
+
+if ( ! function_exists( 'siteorigin_unwind_excerpt_length' ) ) :
+/**
+ * Filter the excerpt length.
+ */
+function siteorigin_unwind_excerpt_length( $length ) {
+	return siteorigin_setting( 'blog_excerpt_length' );
+}
+add_filter( 'excerpt_length', 'siteorigin_unwind_excerpt_length', 10 );
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_excerpt_more' ) ) :
+/**
+ * Add a more link to the excerpt.
+ */
+function siteorigin_unwind_excerpt_more( $more ) {
+	if ( is_search() ) return;
+	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more', true ) ||
+		siteorigin_setting( 'blog_archive_layout' ) == 'grid' && siteorigin_setting( 'blog_excerpt_more', true ) ||
+		siteorigin_setting( 'blog_archive_layout' ) == 'alternate' && siteorigin_setting( 'blog_excerpt_more', true ) ) {
+		$read_more_text = esc_html__( 'Continue reading', 'siteorigin-unwind' );
+		return '<div class="more-link-wrapper"><a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</span></a></div>';
+	}
+}
+endif;
+add_filter( 'excerpt_more', 'siteorigin_unwind_excerpt_more' );
 
 if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time, category and comment count.
  */
-function siteorigin_unwind_post_meta() {
+function siteorigin_unwind_post_meta( $cats = true, $post_id = '' ) {
 
 	/* translators: used between list items, there is a space after the comma */
 	$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-unwind' ) );
@@ -284,28 +337,75 @@ function siteorigin_unwind_post_meta() {
 		$comments = NULL;
 	} ?>
 
-	<?php if ( is_sticky() && is_home() && ! is_paged() ) {
+	<?php if ( is_sticky() && is_home() && ! is_paged() && ! siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) {
 		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
 	} ?>
 
 	<?php if ( siteorigin_setting( 'blog_display_date' ) ) { ?>
 		<span class="entry-date">
 			<?php echo ( ! is_singular() ) ? '<a href="' . get_the_permalink() . '" title="' . the_title_attribute( 'echo=0' ) .'">' : ''; ?>
-				<?php the_time( 'M d, Y' ); ?>
+				<?php the_time( apply_filters( 'siteorigin_unwind_date_format', 'M d, Y' ) ); ?>
 			<?php echo ( ! is_singular() ) ? '</a>' : ''; ?>
 		</span>
 	<?php } ?>
 
+	<?php if ( siteorigin_setting( 'blog_display_category' ) ) {
 
-	<?php if ( $categories_list && siteorigin_unwind_categorized_blog() && siteorigin_setting( 'blog_display_category' ) ) {
-		printf( '<span class="entry-category">' . esc_html__( '%1$s', 'siteorigin-unwind' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		if ( 'jetpack-portfolio' == get_post_type() ) {
+
+			$portfolio_terms = get_the_term_list( $post_id, 'jetpack-portfolio-type', '', ', ', '' );
+			if ( $portfolio_terms ) {
+				printf( '<span class="entry-category">' . '%1$s' . '</span>', $portfolio_terms );
+			}
+
+		} else {
+
+			if ( $categories_list && siteorigin_unwind_categorized_blog() && $cats == true ) {
+				printf( '<span class="entry-category">' . '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+
+		}
 	} ?>
 
 	<?php if ( $comments && siteorigin_setting( 'blog_display_comments' ) ) {
-		echo '<span class="entry-comments"><a href="' . get_comments_link() .'">'. $comments.'</a></span>';
+		echo '<span class="entry-comments"><a href="' . get_comments_link() .'">' . $comments . '</a></span>';
 	} ?>
 
 <?php }
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_thumbnail_meta' ) ) :
+/**
+ * Print HTML with meta information for the sticky status and post categories.
+ */
+function siteorigin_unwind_thumbnail_meta() {
+	if ( ! ( is_sticky() || siteorigin_setting( 'blog_display_category' ) ) ) return;
+	echo '<div class="thumbnail-meta">';
+	if ( is_sticky() && is_home() && ! is_paged() ) {
+		echo '<span>' . esc_html__( 'Sticky', 'siteorigin-unwind' ) . '</span>';
+	}
+	if ( siteorigin_setting( 'blog_display_category' ) ) {
+		siteorigin_unwind_three_categories();
+	}
+	echo '</div>';
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_three_categories' ) ) :
+/**
+ * Display only the first 3 categories
+ */
+function siteorigin_unwind_three_categories() {
+	if ( has_category() ) {
+		$categories = array_slice( get_the_category(), 0, 3 );
+
+		foreach ( $categories as $category ) {
+			if ( $category ) {
+				echo '<a href="' . get_category_link( $category->term_id ) . '">' . $category->cat_name . '</a>';
+			}
+		}
+	}
+}
 endif;
 
 if ( ! function_exists( 'siteorigin_unwind_posts_navigation' ) ) :
@@ -367,11 +467,13 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_related_posts' ) ) :
 /**
- * Displays the author box in single posts
+ * Displays related posts in single posts
  */
 function siteorigin_unwind_related_posts( $post_id ) {
 	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin.
 		related_posts();
+	} elseif ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop
 		$categories = get_the_category( $post_id );
 		$first_cat = $categories[0]->cat_ID;
@@ -395,7 +497,7 @@ function siteorigin_unwind_related_posts( $post_id ) {
 										<?php the_post_thumbnail( 'siteorigin-unwind-263x174-crop' ); ?>
 									<?php endif; ?>
 									<h3 class="related-post-title"><?php the_title(); ?></h3>
-									<p class="related-post-date"><?php the_time( 'M d, Y' ); ?></p>
+									<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_unwind_date_format', 'M d, Y' ) ); ?></p>
 								</a>
 							</li>
 						<?php endwhile; ?>
@@ -403,6 +505,49 @@ function siteorigin_unwind_related_posts( $post_id ) {
 				</ol>
 			<?php else : ?>
 				<p><?php esc_html_e( 'No related posts.', 'siteorigin-unwind' ); ?></p>
+			<?php endif; ?>
+		</div>
+		<?php wp_reset_query();
+	}
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_related_projects ' ) ) :
+/**
+ * Displays related posts in single projects.
+ */
+function siteorigin_unwind_related_projects( $post_id ) {
+	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+		echo do_shortcode( '[jetpack-related-posts]' );
+	} else { // The fallback loop.
+		$categories = get_the_terms( $post_id, 'jetpack-portfolio-type' );
+		$first_cat = $categories[0]->term_id;
+		$args=array(
+			'tax_query' => array(
+		        array (
+		            'taxonomy' => 'jetpack-portfolio-type',
+		            'field' => 'term_id',
+		            'terms' => $first_cat,
+		        )
+		    ),
+			'post__not_in' => array( $post_id ),
+			'posts_per_page' => 3,
+			'ignore_sticky_posts' => -1
+		);
+		$related_posts = new WP_Query( $args ); ?>
+
+		<div class="related-projects-section">
+			<h2 class="related-projects heading-strike"><?php esc_html_e( 'You may also like', 'siteorigin-unwind' ); ?></h2>
+			<?php if ( $related_posts->have_posts() ) : ?>
+				<div class="related-projects">
+					<?php if ( $related_posts->have_posts() ) : ?>
+						<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
+							<?php get_template_part( 'template-parts/content', 'portfolio' ); ?>
+						<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
+			<?php else : ?>
+				<p><?php esc_html_e( 'No related projects.', 'siteorigin-unwind' ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php wp_reset_query();
@@ -451,7 +596,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_display_icon' ) ) :
 /**
- * Displays svg icons.
+ * Displays SVG icons.
  */
 function siteorigin_unwind_display_icon( $type ) {
 
@@ -505,13 +650,29 @@ function siteorigin_unwind_display_icon( $type ) {
 			<?php endif;
 			break;
 
+		case 'cart':
+			?>
+			<svg version="1.1" class="svg-icon-cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="32" viewBox="0 0 27 32">
+				<path id="shopping_cart_icon" data-name="shopping cart icon" class="cls-1" d="M906.859,20A3.994,3.994,0,1,0,899,19a3.933,3.933,0,0,0,.142,1H897.09a6,6,0,1,1,11.82,0h-2.051ZM914,19H892l-3,24h28Zm-20.217,2h18.434l2.539,20H891.244Z" transform="translate(-889 -13)"/>
+			</svg>
+			<?php
+			break;
+
+		case 'up-arrow':
+			?>
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="55" height="32" viewBox="0 0 55 32">
+				<path fill="#fff" d="M50.276 32l-22.829-22.829-22.829 22.829-4.553-4.553 27.382-27.415 27.415 27.415z"></path>
+			</svg>
+			<?php
+			break;
+
 	}
 }
 endif;
 
 if ( ! function_exists( 'siteorigin_unwind_strip_gallery' ) ) :
 /**
- * Remove gallery
+ * Remove gallery.
  */
 function siteorigin_unwind_strip_gallery( $content ) {
 	preg_match_all( '/' . get_shortcode_regex() . '/s', $content, $matches, PREG_SET_ORDER );
@@ -572,9 +733,10 @@ function siteorigin_unwind_filter_video( $content ) {
 		preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', $content, $urls );
 
 		if ( ! empty( $urls[0] ) ) {
-			$content = str_replace( $urls[0], '', $content );
+			$content = str_replace( $urls[0][0], '', $content );
 		}
-
+		return $content;
+	} else {
 		return $content;
 	}
 }
@@ -596,9 +758,66 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_strip_image' ) ) :
 /**
- * Removes the first image from the page
+ * Removes the first image from the page.
  */
 function siteorigin_unwind_strip_image( $content ) {
 	return preg_replace( '/<img[^>]+\>/i', '', $content, 1 );
 }
 endif;
+
+if ( ! function_exists( 'siteorigin_unwind_get_gallery' ) ) :
+/**
+ * Get gallery from content for gallery format posts.
+ */
+function siteorigin_unwind_get_gallery() {
+	$gallery = get_post_gallery( get_the_ID(), false );
+	if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
+		add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
+	}
+
+	return ( '' !== $gallery ) ? $gallery : false;
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_archive_post_media' ) ) :
+/**
+ * Check if archive post has format media or thumbnail.
+ */
+function siteorigin_unwind_archive_post_media() {
+
+	if ( ( get_post_format() == 'gallery' && siteorigin_unwind_get_gallery() ) || ( get_post_format() == 'image' && siteorigin_unwind_get_image() ) || ( get_post_format() == 'video' && siteorigin_unwind_get_video() ) || has_post_thumbnail() ) {
+		$entry_thumb = 'active-entry-thumb';
+	} else {
+		$entry_thumb = '';
+	}
+	return $entry_thumb;
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_jetpackme_related_posts_headline' ) ) :
+/**
+ * Changing the jetpack related posts title
+ */
+function siteorigin_unwind_jetpackme_related_posts_headline( $headline ) {
+	$headline = sprintf(
+	    '<h2 class="jp-relatedposts-headline related-posts heading-strike">%s</h2>',
+	    esc_html( 'You may also like', 'siteorigin-unwind' )
+	);
+	return $headline;
+}
+endif;
+add_filter( 'jetpack_relatedposts_filter_headline', 'siteorigin_unwind_jetpackme_related_posts_headline' );
+
+if ( ! function_exists( 'siteorigin_unwind_jetpackme_remove_rp' ) ) :
+/**
+ * Removing jetpack related posts from the bottom of posts
+ */
+function siteorigin_unwind_jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+endif;
+add_filter( 'wp', 'siteorigin_unwind_jetpackme_remove_rp', 20 );

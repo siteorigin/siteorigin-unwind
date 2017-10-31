@@ -2,12 +2,69 @@
 	border-bottom: 1px solid $color__background-hr-dark;
 	margin-bottom: $masthead__bottom-margin;
 
+	@at-root .header-design-2 & {
+		border-bottom: none;
+	}
+
+	@at-root .header-design-1 & {
+		.sticky-bar-sentinel {
+			position: relative;
+			top: 1px;
+		}
+	}
+
+	// Sticky-menu.
+	.sticky-bar {
+		background: #fff;
+		@include clearfix;
+		position: relative;
+		z-index: 101;
+
+		@at-root {
+			.sticky-menu:not( .sticky-bar-out ) & {
+				position: relative;
+				top: auto;
+			}
+
+			.sticky-menu.sticky-bar-out & {
+				border-top: none;
+				border-bottom: 1px solid $color__background-hr-dark;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				@include clearfix;
+			}
+
+			.sticky-menu.sticky-bar-out.admin-bar & {
+				top: 32px;
+
+				@media screen and (max-width: 782px) {
+					top: 46px;
+				}
+
+				@media screen and (max-width: 600px) {
+					position: absolute;
+					top: auto;
+				}
+			}
+		}
+	}
+
 	.top-bar {
 		background: #fff;
 		border-bottom: 1px solid $color__background-hr-dark;
 		@include clearfix;
 		position: relative;
 		z-index: 9999;
+
+		@at-root .header-design-2 & {
+			border-top: 1px solid $color__background-hr-dark;
+		}
+
+		@at-root .homepage-has-slider.header-design-2 & {
+			border-bottom: none;
+		}
 	}
 
 	.top-bar-sentinel {
@@ -27,7 +84,9 @@
 			margin: 0;
 			text-align: center;
 			text-transform: uppercase;
-			
+			word-break: break-all;
+    		word-break: break-word;
+
 			@media (max-width: 480px) {
 				@include font-size(3.2);
 			}
@@ -38,19 +97,81 @@
 			}
 		}
 
+        a {
+			display: inline-block;
+        }
+
 		.site-description {
 			@include font-size(0.9333);
 			line-height: 1.7142;
 			margin-bottom: 0;
 			text-align: center;
 		}
-	}
-}
 
-// Archive and search pages.
-.archive #masthead,
-.search #masthead {
-	margin-bottom: 60px;
+		@at-root .header-design-4 & {
+			display: inline-block;
+			float: left;
+			padding: calc(#{$masthead__padding} /2) 0;
+
+			.site-title {
+				@include font-size(2.5);
+				text-align: left;
+
+				@media (max-width: 480px) {
+					@include font-size(1.8);
+				}
+			}
+		}
+	}
+
+	#masthead-widgets {
+		@include clearfix;
+		margin: 60px auto;
+
+		.widgets {
+
+			@for $i from 1 through 10 {
+				$margin: ($i - 1) * 2.5;
+				&.widgets-#{$i} .widget {
+					width: (100% - $margin) / $i;
+				}
+			}
+
+			.widget {
+				box-sizing: content-box;
+				margin-right: 2.5%;
+				float: left;
+
+				&:last-of-type {
+					margin-right: 0 !important;
+				}
+
+				@media (max-width: 768px) {
+					float: none;
+					margin: 0 0 4em;
+					width: 100% !important;
+				}
+			}
+		}
+	}
+
+	@at-root {
+		.home &,
+		.archive &,
+		.search & {
+			margin-bottom: 60px;
+		}
+	}
+
+	.main-navigation-bar {
+		border-top: 1px solid $color__background-hr-dark;
+		@include clearfix;
+		text-align: center;
+
+		@at-root .header-design-4 & {
+			border-top: none;
+		}
+	}
 }
 
 .homepage-has-slider {

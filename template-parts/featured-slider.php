@@ -18,7 +18,6 @@ if ( empty( $slider ) ) return;
 // Looping through our posts. ?>
 
 <div class="flexslider featured-posts-slider">
-
 	<ul class="slides featured-posts-slides">
 
 		<?php foreach ( $slider as $post ) :
@@ -27,7 +26,7 @@ if ( empty( $slider ) ) return;
 			?>
 
 			<li class="featured-post-slide" <?php if ( ! empty( $thumbnail ) ) echo 'style="background-image: url( \''  . esc_url( $thumbnail ) . '\' )"'; ?>>
- 
+
 				<header class="slide-content <?php echo ( siteorigin_setting( 'blog_featured_slider_overlay' ) ? 'slide-overlay' : '' ) ?>">
 					<a class="slide-entry-link" href="<?php the_permalink(); ?>"></a>
 					<div class="slide-inner">
@@ -52,7 +51,6 @@ if ( empty( $slider ) ) return;
 		<?php endforeach; ?>
 
 	</ul>
-
 </div>
 
 <?php wp_reset_postdata(); ?>

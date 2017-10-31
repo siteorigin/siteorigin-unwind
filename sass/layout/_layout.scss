@@ -21,14 +21,14 @@
 	float: left;
 	margin: 0 (-$size__site-sidebar) 0 0;
 	width: $size__site-main;
-
-	@at-root .no-active-sidebar .content-area {
+	
+	@media (max-width: 768px) {
 		float: none;
 		margin: 0;
 		width: auto;
-	}
+	}	
 
-	@media (max-width: 768px) {
+	@at-root .no-active-sidebar .content-area {
 		float: none;
 		margin: 0;
 		width: auto;
@@ -37,12 +37,12 @@
 
 .site-main {
 	margin: 0 $size__site-sidebar 0 0;
+	
+	@media (max-width: 768px) {
+		margin: 0;
+	}	
 
 	@at-root .no-active-sidebar .site-main {
-		margin: 0;
-	}
-
-	@media (max-width: 768px) {
 		margin: 0;
 	}
 }
@@ -64,4 +64,39 @@
 .site-footer {
 	clear: both;
 	width: $size__site-main;
+}
+
+// Sidebar position left.
+.main-sidebar-left {
+
+	.content-area {
+		float: right;
+		margin: 0 0 0 (-$size__site-sidebar);
+		
+		@media (max-width: 768px) {
+			float: none;
+			margin: 0; 
+		}
+	}
+
+	.site-main {
+		margin: 0 0 0 $size__site-sidebar;
+		
+		@media (max-width: 768px) {
+			margin: 0; 
+		}		
+	}
+
+	.site-content .widget-area {
+		float: left;
+		padding-left: 0;
+		padding-right: 40px;
+		
+		@media (max-width: 768px) {
+			float: none;
+			margin-top: 5.3333em;
+			padding-left: 0;
+			width: 100%;
+		}		
+	}
 }

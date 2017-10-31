@@ -17,6 +17,7 @@
 .page-layout-no-masthead-margin {
 
 	#masthead,
+	&.home #masthead,
 	&.archive #masthead {
 		margin-bottom: 0;
 	}

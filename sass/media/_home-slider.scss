@@ -79,6 +79,7 @@
 			}
 
 			.slide-content {
+				@include backface-visibility(hidden);
 				height: 100%;
 				left: 0;
 				position: absolute;
@@ -123,7 +124,6 @@
 				}
 
 				.entry-meta {
-					@extend .entry-meta;
 					letter-spacing: .3em;
 
 					span {

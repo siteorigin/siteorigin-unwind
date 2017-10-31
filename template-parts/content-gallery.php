@@ -7,11 +7,6 @@
  * @license GPL 2.0
  */
 
-$gallery = get_post_gallery( get_the_ID(), false );
-if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
-	add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
-}
-
 $content = siteorigin_unwind_strip_gallery( get_the_content() );
 $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
 
@@ -33,7 +28,8 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( $gallery != '' ) : ?>
+	<?php if ( siteorigin_unwind_get_gallery() ) : ?>
+		<?php $gallery = siteorigin_unwind_get_gallery(); ?>
 		<div class="flexslider gallery-format-slider">
 			<ul class="slides gallery-format-slides">
 				<?php foreach ( $gallery['src'] as $image ) : ?>
@@ -56,7 +52,8 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php echo $content; ?>
+		<?php if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && $post_class !== 'entry' ) the_excerpt();
+		else echo $content; ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',

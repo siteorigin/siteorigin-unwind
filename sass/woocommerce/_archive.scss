@@ -3,7 +3,7 @@
 	.woocommerce-ordering {
 		cursor: pointer;
 		margin-bottom: 40px;
-		
+
 		@media (max-width: 680px) {
 			float: left;
 			margin-bottom: 35px;
@@ -28,8 +28,8 @@
 			svg {
 				float: right;
 				margin: 0 -3px 0 10px;
-				@include transform( rotate(0deg) );
-				@include transition (all 0.15s ease-in);
+				@include transform(rotate(-90deg));
+				@include transition(all 0.15s ease-in);
 
 				path {
 					fill: $color__text-medium;
@@ -38,14 +38,6 @@
 
 			&:hover {
 				color: $color__text-dark;
-				.north-icon-next {
-					color: $color__text-dark;
-					@include transform( rotate(90deg) );
-				}
-
-				path {
-					fill: $color__text-dark;
-				}
 			}
 
 			.ordering-dropdown-container {
@@ -54,7 +46,7 @@
 				position: absolute;
 				right: -1px;
 				top: 100%;
-				z-index: 999;
+				z-index: 15;
 			}
 
 			.ordering-dropdown {
@@ -87,15 +79,22 @@
 				@include transition (all 0.15s ease-in);
 				@include transform-origin(center top);
 				@include transform( scale(0.95) );
-
 			}
 
-			&:hover {
+			&.open-dropdown {
 
 				.ordering-dropdown {
 					opacity: 1;
 					visibility: visible;
 					@include transform( scale(1) );
+				}
+
+				svg {
+					@include transform( rotate(0deg) );
+
+					path {
+						fill: $color__text-dark;
+					}
 				}
 			}
 		}
@@ -104,39 +103,69 @@
 	.woocommerce-result-count {
 		color: $color__text-medium;
 		font-size: 14px;
-		
+
 		@media (max-width: 680px) {
 			margin-bottom: 40px;
-			width: 100%; 
+			width: 100%;
 		}
 	}
 
 	ul.products {
 
 		li.product {
-			margin: 0 1.75% 27px;
-			width: 31%;
-			
-			&:nth-of-type(3n+1) {
+			text-align: center;
+
+			@at-root .wc-columns-2#{&} {
+				margin: 0 2.5% 27px;
+				width: 47.5%;
+			}
+
+			@at-root .wc-columns-3#{&} {
+				margin: 0 1.9% 27px;
+				width: 30.8%;
+			}
+
+			@at-root .wc-columns-4#{&} {
+				margin: 0 1.6665% 27px;
+				width: 22.5%;
+			}
+
+			@at-root .wc-columns-5#{&} {
+				margin: 0 1.45% 27px;
+				width: 17.68%;
+			}
+
+			&.first {
 				margin-left: 0;
 			}
 
-			&:nth-of-type(3n+3) {
-				margin-right: 0; 
-			}			
-			
+			&.last {
+				margin-right: 0;
+			}
+
 			@media (max-width: 768px) {
-				clear: none; 
-				float: left;
-				
-				&:nth-child(2n) {
-					float: left;
+				@at-root {
+					.wc-columns-2#{&},
+					.wc-columns-3#{&},
+					.wc-columns-4#{&},
+					.wc-columns-5#{&} {
+						margin: 0 2% 27px;
+						width: 48%;
+					}
+				}
+
+				&:nth-of-type(2n+1) {
+					margin-left: 0;
+				}
+
+				&:nth-of-type(2n+2) {
+					margin-right: 0;
 				}
 			}
 
 			@media (max-width: 480px) {
 				margin: 0 0 27px;
-				width: 100%; 
+				width: 100%;
 			}
 
 			span.onsale {
@@ -158,7 +187,7 @@
 				margin-bottom: 0;
 			}
 
-			h3 {
+			 .woocommerce-loop-product__title {
 				font-size: 14px;
 				padding: 17px 0 0;
 				text-align: center;
@@ -191,17 +220,34 @@
 
 					img {
 						opacity: 0.25;
+
+						@at-root .is_mobile#{&} {
+							opacity: 1;
+							visibility: visible;
+						}
 					}
 
 					.add_to_cart_button,
-					.product-quick-view-button {
+					.product-quick-view-button,
+					.product_type_grouped,
+					.product_type_variable {
 						opacity: 1;
 						visibility: visible;
+					}
+
+					* {
+						
+						@at-root .is_mobile#{&} {
+							opacity: 0;
+							visibility: hidden;
+						}
 					}
 				}
 
 				.add_to_cart_button,
-				.product-quick-view-button {
+				.product-quick-view-button,
+				.product_type_grouped,
+				.product_type_variable {
 					border-radius: 0;
 					font-size: 13px;
 					left: 50%;
@@ -213,7 +259,9 @@
 					visibility: hidden;
 				}
 
-				.add_to_cart_button {
+				.add_to_cart_button,
+				.product_type_grouped,
+				.product_type_variable {
 					background: #fff;
 					border: 2px solid #fff;
 					bottom: 30%;
@@ -224,13 +272,18 @@
 					}
 
 					&.loading {
-
 						&:after {
 							margin-left: .53em;
 							position: relative;
 							right: 0;
 							top: 0;
 						}
+					}
+				}
+
+				.ajax_add_to_cart {
+					&:not(.add_to_cart_button) {
+						display: none;
 					}
 				}
 
@@ -252,10 +305,10 @@
 					border-bottom: 0;
 					bottom: 0;
 					box-sizing: border-box;
-					color: $color__text-medium; 
+					color: $color__text-medium;
 					font-family: $font__details;
 					font-size: 13px;
-					left: 50%; 
+					left: 50%;
 					letter-spacing: 1px;
 					line-height: normal;
 					margin: 0;
@@ -263,10 +316,10 @@
 					position: absolute;
 					@include transform( translateX( -50% ) );
 					text-transform: uppercase;
-					
+
 					&:hover {
 						border: 2px solid $color__text-dark;
-						border-bottom: 0; 
+						border-bottom: 0;
 					}
 				}
 			}

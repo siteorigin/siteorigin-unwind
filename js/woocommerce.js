@@ -47,30 +47,11 @@ jQuery( function($){
 
 	$('table.shop_table, .product form.cart').triggerQuantityButtons();
 
-	$('table.shop_table').removeClass('shop_table_responsive');
+	$( document ).on( 'updated_cart_totals', function(){
+		$('table.shop_table, .product form.cart').triggerQuantityButtons();
+	});
 
-	// Product images slider.
-	$(document).ready( function() {
-		if ( $.isFunction( $.fn.flexslider ) ) {
-			$( '.product-images-carousel' ).flexslider( {
-				animation: "slide",
-				controlNav: false,
-				animationLoop: false,
-				slideshow: false,
-				itemWidth: 100,
-				itemMargin: 20,
-				maxItems: 4,
-				asNavFor: '.product-images-slider'
-			} );
-			$( '.product-images-slider' ).flexslider( {
-				animation: "slide",
-				animationLoop: false,
-				slideshow: false,
-				controlNav: false,
-				directionNav: false
-			} );
-		}
-	} );
+	$('table.shop_table').removeClass('shop_table_responsive');
 
 	// Convert the dropdown
 	$('.woocommerce-ordering select').each( function(){
@@ -111,6 +92,23 @@ jQuery( function($){
 		$$.hide();
 	} );
 
+	// Open dropdown on click
+	$( '.ordering-selector-wrapper' ).click( function() {
+		$(this).toggleClass( 'open-dropdown' );
+	} );
+
+	// Closing dropdown on click outside dropdown wrapper
+	$( window ).click( function(e) {
+		if ( !$(e.target).closest('.ordering-selector-wrapper.open-dropdown').length ) {
+			$( '.ordering-selector-wrapper.open-dropdown' ).removeClass( 'open-dropdown' );
+		}
+	})
+
+	// Display variation images
+	$( '.variations' ).on( 'change', 'select', function() {
+		$( '.product-images-carousel' ).find( '.product-featured-image' ).click();
+	} );
+
 	//Quick View Modal
 	$( '.product-quick-view-button' ).click( function(e) {
 		e.preventDefault();
@@ -126,6 +124,9 @@ jQuery( function($){
 			function( data ) {
 				$(document).find( $container ).find( $content ).html(data);
 				$(document).find( '#product-quick-view .cart' ).triggerQuantityButtons();
+				$(document).find( '#product-quick-view .variations_form' ).wc_variation_form();
+				$(document).find( '#product-quick-view .variations_form' ).trigger( 'check_variations' );
+				$( so_unwind_data.chevron_down ).insertAfter( '#product-quick-view .variations_form select' );
 			}
 		);
 
@@ -149,6 +150,18 @@ jQuery( function($){
 			}
 		});
 
+		$( document ).keyup( function(e) {
+			var container = $($content);
+			if ( e.keyCode == 27 ) { // escape key maps to keycode `27`
+				$($container).fadeOut(300);
+				// Enable scrolling
+				$( 'body' ).css( 'overflow', '' );
+				$( 'body' ).css( 'margin-right', '' );
+			}
+		} );
+
 	} );
+
+	$( so_unwind_data.chevron_down ).insertAfter( '.variations select' );
 
 } );

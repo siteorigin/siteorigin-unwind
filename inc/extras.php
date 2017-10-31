@@ -21,11 +21,6 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// Add a CSS3 animations class.
 	$classes[] = 'css3-animations';
 
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
-
 	// Add a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -40,6 +35,9 @@ function siteorigin_unwind_body_classes( $classes ) {
 	if ( wp_is_mobile() ) {
 		$classes[] = 'is_mobile';
 	}
+
+	// Active header template.
+	$classes[] = 'header-design-' . siteorigin_setting( 'masthead_design' );
 
 	// Add a no-js class which we'll remove as required.
 	$classes[] = 'no-js';
@@ -57,7 +55,6 @@ function siteorigin_unwind_body_classes( $classes ) {
 
 	if ( ! empty( $page_settings ) ) {
 		if ( ! empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
-
 		if ( empty( $page_settings['masthead_margin'] ) ) $classes[] = 'page-layout-no-masthead-margin';
 		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
 		if ( empty( $page_settings['masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
@@ -67,6 +64,21 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// If the navigation is sticky, add a class.
 	if ( siteorigin_setting( 'navigation_sticky' ) ) {
 		$classes[] = 'sticky-menu';
+	}
+
+	// If the main sidebar is to be placed on the left.
+	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'left' && is_active_sidebar( 'main-sidebar' ) ) {
+		$classes[] = 'main-sidebar-left';
+	}
+
+	// If the shop sidebar is to be placed on the right.
+	if ( function_exists( 'is_woocommerce' ) && siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'right' && is_active_sidebar( 'shop-sidebar' ) ) {
+		$classes[] = 'shop-sidebar-right';
+	}
+
+	// WooCommerce columns.
+	if ( siteorigin_setting( 'woocommerce_archive_columns' ) ) {
+		$classes[] = 'wc-columns-' . siteorigin_setting( 'woocommerce_archive_columns' );
 	}
 
 	return $classes;

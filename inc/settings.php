@@ -35,10 +35,10 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Logo', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Logo displayed in your header.', 'siteorigin-unwind' )
 				),
-				'retina_logo'      => array(
-					'type'        => 'media',
-					'label'       => __( 'Retina Logo', 'siteorigin-unwind' ),
-					'description' => __( 'A double sized logo to use on retina devices.', 'siteorigin-unwind' )
+				'retina_logo' => array(
+					'type' => 'media',
+					'label' => esc_html__( 'Retina Logo', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'A double sized logo to use on retina devices.', 'siteorigin-unwind' )
 				),
 				'site_description' => array(
 					'type' => 'checkbox',
@@ -47,8 +47,8 @@ function siteorigin_unwind_settings_init() {
 				),
 				'attribution' => array(
 					'type' => 'checkbox',
-					'label' => __( 'Display SiteOrigin Attribution', 'siteorigin-unwind' ),
-					'description' => __( 'Choose if the link to SiteOrigin is displayed in your footer.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Display SiteOrigin Attribution', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Choose if the link to SiteOrigin is displayed in your footer.', 'siteorigin-unwind' ),
 					'teaser' => true,
 				),
 				'accent' => array(
@@ -112,6 +112,16 @@ function siteorigin_unwind_settings_init() {
 		'masthead' => array(
 			'title' => esc_html__( 'Header', 'siteorigin-unwind' ),
 			'fields' => array(
+				'design'	=> array(
+					'type'	=> 'select',
+					'label'	=> esc_html__( 'Header Design', 'siteorigin-unwind' ),
+					'options' => array(
+						'1' => esc_html__( 'Menu above header', 'siteorigin-unwind' ),
+						'2' => esc_html__( 'Menu below header', 'siteorigin-unwind' ),
+						'3' => esc_html__( 'Menu centered below header', 'siteorigin-unwind' ),
+						'4' => esc_html__( 'Menu in line with logo', 'siteorigin-unwind' ),
+					),
+				),
 				'social_widget' => array(
 					'type' => 'widget',
 					'widget_class' => 'SiteOrigin_Widget_SocialMediaButtons_Widget',
@@ -137,15 +147,30 @@ function siteorigin_unwind_settings_init() {
 		'navigation' => array(
 			'title' => esc_html__( 'Navigation', 'siteorigin-unwind' ),
 			'fields' => array(
+				'search' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Menu search', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display search in main menu.', 'siteorigin-unwind' ),
+				),
 				'sticky' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Sticky menu', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Stick menu to top of screen.', 'siteorigin-unwind' ),
 				),
+				'mobile_menu_collapse' => array(
+					'label'       => esc_html__( 'Mobile Menu Collapse', 'siteorigin-unwind' ),
+					'type'        => 'number',
+					'description' => esc_html__( 'The screen width in pixels when the primary menu changes to a mobile menu.', 'siteorigin-unwind' )
+				),
 				'post' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post navigation', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Display next and previous post navigation.', 'siteorigin-unwind' ),
+				),
+				'scroll_to_top' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Scroll to Top', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display scroll to top button.', 'siteorigin-unwind' ),
 				),
 			),
 		),
@@ -172,6 +197,20 @@ function siteorigin_unwind_settings_init() {
 			),
 		),
 
+		'layout' => array(
+			'title' => esc_html__( 'Layout', 'siteorigin-unwind' ),
+			'fields' => array(
+				'main_sidebar'	=> array(
+					'type'	=> 'select',
+					'label'	=> esc_html__( 'Main Sidebar Position', 'siteorigin-unwind' ),
+					'options' => array(
+						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
+						'left'  => esc_html__( 'Left', 'siteorigin-unwind' ),
+					),
+				),
+			)
+		),
+
 		'blog' => array(
 			'title' => esc_html__( 'Blog', 'siteorigin-unwind' ),
 			'fields' => array(
@@ -181,7 +220,7 @@ function siteorigin_unwind_settings_init() {
 				),
 				'featured_slider_overlay' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Jetpack Featured Content slider image overlay. Slider must first be enabled.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Jetpack Featured Content slider image overlay. Also applies to slider in Post Loop widget.', 'siteorigin-unwind' ),
 				),
 				'featured_archive' => array(
 					'type' => 'checkbox',
@@ -190,6 +229,37 @@ function siteorigin_unwind_settings_init() {
 				'featured_single' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Featured image on single post.', 'siteorigin-unwind' ),
+				),
+				'archive_layout' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Blog Archive Layout', 'siteorigin-unwind' ),
+					'options' => array(
+						'default' => esc_html__( 'Default', 'siteorigin-unwind' ),
+						'grid'  => esc_html__( 'Grid', 'siteorigin-unwind' ),
+						'offset'  => esc_html__( 'Offset', 'siteorigin-unwind' ),
+						'alternate'  => esc_html__( 'Alternate', 'siteorigin-unwind' ),
+						'masonry'  => esc_html__( 'Masonry', 'siteorigin-unwind' ),
+					),
+					'description' => esc_html__('Choose how to display your posts on the blog and archive pages.', 'siteorigin-unwind'),
+				),
+				'archive_content' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Post Content', 'siteorigin-unwind' ),
+					'options' => array(
+						'full' => esc_html__( 'Full Post', 'siteorigin-unwind' ),
+						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-unwind' ),
+					),
+					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag. Applies for the default post layout only.', 'siteorigin-unwind'),
+				),
+				'excerpt_length' => array(
+					'type' => 'number',
+					'label' => esc_html__( 'Excerpt Length', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'If no manual post excerpt is added one will be generated. Choose how many words it should be.', 'siteorigin-unwind' ),
+				),
+				'excerpt_more' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display the Read More link below the post excerpt.', 'siteorigin-unwind' ),
 				),
 				'display_date' => array(
 					'type' => 'checkbox',
@@ -217,7 +287,7 @@ function siteorigin_unwind_settings_init() {
 				),
 				'search_fallback' => array(
 					'type' => 'media',
-					'label' => __( 'Search fallback image', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Search fallback image', 'siteorigin-unwind' ),
 					'description' => esc_html__( "Used for blog posts with no featured image.", 'siteorigin-unwind' ),
 				),
 			)
@@ -253,10 +323,10 @@ function siteorigin_unwind_settings_init() {
 					'live'	=> true,
 				),
 
-				'top_margin'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Top Margin', 'siteorigin-unwind' ),
-					'live'	=> true,
+				'top_margin' => array(
+					'type' => 'measurement',
+					'label' => esc_html__( 'Top Margin', 'siteorigin-unwind' ),
+					'live' => true,
 				),
 			),
 		),
@@ -264,6 +334,58 @@ function siteorigin_unwind_settings_init() {
 	) ) );
 }
 add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
+
+function siteorigin_unwind_woocommerce_settings( $settings ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
+
+	$wc_settings = array(
+		'woocommerce' => array(
+			'title' => esc_html__( 'WooCommerce', 'siteorigin-unwind' ),
+			'fields' => array(
+
+				'product_gallery' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Product Gallery', 'siteorigin-unwind' ),
+					'options' => array(
+						'slider' => esc_html__( 'Gallery Slider', 'siteorigin-unwind' ),
+						'slider-lightbox' => esc_html__( 'Gallery Slider + Lightbox', 'siteorigin-unwind' ),
+						'slider-zoom' => esc_html__( 'Gallery Slider + Zoom', 'siteorigin-unwind' ),
+						'slider-lightbox-zoom' => esc_html__( 'Gallery Slider + Lightbox + Zoom', 'siteorigin-unwind' ),
+					),
+				),
+				'archive_columns' => array(
+					'type' => 'range',
+					'label' => esc_html__( 'Number of Products per Row', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-unwind' ),
+					'min' => 2,
+					'max' => 5,
+					'step' => 1
+				),
+				'display_quick_view' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display quick view button on hover.', 'siteorigin-unwind' ),
+				),
+				'display_mini_cart' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display Cart', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display WooCommerce cart in the main menu', 'siteorigin-unwind' ),
+				),
+				'shop_sidebar' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Shop Sidebar Position', 'siteorigin-unwind' ),
+					'options' => array(
+						'left' => esc_html__( 'Left', 'siteorigin-unwind' ),
+						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
+					),
+				),
+
+			)
+		)
+	);
+
+	return array_merge( $settings, $wc_settings );
+}
+add_filter( 'siteorigin_unwind_settings_array', 'siteorigin_unwind_woocommerce_settings' );
 
 /**
  * Tell the settings framework which settings we're using as fonts.
@@ -307,9 +429,8 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  * @return string
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
-// Custom CSS Code
-$css .= '/* style */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/7HaA1B/sass/style.css ***/
+	// Custom CSS Code
+	$css .= '/* style */
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -354,15 +475,18 @@ $css .= '/* style */
 	a:hover,a:focus {
 	color: ${branding_accent_dark};
 	}
-	.main-navigation ul ul a {
+	.main-navigation > div ul ul a {
 	.font( ${fonts_main} );
 	}
-	.main-navigation li a {
+	.main-navigation > div li a {
 	color: ${fonts_text_medium};
 	.font( ${fonts_details} );
 	}
-	.main-navigation li:hover > a,.main-navigation li.focus > a {
+	.main-navigation > div li:hover > a,.main-navigation > div li.focus > a {
 	color: ${fonts_text_dark};
+	}
+	.header-design-4 .main-navigation {
+	padding: calc( ${masthead_padding} /2) 0;
 	}
 	.social-search .search-toggle .open .svg-icon-search path {
 	fill: ${fonts_text_medium};
@@ -433,13 +557,13 @@ $css .= '/* style */
 	.breadcrumbs .breadcrumb_last,.woocommerce .woocommerce-breadcrumb .breadcrumb_last {
 	color: ${fonts_text_light};
 	}
-	#secondary .widget .widget-title,#colophon .widget .widget-title {
+	#secondary .widget .widget-title,#colophon .widget .widget-title,#masthead-widgets .widget .widget-title {
 	color: ${fonts_text_medium};
 	}
-	#secondary .widget a,#colophon .widget a {
+	#secondary .widget a,#colophon .widget a,#masthead-widgets .widget a {
 	color: ${fonts_text_medium};
 	}
-	#secondary .widget a:hover,#colophon .widget a:hover {
+	#secondary .widget a:hover,#colophon .widget a:hover,#masthead-widgets .widget a:hover {
 	color: ${branding_accent};
 	}
 	.widget_categories {
@@ -473,7 +597,7 @@ $css .= '/* style */
 	.recent-posts-extended time {
 	color: ${fonts_text_light};
 	}
-	#secondary .widget_search .search-form button[type="submit"] svg,#colophon .widget_search .search-form button[type="submit"] svg {
+	#secondary .widget_search .search-form button[type="submit"] svg,#colophon .widget_search .search-form button[type="submit"] svg,#masthead-widgets .widget_search .search-form button[type="submit"] svg {
 	fill: ${fonts_text_medium};
 	}
 	#page .widget_tag_cloud a {
@@ -494,6 +618,9 @@ $css .= '/* style */
 	}
 	#masthead .site-branding .site-title a {
 	color: ${fonts_text_dark};
+	}
+	.header-design-4 #masthead .site-branding {
+	padding: calc( ${masthead_padding} /2) 0;
 	}
 	#fullscreen-search h3 {
 	color: ${fonts_text_medium};
@@ -523,13 +650,13 @@ $css .= '/* style */
 	to {
 	}
 	}
-	.entry-meta,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta {
+	.entry-meta {
 	.font( ${fonts_details} );
 	}
-	.entry-meta span,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta span {
+	.entry-meta span {
 	color: ${fonts_text_light};
 	}
-	.entry-meta span a:hover,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-meta span a:hover {
+	.entry-meta span a:hover {
 	color: ${branding_accent};
 	}
 	.entry-title {
@@ -538,14 +665,13 @@ $css .= '/* style */
 	.entry-title a:hover {
 	color: ${fonts_text_medium};
 	}
-	.more-link {
+	.more-link-wrapper .more-text {
 	color: ${fonts_text_dark};
-	}
-	.more-link .more-text {
 	.font( ${fonts_details} );
 	}
-	.more-link .more-text:hover {
+	.more-link:hover .more-text {
 	border: 2px solid ${branding_accent};
+	color: ${branding_accent};
 	}
 	.page-links .page-links-title {
 	color: ${fonts_text_dark};
@@ -566,6 +692,49 @@ $css .= '/* style */
 	}
 	.tags-list a:hover {
 	background: ${fonts_text_medium};
+	}
+	.blog-layout-grid .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-grid .archive-entry .entry-thumbnail .thumbnail-meta span {
+	.font( ${fonts_details} );
+	}
+	.blog-layout-grid .archive-entry .more-link .more-text {
+	color: ${branding_accent};
+	.font( ${fonts_main} );
+	}
+	.blog-layout-grid .archive-entry .more-link .more-text:hover {
+	color: ${fonts_text_medium};
+	}
+	.blog-layout-masonry .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-masonry .archive-entry .entry-thumbnail .thumbnail-meta span {
+	.font( ${fonts_details} );
+	}
+	.blog-layout-masonry .archive-entry .more-link .more-text {
+	color: ${branding_accent};
+	.font( ${fonts_main} );
+	}
+	.blog-layout-masonry .archive-entry .more-link .more-text:hover {
+	color: ${fonts_text_medium};
+	}
+	.blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta a,.blog-layout-alternate .archive-entry .entry-thumbnail .thumbnail-meta span {
+	.font( ${fonts_details} );
+	}
+	.blog-layout-alternate .archive-entry .entry-content .more-link .more-text {
+	color: ${branding_accent};
+	.font( ${fonts_main} );
+	}
+	.blog-layout-alternate .archive-entry .entry-content .more-link .more-text:hover {
+	color: ${fonts_text_medium};
+	}
+	.blog-layout-offset .archive-entry .entry-header .entry-time {
+	color: ${fonts_text_light};
+	.font( ${fonts_details} );
+	}
+	.blog-layout-offset .archive-entry .entry-offset .meta-text {
+	color: ${fonts_text_light};
+	}
+	.blog-layout-offset .archive-entry .entry-offset a {
+	color: ${fonts_text_dark};
+	}
+	.blog-layout-offset .archive-entry .entry-offset a:hover {
+	color: ${fonts_text_medium};
 	}
 	.archive .container > .page-header,.search .container > .page-header {
 	margin-bottom: ${masthead_bottom_margin};
@@ -593,6 +762,45 @@ $css .= '/* style */
 	}
 	.author-box .author-description .post-author-title a:hover {
 	color: ${fonts_text_medium};
+	}
+	.portfolio-filter-terms button {
+	color: ${fonts_text_light};
+	}
+	.portfolio-filter-terms button:hover {
+	color: ${fonts_text_dark};
+	}
+	.portfolio-filter-terms button.active {
+	border-bottom: 2px solid ${fonts_text_dark};
+	color: ${fonts_text_dark};
+	}
+	.entry-thumbnail:hover .entry-overlay {
+	border: 2px solid ${fonts_text_light};
+	}
+	.archive-project .entry-title {
+	color: ${fonts_text_dark};
+	}
+	.archive-project .entry-divider {
+	border: solid ${fonts_text_dark} 1px;
+	}
+	.archive-project .entry-project-type {
+	color: ${fonts_text_light};
+	.font( ${fonts_details} );
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry-title a {
+	color: ${fonts_text_dark};
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry-title a:hover {
+	color: ${fonts_text_medium};
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry-meta {
+	color: ${fonts_text_light};
+	.font( ${fonts_details} );
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry-meta a {
+	color: ${fonts_text_light};
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry-meta a:hover {
+	color: ${branding_accent};
 	}
 	.comment-list li.comment {
 	color: ${fonts_text_medium};
@@ -650,20 +858,50 @@ $css .= '/* style */
 	#colophon.unconstrained-footer .container {
 	padding: 0 ${footer_side_padding};
 	}
-	.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button:hover,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button:hover,#page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button:hover {
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a {
 	color: ${fonts_text_dark};
 	}
-	/* woocommerce */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/7HaA1B/sass/woocommerce.css ***/
-	.woocommerce a.button,.woocommerce a.button.alt,.woocommerce.single-product .cart button {
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post h4 a:hover {
+	color: ${fonts_text_medium};
+	}
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post p {
+	color: ${fonts_text_light};
+	}
+	.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button:hover,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button:hover,#page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button:hover {
+	color: ${fonts_text_dark};
+	}';
+	return $css;
+}
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
+
+if ( ! function_exists( 'siteorigin_unwind_wc_settings_custom_css' ) ) :
+/**
+ * Add custom CSS for the theme woocommerce elements
+ *
+ * @param $css
+ *
+ * @return string
+ */
+function siteorigin_unwind_wc_settings_custom_css( $css ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
+	// Custom WooCommerce CSS Code
+	$css .= '/* woocommerce */
+	.woocommerce-store-notice,p.demo_store {
+	background: ${branding_accent};
+	}
+	.woocommerce.woocommerce-page #respond input#submit.alt.disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],.woocommerce.woocommerce-page a.button.alt.disabled,.woocommerce.woocommerce-page a.button.alt:disabled,.woocommerce.woocommerce-page a.button.alt:disabled[disabled],.woocommerce.woocommerce-page button.button.alt.disabled,.woocommerce.woocommerce-page button.button.alt:disabled,.woocommerce.woocommerce-page button.button.alt:disabled[disabled],.woocommerce.woocommerce-page input.button.alt.disabled,.woocommerce.woocommerce-page input.button.alt:disabled,.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
 	background-color: ${branding_accent};
 	border: 1px solid ${branding_accent};
 	}
-	.woocommerce a.button:hover,.woocommerce a.button.alt:hover,.woocommerce.single-product .cart button:hover {
+	.woocommerce a.button,.woocommerce a.button.alt,.woocommerce.single-product .cart button,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button {
+	background-color: ${branding_accent};
+	border: 1px solid ${branding_accent};
+	}
+	.woocommerce a.button:hover,.woocommerce a.button.alt:hover,.woocommerce.single-product .cart button:hover,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:hover {
 	background-color: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
 	}
-	.woocommerce a.button:active,.woocommerce a.button:focus,.woocommerce a.button.alt:active,.woocommerce a.button.alt:focus,.woocommerce.single-product .cart button:active,.woocommerce.single-product .cart button:focus {
+	.woocommerce a.button:active,.woocommerce a.button:focus,.woocommerce a.button.alt:active,.woocommerce a.button.alt:focus,.woocommerce.single-product .cart button:active,.woocommerce.single-product .cart button:focus,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:active,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:focus {
 	border-color: ${branding_accent};
 	}
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper {
@@ -675,17 +913,14 @@ $css .= '/* style */
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper:hover {
 	color: ${fonts_text_dark};
 	}
-	.woocommerce .woocommerce-ordering .ordering-selector-wrapper:hover .north-icon-next {
-	color: ${fonts_text_dark};
-	}
-	.woocommerce .woocommerce-ordering .ordering-selector-wrapper:hover path {
-	fill: ${fonts_text_dark};
-	}
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper .ordering-dropdown li {
 	color: ${fonts_text_light};
 	}
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper .ordering-dropdown li:hover {
 	color: ${fonts_text_dark};
+	}
+	.woocommerce .woocommerce-ordering .ordering-selector-wrapper.open-dropdown svg path {
+	fill: ${fonts_text_dark};
 	}
 	.woocommerce .woocommerce-result-count {
 	color: ${fonts_text_medium};
@@ -694,7 +929,7 @@ $css .= '/* style */
 	background-color: ${branding_accent};
 	.font( ${fonts_details} );
 	}
-	.woocommerce ul.products li.product h3:hover {
+	.woocommerce ul.products li.product .woocommerce-loop-product__title:hover {
 	color: ${fonts_text_medium};
 	}
 	.woocommerce ul.products li.product .price {
@@ -709,10 +944,10 @@ $css .= '/* style */
 	.woocommerce ul.products li.product .loop-product-thumbnail {
 	background: ${branding_accent_dark};
 	}
-	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button {
+	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_variable {
 	color: ${fonts_text_dark};
 	}
-	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover {
+	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_variable:hover {
 	border: 2px solid ${fonts_text_dark};
 	}
 	.woocommerce ul.products li.product .loop-product-thumbnail .product-quick-view-button:hover {
@@ -743,6 +978,15 @@ $css .= '/* style */
 	background: ${branding_accent};
 	border-color: ${branding_accent};
 	}
+	.woocommerce.single-product .woocommerce-message:before {
+	color: ${branding_accent};
+	}
+	.woocommerce.single-product #content div.product .woocommerce-message:before {
+	color: ${branding_accent};
+	}
+	.woocommerce.single-product #content div.product .out-of-stock {
+	color: ${branding_accent};
+	}
 	.woocommerce.single-product #content div.product .star-rating span:before {
 	color: ${branding_accent};
 	}
@@ -756,11 +1000,11 @@ $css .= '/* style */
 	.woocommerce.single-product #content div.product .entry-summary .woocommerce-product-rating .woocommerce-review-link:hover {
 	color: ${branding_accent};
 	}
+	.woocommerce.single-product #content div.product .entry-summary .price {
+	color: ${branding_accent};
+	}
 	.woocommerce.single-product #content div.product .entry-summary .price del,.woocommerce.single-product #content div.product .entry-summary .price del .amount {
 	color: ${fonts_text_light};
-	}
-	.woocommerce.single-product #content div.product .entry-summary .price .amount,.woocommerce.single-product #content div.product .entry-summary .price ins {
-	color: ${branding_accent};
 	}
 	.woocommerce.single-product #content div.product .entry-summary .cart .variations {
 	.font( ${fonts_main} );
@@ -779,6 +1023,12 @@ $css .= '/* style */
 	color: ${fonts_text_light};
 	}
 	.woocommerce.single-product #content div.product .entry-summary .product_meta span a {
+	color: ${fonts_text_dark};
+	}
+	.woocommerce.single-product #content div.product .entry-summary .product_meta span a:hover {
+	color: ${fonts_text_light};
+	}
+	.woocommerce.single-product #content div.product .entry-summary .product_meta .sku {
 	color: ${fonts_text_dark};
 	}
 	.woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs li {
@@ -802,17 +1052,38 @@ $css .= '/* style */
 	.woocommerce.single-product #content div.product #reviews #comments ol.commentlist li.comment .comment_container .comment-text .comment-meta .comment-date {
 	color: ${fonts_text_light};
 	}
+	.variations select {
+	color: ${fonts_text_medium};
+	}
+	.variations .reset_variations {
+	.font( ${fonts_details} );
+	}
+	.variations svg path {
+	fill: ${fonts_text_medium};
+	}
+	.variations select:hover + svg path {
+	fill: ${fonts_text_dark};
+	}
+	.woocommerce .woocommerce-info {
+	color: ${fonts_text_dark};
+	}
 	.woocommerce form.login input.button,.woocommerce form.checkout_coupon input.button {
 	background-color: ${branding_accent};
 	}
 	.woocommerce form.login input.button:hover,.woocommerce form.checkout_coupon input.button:hover {
 	background-color: ${branding_accent};
 	}
-	.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button {
-	background-color: ${branding_accent};
+	.woocommerce .woocommerce-checkout .checkout-details .form-row label {
+	color: ${fonts_text_dark};
 	}
-	.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:hover {
-	background-color: ${branding_accent};
+	.woocommerce .woocommerce-checkout .checkout-details .form-row.woocommerce-validated input.input-text {
+	border-color: ${branding_accent};
+	}
+	.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order {
+	color: ${fonts_text_dark};
+	}
+	.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table {
+	.font( ${fonts_main} );
 	}
 	.woocommerce-cart .woocommerce-message:before,.woocommerce-cart .woocommerce-info:before {
 	color: ${branding_accent};
@@ -835,6 +1106,9 @@ $css .= '/* style */
 	.woocommerce-cart table.shop_table tbody .product-name a {
 	color: ${fonts_text_dark};
 	}
+	.woocommerce-cart table.shop_table tbody .product-name .variation {
+	color: ${fonts_text_medium};
+	}
 	.woocommerce-cart table.shop_table tbody .quantity.button-controls .qty {
 	border-color: ${fonts_text_light};
 	color: ${fonts_text_medium};
@@ -844,7 +1118,7 @@ $css .= '/* style */
 	border-color: ${fonts_text_light};
 	}
 	.woocommerce-cart table.shop_table tbody .quantity.button-controls .add:hover,.woocommerce-cart table.shop_table tbody .quantity.button-controls .subtract:hover {
-	color: ${fonts_text_medium};
+	background: ${fonts_text_medium};
 	}
 	.woocommerce-cart table.shop_table td.actions input.button {
 	background-color: ${branding_accent};
@@ -852,20 +1126,55 @@ $css .= '/* style */
 	.woocommerce-cart table.shop_table td.actions input.button:hover {
 	background: ${branding_accent_dark};
 	}
-	.cart-collaterals .cart_totals table tr th {
+	.woocommerce .cart-collaterals .cart_totals table tr th {
 	color: ${fonts_text_dark};
 	}
-	.cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .shipping-calculator-button {
+	.woocommerce .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .shipping-calculator-button {
 	color: ${branding_accent};
 	}
-	.cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .shipping-calculator-button:hover {
+	.woocommerce .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .shipping-calculator-button:hover {
 	color: ${branding_accent};
 	}
-	.cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button {
+	.woocommerce .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button {
 	background-color: ${branding_accent};
 	}
-	.cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button:hover {
+	.woocommerce .cart-collaterals .cart_totals table tr.shipping .shipping-calculator-form .button:hover {
 	background-color: ${branding_accent};
+	}
+	.main-navigation .shopping-cart .shopping-cart-link .shopping-cart-count {
+	background: ${branding_accent};
+	}
+	.main-navigation .shopping-cart .shopping-cart-link .svg-icon-cart path {
+	fill: ${fonts_text_medium};
+	}
+	#mobile-navigation .shopping-cart-link {
+	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
+	}
+	#mobile-navigation .shopping-cart-link .shopping-cart-count {
+	background: ${branding_accent};
+	}
+	.woocommerce .widget_shopping_cart_content .cart_list .mini_cart_item a.remove {
+	color: ${fonts_text_medium} !important;
+	}
+	.woocommerce .widget_shopping_cart_content .cart_list .mini_cart_item a:not(.remove) {
+	color: ${fonts_text_medium};
+	}
+	.woocommerce .widget_shopping_cart_content .cart_list .mini_cart_item .quantity .amount {
+	color: ${branding_accent};
+	}
+	.woocommerce .widget_shopping_cart_content .total {
+	color: ${fonts_text_medium};
+	}
+	.woocommerce .widget_shopping_cart_content .total span {
+	color: ${fonts_text_dark};
+	}
+	.woocommerce .widget_shopping_cart_content .buttons a.wc-forward:first-of-type {
+	color: ${fonts_text_dark};
+	}
+	.woocommerce .widget_shopping_cart_content .buttons a.wc-forward:first-of-type:hover {
+	background: ${branding_accent_dark};
+	border-color: ${branding_accent_dark};
 	}
 	.woocommerce .widget-area#secondary .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget-area#secondary .widget_price_filter .ui-slider .ui-slider-handle {
 	background-color: ${branding_accent};
@@ -935,6 +1244,9 @@ $css .= '/* style */
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price .amount,.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price ins {
 	color: ${branding_accent};
 	}
+	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .out-of-stock {
+	color: ${branding_accent};
+	}
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .qty {
 	border-color: ${fonts_text_light};
 	color: ${fonts_text_medium};
@@ -942,15 +1254,58 @@ $css .= '/* style */
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add,.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract {
 	border-color: ${fonts_text_light};
 	}
+	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add:hover,.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract:hover {
+	color: ${fonts_text_medium};
+	}
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper button {
 	background-color: ${branding_accent};
 	}
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper button:hover {
 	background-color: ${branding_accent_dark};
+	}
+	.woocommerce #quick-view-container .product-content-wrapper .variations td.label {
+	.font( ${fonts_main} );
 	}';
 	return $css;
 }
-add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
+endif;
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_wc_settings_custom_css' );
+
+if ( ! function_exists( 'siteorigin_unwind_menu_breakpoint_css' ) ) :
+/**
+ * Add CSS for mobile menu breakpoint.
+ */
+function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
+	$breakpoint = isset( $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] ) ? $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] : 768;
+
+	$css .= '@media screen and (max-width: ' . intval( $breakpoint ) . 'px) {
+		.main-navigation .menu-toggle {
+			display: block;
+		}
+		.main-navigation > div,
+		.main-navigation > div ul,
+		.main-navigation .shopping-cart {
+			display: none;
+		}
+	}
+	@media screen and (min-width: ' . ( 1 + $breakpoint ) . 'px) {
+		#mobile-navigation {
+			display: none !important;
+		}
+		.main-navigation > div ul {
+			display: block;
+		}
+		.main-navigation .shopping-cart {
+			display: inline-block;
+		}
+		.main-navigation .menu-toggle {
+			display: none;
+		}
+	}';
+	return $css;
+}
+endif;
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_menu_breakpoint_css', 10, 2 );
 
 /**
  * Add default settings.
@@ -974,13 +1329,17 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['fonts_text_dark']   = '#2d2d2d';
 
 	// The masthead defaults.
+	$defaults['masthead_design']        = '1';
 	$defaults['masthead_social_widget'] = '';
 	$defaults['masthead_padding']       = '60px';
 	$defaults['masthead_bottom_margin'] = '80px';
 
 	// Navigation defaults.
-	$defaults['navigation_sticky'] = true;
-	$defaults['navigation_post']   = true;
+	$defaults['navigation_search']               = true;
+	$defaults['navigation_sticky']               = true;
+	$defaults['navigation_mobile_menu_collapse'] = 768;
+	$defaults['navigation_post']                 = true;
+	$defaults['navigation_scroll_to_top']        = false;
 
 	// Icons.
 	$defaults['icons_menu']              = false;
@@ -988,11 +1347,18 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['icons_search']            = false;
 	$defaults['icons_close_search']      = false;
 
+	// Layout
+	$defaults['layout_main_sidebar'] = 'right';
+
 	// Blog settings.
 	$defaults['blog_featured_slider']         = false;
 	$defaults['blog_featured_slider_overlay'] = false;
 	$defaults['blog_featured_archive']        = true;
 	$defaults['blog_featured_single']         = true;
+	$defaults['blog_archive_layout']          = 'default';
+	$defaults['blog_archive_content']         = 'full';
+	$defaults['blog_excerpt_length']          = 55;
+	$defaults['blog_excerpt_more']            = true;
 	$defaults['blog_display_related_posts']   = true;
 	$defaults['blog_display_author_box']      = true;
 	$defaults['blog_display_date']            = true;
@@ -1007,6 +1373,13 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['footer_top_padding']  = '80px';
 	$defaults['footer_side_padding'] = '40px';
 	$defaults['footer_top_margin']   = '80px';
+
+	// WooCommerce
+	$defaults['woocommerce_product_gallery']    = 'slider-lightbox';
+	$defaults['woocommerce_archive_columns']    = 3;
+	$defaults['woocommerce_display_quick_view'] = true;
+	$defaults['woocommerce_display_mini_cart']  = true;
+	$defaults['woocommerce_shop_sidebar']       = 'left';
 
 	return $defaults;
 }
@@ -1053,7 +1426,7 @@ function siteorigin_unwind_page_settings( $settings, $type, $id ) {
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Header', 'siteorigin-unwind' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Display the header.', 'siteorigin-unwind' )
+		'description'    => esc_html__( 'Display the header and top bar.', 'siteorigin-unwind' )
 	);
 
 	$settings['display_footer_widgets'] = array(
@@ -1070,12 +1443,12 @@ add_action( 'siteorigin_page_settings', 'siteorigin_unwind_page_settings', 10, 3
 /**
  * Add the default Page Settings.
  */
-function siteorigin_unwind_setup_page_setting_defaults( $defaults, $type, $id ){
+function siteorigin_unwind_setup_page_setting_defaults( $defaults, $type, $id ) {
 	// All the basic default settings.
-	$defaults['layout']              	= 'default';
-	$defaults['page_title']          	= true;
-	$defaults['masthead_margin']     	= true;
-	$defaults['footer_margin']       	= true;
+	$defaults['layout']                 = 'default';
+	$defaults['page_title']             = true;
+	$defaults['masthead_margin']        = true;
+	$defaults['footer_margin']          = true;
 	$defaults['display_masthead']       = true;
 	$defaults['display_footer_widgets'] = true;
 
@@ -1100,7 +1473,7 @@ add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_s
  *
  * @return mixed
  */
-function siteorigin_unwind_page_settings_panels_defaults( $settings ){
+function siteorigin_unwind_page_settings_panels_defaults( $settings ) {
 	$settings['layout']     = 'no-sidebar';
 	$settings['page_title'] = false;
 

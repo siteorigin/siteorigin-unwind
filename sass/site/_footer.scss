@@ -1,6 +1,9 @@
 #colophon {
-	border-top: 1px solid $color__background-hr-dark;
 	margin-top: $footer__top-margin;
+	
+	&.footer-active-sidebar {
+		border-top: 1px solid $color__background-hr-dark;
+	}	
 
 	.widgets {
 		@include clearfix();
@@ -36,6 +39,10 @@
 		@include font-size(0.8666);
 		padding: 45px 0;
 		text-align: center;
+		
+		@media (max-width: 480px) {
+			word-break: break-all;
+		}
 
 		a {
 			color: inherit;
