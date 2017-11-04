@@ -2,7 +2,7 @@
 
 = 1.2.1 - 30 October 2017 =
 * Various improvements to the Jetpack Portfolio integration.
-* Added Jetpack Portfolio support.
+* Fixes to Jetpack Portfolio.
 
 = 1.2 - 26 October 2017 =
 * Small styling fix for loops in Post Loop widget.
