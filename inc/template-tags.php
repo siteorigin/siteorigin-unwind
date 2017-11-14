@@ -211,7 +211,7 @@ function siteorigin_unwind_main_navigation() {
 			<?php global $woocommerce; ?>
 			<ul class="shopping-cart">
 				<li>
-					<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
+					<a class="shopping-cart-link" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
 						<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-unwind' ); ?></span>
 						<?php siteorigin_unwind_display_icon( 'cart' ); ?>
 						<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-unwind' ); ?></span>
