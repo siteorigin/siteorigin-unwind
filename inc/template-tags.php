@@ -725,6 +725,8 @@ function siteorigin_unwind_get_video() {
 		break;
 	}
 
+	wp_enqueue_script( 'jquery-fitvids' );
+
 	return ( '' !== $first_video ) ? $first_video : false;
 }
 endif;

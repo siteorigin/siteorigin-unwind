@@ -212,8 +212,10 @@ function siteorigin_unwind_scripts() {
 	}
 
 	// FitVids.
+	wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
+
 	if ( ! class_exists( 'Jetpack' ) ) {
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
+		wp_enqueue_script( 'jquery-fitvids' );
 	}
 
 	// Jetpack Portfolio.
