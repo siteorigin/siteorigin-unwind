@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.2.2 - 22 November 2017 =
+* Updated WooCommerce functions to match latest release.
+* Resolved video post format display issue in archive view in grid and similar blog layouts. 
+
 = 1.2.1 - 30 October 2017 =
 * Various improvements to the Jetpack Portfolio integration.
 * Fixes to Jetpack Portfolio.
