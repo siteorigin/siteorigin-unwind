@@ -686,7 +686,7 @@ function siteorigin_unwind_strip_gallery( $content ) {
 		foreach ( $matches as $shortcode ) {
 			if ( 'gallery' === $shortcode[2] ) {
 				$pos = strpos( $content, $shortcode[0] );
-				if( false !== $pos ) {
+				if ( false !== $pos ) {
 					return substr_replace( $content, '', $pos, strlen( $shortcode[0] ) );
 				}
 			}
