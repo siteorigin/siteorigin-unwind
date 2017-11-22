@@ -35,7 +35,7 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 				<?php the_post_thumbnail(); ?>
 			<?php else : ?>
 				<a href="<?php the_permalink() ?>">
-					<?php the_post_thumbnail() ?>
+					<?php the_post_thumbnail(); ?>
 				</a>
 			<?php endif; ?>
 		</div>
