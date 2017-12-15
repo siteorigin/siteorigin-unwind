@@ -126,6 +126,13 @@ jQuery( function( $ ) {
 		$( this ).next( 'ul' ).slideToggle( '300ms' );
 	} );
 
+	$( '#mobile-navigation' ).on( 'click', '.has-dropdown-button', function( e ) {
+		if ( typeof $( this ).attr( 'href' ) === "undefined" ) {
+			e.preventDefault();
+			$( this ).siblings( 'ul' ).slideToggle( '300ms' );
+		}
+	} );
+
 	// Scroll to top.
 	var sttWindowScroll = function () {
 		var top = window.pageYOffset || document.documentElement.scrollTop;

@@ -115,7 +115,7 @@
 	.mega-menu {
 
 		.mega-menu-megamenu {
-		
+
 			ul.mega-sub-menu {
 				@include transform( scaleY(1) );
 			}
@@ -255,14 +255,14 @@
 	top: 61px;
 	width: 100%;
 	z-index: 10;
-	
+
 	@at-root .header-design-2 & {
 		top: 60px;
-	}	
+	}
 
 	@at-root .header-design-3 & {
 		top: 60px;
-	}	
+	}
 
 	@at-root .header-design-4 & {
 		top: 100px;
@@ -291,6 +291,10 @@
 				padding: 14px 0 12px 20px;
 				text-transform: uppercase;
 				width: 100%;
+
+				&.has-dropdown-button:not([href]) {
+					cursor: pointer;
+				}
 			}
 
 			&.menu-item-has-children > a {
