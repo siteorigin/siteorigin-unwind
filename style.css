@@ -476,7 +476,7 @@ input[type="submit"],
   letter-spacing: 1.5px;
   outline-style: none;
   padding: 1em 1.923em;
-  transition: 0.3s;
+  transition: .3s;
   text-decoration: none;
   text-transform: uppercase; }
   .button:hover, #page #infinite-handle span button:hover,
@@ -812,6 +812,8 @@ a {
         padding: 14px 0 12px 20px;
         text-transform: uppercase;
         width: 100%; }
+        #mobile-navigation ul li a.has-dropdown-button:not([href]) {
+          cursor: pointer; }
       #mobile-navigation ul li.menu-item-has-children > a {
         max-width: 100%;
         padding-right: 48px; }
