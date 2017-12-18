@@ -1500,6 +1500,13 @@ p.demo_store {
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg); }
+  .woocommerce #quick-view-container .product-content-wrapper .flexslider {
+    margin: 0;
+    max-height: 500px;
+    overflow-y: hidden;
+    border: none; }
+    .woocommerce #quick-view-container .product-content-wrapper .flexslider img {
+      max-height: 500px; }
   .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper {
     float: left;
     max-height: 500px;

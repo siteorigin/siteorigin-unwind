@@ -52,6 +52,17 @@
 
 		.product-content-wrapper {
 
+			.flexslider {
+				margin: 0;
+				max-height: 500px;
+				overflow-y: hidden;
+				border: none;
+
+				img {
+					max-height: 500px;
+				}
+			}
+
 			.product-image-wrapper {
 				float: left;
 				max-height: 500px;
@@ -223,8 +234,8 @@
 					padding-bottom: 0;
 
 					&.label {
-						font-family: $font__main; 
-						font-weight: 700; 
+						font-family: $font__main;
+						font-weight: 700;
 						padding: 0;
 						vertical-align: top;
 					}
@@ -235,7 +246,7 @@
 					}
 
 					.reset_variations {
-						font-size: 12px; 
+						font-size: 12px;
 						margin-left: 10px;
 					}
 				}
