@@ -1,12 +1,12 @@
 .woocommerce {
-	// Styling the quickview button
+	// Styling the quickview button.
 	a.product-quick-view-button {
 		margin-right: 1px;
 	}
 
-	// Styling the quickview modal
+	// Styling the quickview modal.
 	#quick-view-container {
-		background: rgba(0,0,0,0.5);
+		background: rgba(0,0,0,.5);
 		bottom: 0;
 		display: none;
 		height: 100vh;
@@ -53,11 +53,11 @@
 		.product-content-wrapper {
 
 			.flexslider {
+				border: none;
 				margin: 0;
 				max-height: 500px;
 				overflow-y: hidden;
-				border: none;
-
+				
 				img {
 					max-height: 500px;
 				}
