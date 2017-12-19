@@ -94,6 +94,10 @@ if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view_button' ) ) :
 function siteorigin_unwind_woocommerce_quick_view_button() {
 	global $product;
 	echo '<a href="#" id="product-id-' . $product->get_id() . '" class="button product-quick-view-button" data-product-id="' . $product->get_id() . '">' . esc_html__( 'Quick View', 'siteorigin-unwind') . '</a>';
+	$gallery = $product->get_gallery_image_ids();
+	if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
+		add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
+	}
 }
 endif;
 
@@ -110,9 +114,6 @@ function siteorigin_unwind_woocommerce_quick_view_image() {
 	if ( empty( $gallery ) ) {
 		echo woocommerce_get_product_thumbnail( 'shop_single' );
 	} else {
-		if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
-			add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
-		}
 		?>
 		<div class="product-images-slider flexslider">
 			<ul class="slides">
