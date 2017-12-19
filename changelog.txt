@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.2.4 - 19 December 2017 =
+* Add the product image gallery to the WooCommerce Quick View modal.
+* Add ellipsis before the post excerpt read more button.
+
 = 1.2.3 - 15 December 2017 =
 * Allow mobile menu non-linked parent items to toggle the the dropdown on click.
 
