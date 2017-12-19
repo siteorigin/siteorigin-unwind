@@ -539,6 +539,8 @@ p.demo_store {
       .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract:hover {
         background: #626262;
         color: #fff; }
+    .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls.hidden {
+      display: none; }
     .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract {
       border-right: none; }
     .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add {
