@@ -130,6 +130,18 @@ jQuery( function($){
 			}
 		);
 
+		$(document).ajaxComplete(function () {
+			if ( $.isFunction( $.fn.flexslider ) ) {
+				$( '.product-images-slider' ).flexslider( {
+					animation: "slide",
+					animationLoop: true,
+					slideshow: false,
+					controlNav: true,
+					directionNav: true,
+				} );
+			}
+		});
+
 		if( $(document).find( $container ).is(':hidden') ) {
 			$(document).find( $container ).find( $content ).empty();
 		}
