@@ -1,12 +1,12 @@
 .woocommerce {
-	// Styling the quickview button
+	// Styling the quickview button.
 	a.product-quick-view-button {
 		margin-right: 1px;
 	}
 
-	// Styling the quickview modal
+	// Styling the quickview modal.
 	#quick-view-container {
-		background: rgba(0,0,0,0.5);
+		background: rgba(0,0,0,.5);
 		bottom: 0;
 		display: none;
 		height: 100vh;
@@ -52,6 +52,17 @@
 
 		.product-content-wrapper {
 
+			.flexslider {
+				border: none;
+				margin: 0;
+				max-height: 500px;
+				overflow-y: hidden;
+				
+				img {
+					max-height: 500px;
+				}
+			}
+
 			.product-image-wrapper {
 				float: left;
 				max-height: 500px;
@@ -68,6 +79,61 @@
 				img {
 					vertical-align: middle;
 				}
+
+				.flex-direction-nav {
+
+					@media (max-width: 860px) {
+
+						.flex-prev {
+							left: 0;
+						}
+
+						.flex-next {
+							right: 0;
+						}
+					}					
+
+					li {
+						padding: 0;
+					}					
+
+					a {
+						height: 50px;
+						top: 49.166%;
+						margin-top: -25px;
+						width: 40px;
+						
+						&:before {
+							background: none;
+							content: "";
+							height: 50px;
+							opacity: 0;
+							padding: 0;
+							width: 40px;
+						}					
+
+						&.flex-prev:before {
+							background-color: rgba(0, 0, 0, .4);
+							background-image: url('images/arrow-left.svg');
+							background-position: 13px 16px;
+							background-repeat: no-repeat;
+							opacity: 1;
+						}
+
+						&.flex-next:before {
+							background-color: rgba(0, 0, 0, .4);
+							background-image: url('images/arrow-right.svg');
+							background-position: 16px 16px;
+							background-repeat: no-repeat;
+							opacity: 1;
+						}
+					}						
+				}
+
+				.flex-direction-nav .flex-prev:hover,
+				.flex-direction-nav .flex-next:hover {
+					background: transparent !important;
+				}		
 			}
 
 			.product-info-wrapper {
@@ -223,8 +289,8 @@
 					padding-bottom: 0;
 
 					&.label {
-						font-family: $font__main; 
-						font-weight: 700; 
+						font-family: $font__main;
+						font-weight: 700;
 						padding: 0;
 						vertical-align: top;
 					}
@@ -235,7 +301,7 @@
 					}
 
 					.reset_variations {
-						font-size: 12px; 
+						font-size: 12px;
 						margin-left: 10px;
 					}
 				}

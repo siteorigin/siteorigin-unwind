@@ -309,11 +309,9 @@ if ( ! function_exists( 'siteorigin_unwind_excerpt_more' ) ) :
  */
 function siteorigin_unwind_excerpt_more( $more ) {
 	if ( is_search() ) return;
-	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more', true ) ||
-		siteorigin_setting( 'blog_archive_layout' ) == 'grid' && siteorigin_setting( 'blog_excerpt_more', true ) ||
-		siteorigin_setting( 'blog_archive_layout' ) == 'alternate' && siteorigin_setting( 'blog_excerpt_more', true ) ) {
-		$read_more_text = esc_html__( 'Continue reading', 'siteorigin-unwind' );
-		return '<div class="more-link-wrapper"><a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</span></a></div>';
+	if ( ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' || siteorigin_setting( 'blog_archive_layout' ) == 'grid' || siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) && siteorigin_setting( 'blog_excerpt_more', true ) ) {
+		$read_more_text = esc_html__( 'Continue reading now', 'siteorigin-unwind' );
+		return '...<div class="more-link-wrapper"><a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</span></a></div>';
 	}
 }
 endif;
@@ -608,7 +606,7 @@ function siteorigin_unwind_display_icon( $type ) {
 	switch( $type ) {
 
 		case 'fullscreen-search' :
-			if ( siteorigin_setting( 'icons_fullscreen_search' ) ): ?>
+			if ( siteorigin_setting( 'icons_fullscreen_search' ) ) : ?>
 				<?php siteorigin_unwind_custom_icon( 'icons_fullscreen_search', 'svg-icon-fullscreen-search' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-fullscreen-search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
