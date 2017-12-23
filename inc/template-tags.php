@@ -606,7 +606,7 @@ function siteorigin_unwind_display_icon( $type ) {
 	switch( $type ) {
 
 		case 'fullscreen-search' :
-			if ( siteorigin_setting( 'icons_fullscreen_search' ) ): ?>
+			if ( siteorigin_setting( 'icons_fullscreen_search' ) ) : ?>
 				<?php siteorigin_unwind_custom_icon( 'icons_fullscreen_search', 'svg-icon-fullscreen-search' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-fullscreen-search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">

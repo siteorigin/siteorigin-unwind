@@ -1522,6 +1522,40 @@ p.demo_store {
         width: 100%; } }
     .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper img {
       vertical-align: middle; }
+    @media (max-width: 860px) {
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-prev {
+        left: 0; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-next {
+        right: 0; } }
+    .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav li {
+      padding: 0; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav a {
+      height: 50px;
+      top: 49.166%;
+      margin-top: -25px;
+      width: 40px; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav a:before {
+        background: none;
+        content: "";
+        height: 50px;
+        opacity: 0;
+        padding: 0;
+        width: 40px; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav a.flex-prev:before {
+        background-color: rgba(0, 0, 0, 0.4);
+        background-image: url("images/arrow-left.svg");
+        background-position: 13px 16px;
+        background-repeat: no-repeat;
+        opacity: 1; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav a.flex-next:before {
+        background-color: rgba(0, 0, 0, 0.4);
+        background-image: url("images/arrow-right.svg");
+        background-position: 16px 16px;
+        background-repeat: no-repeat;
+        opacity: 1; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-prev:hover,
+    .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-next:hover {
+      background: transparent !important; }
   .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper {
     width: 50%;
     float: right;
