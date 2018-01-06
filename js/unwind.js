@@ -22,7 +22,7 @@ jQuery( function( $ ) {
 
 	// Check if an element is visible in the viewport
 	$.fn.unwindIsVisible = function() {
-		return ( this[0].getBoundingClientRect().bottom >= 0 );
+		return ( this[0].getBoundingClientRect().top >= 0 );
 	};
 
 	// Check if element is are overlapping the wp admin bar
