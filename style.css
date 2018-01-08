@@ -1512,6 +1512,24 @@ a {
       clear: both;
       content: "";
       display: table; }
+
+@-webkit-keyframes stickyMh {
+  0%, 100% {
+    opacity: 1; }
+  10% {
+    opacity: 0.7; } }
+
+@-moz-keyframes stickyMh {
+  0%, 100% {
+    opacity: 1; }
+  10% {
+    opacity: 0.7; } }
+
+@keyframes stickyMh {
+  0%, 100% {
+    opacity: 1; }
+  10% {
+    opacity: 0.7; } }
     .sticky-menu:not(.sticky-bar-out) #masthead .sticky-bar {
       position: relative;
       top: auto; }
@@ -1521,7 +1539,10 @@ a {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%; }
+      width: 100%;
+      -webkit-animation: stickyMh 0.3s ease-in;
+      -moz-animation: stickyMh 0.3s ease-in;
+      animation: stickyMh 0.3s ease-in; }
       .sticky-menu.sticky-bar-out #masthead .sticky-bar::after {
         clear: both;
         content: "";
