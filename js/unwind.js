@@ -22,7 +22,7 @@ jQuery( function( $ ) {
 
 	// Check if an element is visible in the viewport
 	$.fn.unwindIsVisible = function() {
-		return ( this[0].getBoundingClientRect().bottom >= 0 );
+		return ( this[0].getBoundingClientRect().top >= 0 );
 	};
 
 	// Check if element is are overlapping the wp admin bar
@@ -161,6 +161,7 @@ jQuery( function( $ ) {
 			$sb = $( '.sticky-bar' ),
 			$mh = $( '#masthead' ),
 			$wpab = $( '#wpadminbar' );
+			$sbh = $sb.outerHeight();
 
 		var smSetup = function() {
 
@@ -179,6 +180,12 @@ jQuery( function( $ ) {
 			}
 			if ( ! $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'sticky-bar-out' ) && $sbs.unwindIsVisible() ) {
 				$( 'body' ).removeClass( 'sticky-bar-out' );
+			}
+
+			if ( $( 'body' ).hasClass( 'sticky-bar-out' ) ) {
+				$('.sticky-bar-sentinel').height( $sbh );
+			} else {
+				$('.sticky-bar-sentinel').height( 0 );
 			}
 		}
 		smSetup();
