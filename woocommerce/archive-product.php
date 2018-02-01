@@ -13,11 +13,11 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.0.0
+ * @version     3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit;
 }
 
 get_header( 'shop' ); ?>
@@ -62,7 +62,7 @@ get_header( 'shop' ); ?>
 
 			<?php woocommerce_product_loop_start(); ?>
 
-				<?php woocommerce_product_subcategories(); ?>
+			<?php if ( wc_get_loop_prop( 'total' ) ) { ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -79,6 +79,8 @@ get_header( 'shop' ); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
+			<?php } ?>
+
 			<?php woocommerce_product_loop_end(); ?>
 
 			<?php
@@ -90,7 +92,7 @@ get_header( 'shop' ); ?>
 				do_action( 'woocommerce_after_shop_loop' );
 			?>
 
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
+		<?php else : ?>
 
 			<?php do_action( 'woocommerce_no_products_found' ); ?>
 
