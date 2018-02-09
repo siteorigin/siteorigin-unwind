@@ -39,12 +39,7 @@
     float: right;
     padding: 0 0 0 40px; }
 
-.woocommerce-page.single-product #container {
-  float: none;
-  margin: 0;
-  width: auto; }
-
-.woocommerce-page.single-product .container #content {
+.woocommerce-page.single-product .site-main {
   float: none;
   margin: 0;
   width: auto; }
@@ -289,6 +284,7 @@ p.demo_store {
     border-radius: 0;
     font-family: "Lato", sans-serif;
     font-size: 12px;
+    font-weight: normal;
     left: 0;
     right: auto;
     line-height: normal;

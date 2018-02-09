@@ -43,7 +43,7 @@ function siteorigin_unwind_woocommerce_change_hooks() {
 endif;
 add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_change_hooks' );
 
-if( ! function_exists( 'siteorigin_unwind_woocommerce_product_hooks' ) ) :
+if ( ! function_exists( 'siteorigin_unwind_woocommerce_product_hooks' ) ) :
 function siteorigin_unwind_woocommerce_product_hooks() {
 	// Archive title area.
 	if ( ! is_product() ) :
@@ -52,7 +52,7 @@ function siteorigin_unwind_woocommerce_product_hooks() {
 	endif;
 }
 endif;
-add_action('template_redirect', 'siteorigin_unwind_woocommerce_product_hooks' );
+add_action( 'template_redirect', 'siteorigin_unwind_woocommerce_product_hooks' );
 
 // Quick view action hooks.
 add_action( 'siteorigin_unwind_woocommerce_quick_view_images', 'siteorigin_unwind_woocommerce_quick_view_image', 5 );
