@@ -2,6 +2,8 @@
 
 = 1.2.6 - 09 February 2018 =
 * Updated WooCommerce template files. WooCommerce must be updated to version 3.3.0+ before updating Unwind.
+* Minor WooCommerce style fixes.
+* Fixed bugs with WooCommerce shop page and theme Page Template Settings.
 * Resolved spinning sticky menu bug.
 
 = 1.2.5 - 08 January 2017 =
