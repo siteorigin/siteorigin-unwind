@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.2.6 - 09 February 2018 =
+* Updated WooCommerce template files. WooCommerce must be updated to version 3.3.0+ before updating Unwind.
+* Resolved spinning sticky menu bug.
+
 = 1.2.5 - 08 January 2017 =
 * Improved the sticky navigation transition effect.
 
