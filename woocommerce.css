@@ -1,44 +1,6 @@
 /*--------------------------------------------------------------
 # WooCommerce Layout
 --------------------------------------------------------------*/
-.woocommerce-page #container {
-  float: right;
-  margin: 0 0 0 -25.61404%;
-  width: 100%; }
-  .shop-sidebar-right.woocommerce-page #container {
-    float: left;
-    margin: 0 -25.61404% 0 0; }
-  .no-active-wc-sidebar.woocommerce-page #container {
-    float: none;
-    margin: 0;
-    width: auto; }
-  @media (max-width: 768px) {
-    .woocommerce-page #container {
-      float: none;
-      margin: 0;
-      width: auto; } }
-
-.woocommerce-page .container #content {
-  margin: 0 0 0 25.61404%; }
-  .shop-sidebar-right.woocommerce-page .container #content {
-    margin: 0 25.61404% 0 0; }
-  .no-active-wc-sidebar.woocommerce-page .container #content {
-    float: none;
-    margin: 0;
-    width: auto; }
-  @media (max-width: 768px) {
-    .woocommerce-page .container #content {
-      float: none;
-      margin: 0;
-      width: auto; } }
-
-.woocommerce-page .container .shop-widgets.widget-area {
-  float: left;
-  padding: 0 40px 0 0; }
-  .shop-sidebar-right.woocommerce-page .container .shop-widgets.widget-area {
-    float: right;
-    padding: 0 0 0 40px; }
-
 .woocommerce-page.single-product .site-main {
   float: none;
   margin: 0;
@@ -1667,5 +1629,3 @@ p.demo_store {
         margin-left: 10px; }
   .woocommerce #quick-view-container .product-content-wrapper .single_variation_wrap .woocommerce-variation-price {
     margin: 15px 0; }
-
-/*# sourceMappingURL=sass/maps/woocommerce.css.map */
