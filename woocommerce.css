@@ -298,7 +298,7 @@ p.demo_store {
       left: 50%;
       margin: 0;
       opacity: 0;
-      padding: 12px 15px;
+      padding: 12px;
       position: absolute;
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);
@@ -420,6 +420,7 @@ p.demo_store {
   background-color: #24c48a;
   border-radius: 0;
   font-family: "Lato", sans-serif;
+  font-weight: normal;
   left: 0;
   line-height: normal;
   margin: 0;
@@ -1629,3 +1630,5 @@ p.demo_store {
         margin-left: 10px; }
   .woocommerce #quick-view-container .product-content-wrapper .single_variation_wrap .woocommerce-variation-price {
     margin: 15px 0; }
+
+/*# sourceMappingURL=sass/maps/woocommerce.css.map */
