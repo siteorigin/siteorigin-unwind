@@ -173,6 +173,7 @@
 				border-radius: 0;
 				font-family: $font__details;
 				font-size: 12px;
+				font-weight: normal;
 				left: 0;
 				right: auto;
 				line-height: normal;
@@ -253,7 +254,7 @@
 					left: 50%;
 					margin: 0;
 					opacity: 0;
-					padding: 12px 15px;
+					padding: 12px;
 					position: absolute;
 					@include transform( translateX( -50% ) );
 					visibility: hidden;

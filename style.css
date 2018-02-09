@@ -1412,6 +1412,22 @@ a {
   float: left;
   margin: 0 -25.61404% 0 0;
   width: 100%; }
+  .woocommerce-page .content-area {
+    float: right;
+    margin: 0 0 0 -25.61404%; }
+    @media (max-width: 768px) {
+      .woocommerce-page .content-area {
+        float: none;
+        margin: 0;
+        width: auto; } }
+  .woocommerce-page.shop-sidebar-right .content-area {
+    float: left;
+    margin: 0 -25.61404% 0 0; }
+    @media (max-width: 768px) {
+      .woocommerce-page.shop-sidebar-right .content-area {
+        float: none;
+        margin: 0;
+        width: auto; } }
   @media (max-width: 768px) {
     .content-area {
       float: none;
@@ -1421,13 +1437,29 @@ a {
     float: none;
     margin: 0;
     width: auto; }
+  .no-active-wc-sidebar .content-area {
+    float: none;
+    margin: 0;
+    width: auto; }
 
 .site-main {
   margin: 0 25.61404% 0 0; }
+  .woocommerce-page .site-main {
+    margin: 0 0 0 25.61404%; }
+    @media (max-width: 768px) {
+      .woocommerce-page .site-main {
+        margin: 0; } }
+  .woocommerce-page.shop-sidebar-right .site-main {
+    margin: 0 25.61404% 0 0; }
+    @media (max-width: 768px) {
+      .woocommerce-page.shop-sidebar-right .site-main {
+        margin: 0; } }
   @media (max-width: 768px) {
     .site-main {
       margin: 0; } }
   .no-active-sidebar .site-main {
+    margin: 0; }
+  .no-active-wc-sidebar .site-main {
     margin: 0; }
 
 .site-content .widget-area {
@@ -1435,6 +1467,12 @@ a {
   overflow: hidden;
   padding-left: 40px;
   width: 25.61404%; }
+  .woocommerce-page .site-content .widget-area {
+    float: left;
+    padding: 0 40px 0 0; }
+  .woocommerce-page.shop-sidebar-right .site-content .widget-area {
+    float: right;
+    padding: 0 0 0 40px; }
   @media (max-width: 768px) {
     .site-content .widget-area {
       float: none;
@@ -1475,6 +1513,7 @@ a {
 ## Page Settings
 --------------------------------------------------------------*/
 .page-layout-no-sidebar .site-main,
+.woocommerce.page-layout-no-sidebar .site-main,
 .page-layout-full-width .site-main {
   margin: 0; }
 

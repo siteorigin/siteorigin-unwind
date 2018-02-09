@@ -1,50 +1,7 @@
 /*--------------------------------------------------------------
 # WooCommerce Layout
 --------------------------------------------------------------*/
-.woocommerce-page #container {
-  float: right;
-  margin: 0 0 0 -25.61404%;
-  width: 100%; }
-  .shop-sidebar-right.woocommerce-page #container {
-    float: left;
-    margin: 0 -25.61404% 0 0; }
-  .no-active-wc-sidebar.woocommerce-page #container {
-    float: none;
-    margin: 0;
-    width: auto; }
-  @media (max-width: 768px) {
-    .woocommerce-page #container {
-      float: none;
-      margin: 0;
-      width: auto; } }
-
-.woocommerce-page .container #content {
-  margin: 0 0 0 25.61404%; }
-  .shop-sidebar-right.woocommerce-page .container #content {
-    margin: 0 25.61404% 0 0; }
-  .no-active-wc-sidebar.woocommerce-page .container #content {
-    float: none;
-    margin: 0;
-    width: auto; }
-  @media (max-width: 768px) {
-    .woocommerce-page .container #content {
-      float: none;
-      margin: 0;
-      width: auto; } }
-
-.woocommerce-page .container .shop-widgets.widget-area {
-  float: left;
-  padding: 0 40px 0 0; }
-  .shop-sidebar-right.woocommerce-page .container .shop-widgets.widget-area {
-    float: right;
-    padding: 0 0 0 40px; }
-
-.woocommerce-page.single-product #container {
-  float: none;
-  margin: 0;
-  width: auto; }
-
-.woocommerce-page.single-product .container #content {
+.woocommerce-page.single-product .site-main {
   float: none;
   margin: 0;
   width: auto; }
@@ -289,6 +246,7 @@ p.demo_store {
     border-radius: 0;
     font-family: "Lato", sans-serif;
     font-size: 12px;
+    font-weight: normal;
     left: 0;
     right: auto;
     line-height: normal;
@@ -340,7 +298,7 @@ p.demo_store {
       left: 50%;
       margin: 0;
       opacity: 0;
-      padding: 12px 15px;
+      padding: 12px;
       position: absolute;
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);
@@ -462,6 +420,7 @@ p.demo_store {
   background-color: #24c48a;
   border-radius: 0;
   font-family: "Lato", sans-serif;
+  font-weight: normal;
   left: 0;
   line-height: normal;
   margin: 0;
@@ -1504,6 +1463,7 @@ p.demo_store {
     transform: rotate(45deg); }
   .woocommerce #quick-view-container .product-content-wrapper .flexslider {
     border: none;
+    border-radius: 0;
     margin: 0;
     max-height: 500px;
     overflow-y: hidden; }
