@@ -327,22 +327,21 @@ function siteorigin_unwind_excerpt () {
 
 	if ( ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' || siteorigin_setting( 'blog_archive_layout' ) == 'grid' || siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) && siteorigin_setting( 'blog_excerpt_more', true ) && ! is_search() ) {
 		$read_more_text = esc_html__( 'Continue reading now', 'siteorigin-unwind' );
-		$read_more_text = '...<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '"><span class="more-text">' . $read_more_text . '</span></a></div>';
+		$read_more_text = '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '"><span class="more-text">' . $read_more_text . '</span></a></div>';
 	} else {
-		$read_more_text = '...';
+		$read_more_text = '';
 	}
+	$ellipsis = '...';
 	$length = siteorigin_setting( 'blog_excerpt_length' );
-	$excerpt = explode( ' ', get_the_excerpt(), $limit );
+	$excerpt = explode( ' ', get_the_excerpt(), $length );
 
 	if ( $length ) :
 
-		$excerpt = explode( ' ', get_the_excerpt(), $length );
-
 		if ( count( $excerpt ) >= $length ) :
 			array_pop( $excerpt );
-			$excerpt = implode( " ", $excerpt ). esc_html( $read_more_text );
+			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
 		else:
-			$excerpt = implode( " ", $excerpt );
+			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>';
 		endif;
 
 	else :
