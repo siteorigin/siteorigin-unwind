@@ -323,7 +323,7 @@ if ( ! function_exists( 'siteorigin_unwind_excerpt' ) ) :
 /**
  * Outputs the excerpt.
  */
-function siteorigin_unwind_excerpt ( $limit, $after ) {
+function siteorigin_unwind_excerpt () {
 
 	if ( ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' || siteorigin_setting( 'blog_archive_layout' ) == 'grid' || siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) && siteorigin_setting( 'blog_excerpt_more', true ) && ! is_search() ) {
 		$read_more_text = esc_html__( 'Continue reading now', 'siteorigin-unwind' );
