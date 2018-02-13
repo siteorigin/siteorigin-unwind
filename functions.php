@@ -20,6 +20,7 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
 require get_template_directory() . '/inc/settings/settings.php';
 require get_template_directory() . '/inc/settings.php';
 require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/deprecated.php';
 
 if ( ! function_exists( 'siteorigin_unwind_setup' ) ) :
 /**
