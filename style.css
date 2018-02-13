@@ -675,6 +675,8 @@ a {
       float: left;
       padding: 2px 45px 0 0;
       position: relative; }
+      .header-design-4 .main-navigation > div li:last-child {
+        padding-right: 0; }
       .main-navigation > div li a {
         text-transform: uppercase;
         color: #626262;
