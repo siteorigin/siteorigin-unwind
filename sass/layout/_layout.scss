@@ -56,7 +56,7 @@
 		width: auto;
 	}
 
-	@at-root .no-active-wc-sidebar .content-area {
+	@at-root .woocommerce.no-active-wc-sidebar .content-area {
 		float: none;
 		margin: 0;
 		width: auto;
@@ -90,7 +90,7 @@
 		margin: 0;
 	}
 
-	@at-root .no-active-wc-sidebar .site-main {
+	@at-root .woocommerce.no-active-wc-sidebar .site-main {
 		margin: 0;
 	}	
 }

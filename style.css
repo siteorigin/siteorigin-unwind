@@ -1437,7 +1437,7 @@ a {
     float: none;
     margin: 0;
     width: auto; }
-  .no-active-wc-sidebar .content-area {
+  .woocommerce.no-active-wc-sidebar .content-area {
     float: none;
     margin: 0;
     width: auto; }
@@ -1459,7 +1459,7 @@ a {
       margin: 0; } }
   .no-active-sidebar .site-main {
     margin: 0; }
-  .no-active-wc-sidebar .site-main {
+  .woocommerce.no-active-wc-sidebar .site-main {
     margin: 0; }
 
 .site-content .widget-area {
