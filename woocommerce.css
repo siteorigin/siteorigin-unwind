@@ -1036,7 +1036,7 @@ p.demo_store {
   line-height: 1;
   list-style: none;
   margin: 0;
-  padding-left: 0;
+  padding-left: 45px;
   position: relative; }
   .header-design-4 .main-navigation .shopping-cart {
     bottom: 0; }
