@@ -42,7 +42,7 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && $post_class !== 'entry' ) the_excerpt();
+		<?php if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && $post_class !== 'entry' ) siteorigin_unwind_excerpt();
 		else echo apply_filters( 'the_content', siteorigin_unwind_filter_video( get_the_content() ) ); // Display the content without first video ?>
 		<?php
 			wp_link_pages( array(
