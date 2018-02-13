@@ -38,7 +38,7 @@ $post_class = siteorigin_setting( 'blog_search_fallback' ) ? 'has-fallback-image
 		</header><!-- .entry-header -->
 
 		<div class="entry-summary">
-			<?php the_excerpt(); ?>
+			<?php siteorigin_unwind_excerpt(); ?>
 		</div><!-- .entry-summary -->
 	</div>
 

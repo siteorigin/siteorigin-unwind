@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.2.7 - 13 February 2018 =
+* Overhauled excerpt function. `siteorigin_unwind_excerpt_length` and `siteorigin_unwind_excerpt_more` deprecated.
+* Fixed sidebar layout issue.
+* Fixed menu last item spacing issue.
+
 = 1.2.6 - 09 February 2018 =
 * Updated WooCommerce template files. WooCommerce must be updated to version 3.3.0+ before updating Unwind.
 * Minor WooCommerce style fixes.

@@ -675,6 +675,8 @@ a {
       float: left;
       padding: 2px 45px 0 0;
       position: relative; }
+      .main-navigation > div li:last-child {
+        padding-right: 0; }
       .main-navigation > div li a {
         text-transform: uppercase;
         color: #626262;
@@ -1437,7 +1439,7 @@ a {
     float: none;
     margin: 0;
     width: auto; }
-  .no-active-wc-sidebar .content-area {
+  .woocommerce.no-active-wc-sidebar .content-area {
     float: none;
     margin: 0;
     width: auto; }
@@ -1459,7 +1461,7 @@ a {
       margin: 0; } }
   .no-active-sidebar .site-main {
     margin: 0; }
-  .no-active-wc-sidebar .site-main {
+  .woocommerce.no-active-wc-sidebar .site-main {
     margin: 0; }
 
 .site-content .widget-area {

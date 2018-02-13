@@ -85,6 +85,10 @@
 			padding: 2px 45px 0 0;
 			position: relative;
 
+			&:last-child {
+				padding-right: 0;
+			}
+
 			a {
 				text-transform: uppercase;
 				color: $color__text-medium;

@@ -293,29 +293,43 @@ function siteorigin_unwind_read_more_link() {
 endif;
 add_filter( 'the_content_more_link', 'siteorigin_unwind_read_more_link' );
 
-if ( ! function_exists( 'siteorigin_unwind_excerpt_length' ) ) :
+if ( ! function_exists( 'siteorigin_unwind_excerpt' ) ) :
 /**
- * Filter the excerpt length.
+ * Outputs the excerpt.
  */
-function siteorigin_unwind_excerpt_length( $length ) {
-	return siteorigin_setting( 'blog_excerpt_length' );
-}
-add_filter( 'excerpt_length', 'siteorigin_unwind_excerpt_length', 10 );
-endif;
+function siteorigin_unwind_excerpt() {
 
-if ( ! function_exists( 'siteorigin_unwind_excerpt_more' ) ) :
-/**
- * Add a more link to the excerpt.
- */
-function siteorigin_unwind_excerpt_more( $more ) {
-	if ( is_search() ) return;
-	if ( ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' || siteorigin_setting( 'blog_archive_layout' ) == 'grid' || siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) && siteorigin_setting( 'blog_excerpt_more', true ) ) {
-		$read_more_text = esc_html__( 'Continue reading now', 'siteorigin-unwind' );
-		return '...<div class="more-link-wrapper"><a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</span></a></div>';
+	if ( ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' || siteorigin_setting( 'blog_archive_layout' ) == 'grid' || siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) && siteorigin_setting( 'blog_excerpt_more', true ) && ! is_search() ) {
+		$read_more_text = esc_html__( 'Continue reading', 'siteorigin-unwind' );
+		$read_more_text = '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '"><span class="more-text">' . $read_more_text . '</span></a></div>';
+	} else {
+		$read_more_text = '';
 	}
+	$ellipsis = '...';
+	$length = siteorigin_setting( 'blog_excerpt_length' );
+	$excerpt = explode( ' ', get_the_excerpt(), $length );
+
+	if ( $length ) :
+
+		if ( count( $excerpt ) >= $length ) :
+			array_pop( $excerpt );
+			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
+		else:
+			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>';
+		endif;
+
+	else :
+
+		$excerpt = get_the_excerpt();
+
+	endif;
+
+	$excerpt = preg_replace( '`\[[^\]]*\]`','', $excerpt );
+
+	echo $excerpt;
+
 }
 endif;
-add_filter( 'excerpt_more', 'siteorigin_unwind_excerpt_more' );
 
 if ( ! function_exists( 'siteorigin_unwind_post_meta' ) ) :
 /**
