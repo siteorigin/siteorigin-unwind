@@ -2763,7 +2763,8 @@ a {
   .archive-project .entry-thumbnail {
     margin: 0; }
     .archive-project .entry-thumbnail a {
-      display: block; }
+      display: block;
+      position: relative; }
   .archive-project .entry-overlay {
     height: 100%;
     left: 0;
