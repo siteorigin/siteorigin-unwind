@@ -1655,7 +1655,7 @@ a {
             font-size: 28.8px;
             font-size: 1.8rem; } }
   #masthead #masthead-widgets {
-    margin: calc(60px / 2) auto; }
+    margin: 60px auto; }
     #masthead #masthead-widgets::after {
       clear: both;
       content: "";
