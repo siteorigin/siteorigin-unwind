@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.2.8 - 21 February 2018 =
+* Ensured all JS files load minified versions.
+* Updated search form function to use `home_url()`.
+* Resolve Jetpack Portfolio project hover placement and project thumbnail alignment issues.
+* Changed masthead widget area padding to use header padding theme setting.
+* Minor WooCommerce style fixes.
+
 = 1.2.7 - 13 February 2018 =
 * Overhauled excerpt function. `siteorigin_unwind_excerpt_length` and `siteorigin_unwind_excerpt_more` deprecated.
 * Fixed sidebar layout issue.
