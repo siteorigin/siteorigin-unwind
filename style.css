@@ -2738,6 +2738,9 @@ a {
   margin-bottom: 30px;
   margin-left: 1.1667%;
   width: 31%; }
+  .tax-jetpack-portfolio-type .archive-project,
+  .tax-jetpack-portfolio-tag .archive-project {
+    float: left; }
   @media (max-width: 1175px) {
     body:not(.no-active-sidebar) .archive-project {
       margin-right: 0.875%;
