@@ -193,6 +193,7 @@
 
 					img {
 						padding: 10px;
+						-webkit-backface-visibility: hidden;
 					}
 				}
 			}

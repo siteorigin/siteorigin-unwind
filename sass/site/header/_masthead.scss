@@ -121,7 +121,7 @@
 		@at-root .header-design-4 & {
 			display: inline-block;
 			float: left;
-			padding: calc(#{$masthead__padding} /2) 0;
+			padding: calc(#{$masthead__padding} / 2) 0;
 
 			.site-title {
 				@include font-size(2.5);
@@ -136,7 +136,7 @@
 
 	#masthead-widgets {
 		@include clearfix;
-		margin: 60px auto;
+		margin: $masthead__padding auto;
 
 		.widgets {
 

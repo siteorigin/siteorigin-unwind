@@ -298,7 +298,7 @@ p.demo_store {
       left: 50%;
       margin: 0;
       opacity: 0;
-      padding: 12px 15px;
+      padding: 12px 12px;
       position: absolute;
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);
@@ -522,7 +522,8 @@ p.demo_store {
 .woocommerce.single-product #content div.product .images .flex-control-nav {
   margin-top: 10px; }
   .woocommerce.single-product #content div.product .images .flex-control-nav li img {
-    padding: 10px; }
+    padding: 10px;
+    -webkit-backface-visibility: hidden; }
 
 .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs {
   margin-bottom: 30px;

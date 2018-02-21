@@ -1645,7 +1645,7 @@ a {
     .header-design-4 #masthead .site-branding {
       display: inline-block;
       float: left;
-      padding: calc(60px /2) 0; }
+      padding: calc(60px / 2) 0; }
       .header-design-4 #masthead .site-branding .site-title {
         font-size: 40px;
         font-size: 2.5rem;
@@ -2738,6 +2738,9 @@ a {
   margin-bottom: 30px;
   margin-left: 1.1667%;
   width: 31%; }
+  .tax-jetpack-portfolio-type .archive-project,
+  .tax-jetpack-portfolio-tag .archive-project {
+    float: left; }
   @media (max-width: 1175px) {
     body:not(.no-active-sidebar) .archive-project {
       margin-right: 0.875%;
@@ -2763,7 +2766,8 @@ a {
   .archive-project .entry-thumbnail {
     margin: 0; }
     .archive-project .entry-thumbnail a {
-      display: block; }
+      display: block;
+      position: relative; }
   .archive-project .entry-overlay {
     height: 100%;
     left: 0;
