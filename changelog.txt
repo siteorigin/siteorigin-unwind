@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.2.9 - 25 February 2018 =
+* Resolve WooCommerce sidebar placement when the main sidebar widget area is empty.
+* Use the minified WooCommerce stylesheet in the release version.
+
 = 1.2.8 - 21 February 2018 =
 * Ensured all JS files load minified versions.
 * Updated search form function to use `home_url()`.
