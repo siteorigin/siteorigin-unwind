@@ -32,7 +32,7 @@
 
 	<div class="entry-content">
 		<?php
-			if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) the_excerpt();
+			if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) siteorigin_unwind_excerpt();
 			else the_content();
 
 			wp_link_pages( array(

@@ -1,5 +1,49 @@
 == Changelog ==
 
+= 1.2.10 - 06 March 2018 =
+* Resolved mobile menu accessibility bug. Updated aria-expanded state, allow for # links to open sub-menus.
+
+= 1.2.9 - 25 February 2018 =
+* Resolved WooCommerce sidebar placement when the main sidebar widget area is empty.
+* Use the minified WooCommerce stylesheet in the release version.
+
+= 1.2.8 - 21 February 2018 =
+* Ensured all JS files load minified versions.
+* Updated search form function to use `home_url()`.
+* Resolved Jetpack Portfolio project hover placement and project thumbnail alignment issues.
+* Changed masthead widget area padding to use header padding theme setting.
+* Minor WooCommerce style fixes.
+
+= 1.2.7 - 13 February 2018 =
+* Overhauled excerpt function. `siteorigin_unwind_excerpt_length` and `siteorigin_unwind_excerpt_more` deprecated.
+* Fixed sidebar layout issue.
+* Fixed menu last item spacing issue.
+
+= 1.2.6 - 09 February 2018 =
+* Updated WooCommerce template files. WooCommerce must be updated to version 3.3.0+ before updating Unwind.
+* Minor WooCommerce style fixes.
+* Fixed bugs with WooCommerce shop page and theme Page Template Settings.
+* Resolved spinning sticky menu bug.
+
+= 1.2.5 - 08 January 2017 =
+* Improved the sticky navigation transition effect.
+
+= 1.2.4 - 23 December 2017 =
+* Added the product image gallery to the WooCommerce Quick View modal.
+* Fixed WooCommerce checkout problem with products sold individually. 
+* Added ellipsis before the post excerpt read more button.
+
+= 1.2.3 - 15 December 2017 =
+* Allow mobile menu non-linked parent items to toggle the the dropdown on click.
+
+= 1.2.2 - 22 November 2017 =
+* Updated WooCommerce functions to match latest release.
+* Resolved video post format display issue in archive view in grid and similar blog layouts. 
+
+= 1.2.1 - 30 October 2017 =
+* Various improvements to the Jetpack Portfolio integration.
+* Fixes to Jetpack Portfolio.
+
 = 1.2 - 26 October 2017 =
 * Small styling fix for loops in Post Loop widget.
 * Fix blog meta categories setting bug.

@@ -27,9 +27,7 @@ while ( have_posts() ) : the_post();
 			<div class="product-info-wrapper">
 
 				<a href="<?php the_permalink(); ?>">
-					<?php
-					do_action( 'siteorigin_unwind_woocommerce_quick_view_title' );
-					?>
+					<?php do_action( 'siteorigin_unwind_woocommerce_quick_view_title' ); ?>
 				</a>
 
 				<?php do_action( 'siteorigin_unwind_woocommerce_quick_view_content' ); ?>

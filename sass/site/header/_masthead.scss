@@ -20,6 +20,15 @@
 		position: relative;
 		z-index: 101;
 
+		@include keyframes( stickyMh ) {
+			0%, 100% {
+				opacity: 1;
+			}
+			10% {
+				opacity: 0.7;
+			}
+		}
+
 		@at-root {
 			.sticky-menu:not( .sticky-bar-out ) & {
 				position: relative;
@@ -34,6 +43,7 @@
 				left: 0;
 				width: 100%;
 				@include clearfix;
+				@include animation( stickyMh 0.3s ease-in );
 			}
 
 			.sticky-menu.sticky-bar-out.admin-bar & {
@@ -110,7 +120,7 @@
 		@at-root .header-design-4 & {
 			display: inline-block;
 			float: left;
-			padding: calc(#{$masthead__padding} /2) 0;
+			padding: calc(#{$masthead__padding} / 2) 0;
 
 			.site-title {
 				@include font-size(2.5);
@@ -125,7 +135,7 @@
 
 	#masthead-widgets {
 		@include clearfix;
-		margin: 60px auto;
+		margin: $masthead__padding auto;
 
 		.widgets {
 

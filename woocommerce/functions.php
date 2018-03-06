@@ -48,7 +48,7 @@ add_filter( 'woocommerce_product_single_add_to_cart_text', 'siteorigin_unwind_wo
 
 function siteorigin_unwind_woocommerce_enqueue_styles( $styles ) {
 	$styles['unwind-woocommerce'] = array(
-		'src' => get_template_directory_uri() . '/woocommerce.css',
+		'src' => get_template_directory_uri() . '/woocommerce' . SITEORIGIN_THEME_JS_PREFIX . '.css',
 		'deps' => array( 'woocommerce-layout', 'siteorigin-unwind-style' ),
 		'version' => SITEORIGIN_THEME_VERSION,
 		'media' => 'all'
@@ -134,7 +134,11 @@ function siteorigin_unwind_woocommerce_update_cart_count( $fragments ) {
 	return $fragments;
 }
 endif;
-add_filter( 'add_to_cart_fragments', 'siteorigin_unwind_woocommerce_update_cart_count' );
+if ( version_compare( $woocommerce->version, '3', '<' ) ) {
+	add_filter( 'add_to_cart_fragments', 'siteorigin_unwind_woocommerce_update_cart_count' );
+} else {
+	add_filter( 'woocommerce_add_to_cart_fragments', 'siteorigin_unwind_woocommerce_update_cart_count' );
+}
 
 if ( ! function_exists( 'siteorigin_unwind_wc_columns' ) ) :
 // Change number of products per row.
