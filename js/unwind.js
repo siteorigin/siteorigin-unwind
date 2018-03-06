@@ -186,7 +186,7 @@ jQuery( function( $ ) {
 				$sbs = $( '<div class="sticky-bar-sentinel"></div>' ).insertBefore( $sb );
 			}
 			// Toggle .topbar-out with visibility of top-bar in the viewport
-			if( $( 'body' ).hasClass( 'admin-bar' ) ) {
+			if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
 				if ( ! $sbs.unwindAdminIsVisible() ) {
 					$( 'body' ).addClass( 'sticky-bar-out' );
 				}
