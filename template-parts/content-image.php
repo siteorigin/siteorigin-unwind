@@ -35,14 +35,14 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 				<?php the_post_thumbnail(); ?>
 			<?php else : ?>
 				<a href="<?php the_permalink() ?>">
-					<?php the_post_thumbnail() ?>
+					<?php the_post_thumbnail(); ?>
 				</a>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && $post_class !== 'entry' ) the_excerpt();
+		<?php if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && $post_class !== 'entry' ) siteorigin_unwind_excerpt();
 		else echo apply_filters( 'the_content', siteorigin_unwind_strip_image( get_the_content() ) ); // Display the content without first image ?>
 		<?php
 			wp_link_pages( array(

@@ -55,7 +55,7 @@
 
 	<div class="entry-content">
 		<?php
-			the_excerpt();
+			siteorigin_unwind_excerpt();
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',

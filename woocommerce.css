@@ -1,50 +1,7 @@
 /*--------------------------------------------------------------
 # WooCommerce Layout
 --------------------------------------------------------------*/
-.woocommerce-page #container {
-  float: right;
-  margin: 0 0 0 -25.61404%;
-  width: 100%; }
-  .shop-sidebar-right.woocommerce-page #container {
-    float: left;
-    margin: 0 -25.61404% 0 0; }
-  .no-active-wc-sidebar.woocommerce-page #container {
-    float: none;
-    margin: 0;
-    width: auto; }
-  @media (max-width: 768px) {
-    .woocommerce-page #container {
-      float: none;
-      margin: 0;
-      width: auto; } }
-
-.woocommerce-page .container #content {
-  margin: 0 0 0 25.61404%; }
-  .shop-sidebar-right.woocommerce-page .container #content {
-    margin: 0 25.61404% 0 0; }
-  .no-active-wc-sidebar.woocommerce-page .container #content {
-    float: none;
-    margin: 0;
-    width: auto; }
-  @media (max-width: 768px) {
-    .woocommerce-page .container #content {
-      float: none;
-      margin: 0;
-      width: auto; } }
-
-.woocommerce-page .container .shop-widgets.widget-area {
-  float: left;
-  padding: 0 40px 0 0; }
-  .shop-sidebar-right.woocommerce-page .container .shop-widgets.widget-area {
-    float: right;
-    padding: 0 0 0 40px; }
-
-.woocommerce-page.single-product #container {
-  float: none;
-  margin: 0;
-  width: auto; }
-
-.woocommerce-page.single-product .container #content {
+.woocommerce-page.single-product .site-main {
   float: none;
   margin: 0;
   width: auto; }
@@ -289,6 +246,7 @@ p.demo_store {
     border-radius: 0;
     font-family: "Lato", sans-serif;
     font-size: 12px;
+    font-weight: normal;
     left: 0;
     right: auto;
     line-height: normal;
@@ -340,7 +298,7 @@ p.demo_store {
       left: 50%;
       margin: 0;
       opacity: 0;
-      padding: 12px 15px;
+      padding: 12px 12px;
       position: absolute;
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);
@@ -462,6 +420,7 @@ p.demo_store {
   background-color: #24c48a;
   border-radius: 0;
   font-family: "Lato", sans-serif;
+  font-weight: normal;
   left: 0;
   line-height: normal;
   margin: 0;
@@ -539,6 +498,8 @@ p.demo_store {
       .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract:hover {
         background: #626262;
         color: #fff; }
+    .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls.hidden {
+      display: none; }
     .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract {
       border-right: none; }
     .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add {
@@ -561,7 +522,8 @@ p.demo_store {
 .woocommerce.single-product #content div.product .images .flex-control-nav {
   margin-top: 10px; }
   .woocommerce.single-product #content div.product .images .flex-control-nav li img {
-    padding: 10px; }
+    padding: 10px;
+    -webkit-backface-visibility: hidden; }
 
 .woocommerce.single-product #content div.product .woocommerce-tabs .wc-tabs {
   margin-bottom: 30px;
@@ -1075,7 +1037,7 @@ p.demo_store {
   line-height: 1;
   list-style: none;
   margin: 0;
-  padding-left: 0;
+  padding-left: 45px;
   position: relative; }
   .header-design-4 .main-navigation .shopping-cart {
     bottom: 0; }
@@ -1500,6 +1462,14 @@ p.demo_store {
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg); }
+  .woocommerce #quick-view-container .product-content-wrapper .flexslider {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    max-height: 500px;
+    overflow-y: hidden; }
+    .woocommerce #quick-view-container .product-content-wrapper .flexslider img {
+      max-height: 500px; }
   .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper {
     float: left;
     max-height: 500px;
@@ -1513,6 +1483,40 @@ p.demo_store {
         width: 100%; } }
     .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper img {
       vertical-align: middle; }
+    @media (max-width: 860px) {
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-prev {
+        left: 0; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-next {
+        right: 0; } }
+    .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav li {
+      padding: 0; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav a {
+      height: 50px;
+      top: 49.166%;
+      margin-top: -25px;
+      width: 40px; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav a:before {
+        background: none;
+        content: "";
+        height: 50px;
+        opacity: 0;
+        padding: 0;
+        width: 40px; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav a.flex-prev:before {
+        background-color: rgba(0, 0, 0, 0.4);
+        background-image: url("images/arrow-left.svg");
+        background-position: 13px 16px;
+        background-repeat: no-repeat;
+        opacity: 1; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav a.flex-next:before {
+        background-color: rgba(0, 0, 0, 0.4);
+        background-image: url("images/arrow-right.svg");
+        background-position: 16px 16px;
+        background-repeat: no-repeat;
+        opacity: 1; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-prev:hover,
+    .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-next:hover {
+      background: transparent !important; }
   .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper {
     width: 50%;
     float: right;

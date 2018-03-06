@@ -20,6 +20,7 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
 require get_template_directory() . '/inc/settings/settings.php';
 require get_template_directory() . '/inc/settings.php';
 require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/deprecated.php';
 
 if ( ! function_exists( 'siteorigin_unwind_setup' ) ) :
 /**
@@ -212,8 +213,10 @@ function siteorigin_unwind_scripts() {
 	}
 
 	// FitVids.
+	wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
+
 	if ( ! class_exists( 'Jetpack' ) ) {
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
+		wp_enqueue_script( 'jquery-fitvids' );
 	}
 
 	// Jetpack Portfolio.
@@ -225,7 +228,7 @@ function siteorigin_unwind_scripts() {
 	wp_enqueue_script( 'siteorigin-unwind-script', get_template_directory_uri() . '/js/unwind' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
 
 	// Skip link focus fix.
-	wp_enqueue_script( 'siteorigin-unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'siteorigin-unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), '20130115', true );
 
 	// Comment reply.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -47,7 +47,7 @@ if ( have_posts() ) :
 				</header><!-- .entry-header -->
 
 				<div class="entry-summary">
-					<?php the_excerpt(); ?>
+					<?php siteorigin_unwind_excerpt(); ?>
 				</div><!-- .entry-summary -->
 			</div>
 

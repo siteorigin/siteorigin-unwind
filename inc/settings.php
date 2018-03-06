@@ -249,7 +249,7 @@ function siteorigin_unwind_settings_init() {
 						'full' => esc_html__( 'Full Post', 'siteorigin-unwind' ),
 						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-unwind' ),
 					),
-					'description' => esc_html__('Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag. Applies for the default post layout only.', 'siteorigin-unwind'),
+					'description' => esc_html__( 'Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag. Applies for the default post layout only.', 'siteorigin-unwind' ),
 				),
 				'excerpt_length' => array(
 					'type' => 'number',
@@ -610,6 +610,18 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#masthead {
 	margin-bottom: ${masthead_bottom_margin};
 	}
+	@-webkit-keyframes "stickyMh" {
+	0%,100% {
+	}
+	}
+	@-moz-keyframes "stickyMh" {
+	0%,100% {
+	}
+	}
+	@keyframes "stickyMh" {
+	0%,100% {
+	}
+	}
 	#masthead .site-branding {
 	padding: ${masthead_padding} 0;
 	}
@@ -620,7 +632,10 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	color: ${fonts_text_dark};
 	}
 	.header-design-4 #masthead .site-branding {
-	padding: calc( ${masthead_padding} /2) 0;
+	padding: calc( ${masthead_padding} / 2) 0;
+	}
+	#masthead #masthead-widgets {
+	margin: ${masthead_padding} auto;
 	}
 	#fullscreen-search h3 {
 	color: ${fonts_text_medium};

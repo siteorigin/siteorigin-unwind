@@ -22,7 +22,7 @@ jQuery( function( $ ) {
 
 	// Check if an element is visible in the viewport
 	$.fn.unwindIsVisible = function() {
-		return ( this[0].getBoundingClientRect().bottom >= 0 );
+		return ( this[0].getBoundingClientRect().top >= 0 );
 	};
 
 	// Check if element is are overlapping the wp admin bar
@@ -104,7 +104,7 @@ jQuery( function( $ ) {
 		$$.toggleClass( 'to-close' );
 		var $mobileMenuDiv = $( '#mobile-navigation' );
 
-		if( $mobileMenu === false ) {
+		if ( $mobileMenu === false ) {
 			$mobileMenu = $mobileMenuDiv
 				.append( $( '.main-navigation ul' ).first().clone() )
 				.appendTo( $mobileMenuDiv ).hide();
@@ -124,6 +124,25 @@ jQuery( function( $ ) {
 	$( '#mobile-navigation' ).on( 'click', '.dropdown-toggle', function( e ) {
 		e.preventDefault();
 		$( this ).next( 'ul' ).slideToggle( '300ms' );
+		
+		if( $( this ).attr( 'aria-expanded' ) == 'false' ) {
+			$( this ).attr( 'aria-expanded', 'true' )
+		} else {
+			$( this ).attr( 'aria-expanded', 'false' )
+		}
+	} );
+
+	$( '#mobile-navigation' ).on( 'click', '.has-dropdown-button', function( e ) {
+		if ( typeof $( this ).attr( 'href' ) === "undefined" || $( this ).attr( 'href' ) == "#" ) {
+			e.preventDefault();
+			$( this ).siblings( 'ul' ).slideToggle( '300ms' );
+
+			if( $( this ).siblings( '.dropdown-toggle' ).attr( 'aria-expanded' ) == 'false' ) {
+				$( this ).siblings( '.dropdown-toggle' ).attr( 'aria-expanded', 'true' )
+			} else {
+				$( this ).siblings( '.dropdown-toggle' ).attr( 'aria-expanded', 'false' )
+			}
+		}
 	} );
 
 	// Scroll to top.
@@ -154,6 +173,7 @@ jQuery( function( $ ) {
 			$sb = $( '.sticky-bar' ),
 			$mh = $( '#masthead' ),
 			$wpab = $( '#wpadminbar' );
+			$sbh = $sb.outerHeight();
 
 		var smSetup = function() {
 
@@ -172,6 +192,12 @@ jQuery( function( $ ) {
 			}
 			if ( ! $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'sticky-bar-out' ) && $sbs.unwindIsVisible() ) {
 				$( 'body' ).removeClass( 'sticky-bar-out' );
+			}
+
+			if ( $( 'body' ).hasClass( 'sticky-bar-out' ) ) {
+				$('.sticky-bar-sentinel').height( $sbh );
+			} else {
+				$('.sticky-bar-sentinel').height( 0 );
 			}
 		}
 		smSetup();

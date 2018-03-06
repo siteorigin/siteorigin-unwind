@@ -9,7 +9,6 @@
  * @license GPL 2.0
  */
 
-
 wp_enqueue_style( 'siteorigin-unwind-flexslider' );
 wp_enqueue_script( 'jquery-flexslider' );
 

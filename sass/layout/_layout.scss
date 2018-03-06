@@ -21,6 +21,28 @@
 	float: left;
 	margin: 0 (-$size__site-sidebar) 0 0;
 	width: $size__site-main;
+
+	@at-root .woocommerce-page & {
+		float: right;
+		margin: 0 0 0 (-$size__site-sidebar);
+
+		@media (max-width: 768px) {
+			float: none;
+			margin: 0;
+			width: auto;
+		}			
+	}
+
+	@at-root .woocommerce-page.shop-sidebar-right & {
+		float: left;
+		margin: 0 (-$size__site-sidebar) 0 0;
+
+		@media (max-width: 768px) {
+			float: none;
+			margin: 0;
+			width: auto;
+		}			
+	}			
 	
 	@media (max-width: 768px) {
 		float: none;
@@ -31,12 +53,32 @@
 	@at-root .no-active-sidebar .content-area {
 		float: none;
 		margin: 0;
-		width: auto;
 	}
+
+	@at-root .woocommerce.no-active-wc-sidebar .content-area {
+		float: none;
+		margin: 0;
+	}	
 }
 
 .site-main {
 	margin: 0 $size__site-sidebar 0 0;
+
+	@at-root .woocommerce-page & {
+		margin: 0 0 0 $size__site-sidebar;
+
+		@media (max-width: 768px) {
+			margin: 0;
+		}		
+	}
+
+	@at-root .woocommerce-page.shop-sidebar-right & {
+		margin: 0 $size__site-sidebar 0 0;
+
+		@media (max-width: 768px) {
+			margin: 0;
+		}		
+	}	
 	
 	@media (max-width: 768px) {
 		margin: 0;
@@ -45,6 +87,10 @@
 	@at-root .no-active-sidebar .site-main {
 		margin: 0;
 	}
+
+	@at-root .woocommerce.no-active-wc-sidebar .site-main {
+		margin: 0;
+	}	
 }
 
 .site-content .widget-area {
@@ -52,6 +98,16 @@
 	overflow: hidden;
 	padding-left: 40px;
 	width: $size__site-sidebar;
+
+	@at-root .woocommerce-page & {
+		float: left;
+		padding: 0 40px 0 0;
+	}
+
+	@at-root .woocommerce-page.shop-sidebar-right & {
+		float: right;
+		padding: 0 0 0 40px;
+	}
 
 	@media (max-width: 768px) {
 		float: none;
