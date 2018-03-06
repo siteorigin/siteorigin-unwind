@@ -1,13 +1,16 @@
 == Changelog ==
 
+= 1.2.10 - 06 March 2018 =
+* Resolved mobile menu accessibility bug. Updated aria-expanded state, allow for # links to open sub-menus.
+
 = 1.2.9 - 25 February 2018 =
-* Resolve WooCommerce sidebar placement when the main sidebar widget area is empty.
+* Resolved WooCommerce sidebar placement when the main sidebar widget area is empty.
 * Use the minified WooCommerce stylesheet in the release version.
 
 = 1.2.8 - 21 February 2018 =
 * Ensured all JS files load minified versions.
 * Updated search form function to use `home_url()`.
-* Resolve Jetpack Portfolio project hover placement and project thumbnail alignment issues.
+* Resolved Jetpack Portfolio project hover placement and project thumbnail alignment issues.
 * Changed masthead widget area padding to use header padding theme setting.
 * Minor WooCommerce style fixes.
 
