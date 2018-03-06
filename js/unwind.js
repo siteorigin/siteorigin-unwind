@@ -150,6 +150,10 @@ jQuery( function( $ ) {
 		}
 	} );
 
+	$( '#mobile-navigation' ).on( 'click', '.menu-item a[href*="#"]:not([href="#"])', function() {
+		$mobileMenu.slideToggle( 'fast' );
+	} );
+
 	// Scroll to top.
 	var sttWindowScroll = function () {
 		var top = window.pageYOffset || document.documentElement.scrollTop;
