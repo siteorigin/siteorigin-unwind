@@ -104,7 +104,7 @@ jQuery( function( $ ) {
 		$$.toggleClass( 'to-close' );
 		var $mobileMenuDiv = $( '#mobile-navigation' );
 
-		if( $mobileMenu === false ) {
+		if ( $mobileMenu === false ) {
 			$mobileMenu = $mobileMenuDiv
 				.append( $( '.main-navigation ul' ).first().clone() )
 				.appendTo( $mobileMenuDiv ).hide();
