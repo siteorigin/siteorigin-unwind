@@ -1593,8 +1593,7 @@ a {
           top: 46px; } }
       @media screen and (max-width: 600px) {
         .sticky-menu.sticky-bar-out.admin-bar #masthead .sticky-bar {
-          position: absolute;
-          top: auto; } }
+          top: 0; } }
   #masthead .top-bar {
     background: #fff;
     border-bottom: 1px solid #ebebeb;
