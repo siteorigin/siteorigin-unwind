@@ -1512,8 +1512,7 @@ a {
 /*--------------------------------------------------------------
 ## Page Settings
 --------------------------------------------------------------*/
-.page-layout-no-sidebar .site-main,
-.woocommerce.page-layout-no-sidebar .site-main,
+.page-layout-no-sidebar .container .site-main,
 .page-layout-full-width .site-main {
   margin: 0; }
 
@@ -1593,8 +1592,7 @@ a {
           top: 46px; } }
       @media screen and (max-width: 600px) {
         .sticky-menu.sticky-bar-out.admin-bar #masthead .sticky-bar {
-          position: absolute;
-          top: auto; } }
+          top: 0; } }
   #masthead .top-bar {
     background: #fff;
     border-bottom: 1px solid #ebebeb;
