@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.2.11 - 17 March 2018 =
+* Resolved No Sidebar content width bug on WooCommerce pages.
+
 = 1.2.10 - 06 March 2018 =
 * Resolved mobile menu accessibility bug. Updated aria-expanded state, allow for # links to open sub-menus.
 
