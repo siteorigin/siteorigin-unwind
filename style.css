@@ -1512,8 +1512,7 @@ a {
 /*--------------------------------------------------------------
 ## Page Settings
 --------------------------------------------------------------*/
-.page-layout-no-sidebar .site-main,
-.woocommerce.page-layout-no-sidebar .site-main,
+.page-layout-no-sidebar .container .site-main,
 .page-layout-full-width .site-main {
   margin: 0; }
 
