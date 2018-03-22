@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.2.12 - 22 March 2018 =
+* Updated settings framework to resolve font selection bug when body font not set.
+
 = 1.2.11 - 17 March 2018 =
 * Resolved No Sidebar content width bug on WooCommerce pages.
 * Improved sticky menu behaviour when admin bar present.
