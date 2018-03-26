@@ -22,7 +22,7 @@
 	margin: 0 (-$size__site-sidebar) 0 0;
 	width: $size__site-main;
 
-	@at-root .woocommerce-page & {
+	@at-root .woocommerce-page .container & {
 		float: right;
 		margin: 0 0 0 (-$size__site-sidebar);
 
@@ -64,7 +64,7 @@
 .site-main {
 	margin: 0 $size__site-sidebar 0 0;
 
-	@at-root .woocommerce-page & {
+	@at-root .woocommerce-page .container & {
 		margin: 0 0 0 $size__site-sidebar;
 
 		@media (max-width: 768px) {
