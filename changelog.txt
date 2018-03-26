@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.2.13 - 26 March 2018 =
+* Fixed WooCommerce left sidebar layout when no widgets added to main sidebar.
+* Fixed `siteorigin_unwind_content_width` filter spelling.
+
 = 1.2.12 - 22 March 2018 =
 * Updated settings framework to resolve font selection bug when body font not set.
 
