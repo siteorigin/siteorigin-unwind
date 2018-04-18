@@ -771,7 +771,8 @@ function siteorigin_unwind_get_image() {
 	$output = preg_match_all( '/<img[^>]+\>/i', get_the_content(), $images );
 	$first_image = $images[0][0];
 
-	return ( '' !== $first_image ) ? $first_image : false;
+	return ( '' !== $first_image ) ? apply_filters( 'a3_lazy_load_images', $first_image, false ) : false;
+
 }
 endif;
 
