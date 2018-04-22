@@ -70,7 +70,36 @@ function siteorigin_unwind_infinite_scroll_render() {
 				the_post();
 				get_template_part( 'template-parts/content', 'search' );
 			} ?>
-		</div><!-- .left-medium-loop --><?php
+		</div><?php
+	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) : ?>
+		<div class="blog-layout-grid"><?php
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( 'template-parts/content', 'grid' );
+			} ?>
+		</div><?php
+	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'offset' ) : ?>
+		<div class="blog-layout-offset"><?php
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( 'template-parts/content', 'offset' );
+			} ?>
+		</div><?php
+	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) : ?>
+		<div class="blog-layout-alternate"><?php
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( 'template-parts/content', 'alternate' );
+			} ?>
+		</div><?php
+	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'masonry' ) :
+		wp_enqueue_script( 'jquery-masonry' ); ?>
+		<div class="blog-layout-masonry"><?php
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( 'template-parts/content', 'masonry' );
+			} ?>
+		</div><?php										
 	elseif ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) :
 		while ( have_posts() ) {
 			the_post();
