@@ -142,7 +142,7 @@ if ( function_exists( 'is_woocommerce' ) ) {
  * @global int $content_width
  */
 function siteorigin_unwind_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'siteorigin_uwnind_content_width', 1140 );
+	$GLOBALS['content_width'] = apply_filters( 'siteorigin_unwind_content_width', 1140 );
 }
 add_action( 'after_setup_theme', 'siteorigin_unwind_content_width', 0 );
 

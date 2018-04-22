@@ -27,7 +27,12 @@ jQuery( function( $ ) {
 
 	// Check if element is are overlapping the wp admin bar
 	$.fn.unwindAdminIsVisible = function() {
-		return ! ( $( '#wpadminbar' )[0].getBoundingClientRect().bottom < this[0].getBoundingClientRect().top );
+		// Admin bar is sticky on desktop, and not on mobile so we may need to run a different check
+		if ( $( 'body' ).innerWidth() > 600) {
+			return ( $( '#wpadminbar' )[0].getBoundingClientRect().bottom < this[0].getBoundingClientRect().top );
+		} else {
+			return ( $( '#wpadminbar' )[0].getBoundingClientRect().bottom >= 0 );
+		}
 	};
 
 	// Featured posts slider.
@@ -145,6 +150,10 @@ jQuery( function( $ ) {
 		}
 	} );
 
+	$( '#mobile-navigation' ).on( 'click', '.menu-item a[href*="#"]:not([href="#"])', function() {
+		$mobileMenu.slideToggle( 'fast' );
+	} );
+
 	// Scroll to top.
 	var sttWindowScroll = function () {
 		var top = window.pageYOffset || document.documentElement.scrollTop;
@@ -181,17 +190,20 @@ jQuery( function( $ ) {
 				$sbs = $( '<div class="sticky-bar-sentinel"></div>' ).insertBefore( $sb );
 			}
 			// Toggle .topbar-out with visibility of top-bar in the viewport
-			if ( $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'sticky-menu' ) && $sbs.unwindAdminIsVisible() ) {
-				$( 'body' ).addClass( 'sticky-bar-out' );
-			}
-			if ( ! $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'sticky-menu' ) && ! $sbs.unwindIsVisible() ) {
-				$( 'body' ).addClass( 'sticky-bar-out' );
-			}
-			if ( $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'sticky-bar-out' ) && ! $sbs.unwindAdminIsVisible() ) {
-				$( 'body' ).removeClass( 'sticky-bar-out' );
-			}
-			if ( ! $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'sticky-bar-out' ) && $sbs.unwindIsVisible() ) {
-				$( 'body' ).removeClass( 'sticky-bar-out' );
+			if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
+				if ( ! $sbs.unwindAdminIsVisible() ) {
+					$( 'body' ).addClass( 'sticky-bar-out' );
+				}
+				if ( $( 'body' ).hasClass( 'sticky-bar-out' ) && $sbs.unwindAdminIsVisible() ) {
+					$( 'body' ).removeClass( 'sticky-bar-out' );
+				}
+			} else {
+				if ( ! $sbs.unwindIsVisible() ) {
+					$( 'body' ).addClass( 'sticky-bar-out' );
+				}
+				if ( $( 'body' ).hasClass( 'sticky-bar-out' ) && $sbs.unwindIsVisible() ) {
+					$( 'body' ).removeClass( 'sticky-bar-out' );
+				}
 			}
 
 			if ( $( 'body' ).hasClass( 'sticky-bar-out' ) ) {
