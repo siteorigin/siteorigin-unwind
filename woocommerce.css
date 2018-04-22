@@ -670,6 +670,7 @@ p.demo_store {
   outline: none;
   padding: 10px;
   position: relative;
+  width: auto;
   z-index: 1; }
 
 .variations .reset_variations {
