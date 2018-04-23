@@ -217,7 +217,8 @@ jQuery( function( $ ) {
 		$( window ).resize( smSetup ).scroll( smSetup );
 	}
 
-	// Setup the load more button in portfolio widget loop
+	// Setup the load more button in portfolio widget loop.
+	if ( ! $( '#portfolio-loop' ).length ) return;
 	$infinite_scroll = 0;
 	$( document.body ).on( 'post-load', function() {
 		var $container = $( '#portfolio-loop' );
