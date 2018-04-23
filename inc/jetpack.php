@@ -93,9 +93,9 @@ function siteorigin_unwind_infinite_scroll_render() {
 				get_template_part( 'template-parts/content', 'alternate' );
 			} ?>
 		</div><?php
-	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'masonry' ) :
-		wp_enqueue_script( 'jquery-masonry' ); ?>
-		<div class="blog-layout-masonry"><?php
+	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'masonry' ) : ?>
+		<div class="blog-layout-masonry">
+			<?php wp_enqueue_script( 'jquery-masonry' );
 			while ( have_posts() ) {
 				the_post();
 				get_template_part( 'template-parts/content', 'masonry' );
