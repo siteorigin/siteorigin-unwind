@@ -33,6 +33,7 @@ function siteorigin_unwind_jetpack_setup() {
 		'container' => 'main',
 		'render'    => 'siteorigin_unwind_infinite_scroll_render',
 		'footer'    => 'page',
+		'posts_per_page' => get_option( 'posts_per_page' ),
 	) );
 
 	/**
