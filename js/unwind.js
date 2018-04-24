@@ -20,14 +20,14 @@ jQuery( function( $ ) {
 		$( window ).resize( resetMenu );
 	}
 
-	// Check if an element is visible in the viewport
+	// Check if an element is visible in the viewport.
 	$.fn.unwindIsVisible = function() {
 		return ( this[0].getBoundingClientRect().top >= 0 );
 	};
 
-	// Check if element is are overlapping the wp admin bar
+	// Check if element is are overlapping the wp admin bar.
 	$.fn.unwindAdminIsVisible = function() {
-		// Admin bar is sticky on desktop, and not on mobile so we may need to run a different check
+		// Admin bar is sticky on desktop, and not on mobile so we may need to run a different check.
 		if ( $( 'body' ).innerWidth() > 600) {
 			return ( $( '#wpadminbar' )[0].getBoundingClientRect().bottom < this[0].getBoundingClientRect().top );
 		} else {
@@ -71,7 +71,7 @@ jQuery( function( $ ) {
 		fullscreenSearch();
 		$( window ).resize( fullscreenSearch );
 
-		// Disable scrolling when fullscreen search is open
+		// Disable scrolling when fullscreen search is open.
 		if ( $$.hasClass( 'close-search' ) ) {
 			$( 'body' ).css( 'margin-right', ( window.innerWidth - $( 'body' ).width() ) + 'px' );
 			$( 'body' ).css( 'overflow', 'hidden' );
@@ -93,7 +93,7 @@ jQuery( function( $ ) {
 
 	// Close fullscreen search with escape key.
 	$( document ).keyup( function(e) {
-		if ( e.keyCode == 27 ) { // escape key maps to keycode `27`
+		if ( e.keyCode == 27 ) { // Escape key maps to keycode `27`.
 			$( '#search-button.close-search' ).trigger( 'click' );
 		}
 	} );
@@ -174,7 +174,7 @@ jQuery( function( $ ) {
 		$( 'html, body' ).animate( { scrollTop: 0 } );
 	} );
 
-	// Sticky menu
+	// Sticky menu.
 	if ( $( '.sticky-bar' ).hasClass( 'sticky-menu' ) ) {
 		var $sbs = false,
 			tbTop = false,
