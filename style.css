@@ -1762,6 +1762,7 @@ a {
       #fullscreen-search form button[type="submit"] svg {
         fill: #adadad;
         height: 31px;
+        padding: 3px;
         width: 32px; }
         @media (max-width: 768px) {
           #fullscreen-search form button[type="submit"] svg {
