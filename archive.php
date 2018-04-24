@@ -20,7 +20,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php
-			if ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
+			if ( is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
 
 				if ( have_posts() ) : ?>
 
