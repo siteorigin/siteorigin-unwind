@@ -711,7 +711,8 @@ a {
 ## Social and Search Icons
 --------------------------------------------------------------*/
 .social-search {
-  float: right; }
+  float: right;
+  padding-left: 45px; }
   .social-search .search-toggle {
     background: transparent;
     border: none;
