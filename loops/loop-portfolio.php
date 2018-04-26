@@ -27,8 +27,9 @@
 	<?php
 
 	$args = array(
-		'post_type' => 'jetpack-portfolio',
-		'paged'     => $paged,
+		'post_type'      => 'jetpack-portfolio',
+		'paged'          => $paged,
+		'posts_per_page' => get_option( 'jetpack_portfolio_posts_per_page' )
 	);
 
 	if ( ! is_post_type_archive() ) {
