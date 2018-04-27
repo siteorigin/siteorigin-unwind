@@ -100,7 +100,7 @@ function siteorigin_unwind_infinite_scroll_render() {
 				the_post();
 				get_template_part( 'template-parts/content', 'masonry' );
 			endwhile; ?>
-		</div><?php										
+		</div><?php
 	elseif ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) :
 		while ( have_posts() ) :
 			the_post();
