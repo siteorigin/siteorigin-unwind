@@ -3191,7 +3191,9 @@ a {
   display: block; }
 
 #page #infinite-handle {
-  text-align: center; }
+  clear: both;
+  text-align: center;
+  width: 100%; }
   #page #infinite-handle span {
     background: inherit;
     border-radius: initial;
@@ -3200,9 +3202,11 @@ a {
     font-size: inherit;
     padding: inherit; }
 
-.infinite-scroll .infinite-loader .spinner {
-  margin: 0 auto;
-  text-align: center; }
+.infinite-scroll .infinite-loader {
+  display: block;
+  width: 100%; }
+  .infinite-scroll .infinite-loader .spinner {
+    margin: 0 auto; }
 
 /*--------------------------------------------------------------
 ## Related Posts

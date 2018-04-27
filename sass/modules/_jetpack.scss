@@ -13,7 +13,9 @@
 }
 
 #page #infinite-handle {
+	clear: both;
 	text-align: center;
+	width: 100%;
 
 	span {
     	background: inherit;
@@ -29,9 +31,13 @@
 	}
 }
 
-.infinite-scroll .infinite-loader .spinner {
-	margin: 0 auto;
-	text-align: center;
+.infinite-scroll .infinite-loader {
+	display: block;
+	width: 100%;
+	
+	.spinner {
+		margin: 0 auto;
+	}
 }
 
 /*--------------------------------------------------------------

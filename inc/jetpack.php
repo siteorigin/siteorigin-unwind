@@ -72,6 +72,13 @@ function siteorigin_unwind_infinite_scroll_render() {
 				get_template_part( 'template-parts/content', 'search' );
 			endwhile; ?>
 		</div><?php
+	elseif ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_woocommerce() ) ) :
+		echo '<ul class="products test columns-' . esc_attr( wc_get_loop_prop( 'columns' ) ) . '">';
+		while ( have_posts() ) :
+			the_post();
+			wc_get_template_part( 'content', 'product' );
+		endwhile;
+		echo '</ul>';		
 	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) : ?>
 		<div class="blog-layout-grid"><?php
 			while ( have_posts() ) :
