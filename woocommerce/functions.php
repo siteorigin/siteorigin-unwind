@@ -73,6 +73,14 @@ function siteorigin_unwind_woocommerce_enqueue_scripts() {
 }
 add_filter( 'wp_enqueue_scripts', 'siteorigin_unwind_woocommerce_enqueue_scripts' );
 
+/**
+ * Filter the archive page title.
+ */
+function siteorigin_unwind_woocommerce_archive_title() {
+	if ( siteorigin_page_setting( 'page_title' ) ) return true;
+}
+add_filter( 'woocommerce_show_page_title', 'siteorigin_unwind_woocommerce_archive_title' );
+
 if ( ! function_exists( 'siteorigin_unwind_woocommerce_loop_shop_columns' ) ) :
 /*
  * Change number of products per row.
@@ -84,6 +92,19 @@ function siteorigin_unwind_woocommerce_loop_shop_columns() {
 }
 endif;
 add_filter( 'loop_shop_columns', 'siteorigin_unwind_woocommerce_loop_shop_columns' );
+
+/**
+ * Change the gallery thumbnail image size.
+ * @link https://github.com/woocommerce/woocommerce/wiki/Customizing-image-sizes-in-3.3-
+ */
+function siteorigin_unwind_woocommerce_single_gallery_thumbnail_size( $size ) {
+    return array(
+        'width'  => 150,
+        'height' => 150,
+        'crop'   => 1,
+    );	
+}
+add_filter( 'woocommerce_get_image_size_gallery_thumbnail', 'siteorigin_unwind_woocommerce_single_gallery_thumbnail_size' );
 
 function siteorigin_unwind_woocommerce_related_product_args( $args ) {
 	$args['columns'] = 4;
