@@ -29,8 +29,13 @@
 	}
 }
 
-.portfolio-loop #projects-container {
+.portfolio-loop #projects-container,
+.portfolio-archive-layout {
 	margin-bottom: 3.5em;
+}
+
+.portfolio-archive-layout {
+	overflow: auto;
 }
 
 .portfolio-loop #projects-container,

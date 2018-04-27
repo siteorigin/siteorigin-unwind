@@ -2704,8 +2704,12 @@ a {
       border-bottom: 2px solid #2d2d2d;
       color: #2d2d2d; }
 
-.portfolio-loop #projects-container {
+.portfolio-loop #projects-container,
+.portfolio-archive-layout {
   margin-bottom: 3.5em; }
+
+.portfolio-archive-layout {
+  overflow: auto; }
 
 .portfolio-loop #projects-container,
 .related-projects {
