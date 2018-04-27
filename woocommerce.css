@@ -1266,7 +1266,7 @@ p.demo_store {
 .woocommerce .widget-area#secondary .widget_price_filter .price_slider_amount {
   text-align: left; }
   .woocommerce .widget-area#secondary .widget_price_filter .price_slider_amount .price_label {
-    font-weight: light; }
+    font-weight: normal; }
     .woocommerce .widget-area#secondary .widget_price_filter .price_slider_amount .price_label span {
       font-weight: bold; }
   .woocommerce .widget-area#secondary .widget_price_filter .price_slider_amount .button {
