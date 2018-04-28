@@ -3204,6 +3204,7 @@ a {
 
 .infinite-scroll .infinite-loader {
   display: block;
+  clear: both;
   width: 100%; }
   .infinite-scroll .infinite-loader .spinner {
     margin: 0 auto; }
