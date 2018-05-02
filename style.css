@@ -2704,9 +2704,12 @@ a {
       border-bottom: 2px solid #2d2d2d;
       color: #2d2d2d; }
 
-.portfolio-loop #projects-container,
-.portfolio-archive-layout {
+body:not(.infinite-scroll) .portfolio-loop #projects-container,
+body:not(.infinite-scroll) .portfolio-archive-layout {
   margin-bottom: 3.5em; }
+
+.post-type-archive-jetpack-portfolio #infinite-handle {
+  padding-top: 3.5em; }
 
 .portfolio-archive-layout {
   overflow: auto; }
