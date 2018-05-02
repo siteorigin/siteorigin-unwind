@@ -38,6 +38,10 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 	padding-top: 3.5em;
 }
 
+.post-type-archive-jetpack-portfolio .infinite-loader {
+	margin-top: 3.5em;
+}
+
 .portfolio-archive-layout {
 	overflow: auto;
 }
