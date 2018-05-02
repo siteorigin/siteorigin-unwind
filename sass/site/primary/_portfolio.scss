@@ -46,7 +46,7 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 	overflow: auto;
 }
 
-.portfolio-loop #projects-container,
+#projects-container,
 .related-projects {
 	margin-right: -1.1667%;
 	margin-left: -1.1667%;
@@ -78,15 +78,11 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 }
 
 .archive-project {
+	float: left;
 	margin-right: 1.1667%;
 	margin-bottom: 30px;
 	margin-left: 1.1667%;
 	width: 31%;
-
-	.tax-jetpack-portfolio-type &,
-	.tax-jetpack-portfolio-tag & {
-		float: left;
-	}
 
 	@at-root body:not(.no-active-sidebar) & {
 

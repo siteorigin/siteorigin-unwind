@@ -2717,38 +2717,36 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 .portfolio-archive-layout {
   overflow: auto; }
 
-.portfolio-loop #projects-container,
+#projects-container,
 .related-projects {
   margin-right: -1.1667%;
   margin-left: -1.1667%; }
   @media (max-width: 1175px) {
-    body:not(.no-active-sidebar) .portfolio-loop #projects-container, body:not(.no-active-sidebar)
+    body:not(.no-active-sidebar) #projects-container, body:not(.no-active-sidebar)
     .related-projects {
       margin-right: -0.875%;
       margin-left: -0.875%; } }
   @media (max-width: 640px) {
-    body:not(.no-active-sidebar) .portfolio-loop #projects-container, body:not(.no-active-sidebar)
+    body:not(.no-active-sidebar) #projects-container, body:not(.no-active-sidebar)
     .related-projects {
       margin-right: 0;
       margin-left: 0; } }
   @media (max-width: 890px) {
-    .no-active-sidebar .portfolio-loop #projects-container, .no-active-sidebar
+    .no-active-sidebar #projects-container, .no-active-sidebar
     .related-projects {
       margin-right: -0.875%;
       margin-left: -0.875%; } }
   @media (max-width: 640px) {
-    .no-active-sidebar .portfolio-loop #projects-container, .no-active-sidebar
+    .no-active-sidebar #projects-container, .no-active-sidebar
     .related-projects {
       margin: 0; } }
 
 .archive-project {
+  float: left;
   margin-right: 1.1667%;
   margin-bottom: 30px;
   margin-left: 1.1667%;
   width: 31%; }
-  .tax-jetpack-portfolio-type .archive-project,
-  .tax-jetpack-portfolio-tag .archive-project {
-    float: left; }
   @media (max-width: 1175px) {
     body:not(.no-active-sidebar) .archive-project {
       margin-right: 0.875%;
