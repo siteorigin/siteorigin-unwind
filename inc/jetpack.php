@@ -30,9 +30,10 @@ function siteorigin_unwind_jetpack_setup() {
 	 * See https://jetpack.com/support/infinite-scroll/
 	 */
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'siteorigin_unwind_infinite_scroll_render',
-		'footer'    => 'page',
+		'container'      => 'main',
+		'render'         => 'siteorigin_unwind_infinite_scroll_render',
+		'footer'    	 => 'page',
+		'posts_per_page' => get_option( 'jetpack_portfolio_posts_per_page' ),
 	) );
 
 	/**
@@ -66,16 +67,54 @@ add_action( 'wp_footer', 'siteorigin_unwind_remove_jetpack_css' );
 function siteorigin_unwind_infinite_scroll_render() {
 	if ( is_search() ) : ?>
 		<div class="left-medium-loop"><?php
-			while ( have_posts() ) {
+			while ( have_posts() ) :
 				the_post();
 				get_template_part( 'template-parts/content', 'search' );
-			} ?>
-		</div><!-- .left-medium-loop --><?php
-	elseif ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) :
-		while ( have_posts() ) {
+			endwhile; ?>
+		</div><?php
+	elseif ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_woocommerce() ) ) :
+		echo '<ul class="products test columns-' . esc_attr( wc_get_loop_prop( 'columns' ) ) . '">';
+		while ( have_posts() ) :
 			the_post();
-			get_template_part( 'template-parts/content', 'portfolio' );
-		}
+			wc_get_template_part( 'content', 'product' );
+		endwhile;
+		echo '</ul>';		
+	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) : ?>
+		<div class="blog-layout-grid"><?php
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'template-parts/content', 'grid' );
+			endwhile; ?>
+		</div><?php
+	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'offset' ) : ?>
+		<div class="blog-layout-offset"><?php
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'template-parts/content', 'offset' );
+			endwhile; ?>
+		</div><?php
+	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) : ?>
+		<div class="blog-layout-alternate"><?php
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'template-parts/content', 'alternate' );
+			endwhile; ?>
+		</div><?php
+	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'masonry' ) :
+		wp_enqueue_script( 'jquery-masonry' ); ?>
+		<div class="blog-layout-masonry"><?php
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'template-parts/content', 'masonry' );
+			endwhile; ?>
+		</div><?php
+	elseif ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) : ?>
+		<div id="projects-container"><?php
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'template-parts/content', 'portfolio' );
+			endwhile;
+		?></div><?php
 	else :
 		while ( have_posts() ) {
 			the_post();

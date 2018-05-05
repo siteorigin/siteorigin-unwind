@@ -19,8 +19,8 @@ get_header(); ?>
 
 		<main id="main" class="site-main">
 
-			<?php
-			if ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
+			<?php 
+			if ( is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) :
 
 				if ( have_posts() ) : ?>
 
@@ -43,11 +43,11 @@ get_header(); ?>
 
 				endif;
 
-			} else {
+			else :
 
 				get_template_part( 'loops/loop', 'blog-' . siteorigin_setting( 'blog_archive_layout' ) );
 
-			}
+			endif;
 			?>
 
 		</main><!-- #main -->

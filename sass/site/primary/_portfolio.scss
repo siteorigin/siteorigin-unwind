@@ -29,11 +29,24 @@
 	}
 }
 
-.portfolio-loop #projects-container {
+body:not(.infinite-scroll) .portfolio-loop #projects-container,
+body:not(.infinite-scroll) .portfolio-archive-layout {
 	margin-bottom: 3.5em;
 }
 
-.portfolio-loop #projects-container,
+.post-type-archive-jetpack-portfolio #infinite-handle {
+	padding-top: 3.5em;
+}
+
+.post-type-archive-jetpack-portfolio .infinite-loader {
+	margin-top: 3.5em;
+}
+
+.portfolio-archive-layout {
+	overflow: auto;
+}
+
+#projects-container,
 .related-projects {
 	margin-right: -1.1667%;
 	margin-left: -1.1667%;
@@ -65,15 +78,11 @@
 }
 
 .archive-project {
+	float: left;
 	margin-right: 1.1667%;
 	margin-bottom: 30px;
 	margin-left: 1.1667%;
 	width: 31%;
-
-	.tax-jetpack-portfolio-type &,
-	.tax-jetpack-portfolio-tag & {
-		float: left;
-	}
 
 	@at-root body:not(.no-active-sidebar) & {
 
