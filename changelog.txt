@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.2.15 - 05 May 2018 =
+* Minor WooCommerce styling fixes.
+* Enabled Jetpack Infinite scroll to function correctly with all available post loops.
+
 = 1.2.14 - 18 April 2018 =
 * Support a3 Lazy Load for Post Format: Image.
 
