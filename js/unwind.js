@@ -266,5 +266,26 @@ jQuery( function( $ ) {
 			return false;
 		} );
 
+		// Blog Portfolio loop filter.
+		var $container = $( '#posts-posrtfolio-container' );
+		if ( $( '.blog-filter-terms' ).length ) {
+			$container.isotope( {
+				itemSelector: '.post',
+				filter: '*',
+				layoutMode: 'fitRows',
+				resizable: true,
+			} );
+		}
+
+		$( '.blog-filter-terms button' ).click( function() {
+			var selector = $( this ).attr( 'data-filter' );
+			$container.isotope( {
+				filter: selector,
+			} );
+			$( '.blog-filter-terms button' ).removeClass( 'active' );
+			$( this ).addClass( 'active' );
+			return false;
+		} );
+
 	} );
 } )( jQuery );
