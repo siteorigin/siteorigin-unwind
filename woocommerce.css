@@ -1,11 +1,70 @@
 /*--------------------------------------------------------------
-# WooCommerce Layout
+# Layout
 --------------------------------------------------------------*/
-.woocommerce-page.single-product .site-main {
+body.woocommerce.woocommerce-page .content-area {
+  width: 100%; }
+
+body.woocommerce.woocommerce-page .site-main {
+  margin: 0; }
+
+body.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
+  float: right;
+  margin: 0 0 0 -25.61404%;
+  width: 100%; }
+  body.woocommerce.woocommerce-page.woocommerce-sidebar-right .content-area {
+    float: left;
+    margin: 0 -25.61404% 0 0; }
+  @media (max-width: 768px) {
+    body.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
+      margin: 0 !important;
+      width: 100% !important; } }
+
+body.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+  margin: 0 0 0 25.61404%; }
+  body.woocommerce.woocommerce-page.woocommerce-sidebar-right .site-main {
+    margin: 0 25.61404% 0 0; }
+  @media (max-width: 768px) {
+    body.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+      margin: 0 !important; } }
+
+body.woocommerce.woocommerce-page.page-layout-no-sidebar .site-content .content-area {
   float: none;
   margin: 0;
-  width: auto; }
+  width: 100%; }
 
+body.woocommerce.woocommerce-page.page-layout-no-sidebar .site-content .site-main {
+  margin: 0; }
+
+body.woocommerce.woocommerce-page.page-layout-full-width .site-content #primary.content-area {
+  float: none;
+  margin: 0;
+  width: 100%; }
+
+body.woocommerce.woocommerce-page.page-layout-full-width .site-content #main.site-main {
+  margin: 0; }
+
+body.woocommerce.woocommerce-page.page-layout-full-width .site-content .corp-container {
+  max-width: none;
+  padding: 0; }
+
+body.woocommerce.woocommerce-page .widget-area {
+  float: left;
+  padding-right: 40px;
+  padding-left: 0;
+  width: 25.61404%; }
+  body.woocommerce.woocommerce-page.woocommerce-sidebar-right .widget-area {
+    float: left;
+    padding-left: 40px;
+    padding-right: 0; }
+  @media (max-width: 768px) {
+    body.woocommerce.woocommerce-page .widget-area {
+      margin-top: 80px;
+      padding: 0;
+      width: 100%; } }
+
+/*--------------------------------------------------------------
+# Notifications
+--------------------------------------------------------------*/
 .woocommerce-store-notice,
 p.demo_store {
   background: #24c48a;
@@ -47,7 +106,7 @@ p.demo_store {
     margin-top: 0; } }
 
 /*--------------------------------------------------------------
-# WooCommerce Buttons
+# Buttons
 --------------------------------------------------------------*/
 .woocommerce.woocommerce-page #respond input#submit.alt.disabled,
 .woocommerce.woocommerce-page #respond input#submit.alt:disabled,
@@ -104,7 +163,7 @@ p.demo_store {
     color: #fff; }
 
 /*--------------------------------------------------------------
-# WooCommerce Archive
+# Archive
 --------------------------------------------------------------*/
 .woocommerce .woocommerce-ordering {
   cursor: pointer;
@@ -398,7 +457,7 @@ p.demo_store {
   padding: 40px 0; }
 
 /*--------------------------------------------------------------
-# WooCommerce Single Product
+# Single Product
 --------------------------------------------------------------*/
 .woocommerce.single-product .woocommerce-message {
   border-top: none; }
@@ -691,7 +750,7 @@ p.demo_store {
   background: transparent; }
 
 /*--------------------------------------------------------------
-# WooCommerce Checkout
+# Checkout
 --------------------------------------------------------------*/
 .woocommerce-checkout .entry-title {
   font-size: 24px; }
@@ -835,7 +894,7 @@ p.demo_store {
         padding: 0; }
 
 /*--------------------------------------------------------------
-# WooCommerce Cart
+# Cart
 --------------------------------------------------------------*/
 .woocommerce-cart .entry-title {
   font-size: 24px; }
@@ -1242,7 +1301,7 @@ p.demo_store {
         color: #fff; }
 
 /*--------------------------------------------------------------
-# WooCommerce Widgets
+# Widgets
 --------------------------------------------------------------*/
 .woocommerce .widget-area#secondary .widget_price_filter .ui-slider {
   background-color: #f4f4f4;
@@ -1415,7 +1474,7 @@ p.demo_store {
     color: #2d2d2d !important; }
 
 /*--------------------------------------------------------------
-# WooCommerce Quickview
+# Quickview
 --------------------------------------------------------------*/
 .woocommerce a.product-quick-view-button {
   margin-right: 1px; }

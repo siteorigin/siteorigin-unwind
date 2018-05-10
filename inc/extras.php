@@ -42,14 +42,6 @@ function siteorigin_unwind_body_classes( $classes ) {
 	// Add a no-js class which we'll remove as required.
 	$classes[] = 'no-js';
 
-	// Check if the sidebar has widgets.
-	if ( ! is_active_sidebar( 'main-sidebar' ) ) {
-		$classes[] = 'no-active-sidebar';
-	}
-	if ( function_exists( 'is_woocommerce' ) && ! is_active_sidebar( 'shop-sidebar' ) ) {
-		$classes[] = 'no-active-wc-sidebar';
-	}
-
 	// Add the page setting classes.
 	$page_settings = siteorigin_page_setting();
 
@@ -66,14 +58,22 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'sticky-menu';
 	}
 
-	// If the main sidebar is to be placed on the left.
-	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'left' && is_active_sidebar( 'main-sidebar' ) ) {
-		$classes[] = 'main-sidebar-left';
+	// Sidebar.
+	if ( is_active_sidebar( 'main-sidebar' ) ) {
+		$classes[] = 'sidebar';
 	}
 
-	// If the shop sidebar is to be placed on the right.
-	if ( function_exists( 'is_woocommerce' ) && siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'right' && is_active_sidebar( 'shop-sidebar' ) ) {
-		$classes[] = 'shop-sidebar-right';
+	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'left' ) {
+		 $classes[] = 'sidebar-left';
+	}
+
+	// WooCommerce sidebar.
+	if ( is_active_sidebar( 'shop-sidebar' ) && function_exists( 'is_woocommerce' ) && is_woocommerce() && ! is_product() ) {
+		$classes[] = 'woocommerce-sidebar';
+
+		if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'right' ) {
+			$classes[] = 'woocommerce-sidebar-right';
+		}			
 	}
 
 	// WooCommerce columns.

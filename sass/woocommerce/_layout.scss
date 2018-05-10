@@ -1,58 +1,94 @@
-.woocommerce-page.single-product {
+body.woocommerce.woocommerce-page {
+
+	.content-area {
+		width: 100%;	
+	}
 
 	.site-main {
-		float: none;
 		margin: 0;
-		width: auto;
+	}		
+
+	&.woocommerce-sidebar {
+	
+		.content-area {
+			float: right;
+			margin: 0 0 0 (-$size__site-sidebar);
+			width: $size__site-main;
+
+			@at-root body.woocommerce.woocommerce-page.woocommerce-sidebar-right .content-area {
+				float: left;
+				margin: 0 (-$size__site-sidebar) 0 0;
+			}					
+
+			@media (max-width: 768px) {
+				margin: 0 !important;
+				width: 100% !important;
+			}
+		}
+
+		.site-main {
+			margin: 0 0 0 $size__site-sidebar;
+
+			@at-root body.woocommerce.woocommerce-page.woocommerce-sidebar-right .site-main {
+				margin: 0 $size__site-sidebar 0 0;			
+			}			
+	
+			@media (max-width: 768px) {
+				margin: 0 !important;
+			}
+	 	}
 	}
-}
 
-.woocommerce-store-notice,
-p.demo_store {
-	background: $color__primary-accent;
-	box-shadow: none;
-	color: #fff;
-	font-size: 13px;
-	line-height: 1; 
-	padding: 20px;
-	position: relative;
-	text-align: center;
-	top: 0;
+	// No Sidebar page layout setting.
+	&.page-layout-no-sidebar .site-content {
 
-	.woocommerce-store-notice__dismiss-link {
-		color: #fff; 
-		text-decoration: underline;
-	}
+		.content-area {
+			float: none;
+			margin: 0;
+			width: 100%; 
+		}
 
-	&:after {
-		bottom: -14px;
- 		box-shadow: rgba(0, 0, 0, .25) 0 14px 14px -14px inset;
-  		content: "";
-  		height: 14px;
-  		left: 0;
-  		position: absolute;
-  		width: 100%;
+		.site-main {
+			margin: 0;
+		}
+	} 
+
+	// Full Width page layout setting.
+	&.page-layout-full-width .site-content {
+
+		#primary.content-area {
+			float: none;
+			margin: 0;
+			width: 100%; 
+		}
+
+		#main.site-main {
+			margin: 0;
+		}
+
+		.corp-container {
+			max-width: none;
+			padding: 0;  
+		}
 	}	
-}
 
-.admin-bar p.demo_store {
-	top: 0;
-}
-
-.admin-bar p.demo_store {
-
-	@media( max-width: 782px ) {
-		top: 46px !important;
-	}
-
-	@media( max-width: 480px ) {
-		top: 0 !important;
-	}
-}
-
-@media( max-width: 480px ) {
-
-	.woocommerce-demo-store #page {
-		margin-top: 0;
-	}
+	// Sidebar.
+	.widget-area {
+		float: left;
+		padding-right: 40px;
+		padding-left: 0;
+		width: $size__site-sidebar;	
+		
+		@at-root body.woocommerce.woocommerce-page.woocommerce-sidebar-right .widget-area {
+			float: left;
+			padding-left: 40px;
+			padding-right: 0;
+		}	
+					
+		@media (max-width: 768px) {
+			margin-top: 80px;	
+			padding: 0;		
+			width: 100%;
+		}
+	}				
 }

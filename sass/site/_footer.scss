@@ -1,6 +1,8 @@
 #colophon {
+	clear: both;
 	margin-top: $footer__top-margin;
-	
+	width: 100%;
+
 	&.footer-active-sidebar {
 		border-top: 1px solid $color__background-hr-dark;
 	}	

@@ -778,6 +778,29 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.author-box .author-description .post-author-title a:hover {
 	color: ${fonts_text_medium};
 	}
+	.blog-filter-terms button {
+	color: ${fonts_text_light};
+	}
+	.blog-filter-terms button:hover {
+	color: ${fonts_text_dark};
+	}
+	.blog-filter-terms button.active {
+	border-bottom: 2px solid ${fonts_text_dark};
+	color: ${fonts_text_dark};
+	}
+	.entry-thumbnail:hover .entry-overlay {
+	border: 2px solid ${fonts_text_light};
+	}
+	.archive-post-postfolio .entry-title {
+	color: ${fonts_text_dark};
+	}
+	.archive-post-postfolio .entry-divider {
+	border: solid ${fonts_text_dark} 1px;
+	}
+	.archive-post-postfolio .entry-post-category {
+	color: ${fonts_text_light};
+	.font( ${fonts_details} );
+	}
 	.portfolio-filter-terms button {
 	color: ${fonts_text_light};
 	}
@@ -900,7 +923,7 @@ if ( ! function_exists( 'siteorigin_unwind_wc_settings_custom_css' ) ) :
 function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
 	// Custom WooCommerce CSS Code
-	$css .= '/* woocommerce */
+	$css .= '	/* woocommerce */
 	.woocommerce-store-notice,p.demo_store {
 	background: ${branding_accent};
 	}
@@ -1281,6 +1304,7 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	.woocommerce #quick-view-container .product-content-wrapper .variations td.label {
 	.font( ${fonts_main} );
 	}';
+
 	return $css;
 }
 endif;
