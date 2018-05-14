@@ -1316,9 +1316,6 @@ if ( ! function_exists( 'siteorigin_unwind_menu_breakpoint_css' ) ) :
  */
 function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
 	$breakpoint = siteorigin_setting( 'navigation_mobile_menu_collapse' );
-	if( empty( $breakpoint ) ) {
-		$breakpoint = 768;
-	}
 	
 	$css .= '@media screen and (max-width: ' . intval( $breakpoint ) . 'px) {
 		.main-navigation .menu-toggle {
