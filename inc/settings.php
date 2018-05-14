@@ -1315,9 +1315,7 @@ if ( ! function_exists( 'siteorigin_unwind_menu_breakpoint_css' ) ) :
  * Add CSS for mobile menu breakpoint.
  */
 function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
-	$breakpoint = siteorigin_setting( 'navigation_mobile_menu_collapse' );
-	
-	$css .= '@media screen and (max-width: ' . intval( $breakpoint ) . 'px) {
+	$css .= '@media screen and (max-width: ' . intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ); ) . 'px) {
 		.main-navigation .menu-toggle {
 			display: block;
 		}
@@ -1327,7 +1325,7 @@ function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
 			display: none;
 		}
 	}
-	@media screen and (min-width: ' . ( 1 + $breakpoint ) . 'px) {
+	@media screen and (min-width: ' . ( 1 + siteorigin_setting( 'navigation_mobile_menu_collapse' ); ) . 'px) {
 		#mobile-navigation {
 			display: none !important;
 		}
