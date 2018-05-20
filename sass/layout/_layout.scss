@@ -30,29 +30,33 @@
 		margin: 0 (-$size__site-sidebar) 0 0;
 		width: $size__site-main;
 
-		@at-root .sidebar-left#{&} {
-			float: right;
-			margin: 0 0 0 (-$size__site-sidebar);	
-		}
-
 		@media (max-width: 768px) {
-			margin: 0 !important;
-			width: 100% !important;
+			margin: 0;
+			width: 100%;
 		}
 	}
 
 	.site-main {
 		margin: 0 $size__site-sidebar 0 0;
 
-		@at-root .sidebar-left#{&} {
-			margin: 0 0 0 $size__site-sidebar;		
-		}
-
 		@media (max-width: 768px) {
 			margin: 0 !important;
 		}
  	}
  }
+
+// Content area with left sidebar.
+.sidebar-left {
+	
+	.content-area {
+		float: right;
+		margin: 0 0 0 (-$size__site-sidebar);
+	}
+
+	.site-main {
+		margin: 0 0 0 $size__site-sidebar;	
+	}
+}
 
 // No Sidebar page layout setting.
 .page-layout-no-sidebar.sidebar .site-content {
@@ -86,7 +90,7 @@
 		padding: 0;  
 	}
 }
-	
+
 // Sidebar.
 .widget-area {
 	float: right;
@@ -102,6 +106,6 @@
 	@media (max-width: 768px) {
 		margin-top: 80px;	
 		padding: 0;		
-		width: 100%;
+		width: 100% !important;
 	}
 }

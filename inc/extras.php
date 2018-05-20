@@ -68,7 +68,7 @@ function siteorigin_unwind_body_classes( $classes ) {
 	}
 
 	// WooCommerce sidebar.
-	if ( is_active_sidebar( 'shop-sidebar' ) && function_exists( 'is_woocommerce' ) && is_woocommerce() && ! is_product() ) {
+	if ( is_active_sidebar( 'shop-sidebar' ) && ( function_exists( 'is_woocommerce' ) && is_woocommerce() && ( siteorigin_page_setting( 'layout' ) == 'default' || siteorigin_page_setting( 'layout' ) == 'full-width-sidebar' ) && ! is_product() ) ) {
 		$classes[] = 'woocommerce-sidebar';
 
 		if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'right' ) {
