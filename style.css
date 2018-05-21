@@ -1412,103 +1412,63 @@ a {
   display: table; }
 
 .content-area {
+  width: 100%; }
+
+.sidebar .content-area {
   float: left;
   margin: 0 -25.61404% 0 0;
   width: 100%; }
-  .woocommerce-page .container .content-area {
-    float: right;
-    margin: 0 0 0 -25.61404%; }
-    @media (max-width: 768px) {
-      .woocommerce-page .container .content-area {
-        float: none;
-        margin: 0;
-        width: auto; } }
-  .woocommerce-page.shop-sidebar-right .content-area {
-    float: left;
-    margin: 0 -25.61404% 0 0; }
-    @media (max-width: 768px) {
-      .woocommerce-page.shop-sidebar-right .content-area {
-        float: none;
-        margin: 0;
-        width: auto; } }
   @media (max-width: 768px) {
-    .content-area {
-      float: none;
+    .sidebar .content-area {
       margin: 0;
-      width: auto; } }
-  .no-active-sidebar .content-area {
-    float: none;
-    margin: 0; }
-  .woocommerce.no-active-wc-sidebar .content-area {
-    float: none;
-    margin: 0; }
-
-.site-main {
-  margin: 0 25.61404% 0 0; }
-  .woocommerce-page .container .site-main {
-    margin: 0 0 0 25.61404%; }
-    @media (max-width: 768px) {
-      .woocommerce-page .container .site-main {
-        margin: 0; } }
-  .woocommerce-page.shop-sidebar-right .site-main {
-    margin: 0 25.61404% 0 0; }
-    @media (max-width: 768px) {
-      .woocommerce-page.shop-sidebar-right .site-main {
-        margin: 0; } }
-  @media (max-width: 768px) {
-    .site-main {
-      margin: 0; } }
-  .no-active-sidebar .site-main {
-    margin: 0; }
-  .woocommerce.no-active-wc-sidebar .site-main {
-    margin: 0; }
-
-.site-content .widget-area {
-  float: right;
-  overflow: hidden;
-  padding-left: 40px;
-  width: 25.61404%; }
-  .woocommerce-page .site-content .widget-area {
-    float: left;
-    padding: 0 40px 0 0; }
-  .woocommerce-page.shop-sidebar-right .site-content .widget-area {
-    float: right;
-    padding: 0 0 0 40px; }
-  @media (max-width: 768px) {
-    .site-content .widget-area {
-      float: none;
-      margin-top: 5.3333em;
-      padding-left: 0;
       width: 100%; } }
 
-.site-footer {
-  clear: both;
-  width: 100%; }
+.sidebar .site-main {
+  margin: 0 25.61404% 0 0; }
+  @media (max-width: 768px) {
+    .sidebar .site-main {
+      margin: 0 !important; } }
 
-.main-sidebar-left .content-area {
+.sidebar-left .content-area {
   float: right;
   margin: 0 0 0 -25.61404%; }
-  @media (max-width: 768px) {
-    .main-sidebar-left .content-area {
-      float: none;
-      margin: 0; } }
 
-.main-sidebar-left .site-main {
+.sidebar-left .site-main {
   margin: 0 0 0 25.61404%; }
-  @media (max-width: 768px) {
-    .main-sidebar-left .site-main {
-      margin: 0; } }
 
-.main-sidebar-left .site-content .widget-area {
-  float: left;
-  padding-left: 0;
-  padding-right: 40px; }
+.page-layout-no-sidebar.sidebar .site-content .content-area {
+  float: none;
+  margin: 0;
+  width: 100%; }
+
+.page-layout-no-sidebar.sidebar .site-content .site-main {
+  margin: 0; }
+
+.page-layout-full-width-no-sidebar .site-content #primary.content-area {
+  float: none;
+  margin: 0;
+  width: 100%; }
+
+.page-layout-full-width-no-sidebar .site-content #main.site-main {
+  margin: 0; }
+
+.page-layout-full-width-no-sidebar .site-content .container {
+  max-width: none;
+  padding: 0; }
+
+.widget-area {
+  float: right;
+  padding-left: 40px;
+  width: 25.61404%; }
+  .sidebar-left .widget-area {
+    float: left;
+    padding-right: 40px;
+    padding-left: 0; }
   @media (max-width: 768px) {
-    .main-sidebar-left .site-content .widget-area {
-      float: none;
-      margin-top: 5.3333em;
-      padding-left: 0;
-      width: 100%; } }
+    .widget-area {
+      margin-top: 80px;
+      padding: 0;
+      width: 100% !important; } }
 
 /*--------------------------------------------------------------
 ## Page Settings
@@ -3122,7 +3082,9 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 ## Site Footer
 --------------------------------------------------------------*/
 #colophon {
-  margin-top: 80px; }
+  clear: both;
+  margin-top: 80px;
+  width: 100%; }
   #colophon.footer-active-sidebar {
     border-top: 1px solid #ebebeb; }
   #colophon .widgets {

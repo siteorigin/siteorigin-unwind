@@ -1,11 +1,44 @@
 /*--------------------------------------------------------------
-# WooCommerce Layout
+# Layout
 --------------------------------------------------------------*/
-.woocommerce-page.single-product .site-main {
-  float: none;
-  margin: 0;
-  width: auto; }
+.woocommerce .site-main {
+  margin: 0; }
 
+.woocommerce.woocommerce-sidebar .content-area {
+  float: right;
+  margin: 0 0 0 -25.61404%;
+  width: 100%; }
+  @media (max-width: 768px) {
+    .woocommerce.woocommerce-sidebar .content-area {
+      margin: 0;
+      width: 100%; } }
+
+.woocommerce.woocommerce-sidebar .site-main {
+  margin: 0 0 0 25.61404%; }
+  @media (max-width: 768px) {
+    .woocommerce.woocommerce-sidebar .site-main {
+      margin: 0 !important; } }
+
+.woocommerce .widget-area {
+  float: left;
+  padding-right: 40px;
+  padding-left: 0; }
+
+.woocommerce.woocommerce-sidebar-right .content-area {
+  float: left;
+  margin: 0 -25.61404% 0 0; }
+
+.woocommerce.woocommerce-sidebar-right .site-main {
+  margin: 0 25.61404% 0 0; }
+
+.woocommerce.woocommerce-sidebar-right .widget-area {
+  float: right;
+  padding-right: 0;
+  padding-left: 40px; }
+
+/*--------------------------------------------------------------
+# Notifications
+--------------------------------------------------------------*/
 .woocommerce-store-notice,
 p.demo_store {
   background: #24c48a;
@@ -47,7 +80,7 @@ p.demo_store {
     margin-top: 0; } }
 
 /*--------------------------------------------------------------
-# WooCommerce Buttons
+# Buttons
 --------------------------------------------------------------*/
 .woocommerce.woocommerce-page #respond input#submit.alt.disabled,
 .woocommerce.woocommerce-page #respond input#submit.alt:disabled,
@@ -104,7 +137,7 @@ p.demo_store {
     color: #fff; }
 
 /*--------------------------------------------------------------
-# WooCommerce Archive
+# Archive
 --------------------------------------------------------------*/
 .woocommerce .woocommerce-ordering {
   cursor: pointer;
@@ -398,7 +431,7 @@ p.demo_store {
   padding: 40px 0; }
 
 /*--------------------------------------------------------------
-# WooCommerce Single Product
+# Single Product
 --------------------------------------------------------------*/
 .woocommerce.single-product .woocommerce-message {
   border-top: none; }
@@ -691,7 +724,7 @@ p.demo_store {
   background: transparent; }
 
 /*--------------------------------------------------------------
-# WooCommerce Checkout
+# Checkout
 --------------------------------------------------------------*/
 .woocommerce-checkout .entry-title {
   font-size: 24px; }
@@ -835,7 +868,7 @@ p.demo_store {
         padding: 0; }
 
 /*--------------------------------------------------------------
-# WooCommerce Cart
+# Cart
 --------------------------------------------------------------*/
 .woocommerce-cart .entry-title {
   font-size: 24px; }
@@ -1242,7 +1275,7 @@ p.demo_store {
         color: #fff; }
 
 /*--------------------------------------------------------------
-# WooCommerce Widgets
+# Widgets
 --------------------------------------------------------------*/
 .woocommerce .widget-area#secondary .widget_price_filter .ui-slider {
   background-color: #f4f4f4;
@@ -1415,7 +1448,7 @@ p.demo_store {
     color: #2d2d2d !important; }
 
 /*--------------------------------------------------------------
-# WooCommerce Quickview
+# Quickview
 --------------------------------------------------------------*/
 .woocommerce a.product-quick-view-button {
   margin-right: 1px; }

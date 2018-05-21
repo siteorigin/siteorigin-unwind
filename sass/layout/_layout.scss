@@ -17,142 +17,95 @@
 	@include clearfix;
 }
 
+// Content area without sidebar.
 .content-area {
-	float: left;
-	margin: 0 (-$size__site-sidebar) 0 0;
-	width: $size__site-main;
+	width: 100%; 
+}
 
-	@at-root .woocommerce-page .container & {
-		float: right;
-		margin: 0 0 0 (-$size__site-sidebar);
-
-		@media (max-width: 768px) {
-			float: none;
-			margin: 0;
-			width: auto;
-		}			
-	}
-
-	@at-root .woocommerce-page.shop-sidebar-right & {
+// Content area with sidebar.
+.sidebar {
+	
+	.content-area {
 		float: left;
 		margin: 0 (-$size__site-sidebar) 0 0;
-
-		@media (max-width: 768px) {
-			float: none;
-			margin: 0;
-			width: auto;
-		}			
-	}			
-	
-	@media (max-width: 768px) {
-		float: none;
-		margin: 0;
-		width: auto;
-	}	
-
-	@at-root .no-active-sidebar .content-area {
-		float: none;
-		margin: 0;
-	}
-
-	@at-root .woocommerce.no-active-wc-sidebar .content-area {
-		float: none;
-		margin: 0;
-	}	
-}
-
-.site-main {
-	margin: 0 $size__site-sidebar 0 0;
-
-	@at-root .woocommerce-page .container & {
-		margin: 0 0 0 $size__site-sidebar;
+		width: $size__site-main;
 
 		@media (max-width: 768px) {
 			margin: 0;
-		}		
-	}
-
-	@at-root .woocommerce-page.shop-sidebar-right & {
-		margin: 0 $size__site-sidebar 0 0;
-
-		@media (max-width: 768px) {
-			margin: 0;
-		}		
-	}	
-	
-	@media (max-width: 768px) {
-		margin: 0;
-	}	
-
-	@at-root .no-active-sidebar .site-main {
-		margin: 0;
-	}
-
-	@at-root .woocommerce.no-active-wc-sidebar .site-main {
-		margin: 0;
-	}	
-}
-
-.site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	padding-left: 40px;
-	width: $size__site-sidebar;
-
-	@at-root .woocommerce-page & {
-		float: left;
-		padding: 0 40px 0 0;
-	}
-
-	@at-root .woocommerce-page.shop-sidebar-right & {
-		float: right;
-		padding: 0 0 0 40px;
-	}
-
-	@media (max-width: 768px) {
-		float: none;
-		margin-top: 5.3333em;
-		padding-left: 0;
-		width: 100%;
-	}
-}
-
-.site-footer {
-	clear: both;
-	width: $size__site-main;
-}
-
-// Sidebar position left.
-.main-sidebar-left {
-
-	.content-area {
-		float: right;
-		margin: 0 0 0 (-$size__site-sidebar);
-		
-		@media (max-width: 768px) {
-			float: none;
-			margin: 0; 
+			width: 100%;
 		}
 	}
 
 	.site-main {
-		margin: 0 0 0 $size__site-sidebar;
-		
+		margin: 0 $size__site-sidebar 0 0;
+
 		@media (max-width: 768px) {
-			margin: 0; 
-		}		
+			margin: 0 !important;
+		}
+ 	}
+ }
+
+// Content area with left sidebar.
+.sidebar-left {
+	
+	.content-area {
+		float: right;
+		margin: 0 0 0 (-$size__site-sidebar);
 	}
 
-	.site-content .widget-area {
+	.site-main {
+		margin: 0 0 0 $size__site-sidebar;	
+	}
+}
+
+// No Sidebar page layout setting.
+.page-layout-no-sidebar.sidebar .site-content {
+
+	.content-area {
+		float: none;
+		margin: 0;
+		width: 100%; 
+	}
+
+	.site-main {
+		margin: 0;
+	}
+} 
+
+// Full Width page layout setting.
+.page-layout-full-width-no-sidebar .site-content {
+
+	#primary.content-area {
+		float: none;
+		margin: 0;
+		width: 100%; 
+	}
+
+	#main.site-main {
+		margin: 0;
+	}
+
+	.container {
+		max-width: none;
+		padding: 0;  
+	}
+}
+
+// Sidebar.
+.widget-area {
+	float: right;
+	padding-left: 40px;
+	width: $size__site-sidebar;	
+	
+	.sidebar-left & {
 		float: left;
-		padding-left: 0;
 		padding-right: 40px;
-		
-		@media (max-width: 768px) {
-			float: none;
-			margin-top: 5.3333em;
-			padding-left: 0;
-			width: 100%;
-		}		
+		padding-left: 0;	
+	}
+
+	@media (max-width: 768px) {
+		margin-top: 80px;	
+		padding: 0;		
+		width: 100% !important;
 	}
 }

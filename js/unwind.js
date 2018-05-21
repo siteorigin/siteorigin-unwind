@@ -267,4 +267,5 @@ jQuery( function( $ ) {
 		} );
 
 	} );
+
 } )( jQuery );
