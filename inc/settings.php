@@ -1325,7 +1325,7 @@ function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
 			display: none;
 		}
 	}
-	@media screen and (min-width: ' . ( 1 + siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) . 'px) {
+	@media screen and (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
 		#mobile-navigation {
 			display: none !important;
 		}
