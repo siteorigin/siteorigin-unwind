@@ -59,11 +59,11 @@ function siteorigin_unwind_body_classes( $classes ) {
 	}
 
 	// Sidebar.
-	if ( is_active_sidebar( 'main-sidebar' ) ) {
+	if ( is_active_sidebar( 'main-sidebar' ) && ! ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) ) {
 		$classes[] = 'sidebar';
 	}
 
-	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'left' ) {
+	if ( siteorigin_setting( 'layout_main_sidebar' ) == 'left' && ! ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) ) {
 		 $classes[] = 'sidebar-left';
 	}
 
