@@ -196,6 +196,22 @@
 		}
 	}
 
+	.comment-form-cookies-consent {
+		clear: both;
+		margin-bottom: 0;
+		
+		input {
+			line-height: 1;
+			margin-right: 5px;
+		}
+		
+		label {
+			display: inline-block;
+			font-weight: normal;
+			margin-bottom: 0;
+		}
+	}
+
 	.form-submit {
 		margin: 2em 0 20px;
 		clear: both;

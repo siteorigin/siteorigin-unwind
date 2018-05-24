@@ -3067,6 +3067,17 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
     #commentform .logged-in-as a:hover {
       color: #2d2d2d; }
 
+#commentform .comment-form-cookies-consent {
+  clear: both;
+  margin-bottom: 0; }
+  #commentform .comment-form-cookies-consent input {
+    line-height: 1;
+    margin-right: 5px; }
+  #commentform .comment-form-cookies-consent label {
+    display: inline-block;
+    font-weight: normal;
+    margin-bottom: 0; }
+
 #commentform .form-submit {
   margin: 2em 0 20px;
   clear: both; }
