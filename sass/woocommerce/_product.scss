@@ -109,6 +109,7 @@
 
 				.quantity.button-controls {
 					@include clearfix;
+					min-width: 120px;
 
 					.qty {
 						-moz-appearance: textfield;
@@ -157,6 +158,11 @@
 						border-left: none;
 					}
 				}
+			}
+
+			.group_table {
+				display: block;
+				padding-bottom: 30px;
 			}
 
 			.product_meta {
