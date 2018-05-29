@@ -1,12 +1,5 @@
 == Changelog ==
 
-= 1.2.17 - 29 May 2018 =
-* Updated WooCommerce review meta file for WooCommerce version `3.4.0`.
-* Resolved issues with WooCommerce grouped product styling.
-* Minor adjustments to WooCommerce single product review and archive add to cart button styling.
-* Styled comment form cookie consent setting.
-* Other minor style adjustments.
-
 = 1.2.16 - 21 May 2018 =
 * Resolved a warning in the image post format by adding a conditional.
 * Updated mobile menu breakpoint setting so it will reflect live in the Customizer.
