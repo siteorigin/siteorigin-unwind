@@ -243,6 +243,10 @@
 
 		#reviews {
 
+			.woocommerce-noreviews {
+				margin-bottom: 0;
+			}
+
 			#comments {
 
 				.woocommerce-Reviews-title {
@@ -270,6 +274,11 @@
 								border-width: 0;
 								margin-left: 95px;
 								padding: 0;
+								
+								.star-rating {
+									float: none;
+									margin-bottom: 5px;
+								}
 
 								.comment-meta {
 									color: $color__text-light;
@@ -299,6 +308,7 @@
 			#respond {
 
 				.comment-reply-title {
+					color: $color__text-dark;
 					display: block;
 					margin: 33px 0 37px;
 				}
