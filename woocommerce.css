@@ -331,7 +331,7 @@ p.demo_store {
       left: 50%;
       margin: 0;
       opacity: 0;
-      padding: 12px 12px;
+      padding: 12px 11px;
       position: absolute;
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);

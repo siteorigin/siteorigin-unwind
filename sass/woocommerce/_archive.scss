@@ -254,7 +254,7 @@
 					left: 50%;
 					margin: 0;
 					opacity: 0;
-					padding: 12px 12px;
+					padding: 12px 11px;
 					position: absolute;
 					@include transform( translateX( -50% ) );
 					visibility: hidden;
@@ -273,6 +273,7 @@
 					}
 
 					&.loading {
+
 						&:after {
 							margin-left: .53em;
 							position: relative;
@@ -283,6 +284,7 @@
 				}
 
 				.ajax_add_to_cart {
+
 					&:not(.add_to_cart_button) {
 						display: none;
 					}
