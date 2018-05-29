@@ -309,20 +309,20 @@ function siteorigin_unwind_excerpt() {
 	$length = siteorigin_setting( 'blog_excerpt_length' );
 	$excerpt = explode( ' ', get_the_excerpt(), $length );
 
-	if ( $length ) :
+	if ( $length ) {
 
-		if ( count( $excerpt ) >= $length ) :
+		if ( count( $excerpt ) >= $length ) {
 			array_pop( $excerpt );
 			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
-		else:
+		} else {
 			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>';
-		endif;
+		}
 
-	else :
-
+	} else {
+		
 		$excerpt = get_the_excerpt();
 
-	endif;
+	}
 
 	$excerpt = preg_replace( '`\[[^\]]*\]`','', $excerpt );
 
