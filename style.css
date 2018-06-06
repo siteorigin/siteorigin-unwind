@@ -753,13 +753,19 @@ a {
   .header-design-3 .social-search,
   .header-design-4 .social-search {
     float: none; }
+    .header-design-3 .social-search .widget_sow-social-media-buttons,
+    .header-design-4 .social-search .widget_sow-social-media-buttons {
+      width: 100%; }
     .header-design-3 .social-search .v-line,
     .header-design-4 .social-search .v-line {
       display: none; }
     .header-design-3 .social-search .search-toggle,
     .header-design-4 .social-search .search-toggle {
-      float: right;
-      line-height: 45px; }
+      float: none;
+      line-height: 45px;
+      position: absolute;
+      top: 0;
+      right: 0; }
 
 /*--------------------------------------------------------------
 ## Mobile Menu

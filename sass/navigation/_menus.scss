@@ -216,13 +216,20 @@
 		.header-design-4 & {
 			float: none;
 
+			.widget_sow-social-media-buttons {
+				width: 100%;
+			}
+
 			.v-line {
 				display: none;
 			}
 
 			.search-toggle {
-				float: right;
+				float: none;
 				line-height: 45px;
+				position: absolute;
+				top: 0;
+				right: 0;
 			}
 		}
 	}
