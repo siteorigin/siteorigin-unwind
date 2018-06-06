@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.2.18 - 06 June 2018 =
+* Fixed menu social icon alignment setting.
+* Minor WooCommerce mini-cart style adjustments.
+
 = 1.2.17 - 29 May 2018 =
 * Updated WooCommerce review meta file for WooCommerce version `3.4.0`.
 * Resolved issues with WooCommerce grouped product styling.
