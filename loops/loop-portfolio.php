@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop Name: Portfolio
+ * Loop Name: Portfolio (only for Jetpack portfolio projects)
  *
  * @package siteorigin-unwind
  * @since siteorigin-unwind 1.2
