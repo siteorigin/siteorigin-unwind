@@ -504,6 +504,10 @@
 						left: auto !important;
 						right: 0;
 						width: 30px !important;
+						
+						&:hover {
+							color: $color__primary-accent !important;
+						}
 					}
 
 					&:not(.remove) {
@@ -511,6 +515,10 @@
 						display: block;
 						font-weight: normal;
 						line-height: 1.5em;
+					}
+
+					&:hover {
+						color: $color__primary-accent;
 					}
 				}
 
@@ -548,6 +556,7 @@
 						margin-bottom: 0;
 						padding-bottom: 0;
 					}
+
 					dd {
 						margin-left: 15px;
 					}
@@ -580,6 +589,7 @@
 			text-transform: uppercase;
 
 			a {
+				font-weight: normal;
 				padding: 12px 1.5em;
 				width: 49%;
 
@@ -590,7 +600,7 @@
 				&.wc-forward:first-of-type {
 					background: transparent;
 					border: 2px solid #dadada;
-					color: $color__text-dark;
+					color: $color__text-medium;
 
 					&:hover {
 						background: $color__primary-accent-dark;

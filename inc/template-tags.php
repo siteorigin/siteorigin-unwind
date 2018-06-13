@@ -309,20 +309,20 @@ function siteorigin_unwind_excerpt() {
 	$length = siteorigin_setting( 'blog_excerpt_length' );
 	$excerpt = explode( ' ', get_the_excerpt(), $length );
 
-	if ( $length ) :
+	if ( $length ) {
 
-		if ( count( $excerpt ) >= $length ) :
+		if ( count( $excerpt ) >= $length ) {
 			array_pop( $excerpt );
 			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
-		else:
+		} else {
 			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>';
-		endif;
+		}
 
-	else :
-
+	} else {
+		
 		$excerpt = get_the_excerpt();
 
-	endif;
+	}
 
 	$excerpt = preg_replace( '`\[[^\]]*\]`','', $excerpt );
 
@@ -769,11 +769,12 @@ function siteorigin_unwind_get_image() {
 	$first_image = '';
 
 	$output = preg_match_all( '/<img[^>]+\>/i', get_the_content(), $images );
-	if ( ! empty( $images ) ) return;
+
+	if ( empty( $images[0] ) ) return false;
+
 	$first_image = $images[0][0];
 
-	return ( '' !== $first_image ) ? apply_filters( 'a3_lazy_load_images', $first_image, false ) : false;
-
+	return ( '' !== $first_image ) ? $first_image : false;
 }
 endif;
 

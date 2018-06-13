@@ -130,7 +130,7 @@ jQuery( function( $ ) {
 		e.preventDefault();
 		$( this ).next( 'ul' ).slideToggle( '300ms' );
 		
-		if( $( this ).attr( 'aria-expanded' ) == 'false' ) {
+		if ( $( this ).attr( 'aria-expanded' ) == 'false' ) {
 			$( this ).attr( 'aria-expanded', 'true' )
 		} else {
 			$( this ).attr( 'aria-expanded', 'false' )
@@ -142,7 +142,7 @@ jQuery( function( $ ) {
 			e.preventDefault();
 			$( this ).siblings( 'ul' ).slideToggle( '300ms' );
 
-			if( $( this ).siblings( '.dropdown-toggle' ).attr( 'aria-expanded' ) == 'false' ) {
+			if ( $( this ).siblings( '.dropdown-toggle' ).attr( 'aria-expanded' ) == 'false' ) {
 				$( this ).siblings( '.dropdown-toggle' ).attr( 'aria-expanded', 'true' )
 			} else {
 				$( this ).siblings( '.dropdown-toggle' ).attr( 'aria-expanded', 'false' )
@@ -267,4 +267,5 @@ jQuery( function( $ ) {
 		} );
 
 	} );
+
 } )( jQuery );

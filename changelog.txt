@@ -1,5 +1,21 @@
 == Changelog ==
 
+= 1.2.18 - 06 June 2018 =
+* Fixed menu social icon alignment setting.
+* Minor WooCommerce mini-cart style adjustments.
+
+= 1.2.17 - 29 May 2018 =
+* Updated WooCommerce review meta file for WooCommerce version `3.4.0`.
+* Resolved issues with WooCommerce grouped product styling.
+* Minor adjustments to WooCommerce single product review and archive add to cart button styling.
+* Styled comment form cookie consent setting.
+* Other minor style adjustments.
+
+= 1.2.16 - 21 May 2018 =
+* Resolved a warning in the image post format by adding a conditional.
+* Updated mobile menu breakpoint setting so it will reflect live in the Customizer.
+* Re-factored primary content and sidebar layout logic to CSS specificity required.
+
 = 1.2.15 - 05 May 2018 =
 * Minor WooCommerce styling fixes.
 * Enabled Jetpack Infinite scroll to function correctly with all available post loops.
@@ -16,7 +32,7 @@
 
 = 1.2.11 - 17 March 2018 =
 * Resolved No Sidebar content width bug on WooCommerce pages.
-* Improved sticky menu behaviour when admin bar present.
+* Improved sticky menu behavior when admin bar present.
 * Allowed for sub-menus to be opened by # and empty links.
 
 = 1.2.10 - 06 March 2018 =
