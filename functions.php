@@ -219,7 +219,7 @@ function siteorigin_unwind_scripts() {
 		wp_enqueue_script( 'jquery-fitvids' );
 	}
 
-	// Jetpack Portfolio.
+	// Jetpack Portfolio
 	if ( post_type_exists( 'jetpack-portfolio' ) ) {
 		wp_register_script( 'jquery-isotope', get_template_directory_uri() . '/js/isotope.pkgd' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '3.0.4', true );
 	}
