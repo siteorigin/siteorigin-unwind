@@ -1652,7 +1652,7 @@ a {
       @media (max-width: 768px) {
         #masthead #masthead-widgets .widgets .widget {
           float: none;
-          margin: 0 0 4em;
+          margin: 0;
           width: 100% !important; } }
   .archive #masthead,
   .search #masthead {
