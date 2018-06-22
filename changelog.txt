@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.2.19 - 22 June 2018 =
+* Google Fonts update.
+* .pot file update.
+
 = 1.2.18 - 06 June 2018 =
 * Fixed menu social icon alignment setting.
 * Minor WooCommerce mini-cart style adjustments.
