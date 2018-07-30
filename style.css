@@ -1648,7 +1648,7 @@ a {
       margin-right: 2.5%;
       float: left; }
       #masthead #masthead-widgets .widgets .widget:last-of-type {
-        margin-right: 0 !important; }
+        margin-right: 0; }
       @media (max-width: 768px) {
         #masthead #masthead-widgets .widgets .widget {
           float: none;
