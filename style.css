@@ -2378,19 +2378,6 @@ a {
     width: 1.3333em; }
 
 /*--------------------------------------------------------------
-## Jetpack Sharing
---------------------------------------------------------------*/
-.share-this {
-  font-size: 13px; }
-
-.single .sharedaddy .sd-content {
-  padding: 1em 0 1.5em;
-  text-align: center;
-  width: 100%; }
-  .single .sharedaddy .sd-content ul {
-    display: inline-block; }
-
-/*--------------------------------------------------------------
 ## Related Posts
 --------------------------------------------------------------*/
 .yarpp-related,
@@ -3234,6 +3221,19 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
     opacity: 1; }
     .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post p:last-of-type {
       margin-bottom: 1.9833em; }
+
+/*--------------------------------------------------------------
+## Sharing
+--------------------------------------------------------------*/
+.share-this {
+  font-size: 13px; }
+
+.single .sharedaddy .sd-content {
+  padding: 1em 0 1.5em;
+  text-align: center;
+  width: 100%; }
+  .single .sharedaddy .sd-content ul {
+    display: inline-block; }
 
 /*--------------------------------------------------------------
 # Media
