@@ -278,7 +278,7 @@ function siteorigin_unwind_footer_text() {
 		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
 		$text
 	);
-	echo wp_kses_post( $text );
+	echo '<span>' . wp_kses_post( $text ) . '</span>';
 }
 endif;
 

@@ -46,6 +46,15 @@
 			word-break: break-all;
 		}
 
+		span {
+			display: inline-block;
+			margin-right: 5px;
+			
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+
 		a {
 			color: inherit;
 			text-decoration: none;
