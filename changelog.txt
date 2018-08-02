@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.2.20 - 02 August 2018 =
+* Added Jetpack Like functionality if enabled.
+* Minor update to header widget spacing.
+* WooCommerce Cart page responsive fixes.
+* Minor WooCommerce Checkout page styling adjustments.
+
 = 1.2.19 - 22 June 2018 =
 * Google Fonts update.
 * .pot file update.

@@ -25,10 +25,14 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'single' );
 			}
 
-			if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy'  ) && function_exists( 'sharing_display' ) ) : ?>
-				<h2 class="share-this heading-strike"><?php esc_html_e( 'Share This', 'siteorigin-unwind' ); ?></h2>
-				<?php echo sharing_display();
-			endif;
+			if ( class_exists( 'Jetpack_Likes' ) ) {
+				$custom_likes = new Jetpack_Likes;
+				echo $custom_likes->post_likes();
+			}			
+
+			if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy' ) ) {
+				echo sharing_display();
+			}
 
 			if ( siteorigin_setting( 'navigation_post' ) ) :
 				siteorigin_unwind_the_post_navigation();

@@ -24,8 +24,17 @@
 	form.checkout_coupon {
 		border-color: $color__background-hr;
 		border-radius: 0;
+		font-size: 14px;
 		margin: 0.5em 0;
 		padding: 10px 20px;
+		
+		p {
+			margin-bottom: 0;
+		}
+
+		label {
+			color: $color__text-dark;
+		}
 
 		input.input-text {
 			border-radius: 0;
@@ -197,31 +206,50 @@
 						li {
 							border-bottom: 1px solid $color__background-hr;
 							padding: 0.5em 0;
+							position: relative;
 						}
 
 						label {
 							font-size: 13px; 
 						}
-					}
 
-					.payment_box {
-						margin: 0;
-						background-color: transparent;
+						.payment_box {
+							margin: 0;
+							background-color: transparent;
 
-						&:before {
-							border: none;
+							&:before {
+								border: none;
+							}
+
+							p:first-child {
+								margin-top: 0;
+							}
 						}
 
-						p:first-child {
-							margin-top: 0;
+						.payment_method_stripe {
+
+							input {
+								top: 12px !important;
+							}
+						}						
+					}
+
+					.woocommerce-terms-and-conditions-wrapper {
+
+						p {
+							margin-bottom: 14px;
+							
+							&.validate-required {
+								margin-bottom: 0;
+							}
 						}
 					}
 
-					.place-order {
-						float: left;
-						margin: 4px 0 0; 
-						padding: 0;
-					}
+					#place_order {
+						float: right;
+						font-size: 16px;
+						margin-top: 30px;
+					}										
 				}
 			}
 		}

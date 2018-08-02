@@ -124,7 +124,7 @@ function siteorigin_unwind_infinite_scroll_render() {
 }
 
 /**
- * Remove sharing buttons from their default locations
+ * Remove sharing buttons from their default locations.
  */
  function siteorigin_unwind_remove_share() {
     remove_filter( 'the_content', 'sharing_display', 19 );
@@ -137,7 +137,7 @@ add_action( 'loop_start', 'siteorigin_unwind_remove_share' );
 
 if ( ! function_exists( 'siteorigin_unwind_jetpack_related_projects' ) ) :
 /**
- * Displays jetpack related posts for projects
+ * Displays jetpack related posts for projects.
  */
 function siteorigin_unwind_jetpack_related_projects( $allowed_post_types ) {
 	$allowed_post_type[] = 'jetpack-portfolio';
