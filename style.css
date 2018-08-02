@@ -3137,11 +3137,6 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
     @media (max-width: 480px) {
       #colophon .site-info {
         word-break: break-all; } }
-    #colophon .site-info span {
-      display: inline-block;
-      margin-right: 5px; }
-      #colophon .site-info span:last-of-type {
-        margin-right: 0; }
     #colophon .site-info a {
       color: inherit;
       text-decoration: none; }
