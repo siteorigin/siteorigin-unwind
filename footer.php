@@ -39,7 +39,7 @@
 
 				if ( function_exists( 'the_privacy_policy_link' ) ) {
 					the_privacy_policy_link( '', '.&nbsp;' );
-				}		
+				}
 
 				$credit_text = apply_filters(
 					'siteorigin_unwind_footer_credits',
