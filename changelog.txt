@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.3 - 03 August 2018 =
+* Updated Customizer settings CSS.
+* Added Jetpack Sharing title back.
+* Added the privacy page link to the footer if a page is selected.
+
 = 1.2.20 - 02 August 2018 =
 * Added Jetpack Like functionality if enabled.
 * Minor update to header widget spacing.
