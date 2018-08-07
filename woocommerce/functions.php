@@ -60,7 +60,9 @@ add_filter( 'woocommerce_enqueue_styles', 'siteorigin_unwind_woocommerce_enqueue
 
 function siteorigin_unwind_woocommerce_enqueue_scripts() {
 
-	wp_enqueue_script( 'siteorigin-unwind-quick-view', get_template_directory_uri() . '/js/woocommerce-quick-view' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
+	if ( siteorigin_setting( 'woocommerce_display_quick_view' ) ) {
+		wp_enqueue_script( 'siteorigin-unwind-quick-view', get_template_directory_uri() . '/js/woocommerce-quick-view' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
+	}
 
 	if ( ! function_exists( 'is_woocommerce' ) ) return;
 
