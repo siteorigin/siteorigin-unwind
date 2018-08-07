@@ -116,7 +116,7 @@ jQuery( function( $ ) {
 		var $container = '#quick-view-container';
 		var $content = '#product-quick-view';
 
-		var id = $(this).attr( 'data-product-id' );
+		var id = $( this ).attr( 'data-product-id' );
 
 		$.post(
 			so_unwind_data.ajaxurl,
