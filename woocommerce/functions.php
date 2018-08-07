@@ -59,6 +59,9 @@ function siteorigin_unwind_woocommerce_enqueue_styles( $styles ) {
 add_filter( 'woocommerce_enqueue_styles', 'siteorigin_unwind_woocommerce_enqueue_styles' );
 
 function siteorigin_unwind_woocommerce_enqueue_scripts() {
+
+	wp_enqueue_script( 'siteorigin-unwind-quick-view', get_template_directory_uri() . '/js/woocommerce-quick-view' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
+
 	if ( ! function_exists( 'is_woocommerce' ) ) return;
 
 	if ( is_woocommerce() || is_cart() ) {
