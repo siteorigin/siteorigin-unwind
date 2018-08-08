@@ -1,16 +1,15 @@
 <?php
 
-// if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 while ( have_posts() ) : the_post();
 
 	global $post, $product;
 
 	if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view_class' ) ) :
 	/**
-	 * Adds the product-quick-view class to the quick view post.
+	 * Adds the product-quick-view class to the Qick View post.
 	 */
 	function siteorigin_unwind_woocommerce_quick_view_class( $classes ) {
+		$classes[] = "woocommerce";
 		$classes[] = "product-quick-view";
 		return $classes;
 	}
