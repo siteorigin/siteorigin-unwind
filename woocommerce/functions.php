@@ -48,7 +48,7 @@ add_filter( 'woocommerce_product_single_add_to_cart_text', 'siteorigin_unwind_wo
 
 function siteorigin_unwind_woocommerce_enqueue_styles( $styles ) {
 	$styles['unwind-woocommerce'] = array(
-		'src' => get_template_directory_uri() . '/woocommerce' . SITEORIGIN_THEME_JS_PREFIX . '.css',
+		'src' => get_template_directory_uri() . '/woocommerce' . SITEORIGIN_THEME_CSS_PREFIX . '.css',
 		'deps' => array( 'woocommerce-layout', 'siteorigin-unwind-style' ),
 		'version' => SITEORIGIN_THEME_VERSION,
 		'media' => 'all'
@@ -59,17 +59,14 @@ function siteorigin_unwind_woocommerce_enqueue_styles( $styles ) {
 add_filter( 'woocommerce_enqueue_styles', 'siteorigin_unwind_woocommerce_enqueue_styles' );
 
 function siteorigin_unwind_woocommerce_enqueue_scripts() {
-	if ( ! function_exists( 'is_woocommerce' ) ) return;
+	
+	wp_enqueue_script( 'siteorigin-unwind-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array( 'jquery', 'wc-add-to-cart-variation' ), SITEORIGIN_THEME_VERSION );
 
-	if ( is_woocommerce() || is_cart() ) {
-		wp_enqueue_script( 'siteorigin-unwind-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array( 'jquery', 'wc-add-to-cart-variation' ), SITEORIGIN_THEME_VERSION );
-
-		$script_data = array(
-			'chevron_down' => '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32"><path d="M30.054 14.429l-13.25 13.232q-0.339 0.339-0.804 0.339t-0.804-0.339l-13.25-13.232q-0.339-0.339-0.339-0.813t0.339-0.813l2.964-2.946q0.339-0.339 0.804-0.339t0.804 0.339l9.482 9.482 9.482-9.482q0.339-0.339 0.804-0.339t0.804 0.339l2.964 2.946q0.339 0.339 0.339 0.813t-0.339 0.813z"></path></svg>',
-			'ajaxurl' => admin_url( 'admin-ajax.php' )
-		);
-		wp_localize_script( 'siteorigin-unwind-woocommerce', 'so_unwind_data', $script_data );
-	}
+	$script_data = array(
+		'chevron_down' => '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32"><path d="M30.054 14.429l-13.25 13.232q-0.339 0.339-0.804 0.339t-0.804-0.339l-13.25-13.232q-0.339-0.339-0.339-0.813t0.339-0.813l2.964-2.946q0.339-0.339 0.804-0.339t0.804 0.339l9.482 9.482 9.482-9.482q0.339-0.339 0.804-0.339t0.804 0.339l2.964 2.946q0.339 0.339 0.339 0.813t-0.339 0.813z"></path></svg>',
+		'ajaxurl' => admin_url( 'admin-ajax.php' )
+	);
+	wp_localize_script( 'siteorigin-unwind-woocommerce', 'so_unwind_data', $script_data );
 }
 add_filter( 'wp_enqueue_scripts', 'siteorigin_unwind_woocommerce_enqueue_scripts' );
 

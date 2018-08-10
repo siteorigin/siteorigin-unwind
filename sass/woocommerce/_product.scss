@@ -163,6 +163,10 @@
 			.group_table {
 				display: block;
 				padding-bottom: 30px;
+				
+				td:first-child {
+					width: auto !important;
+				}
 			}
 
 			.product_meta {

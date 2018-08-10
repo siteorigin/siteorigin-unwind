@@ -170,11 +170,11 @@ function so_product_quick_view_ajax() {
 	}
 	$product_id = intval( $_REQUEST['product_id'] );
 
-	// set the main wp query for the product
+	// Set the main WP query for the product.
 	wp( 'p=' . $product_id . '&post_type=product' );
 
 	ob_start();
-	// load content template
+	// Load content template.
 	wc_get_template( 'quick-view.php' );
 	echo ob_get_clean();
 
