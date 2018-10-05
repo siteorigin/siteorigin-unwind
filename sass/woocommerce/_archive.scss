@@ -214,9 +214,9 @@
 			}
 
 			.loop-product-thumbnail {
-				position: relative;
 				background: $color__primary-accent-dark;
-
+				position: relative;
+			
 				&:hover {
 
 					img {
@@ -305,7 +305,7 @@
 					
 					@media (max-width: 1024px) {
 						top: 15%;
-					}																																
+					}
 
 					&:hover {
 						background: #fff;

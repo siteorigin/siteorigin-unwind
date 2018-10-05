@@ -316,8 +316,8 @@ p.demo_store {
       color: #24c48a;
       display: inline; }
   .woocommerce ul.products li.product .loop-product-thumbnail {
-    position: relative;
-    background: #00a76a; }
+    background: #00a76a;
+    position: relative; }
     .woocommerce ul.products li.product .loop-product-thumbnail:hover img {
       opacity: 0.25; }
       .is_mobile.woocommerce ul.products li.product .loop-product-thumbnail:hover img {
@@ -1757,3 +1757,5 @@ a.product-quick-view-button {
       padding: 18px 22px 7.5px 0; }
     #quick-view-container .product-content-wrapper .group_table td:first-child {
       width: auto !important; }
+
+/*# sourceMappingURL=sass/maps/woocommerce.css.map */
