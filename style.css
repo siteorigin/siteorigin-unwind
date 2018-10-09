@@ -765,7 +765,8 @@ a {
       line-height: 45px;
       position: absolute;
       right: 0;
-      top: 0; }
+      top: 0;
+      z-index: 15; }
 
 /*--------------------------------------------------------------
 ## Mobile Menu
@@ -3493,3 +3494,5 @@ object {
 .entry-video,
 .entry-image {
   margin: 0 0 35px; }
+
+/*# sourceMappingURL=sass/maps/style.css.map */
