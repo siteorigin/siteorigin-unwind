@@ -100,6 +100,12 @@ function siteorigin_unwind_setup() {
 	) ) );
 
 	/*
+	 * Enable support for Gutenberg Editor Styles.
+	 * https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#editor-styles
+	 */
+	add_theme_support( 'editor-styles' );
+
+	/*
 	 * Allow shortcodes to be use in category descriptions.
 	 * See https://developer.wordpress.org/reference/functions/term_description/
 	 */
@@ -244,6 +250,14 @@ function siteorigin_unwind_enqueue_flexslider() {
 	wp_enqueue_style( 'siteorigin-unwind-flexslider' );
 	wp_enqueue_script( 'jquery-flexslider' );
 }
+
+/**
+ * Enqueue Gutenberg block editor style.
+ */
+function siteorigin_unwind_block_editor_styles() {
+	wp_enqueue_style( 'siteorigin-corp-block-editor-styles', get_template_directory_uri() . '/style-editor.css', SITEORIGIN_THEME_VERSION );
+}
+add_action( 'enqueue_block_editor_assets', 'siteorigin_unwind_block_editor_styles' );
 
 if ( ! function_exists( 'siteorigin_unwind_post_class_filter' ) ) :
 /**
