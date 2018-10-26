@@ -4,28 +4,26 @@
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/checkout/form-checkout.php.
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you (the theme developer).
- * will need to copy the new files to your theme to maintain compatibility. We try to do this.
- * as little as possible, but it does happen. When this occurs the version of the template file will.
- * be bumped and the readme will list any important changes.
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
  *
- * @see 	    http://docs.woothemes.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     2.3.0
+ * @see https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce/Templates
+ * @version 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-wc_print_notices();
-
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
-// If checkout registration is disabled and not logged in, the user cannot checkout
+// If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
-	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'siteorigin-unwind' ) );
+	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'siteorigin-unwind' ) ) );
 	return;
 }
 
@@ -50,7 +48,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 	<div class="order-details">
 
-		<h3 id="order_review_heading"><?php _e( 'Your order', 'siteorigin-unwind' ); ?></h3>
+		<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'siteorigin-unwind' ); ?></h3>
 
 		<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
