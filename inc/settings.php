@@ -307,7 +307,7 @@ function siteorigin_unwind_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Privacy Policy Link', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Display the Privacy Policy page link.', 'siteorigin-unwind' ),
-				),				
+				),
 				'constrained' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Constrain', 'siteorigin-unwind' ),
