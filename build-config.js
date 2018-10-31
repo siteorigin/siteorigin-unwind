@@ -64,6 +64,7 @@ module.exports = {
     css: {
         src: [
             'style.css',
+            'style-editor.css',
             'woocommerce.css',
         ],
     },

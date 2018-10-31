@@ -303,26 +303,27 @@ function siteorigin_unwind_settings_init() {
 					'description' => esc_html__( "{sitename} and {year} are your site's name and current year.", 'siteorigin-unwind' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-
+				'privacy_policy_link' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Privacy Policy Link', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display the Privacy Policy page link.', 'siteorigin-unwind' ),
+				),
 				'constrained' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Constrain', 'siteorigin-unwind' ),
 					'description' => esc_html__( "Constrain the footer width.", 'siteorigin-unwind' ),
 				),
-
 				'top_padding'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Top Padding', 'siteorigin-unwind' ),
 					'live'	=> true,
 				),
-
 				'side_padding'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Side Padding', 'siteorigin-unwind' ),
 					'description' => esc_html__( "Applies if the footer width is not constrained.", 'siteorigin-unwind' ),
 					'live'	=> true,
 				),
-
 				'top_margin' => array(
 					'type' => 'measurement',
 					'label' => esc_html__( 'Top Margin', 'siteorigin-unwind' ),
@@ -1340,22 +1341,22 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_menu_breakpoint
 function siteorigin_unwind_settings_defaults( $defaults ) {
 
 	// Branding defaults.
-	$defaults['branding_logo']             = false;
-	$defaults['branding_site_description'] = false;
-	$defaults['branding_attribution']      = true;
-	$defaults['branding_accent']           = '#24c48a';
-	$defaults['branding_accent_dark']      = '#00a76a';
+	$defaults['branding_logo']                   = false;
+	$defaults['branding_site_description']       = false;
+	$defaults['branding_attribution']            = true;
+	$defaults['branding_accent']                 = '#24c48a';
+	$defaults['branding_accent_dark']            = '#00a76a';
 
 	// Font defaults.
-	$defaults['fonts_text_light']  = '#adadad';
-	$defaults['fonts_text_medium'] = '#626262';
-	$defaults['fonts_text_dark']   = '#2d2d2d';
+	$defaults['fonts_text_light']                = '#adadad';
+	$defaults['fonts_text_medium']               = '#626262';
+	$defaults['fonts_text_dark']                 = '#2d2d2d';
 
 	// The masthead defaults.
-	$defaults['masthead_design']        = '1';
-	$defaults['masthead_social_widget'] = '';
-	$defaults['masthead_padding']       = '60px';
-	$defaults['masthead_bottom_margin'] = '80px';
+	$defaults['masthead_design']                 = '1';
+	$defaults['masthead_social_widget']          = '';
+	$defaults['masthead_padding']                = '60px';
+	$defaults['masthead_bottom_margin']          = '80px';
 
 	// Navigation defaults.
 	$defaults['navigation_search']               = true;
@@ -1365,44 +1366,45 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['navigation_scroll_to_top']        = false;
 
 	// Icons.
-	$defaults['icons_menu']              = false;
-	$defaults['icons_fullscreen_search'] = false;
-	$defaults['icons_search']            = false;
-	$defaults['icons_close_search']      = false;
+	$defaults['icons_menu']                      = false;
+	$defaults['icons_fullscreen_search']         = false;
+	$defaults['icons_search']                    = false;
+	$defaults['icons_close_search']              = false;
 
 	// Layout
-	$defaults['layout_main_sidebar'] = 'right';
+	$defaults['layout_main_sidebar']             = 'right';
 
 	// Blog settings.
-	$defaults['blog_featured_slider']         = false;
-	$defaults['blog_featured_slider_overlay'] = false;
-	$defaults['blog_featured_archive']        = true;
-	$defaults['blog_featured_single']         = true;
-	$defaults['blog_archive_layout']          = 'default';
-	$defaults['blog_archive_content']         = 'full';
-	$defaults['blog_excerpt_length']          = 55;
-	$defaults['blog_excerpt_more']            = true;
-	$defaults['blog_display_related_posts']   = true;
-	$defaults['blog_display_author_box']      = true;
-	$defaults['blog_display_date']            = true;
-	$defaults['blog_display_category']        = true;
-	$defaults['blog_display_comments']        = true;
-	$defaults['blog_display_tags']            = true;
-	$defaults['blog_search_fallback']         = false;
+	$defaults['blog_featured_slider']            = false;
+	$defaults['blog_featured_slider_overlay']    = false;
+	$defaults['blog_featured_archive']           = true;
+	$defaults['blog_featured_single']            = true;
+	$defaults['blog_archive_layout']             = 'default';
+	$defaults['blog_archive_content']            = 'full';
+	$defaults['blog_excerpt_length']             = 55;
+	$defaults['blog_excerpt_more']               = true;
+	$defaults['blog_display_related_posts']      = true;
+	$defaults['blog_display_author_box']         = true;
+	$defaults['blog_display_date']               = true;
+	$defaults['blog_display_category']           = true;
+	$defaults['blog_display_comments']           = true;
+	$defaults['blog_display_tags']               = true;
+	$defaults['blog_search_fallback']            = false;
 
 	// Footer settings.
-	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );
-	$defaults['footer_constrained']  = true;
-	$defaults['footer_top_padding']  = '80px';
-	$defaults['footer_side_padding'] = '40px';
-	$defaults['footer_top_margin']   = '80px';
+	$defaults['footer_text']                     = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-unwind' );
+	$defaults['footer_privacy_policy_link']      = true;
+	$defaults['footer_constrained']              = true;
+	$defaults['footer_top_padding']              = '80px';
+	$defaults['footer_side_padding']             = '40px';
+	$defaults['footer_top_margin']               = '80px';
 
 	// WooCommerce
-	$defaults['woocommerce_product_gallery']    = 'slider-lightbox';
-	$defaults['woocommerce_archive_columns']    = 3;
-	$defaults['woocommerce_display_quick_view'] = true;
-	$defaults['woocommerce_display_mini_cart']  = true;
-	$defaults['woocommerce_shop_sidebar']       = 'left';
+	$defaults['woocommerce_product_gallery']     = 'slider-lightbox';
+	$defaults['woocommerce_archive_columns']     = 3;
+	$defaults['woocommerce_display_quick_view']  = true;
+	$defaults['woocommerce_display_mini_cart']   = true;
+	$defaults['woocommerce_shop_sidebar']        = 'left';
 
 	return $defaults;
 }
