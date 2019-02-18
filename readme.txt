@@ -39,7 +39,6 @@ SiteOrigin Unwind includes support for:
 * [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
-* [Jetpack Responsive Videos](https://jetpack.com/support/responsive-videos/)
 * [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
 * [SiteOrigin Page Builder](https://wordpress.org/plugins/siteorigin-panels/)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
