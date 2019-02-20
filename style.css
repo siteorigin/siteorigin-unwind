@@ -911,6 +911,15 @@ a {
     .post-navigation .nav-next span {
       font-family: Verdana, Geneva, sans-serif;
       margin-left: .2em; }
+  @media (max-width: 480px) {
+    .comment-navigation .nav-previous,
+    .comment-navigation .nav-next,
+    .posts-navigation .nav-previous,
+    .posts-navigation .nav-next,
+    .post-navigation .nav-previous,
+    .post-navigation .nav-next {
+      float: none;
+      width: 100%; } }
   .comment-navigation a,
   .posts-navigation a,
   .post-navigation a {
@@ -924,6 +933,13 @@ a {
     .post-navigation a:hover {
       border-color: #24c48a;
       color: #24c48a; }
+    @media (max-width: 480px) {
+      .comment-navigation a,
+      .posts-navigation a,
+      .post-navigation a {
+        display: block;
+        text-align: center;
+        width: 100%; } }
 
 .posts-navigation .nav-links,
 .comment-navigation .nav-links {
