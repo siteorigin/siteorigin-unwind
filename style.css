@@ -2938,14 +2938,17 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
   display: block; }
 
 .comment-list {
-  margin: 25px 0;
+  margin: 25px 0 57px;
   padding: 0; }
+  .comment-list ol.children {
+    margin: 0; }
+  @media (min-width: 1025px) {
+    .comment-list li .comment {
+      margin-left: 70px; } }
   .comment-list li.comment {
     width: auto;
     display: block;
     color: #626262; }
-    .comment-list li.comment:last-of-type {
-      margin-bottom: 3.8em; }
     .comment-list li.comment .comment-box {
       padding: 2em 0;
       border-bottom: 1px solid #ebebeb; }
@@ -2955,12 +2958,18 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
         display: table; }
     .comment-list li.comment .comment-container {
       margin-left: 6em; }
+      @media (max-width: 481px) {
+        .comment-list li.comment .comment-container {
+          margin-left: 0; } }
       .comment-list li.comment .comment-container .comment-awaiting-moderation {
         font-style: italic; }
     .comment-list li.comment.pingback .comment-container {
       margin-left: 0; }
     .comment-list li.comment .avatar-container {
       float: left; }
+      @media (max-width: 480px) {
+        .comment-list li.comment .avatar-container {
+          display: none; } }
       .comment-list li.comment .avatar-container img {
         display: block;
         border-radius: 50%; }
@@ -2994,10 +3003,6 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
       text-transform: uppercase; }
       .comment-list li.comment .comment-reply-link:hover {
         color: #24c48a; }
-    .comment-list li.comment .children {
-      margin-left: 70px;
-      margin-top: 50px;
-      padding: 0; }
 
 .comments-title,
 .comment-reply-title {

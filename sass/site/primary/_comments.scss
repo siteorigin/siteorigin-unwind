@@ -1,6 +1,6 @@
 .comment-content {
 	@include font-size(0.9333);
-	
+
 	p:last-of-type {
 		margin-bottom: .9em; 
 	}
@@ -15,17 +15,24 @@
 }
 
 .comment-list {
-	margin: 25px 0;
+	margin: 25px 0 57px;
 	padding: 0;
+
+	ol.children {
+		margin: 0;
+	}
+
+	@media (min-width: 1025px) {
+
+		li .comment {
+			margin-left: 70px;
+		}
+	}
 
 	li.comment {
 		width: auto;
 		display: block;
 		color: $color__text-medium;
-		
-		&:last-of-type {
-			margin-bottom: 3.8em;
-		}
 
 		.comment-box {
 			padding: 2em 0;
@@ -35,6 +42,11 @@
 
 		.comment-container {
 			margin-left: 6em;
+			
+			@media (max-width: 481px) {
+				margin-left: 0;
+			}
+
 			.comment-awaiting-moderation {
 				font-style: italic;
 			}
@@ -49,6 +61,10 @@
 
 		.avatar-container {
 			float: left;
+			
+			@media (max-width: 480px) {
+				display: none;
+			}
 
 			img {
 				display: block;
@@ -70,7 +86,7 @@
 			a {
 				color: $color__text-dark;
 				text-decoration: none;
-				
+
 				&:hover {
 					color: $color__text-medium;
 				}
@@ -95,12 +111,6 @@
 			&:hover {
 				color: $color__primary-accent;
 			}
-		}		
-
-		.children {
-			margin-left: 70px;
-			margin-top: 50px;
-			padding: 0;
 		}
 	}
 }
@@ -120,7 +130,7 @@
 	@include font-size(0.9333);
 	padding-bottom: 0.8666em;
 	text-transform: uppercase;
-	
+
 	#cancel-comment-reply-link {
 		color: $color__text-light; 
 		font-family: $font__details; 
@@ -130,11 +140,11 @@
 		line-height: normal;
 		text-decoration: none;
 		margin-left: .25em;
-		
+
 		&:hover {
 			color: $color__primary-accent;
 		}
-	}	
+	}
 }
 
 #commentform {
@@ -155,7 +165,7 @@
 
 	textarea {
 		width: 100%;
-	}			
+	}
 
 	.comment-form-author, 
 	.comment-form-email, 
@@ -175,21 +185,21 @@
 
 	.comment-form-email {
 		margin: 0 3.5% 2em;
-		
+
 		@media (max-width: 768px) {
 			margin: 0 0 2em;
-		} 
+		}
 	}
 
 	.comment-notes, 
 	.logged-in-as {
 		@include font-size(0.8666);
 		margin: .66em 0 2.25em;
-		
+
 		a {
 			color: $color__text-medium;
 			text-decoration: none;
-			
+
 			&:hover {
 				color: $color__text-dark;
 			}
@@ -199,12 +209,12 @@
 	.comment-form-cookies-consent {
 		clear: both;
 		margin-bottom: 0;
-		
+
 		input {
 			line-height: 1;
 			margin-right: 5px;
 		}
-		
+
 		label {
 			display: inline-block;
 			font-weight: normal;
@@ -219,10 +229,10 @@
 
 	.comment-subscription-form {
 		margin: 0 0 8px;
-		
+
 		label {
 			color: $color__text-medium;
 			font-weight: normal;
-		}	
+		}
 	}
 }
