@@ -98,6 +98,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.4.1 - 20 February 2019 =
+* Removed Jetpack Responsive Videos support in favor of FitVids.
+* Prevented blog archive navigation links from overlapping on lower resolutions.
+* Improved comments responsive behaviour.
+
 = 1.4 - 31 October 2018 =
 * Added search toggle z-index for headers 3 and 4.
 * Added initial Gutenberg editor styles.
