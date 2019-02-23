@@ -39,7 +39,6 @@ SiteOrigin Unwind includes support for:
 * [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
-* [Jetpack Responsive Videos](https://jetpack.com/support/responsive-videos/)
 * [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
 * [SiteOrigin Page Builder](https://wordpress.org/plugins/siteorigin-panels/)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
@@ -98,6 +97,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.4.1 - 23 February 2019 =
+* Removed Jetpack Responsive Videos support in favor of FitVids.
+* Prevented blog archive navigation links from overlapping on lower resolutions.
+* Improved comments responsive behaviour.
 
 = 1.4 - 31 October 2018 =
 * Added search toggle z-index for headers 3 and 4.

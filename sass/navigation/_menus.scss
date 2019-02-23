@@ -363,19 +363,18 @@
 				}
 			}
 		}
-
 	}
 }
 
 $sel: '';
 @for $i from 1 through 5 {
-    $sel: if($i == 1, "#mobile-navigation", selector-nest($sel, "ul")) !global;
+	$sel: if($i == 1, "#mobile-navigation", selector-nest($sel, "ul")) !global;
 
-    #{$sel} {
-      ul ul li a {
-        padding-left: 40px * $i;
-      }
-    }
+	#{$sel} {
+		ul ul li a {
+			padding-left: 40px * $i;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
@@ -415,6 +414,14 @@ $sel: '';
 		}
 	}
 
+	@media (max-width: 480px) {
+		.nav-previous,
+		.nav-next {
+			float: none;
+			width: 100%;
+		}
+	}
+
 	a {
 		border: 2px solid $color__background-hr-dark;
 		color: $color__text-medium;
@@ -425,6 +432,12 @@ $sel: '';
 		&:hover {
 			border-color: $color__primary-accent;
 			color: $color__primary-accent;
+		}
+
+		@media (max-width: 480px) {
+			display: block;
+			text-align: center;
+			width: 100%;
 		}
 	}
 }
