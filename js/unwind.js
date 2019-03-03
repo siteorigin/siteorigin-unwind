@@ -217,15 +217,29 @@ jQuery( function( $ ) {
 		$( window ).resize( smSetup ).scroll( smSetup );
 	}
 
-	// Detect if is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
+	// This this is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
 	if ( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
-		console.log(123);
 		if ( /iPad|iPhone|iPod/.test( navigator.userAgent ) && ! window.MSStream ) {
 			$( 'body' ).css( 'cursor', 'pointer' );
 		}
 		$( '.main-navigation #primary-menu').find('.menu-item-has-children > a' ).each( function() {
 			$( this ).click( function( e ) {
-				e.preventDefault();
+				var link = $( this );
+				e.stopPropagation();
+
+ 				if ( ! link.hasClass( 'hover' ) ) {
+					e.preventDefault();	
+ 					// Remove .hover from all other sub menus
+ 					$( '.hover' ).removeClass( 'hover' );
+
+					link.addClass( 'hover' );
+
+					// Remove .hover class when user clicks outside of sub menu
+	 				$( document ).click( function() {
+						link.removeClass( 'hover' );
+						link.unbind( 'click' );	
+					} );
+				}
 			} );
 		} );
 	}
