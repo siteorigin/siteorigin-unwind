@@ -217,21 +217,22 @@ jQuery( function( $ ) {
 		$( window ).resize( smSetup ).scroll( smSetup );
 	}
 
-	// Setup the load more button in portfolio widget loop.
-	if ( ! $( '#portfolio-loop' ).length ) return;
-	$infinite_scroll = 0;
-	$( document.body ).on( 'post-load', function() {
-		var $container = $( '#portfolio-loop' );
+	// Setup the load more button in portfolio widget loop if there's a portfolio loop present on the page.
+	if ( $( '#portfolio-loop' ).length ) {
+		$infinite_scroll = 0;
+		$( document.body ).on( 'post-load', function() {
+			var $container = $( '#portfolio-loop' );
 
-		$infinite_scroll = $infinite_scroll + 1;
-		var $container = $( '#projects-container' ),
-			$selector = $( '#infinite-view-' + $infinite_scroll ),
-			$elements = $selector.find( '.jetpack-portfolio.post' );
+			$infinite_scroll = $infinite_scroll + 1;
+			var $container = $( '#projects-container' ),
+				$selector = $( '#infinite-view-' + $infinite_scroll ),
+				$elements = $selector.find( '.jetpack-portfolio.post' );
 
-		$elements.hide();
-		$container.append( $elements ).isotope( 'appended', $elements );
-	} );
-
+			$elements.hide();
+			$container.append( $elements ).isotope( 'appended', $elements );
+		} );
+	}
+	
 } );
 
 ( function( $ ) {
