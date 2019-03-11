@@ -1894,7 +1894,8 @@ a {
       padding: 10px 12px; }
 
 .page-links {
-  margin: 1.9833em 0 4.6666em; }
+  clear: both;
+  padding: 1.9833em 0 4.6666em; }
   .page-links .page-links-title {
     color: #626262;
     font-weight: 600; }
