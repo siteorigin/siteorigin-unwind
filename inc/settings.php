@@ -901,8 +901,7 @@ if ( ! function_exists( 'siteorigin_unwind_wc_settings_custom_css' ) ) :
 function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
 	// Custom WooCommerce CSS Code
-	$css .= '/* woocommerce */
-	.woocommerce-store-notice,p.demo_store {
+	$css .= '.woocommerce-store-notice,p.demo_store {
 	background: ${branding_accent};
 	}
 	.woocommerce.woocommerce-page #respond input#submit.alt.disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],.woocommerce.woocommerce-page a.button.alt.disabled,.woocommerce.woocommerce-page a.button.alt:disabled,.woocommerce.woocommerce-page a.button.alt:disabled[disabled],.woocommerce.woocommerce-page button.button.alt.disabled,.woocommerce.woocommerce-page button.button.alt:disabled,.woocommerce.woocommerce-page button.button.alt:disabled[disabled],.woocommerce.woocommerce-page input.button.alt.disabled,.woocommerce.woocommerce-page input.button.alt:disabled,.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
@@ -960,10 +959,10 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	.woocommerce ul.products li.product .loop-product-thumbnail {
 	background: ${branding_accent_dark};
 	}
-	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_variable {
+	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_variable,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_external {
 	color: ${fonts_text_dark};
 	}
-	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_variable:hover {
+	.woocommerce ul.products li.product .loop-product-thumbnail .add_to_cart_button:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_grouped:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_variable:hover,.woocommerce ul.products li.product .loop-product-thumbnail .product_type_external:hover {
 	border: 2px solid ${fonts_text_dark};
 	}
 	.woocommerce ul.products li.product .loop-product-thumbnail .product-quick-view-button:hover {
@@ -1259,36 +1258,42 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	.woocommerce .widget-area#secondary .widget_layered_nav_filters li a:hover:before {
 	color: ${fonts_text_dark} !important;
 	}
-	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
+	#quick-view-container .product-content-wrapper .product-info-wrapper .price {
 	color: ${branding_accent};
 	.font( ${fonts_details} );
 	}
-	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price del,.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price del .amount {
+	#quick-view-container .product-content-wrapper .product-info-wrapper .price del,#quick-view-container .product-content-wrapper .product-info-wrapper .price del .amount {
 	color: ${fonts_text_light};
 	}
-	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price .amount,.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price ins {
+	#quick-view-container .product-content-wrapper .product-info-wrapper .price .amount,#quick-view-container .product-content-wrapper .product-info-wrapper .price ins {
 	color: ${branding_accent};
 	}
-	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .out-of-stock {
+	#quick-view-container .product-content-wrapper .product-info-wrapper .woocommerce-product-rating .woocommerce-review-link {
+	color: ${fonts_text_light};
+	}
+	#quick-view-container .product-content-wrapper .product-info-wrapper .woocommerce-product-rating .woocommerce-review-link:hover {
 	color: ${branding_accent};
 	}
-	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .qty {
+	#quick-view-container .product-content-wrapper .product-info-wrapper .out-of-stock {
+	color: ${branding_accent};
+	}
+	#quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .qty {
 	border-color: ${fonts_text_light};
 	color: ${fonts_text_medium};
 	}
-	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add,.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract {
+	#quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add,#quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract {
 	border-color: ${fonts_text_light};
 	}
-	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add:hover,.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract:hover {
+	#quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .add:hover,#quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls .subtract:hover {
 	color: ${fonts_text_medium};
 	}
-	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper button {
+	#quick-view-container .product-content-wrapper .product-info-wrapper button {
 	background-color: ${branding_accent};
 	}
-	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper button:hover {
+	#quick-view-container .product-content-wrapper .product-info-wrapper button:hover {
 	background-color: ${branding_accent_dark};
 	}
-	.woocommerce #quick-view-container .product-content-wrapper .variations td.label {
+	#quick-view-container .product-content-wrapper .variations td.label {
 	.font( ${fonts_main} );
 	}';
 
