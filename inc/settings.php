@@ -431,8 +431,7 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
 	// Custom CSS Code
-	$css .= '/* style */
-	body,button,input,select,textarea {
+	$css .= 'body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
 	}
@@ -690,18 +689,14 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	color: ${branding_accent};
 	}
 	.page-links .page-links-title {
-	color: ${fonts_text_dark};
-	}
-	.page-links span:not(.page-links-title) {
-	background: ${branding_accent};
-	border: 1px solid ${branding_accent};
-	}
-	.page-links .page-links-title ~ a span {
 	color: ${fonts_text_medium};
 	}
-	.page-links .page-links-title ~ a span:hover {
-	background: ${branding_accent};
-	border: 1px solid ${branding_accent};
+	.page-links .post-page-numbers {
+	color: ${fonts_text_medium};
+	}
+	.page-links .post-page-numbers:hover,.page-links .post-page-numbers.current {
+	border-color: ${branding_accent};
+	color: ${branding_accent};
 	}
 	.tags-list a {
 	color: ${fonts_text_medium};
