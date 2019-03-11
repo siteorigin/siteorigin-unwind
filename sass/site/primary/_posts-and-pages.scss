@@ -113,38 +113,28 @@
 	}
 }
 
-// Page links: very similar to .pagination in _menus.scss.
 .page-links {
-	clear: both;
 	margin: 1.9833em 0 4.6666em;
 
 	.page-links-title {
-		color: $color__text-dark;
+		color: $color__text-medium;
+		font-weight: 600;
 	}
 
-	a {
-		text-decoration: none;
-	}
-
-	span:not(.page-links-title) {
-		background: $color__primary-accent;
-		border: 1px solid $color__primary-accent;
-		color: #fff;
+	.post-page-numbers {
+		border: 1px solid $color__background-hr-dark;
+		color: $color__text-medium;
+		display: inline-block;
 		@include font-size(0.8666);
 		line-height: normal;
-		margin-right: 1px;
+		margin-right: 4px;
 		padding: 7px 13px;
-	}
+		transition: .3s;
 
-	.page-links-title ~ a span {
-		background: #fff;
-		border-color: $color__border-button;
-		color: $color__text-medium;
-
-		&:hover {
-			background: $color__primary-accent;
-			border: 1px solid $color__primary-accent;
-			color: #fff;
+		&:hover,
+		&.current {
+			border-color: $color__primary-accent;
+			color: $color__primary-accent;
 		}
 	}
 }
