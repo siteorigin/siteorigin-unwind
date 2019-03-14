@@ -217,21 +217,54 @@ jQuery( function( $ ) {
 		$( window ).resize( smSetup ).scroll( smSetup );
 	}
 
-	// Setup the load more button in portfolio widget loop.
-	if ( ! $( '#portfolio-loop' ).length ) return;
-	$infinite_scroll = 0;
-	$( document.body ).on( 'post-load', function() {
-		var $container = $( '#portfolio-loop' );
+	// Detect if is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
+	if ( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
+		if ( /iPad|iPhone|iPod/.test( navigator.userAgent ) && ! window.MSStream ) {
+			$( 'body' ).css( 'cursor', 'pointer' );
+			$( 'body' ).addClass( 'ios' );
+		}
 
-		$infinite_scroll = $infinite_scroll + 1;
-		var $container = $( '#projects-container' ),
-			$selector = $( '#infinite-view-' + $infinite_scroll ),
-			$elements = $selector.find( '.jetpack-portfolio.post' );
+		$( '.main-navigation #primary-menu' ).find( '.menu-item-has-children > a' ).each( function() {
+			$( this ).on( 'click touchend', function( e ) {
+				var link = $( this );
+				e.stopPropagation();
+				
+				if ( e.type == 'click' ) {
+					return;
+				}
 
-		$elements.hide();
-		$container.append( $elements ).isotope( 'appended', $elements );
-	} );
+				if ( ! link.parent().hasClass( 'hover' ) ) {
+					// Remove .hover from all other sub menus
+					$( '.menu-item.hover' ).removeClass( 'hover' );
+					link.parents('.menu-item').addClass( 'hover' );
+					e.preventDefault();
+				}
 
+				// Remove .hover class when user clicks outside of sub menu
+				$( document ).one( 'click', function() {
+					link.parent().removeClass( 'hover' );
+				} );
+
+			} );
+		} );
+	}
+
+	// Setup the load more button in portfolio widget loop if there's a portfolio loop present on the page.
+	if ( $( '#portfolio-loop' ).length ) {
+		$infinite_scroll = 0;
+		$( document.body ).on( 'post-load', function() {
+			var $container = $( '#portfolio-loop' );
+
+			$infinite_scroll = $infinite_scroll + 1;
+			var $container = $( '#projects-container' ),
+				$selector = $( '#infinite-view-' + $infinite_scroll ),
+				$elements = $selector.find( '.jetpack-portfolio.post' );
+
+			$elements.hide();
+			$container.append( $elements ).isotope( 'appended', $elements );
+		} );
+	}
+  
 } );
 
 ( function( $ ) {

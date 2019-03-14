@@ -74,9 +74,23 @@
 
 				> ul {
 					opacity: 1;
+					visibility: visible;
+				}
+			}
+
+			@at-root body:not(.ios) & {
+				li:hover > ul,
+				li.focus > ul {
+					opacity: 1;
 					@include transform( scaleY(1) );
 					visibility: visible;
 				}
+			}
+
+			li.hover > ul {
+				opacity: 1;
+				@include transform( scaleY(1) );
+				visibility: visible;
 			}
 		}
 

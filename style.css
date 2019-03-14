@@ -665,6 +665,18 @@ a {
       .main-navigation > div ul li:hover > ul,
       .main-navigation > div ul li.focus > ul {
         opacity: 1;
+        visibility: visible; }
+      body:not(.ios) .main-navigation > div ul li:hover > ul,
+      body:not(.ios) .main-navigation > div ul li.focus > ul {
+        opacity: 1;
+        -webkit-transform: scaleY(1);
+        -moz-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+        -o-transform: scaleY(1);
+        transform: scaleY(1);
+        visibility: visible; }
+      .main-navigation > div ul li.hover > ul {
+        opacity: 1;
         -webkit-transform: scaleY(1);
         -moz-transform: scaleY(1);
         -ms-transform: scaleY(1);
@@ -1895,28 +1907,23 @@ a {
 
 .page-links {
   clear: both;
-  margin: 1.9833em 0 4.6666em; }
+  padding: 1.9833em 0 4.6666em; }
   .page-links .page-links-title {
-    color: #2d2d2d; }
-  .page-links a {
-    text-decoration: none; }
-  .page-links span:not(.page-links-title) {
-    background: #24c48a;
-    border: 1px solid #24c48a;
-    color: #fff;
+    color: #626262;
+    font-weight: 600; }
+  .page-links .post-page-numbers {
+    border: 1px solid #ebebeb;
+    color: #626262;
+    display: inline-block;
     font-size: 13.8656px;
     font-size: 0.8666rem;
     line-height: normal;
-    margin-right: 1px;
-    padding: 7px 13px; }
-  .page-links .page-links-title ~ a span {
-    background: #fff;
-    border-color: #ebebeb;
-    color: #626262; }
-    .page-links .page-links-title ~ a span:hover {
-      background: #24c48a;
-      border: 1px solid #24c48a;
-      color: #fff; }
+    margin-right: 4px;
+    padding: 7px 13px;
+    transition: .3s; }
+    .page-links .post-page-numbers:hover, .page-links .post-page-numbers.current {
+      border-color: #24c48a;
+      color: #24c48a; }
 
 .tags-list {
   margin-top: 1em; }

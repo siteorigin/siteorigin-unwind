@@ -98,8 +98,13 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.4.2 - 14 March 2019 =
+* Added a fallback to the default theme icon if a custom icon is missing.
+* Allow main menu hovers when Touch UI Layout is enabled.
+* Adjusted page link styling for changed HTML structure.
+
 = 1.4.1 - 23 February 2019 =
-* Removed Jetpack Responsive Videos support in favor of FitVids.
+* Removed Jetpack Responsive Videos support in favour of FitVids.
 * Prevented blog archive navigation links from overlapping on lower resolutions.
 * Improved comments responsive behaviour.
 
