@@ -14,9 +14,8 @@
 <div class="container">
 	<h3><?php esc_html_e( 'Search Site', 'siteorigin-unwind' ); ?></h3>
 	<form id="fullscreen-search-form" method="get" action="<?php echo esc_url( site_url() ) ?>">
-		<input type="search" name="s" placeholder="<?php esc_attr_e( 'Type and hit enter to search', 'siteorigin-unwind') ?>" value="<?php echo get_search_query() ?>" />
-		<button type="submit">
-			<label class="screen-reader-text"><?php esc_html_e( 'Search', 'siteorigin-unwind' ); ?></label>
+		<input type="search" name="s" aria-label="<?php esc_html_e( 'Search for', 'siteorigin-corp' ); ?>" placeholder="<?php esc_attr_e( 'Type and hit enter to search', 'siteorigin-unwind') ?>" value="<?php echo get_search_query() ?>" />
+		<button type="submit" aria-label="<?php esc_html_e( 'Search', 'siteorigin-unwind' ); ?>">
 			<?php siteorigin_unwind_display_icon( 'fullscreen-search' ); ?>
 			<?php siteorigin_unwind_display_icon( 'fullscreen-loading' ); ?>
 		</button>
