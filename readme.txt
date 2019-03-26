@@ -98,6 +98,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.4.3 - 26 March 2019 =
+* Improved search form accessibility.
+* Updated Settings sub-module to allow for Page Settings in single Jetpack projects.
+
 = 1.4.2 - 14 March 2019 =
 * Added a fallback to the default theme icon if a custom icon is missing.
 * Allow main menu hovers when Touch UI Layout is enabled.
