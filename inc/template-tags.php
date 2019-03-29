@@ -529,7 +529,7 @@ function siteorigin_unwind_related_posts( $post_id ) {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_unwind_related_projects ' ) ) :
+if ( ! function_exists( 'siteorigin_unwind_related_projects' ) ) :
 /**
  * Displays related posts in single projects.
  */
