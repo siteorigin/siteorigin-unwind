@@ -38,6 +38,7 @@ SiteOrigin Unwind includes support for:
 * [Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
 * [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
+* [Jetpack Portfolio Custom Post Type](https://jetpack.com/support/custom-content-types/)
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
 * [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
 * [SiteOrigin Page Builder](https://wordpress.org/plugins/siteorigin-panels/)
