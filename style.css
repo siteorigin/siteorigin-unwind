@@ -3090,8 +3090,10 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
       color: #2d2d2d; }
 
 #commentform .comment-form-cookies-consent {
+  align-items: center;
   clear: both;
-  margin-bottom: 0; }
+  display: flex;
+  margin: 0 0 8px; }
   #commentform .comment-form-cookies-consent input {
     line-height: 1;
     margin-right: 5px; }
@@ -3101,14 +3103,22 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
     margin-bottom: 0; }
 
 #commentform .form-submit {
-  margin: 2em 0 20px;
+  margin: 22px 0 0;
   clear: both; }
 
 #commentform .comment-subscription-form {
-  margin: 0 0 8px; }
+  display: block;
+  clear: both;
+  margin: 0 0 8px;
+  overflow: auto; }
+  #commentform .comment-subscription-form input {
+    margin-right: 0; }
   #commentform .comment-subscription-form label {
-    color: #626262;
     font-weight: normal; }
+
+#commentform .form-submit {
+  margin: 2em 0 20px;
+  clear: both; }
 
 /*--------------------------------------------------------------
 ## Site Footer
