@@ -3116,10 +3116,6 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
   #commentform .comment-subscription-form label {
     font-weight: normal; }
 
-#commentform .form-submit {
-  margin: 2em 0 20px;
-  clear: both; }
-
 /*--------------------------------------------------------------
 ## Site Footer
 --------------------------------------------------------------*/
