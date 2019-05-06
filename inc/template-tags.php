@@ -218,7 +218,13 @@ function siteorigin_unwind_main_navigation() {
 						<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count; ?></span>
 					</a>
 					<ul class="shopping-cart-dropdown" id="cart-drop">
-						<?php the_widget( 'WC_Widget_Cart' );?>
+						<?php 
+						$instance = array(
+							'title' => '',
+						);
+
+						the_widget( 'WC_Widget_Cart', $instance );
+						?>
 					</ul>
 				</li>
 			</ul>
