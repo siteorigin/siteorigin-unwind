@@ -12,11 +12,11 @@
 		letter-spacing: 1px;
 		padding: 0 0 12px 0;
 		margin-right: 34px;
-		
+
 		@media (max-width: 768px) {
 			padding: 0 0 5px 0;
 			margin: 0 10px 5px 0; 
-		}		
+		}
 
 		&:hover {
 			color: $color__text-dark;
@@ -127,12 +127,12 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 
 	.entry-overlay {
 		height: 100%;
-    	left: 0;
-    	position: absolute;
-    	top: 0;
-    	transition: .3s;
-    	width: 100%;
-    	z-index: 0;
+		left: 0;
+		position: absolute;
+		top: 0;
+		transition: .3s;
+		width: 100%;
+		z-index: 0;
 
 		@at-root .entry-thumbnail:hover .entry-overlay {
 			background-color: rgba(265, 265, 265, .9);
@@ -189,15 +189,15 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 	float: left;
 	padding-bottom: 1.3333em;
 	width: 100%; 
-	
+
 	.related-projects {
 		font-size: 1em;
 		text-transform: uppercase;
-	
+
 		article {
 			float: left;
 			position: relative;
-			vertical-align: top;			
+			vertical-align: top;
 		}
 	}
 }
