@@ -207,8 +207,10 @@
 	}
 
 	.comment-form-cookies-consent {
+		align-items: center;
 		clear: both;
-		margin-bottom: 0;
+		display: flex;
+		margin: 0 0 8px;
 
 		input {
 			line-height: 1;
@@ -223,15 +225,22 @@
 	}
 
 	.form-submit {
-		margin: 2em 0 20px;
+		margin: 22px 0 0;
 		clear: both;
 	}
 
+	// Jetpack Subscriptions.
 	.comment-subscription-form {
+		display: block;
+		clear: both;
 		margin: 0 0 8px;
+		overflow: auto;	
+
+		input {
+			margin-right: 0;
+		}
 
 		label {
-			color: $color__text-medium;
 			font-weight: normal;
 		}
 	}

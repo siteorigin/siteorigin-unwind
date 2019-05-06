@@ -8,7 +8,7 @@
                 <span class="v-line"></span>
             <?php endif; ?>
             <?php if ( siteorigin_setting( 'navigation_search' ) ) : ?>
-                <button id="search-button" class="search-toggle" aria-label="<?php esc_attr_e( 'Open Search', 'siteorigin-corp' ); ?>">
+                <button id="search-button" class="search-toggle" aria-label="<?php esc_attr_e( 'Open Search', 'siteorigin-unwind' ); ?>">
                     <span class="open"><?php siteorigin_unwind_display_icon( 'search' ); ?></span>
                     <span class="close"><?php siteorigin_unwind_display_icon( 'close' ); ?></span>
                 </button>

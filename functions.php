@@ -255,7 +255,7 @@ function siteorigin_unwind_enqueue_flexslider() {
  * Enqueue Gutenberg block editor style.
  */
 function siteorigin_unwind_block_editor_styles() {
-	wp_enqueue_style( 'siteorigin-corp-block-editor-styles', get_template_directory_uri() . '/style-editor.css', SITEORIGIN_THEME_VERSION );
+	wp_enqueue_style( 'siteorigin-unwind-block-editor-styles', get_template_directory_uri() . '/style-editor.css', SITEORIGIN_THEME_VERSION );
 }
 add_action( 'enqueue_block_editor_assets', 'siteorigin_unwind_block_editor_styles' );
 
