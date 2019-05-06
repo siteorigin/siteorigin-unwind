@@ -99,6 +99,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.4.4 - 06 May 2019 =
+* Removed WooCommerce mini-cart "Cart" title.
+* Jetpack Portfolio responsive improvements.
+
 = 1.4.3 - 26 March 2019 =
 * Improved search form accessibility.
 * Updated Settings sub-module to allow for Page Settings in single Jetpack projects.
