@@ -2,7 +2,7 @@
 ### Portfolio Loop
 --------------------------------------------------------------*/
 .portfolio-filter-terms {
-	margin-bottom: 25px;
+	padding-bottom: 25px;
 
 	button {
 		border: none;
@@ -31,7 +31,7 @@
 
 body:not(.infinite-scroll) .portfolio-loop #projects-container,
 body:not(.infinite-scroll) .portfolio-archive-layout {
-	margin-bottom: 3.5em;
+	// margin-bottom: 3.5em;
 }
 
 .post-type-archive-jetpack-portfolio #infinite-handle {

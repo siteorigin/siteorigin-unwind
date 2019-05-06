@@ -2661,7 +2661,7 @@ a {
 ### Portfolio Loop
 --------------------------------------------------------------*/
 .portfolio-filter-terms {
-  margin-bottom: 25px; }
+  padding-bottom: 25px; }
   .portfolio-filter-terms button {
     border: none;
     border-bottom: 2px solid transparent;
@@ -2679,10 +2679,6 @@ a {
     .portfolio-filter-terms button.active {
       border-bottom: 2px solid #2d2d2d;
       color: #2d2d2d; }
-
-body:not(.infinite-scroll) .portfolio-loop #projects-container,
-body:not(.infinite-scroll) .portfolio-archive-layout {
-  margin-bottom: 3.5em; }
 
 .post-type-archive-jetpack-portfolio #infinite-handle {
   padding-top: 3.5em; }
