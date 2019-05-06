@@ -23,58 +23,37 @@
 		}
 
 		&.active {
+			background: none;
 			border-bottom: 2px solid $color__text-dark;
 			color: $color__text-dark;
 		}
 	}
 }
 
-body:not(.infinite-scroll) .portfolio-loop #projects-container,
-body:not(.infinite-scroll) .portfolio-archive-layout {
-	// margin-bottom: 3.5em;
-}
-
-.post-type-archive-jetpack-portfolio #infinite-handle {
-	padding-top: 3.5em;
-}
-
-.post-type-archive-jetpack-portfolio .infinite-loader {
-	margin-top: 3.5em;
-}
-
-.portfolio-archive-layout {
-	overflow: auto;
-}
-
 #projects-container,
+.portfolio-archive-layout,
 .related-projects {
 	margin-right: -1.1667%;
 	margin-left: -1.1667%;
 
-	@at-root body:not(.no-active-sidebar) & {
-
-		@media (max-width: 1175px) {
-			margin-right: -0.875%;
-			margin-left: -0.875%;
-		}
-
-		@media (max-width: 640px) {
-			margin-right: 0;
-			margin-left: 0;  
-		}
+	@media (max-width: 640px) {
+		margin-right: 0;
+		margin-left: 0;
 	}
+}
 
-	@at-root .no-active-sidebar & {
+#projects-container ~ .posts-navigation {
+	padding-top: 52.5px;
+}
 
-		@media (max-width: 890px) {
-			margin-right: -0.875%;
-			margin-left: -0.875%;
-		}
+.post-type-archive-jetpack-portfolio #infinite-handle,
+.tax-jetpack-portfolio-type #infinite-handle {
+	padding-top: 54.5px;
+}
 
-		@media (max-width: 640px) {
-			margin: 0;
-		}
-	}
+.post-type-archive-jetpack-portfolio .infinite-loader,
+.tax-jetpack-portfolio-type .infinite-loader {
+	margin-top: 54.5px;
 }
 
 .archive-project {
@@ -84,36 +63,18 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 	margin-left: 1.1667%;
 	width: 31%;
 
-	@at-root body:not(.no-active-sidebar) & {
-
-		@media (max-width: 1175px) {
-			margin-right: 0.875%;
-			margin-left: 0.875%;
-			width: 48.25%;
-		}
-
-		@media (max-width: 640px) {
-			clear: none;
-			display: block;
-			margin-right: 0;
-			width: 100%;
-		}
+	@media (max-width: 1175px) {
+		margin-right: 0.875%;
+		margin-left: 0.875%;
+		width: 48.25%;
 	}
 
-	@at-root .no-active-sidebar & {
-
-		@media (max-width: 890px) {
-			margin-right: 0.875%;
-			margin-left: 0.875%;
-			width: 48.25%;
-		}
-
-		@media (max-width: 640px) {
-			clear: none;
-			display: block;
-			margin-right: 0;
-			width: 100%;
-		}
+	@media (max-width: 640px) {
+		clear: none;
+		display: block;
+		margin-right: 0;
+		margin-left: 0;
+		width: 100%;
 	}
 
 	.entry-thumbnail {
@@ -187,7 +148,7 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 
 .related-projects-section {
 	float: left;
-	padding-bottom: 1.3333em;
+	padding-bottom: 41px;
 	width: 100%; 
 
 	.related-projects {
@@ -206,34 +167,37 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 ### Portfolio Shortcode
 --------------------------------------------------------------*/
 .jetpack-portfolio-shortcode {
+	display: flex;
+	flex-wrap: wrap;
 
 	.portfolio-entry {
-		float: left;
-		margin-bottom: 53px;
-
-		&:last-of-type {
-			margin-bottom: 5.5em;
-		}
-
+		margin: 0 3.5% 23px 0;
+		width: 100%;
+	
+		// One column.
 		&.portfolio-entry-column-1 {
-			border-bottom: 2px solid $color__background-hr;
-			margin-bottom: 5em;
-			padding-bottom: 5em;
+			margin-right: 0;
+
+			@media (max-width: 768px) {
+				width: 100%;
+			}
 		}
 
+		// Two columns.
 		&.portfolio-entry-column-2 {
-			margin-right: 3.5%;
 			width: 48.25%;
 
 			&:nth-child(2n+2) {
 				margin-right: 0;
 			}
 
-			&:nth-child(2n+3) {
-				clear: left;
+			@media (max-width: 480px) {
+				margin-right: 0;
+				width: 100%;
 			}
 		}
 
+		// Three columns.
 		&.portfolio-entry-column-3 {
 			margin-right: 3.5%;
 			width: 31%;
@@ -242,47 +206,96 @@ body:not(.infinite-scroll) .portfolio-archive-layout {
 				margin-right: 0;
 			}
 
-			&:nth-child(3n+4) {
-				clear: left;
+			@media (max-width: 768px) {
+				margin-right: 0;
+				width: 48.25%;
+
+				&:nth-child(2n+1) {
+					margin-right: 3.5%;
+
+					@media (max-width: 480px) {
+						margin-right: 0;
+					}
+				}
+			}
+
+			@media (max-width: 480px) {
+				width: 100%;
 			}
 		}
 
 		&.portfolio-entry-column-4 {
-			margin-right: 3.5%;
 			width: 22.375%;
 
 			&:nth-child(4n+4) {
 				margin-right: 0;
 			}
 
-			&:nth-child(4n+5) {
-				clear: left;
+			@media (max-width: 768px) {
+				margin-right: 0;
+				width: 48.25%;
+
+				&:nth-child(2n+1) {
+					margin-right: 3.5%;
+
+					@media (max-width: 480px) {
+						margin-right: 0;
+					}
+				}
+			}
+
+			@media (max-width: 480px) {
+				width: 100%;
 			}
 		}
 
 		&.portfolio-entry-column-5 {
-			margin-right: 3.5%;
 			width: 17.2%;
 
 			&:nth-child(5n+5) {
 				margin-right: 0;
 			}
 
-			&:nth-child(5n+6) {
-				clear: left;
+			@media (max-width: 1024px) {
+				margin-right: 0;
+				width: 48.25%;
+
+				&:nth-child(2n+1) {
+					margin-right: 3.5%;
+
+					@media (max-width: 480px) {
+						margin-right: 0;
+					}
+				}
+			}
+
+			@media (max-width: 480px) {
+				width: 100%;
 			}
 		}
 
 		&.portfolio-entry-column-6 {
-			margin-right: 3.5%;
 			width: 13.75%;
 
 			&:nth-child(6n+6) {
 				margin-right: 0;
 			}
 
-			&:nth-child(6n+7) {
-				clear: left;
+			@media (max-width: 1024px) {
+				margin-right: 0;
+				width: 48.25%;
+
+				&:nth-child(2n+1) {
+					margin-right: 3.5%;
+
+					@media (max-width: 480px) {
+						margin-right: 0;
+					}
+				}
+			}
+
+			@media (max-width: 480px) {
+				width: 100%;
 			}
 		}
 	}
