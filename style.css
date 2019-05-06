@@ -2664,7 +2664,7 @@ a {
   margin-bottom: 25px; }
   .portfolio-filter-terms button {
     border: none;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid transparent;
     color: #adadad;
     font-size: 12px;
     letter-spacing: 1px;
