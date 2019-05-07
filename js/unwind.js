@@ -7,18 +7,6 @@ jQuery( function( $ ) {
 
 	// no-js Body Class.
 	$ ( 'body.no-js' ).removeClass( 'no-js' );
-	if ( $( 'body' ).hasClass( 'css3-animations' ) ) {
-
-		var resetMenu = function() {
-			$( '.main-navigation ul ul' ).each( function() {
-				var $$ = $( this );
-				var width = Math.max.apply(Math, $$.find( '> li > a' ).map( function() { return $( this ).width(); } ).get() );
-				$$.find( '> li > a' ).width( width );
-			} );
-		};
-		resetMenu();
-		$( window ).resize( resetMenu );
-	}
 
 	// Check if an element is visible in the viewport.
 	$.fn.unwindIsVisible = function() {
