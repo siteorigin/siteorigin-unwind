@@ -603,6 +603,7 @@ a {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
+  line-height: 0;
   float: left; }
   .main-navigation::after {
     clear: both;
