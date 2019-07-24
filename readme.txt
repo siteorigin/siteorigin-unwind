@@ -5,7 +5,7 @@ Contributors: siteorigin
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
-Tested up to: 5.1.1
+Tested up to: 5.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.4.5 - 24 July 2019 =
+* Added `wp_body_open` hook.
+* Updated SiteOrigin Settings framework.
+* Removed the theme mobile menu when Max Mega Menu used for the primary menu.
+* Improved primary menu vertical alignment.
 
 = 1.4.4 - 06 May 2019 =
 * Removed WooCommerce mini-cart "Cart" title.

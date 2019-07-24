@@ -205,7 +205,10 @@ if ( ! function_exists( 'siteorigin_unwind_main_navigation' ) ) :
 function siteorigin_unwind_main_navigation() {
 	?>
 	<nav id="site-navigation" class="main-navigation" role="navigation">
-		<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
+		<?php $mega_menu_active = function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'primary' ); ?>
+		<?php if ( ! $mega_menu_active ) : ?>
+			<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
+		<?php endif; ?>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		<?php if ( class_exists( 'Woocommerce' ) && ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_mini_cart' ) ) : ?>
 			<?php global $woocommerce; ?>
