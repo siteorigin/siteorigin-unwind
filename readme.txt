@@ -99,6 +99,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.4.5 - 24 July 2019 =
+* Added `wp_body_open` hook.
+* Updated SiteOrigin Settings framework.
+* Removed the theme mobile menu when Max Mega Menu used for the primary menu.
+* Improved primary menu vertical alignment.
+
 = 1.4.4 - 06 May 2019 =
 * Removed WooCommerce mini-cart "Cart" title.
 * Jetpack Portfolio responsive improvements.
