@@ -5,7 +5,7 @@ Contributors: siteorigin
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
-Tested up to: 4.9.5
+Tested up to: 5.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,7 @@ SiteOrigin Unwind includes support for:
 * [Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
 * [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
+* [Jetpack Portfolio Custom Post Type](https://jetpack.com/support/custom-content-types/)
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
 * [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
 * [SiteOrigin Page Builder](https://wordpress.org/plugins/siteorigin-panels/)
@@ -97,6 +98,20 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.4.5 - 24 July 2019 =
+* Added `wp_body_open` hook.
+* Updated SiteOrigin Settings framework.
+* Removed the theme mobile menu when Max Mega Menu used for the primary menu.
+* Improved primary menu vertical alignment.
+
+= 1.4.4 - 06 May 2019 =
+* Removed WooCommerce mini-cart "Cart" title.
+* Jetpack Portfolio responsive improvements.
+
+= 1.4.3 - 26 March 2019 =
+* Improved search form accessibility.
+* Updated Settings sub-module to allow for Page Settings in single Jetpack projects.
 
 = 1.4.2 - 14 March 2019 =
 * Added a fallback to the default theme icon if a custom icon is missing.
