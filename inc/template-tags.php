@@ -498,7 +498,7 @@ if ( ! function_exists( 'siteorigin_unwind_related_posts' ) ) :
 function siteorigin_unwind_related_posts( $post_id ) {
 	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin.
 		related_posts();
-	} elseif ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+	} elseif ( class_exists( 'Jetpack' ) && class_exists( 'Jetpack_RelatedPosts' ) ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop
 		$categories = get_the_category( $post_id );
@@ -543,7 +543,7 @@ if ( ! function_exists( 'siteorigin_unwind_related_projects' ) ) :
  * Displays related posts in single projects.
  */
 function siteorigin_unwind_related_projects( $post_id ) {
-	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+	if ( class_exists( 'Jetpack' ) && class_exists( 'Jetpack_RelatedPosts' ) ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop.
 		$categories = get_the_terms( $post_id, 'jetpack-portfolio-type' );
