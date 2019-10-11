@@ -3192,6 +3192,12 @@ a {
       text-decoration: none; }
       #colophon .site-info a:hover {
         color: #2d2d2d; }
+    #colophon .site-info span:after {
+      content: "\002d";
+      display: inline-block;
+      padding: 0 5px; }
+    #colophon .site-info span:last-of-type:after {
+      content: none; }
   #colophon.unconstrained-footer .container {
     max-width: none;
     padding: 0 40px; }

@@ -282,10 +282,11 @@ if ( ! function_exists( 'siteorigin_unwind_footer_text' ) ) :
  */
 function siteorigin_unwind_footer_text() {
 	$text = siteorigin_setting( 'footer_text' );
+	if ( empty( $text ) ) return;
 	$text = str_replace(
 		array( '{sitename}', '{year}' ),
 		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
-		$text
+		'<span>' . $text . '</span>'
 	);
 	echo wp_kses_post( $text ) . '&nbsp;';
 }
