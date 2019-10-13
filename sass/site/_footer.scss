@@ -54,6 +54,22 @@
 				color: $color__text-dark;
 			}
 		}
+
+		span {
+
+			&:after {
+				content: "\002d";
+				display: inline-block;
+				padding: 0 5px;
+			}
+
+			&:last-of-type {
+
+				&:after {
+					content: none;
+				}
+			}
+		}
 	}
 
 	&.unconstrained-footer {
