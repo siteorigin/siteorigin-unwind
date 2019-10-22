@@ -99,6 +99,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.4.7 - 22 October 2019 =
+* Improved Jetpack related posts conditional.
+* Changed footer copyright text separators to hyphens.
+
 = 1.4.6 - 02 October 2019 =
 * Search Forms: Replace all instances of `site_url()` with `home_url()`.
 

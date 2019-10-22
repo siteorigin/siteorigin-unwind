@@ -38,12 +38,12 @@
 				siteorigin_unwind_footer_text();
 
 				if ( function_exists( 'the_privacy_policy_link' ) && siteorigin_setting( 'footer_privacy_policy_link' ) ) {
-					the_privacy_policy_link( '', '.&nbsp;' );
+					the_privacy_policy_link( '<span>', '</span>' );
 				}
-				
+
 				$credit_text = apply_filters(
 					'siteorigin_unwind_footer_credits',
-					sprintf( esc_html__( 'Crafted with love by %s.', 'siteorigin-unwind' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
+					'<span>' . sprintf( esc_html__( 'Crafted with love by %s', 'siteorigin-unwind' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' ) . '</span>'
 				);
 
 				if ( ! empty( $credit_text ) ) {

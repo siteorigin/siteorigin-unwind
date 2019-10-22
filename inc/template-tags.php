@@ -282,10 +282,11 @@ if ( ! function_exists( 'siteorigin_unwind_footer_text' ) ) :
  */
 function siteorigin_unwind_footer_text() {
 	$text = siteorigin_setting( 'footer_text' );
+	if ( empty( $text ) ) return;
 	$text = str_replace(
 		array( '{sitename}', '{year}' ),
 		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
-		$text
+		'<span>' . $text . '</span>'
 	);
 	echo wp_kses_post( $text ) . '&nbsp;';
 }
@@ -498,7 +499,7 @@ if ( ! function_exists( 'siteorigin_unwind_related_posts' ) ) :
 function siteorigin_unwind_related_posts( $post_id ) {
 	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin.
 		related_posts();
-	} elseif ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+	} elseif ( class_exists( 'Jetpack' ) && class_exists( 'Jetpack_RelatedPosts' ) ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop
 		$categories = get_the_category( $post_id );
@@ -543,19 +544,19 @@ if ( ! function_exists( 'siteorigin_unwind_related_projects' ) ) :
  * Displays related posts in single projects.
  */
 function siteorigin_unwind_related_projects( $post_id ) {
-	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+	if ( class_exists( 'Jetpack' ) && class_exists( 'Jetpack_RelatedPosts' ) ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop.
 		$categories = get_the_terms( $post_id, 'jetpack-portfolio-type' );
 		$first_cat = $categories[0]->term_id;
 		$args=array(
 			'tax_query' => array(
-		        array (
-		            'taxonomy' => 'jetpack-portfolio-type',
-		            'field' => 'term_id',
-		            'terms' => $first_cat,
-		        )
-		    ),
+				array (
+					'taxonomy' => 'jetpack-portfolio-type',
+					'field' => 'term_id',
+					'terms' => $first_cat,
+				)
+			),
 			'post__not_in' => array( $post_id ),
 			'posts_per_page' => 3,
 			'ignore_sticky_posts' => -1
@@ -831,8 +832,8 @@ if ( ! function_exists( 'siteorigin_unwind_jetpackme_related_posts_headline' ) )
  */
 function siteorigin_unwind_jetpackme_related_posts_headline( $headline ) {
 	$headline = sprintf(
-	    '<h2 class="jp-relatedposts-headline related-posts heading-strike">%s</h2>',
-	    esc_html( 'You may also like', 'siteorigin-unwind' )
+		'<h2 class="jp-relatedposts-headline related-posts heading-strike">%s</h2>',
+		esc_html( 'You may also like', 'siteorigin-unwind' )
 	);
 	return $headline;
 }
@@ -844,11 +845,11 @@ if ( ! function_exists( 'siteorigin_unwind_jetpackme_remove_rp' ) ) :
  * Removing jetpack related posts from the bottom of posts
  */
 function siteorigin_unwind_jetpackme_remove_rp() {
-    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
-        $jprp = Jetpack_RelatedPosts::init();
-        $callback = array( $jprp, 'filter_add_target_to_dom' );
-        remove_filter( 'the_content', $callback, 40 );
-    }
+	if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+		$jprp = Jetpack_RelatedPosts::init();
+		$callback = array( $jprp, 'filter_add_target_to_dom' );
+		remove_filter( 'the_content', $callback, 40 );
+	}
 }
 endif;
 add_filter( 'wp', 'siteorigin_unwind_jetpackme_remove_rp', 20 );
