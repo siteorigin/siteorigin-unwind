@@ -198,6 +198,19 @@ function siteorigin_unwind_display_retina_logo( $attr ){
 }
 add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 
+if ( class_exists( 'LiteSpeed_Cache' ) ) :
+	if ( ! function_exists( 'siteorigin_unwind_litespeed_lazy_exclude' ) ) :
+		/**
+		 * Exclude Logo from LiteSpeed Cache Lazy Load
+		 */
+		function siteorigin_unwind_litespeed_lazy_exclude( $attr ) {
+			$attr['data-no-lazy'] = 1;
+			return $attr;
+		}
+	endif;
+	add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_litespeed_lazy_exclude' );
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_main_navigation' ) ) :
 /**
  * Display the main menu.
