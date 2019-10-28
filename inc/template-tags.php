@@ -223,7 +223,7 @@ if ( class_exists( 'Smush\WP_Smush' ) ) :
 			}
 			
 			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
-				$attr['class'] = ' no-lazyload';
+				$attr['class'] .= ' no-lazyload';
 			}
 			return $attr;
 		}
