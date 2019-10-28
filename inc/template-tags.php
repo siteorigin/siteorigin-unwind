@@ -214,7 +214,7 @@ endif;
 if ( class_exists( 'Smush\WP_Smush' ) ) :
 	if ( ! function_exists( 'siteorigin_unwind_smush_lazy_exclude' ) ) :
 		/**
-		 * Exclude Logo from LiteSpeed Cache Lazy Load
+		 * Exclude Logo from Smush Lazy Load
 		 */
 		function siteorigin_unwind_smush_lazy_exclude( $attr, $attachment ) {
 			$custom_logo_id = siteorigin_setting( 'branding_logo' );
