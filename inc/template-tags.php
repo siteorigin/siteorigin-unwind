@@ -211,6 +211,26 @@ if ( class_exists( 'LiteSpeed_Cache' ) ) :
 	add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_litespeed_lazy_exclude' );
 endif;
 
+if ( class_exists( 'Smush\WP_Smush' ) ) :
+	if ( ! function_exists( 'siteorigin_unwind_smush_lazy_exclude' ) ) :
+		/**
+		 * Exclude Logo from Smush Lazy Load
+		 */
+		function siteorigin_unwind_smush_lazy_exclude( $attr, $attachment ) {
+			$custom_logo_id = siteorigin_setting( 'branding_logo' );
+			if ( empty( $custom_logo_id ) ) {
+				$custom_logo_id = get_theme_mod( 'custom_logo' );
+			}
+			
+			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
+				$attr['class'] .= ' no-lazyload';
+			}
+			return $attr;
+		}
+	endif;
+	add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_unwind_smush_lazy_exclude', 10, 2 );
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_main_navigation' ) ) :
 /**
  * Display the main menu.
