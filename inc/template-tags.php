@@ -198,7 +198,11 @@ function siteorigin_unwind_display_retina_logo( $attr ){
 }
 add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 
-if ( class_exists( 'Smush\Core\Modules\Lazy' ) || class_exists( 'LiteSpeed_Cache' ) ) :
+if (
+	class_exists( 'Smush\Core\Modules\Lazy' ) ||
+	class_exists( 'LiteSpeed_Cache' ) ||
+	class_exists( 'Automattic\Jetpack\Assets\Jetpack_Lazy_Images' )
+) :
 	if ( ! function_exists( 'siteorigin_unwind_lazy_load_exclude' ) ) :
 		/**
 		 * Exclude Logo from Lazy Load plugins
@@ -210,7 +214,10 @@ if ( class_exists( 'Smush\Core\Modules\Lazy' ) || class_exists( 'LiteSpeed_Cache
 			}
 			
 			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
-				if ( class_exists( 'Smush\Core\Modules\Lazy' ) ) {
+				if ( class_exists( 'Automattic\Jetpack\Assets\Jetpack_Lazy_Images' ) ) {
+					// Jetpack Lazy Load
+					$attr['class'] .= ' skip-lazy';
+				} elseif ( class_exists( 'Smush\Core\Modules\Lazy' ) ) {
 					// Smuah Lazy Load
 					$attr['class'] .= ' no-lazyload';
 				} elseif ( class_exists( 'LiteSpeed_Cache' ) ) {
