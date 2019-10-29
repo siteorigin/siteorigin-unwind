@@ -214,14 +214,18 @@ if (
 			}
 			
 			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
+				// Jetpack Lazy Load
 				if ( class_exists( 'Automattic\Jetpack\Assets\Jetpack_Lazy_Images' ) ) {
-					// Jetpack Lazy Load
 					$attr['class'] .= ' skip-lazy';
-				} elseif ( class_exists( 'Smush\Core\Modules\Lazy' ) ) {
-					// Smuah Lazy Load
+				}
+
+				// Smush Lazy Load
+				if ( class_exists( 'Smush\Core\Modules\Lazy' ) ) {
 					$attr['class'] .= ' no-lazyload';
-				} elseif ( class_exists( 'LiteSpeed_Cache' ) ) {
-					// LiteSpeed Cache Lazy Load
+				}
+
+				// LiteSpeed Cache Lazy Load
+				if ( class_exists( 'LiteSpeed_Cache' ) ) {
 					$attr['data-no-lazy'] = 1;
 				}
 			}
