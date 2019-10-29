@@ -198,7 +198,7 @@ function siteorigin_unwind_display_retina_logo( $attr ){
 }
 add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 
-if ( class_exists( 'Smush\WP_Smush' ) || class_exists( 'LiteSpeed_Cache' ) ) :
+if ( class_exists( 'Smush\Core\Modules\Lazy' ) || class_exists( 'LiteSpeed_Cache' ) ) :
 	if ( ! function_exists( 'siteorigin_unwind_lazy_load_exclude' ) ) :
 		/**
 		 * Exclude Logo from Lazy Load plugins
@@ -210,9 +210,11 @@ if ( class_exists( 'Smush\WP_Smush' ) || class_exists( 'LiteSpeed_Cache' ) ) :
 			}
 			
 			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
-				if ( class_exists( 'Smush\WP_Smush' ) ) {
+				if ( class_exists( 'Smush\Core\Modules\Lazy' ) ) {
+					// Smuah Lazy Load
 					$attr['class'] = ' no-lazyload';
-				} else if ( class_exists( 'LiteSpeed_Cache' ) ) {
+				} elseif ( class_exists( 'LiteSpeed_Cache' ) ) {
+					// LiteSpeed Cache Lazy Load
 					$attr['data-no-lazy'] = 1;
 				}
 			}
