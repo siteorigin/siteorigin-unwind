@@ -212,7 +212,7 @@ if ( class_exists( 'Smush\Core\Modules\Lazy' ) || class_exists( 'LiteSpeed_Cache
 			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
 				if ( class_exists( 'Smush\Core\Modules\Lazy' ) ) {
 					// Smuah Lazy Load
-					$attr['class'] = ' no-lazyload';
+					$attr['class'] .= ' no-lazyload';
 				} elseif ( class_exists( 'LiteSpeed_Cache' ) ) {
 					// LiteSpeed Cache Lazy Load
 					$attr['data-no-lazy'] = 1;
