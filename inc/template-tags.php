@@ -201,7 +201,7 @@ add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_reti
 if (
 	class_exists( 'Smush\Core\Modules\Lazy' ) ||
 	class_exists( 'LiteSpeed_Cache' ) ||
-	class_exists( 'Automattic\Jetpack\Assets\Jetpack_Lazy_Images' )
+	class_exists( 'Jetpack_Lazy_Images' )
 ) :
 	if ( ! function_exists( 'siteorigin_unwind_lazy_load_exclude' ) ) :
 		/**
@@ -215,7 +215,7 @@ if (
 			
 			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
 				// Jetpack Lazy Load
-				if ( class_exists( 'Automattic\Jetpack\Assets\Jetpack_Lazy_Images' ) ) {
+				if ( class_exists( 'Jetpack_Lazy_Images' ) ) {
 					$attr['class'] .= ' skip-lazy';
 				}
 
