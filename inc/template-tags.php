@@ -174,22 +174,22 @@ function siteorigin_unwind_display_retina_logo( $attr ){
 	$logo = siteorigin_setting( 'branding_logo' );
 	$retina = siteorigin_setting( 'branding_retina_logo' );
 
-	if( !empty( $retina ) ) {
+	if ( ! empty( $retina ) ) {
 
 		$srcset = array();
 
 		$logo_src = wp_get_attachment_image_src( $logo, 'full' );
 		$retina_src = wp_get_attachment_image_src( $retina, 'full' );
 
-		if( !empty( $logo_src ) ) {
+		if ( ! empty( $logo_src ) ) {
 			$srcset[] = $logo_src[0] . ' 1x';
 		}
 
-		if( !empty( $logo_src ) ) {
+		if ( ! empty( $logo_src ) ) {
 			$srcset[] = $retina_src[0] . ' 2x';
 		}
 
-		if( ! empty( $srcset ) ) {
+		if ( ! empty( $srcset ) ) {
 			$attr['srcset'] = implode( ',', $srcset );
 		}
 	}
@@ -205,14 +205,14 @@ if (
 ) :
 	if ( ! function_exists( 'siteorigin_unwind_lazy_load_exclude' ) ) :
 		/**
-		 * Exclude Logo from Lazy Load plugins
+		 * Exclude Logo from Lazy Load plugins.
 		 */
 		function siteorigin_unwind_lazy_load_exclude( $attr, $attachment ) {
 			$custom_logo_id = siteorigin_setting( 'branding_logo' );
 			if ( empty( $custom_logo_id ) ) {
 				$custom_logo_id = get_theme_mod( 'custom_logo' );
 			}
-			
+
 			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
 				// Jetpack Lazy Load
 				if ( class_exists( 'Jetpack_Lazy_Images' ) ) {
@@ -664,9 +664,9 @@ if ( ! function_exists( 'siteorigin_unwind_display_icon' ) ) :
  */
 function siteorigin_unwind_display_icon( $type ) {
 
-	switch( $type ) {
+	switch ( $type ) {
 
-		case 'fullscreen-search' :
+		case 'fullscreen-search':
 			if ( siteorigin_setting( 'icons_fullscreen_search' ) && wp_attachment_is_image( siteorigin_setting( 'icons_fullscreen_search' ) ) ) : ?>
 				<?php siteorigin_unwind_custom_icon( 'icons_fullscreen_search', 'svg-icon-fullscreen-search' ); ?>
 			<?php else : ?>
@@ -676,7 +676,7 @@ function siteorigin_unwind_display_icon( $type ) {
 			<?php endif;
 			break;
 
-			case 'fullscreen-loading' :
+			case 'fullscreen-loading':
 				?>
 				<svg version="1.1" class="svg-icon-search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 				  <path id="icon_loading" data-name="icon loading" class="cls-1" d="M13,26A13,13,0,1,1,26,13,13,13,0,0,1,13,26ZM13,4a9,9,0,1,0,4.88,16.551,1.925,1.925,0,0,1-.466-0.308l-5.656-5.657a2.006,2.006,0,0,1,0-2.828h0a2.006,2.006,0,0,1,2.828,0l5.656,5.657a1.926,1.926,0,0,1,.309.466A8.987,8.987,0,0,0,13,4Z"/>
@@ -684,7 +684,7 @@ function siteorigin_unwind_display_icon( $type ) {
 				<?php
 				break;
 
-		case 'search' :
+		case 'search':
 			if ( siteorigin_setting( 'icons_search' ) && wp_attachment_is_image( siteorigin_setting( 'icons_search' ) ) ): ?>
 				<?php siteorigin_unwind_custom_icon( 'icons_search', 'svg-icon-search' ); ?>
 			<?php else : ?>
@@ -694,7 +694,7 @@ function siteorigin_unwind_display_icon( $type ) {
 			<?php endif;
 			break;
 
-		case 'close' :
+		case 'close':
 			if ( siteorigin_setting( 'icons_close_search' ) && wp_attachment_is_image( siteorigin_setting( 'icons_close_search' ) ) ): ?>
 				<?php siteorigin_unwind_custom_icon( 'icons_close_search', 'svg-icon-close' ); ?>
 			<?php else : ?>
