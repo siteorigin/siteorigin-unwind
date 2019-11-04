@@ -485,13 +485,13 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.main-navigation > div li:hover > a,.main-navigation > div li.focus > a {
 	color: ${fonts_text_dark};
 	}
-	.header-design-4 .main-navigation {
-	padding: calc( ${masthead_padding} /2) 0;
+	.header-design-4 .main-navigation-bar > .container {
+	height: calc( ${masthead_padding} / 2) 0;
 	}
-	.social-search .search-toggle .open .svg-icon-search path {
+	.search-toggle .open .svg-icon-search path {
 	fill: ${fonts_text_medium};
 	}
-	.social-search .search-toggle .close .svg-icon-close path {
+	.search-toggle .close .svg-icon-close path {
 	fill: ${fonts_text_medium};
 	}
 	.menu-toggle .svg-icon-menu path {
