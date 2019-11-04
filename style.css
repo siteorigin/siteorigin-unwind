@@ -602,12 +602,15 @@ a {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  line-height: 0;
-  float: left; }
+  align-items: center;
+  display: flex;
+  line-height: 1; }
   .main-navigation::after {
     clear: both;
     content: "";
     display: table; }
+  .header-design-3 .main-navigation {
+    justify-content: center; }
   .main-navigation > div {
     display: inline-block; }
     .main-navigation > div ul {
@@ -623,7 +626,7 @@ a {
         padding: 0;
         position: absolute;
         text-align: left;
-        top: 50px;
+        top: 24px;
         -webkit-transition: all 0.1s ease-in-out;
         -moz-transition: all 0.1s ease-in-out;
         transition: all 0.1s ease-in-out;
@@ -685,7 +688,7 @@ a {
         visibility: visible; }
     .main-navigation > div li {
       float: left;
-      padding: 2px 45px 0 0;
+      padding: 0 45px 0 0;
       position: relative; }
       .main-navigation > div li:last-child {
         padding-right: 0; }
@@ -693,10 +696,10 @@ a {
         text-transform: uppercase;
         color: #626262;
         font-family: "Lato", sans-serif;
-        font-size: 12.8px;
         font-size: 0.8rem;
         letter-spacing: 1px;
-        line-height: 60px; }
+        padding: 15px;
+        margin: -15px; }
       .main-navigation > div li:hover > a,
       .main-navigation > div li.focus > a {
         color: #2d2d2d; }
@@ -709,76 +712,76 @@ a {
     -ms-transform: scaleY(1);
     -o-transform: scaleY(1);
     transform: scaleY(1); }
-  .header-design-3 .main-navigation {
-    display: inline-block;
-    float: none; }
-  .header-design-4 .main-navigation {
-    display: inline-block;
-    float: right;
-    padding: calc(60px /2) 0; }
-    .header-design-4 .main-navigation > div li a {
-      line-height: 30px; }
+
+.header-design-3 .main-navigation-bar > .container {
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: center; }
+
+.header-design-4 .main-navigation-bar > .container {
+  align-items: center;
+  display: flex;
+  height: calc( 60px / 2) 0;
+  justify-content: space-between; }
 
 /*--------------------------------------------------------------
 ## Social and Search Icons
 --------------------------------------------------------------*/
 .social-search {
-  float: right;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  height: 60px;
   padding-left: 45px; }
-  .social-search .search-toggle {
-    background: transparent;
-    border: none;
-    line-height: 60px;
-    outline: none;
-    padding: 0; }
-    .social-search .search-toggle .open {
-      display: block; }
-      .social-search .search-toggle .open .svg-icon-search {
-        height: 16px;
-        position: relative;
-        top: 5px;
-        width: 17px; }
-        .social-search .search-toggle .open .svg-icon-search path {
-          fill: #626262; }
-    .social-search .search-toggle .close {
-      display: none; }
-      .social-search .search-toggle .close .svg-icon-close {
-        height: 16px;
-        width: 16px;
-        position: relative;
-        top: 5px; }
-        .social-search .search-toggle .close .svg-icon-close path {
-          fill: #626262; }
-    .social-search .search-toggle.close-search .open {
-      display: none; }
-    .social-search .search-toggle.close-search .close {
-      display: block; }
+  .header-design-3 .social-search,
+  .header-design-4 .social-search {
+    padding-left: 0; }
   .social-search .widget {
     display: inline-block; }
+    .social-search .widget .widgettitle {
+      display: none; }
   .social-search .v-line {
     background: #ebebeb;
     display: inline-block;
     height: 10px;
-    line-height: 60px;
-    margin: 0 8px;
+    margin: 0 12px;
     width: 1px; }
-  .header-design-3 .social-search,
-  .header-design-4 .social-search {
-    float: none; }
-    .header-design-3 .social-search .widget_sow-social-media-buttons,
-    .header-design-4 .social-search .widget_sow-social-media-buttons {
-      width: 100%; }
-    .header-design-3 .social-search .v-line,
-    .header-design-4 .social-search .v-line {
-      display: none; }
-    .header-design-3 .social-search .search-toggle,
-    .header-design-4 .social-search .search-toggle {
-      float: none;
-      line-height: 45px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 15; }
+  .header-design-3 .social-search .widget_sow-social-media-buttons,
+  .header-design-4 .social-search .widget_sow-social-media-buttons {
+    width: 100%; }
+  .header-design-3 .social-search .v-line,
+  .header-design-4 .social-search .v-line {
+    display: none; }
+  .header-design-3 .social-search .search-toggle,
+  .header-design-4 .social-search .search-toggle {
+    z-index: 15; }
+
+.search-toggle {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0; }
+  .search-toggle .open {
+    display: block; }
+    .search-toggle .open .svg-icon-search {
+      height: 16px;
+      position: relative;
+      width: 17px; }
+      .search-toggle .open .svg-icon-search path {
+        fill: #626262; }
+  .search-toggle .close {
+    display: none; }
+    .search-toggle .close .svg-icon-close {
+      height: 16px;
+      width: 16px;
+      position: relative; }
+      .search-toggle .close .svg-icon-close path {
+        fill: #626262; }
+  .search-toggle.close-search .open {
+    display: none; }
+  .search-toggle.close-search .close {
+    display: block; }
 
 /*--------------------------------------------------------------
 ## Mobile Menu
@@ -806,12 +809,8 @@ a {
   top: 61px;
   width: 100%;
   z-index: 10; }
-  .header-design-2 #mobile-navigation {
-    top: 60px; }
-  .header-design-3 #mobile-navigation {
-    top: 60px; }
   .header-design-4 #mobile-navigation {
-    top: 100px; }
+    top: 100%; }
   #mobile-navigation ul {
     list-style: none;
     margin: 0;
@@ -1602,6 +1601,11 @@ a {
       border-top: 1px solid #ebebeb; }
     .homepage-has-slider.header-design-2 #masthead .top-bar {
       border-bottom: none; }
+    #masthead .top-bar > .container {
+      align-items: center;
+      display: flex;
+      height: 60px;
+      justify-content: space-between; }
   #masthead .top-bar-sentinel {
     box-sizing: border-box; }
   #masthead .site-branding {
