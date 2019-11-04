@@ -388,9 +388,11 @@
 		}
 
 		.shopping-cart-link {
+			display: block;
 			line-height: 0;
+			margin: -15px;
+			padding: 15px;
 			position: relative;
-			vertical-align: middle;
 
 			.shopping-cart-text {
 				display: none;
@@ -405,7 +407,7 @@
 				font-size: 11px;
 				line-height: 19px;
 				position: absolute;
-				right: -11px;
+				right: 4px;
 				text-align: center;
 				width: 20px;
 			}

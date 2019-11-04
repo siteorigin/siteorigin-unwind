@@ -696,9 +696,10 @@ a {
         text-transform: uppercase;
         color: #626262;
         font-family: "Lato", sans-serif;
-        font-size: 12.8px;
         font-size: 0.8rem;
-        letter-spacing: 1px; }
+        letter-spacing: 1px;
+        padding: 15px;
+        margin: -15px; }
       .main-navigation > div li:hover > a,
       .main-navigation > div li.focus > a {
         color: #2d2d2d; }

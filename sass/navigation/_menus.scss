@@ -113,8 +113,10 @@
 				text-transform: uppercase;
 				color: $color__text-medium;
 				font-family: $font__details;
-				@include font-size(0.8);
+				font-size: 0.8rem;
 				letter-spacing: 1px;
+				padding: 15px;
+				margin: -15px;
 			}
 
 			&:hover > a,
