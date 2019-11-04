@@ -94,7 +94,7 @@
 			text-align: center;
 			text-transform: uppercase;
 			word-break: break-all;
-    		word-break: break-word;
+			word-break: break-word;
 
 			@media (max-width: 480px) {
 				@include font-size(3.2);
@@ -106,9 +106,9 @@
 			}
 		}
 
-        a {
+		a {
 			display: inline-block;
-        }
+		}
 
 		.site-description {
 			@include font-size(0.9333);
