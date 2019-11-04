@@ -74,6 +74,13 @@
 		@at-root .homepage-has-slider.header-design-2 & {
 			border-bottom: none;
 		}
+
+		> .container {
+			align-items: center;
+			display: flex;
+			height: 60px;
+			justify-content: space-between;
+		}
 	}
 
 	.top-bar-sentinel {

@@ -1,7 +1,12 @@
 .main-navigation {
+	align-items: center;
+	display: flex;
 	@include clearfix;
-	line-height: 0;
-	float: left;
+	line-height: 1;
+
+	@at-root .header-design-3 & {
+		justify-content: center;
+	}
 
 	> div {
 		display: inline-block;
@@ -20,7 +25,7 @@
 				padding: 0;
 				position: absolute;
 				text-align: left;
-				top: 50px;
+				top: 24px;
 				@include transition (all 0.1s ease-in-out);
 				@include transform-origin(center top);
 				@include transform(scaleY(0));
@@ -97,7 +102,7 @@
 
 		li {
 			float: left;
-			padding: 2px 45px 0 0;
+			padding: 0 45px 0 0;
 			position: relative;
 
 			&:last-child {
@@ -110,7 +115,6 @@
 				font-family: $font__details;
 				@include font-size(0.8);
 				letter-spacing: 1px;
-				line-height: 60px;
 			}
 
 			&:hover > a,
@@ -140,96 +144,61 @@
 			}
 		}
 	}
+}
 
-	@at-root .header-design-3 & {
-		display: inline-block;
-		float: none;
-	}
+// Menu Centered Below Header.
+.header-design-3 .main-navigation-bar > .container {
+	align-items: center;
+	display: flex;
+	height: 60px;
+	justify-content: center;
+}
 
-	@at-root .header-design-4 & {
-		display: inline-block;
-		float: right;
-		padding: calc(#{$masthead__padding} /2) 0;
-
-		> div li a {
-			line-height: 30px;
-		}
-	}
+// Menu in line with logo.
+.header-design-4 .main-navigation-bar > .container {
+	align-items: center;
+	display: flex;
+	height: calc( #{$masthead__padding} / 2 ) 0;
+	justify-content: space-between;
 }
 
 /*--------------------------------------------------------------
 ## Social and Search Icons
 --------------------------------------------------------------*/
 .social-search {
-	float: right;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	height: 60px;
 	padding-left: 45px;
 
-	.search-toggle {
-		background: transparent;
-		border: none;
-		line-height: 60px;
-		outline: none;
-		padding: 0;
+	@at-root {
 
-		.open {
-			display: block;
-
-			.svg-icon-search {
-				height: 16px;
-				position: relative;
-				top: 5px;
-				width: 17px;
-
-				path {
-					fill: $color__text-medium;
-				}
-			}
-		}
-
-		.close {
-			display: none;
-
-			.svg-icon-close {
-				height: 16px;
-				width: 16px;
-				position: relative;
-				top: 5px;
-
-				path {
-					fill: $color__text-medium;
-				}
-			}
-		}
-
-		&.close-search {
-
-			.open {
-				display: none;
-			}
-
-			.close {
-				display: block;
-			}
+		.header-design-3 &,
+		.header-design-4 & {
+			padding-left: 0;
 		}
 	}
 
 	.widget {
 		display: inline-block;
+
+		.widgettitle {
+			display: none;
+		}
 	}
 
 	.v-line {
 		background: $color__background-hr-dark;
 		display: inline-block;
 		height: 10px;
-		line-height: 60px;
-		margin: 0 8px;
+		margin: 0 12px;
 		width: 1px;
 	}
 
 	@at-root {
 		.header-design-3 &,
 		.header-design-4 & {
-			float: none;
 
 			.widget_sow-social-media-buttons {
 				width: 100%;
@@ -240,13 +209,54 @@
 			}
 
 			.search-toggle {
-				float: none;
-				line-height: 45px;
-				position: absolute;
-				right: 0;
-				top: 0;
 				z-index: 15;
 			}
+		}
+	}
+}
+
+.search-toggle {
+	background: transparent;
+	border: none;
+	outline: none;
+	padding: 0;
+
+	.open {
+		display: block;
+
+		.svg-icon-search {
+			height: 16px;
+			position: relative;
+			width: 17px;
+
+			path {
+				fill: $color__text-medium;
+			}
+		}
+	}
+
+	.close {
+		display: none;
+
+		.svg-icon-close {
+			height: 16px;
+			width: 16px;
+			position: relative;
+
+			path {
+				fill: $color__text-medium;
+			}
+		}
+	}
+
+	&.close-search {
+
+		.open {
+			display: none;
+		}
+
+		.close {
+			display: block;
 		}
 	}
 }
@@ -284,16 +294,8 @@
 	width: 100%;
 	z-index: 10;
 
-	@at-root .header-design-2 & {
-		top: 60px;
-	}
-
-	@at-root .header-design-3 & {
-		top: 60px;
-	}
-
 	@at-root .header-design-4 & {
-		top: 100px;
+		top: 100%;
 	}
 
 	ul {
