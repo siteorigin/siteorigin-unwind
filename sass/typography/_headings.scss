@@ -40,7 +40,7 @@ h6 {
 	@include justify-content(center);
 	text-align: center;
 	text-transform: uppercase;
-	
+
 	&:before, 
 	&:after {
 		align-self: center;
