@@ -99,6 +99,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.5.0 - 07 November 2019 =
+* Excluded the logo from LiteSpeed Cache, Smush and Jetpack lazy loading.
+* Removed heading tag clearing.
+* Various changes and refactoring to ensure that menu contents are always vertically centered. 
+If `header-1/2/3/4.php` are included in your child theme, they should be updated to reflect the changes made in this release.
+
 = 1.4.7 - 22 October 2019 =
 * Improved Jetpack related posts conditional.
 * Changed footer copyright text separators to hyphens.
