@@ -5,7 +5,7 @@ Contributors: siteorigin
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
-Tested up to: 5.2
+Tested up to: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.5.0 - 07 November 2019 =
+* Excluded the logo from LiteSpeed Cache, Smush and Jetpack lazy loading.
+* Removed heading tag clearing.
+* Various changes and refactoring to ensure that menu contents are always vertically centered. 
+If `header-1/2/3/4.php` are included in your child theme, they should be updated to reflect the changes made in this release.
 
 = 1.4.7 - 22 October 2019 =
 * Improved Jetpack related posts conditional.
