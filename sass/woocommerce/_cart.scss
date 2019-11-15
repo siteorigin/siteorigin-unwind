@@ -365,12 +365,21 @@
 			opacity: 0;
 			padding: 0;
 			position: absolute;
-			top: 50px;
+			top: 35px;
 			@include transition (all 0.1s ease-in-out);
 			@include transform-origin(center top);
 			@include transform( scaleY(0) );
 			visibility: hidden;
 			z-index: 9999;
+			width: 300px;
+
+			.mini_cart_item a {
+				white-space: normal;
+			}
+
+			.woocommerce-mini-cart__empty-message {
+				margin-bottom: -5px;
+			}
 
 			@at-root .header-design-4 & {
 				right: 0;
@@ -417,19 +426,6 @@
 				path {
 					fill: $color__text-medium;
 				}
-			}
-		}
-
-		.shopping-cart-dropdown {
-			top: 35px;
-			width: 300px;
-
-			.mini_cart_item a {
-				white-space: normal;
-			}
-
-			.woocommerce-mini-cart__empty-message {
-				margin-bottom: -5px;
 			}
 		}
 	}
