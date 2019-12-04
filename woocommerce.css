@@ -1208,6 +1208,7 @@ p.demo_store {
       line-height: 19px;
       position: absolute;
       right: 4px;
+      top: 15px;
       text-align: center;
       width: 20px; }
     .main-navigation .shopping-cart .shopping-cart-link .svg-icon-cart path {
