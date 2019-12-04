@@ -99,6 +99,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.5.1 - 04 December 2019 =
+* Fixed Block Editor admin max-width.
+* Minor header mini-cart style adjustments.
+* Header 4 - Menu in line with Logo: Don’t display top bar if empty.
+* Fixed header mini-cart product count position for Firefox.
+
 = 1.5.0 - 07 November 2019 =
 * Excluded the logo from LiteSpeed Cache, Smush and Jetpack lazy loading.
 * Removed heading tag clearing.
