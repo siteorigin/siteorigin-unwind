@@ -18,12 +18,12 @@
 	width: 100%;
 
 	span {
-    	background: inherit;
-    	border-radius: initial;
-    	color: inherit;
-    	cursor: pointer;
-    	font-size: inherit;
-	    padding: inherit;
+		background: inherit;
+		border-radius: initial;
+		color: inherit;
+		cursor: pointer;
+		font-size: inherit;
+		padding: inherit;
 
 		button {
 			@extend .button;
@@ -35,7 +35,7 @@
 	display: block;
 	clear: both;
 	width: 100%;
-	
+
 	.spinner {
 		margin: 0 auto;
 	}
@@ -55,7 +55,7 @@
 		margin: 0; 
 		padding: .3333em 0 0;
 		width: 31%;
-		
+
 		@media (max-width: 780px) {
 			width: 100%;
 		}
@@ -66,7 +66,7 @@
 			@media (max-width: 480px) {
 				margin-right: 0;
 			}
-		}			 
+		}
 
 		&:last-child {
 			margin-left: 2.4%;
@@ -82,17 +82,17 @@
 
 		h4 {
 			margin-top: 1em;
-			
+
 			a {
 				color: $color__text-dark;
 				font-weight: 700; 
 				line-height: normal;
-			
+
 				&:hover {
 					color: $color__text-medium;
 					text-decoration: none;
 				}
-			}	
+			}
 		}
 
 		&:hover .jp-relatedposts-post-title a {
@@ -103,10 +103,10 @@
 			color: $color__text-light;
 			font-size: .8666rem;
 			opacity: 1;
-			
+
 			&:last-of-type {
 				margin-bottom: 1.9833em; 
-			} 	
+			}
 		}
 	}
 }

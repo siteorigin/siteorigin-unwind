@@ -132,8 +132,8 @@
 	text-transform: uppercase;
 
 	#cancel-comment-reply-link {
-		color: $color__text-light; 
-		font-family: $font__details; 
+		color: $color__text-light;
+		font-family: $font__details;
 		@include font-size(0.8);
 		font-weight: normal;
 		letter-spacing: 1px; 
@@ -234,10 +234,12 @@
 		display: block;
 		clear: both;
 		margin: 0 0 8px;
-		overflow: auto;	
+		overflow: auto;
 
 		input {
 			margin-right: 0;
+			position: relative;
+			top: -1px;
 		}
 
 		label {
