@@ -119,7 +119,7 @@ function siteorigin_unwind_settings_init() {
 						'1' => esc_html__( 'Menu above header', 'siteorigin-unwind' ),
 						'2' => esc_html__( 'Menu below header', 'siteorigin-unwind' ),
 						'3' => esc_html__( 'Menu centered below header', 'siteorigin-unwind' ),
-						'4' => esc_html__( 'Menu in line with logo', 'siteorigin-unwind' ),
+						'4' => esc_html__( 'Menu inline with logo', 'siteorigin-unwind' ),
 					),
 				),
 				'social_widget' => array(
