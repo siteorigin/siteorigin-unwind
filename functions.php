@@ -193,7 +193,7 @@ function siteorigin_unwind_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Masthead', 'siteorigin-unwind' ),
 		'id'            => 'masthead-sidebar',
-		'description'   => esc_html__( 'Replaces the logo and description.', 'siteorigin-unwind' ),
+		'description'   => esc_html__( 'Replaces the logo and description. Works with all header layouts except Menu inline with logo.', 'siteorigin-unwind' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
