@@ -180,20 +180,20 @@ function siteorigin_unwind_widgets_init() {
 
 	if ( function_exists( 'is_woocommerce' ) ) {
 		register_sidebar( array(
-			'name' 			=> esc_html__( 'Shop', 'siteorigin-unwind' ),
-			'id' 			=> 'shop-sidebar',
-			'description' 	=> esc_html__( 'Displays on WooCommerce pages.', 'siteorigin-unwind' ),
+			'name'          => esc_html__( 'Shop', 'siteorigin-unwind' ),
+			'id'            => 'shop-sidebar',
+			'description'   => esc_html__( 'Displays on WooCommerce pages.', 'siteorigin-unwind' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' 	=> '</aside>',
-			'before_title' 	=> '<h2 class="widget-title heading-strike">',
-			'after_title' 	=> '</h2>',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title heading-strike">',
+			'after_title'   => '</h2>',
 		) );
 	}
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Masthead', 'siteorigin-unwind' ),
 		'id'            => 'masthead-sidebar',
-		'description'   => esc_html__( 'Replaces the logo and description.', 'siteorigin-unwind' ),
+		'description'   => esc_html__( 'Replaces the logo and description. Works with all header layouts except Menu inline with logo.', 'siteorigin-unwind' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title heading-strike">',
@@ -290,14 +290,14 @@ function siteorigin_unwind_premium_setup() {
 
 	// No Attribution addon.
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
-		'filter'  => 'siteorigin_unwind_footer_credits',
-		'enabled' => ! siteorigin_setting( 'branding_attribution' ),
+		'filter'             => 'siteorigin_unwind_footer_credits',
+		'enabled'            => ! siteorigin_setting( 'branding_attribution' ),
 		'siteorigin_setting' => '!branding_attribution'
 	) );
 
 	// Ajax Comments addon.
 	add_theme_support( 'siteorigin-premium-ajax-comments', array(
-		'enabled' => siteorigin_setting( 'blog_ajax_comments' ),
+		'enabled'            => siteorigin_setting( 'blog_ajax_comments' ),
 		'siteorigin_setting' => 'blog_ajax_comments'
 	) );
 }
