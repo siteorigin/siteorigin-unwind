@@ -733,7 +733,8 @@ a {
   display: flex;
   align-items: center;
   height: 60px;
-  padding-left: 45px; }
+  padding-left: 45px;
+  white-space: nowrap; }
   .header-design-3 .social-search,
   .header-design-4 .social-search {
     padding-left: 0; }
