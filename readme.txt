@@ -99,6 +99,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.5.2 - 21 December 2019 =
+* WooCommerce widget style improvements.
+* Minor comment form alignment improvements for Jetpack Subscriptions.
+
 = 1.5.1 - 04 December 2019 =
 * Fixed Block Editor admin max-width.
 * Minor header mini-cart style adjustments.
