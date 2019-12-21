@@ -1,62 +1,116 @@
-// Pricing filter.
-.widget_price_filter {
+.woocommerce {
 
-	.ui-slider {
-		background-color: $color__background-hr;
-		margin: 0 0 25px 0;
+	.widget_price_filter {
 
-		.ui-slider-range,
-		.ui-slider-handle {
-			background-color: $color__primary-accent;
-		}
+		.ui-slider {
+			background-color: $color__background-hr;
+			margin: 0 10px 25px 0;
 
-		.ui-slider-handle {
-			border-radius: 0;
-			height: 16px;
-			margin: 0;
-			top: -6px;
-			width: 10px;
-		}
-	}
+			.ui-slider-range,
+			.ui-slider-handle {
+				background-color: $color__primary-accent;
+			}
 
-	.ui-widget-content {
-		border-radius: 0;
-	}
-
-	.ui-slider-horizontal {
-		height: 3px;
-	}
-
-	.price_slider_amount {
-		text-align: left;
-
-		.price_label {
-			font-weight: normal;
-
-			span {
-				font-weight: bold;
+			.ui-slider-handle {
+				border-radius: 0;
+				height: 16px;
+				margin: 0;
+				top: -6px;
+				width: 10px;
 			}
 		}
 
-		.button {
-			background: transparent;
+		.ui-widget-content {
 			border-radius: 0;
-			border: 1px solid $color__background-hr;
-			color: $color__text-medium;
-			font-weight: normal;
-			float: right;
+		}
 
-			&:hover {
-				border-color: $color__primary-accent-dark;
-				box-shadow: none;
-				color: $color__primary-accent-dark;
+		.ui-slider-horizontal {
+			height: 3px;
+		}
+
+		.price_slider_amount {
+			text-align: left;
+
+			.price_label {
+				font-size: 0.9rem;
+				font-weight: normal;
+
+				span {
+					font-weight: bold;
+				}
+			}
+
+			.button {
+				background: transparent;
+				border-radius: 0;
+				border: 2px solid $color__background-hr;
+				color: $color__text-medium;
+				font-size: 0.9rem;
+				font-weight: normal;
+				float: right;
+
+				&:hover {
+					border-color: $color__primary-accent-dark;
+					box-shadow: none;
+					color: $color__primary-accent-dark;
+				}
+			}
+		}
+	}
+
+	.widget_layered_nav {
+
+		.woocommerce-widget-layered-nav-list__item {
+			font-size: 0.866rem;
+			padding-bottom: 5px;
+
+			&:last-of-type {
+				padding-bottom: 0;
+			}
+
+			a {
+
+				&:before {
+					background: transparent;
+					color: $color__text-light !important;
+				}
+
+				&:hover:before {
+					background: transparent;
+					color: $color__text-dark !important;
+				}
+			}
+
+			.count {
+				color: $color__text-light;
+			}			
+		}
+	}
+
+	.widget_layered_nav_filters {
+
+		li {
+			border-bottom: none;
+			font-size: 0.866rem;
+
+			a {
+
+				&:before {
+					background: transparent;
+					color: $color__text-light !important;
+				}
+
+				&:hover:before {
+					background: transparent;
+					color: $color__text-dark !important;
+				}
 			}
 		}
 	}
 }
 
-// Product Tag Cloud.
 .widget_product_tag_cloud {
+	margin-right: -6px;
 
 	a {
 		border: 1px solid $color__background-hr;
@@ -64,7 +118,7 @@
 		display: inline-block;
 		font-size: 15px;
 		line-height: normal;
-		margin: 0 7px 10px 0;
+		margin: 0 2px 6px 0;
 		padding: 8px 10px;
 		text-decoration: none;
 
@@ -76,52 +130,63 @@
 	}
 }
 
-// Products and Review Widget.
-.widget_products,
-.widget_recent_reviews,
-.widget_top_rated_products {
-	.product_list_widget {
+.site-content {
 
-		li {
-			padding-bottom: 25px;
-			padding-top: 0;
-			border-bottom: none;
+	.widget_products,
+	.widget_recent_reviews,
+	.widget_top_rated_products,
+	.widget_recently_viewed_products {
 
-			img {
-				float: left;
-				margin-left: 0;
-				margin-right: 20px;
-				width: 70px;
-			}
+		.product_list_widget {
 
-			.product-title {
-				display: inline-block;
-				padding: 10px 0;
-			}
+			li {
+				padding-bottom: 25px;
+				padding-top: 0;
+				border-bottom: none;
 
-			.amount {
-				color: $color__primary-accent;
-				display: inline;
-			}
+				a {
+					color: $color__text-medium;
+					text-decoration: none;
 
-			ins {
-				background: transparent;
-			}
+					&:hover {
+						color: $color__primary-accent;
+					}
+				}
 
-			del {
-				color: $color__text-light;
+				img {
+					float: left;
+					margin-left: 0;
+					margin-right: 20px;
+					width: 70px;
+				}
+
+				.product-title {
+					display: inline-block;
+					padding: 0;
+				}
 
 				.amount {
-					color: $color__text-light;
+					color: $color__primary-accent;
 					display: inline;
+				}
+
+				ins {
+					background: transparent;
+				}
+
+				del {
+					color: $color__text-light;
+
+					.amount {
+						color: $color__text-light;
+						display: inline;
+					}
 				}
 			}
 		}
-
-	}
+	}	
 }
 
-// Search Field.
 .widget_product_search {
 
 	.search-form {
@@ -212,6 +277,7 @@
 			&.checkout {
 				background: $color__primary-accent;
 				border-color: $color__primary-accent;
+				border-width: 1px;
 				color: #fff;
 
 				&:hover {
@@ -223,41 +289,70 @@
 	}
 }
 
-.widget_layered_nav {
+.widget_product_categories {
+
+	ul,
+	li {
+		margin: 0;
+		padding: 0;
+	}
 
 	li {
-
+		border-bottom: 1px solid $color__background-hr;
+		display: block;
+		font-size: 0.866rem;
+		line-height: normal;
+		padding: 0.866rem 0;
+		
 		a {
+			color: $color__text-medium;
+			text-decoration: none;
 
-			&:before {
-				background: transparent;
-				color: $color__text-light !important;
-			}
-
-			&:hover:before {
-				background: transparent;
-				color: $color__text-dark !important;
+			&:hover {
+				color: $color__primary-accent;
 			}
 		}
+
+		.count {
+			color: $color__text-light;
+		}
+
+		&.cat-parent {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+
+		.children {
+			border-top: 1px solid $color__background-hr;
+			margin-top: 0.866rem
+		}
+	}
+
+	> ul > li:last-of-type > a {
+		border-bottom: none;
+	}
+
+	.children li a {
+		padding-left: 1rem;
 	}
 }
 
-.widget_layered_nav_filters {
+#masthead-widgets,
+#secondary,
+#colophon {
 
-	li {
-		border-bottom: none;
-		padding: 0;
+	.widget_product_categories ul li .children {
+		margin-top: 0.866rem;
+	}
 
-		a {
-			&:before {
-				background: transparent;
-				color: $color__text-light !important;
-			}
+	.widget_shopping_cart .buttons {
 
-			&:hover:before {
-				background: transparent;
-				color: $color__text-dark !important;
-			}
+		.button:hover {
+			color: #fff;
+		}
+
+		.button.checkout {
+			color: #fff;
 		}
 	}
 }
