@@ -99,6 +99,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.5.3 - 01 January 2020 =
+* Updated footer attribution link text.
+* Prevented the menu social icons from wrapping when space is limited.
+* Header 3 - Menu centered below header: Don’t display top bar if empty.
+
 = 1.5.2 - 21 December 2019 =
 * WooCommerce widget style improvements.
 * Minor comment form alignment improvements for Jetpack Subscriptions.
@@ -106,7 +111,7 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 = 1.5.1 - 04 December 2019 =
 * Fixed Block Editor admin max-width.
 * Minor header mini-cart style adjustments.
-* Header 4 - Menu in line with Logo: Don’t display top bar if empty.
+* Header 4 - Menu in line with logo: Don’t display top bar if empty.
 * Fixed header mini-cart product count position for Firefox.
 
 = 1.5.0 - 07 November 2019 =
