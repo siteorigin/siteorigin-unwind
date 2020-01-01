@@ -43,7 +43,7 @@
 
 				$credit_text = apply_filters(
 					'siteorigin_unwind_footer_credits',
-					'<span>' . sprintf( esc_html__( 'Crafted with love by %s', 'siteorigin-unwind' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' ) . '</span>'
+					'<span>' . sprintf( esc_html__( 'Theme by %s', 'siteorigin-unwind' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' ) . '</span>'
 				);
 
 				if ( ! empty( $credit_text ) ) {

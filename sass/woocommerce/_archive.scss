@@ -238,7 +238,7 @@
 					}
 
 					* {
-						
+
 						@at-root .is_mobile#{&} {
 							opacity: 0;
 							visibility: hidden;
@@ -270,10 +270,10 @@
 					border: 2px solid #fff;
 					bottom: 20%;
 					color: $color__text-dark;
-					
+
 					@media (max-width: 1024px) {
 						bottom: 15%;
-					}										
+					}
 
 					&:hover {
 						border: 2px solid $color__text-dark;
@@ -302,7 +302,7 @@
 					border: 2px solid #fff;
 					color: #fff;
 					top: 20%;
-					
+
 					@media (max-width: 1024px) {
 						top: 15%;
 					}
