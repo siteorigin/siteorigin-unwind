@@ -1253,7 +1253,7 @@ p.demo_store {
   border-bottom: 1px solid #f4f4f4;
   box-sizing: border-box;
   margin: 0 0 13px 0;
-  padding: 0 0 13px 0;
+  padding: 0 30px 13px 0;
   position: relative;
   text-align: left; }
   .woocommerce .widget_shopping_cart_content .cart_list .mini_cart_item::after {
