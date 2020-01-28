@@ -1310,7 +1310,8 @@ p.demo_store {
   border-top: none !important;
   color: #626262;
   font-size: 14px;
-  margin: 14px 0 0 0;
+  line-height: 1.8666;
+  margin: 14px 0 !important;
   padding: 5px 0 !important;
   text-align: left; }
   .woocommerce .widget_shopping_cart_content .total strong {
@@ -1320,11 +1321,12 @@ p.demo_store {
     font-weight: 700; }
 
 .woocommerce .widget_shopping_cart_content .buttons {
-  margin: 14px 0 0 0;
+  margin: 0;
   padding-top: 0;
   text-align: center;
   text-transform: uppercase; }
   .woocommerce .widget_shopping_cart_content .buttons a {
+    display: inline-block;
     font-weight: normal;
     padding: 12px 1.5em;
     width: 49%; }
