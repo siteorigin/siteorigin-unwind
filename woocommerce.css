@@ -114,7 +114,7 @@ p.demo_store {
 
 .woocommerce a.button,
 .woocommerce a.button.alt,
-.woocommerce.single-product .cart button,
+.woocommerce .button.button.alt,
 .woocommerce .actions .button,
 .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button {
   background-color: #24c48a;
@@ -122,17 +122,17 @@ p.demo_store {
   color: #fff; }
   .woocommerce a.button:hover,
   .woocommerce a.button.alt:hover,
-  .woocommerce.single-product .cart button:hover,
+  .woocommerce .button.button.alt:hover,
   .woocommerce .actions .button:hover,
   .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:hover {
     background-color: #00a76a;
     border-color: #00a76a;
-    color: #fff; }
+    color: #fff !important; }
   .woocommerce a.button:active, .woocommerce a.button:focus,
   .woocommerce a.button.alt:active,
   .woocommerce a.button.alt:focus,
-  .woocommerce.single-product .cart button:active,
-  .woocommerce.single-product .cart button:focus,
+  .woocommerce .button.button.alt:active,
+  .woocommerce .button.button.alt:focus,
   .woocommerce .actions .button:active,
   .woocommerce .actions .button:focus,
   .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:active,

@@ -22,7 +22,7 @@
 
 .woocommerce a.button,
 .woocommerce a.button.alt,
-.woocommerce.single-product .cart button,
+.woocommerce .button.button.alt,
 .woocommerce .actions .button,
 .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button {
 	background-color: $color__primary-accent;
@@ -32,7 +32,7 @@
 	&:hover {
 		background-color: $color__primary-accent-dark;
 		border-color: $color__primary-accent-dark;
-		color: #fff;
+		color: #fff !important;
 	}
 
 	&:active,
