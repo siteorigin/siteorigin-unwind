@@ -904,15 +904,15 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	background-color: ${branding_accent};
 	border: 1px solid ${branding_accent};
 	}
-	.woocommerce a.button,.woocommerce a.button.alt,.woocommerce.single-product .cart button,.woocommerce .actions .button,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button {
+	.woocommerce a.button,.woocommerce a.button.alt,.woocommerce .button.button.alt,.woocommerce .actions .button,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button {
 	background-color: ${branding_accent};
 	border: 1px solid ${branding_accent};
 	}
-	.woocommerce a.button:hover,.woocommerce a.button.alt:hover,.woocommerce.single-product .cart button:hover,.woocommerce .actions .button:hover,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:hover {
+	.woocommerce a.button:hover,.woocommerce a.button.alt:hover,.woocommerce .button.button.alt:hover,.woocommerce .actions .button:hover,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:hover {
 	background-color: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
 	}
-	.woocommerce a.button:active,.woocommerce a.button:focus,.woocommerce a.button.alt:active,.woocommerce a.button.alt:focus,.woocommerce.single-product .cart button:active,.woocommerce.single-product .cart button:focus,.woocommerce .actions .button:active,.woocommerce .actions .button:focus,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:active,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:focus {
+	.woocommerce a.button:active,.woocommerce a.button:focus,.woocommerce a.button.alt:active,.woocommerce a.button.alt:focus,.woocommerce .button.button.alt:active,.woocommerce .button.button.alt:focus,.woocommerce .actions .button:active,.woocommerce .actions .button:focus,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:active,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:focus {
 	border-color: ${branding_accent};
 	}
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper {
