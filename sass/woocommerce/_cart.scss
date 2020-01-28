@@ -158,7 +158,6 @@
 					padding: 0;
 					width: 38px;
 
-
 					&::-webkit-inner-spin-button,
 					&::-webkit-outer-spin-button {
 						-webkit-appearance: none;
@@ -259,8 +258,8 @@
 			width: 100%;
 
 			h2 {
-				font-size: 24px;  
-				font-weight: bold; 
+				font-size: 24px;
+				font-weight: bold;
 				margin: 0 0 8px;
 
 				@media (max-width: 768px) {
