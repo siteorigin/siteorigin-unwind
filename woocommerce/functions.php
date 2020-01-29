@@ -35,8 +35,6 @@ function siteorigin_unwind_woocommerce_setup() {
 		add_theme_support( 'wc-product-gallery-zoom' );
 	}
 
-	// Modifying cart product image size.
-	add_image_size( 'cart_item_image_size', 80, 80, true );
 
 }
 add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_setup' );
@@ -120,13 +118,6 @@ function siteorigin_unwind_woocommerce_output_upsells() {
 	woocommerce_upsell_display( 4, 4 );
 }
 endif;
-
-function siteorigin_unwind_cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
-	// Create the product object.
-	$product = wc_get_product( $cart_item['product_id'] );
-	return $product->get_image( 'cart_item_image_size' );
-}
-add_filter( 'woocommerce_cart_item_thumbnail', 'siteorigin_unwind_cart_item_thumbnail', 10, 3 );
 
 function siteorigin_unwind_woocommerce_tag_cloud_widget() {
 	$args['unit'] = 'px';

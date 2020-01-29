@@ -1287,7 +1287,8 @@ p.demo_store {
     float: left;
     margin-right: 10px;
     vertical-align: middle;
-    width: 64px; }
+    width: 64px;
+    height: auto; }
   .woocommerce .widget_shopping_cart_content .cart_list .mini_cart_item .quantity {
     display: block;
     font-size: 14px;
