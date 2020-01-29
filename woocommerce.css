@@ -79,6 +79,9 @@ p.demo_store {
   .woocommerce-demo-store #page {
     margin-top: 0; } }
 
+.woocommerce .woocommerce-notices-wrapper a.button:hover {
+  color: #fff; }
+
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
@@ -138,6 +141,7 @@ p.demo_store {
   .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:active,
   .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:focus {
     background-color: #00a76a;
+    border-color: #00a76a;
     color: #fff; }
 
 /*--------------------------------------------------------------
