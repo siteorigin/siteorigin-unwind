@@ -913,7 +913,8 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	border-color: ${branding_accent_dark};
 	}
 	.woocommerce a.button:active,.woocommerce a.button:focus,.woocommerce a.button.alt:active,.woocommerce a.button.alt:focus,.woocommerce .button.button.alt:active,.woocommerce .button.button.alt:focus,.woocommerce .actions .button:active,.woocommerce .actions .button:focus,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:active,.woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:focus {
-	border-color: ${branding_accent};
+	background-color: ${branding_accent_dark};
+	border-color: ${branding_accent_dark};
 	}
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper {
 	color: ${fonts_text_medium};

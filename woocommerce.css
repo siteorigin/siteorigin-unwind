@@ -127,7 +127,7 @@ p.demo_store {
   .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:hover {
     background-color: #00a76a;
     border-color: #00a76a;
-    color: #fff !important; }
+    color: #fff; }
   .woocommerce a.button:active, .woocommerce a.button:focus,
   .woocommerce a.button.alt:active,
   .woocommerce a.button.alt:focus,
@@ -137,7 +137,7 @@ p.demo_store {
   .woocommerce .actions .button:focus,
   .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:active,
   .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .place-order .button:focus {
-    border-color: #24c48a;
+    background-color: #00a76a;
     color: #fff; }
 
 /*--------------------------------------------------------------

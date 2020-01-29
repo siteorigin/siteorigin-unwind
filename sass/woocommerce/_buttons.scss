@@ -32,12 +32,13 @@
 	&:hover {
 		background-color: $color__primary-accent-dark;
 		border-color: $color__primary-accent-dark;
-		color: #fff !important;
+		color: #fff;
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__primary-accent;
+		background-color: $color__primary-accent-dark;
+		border-color: $color__primary-accent-dark;
 		color: #fff;
 	}
 }
