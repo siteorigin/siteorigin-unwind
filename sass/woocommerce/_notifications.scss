@@ -50,7 +50,12 @@ p.demo_store {
 
 .woocommerce .woocommerce-notices-wrapper {
 
-	a.button:hover {
-		color: #fff;
+	a.button {
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #fff;
+		}
 	}
 }

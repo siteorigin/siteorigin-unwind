@@ -79,7 +79,7 @@ p.demo_store {
   .woocommerce-demo-store #page {
     margin-top: 0; } }
 
-.woocommerce .woocommerce-notices-wrapper a.button:hover {
+.woocommerce .woocommerce-notices-wrapper a.button:hover, .woocommerce .woocommerce-notices-wrapper a.button:active, .woocommerce .woocommerce-notices-wrapper a.button:focus {
   color: #fff; }
 
 /*--------------------------------------------------------------
