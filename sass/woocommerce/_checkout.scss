@@ -231,6 +231,13 @@
 							input {
 								top: 12px !important;
 							}
+
+							@media (max-width: 480px) {
+
+								.form-row {
+									width: 100%;
+								}
+							}
 						}
 					}
 

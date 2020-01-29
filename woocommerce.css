@@ -914,6 +914,9 @@ p.demo_store {
             margin-top: 0; }
         .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .payment_methods .payment_method_stripe input {
           top: 12px !important; }
+        @media (max-width: 480px) {
+          .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .payment_methods .payment_method_stripe .form-row {
+            width: 100%; } }
       .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .woocommerce-terms-and-conditions-wrapper p {
         margin-bottom: 14px; }
         .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment .woocommerce-terms-and-conditions-wrapper p.validate-required {
