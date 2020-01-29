@@ -1,5 +1,5 @@
 .woocommerce-checkout .entry-title {
-	font-size: 24px;		
+	font-size: 24px;
 }
 
 .woocommerce {
@@ -27,7 +27,7 @@
 		font-size: 14px;
 		margin: 0.5em 0;
 		padding: 10px 20px;
-		
+
 		p {
 			margin-bottom: 0;
 		}
@@ -88,7 +88,7 @@
 				label {
 					color: $color__text-dark;
 					font-size: 13px;
-					margin: 13px 0 1px;					
+					margin: 13px 0 1px;
 
 					abbr {
 						color: inherit;
@@ -107,7 +107,7 @@
 
 				[class*="_select"] {
 					font-size: 13px;
-					
+
 					a {
 						border-color: $color__background-hr-dark;
 					}
@@ -144,7 +144,7 @@
 				.woocommerce-checkout-review-order-table {
 					border: none;
 					border-bottom: 1px solid $color__background-hr;
-					font-family: $font__main; 
+					font-family: $font__main;
 					margin-bottom: 0;
 					
 					.product-name {
@@ -154,27 +154,27 @@
 					.product-total {
 						text-align: right;
 						width: 30%;
-					}						
-					
+					}
+
 					tr {
 						background: none;
 					}
-					
+
 					td {
-						border-top: 1px solid $color__background-hr;					
-					}					
+						border-top: 1px solid $color__background-hr;
+					}
 					
 					thead tr th {
 						padding: 10px 0 12px;
 					}
-					
+
 					tbody tr td {
 						padding: 13px 0 12px;
-						
+
 						dl {
 							margin: 0;
 						}
-						
+
 						dd {
 							margin: 0;
 						}
@@ -210,7 +210,7 @@
 						}
 
 						label {
-							font-size: 13px; 
+							font-size: 13px;
 						}
 
 						.payment_box {
@@ -231,14 +231,14 @@
 							input {
 								top: 12px !important;
 							}
-						}						
+						}
 					}
 
 					.woocommerce-terms-and-conditions-wrapper {
 
 						p {
 							margin-bottom: 14px;
-							
+
 							&.validate-required {
 								margin-bottom: 0;
 							}
@@ -249,7 +249,7 @@
 						float: right;
 						font-size: 16px;
 						margin-top: 30px;
-					}										
+					}
 				}
 			}
 		}
