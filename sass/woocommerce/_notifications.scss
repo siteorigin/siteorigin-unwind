@@ -50,6 +50,10 @@ p.demo_store {
 
 .woocommerce .woocommerce-notices-wrapper {
 
+	.woocommerce-message {
+		line-height: 41px;
+	}
+
 	a.button {
 
 		&:hover,
