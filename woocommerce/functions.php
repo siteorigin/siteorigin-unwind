@@ -35,7 +35,6 @@ function siteorigin_unwind_woocommerce_setup() {
 		add_theme_support( 'wc-product-gallery-zoom' );
 	}
 
-
 }
 add_action( 'after_setup_theme', 'siteorigin_unwind_woocommerce_setup' );
 
@@ -57,7 +56,7 @@ function siteorigin_unwind_woocommerce_enqueue_styles( $styles ) {
 add_filter( 'woocommerce_enqueue_styles', 'siteorigin_unwind_woocommerce_enqueue_styles' );
 
 function siteorigin_unwind_woocommerce_enqueue_scripts() {
-	
+
 	wp_enqueue_script( 'siteorigin-unwind-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array( 'jquery', 'wc-add-to-cart-variation' ), SITEORIGIN_THEME_VERSION );
 
 	$script_data = array(
@@ -93,11 +92,11 @@ add_filter( 'loop_shop_columns', 'siteorigin_unwind_woocommerce_loop_shop_column
  * @link https://github.com/woocommerce/woocommerce/wiki/Customizing-image-sizes-in-3.3-
  */
 function siteorigin_unwind_woocommerce_single_gallery_thumbnail_size( $size ) {
-    return array(
-        'width'  => 150,
-        'height' => 150,
-        'crop'   => 1,
-    );	
+	return array(
+		'width'  => 150,
+		'height' => 150,
+		'crop'   => 1,
+	);
 }
 add_filter( 'woocommerce_get_image_size_gallery_thumbnail', 'siteorigin_unwind_woocommerce_single_gallery_thumbnail_size' );
 
