@@ -174,6 +174,8 @@ jQuery( function( $ ) {
 
 	} );
 
-	$( so_unwind_data.chevron_down ).insertAfter( '.variations select' );
+	if ( ! $( 'body' ).hasClass( 'woo-variation-swatches' ) ) {
+		$( so_unwind_data.chevron_down ).insertAfter( '.variations select' );
+	}
 
 } );
