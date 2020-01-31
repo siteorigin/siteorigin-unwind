@@ -431,7 +431,8 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
 	// Custom CSS Code
-	$css .= 'body,button,input,select,textarea {
+	$css .= '/* style */
+	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
 	}
@@ -851,9 +852,6 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#commentform .comment-notes a:hover,#commentform .logged-in-as a:hover {
 	color: ${fonts_text_dark};
 	}
-	#commentform .comment-subscription-form label {
-	color: ${fonts_text_medium};
-	}
 	#colophon {
 	margin-top: ${footer_top_margin};
 	}
@@ -899,6 +897,12 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	$css .= '/* woocommerce */
 	.woocommerce-store-notice,p.demo_store {
 	background: ${branding_accent};
+	}
+	.woocommerce-message,.woocommerce-error,.woocommerce-info {
+	color: ${fonts_text_dark};
+	}
+	.woocommerce-message:before,.woocommerce-error:before,.woocommerce-info:before {
+	color: ${branding_accent};
 	}
 	.woocommerce.woocommerce-page #respond input#submit.alt.disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],.woocommerce.woocommerce-page a.button.alt.disabled,.woocommerce.woocommerce-page a.button.alt:disabled,.woocommerce.woocommerce-page a.button.alt:disabled[disabled],.woocommerce.woocommerce-page button.button.alt.disabled,.woocommerce.woocommerce-page button.button.alt:disabled,.woocommerce.woocommerce-page button.button.alt:disabled[disabled],.woocommerce.woocommerce-page input.button.alt.disabled,.woocommerce.woocommerce-page input.button.alt:disabled,.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
 	background-color: ${branding_accent};
@@ -1078,9 +1082,6 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	}
 	.variations select:hover + svg path {
 	fill: ${fonts_text_dark};
-	}
-	.woocommerce .woocommerce-info {
-	color: ${fonts_text_dark};
 	}
 	.woocommerce form.login label,.woocommerce form.checkout_coupon label {
 	color: ${fonts_text_dark};

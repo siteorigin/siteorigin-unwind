@@ -50,10 +50,6 @@ p.demo_store {
 
 .woocommerce .woocommerce-notices-wrapper {
 
-	.woocommerce-message {
-		line-height: 41px;
-	}
-
 	a.button {
 
 		&:hover,
@@ -61,5 +57,22 @@ p.demo_store {
 		&:focus {
 			color: #fff;
 		}
+	}
+}
+
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info {
+	border-top: 0;
+	color: $color__text-dark;
+	font-size: 14px; 
+	line-height: 41px;
+
+	&:before {
+		color: $color__primary-accent;
+	}
+
+	a {
+		text-decoration: none;
 	}
 }
