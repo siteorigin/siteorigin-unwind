@@ -540,7 +540,13 @@ p.demo_store {
       font-family: "Merriweather", serif; }
       .woocommerce.single-product #content div.product .entry-summary .cart .variations tr {
         background: none; }
+        .woocommerce.single-product #content div.product .entry-summary .cart .variations tr:last-of-type td {
+          padding: 0; }
       .woocommerce.single-product #content div.product .entry-summary .cart .variations td {
+        padding: 0; }
+      .woo-variation-swatches.woocommerce.single-product #content div.product .entry-summary .cart .variations td {
+        padding: 0 0 10px; }
+      .woo-variation-swatches.woocommerce.single-product #content div.product .entry-summary .cart .variations tr:last-of-type td {
         padding: 0; }
     .woocommerce.single-product #content div.product .entry-summary .cart .woocommerce-variation-price {
       margin-bottom: 20px; }
