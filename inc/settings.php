@@ -364,12 +364,13 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 				),
 				'display_quick_view' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display quick view button on hover.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Quick View', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display a product Quick View button on product archive pages.', 'siteorigin-unwind' ),
 				),
 				'display_mini_cart' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display Cart', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'Display WooCommerce cart in the main menu', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Mini Cart', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display the WooCommerce mini cart in the header menu.', 'siteorigin-unwind' ),
 				),
 				'shop_sidebar' => array(
 					'type' => 'select',
