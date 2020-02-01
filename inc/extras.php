@@ -81,6 +81,11 @@ function siteorigin_unwind_body_classes( $classes ) {
 		$classes[] = 'wc-columns-' . siteorigin_setting( 'woocommerce_archive_columns' );
 	}
 
+	// WooCommerce Add to Cart.
+	if ( function_exists( 'is_woocommerce' ) && siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
+		$classes[] = 'unwind-add-to-cart';
+	}
+
 	return $classes;
 }
 endif;
