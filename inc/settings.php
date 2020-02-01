@@ -356,7 +356,7 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 				),
 				'archive_columns' => array(
 					'type' => 'range',
-					'label' => esc_html__( 'Number of Products per Row', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Products per Row', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-unwind' ),
 					'min' => 2,
 					'max' => 5,
