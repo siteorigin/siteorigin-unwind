@@ -216,17 +216,17 @@
 			.loop-product-thumbnail {
 				background: $color__primary-accent-dark;
 				position: relative;
-			
+
+				@at-root .unwind-add-to-cart.woocommerce ul.products li.product .loop-product-thumbnail:hover img {
+					opacity: 0.25;
+				}
+
+				@at-root .unwind-add-to-cart.is_mobile.woocommerce ul.products li.product .loop-product-thumbnail:hover img {
+					opacity: 1;
+					visibility: visible; 
+				}
+
 				&:hover {
-
-					img {
-						opacity: 0.25;
-
-						@at-root .is_mobile#{&} {
-							opacity: 1;
-							visibility: visible;
-						}
-					}
 
 					.add_to_cart_button,
 					.product-quick-view-button,

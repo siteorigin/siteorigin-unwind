@@ -365,7 +365,12 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 				'display_quick_view' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Quick View', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'Display a product Quick View button on product archive pages.', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display a product Quick View button on hover product archive pages.', 'siteorigin-unwind' ),
+				),
+				'add_to_cart' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Add to Cart', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-unwind' ),
 				),
 				'display_mini_cart' => array(
 					'type' => 'checkbox',
@@ -1425,6 +1430,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['woocommerce_product_gallery']     = 'slider-lightbox';
 	$defaults['woocommerce_archive_columns']     = 3;
 	$defaults['woocommerce_display_quick_view']  = true;
+	$defaults['woocommerce_add_to_cart']         = true;
 	$defaults['woocommerce_display_mini_cart']   = true;
 	$defaults['woocommerce_shop_sidebar']        = 'left';
 

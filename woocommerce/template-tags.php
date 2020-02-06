@@ -79,7 +79,9 @@ function siteorigin_unwind_woocommerce_loop_item_image() { ?>
 		<?php woocommerce_template_loop_product_link_open(); ?>
 		<?php woocommerce_template_loop_product_thumbnail(); ?>
 		<?php woocommerce_template_loop_product_link_close(); ?>
-		<?php woocommerce_template_loop_add_to_cart(); ?>
+		<?php if ( siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
+			woocommerce_template_loop_add_to_cart();
+		} ?>
 		<?php if ( siteorigin_setting( 'woocommerce_display_quick_view' ) ) {
 			siteorigin_unwind_woocommerce_quick_view_button();
 		} ?>
