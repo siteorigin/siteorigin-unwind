@@ -104,11 +104,6 @@ jQuery( function( $ ) {
 		}
 	} )
 
-	// Display variation images.
-	$( '.variations' ).on( 'change', 'select', function() {
-		$( '.product-images-carousel' ).find( '.product-featured-image' ).click();
-	} );
-
 	// Quick View Modal.
 	$( '.product-quick-view-button' ).click( function( e ) {
 		e.preventDefault();
