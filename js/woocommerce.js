@@ -130,7 +130,7 @@ jQuery( function( $ ) {
 			}
 		);
 
-		$( document ).ajaxComplete( function () {
+		$( document ).ajaxComplete( function() {
 			if ( $.isFunction( $.fn.flexslider ) ) {
 				$( '.product-images-slider' ).flexslider( {
 					animation: "slide",
