@@ -99,6 +99,15 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.0 - 10 February 2020 =
+* Resolved mini-cart remove icon overlap.
+* Updated WooCommerce Customizer settings CSS.
+* Resolved mini-cart and cart widget image not updating to match the variation selected.
+* Minor Stripe checkout styling fixes.
+* Minor WooCommerce styling improvements.
+* Added an a new Add to Cart button setting at `Customize > Theme Settings > WooCommerce > Add to Cart`.
+* Resolved gap below gallery when variable product added to the cart.
+
 = 1.5.3 - 01 January 2020 =
 * Updated footer attribution link text.
 * Prevented the menu social icons from wrapping when space is limited.
