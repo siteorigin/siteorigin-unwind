@@ -59,3 +59,20 @@ p.demo_store {
 		}
 	}
 }
+
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info {
+	border-top: 0;
+	color: $color__text-dark;
+	font-size: 14px; 
+	line-height: 41px;
+
+	&:before {
+		color: $color__primary-accent;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}

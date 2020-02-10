@@ -104,11 +104,6 @@ jQuery( function( $ ) {
 		}
 	} )
 
-	// Display variation images.
-	$( '.variations' ).on( 'change', 'select', function() {
-		$( '.product-images-carousel' ).find( '.product-featured-image' ).click();
-	} );
-
 	// Quick View Modal.
 	$( '.product-quick-view-button' ).click( function( e ) {
 		e.preventDefault();
@@ -122,7 +117,7 @@ jQuery( function( $ ) {
 			so_unwind_data.ajaxurl,
 			{ action: 'so_product_quick_view', product_id: id },
 			function( data ) {
-				$( document ).find( $container ).find( $content ).html(data);
+				$( document ).find( $container ).find( $content ).html( data );
 				$( document ).find( '#product-quick-view .cart' ).triggerQuantityButtons();
 				$( document ).find( '#product-quick-view .variations_form' ).wc_variation_form();
 				$( document ).find( '#product-quick-view .variations_form' ).trigger( 'check_variations' );
@@ -130,7 +125,7 @@ jQuery( function( $ ) {
 			}
 		);
 
-		$( document ).ajaxComplete( function () {
+		$( document ).ajaxComplete( function() {
 			if ( $.isFunction( $.fn.flexslider ) ) {
 				$( '.product-images-slider' ).flexslider( {
 					animation: "slide",
@@ -172,8 +167,10 @@ jQuery( function( $ ) {
 			}
 		} );
 
-	} );	
+	} );
 
-	$( so_unwind_data.chevron_down ).insertAfter( '.variations select' );
+	if ( ! $( 'body' ).hasClass( 'woo-variation-swatches' ) ) {
+		$( so_unwind_data.chevron_down ).insertAfter( '.variations select' );
+	}
 
 } );

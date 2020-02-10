@@ -96,9 +96,25 @@
 
 					tr {
 						background: none;
+						
+						&:last-of-type {
+
+							td {
+								padding: 0;
+							}
+						}
 					}
 
 					td {
+						padding: 0;
+					}
+
+					// Woo Variation Swatches plugin.
+					@at-root .woo-variation-swatches.woocommerce.single-product #content div.product .entry-summary .cart .variations td {
+						padding: 0 0 10px;
+					}
+
+					@at-root .woo-variation-swatches.woocommerce.single-product #content div.product .entry-summary .cart .variations tr:last-of-type td {
 						padding: 0;
 					}
 				}
@@ -195,6 +211,10 @@
 		}
 
 		.images {
+
+			.flex-viewport {
+				height: auto !important;
+			}
 
 			.flex-control-nav {
 				margin-top: 10px;

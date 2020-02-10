@@ -5,7 +5,7 @@ Contributors: siteorigin
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
-Tested up to: 5.3
+Tested up to: 5.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,15 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.6.0 - 10 February 2020 =
+* Resolved mini-cart remove icon overlap.
+* Updated WooCommerce Customizer settings CSS.
+* Resolved mini-cart and cart widget image not updating to match the variation selected.
+* Minor Stripe checkout styling fixes.
+* Minor WooCommerce styling improvements.
+* Added an a new Add to Cart button setting at `Customize > Theme Settings > WooCommerce > Add to Cart`.
+* Resolved gap below gallery when variable product added to the cart.
 
 = 1.5.3 - 01 January 2020 =
 * Updated footer attribution link text.

@@ -356,7 +356,7 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 				),
 				'archive_columns' => array(
 					'type' => 'range',
-					'label' => esc_html__( 'Number of Products per Row', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Products per Row', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-unwind' ),
 					'min' => 2,
 					'max' => 5,
@@ -364,12 +364,18 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 				),
 				'display_quick_view' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display quick view button on hover.', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Quick View', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display a product Quick View button on hover product archive pages.', 'siteorigin-unwind' ),
+				),
+				'add_to_cart' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Add to Cart', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-unwind' ),
 				),
 				'display_mini_cart' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Display Cart', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'Display WooCommerce cart in the main menu', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Mini Cart', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Display the WooCommerce mini cart in the header menu.', 'siteorigin-unwind' ),
 				),
 				'shop_sidebar' => array(
 					'type' => 'select',
@@ -431,7 +437,8 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
  */
 function siteorigin_unwind_settings_custom_css( $css ) {
 	// Custom CSS Code
-	$css .= 'body,button,input,select,textarea {
+	$css .= '/* style */
+	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
 	}
@@ -851,9 +858,6 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	#commentform .comment-notes a:hover,#commentform .logged-in-as a:hover {
 	color: ${fonts_text_dark};
 	}
-	#commentform .comment-subscription-form label {
-	color: ${fonts_text_medium};
-	}
 	#colophon {
 	margin-top: ${footer_top_margin};
 	}
@@ -899,6 +903,12 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	$css .= '/* woocommerce */
 	.woocommerce-store-notice,p.demo_store {
 	background: ${branding_accent};
+	}
+	.woocommerce-message,.woocommerce-error,.woocommerce-info {
+	color: ${fonts_text_dark};
+	}
+	.woocommerce-message:before,.woocommerce-error:before,.woocommerce-info:before {
+	color: ${branding_accent};
 	}
 	.woocommerce.woocommerce-page #respond input#submit.alt.disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled,.woocommerce.woocommerce-page #respond input#submit.alt:disabled[disabled],.woocommerce.woocommerce-page a.button.alt.disabled,.woocommerce.woocommerce-page a.button.alt:disabled,.woocommerce.woocommerce-page a.button.alt:disabled[disabled],.woocommerce.woocommerce-page button.button.alt.disabled,.woocommerce.woocommerce-page button.button.alt:disabled,.woocommerce.woocommerce-page button.button.alt:disabled[disabled],.woocommerce.woocommerce-page input.button.alt.disabled,.woocommerce.woocommerce-page input.button.alt:disabled,.woocommerce.woocommerce-page input.button.alt:disabled[disabled] {
 	background-color: ${branding_accent};
@@ -1078,9 +1088,6 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	}
 	.variations select:hover + svg path {
 	fill: ${fonts_text_dark};
-	}
-	.woocommerce .woocommerce-info {
-	color: ${fonts_text_dark};
 	}
 	.woocommerce form.login label,.woocommerce form.checkout_coupon label {
 	color: ${fonts_text_dark};
@@ -1423,6 +1430,7 @@ function siteorigin_unwind_settings_defaults( $defaults ) {
 	$defaults['woocommerce_product_gallery']     = 'slider-lightbox';
 	$defaults['woocommerce_archive_columns']     = 3;
 	$defaults['woocommerce_display_quick_view']  = true;
+	$defaults['woocommerce_add_to_cart']         = true;
 	$defaults['woocommerce_display_mini_cart']   = true;
 	$defaults['woocommerce_shop_sidebar']        = 'left';
 
