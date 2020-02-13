@@ -89,6 +89,11 @@ p.demo_store {
   color: #2d2d2d;
   font-size: 14px;
   line-height: 41px; }
+  @media (max-width: 768px) {
+    .woocommerce-message,
+    .woocommerce-error,
+    .woocommerce-info {
+      line-height: normal; } }
   .woocommerce-message:before,
   .woocommerce-error:before,
   .woocommerce-info:before {

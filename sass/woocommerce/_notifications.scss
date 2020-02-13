@@ -68,6 +68,10 @@ p.demo_store {
 	font-size: 14px; 
 	line-height: 41px;
 
+	@media (max-width: 768px) {
+		line-height: normal;
+	}
+
 	&:before {
 		color: $color__primary-accent;
 	}
