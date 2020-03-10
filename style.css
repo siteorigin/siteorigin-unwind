@@ -603,8 +603,7 @@ a {
 --------------------------------------------------------------*/
 .main-navigation {
   align-items: center;
-  display: flex;
-  line-height: 1; }
+  display: flex; }
   .main-navigation::after {
     clear: both;
     content: "";
@@ -1605,7 +1604,7 @@ a {
     #masthead .top-bar > .container {
       align-items: center;
       display: flex;
-      height: 60px;
+      min-height: 60px;
       justify-content: space-between; }
   #masthead .top-bar-sentinel {
     box-sizing: border-box; }
