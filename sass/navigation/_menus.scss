@@ -2,7 +2,6 @@
 	align-items: center;
 	display: flex;
 	@include clearfix;
-	line-height: 1;
 
 	@at-root .header-design-3 & {
 		justify-content: center;
