@@ -2418,8 +2418,8 @@ a {
   .yarpp-related ol,
   .related-posts-section ol {
     list-style: none;
-    margin: 0;
-    padding: 0.3333em 0 0; }
+    margin: 0 -15px;
+    padding: 0.3333em 0; }
     .yarpp-related ol::after,
     .related-posts-section ol::after {
       clear: both;
@@ -2430,28 +2430,12 @@ a {
       display: block;
       float: left;
       margin: 0;
-      width: 31%; }
+      padding: 0 15px;
+      width: 33.33%; }
       @media (max-width: 480px) {
         .yarpp-related ol li,
         .related-posts-section ol li {
           width: 100%; } }
-      .yarpp-related ol li:first-child,
-      .related-posts-section ol li:first-child {
-        margin-right: 3.5%; }
-        @media (max-width: 480px) {
-          .yarpp-related ol li:first-child,
-          .related-posts-section ol li:first-child {
-            margin-right: 0; } }
-      .yarpp-related ol li:last-child,
-      .related-posts-section ol li:last-child {
-        margin-left: 3.5%; }
-        @media (max-width: 480px) {
-          .yarpp-related ol li:last-child,
-          .related-posts-section ol li:last-child {
-            margin-left: 0; } }
-      .yarpp-related ol li:only-child,
-      .related-posts-section ol li:only-child {
-        margin: 0; }
       .yarpp-related ol li a,
       .related-posts-section ol li a {
         text-decoration: none; }
@@ -2463,7 +2447,9 @@ a {
         font-size: 14.9328px;
         font-size: 0.9333rem;
         line-height: normal;
-        margin-bottom: 0; }
+        margin-top: 1em;
+        margin-bottom: 0;
+        padding: 0; }
         .yarpp-related ol li .related-post-title:hover,
         .related-posts-section ol li .related-post-title:hover {
           color: #626262; }
@@ -3554,5 +3540,3 @@ object {
 .entry-video,
 .entry-image {
   margin: 0 0 35px; }
-
-/*# sourceMappingURL=sass/maps/style.css.map */
