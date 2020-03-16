@@ -816,37 +816,18 @@
 	ol {
 		@include clearfix;
 		list-style: none;
-		margin: 0;
-		padding: 0.3333em 0 0;
+		margin: 0 -15px;
+		padding: 0.3333em 0;
 
 		li {
 			display: block;
 			float: left;
 			margin: 0;
-			width: 31%;
+			padding: 0 15px;
+			width: 33.33%;
 
 			@media (max-width: 480px) {
 				width: 100%;
-			}
-
-			&:first-child {
-				margin-right: 3.5%;
-
-				@media (max-width: 480px) {
-					margin-right: 0;
-				}
-			}
-
-			&:last-child {
-				margin-left: 3.5%;
-
-				@media (max-width: 480px) {
-					margin-left: 0;
-				}
-			}
-
-			&:only-child {
-				margin: 0;
 			}
 
 			a {
@@ -860,7 +841,9 @@
 			.related-post-title {
 				@include font-size(0.9333);
 				line-height: normal;
+				margin-top: 1em;
 				margin-bottom: 0;
+				padding: 0;
 
 				@at-root &:hover {
 					color: $color__text-medium;

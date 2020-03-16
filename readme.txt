@@ -99,6 +99,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.1 - 16 March 2020 =
+* WooCommerce: Corrected notifications line-height for mobile.
+* WooCommerce: Enqueued the WooCommerce JS file in minified format.
+* Improved styling for multi-line menus.
+* Improved related posts styling.
+
 = 1.6.0 - 10 February 2020 =
 * Resolved mini-cart remove icon overlap.
 * Updated WooCommerce Customizer settings CSS.
