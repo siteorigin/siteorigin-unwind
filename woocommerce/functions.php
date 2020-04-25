@@ -57,7 +57,9 @@ add_filter( 'woocommerce_enqueue_styles', 'siteorigin_unwind_woocommerce_enqueue
 
 function siteorigin_unwind_woocommerce_enqueue_scripts() {
 
+	if ( is_woocommerce() || is_cart() || wc_post_content_has_shortcode( 'products' ) ) {
 	wp_enqueue_script( 'siteorigin-unwind-woocommerce', get_template_directory_uri() . '/js/woocommerce' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery', 'wc-add-to-cart-variation' ), SITEORIGIN_THEME_VERSION );
+	}
 
 	$script_data = array(
 		'chevron_down' => '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32"><path d="M30.054 14.429l-13.25 13.232q-0.339 0.339-0.804 0.339t-0.804-0.339l-13.25-13.232q-0.339-0.339-0.339-0.813t0.339-0.813l2.964-2.946q0.339-0.339 0.804-0.339t0.804 0.339l9.482 9.482 9.482-9.482q0.339-0.339 0.804-0.339t0.804 0.339l2.964 2.946q0.339 0.339 0.339 0.813t-0.339 0.813z"></path></svg>',
