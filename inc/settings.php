@@ -112,9 +112,9 @@ function siteorigin_unwind_settings_init() {
 		'masthead' => array(
 			'title' => esc_html__( 'Header', 'siteorigin-unwind' ),
 			'fields' => array(
-				'design'	=> array(
-					'type'	=> 'select',
-					'label'	=> esc_html__( 'Header Design', 'siteorigin-unwind' ),
+				'design' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Header Design', 'siteorigin-unwind' ),
 					'options' => array(
 						'1' => esc_html__( 'Menu above header', 'siteorigin-unwind' ),
 						'2' => esc_html__( 'Menu below header', 'siteorigin-unwind' ),
@@ -130,16 +130,16 @@ function siteorigin_unwind_settings_init() {
 					'plugin_name' => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Add social icons to the menu.', 'siteorigin-unwind' ),
 				),
-				'padding'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Header Padding', 'siteorigin-unwind' ),
+				'padding' => array(
+					'type' => 'measurement',
+					'label' => esc_html__( 'Header Padding', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Top and bottom header padding.', 'siteorigin-unwind' ),
-					'live'	=> true,
+					'live' => true,
 				),
 				'bottom_margin'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Bottom Margin', 'siteorigin-unwind' ),
-					'live'	=> true,
+					'type' => 'measurement',
+					'label' => esc_html__( 'Bottom Margin', 'siteorigin-unwind' ),
+					'live' => true,
 				),
 			)
 		),
@@ -158,8 +158,8 @@ function siteorigin_unwind_settings_init() {
 					'description' => esc_html__( 'Stick menu to top of screen.', 'siteorigin-unwind' ),
 				),
 				'mobile_menu_collapse' => array(
-					'label'       => esc_html__( 'Mobile Menu Collapse', 'siteorigin-unwind' ),
-					'type'        => 'number',
+					'label' => esc_html__( 'Mobile Menu Collapse', 'siteorigin-unwind' ),
+					'type' => 'number',
 					'description' => esc_html__( 'The screen width in pixels when the primary menu changes to a mobile menu.', 'siteorigin-unwind' )
 				),
 				'post' => array(
@@ -201,11 +201,11 @@ function siteorigin_unwind_settings_init() {
 			'title' => esc_html__( 'Layout', 'siteorigin-unwind' ),
 			'fields' => array(
 				'main_sidebar'	=> array(
-					'type'	=> 'select',
-					'label'	=> esc_html__( 'Main Sidebar Position', 'siteorigin-unwind' ),
+					'type' => 'select',
+					'label' => esc_html__( 'Main Sidebar Position', 'siteorigin-unwind' ),
 					'options' => array(
 						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
-						'left'  => esc_html__( 'Left', 'siteorigin-unwind' ),
+						'left' => esc_html__( 'Left', 'siteorigin-unwind' ),
 					),
 				),
 			)
@@ -235,10 +235,10 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Blog Archive Layout', 'siteorigin-unwind' ),
 					'options' => array(
 						'default' => esc_html__( 'Default', 'siteorigin-unwind' ),
-						'grid'  => esc_html__( 'Grid', 'siteorigin-unwind' ),
-						'offset'  => esc_html__( 'Offset', 'siteorigin-unwind' ),
-						'alternate'  => esc_html__( 'Alternate', 'siteorigin-unwind' ),
-						'masonry'  => esc_html__( 'Masonry', 'siteorigin-unwind' ),
+						'grid' => esc_html__( 'Grid', 'siteorigin-unwind' ),
+						'offset' => esc_html__( 'Offset', 'siteorigin-unwind' ),
+						'alternate' => esc_html__( 'Alternate', 'siteorigin-unwind' ),
+						'masonry' => esc_html__( 'Masonry', 'siteorigin-unwind' ),
 					),
 					'description' => esc_html__('Choose how to display your posts on the blog and archive pages.', 'siteorigin-unwind'),
 				),
@@ -247,7 +247,7 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Post Content', 'siteorigin-unwind' ),
 					'options' => array(
 						'full' => esc_html__( 'Full Post', 'siteorigin-unwind' ),
-						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-unwind' ),
+						'excerpt' => esc_html__( 'Post Excerpt', 'siteorigin-unwind' ),
 					),
 					'description' => esc_html__( 'Choose how to display your post content on the blog and archive pages. Select Full Post if using the "more" quicktag. Applies for the default post layout only.', 'siteorigin-unwind' ),
 				),
@@ -313,16 +313,16 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Constrain', 'siteorigin-unwind' ),
 					'description' => esc_html__( "Constrain the footer width.", 'siteorigin-unwind' ),
 				),
-				'top_padding'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Top Padding', 'siteorigin-unwind' ),
-					'live'	=> true,
+				'top_padding' => array(
+					'type' => 'measurement',
+					'label' => esc_html__( 'Top Padding', 'siteorigin-unwind' ),
+					'live' => true,
 				),
-				'side_padding'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Side Padding', 'siteorigin-unwind' ),
+				'side_padding' => array(
+					'type' => 'measurement',
+					'label' => esc_html__( 'Side Padding', 'siteorigin-unwind' ),
 					'description' => esc_html__( "Applies if the footer width is not constrained.", 'siteorigin-unwind' ),
-					'live'	=> true,
+					'live' => true,
 				),
 				'top_margin' => array(
 					'type' => 'measurement',
