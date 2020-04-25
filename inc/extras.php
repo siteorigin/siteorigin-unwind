@@ -73,7 +73,7 @@ function siteorigin_unwind_body_classes( $classes ) {
 
 		if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'right' ) {
 			$classes[] = 'woocommerce-sidebar-right';
-		}			
+		}
 	}
 
 	// WooCommerce columns.
