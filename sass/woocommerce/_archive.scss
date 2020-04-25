@@ -12,14 +12,14 @@
 		.ordering-selector-wrapper {
 			border: 1px solid $color__background-hr-dark;
 			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
 			color: $color__text-medium;
 			display: block;
 			font-size: 0.85em;
 			line-height: 1em;
 			padding: 10px;
 			position: relative;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
 
 			.current {
 				display: inline-block;
@@ -85,8 +85,8 @@
 
 				.ordering-dropdown {
 					opacity: 1;
-					visibility: visible;
 					@include transform( scale(1) );
+					visibility: visible;
 				}
 
 				svg {
@@ -175,10 +175,10 @@
 				font-size: 12px;
 				font-weight: normal;
 				left: 0;
-				right: auto;
 				line-height: normal;
 				min-height: 0;
 				padding: 6px 12px;
+				right: auto;
 				text-transform: uppercase;
 				top: 6px;
 				z-index: 10;
@@ -223,7 +223,7 @@
 
 				@at-root .unwind-add-to-cart.is_mobile.woocommerce ul.products li.product .loop-product-thumbnail:hover img {
 					opacity: 1;
-					visibility: visible; 
+					visibility: visible;
 				}
 
 				&:hover {
