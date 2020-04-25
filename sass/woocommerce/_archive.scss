@@ -337,9 +337,7 @@
 					}
 				}
 
-				// Checking for two items within .loop-product-thumbnail.
-				a:first-child:nth-last-child(2),
-				a:first-child:nth-last-child(2) ~ a {
+				@at-root .unwind-product-overlay-single ul.products li.product .loop-product-thumbnail a:nth-of-type(2) {
 					bottom: auto;
 					top: 50%;
 					transform: translate(-50%, -50%);

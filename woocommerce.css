@@ -440,6 +440,10 @@ p.demo_store {
       .woocommerce ul.products li.product .loop-product-thumbnail a.added_to_cart:hover {
         border: 2px solid #2d2d2d;
         border-bottom: 0; }
+    .unwind-product-overlay-single ul.products li.product .loop-product-thumbnail a:nth-of-type(2) {
+      bottom: auto;
+      top: 50%;
+      transform: translate(-50%, -50%); }
 
 .woocommerce .woocommerce-pagination .page-numbers {
   border: none; }
