@@ -52,7 +52,7 @@
 			.ordering-dropdown {
 				background: white;
 				border: 1px solid $color__background-hr-dark;
-				box-shadow: 0 1px 1px rgba(0,0,0,0.07);
+				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
 				display: block;
 				list-style: none;
 				margin: 0;
@@ -76,21 +76,21 @@
 				}
 
 				opacity: 0;
-				@include transition (all 0.15s ease-in);
+				@include transition(all 0.15s ease-in);
 				@include transform-origin(center top);
-				@include transform( scale(0.95) );
+				@include transform(scale(0.95));
 			}
 
 			&.open-dropdown {
 
 				.ordering-dropdown {
 					opacity: 1;
-					@include transform( scale(1) );
+					@include transform(scale(1));
 					visibility: visible;
 				}
 
 				svg {
-					@include transform( rotate(0deg) );
+					@include transform(rotate(0deg));
 
 					path {
 						fill: $color__text-dark;
@@ -217,11 +217,11 @@
 				background: $color__primary-accent-dark;
 				position: relative;
 
-				@at-root .unwind-add-to-cart.woocommerce ul.products li.product .loop-product-thumbnail:hover img {
+				@at-root .unwind-add-to-cart ul.products li.product .loop-product-thumbnail:hover img {
 					opacity: 0.25;
 				}
 
-				@at-root .unwind-add-to-cart.is_mobile.woocommerce ul.products li.product .loop-product-thumbnail:hover img {
+				@at-root .unwind-add-to-cart.is_mobile ul.products li.product .loop-product-thumbnail:hover img {
 					opacity: 1;
 					visibility: visible;
 				}
@@ -258,7 +258,7 @@
 					opacity: 0;
 					padding: 12px 11px;
 					position: absolute;
-					@include transform( translateX( -50% ) );
+					@include transform(translateX(-50%));
 					visibility: hidden;
 				}
 
@@ -328,13 +328,21 @@
 					margin: 0;
 					padding: 12px 15px;
 					position: absolute;
-					@include transform( translateX( -50% ) );
+					@include transform(translateX(-50%));
 					text-transform: uppercase;
 
 					&:hover {
 						border: 2px solid $color__text-dark;
 						border-bottom: 0;
 					}
+				}
+
+				// Checking for two items within .loop-product-thumbnail.
+				a:first-child:nth-last-child(2),
+				a:first-child:nth-last-child(2) ~ a {
+					bottom: auto;
+					top: 50%;
+					transform: translate(-50%, -50%);
 				}
 			}
 		}
