@@ -217,11 +217,11 @@
 				background: $color__primary-accent-dark;
 				position: relative;
 
-				@at-root .unwind-add-to-cart ul.products li.product .loop-product-thumbnail:hover img {
+				@at-root .unwind-product-overlay ul.products li.product .loop-product-thumbnail:hover img {
 					opacity: 0.25;
 				}
 
-				@at-root .unwind-add-to-cart.is_mobile ul.products li.product .loop-product-thumbnail:hover img {
+				@at-root .unwind-product-overlay.is_mobile ul.products li.product .loop-product-thumbnail:hover img {
 					opacity: 1;
 					visibility: visible;
 				}
