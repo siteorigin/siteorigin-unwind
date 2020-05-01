@@ -1680,13 +1680,13 @@ a.product-quick-view-button {
       #quick-view-container .quick-view {
         width: 85%; } }
   #quick-view-container .quickview-close-icon {
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 0.5;
     position: absolute;
     right: 20px;
     top: 20px;
-    line-height: 0.5;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 30px;
-    cursor: pointer;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -1722,8 +1722,8 @@ a.product-quick-view-button {
       padding: 0; }
     #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav a {
       height: 50px;
-      top: 49.166%;
       margin-top: -25px;
+      top: 49.166%;
       width: 40px; }
       #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav a:before {
         background: none;
@@ -1748,12 +1748,12 @@ a.product-quick-view-button {
     #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-next:hover {
       background: transparent !important; }
   #quick-view-container .product-content-wrapper .product-info-wrapper {
-    width: 50%;
     float: right;
     max-height: 500px;
     overflow-y: auto;
     padding: 20px;
-    position: relative; }
+    position: relative;
+    width: 50%; }
     @media (max-width: 600px) {
       #quick-view-container .product-content-wrapper .product-info-wrapper {
         float: none;
@@ -1763,13 +1763,13 @@ a.product-quick-view-button {
     #quick-view-container .product-content-wrapper .product-info-wrapper a {
       text-decoration: none; }
     #quick-view-container .product-content-wrapper .product-info-wrapper .product_title {
-      text-align: left;
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      text-align: left; }
     #quick-view-container .product-content-wrapper .product-info-wrapper .price {
-      margin: 15px 0;
       color: #24c48a;
       font-family: "Lato", sans-serif;
-      font-size: 20px; }
+      font-size: 20px;
+      margin: 15px 0; }
       #quick-view-container .product-content-wrapper .product-info-wrapper .price del {
         opacity: 0.5; }
       #quick-view-container .product-content-wrapper .product-info-wrapper .price ins {
