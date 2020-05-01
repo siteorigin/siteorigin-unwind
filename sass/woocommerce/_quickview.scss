@@ -319,6 +319,11 @@ a.product-quick-view-button {
 					font-size: 12px;
 					margin-left: 10px;
 				}
+
+				// Variation Swatches for WooCommerce plugin.
+				@at-root  #quick-view-container .product-content-wrapper .variations td.woo-variation-items-wrapper .reset_variations {
+					margin-left: 0;
+				}
 			}
 		}
 

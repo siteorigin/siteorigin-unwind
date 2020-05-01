@@ -1868,6 +1868,8 @@ a.product-quick-view-button {
       #quick-view-container .product-content-wrapper .variations td .reset_variations {
         font-size: 12px;
         margin-left: 10px; }
+      #quick-view-container .product-content-wrapper .variations td.woo-variation-items-wrapper .reset_variations {
+        margin-left: 0; }
   #quick-view-container .product-content-wrapper .single_variation_wrap .woocommerce-variation-price {
     margin: 15px 0; }
   #quick-view-container .product-content-wrapper .group_table {

@@ -121,7 +121,9 @@ jQuery( function( $ ) {
 				$( document ).find( '#product-quick-view .cart' ).triggerQuantityButtons();
 				$( document ).find( '#product-quick-view .variations_form' ).wc_variation_form();
 				$( document ).find( '#product-quick-view .variations_form' ).trigger( 'check_variations' );
-				$( so_unwind_data.chevron_down ).insertAfter( '#product-quick-view .variations_form select' );
+				if ( ! $( 'body' ).hasClass( 'woo-variation-swatches' ) ) {
+					$( so_unwind_data.chevron_down ).insertAfter( '#product-quick-view .variations_form select' );
+				}
 			}
 		);
 
