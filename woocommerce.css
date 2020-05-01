@@ -1799,7 +1799,7 @@ a.product-quick-view-button {
       #quick-view-container .product-content-wrapper .product-info-wrapper .cart .quantity {
         display: inline-block;
         float: left;
-        margin: -1px 6px 0 0; }
+        margin: 0 6px 0 0; }
         #quick-view-container .product-content-wrapper .product-info-wrapper .cart .quantity input {
           padding: 5px 6px; }
     #quick-view-container .product-content-wrapper .product-info-wrapper .quantity.button-controls::after {
