@@ -184,14 +184,14 @@ p.demo_store {
   .woocommerce .woocommerce-ordering .ordering-selector-wrapper {
     border: 1px solid #ebebeb;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     color: #626262;
     display: block;
     font-size: 0.85em;
     line-height: 1em;
     padding: 10px;
-    position: relative;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; }
+    position: relative; }
     .woocommerce .woocommerce-ordering .ordering-selector-wrapper .current {
       display: inline-block; }
     .woocommerce .woocommerce-ordering .ordering-selector-wrapper svg {
@@ -253,12 +253,12 @@ p.demo_store {
           color: #2d2d2d; }
     .woocommerce .woocommerce-ordering .ordering-selector-wrapper.open-dropdown .ordering-dropdown {
       opacity: 1;
-      visibility: visible;
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
       -ms-transform: scale(1);
       -o-transform: scale(1);
-      transform: scale(1); }
+      transform: scale(1);
+      visibility: visible; }
     .woocommerce .woocommerce-ordering .ordering-selector-wrapper.open-dropdown svg {
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
@@ -316,10 +316,10 @@ p.demo_store {
     font-size: 12px;
     font-weight: normal;
     left: 0;
-    right: auto;
     line-height: normal;
     min-height: 0;
     padding: 6px 12px;
+    right: auto;
     text-transform: uppercase;
     top: 6px;
     z-index: 10; }
@@ -343,9 +343,9 @@ p.demo_store {
   .woocommerce ul.products li.product .loop-product-thumbnail {
     background: #00a76a;
     position: relative; }
-    .unwind-add-to-cart.woocommerce ul.products li.product .loop-product-thumbnail:hover img {
+    .unwind-product-overlay ul.products li.product .loop-product-thumbnail:hover img {
       opacity: 0.25; }
-    .unwind-add-to-cart.is_mobile.woocommerce ul.products li.product .loop-product-thumbnail:hover img {
+    .unwind-product-overlay.is_mobile ul.products li.product .loop-product-thumbnail:hover img {
       opacity: 1;
       visibility: visible; }
     .woocommerce ul.products li.product .loop-product-thumbnail:hover .add_to_cart_button,
@@ -440,6 +440,10 @@ p.demo_store {
       .woocommerce ul.products li.product .loop-product-thumbnail a.added_to_cart:hover {
         border: 2px solid #2d2d2d;
         border-bottom: 0; }
+    .unwind-product-overlay-single ul.products li.product .loop-product-thumbnail a:nth-of-type(2) {
+      bottom: auto;
+      top: 50%;
+      transform: translate(-50%, -50%); }
 
 .woocommerce .woocommerce-pagination .page-numbers {
   border: none; }
