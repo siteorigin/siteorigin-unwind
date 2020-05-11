@@ -99,6 +99,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.2 - 11 May 2020 =
+* Code formatting improvements.
+* WooCommerce: Conditionally load WooCommerce JavaScript file.
+* WooCommerce: Minor Quick View design improvements.
+* WooCommerce: Improvements to the archive overlay formatting.
+
 = 1.6.1 - 16 March 2020 =
 * WooCommerce: Corrected notifications line-height for mobile.
 * WooCommerce: Enqueued the WooCommerce JS file in minified format.
