@@ -12,14 +12,14 @@
 		.ordering-selector-wrapper {
 			border: 1px solid $color__background-hr-dark;
 			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
 			color: $color__text-medium;
 			display: block;
 			font-size: 0.85em;
 			line-height: 1em;
 			padding: 10px;
 			position: relative;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
 
 			.current {
 				display: inline-block;
@@ -52,7 +52,7 @@
 			.ordering-dropdown {
 				background: white;
 				border: 1px solid $color__background-hr-dark;
-				box-shadow: 0 1px 1px rgba(0,0,0,0.07);
+				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
 				display: block;
 				list-style: none;
 				margin: 0;
@@ -76,21 +76,21 @@
 				}
 
 				opacity: 0;
-				@include transition (all 0.15s ease-in);
+				@include transition(all 0.15s ease-in);
 				@include transform-origin(center top);
-				@include transform( scale(0.95) );
+				@include transform(scale(0.95));
 			}
 
 			&.open-dropdown {
 
 				.ordering-dropdown {
 					opacity: 1;
+					@include transform(scale(1));
 					visibility: visible;
-					@include transform( scale(1) );
 				}
 
 				svg {
-					@include transform( rotate(0deg) );
+					@include transform(rotate(0deg));
 
 					path {
 						fill: $color__text-dark;
@@ -175,10 +175,10 @@
 				font-size: 12px;
 				font-weight: normal;
 				left: 0;
-				right: auto;
 				line-height: normal;
 				min-height: 0;
 				padding: 6px 12px;
+				right: auto;
 				text-transform: uppercase;
 				top: 6px;
 				z-index: 10;
@@ -217,13 +217,13 @@
 				background: $color__primary-accent-dark;
 				position: relative;
 
-				@at-root .unwind-add-to-cart.woocommerce ul.products li.product .loop-product-thumbnail:hover img {
+				@at-root .unwind-product-overlay ul.products li.product .loop-product-thumbnail:hover img {
 					opacity: 0.25;
 				}
 
-				@at-root .unwind-add-to-cart.is_mobile.woocommerce ul.products li.product .loop-product-thumbnail:hover img {
+				@at-root .unwind-product-overlay.is_mobile ul.products li.product .loop-product-thumbnail:hover img {
 					opacity: 1;
-					visibility: visible; 
+					visibility: visible;
 				}
 
 				&:hover {
@@ -258,7 +258,7 @@
 					opacity: 0;
 					padding: 12px 11px;
 					position: absolute;
-					@include transform( translateX( -50% ) );
+					@include transform(translateX(-50%));
 					visibility: hidden;
 				}
 
@@ -328,13 +328,19 @@
 					margin: 0;
 					padding: 12px 15px;
 					position: absolute;
-					@include transform( translateX( -50% ) );
+					@include transform(translateX(-50%));
 					text-transform: uppercase;
 
 					&:hover {
 						border: 2px solid $color__text-dark;
 						border-bottom: 0;
 					}
+				}
+
+				@at-root .unwind-product-overlay-single ul.products li.product .loop-product-thumbnail a:nth-of-type(2) {
+					bottom: auto;
+					top: 50%;
+					transform: translate(-50%, -50%);
 				}
 			}
 		}

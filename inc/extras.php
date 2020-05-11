@@ -73,17 +73,24 @@ function siteorigin_unwind_body_classes( $classes ) {
 
 		if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'right' ) {
 			$classes[] = 'woocommerce-sidebar-right';
-		}			
+		}
 	}
 
 	// WooCommerce columns.
-	if ( siteorigin_setting( 'woocommerce_archive_columns' ) ) {
+	if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || wc_post_content_has_shortcode( 'products' ) ) ) {
 		$classes[] = 'wc-columns-' . siteorigin_setting( 'woocommerce_archive_columns' );
 	}
 
-	// WooCommerce Add to Cart.
-	if ( function_exists( 'is_woocommerce' ) && siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
-		$classes[] = 'unwind-add-to-cart';
+	// WooCommerce archive Quick View and Add to Cart.
+	if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_cart() || wc_post_content_has_shortcode( 'products' ) ) ) {
+		if ( siteorigin_setting( 'woocommerce_display_quick_view' ) || siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
+			$classes[] = 'unwind-product-overlay';
+		}
+
+		if ( siteorigin_setting( 'woocommerce_display_quick_view' ) && ! siteorigin_setting( 'woocommerce_add_to_cart' )
+			|| ! siteorigin_setting( 'woocommerce_display_quick_view' ) && siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
+			$classes[] = 'unwind-product-overlay-single';
+		}
 	}
 
 	return $classes;
