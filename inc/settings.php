@@ -458,22 +458,22 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	table thead th {
 	color: ${fonts_text_dark};
 	}
-	.button,#page #infinite-handle span button,button,input[type="button"],input[type="reset"],input[type="submit"],.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce #page #infinite-handle span button,#page #infinite-handle span .woocommerce button,.woocommerce input.button,.woocommerce.single-product .cart button {
+	.button,#page #infinite-handle span button,button,input[type=button],input[type=reset],input[type=submit],.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,.woocommerce.single-product .cart button {
 	color: ${fonts_text_dark};
 	.font( ${fonts_details} );
 	}
-	.button:hover,#page #infinite-handle span button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce #page #infinite-handle span button:hover,#page #infinite-handle span .woocommerce button:hover,.woocommerce input.button:hover,.woocommerce.single-product .cart button:hover {
+	.button:hover,#page #infinite-handle span button:hover,button:hover,input[type=button]:hover,input[type=reset]:hover,input[type=submit]:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce.single-product .cart button:hover {
 	border-color: ${branding_accent};
 	color: ${branding_accent};
 	}
-	.button:active,#page #infinite-handle span button:active,.button:focus,#page #infinite-handle span button:focus,button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus,.woocommerce #respond input#submit:active,.woocommerce #respond input#submit:focus,.woocommerce a.button:active,.woocommerce a.button:focus,.woocommerce button.button:active,.woocommerce #page #infinite-handle span button:active,#page #infinite-handle span .woocommerce button:active,.woocommerce button.button:focus,.woocommerce #page #infinite-handle span button:focus,#page #infinite-handle span .woocommerce button:focus,.woocommerce input.button:active,.woocommerce input.button:focus,.woocommerce.single-product .cart button:active,.woocommerce.single-product .cart button:focus {
+	.button:active,#page #infinite-handle span button:active,.button:focus,#page #infinite-handle span button:focus,button:active,button:focus,input[type=button]:active,input[type=button]:focus,input[type=reset]:active,input[type=reset]:focus,input[type=submit]:active,input[type=submit]:focus,.woocommerce #respond input#submit:active,.woocommerce #respond input#submit:focus,.woocommerce a.button:active,.woocommerce a.button:focus,.woocommerce button.button:active,.woocommerce button.button:focus,.woocommerce input.button:active,.woocommerce input.button:focus,.woocommerce.single-product .cart button:active,.woocommerce.single-product .cart button:focus {
 	border-color: ${branding_accent};
 	color: ${branding_accent};
 	}
-	input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],textarea {
+	input[type=text],input[type=email],input[type=url],input[type=password],input[type=search],input[type=number],input[type=tel],input[type=range],input[type=date],input[type=month],input[type=week],input[type=time],input[type=datetime],input[type=datetime-local],input[type=color],textarea {
 	color: ${fonts_text_light};
 	}
-	input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus,textarea:focus {
+	input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,input[type=password]:focus,input[type=search]:focus,input[type=number]:focus,input[type=tel]:focus,input[type=range]:focus,input[type=date]:focus,input[type=month]:focus,input[type=week]:focus,input[type=time]:focus,input[type=datetime]:focus,input[type=datetime-local]:focus,input[type=color]:focus,textarea:focus {
 	color: ${fonts_text_medium};
 	}
 	a {
@@ -604,7 +604,7 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.recent-posts-extended time {
 	color: ${fonts_text_light};
 	}
-	#secondary .widget_search .search-form button[type="submit"] svg,#colophon .widget_search .search-form button[type="submit"] svg,#masthead-widgets .widget_search .search-form button[type="submit"] svg {
+	#secondary .widget_search .search-form button[type=submit] svg,#colophon .widget_search .search-form button[type=submit] svg,#masthead-widgets .widget_search .search-form button[type=submit] svg {
 	fill: ${fonts_text_medium};
 	}
 	#page .widget_tag_cloud a {
@@ -648,10 +648,10 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	color: ${fonts_text_medium};
 	.font( ${fonts_details} );
 	}
-	#fullscreen-search form input[type="search"] {
+	#fullscreen-search form input[type=search] {
 	color: ${fonts_text_medium};
 	}
-	#fullscreen-search form button[type="submit"] svg {
+	#fullscreen-search form button[type=submit] svg {
 	fill: ${fonts_text_light};
 	}
 	@-webkit-keyframes "spin" {
@@ -763,7 +763,7 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.page-title {
 	color: ${fonts_text_dark};
 	}
-	.content-area .search-form button[type="submit"] svg {
+	.content-area .search-form button[type=submit] svg {
 	fill: ${fonts_text_medium};
 	}
 	.yarpp-related ol li .related-post-title:hover,.related-posts-section ol li .related-post-title:hover {
@@ -1251,7 +1251,7 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	.site-content .widget_products .product_list_widget li del .amount,.site-content .widget_recent_reviews .product_list_widget li del .amount,.site-content .widget_top_rated_products .product_list_widget li del .amount,.site-content .widget_recently_viewed_products .product_list_widget li del .amount {
 	color: ${fonts_text_light};
 	}
-	.widget_product_search .search-form button[type="submit"] svg {
+	.widget_product_search .search-form button[type=submit] svg {
 	fill: ${fonts_text_medium};
 	}
 	.widget_shopping_cart li .quantity .amount {
