@@ -137,7 +137,7 @@ jQuery( function( $ ) {
 					directionNav: true,
 				} );
 				
-				// If variation has image, change to flexslider slide
+				// If variation has image, change to FlexSlider slide.
 				$( '#product-quick-view .variations_form' ).on( 'found_variation.wc-variation-form', function( event, variation ) {
 					if ( variation && variation.image && variation.image.full_src ) {
 						var variationItem = $( '#product-quick-view .product-gallery-image' ).find( 'img[src="' + variation.image.full_src + '"]' );
@@ -149,7 +149,7 @@ jQuery( function( $ ) {
 					}
 				} );
 
-				// Reset flexslider when WordPress wants to
+				// Reset FlexSlider when WordPress wants to.
 				$( '#product-quick-view .variations_form' ).on( 'reset_image', function( event, variation ) {
 					$( '.product-images-slider' ).flexslider( 0 );
 				} );
