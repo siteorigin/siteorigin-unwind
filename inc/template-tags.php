@@ -408,7 +408,7 @@ function siteorigin_unwind_post_meta( $cats = true, $post_id = '' ) {
 	<?php if ( siteorigin_setting( 'blog_display_date' ) ) { ?>
 		<span class="entry-date">
 			<?php echo ( ! is_singular() ) ? '<a href="' . get_the_permalink() . '" title="' . the_title_attribute( 'echo=0' ) .'">' : ''; ?>
-				<?php the_date(); ?>
+				<?php echo get_the_date(); ?>
 			<?php echo ( ! is_singular() ) ? '</a>' : ''; ?>
 		</span>
 	<?php } ?>
@@ -561,7 +561,7 @@ function siteorigin_unwind_related_posts( $post_id ) {
 										<?php the_post_thumbnail( 'siteorigin-unwind-263x174-crop' ); ?>
 									<?php endif; ?>
 									<h3 class="related-post-title"><?php the_title(); ?></h3>
-									<p class="related-post-date"><?php the_date(); ?></p>
+									<p class="related-post-date"><?php echo get_the_date(); ?></p>
 								</a>
 							</li>
 						<?php endwhile; ?>
