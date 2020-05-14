@@ -150,7 +150,7 @@ jQuery( function( $ ) {
 				} );
 
 				// Reset flexslider when WordPress wants to
-				$( '.variations_form' ).on( 'reset_image', function( event, variation ) {
+				$( '#product-quick-view .variations_form' ).on( 'reset_image', function( event, variation ) {
 					$( '.product-images-slider' ).flexslider( 0 );
 				} );
 			}
