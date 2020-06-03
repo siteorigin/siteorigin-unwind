@@ -100,6 +100,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.3 - 03 June 2020 =
+* Corrected meta date output.
+* WooCommerce Quick View: Added image change when variations selected.
+* Updated Settings submodule.
+
 = 1.6.2 - 11 May 2020 =
 * Code formatting improvements.
 * WooCommerce: Conditionally load WooCommerce JavaScript file.
