@@ -5,7 +5,8 @@ Contributors: siteorigin
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
-Tested up to: 5.3.2
+Tested up to: 5.5
+Requires PHP: 7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +99,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.6.3 - 03 June 2020 =
+* Corrected meta date output.
+* WooCommerce Quick View: Added image change when variations selected.
+* Updated Settings submodule.
 
 = 1.6.2 - 11 May 2020 =
 * Code formatting improvements.

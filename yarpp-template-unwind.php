@@ -12,7 +12,7 @@ YARPP Template: SiteOrigin Unwind
 						<?php the_post_thumbnail( 'related-post' ); ?>
 					<?php endif; ?>
 					<h3 class="related-post-title"><?php the_title(); ?></h3>
-					<p class="related-post-date"><?php the_date(); ?></p>
+					<p class="related-post-date"><?php echo get_the_date(); ?></p>
 				</a>
 			</li>
 		<?php endwhile; ?>
