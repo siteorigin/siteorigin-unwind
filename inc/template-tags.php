@@ -485,7 +485,7 @@ function siteorigin_unwind_posts_navigation() {
 		return;
 	}
 
-	// Account for the a post loop widget being used on the front page
+	// Account for the a Post Loop widget being used on the front page.
 	if ( get_query_var( 'paged' ) ) {
 	$paged = get_query_var( 'paged' );
 	} elseif ( get_query_var( 'page' ) ) {
