@@ -100,6 +100,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.4 - 15 June 2020 =
+* Account for the SiteOrigin Post Loop widget being used on the static front page.
+
 = 1.6.3 - 03 June 2020 =
 * Corrected meta date output.
 * WooCommerce Quick View: Added image change when variations selected.
