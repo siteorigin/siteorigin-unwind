@@ -62,9 +62,9 @@ SiteOrigin Unwind WordPress Theme is derived from Underscores WordPress Theme, C
 
 == Images ==
 
-Theme screenshot image with lake and mountains sourced from https://unsplash.com by [Blake Richard Verdoorn](https://unsplash.com/photos/eRQPWFijcx4) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
+Theme screenshot image with lake and mountains sourced from [Stocksnap.io](https://stocksnap.io/) by [Blake Richard Verdoorn](https://stocksnap.io/photo/nature-landscape-B5OL0747H6) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
 
-Theme screenshot image with scooter sourced from https://pixabay.com by [Unsplash](https://pixabay.com/en/scooter-italy-vintage-old-green-593155/) licensed under [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
+Theme screenshot image with buildings and cyclists sourced from [Stocksnap.io](https://stocksnap.io/) by [Dave Meier](https://stocksnap.io/photo/bikes-bicycles-B7EAB1A84F) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
 
 SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and copyright 2016 SiteOrigin.
 
@@ -99,6 +99,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.6.4 - 15 June 2020 =
+* Account for the SiteOrigin Post Loop widget being used on the static front page.
 
 = 1.6.3 - 03 June 2020 =
 * Corrected meta date output.
