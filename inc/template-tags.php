@@ -478,9 +478,20 @@ if ( ! function_exists( 'siteorigin_unwind_posts_navigation' ) ) :
  *
  */
 function siteorigin_unwind_posts_navigation() {
+	global $paged;
+
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
+	}
+
+	// Account for the a Post Loop widget being used on the front page.
+	if ( get_query_var( 'paged' ) ) {
+	$paged = get_query_var( 'paged' );
+	} elseif ( get_query_var( 'page' ) ) {
+		$paged = get_query_var( 'page' );
+	} else {
+		$paged = 1;
 	}
 	?>
 	<nav class="navigation posts-navigation" role="navigation">
