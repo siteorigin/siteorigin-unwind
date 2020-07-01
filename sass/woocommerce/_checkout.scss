@@ -176,11 +176,11 @@
 					}
 
 					thead tr th {
-						padding: 10px 0 12px;
+						padding: 10px 0 15px;
 					}
 
 					tbody tr td {
-						padding: 13px 0 12px;
+						padding: 16px 0 14px;
 
 						dl {
 							margin: 0;
@@ -193,9 +193,13 @@
 
 					tfoot {
 
+						td {
+							padding: 16px 0 14px;
+						}
+
 						th {
 							border-top: 1px solid $color__background-hr;
-							padding: 13px 0 12px;
+							padding: 16px 0 14px;
 						}
 
 						.cart-subtotal,
@@ -216,17 +220,20 @@
 
 						li:not(.woocommerce-notice) {
 							border-bottom: 1px solid $color__background-hr;
-							padding: 0.5em 0;
+							padding: 11px 0;
 							position: relative;
 						}
 
 						label {
 							font-size: 13px;
+							font-weight: bold;
 						}
 
 						.payment_box {
-							margin: 0;
 							background-color: transparent;
+							margin: 0;
+							padding-right: 0;
+							padding-left: 0;
 
 							&:before {
 								border: none;
@@ -234,6 +241,13 @@
 
 							p:first-child {
 								margin-top: 0;
+							}
+						}
+
+						.payment_method_paypal {
+
+							label .about_paypal {
+								font-weight: normal;
 							}
 						}
 
