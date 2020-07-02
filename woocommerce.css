@@ -931,13 +931,11 @@ p.demo_store {
           margin: 0; }
         .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table tbody tr td dd {
           margin: 0; }
-      .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table tfoot td {
-        padding: 16px 0 14px; }
       .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table tfoot th {
         border-top: 1px solid #f4f4f4;
         padding: 16px 0 14px; }
-      .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table tfoot .cart-subtotal td,
-      .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table tfoot .order-total td {
+      .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table tfoot td {
+        padding: 16px 0 14px;
         text-align: right; }
     .woocommerce .woocommerce-checkout .order-details .woocommerce-checkout-review-order #payment {
       background: none; }

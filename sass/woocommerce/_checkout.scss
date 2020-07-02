@@ -193,20 +193,15 @@
 
 					tfoot {
 
-						td {
-							padding: 16px 0 14px;
-						}
-
 						th {
 							border-top: 1px solid $color__background-hr;
 							padding: 16px 0 14px;
 						}
 
-						.cart-subtotal,
-						.order-total {
-							td {
-								text-align: right;
-							}
+
+						td {
+							padding: 16px 0 14px;
+							text-align: right;
 						}
 					}
 				}
