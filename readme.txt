@@ -100,6 +100,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.5 - 02 July 2020 =
+* WooCommerce: Fixed checkout product price alignment.
+
 = 1.6.4 - 15 June 2020 =
 * Account for the SiteOrigin Post Loop widget being used on the static front page.
 
