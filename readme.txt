@@ -6,7 +6,7 @@ Tags: one-column, two-columns, custom-background, custom-colors, custom-header, 
 
 Tested up to: 5.5
 Requires at least: 4.7
-Requires PHP: 7.3
+Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,6 +99,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.6.5 - 02 July 2020 =
+* WooCommerce: Fixed checkout product price alignment.
 
 = 1.6.4 - 15 June 2020 =
 * Account for the SiteOrigin Post Loop widget being used on the static front page.
