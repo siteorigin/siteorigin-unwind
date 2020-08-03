@@ -100,6 +100,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.6 - 03 August 2020 =
+* WooCommerce: Right aligned tax and shipping checkout totals.
+
 = 1.6.5 - 02 July 2020 =
 * WooCommerce: Fixed checkout product price alignment.
 
