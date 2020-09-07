@@ -100,6 +100,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.7 - 07 September 2020 =
+* Corrected invalid CSS applied to the fourth header design menu.
+* Updated lazy load logo exclusion functionality.
+* Updated SiteOrigin Settings.
+
 = 1.6.6 - 03 August 2020 =
 * WooCommerce: Right aligned tax and shipping checkout totals.
 
