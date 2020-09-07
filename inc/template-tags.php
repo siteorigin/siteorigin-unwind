@@ -198,42 +198,35 @@ function siteorigin_unwind_display_retina_logo( $attr ){
 }
 add_filter( 'siteorigin_unwind_logo_attributes', 'siteorigin_unwind_display_retina_logo', 10, 1 );
 
-if (
-	class_exists( 'Smush\Core\Modules\Lazy' ) ||
-	class_exists( 'LiteSpeed_Cache' ) ||
-	class_exists( 'Jetpack_Lazy_Images' )
-) :
-	if ( ! function_exists( 'siteorigin_unwind_lazy_load_exclude' ) ) :
-		/**
-		 * Exclude Logo from Lazy Load plugins.
-		 */
-		function siteorigin_unwind_lazy_load_exclude( $attr, $attachment ) {
-			$custom_logo_id = siteorigin_setting( 'branding_logo' );
-			if ( empty( $custom_logo_id ) ) {
-				$custom_logo_id = get_theme_mod( 'custom_logo' );
-			}
-
-			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
-				// Jetpack Lazy Load
-				if ( class_exists( 'Jetpack_Lazy_Images' ) ) {
-					$attr['class'] .= ' skip-lazy';
-				}
-
-				// Smush Lazy Load
-				if ( class_exists( 'Smush\Core\Modules\Lazy' ) ) {
-					$attr['class'] .= ' no-lazyload';
-				}
-
-				// LiteSpeed Cache Lazy Load
-				if ( class_exists( 'LiteSpeed_Cache' ) ) {
-					$attr['data-no-lazy'] = 1;
-				}
-			}
-			return $attr;
+if ( ! function_exists( 'siteorigin_unwind_lazy_load_exclude' ) ) :
+	/**
+	 * Exclude Logo from Lazy Load plugins.
+	 */
+	function siteorigin_unwind_lazy_load_exclude( $attr, $attachment ) {
+		$custom_logo_id = siteorigin_setting( 'branding_logo' );
+		if ( empty( $custom_logo_id ) ) {
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
 		}
-	endif;
-	add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_unwind_lazy_load_exclude', 10, 2 );
+		if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
+			// Jetpack Lazy Load
+			if ( class_exists( 'Jetpack_Lazy_Images' ) ) {
+				$attr['class'] .= ' skip-lazy';
+			}
+			// Smush Lazy Load
+			if ( class_exists( 'Smush\Core\Modules\Lazy' ) ) {
+				$attr['class'] .= ' no-lazyload';
+			}
+			// LiteSpeed Cache Lazy Load
+			if ( class_exists( 'LiteSpeed_Cache' ) || class_exists( 'LiteSpeed\Media' ) ) {
+				$attr['data-no-lazy'] = 1;
+			}
+			// WP 5.5
+			$attr['loading'] = false;
+		}
+		return $attr;
+	}
 endif;
+add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_unwind_lazy_load_exclude', 10, 2 );
 
 if ( ! function_exists( 'siteorigin_unwind_main_navigation' ) ) :
 /**
