@@ -100,6 +100,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.8 - 25 October 2020 =
+* Updated SiteOrigin Settings framework.
+
 = 1.6.7 - 07 September 2020 =
 * Corrected invalid CSS applied to the fourth header design menu.
 * Updated lazy load logo exclusion functionality.
