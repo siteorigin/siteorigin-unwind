@@ -100,6 +100,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.9 - 09 November 2020 =
+* Minor JavaScript update for WordPress 5.5.
+* WooCommerce: Ensured gallery adjusts to image height.
+
 = 1.6.8 - 25 October 2020 =
 * Updated SiteOrigin Settings framework.
 
