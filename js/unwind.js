@@ -256,7 +256,7 @@ jQuery( function( $ ) {
 } );
 
 ( function( $ ) {
-	$( window ).load( function() {
+	$( window ).on( 'load', function() {
 
 		// Handle masonry blog layout.
 		if ( $( '.blog-layout-masonry' ).length ) {

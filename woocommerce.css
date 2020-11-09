@@ -618,9 +618,6 @@ p.demo_store {
       color: #2d2d2d;
       display: inline-block; }
 
-.woocommerce.single-product #content div.product .images .flex-viewport {
-  height: auto !important; }
-
 .woocommerce.single-product #content div.product .images .flex-control-nav {
   margin-top: 10px; }
   .woocommerce.single-product #content div.product .images .flex-control-nav li img {
