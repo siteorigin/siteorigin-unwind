@@ -33,7 +33,11 @@
 				</div>
 			<?php elseif ( has_post_thumbnail() ) : ?>
 				<a href="<?php the_permalink() ?>">
-					<?php the_post_thumbnail( 'siteorigin-unwind-360x238-crop', array( 'class' => 'aligncenter' ) ); ?>
+					<?php if ( ! in_array( siteorigin_page_setting( 'layout', 'default' ), array( 'default' ), true ) ) : ?>
+						<?php the_post_thumbnail(); ?>
+					<?php else : ?>
+						<?php the_post_thumbnail( 'siteorigin-unwind-360x238-crop', array( 'class' => 'aligncenter' ) ); ?>
+					<?php endif; ?>
 				</a>
 			<?php endif; ?>
 
