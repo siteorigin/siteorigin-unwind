@@ -1,6 +1,6 @@
 /*
- * jQuery FlexSlider v2.6.3
- * http://www.woothemes.com/flexslider/
+ * jQuery FlexSlider v2.7.2
+ * https://www.woocommerce.com/flexslider/
  *
  * Copyright 2012 WooThemes
  * Free to use under the GPLv2 and later license.
@@ -104,6 +104,11 @@ html[xmlns] .flexslider .slides {
 .loading .flex-viewport {
   max-height: 300px;
 }
+@-moz-document url-prefix() {
+  .loading .flex-viewport {
+    max-height: none;
+  }
+}
 .carousel li {
   margin-right: 5px;
 }
@@ -113,15 +118,17 @@ html[xmlns] .flexslider .slides {
 .flex-direction-nav a {
   text-decoration: none;
   display: block;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   margin: -20px 0 0;
   position: absolute;
   top: 50%;
   z-index: 10;
   overflow: hidden;
+  opacity: 0;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -130,27 +137,35 @@ html[xmlns] .flexslider .slides {
 }
 .flex-direction-nav a:before {
   font-family: "flexslider-icon";
-  font-size: 16px;
+  font-size: 40px;
   display: inline-block;
   content: '\f001';
-  color: rgba(255, 255, 255, 0.7);
-  padding: 10px 17px;
-  background: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
 .flex-direction-nav a.flex-next:before {
   content: '\f002';
 }
 .flex-direction-nav .flex-prev {
-	left: 0;
+  left: -50px;
 }
 .flex-direction-nav .flex-next {
-	right: 0;
+  right: -50px;
   text-align: right;
 }
-.flexslider:hover .flex-direction-nav .flex-prev:hover,
+.flexslider:hover .flex-direction-nav .flex-prev {
+  opacity: 0.7;
+  left: 10px;
+}
+.flexslider:hover .flex-direction-nav .flex-prev:hover {
+  opacity: 1;
+}
+.flexslider:hover .flex-direction-nav .flex-next {
+  opacity: 0.7;
+  right: 10px;
+}
 .flexslider:hover .flex-direction-nav .flex-next:hover {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(0, 0, 0, 0.8);
+  opacity: 1;
 }
 .flex-direction-nav .flex-disabled {
   opacity: 0!important;
