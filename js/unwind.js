@@ -42,7 +42,7 @@ jQuery( function( $ ) {
 	}
 
 	// Fullscreen search.
-	$( '#search-button' ).click( function( e ) {
+	$( '#search-button' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var $$ = $( this );
 		$$.toggleClass( 'close-search' );
@@ -57,7 +57,7 @@ jQuery( function( $ ) {
 			$( '#fullscreen-search' ).css( { 'top': tbpos + 'px', 'height': vph - tbpos + 'px', 'width': vpw + 'px' } );
 		};
 		fullscreenSearch();
-		$( window ).resize( fullscreenSearch );
+		$( window ).on( 'resize', fullscreenSearch );
 
 		// Disable scrolling when fullscreen search is open.
 		if ( $$.hasClass( 'close-search' ) ) {
@@ -70,17 +70,17 @@ jQuery( function( $ ) {
 
 		$( '#fullscreen-search' ).slideToggle( 'fast' );
 
-		$( '#fullscreen-search input' ).focus();
+		$( '#fullscreen-search input' ).trigger( 'focus' );
 
 	} );
 
-	$( '#fullscreen-search-form' ).submit( function() {
+	$( '#fullscreen-search-form' ).on( 'submit', function() {
 		$(this).find( 'button svg' ).hide();
 		$(this).find( 'button svg:last-child' ).show();
 	} );
 
 	// Close fullscreen search with escape key.
-	$( document ).keyup( function(e) {
+	$( document ).on( 'keyup', function( e ) {
 		if ( e.keyCode == 27 ) { // Escape key maps to keycode `27`.
 			$( '#search-button.close-search' ).trigger( 'click' );
 		}
@@ -88,7 +88,7 @@ jQuery( function( $ ) {
 
 	// Mobile menu.
 	var $mobileMenu = false;
-	$( '#mobile-menu-button' ).click( function(e) {
+	$( '#mobile-menu-button' ).on( 'click', function( e ) {
 		e.preventDefault();
 
 		$( '#search-button.close-search' ).trigger( 'click' );
@@ -157,8 +157,8 @@ jQuery( function( $ ) {
 		}
 	};
 	sttWindowScroll();
-	$( window ).scroll( sttWindowScroll );
-	$( '#scroll-to-top' ).click( function () {
+	$( window ).on( 'scroll', sttWindowScroll );
+	$( '#scroll-to-top' ).on( 'click', function() {
 		$( 'html, body' ).animate( { scrollTop: 0 } );
 	} );
 
@@ -202,7 +202,7 @@ jQuery( function( $ ) {
 		}
 		smSetup();
 
-		$( window ).resize( smSetup ).scroll( smSetup );
+		$( window ).on( 'resize scroll', smSetup );
 	}
 
 	// Detect if is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
@@ -277,7 +277,7 @@ jQuery( function( $ ) {
 			} );
 		}
 
-		$( '.portfolio-filter-terms button' ).click( function() {
+		$( '.portfolio-filter-terms button' ).on( 'click', function() {
 			var selector = $( this ).attr( 'data-filter' );
 			$container.isotope( {
 				filter: selector,
