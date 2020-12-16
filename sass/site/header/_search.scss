@@ -57,7 +57,7 @@
 
 			svg {
 				fill: $color__text-light;
-				height: 31px;
+				height: 32px;
 				padding: 3px;
 				width: 32px;
 
@@ -71,6 +71,7 @@
 
 				&:last-child {
 					display: none;
+					height: 34px;
 
 					path {
 						@include animation(spin 2s linear infinite);
