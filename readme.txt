@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
-Tested up to: 5.5
+Tested up to: 5.6
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -99,6 +99,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.6.10 - 17 December 2020 =
+* Full Screen Search: Prevented loading icon from being cut off.
+* Developer: Removed Featured Image size restriction unless page layout default in use.
+* Developer: Added support for jQuery 3.5
 
 = 1.6.9 - 09 November 2020 =
 * Minor JavaScript update for WordPress 5.5.
