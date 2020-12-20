@@ -221,7 +221,7 @@ if ( ! function_exists( 'siteorigin_unwind_lazy_load_exclude' ) ) :
 				$attr['data-no-lazy'] = 1;
 			}
 			// WP 5.5
-			$attr['loading'] = false;
+			$attr['loading'] = 'eager';
 		}
 		return $attr;
 	}
