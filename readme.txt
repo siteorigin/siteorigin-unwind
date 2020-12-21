@@ -103,7 +103,7 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 = 1.6.10 - 17 December 2020 =
 * Full Screen Search: Prevented loading icon from being cut off.
 * Developer: Removed Featured Image size restriction unless page layout default in use.
-* Developer: Added support for jQuery 3.5
+* Developer: Added support for jQuery 3.5.
 
 = 1.6.9 - 09 November 2020 =
 * Minor JavaScript update for WordPress 5.5.
