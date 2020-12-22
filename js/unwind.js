@@ -25,7 +25,7 @@ jQuery( function( $ ) {
 
 	// Featured posts slider.
 	$( document ).ready( function() {
-		if ( $.isFunction( $.fn.flexslider ) ) {
+		if ( typeof $.fn.flexslider == 'function' ) {
 			$( '.featured-posts-slider' ).flexslider( {
 				animation: "slide",
 				controlNav: false
