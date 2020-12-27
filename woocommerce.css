@@ -1718,7 +1718,8 @@ a.product-quick-view-button {
         overflow-y: auto;
         width: 100%; } }
     #quick-view-container .product-content-wrapper .product-image-wrapper img {
-      vertical-align: middle; }
+      vertical-align: middle;
+      width: auto; }
     @media (max-width: 860px) {
       #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-prev {
         left: 0; }
