@@ -128,7 +128,7 @@ jQuery( function( $ ) {
 		);
 
 		$( document ).ajaxComplete( function() {
-			if ( $.isFunction( $.fn.flexslider ) ) {
+			if ( typeof $.fn.flexslider == 'function' ) {
 				$( '.product-images-slider' ).flexslider( {
 					animation: "slide",
 					animationLoop: true,
