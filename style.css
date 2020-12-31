@@ -724,7 +724,6 @@ a {
 .header-design-4 .main-navigation-bar > .container {
   align-items: center;
   display: flex;
-  height: calc( 60px / 2) 0;
   justify-content: space-between; }
 
 /*--------------------------------------------------------------
