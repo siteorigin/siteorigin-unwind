@@ -128,13 +128,12 @@ jQuery( function( $ ) {
 		);
 
 		$( document ).ajaxComplete( function() {
-			if ( $.isFunction( $.fn.flexslider ) ) {
+			if ( typeof $.fn.flexslider == 'function' ) {
 				$( '.product-images-slider' ).flexslider( {
 					animation: "slide",
 					animationLoop: true,
 					slideshow: false,
-					controlNav: true,
-					directionNav: true,
+					customDirectionNav: $( this ).find( '.flex-direction-nav a' ),
 				} );
 				
 				// If variation has image, change to FlexSlider slide.
