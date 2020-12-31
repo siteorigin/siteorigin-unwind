@@ -1684,6 +1684,7 @@ a.product-quick-view-button {
     width: 100%; }
     @media (max-width: 1100px) {
       #quick-view-container .quick-view {
+        height: 80%;
         width: 85%; } }
   #quick-view-container .quickview-close-icon {
     color: rgba(0, 0, 0, 0.5);
@@ -1706,6 +1707,12 @@ a.product-quick-view-button {
     overflow: hidden; }
     #quick-view-container .product-content-wrapper .flexslider img {
       max-height: 500px; }
+      @media (max-width: 600px) {
+        #quick-view-container .product-content-wrapper .flexslider img {
+          max-height: 300px; } }
+    @media (max-width: 600px) {
+      #quick-view-container .product-content-wrapper .flexslider {
+        max-height: 300px; } }
   #quick-view-container .product-content-wrapper .product-image-wrapper {
     float: left;
     max-height: 500px;
@@ -1714,8 +1721,7 @@ a.product-quick-view-button {
     @media (max-width: 600px) {
       #quick-view-container .product-content-wrapper .product-image-wrapper {
         float: none;
-        max-height: auto;
-        overflow-y: auto;
+        overflow-y: initial;
         width: 100%; } }
     #quick-view-container .product-content-wrapper .product-image-wrapper img {
       margin: 0 auto;
@@ -1764,14 +1770,18 @@ a.product-quick-view-button {
     @media (max-width: 600px) {
       #quick-view-container .product-content-wrapper .product-info-wrapper {
         float: none;
-        max-height: auto;
-        overflow-y: auto;
+        height: 50%;
+        overflow-y: initial;
         width: 100%; } }
     #quick-view-container .product-content-wrapper .product-info-wrapper a {
       text-decoration: none; }
     #quick-view-container .product-content-wrapper .product-info-wrapper .product_title {
       margin-bottom: 10px;
       text-align: left; }
+      @media (max-width: 600px) {
+        #quick-view-container .product-content-wrapper .product-info-wrapper .product_title {
+          font-size: 25.6px;
+          font-size: 1.6rem; } }
     #quick-view-container .product-content-wrapper .product-info-wrapper .price {
       color: #24c48a;
       font-family: "Lato", sans-serif;
