@@ -100,6 +100,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.11 - 31 December 2020 =
+* WooCommerce Quick View: Prevented stretching and a scrollbar due to large images by resizing product images as needed.
+* WooCommerce: Added single product thumbnail navigation support for jQuery 3.5.
+* Updated the SiteOrigin Settings framework.
+
 = 1.6.10 - 17 December 2020 =
 * Full Screen Search: Prevented loading icon from being cut off.
 * Developer: Removed Featured Image size restriction unless page layout default in use.
