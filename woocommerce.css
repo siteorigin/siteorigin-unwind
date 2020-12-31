@@ -1703,7 +1703,7 @@ a.product-quick-view-button {
     border-radius: 0;
     margin: 0;
     max-height: 500px;
-    overflow-y: hidden; }
+    overflow: hidden; }
     #quick-view-container .product-content-wrapper .flexslider img {
       max-height: 500px; }
   #quick-view-container .product-content-wrapper .product-image-wrapper {
@@ -1718,7 +1718,9 @@ a.product-quick-view-button {
         overflow-y: auto;
         width: 100%; } }
     #quick-view-container .product-content-wrapper .product-image-wrapper img {
-      vertical-align: middle; }
+      vertical-align: middle;
+      margin: 0 auto;
+      width: auto; }
     @media (max-width: 860px) {
       #quick-view-container .product-content-wrapper .product-image-wrapper .flex-direction-nav .flex-prev {
         left: 0; }
