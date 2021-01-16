@@ -100,6 +100,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.12 - 15 January 2021 =
+* Developer: Updated the Chosen minified JavaScript file.
+
 = 1.6.11 - 31 December 2020 =
 * WooCommerce Quick View: Prevented stretching and a scrollbar due to large images by resizing product images as needed.
 * WooCommerce: Added single product thumbnail navigation support for jQuery 3.5.
