@@ -41,6 +41,7 @@ SiteOrigin Unwind includes support for:
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
 * [Jetpack Portfolio Custom Post Type](https://jetpack.com/support/custom-content-types/)
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
+* [Rank Math Breadcrumbs](https://wordpress.org/plugins/seo-by-rank-math/)
 * [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
 * [SiteOrigin Page Builder](https://wordpress.org/plugins/siteorigin-panels/)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
