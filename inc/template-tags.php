@@ -61,7 +61,7 @@ function siteorigin_unwind_breadcrumbs() {
 		yoast_breadcrumb( '<div class="breadcrumbs">','</div>' );
 	} elseif ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
 		?>
-		<div class="breadcrumbs bcn">
+		<div class="breadcrumbs">
 			<?php rank_math_the_breadcrumbs(); ?>
 		</div>
 		<?php
