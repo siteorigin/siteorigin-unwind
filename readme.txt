@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.0 - 06 March 2021 =
+* Added RankMath breadcrumb support.
+
 = 1.6.12 - 15 January 2021 =
 * Developer: Updated the Chosen minified JavaScript file.
 
