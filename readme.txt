@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
-Tested up to: 5.6
+Tested up to: 5.7
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
