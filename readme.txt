@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
-Tested up to: 5.6
+Tested up to: 5.7
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -41,6 +41,7 @@ SiteOrigin Unwind includes support for:
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
 * [Jetpack Portfolio Custom Post Type](https://jetpack.com/support/custom-content-types/)
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
+* [Rank Math Breadcrumbs](https://wordpress.org/plugins/seo-by-rank-math/)
 * [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
 * [SiteOrigin Page Builder](https://wordpress.org/plugins/siteorigin-panels/)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
@@ -99,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.7.0 - 06 March 2021 =
+* Added RankMath breadcrumb support.
 
 = 1.6.12 - 15 January 2021 =
 * Developer: Updated the Chosen minified JavaScript file.
