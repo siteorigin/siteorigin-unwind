@@ -296,7 +296,7 @@ function siteorigin_unwind_footer_text() {
 		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
 		'<span>' . $text . '</span>'
 	);
-	echo wp_kses_post( $text ) . '&nbsp;';
+	echo wp_kses_post( $text );
 }
 endif;
 
