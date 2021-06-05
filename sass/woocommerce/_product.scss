@@ -122,58 +122,6 @@
 				.woocommerce-variation-price {
 					margin-bottom: 20px;
 				}
-
-				.quantity.button-controls {
-					@include clearfix;
-					min-width: 120px;
-
-					.qty {
-						-moz-appearance: textfield;
-						border-color: $color__text-light;
-						border-radius: 0;
-						border-width: 1px;
-						color: $color__text-medium;
-						float: left;
-						height: 40px;
-						padding: 0;
-						width: 40px;
-
-						&::-webkit-inner-spin-button,
-						&::-webkit-outer-spin-button {
-							-webkit-appearance: none;
-							margin: 0;
-						}
-					}
-
-					.add,
-					.subtract {
-						background: #f9f9f9;
-						border-color: $color__text-light;
-						border-radius: 0;
-						border-width: 1px;
-						float: left;
-						height: 40px;
-						padding: 6px 10px;
-						width: 40px;
-
-						&:hover {
-							background: $color__text-medium;
-							color: #fff;
-						}
-					}
-
-					&.hidden {
-						display: none;
-					}
-
-					.subtract {
-						border-right: none;
-					}
-
-					.add {
-						border-left: none;
-					}
-				}
 			}
 
 			.group_table {
@@ -429,7 +377,12 @@
 	}
 }
 
+// Product variations.
 .variations {
+
+	td {
+		padding: 0;
+	}
 
 	select {
 		@include appearance(none);
@@ -473,5 +426,58 @@
 	tr,
 	tr:nth-child(2n+2) {
 		background: transparent;
+	}
+}
+
+// Product quantity buttons.
+.quantity.button-controls {
+	@include clearfix;
+	min-width: 120px;
+
+	.qty {
+		-moz-appearance: textfield;
+		border-color: $color__text-light;
+		border-radius: 0;
+		border-width: 1px;
+		color: $color__text-medium;
+		float: left;
+		height: 40px;
+		padding: 0;
+		width: 40px;
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	}
+
+	.add,
+	.subtract {
+		background: #f9f9f9;
+		border-color: $color__text-light;
+		border-radius: 0;
+		border-width: 1px;
+		float: left;
+		height: 40px;
+		padding: 6px 10px;
+		width: 40px;
+
+		&:hover {
+			background: $color__text-medium;
+			color: #fff;
+		}
+	}
+
+	&.hidden {
+		display: none;
+	}
+
+	.subtract {
+		border-right: none;
+	}
+
+	.add {
+		border-left: none;
 	}
 }
