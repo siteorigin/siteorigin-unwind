@@ -101,6 +101,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.1 - 05 June 2021 =
+* Updated the SiteOrigin Settings framework.
+* Removed a non-breaking space from the Footer Text.
+* WooCommerce: Styling improvement to single product quantity buttons for SiteOrigin WCTB.
+
 = 1.7.0 - 06 March 2021 =
 * Added RankMath breadcrumb support.
 
