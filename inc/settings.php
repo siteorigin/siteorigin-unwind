@@ -71,19 +71,19 @@ function siteorigin_unwind_settings_init() {
 			'fields' => array(
 				'details' => array(
 					'type' => 'font',
-					'label' => esc_html__( 'Details font', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Details Font', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Used for smaller details.', 'siteorigin-unwind' ),
 					'live' => true,
 				),
 				'main' => array(
 					'type' => 'font',
-					'label' => esc_html__( 'Main font', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Main Font', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Used for body text.', 'siteorigin-unwind' ),
 					'live' => true,
 				),
 				'headings' => array(
 					'type' => 'font',
-					'label' => esc_html__( 'Headings font', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Headings Font', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Used for headings.', 'siteorigin-unwind' ),
 					'live' => true,
 				),
@@ -149,12 +149,12 @@ function siteorigin_unwind_settings_init() {
 			'fields' => array(
 				'search' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Menu search', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Menu Search', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Display search in main menu.', 'siteorigin-unwind' ),
 				),
 				'sticky' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Sticky menu', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Sticky Menu', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Stick menu to top of screen.', 'siteorigin-unwind' ),
 				),
 				'mobile_menu_collapse' => array(
@@ -164,7 +164,7 @@ function siteorigin_unwind_settings_init() {
 				),
 				'post' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Post navigation', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Post Navigation', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Display next and previous post navigation.', 'siteorigin-unwind' ),
 				),
 				'scroll_to_top' => array(
@@ -180,19 +180,19 @@ function siteorigin_unwind_settings_init() {
 			'fields' => array(
 				'menu' => array(
 					'type' => 'media',
-					'label' => esc_html__( 'Mobile menu icon', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Mobile Menu Icon', 'siteorigin-unwind' ),
 				),
 				'fullscreen_search' => array(
 					'type' => 'media',
-					'label' => esc_html__( 'Fullscreen search icon', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Fullscreen Search Icon', 'siteorigin-unwind' ),
 				),
 				'search' => array(
 					'type' => 'media',
-					'label' => esc_html__( 'Menu search icon', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Menu Search Icon', 'siteorigin-unwind' ),
 				),
 				'close_search' => array(
 					'type' => 'media',
-					'label' => esc_html__( 'Menu close search icon', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Menu Close Search Icon', 'siteorigin-unwind' ),
 				),
 			),
 		),
@@ -258,7 +258,7 @@ function siteorigin_unwind_settings_init() {
 				),
 				'excerpt_more' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Post excerpt Read More link', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'Display the Read More link below the post excerpt.', 'siteorigin-unwind' ),
 				),
 				'display_date' => array(
@@ -287,7 +287,7 @@ function siteorigin_unwind_settings_init() {
 				),
 				'search_fallback' => array(
 					'type' => 'media',
-					'label' => esc_html__( 'Search fallback image', 'siteorigin-unwind' ),
+					'label' => esc_html__( 'Search Fallback Image', 'siteorigin-unwind' ),
 					'description' => esc_html__( "Used for blog posts with no featured image.", 'siteorigin-unwind' ),
 				),
 			)
