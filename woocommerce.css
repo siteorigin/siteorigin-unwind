@@ -559,45 +559,6 @@ p.demo_store {
         padding: 0; }
     .woocommerce.single-product #content div.product .entry-summary .cart .woocommerce-variation-price {
       margin-bottom: 20px; }
-    .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls {
-      min-width: 120px; }
-      .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls::after {
-        clear: both;
-        content: "";
-        display: table; }
-      .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .qty {
-        -moz-appearance: textfield;
-        border-color: #adadad;
-        border-radius: 0;
-        border-width: 1px;
-        color: #626262;
-        float: left;
-        height: 40px;
-        padding: 0;
-        width: 40px; }
-        .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .qty::-webkit-inner-spin-button, .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .qty::-webkit-outer-spin-button {
-          -webkit-appearance: none;
-          margin: 0; }
-      .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add,
-      .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract {
-        background: #f9f9f9;
-        border-color: #adadad;
-        border-radius: 0;
-        border-width: 1px;
-        float: left;
-        height: 40px;
-        padding: 6px 10px;
-        width: 40px; }
-        .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add:hover,
-        .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract:hover {
-          background: #626262;
-          color: #fff; }
-      .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls.hidden {
-        display: none; }
-      .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract {
-        border-right: none; }
-      .woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add {
-        border-left: none; }
   .woocommerce.single-product #content div.product .entry-summary .group_table {
     display: block;
     padding-bottom: 30px; }
@@ -758,6 +719,9 @@ p.demo_store {
       margin: 0 0 27px;
       width: 100%; } }
 
+.variations td {
+  padding: 0; }
+
 .variations select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -795,6 +759,46 @@ p.demo_store {
 .variations tr,
 .variations tr:nth-child(2n+2) {
   background: transparent; }
+
+.quantity.button-controls {
+  min-width: 120px; }
+  .quantity.button-controls::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .quantity.button-controls .qty {
+    -moz-appearance: textfield;
+    border-color: #adadad;
+    border-radius: 0;
+    border-width: 1px;
+    color: #626262;
+    float: left;
+    height: 40px;
+    padding: 0;
+    width: 40px; }
+    .quantity.button-controls .qty::-webkit-inner-spin-button, .quantity.button-controls .qty::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+  .quantity.button-controls .add,
+  .quantity.button-controls .subtract {
+    background: #f9f9f9;
+    border-color: #adadad;
+    border-radius: 0;
+    border-width: 1px;
+    float: left;
+    height: 40px;
+    padding: 6px 10px;
+    width: 40px; }
+    .quantity.button-controls .add:hover,
+    .quantity.button-controls .subtract:hover {
+      background: #626262;
+      color: #fff; }
+  .quantity.button-controls.hidden {
+    display: none; }
+  .quantity.button-controls .subtract {
+    border-right: none; }
+  .quantity.button-controls .add {
+    border-left: none; }
 
 /*--------------------------------------------------------------
 # Checkout
