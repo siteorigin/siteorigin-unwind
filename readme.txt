@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
-Tested up to: 5.7
+Tested up to: 5.8
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.8.0 - 21 July 2021 =
+* Disabled WP 5.8 Block-Based widgets editor. Can be re-enabled using `add_filter( 'siteorigin_settings_disable_new_widget_area', '__return_false' );`.
 
 = 1.7.1 - 05 June 2021 =
 * Updated the SiteOrigin Settings framework.
