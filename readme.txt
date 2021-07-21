@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.8.0 - 21 July 2021 =
+* Disabled WP 5.8 Block-Based widgets editor. Can be re-enabled using `add_filter( 'siteorigin_settings_disable_new_widget_area', '__return_false' );`.
+
 = 1.7.1 - 05 June 2021 =
 * Updated the SiteOrigin Settings framework.
 * Removed a non-breaking space from the Footer Text.
