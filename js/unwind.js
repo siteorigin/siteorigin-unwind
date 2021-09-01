@@ -262,8 +262,7 @@ jQuery( function( $ ) {
 		if ( $( '.blog-layout-masonry' ).length ) {
 			$( '.blog-layout-masonry' ).masonry( {
 				itemSelector: '.archive-entry',
-				columnWidth: '.archive-entry',
-				horizontalOrder: true
+				columnWidth: '.archive-entry'
 			} );
 		}
 
