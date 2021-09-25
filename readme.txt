@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.8.1 - 25 September 2021 =
+* Masonry Layout: Set `horizontalOrder` to `true`.
+
 = 1.8.0 - 21 July 2021 =
 * Disabled WP 5.8 Block-Based widgets editor. Can be re-enabled using `add_filter( 'siteorigin_settings_disable_new_widget_area', '__return_false' );`.
 
