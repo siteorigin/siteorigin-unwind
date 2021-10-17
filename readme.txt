@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.8.2 - 17 October 2021 =
+* Scroll to Top: Use alternative offset when the header is not displayed.
+
 = 1.8.1 - 25 September 2021 =
 * Masonry Layout: Set `horizontalOrder` to `true`.
 
