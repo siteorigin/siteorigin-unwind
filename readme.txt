@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.8.4 - 07 November 2021 =
+* Updated SiteOrigin Settings framework: Restored Page Template settings for templates (Search, 404) and taxonomies.
+
 = 1.8.3 - 25 October 2021 =
 * Updated SiteOrigin Settings framework.
 
