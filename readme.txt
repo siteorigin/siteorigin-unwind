@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.8.5 - 05 December 2021 =
+* Updated SiteOrigin Settings: Ensured WPML translated theme strings aren't overridden.
+
 = 1.8.4 - 07 November 2021 =
 * Updated SiteOrigin Settings framework: Restored Page Template settings for templates (Search, 404) and taxonomies.
 
