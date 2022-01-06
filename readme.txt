@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.8.6 - 06 January 2022 =
+* Removed `role="navigation"` in `nav` tags.
+
 = 1.8.5 - 05 December 2021 =
 * Updated SiteOrigin Settings: Ensured WPML translated theme strings aren't overridden.
 
