@@ -212,7 +212,7 @@ if ( ! function_exists( 'siteorigin_unwind_main_navigation' ) ) :
  */
 function siteorigin_unwind_main_navigation() {
 	?>
-	<nav id="site-navigation" class="main-navigation" role="navigation">
+	<nav id="site-navigation" class="main-navigation">
 		<?php $mega_menu_active = function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'primary' ); ?>
 		<?php if ( ! $mega_menu_active ) : ?>
 			<button id="mobile-menu-button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php siteorigin_unwind_display_icon( 'menu' ); ?></button>
@@ -465,7 +465,7 @@ function siteorigin_unwind_posts_navigation() {
 		$paged = 1;
 	}
 	?>
-	<nav class="navigation posts-navigation" role="navigation">
+	<nav class="navigation posts-navigation">
 		<h3 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'siteorigin-unwind' ); ?></h3>
 		<div class="nav-links">
 
@@ -496,7 +496,7 @@ function siteorigin_unwind_the_post_navigation() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
+	<nav class="navigation post-navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-unwind' ); ?></h2>
 		<div class="nav-links">
 			<div class="nav-previous">
