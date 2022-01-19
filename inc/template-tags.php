@@ -832,7 +832,10 @@ function siteorigin_unwind_get_video( $embed = false ) {
 
 	$i = 0;
 
-	if ( class_exists( 'SiteOrigin_Panels' ) ) {
+	if (
+		class_exists( 'SiteOrigin_Panels' ) &&
+		class_exists( 'SiteOrigin_Widget_Video_Widget' )
+	) {
 		$panels_content = siteorigin_unwind_panels_get_panels_data();
 		if ( ! empty( $panels_content ) ) {
 			return siteorigin_unwind_panels_video_widget( $embed, $panels_content );
