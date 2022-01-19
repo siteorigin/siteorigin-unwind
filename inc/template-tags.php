@@ -827,11 +827,8 @@ if ( ! function_exists( 'siteorigin_unwind_get_video' ) ) :
  * Get the video from the current post
  */
 function siteorigin_unwind_get_video( $embed = false ) {
-	$first_url    = '';
-	$first_video  = '';
 
-	$i = 0;
-
+	// SiteOrigin Page Builder with SiteOrigin Video Player widget.
 	if (
 		class_exists( 'SiteOrigin_Panels' ) &&
 		class_exists( 'SiteOrigin_Widget_Video_Widget' )
@@ -842,8 +839,12 @@ function siteorigin_unwind_get_video( $embed = false ) {
 		}
 	}
 
+	// Standard CLassic or Block Editor page.
 	preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', get_the_content(), $urls );
 
+	$first_url    = '';
+	$first_video  = '';
+	$i = 0;
 	foreach ( $urls[0] as $url ) {
 		$i++;
 
@@ -862,7 +863,7 @@ function siteorigin_unwind_get_video( $embed = false ) {
 
 	wp_enqueue_script( 'jquery-fitvids' );
 
-	return ( '' !== $first_video ) ? $first_video : false;
+	return ( '' !== $first_video ) ? $first_video : get_the_content();
 }
 endif;
 
