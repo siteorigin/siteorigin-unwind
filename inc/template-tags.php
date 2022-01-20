@@ -828,7 +828,7 @@ if ( ! function_exists( 'siteorigin_unwind_get_video' ) ) :
  */
 function siteorigin_unwind_get_video( $embed = false ) {
 
-	// SiteOrigin Page Builder with SiteOrigin Video Player widget.
+	// SiteOrigin Page Builder with SiteOrigin Video Player Widget.
 	if (
 		class_exists( 'SiteOrigin_Panels' ) &&
 		class_exists( 'SiteOrigin_Widget_Video_Widget' )
@@ -839,7 +839,7 @@ function siteorigin_unwind_get_video( $embed = false ) {
 		}
 	}
 
-	// Standard CLassic or Block Editor page.
+	// Classic or Block Editor page.
 	preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', get_the_content(), $urls );
 
 	$first_url    = '';
