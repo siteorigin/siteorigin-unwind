@@ -812,8 +812,7 @@ function siteorigin_unwind_panels_video_widget( $embed = false, $panels_data = a
 						return serialize_blocks( $blocks );
 					} else {
 						// Classic Editor.
-						echo SiteOrigin_Panels::renderer()->render( false, true, $panels_data );
-						return;
+						return SiteOrigin_Panels::renderer()->render( false, true, $panels_data );
 					}
 				}
 			}
@@ -873,7 +872,7 @@ if ( ! function_exists( 'siteorigin_unwind_filter_video' ) ) :
  */
 function siteorigin_unwind_filter_video( $content ) {
 	$has_panels_data = siteorigin_unwind_panels_get_panels_data();
-	if ( ! $has_panels_data && ! empty( $video_content ) ) {
+	if ( ! $has_panels_data ) {
 		$urls = siteorigin_unwind_get_video();
 		
 		preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', $content, $urls );
@@ -882,6 +881,21 @@ function siteorigin_unwind_filter_video( $content ) {
 		}
 	}
 	return $content;
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_render_video_format_content' ) ) :
+/**
+ * Renders the content for the Video post format.
+ */
+function siteorigin_unwind_render_video_format_content() {
+	// Display the content without first video
+	$content = siteorigin_unwind_get_video();
+	if ( ! empty( $content ) ) {
+		add_filter( 'siteorigin_panels_filter_content_enabled', '__return_false' );
+		echo apply_filters( 'the_content', siteorigin_unwind_filter_video( $content ) );
+		remove_filter( 'siteorigin_panels_filter_content_enabled', '__return_false' );
+	}
 }
 endif;
 

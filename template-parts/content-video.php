@@ -46,11 +46,7 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 		if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && $post_class !== 'entry' ) {
 			siteorigin_unwind_excerpt();
 		} else {
-			// Display the content without first video
-			$content = siteorigin_unwind_get_video();
-			if ( ! empty( $content ) ) {
-				echo apply_filters( 'the_content', siteorigin_unwind_filter_video( $content ) );
-			}
+			siteorigin_unwind_render_video_format_content();
 		}
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',
