@@ -800,7 +800,9 @@ function siteorigin_unwind_panels_video_widget( $embed = false, $panels_data = a
 						)
 					) {
 						$video_widget = new SiteOrigin_Widget_Video_Widget();
-						return $video_widget->widget( array(), $widget );
+						ob_start();
+						$video_widget->widget( array(), $widget );
+						return ob_get_clean();
 					}
 				} else {
 					// Return layout without the current video widget present.
