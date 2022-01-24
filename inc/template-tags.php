@@ -891,10 +891,13 @@ if ( ! function_exists( 'siteorigin_unwind_render_video_format_content' ) ) :
 function siteorigin_unwind_render_video_format_content() {
 	// Display the content without first video
 	$content = siteorigin_unwind_get_video();
-	if ( ! empty( $content ) ) {
+	$has_panels_data = siteorigin_unwind_panels_get_panels_data();
+	if ( $has_panels_data && ! empty( $content ) ) {
 		add_filter( 'siteorigin_panels_filter_content_enabled', '__return_false' );
 		echo apply_filters( 'the_content', siteorigin_unwind_filter_video( $content ) );
 		remove_filter( 'siteorigin_panels_filter_content_enabled', '__return_false' );
+	} else {
+		echo apply_filters( 'the_content', siteorigin_unwind_filter_video( get_the_content() ) );
 	}
 }
 endif;
