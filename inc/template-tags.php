@@ -839,7 +839,7 @@ function siteorigin_unwind_get_video( $embed = false ) {
 	}
 
 	// Classic or Block Editor page.
-	preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', get_the_content(), $urls );
+	preg_match_all( '/https?\:\/\/[^\" ]+/i', get_the_content(), $urls );
 
 	$first_url    = '';
 	$first_video  = '';
@@ -862,7 +862,7 @@ function siteorigin_unwind_get_video( $embed = false ) {
 
 	wp_enqueue_script( 'jquery-fitvids' );
 
-	return ( '' !== $first_video ) ? $first_video : get_the_content();
+	return ( '' !== $first_video ) ? $first_video : false;
 }
 endif;
 
@@ -875,7 +875,7 @@ function siteorigin_unwind_filter_video( $content ) {
 	if ( ! $has_panels_data ) {
 		$urls = siteorigin_unwind_get_video();
 		
-		preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', $content, $urls );
+		preg_match_all( '/https?\:\/\/[^\" ]+/i', $content, $urls );
 		if ( ! empty( $urls[0] ) ) {
 			$content = str_replace( $urls[0][0], '', $content );
 		}
