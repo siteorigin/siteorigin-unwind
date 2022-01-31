@@ -756,7 +756,10 @@ function siteorigin_unwind_panels_get_panels_data() {
 			) {
 				$panels_data = $parsed_content[0]['attrs']['panelsData'];
 			}
-			$panels_data['blocks'] = $parsed_content;
+
+			if ( is_array( $panels_data ) ) {
+				$panels_data['blocks'] = $parsed_content;
+			}
 		}
 	}
 	return $panels_data;
