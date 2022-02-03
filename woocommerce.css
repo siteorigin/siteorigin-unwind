@@ -552,7 +552,8 @@ p.demo_store {
         .woocommerce.single-product #content div.product .entry-summary .cart .variations tr:last-of-type td {
           padding: 0; }
       .woocommerce.single-product #content div.product .entry-summary .cart .variations td {
-        padding: 0; }
+        padding: 0;
+        vertical-align: middle; }
       .woo-variation-swatches.woocommerce.single-product #content div.product .entry-summary .cart .variations td {
         padding: 0 0 10px; }
       .woo-variation-swatches.woocommerce.single-product #content div.product .entry-summary .cart .variations tr:last-of-type td {
@@ -736,7 +737,6 @@ p.demo_store {
   cursor: pointer;
   font-size: 0.85em;
   line-height: 1.2;
-  margin-bottom: 15px;
   outline: none;
   padding: 10px;
   position: relative;
