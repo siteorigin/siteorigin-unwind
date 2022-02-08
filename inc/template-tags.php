@@ -522,7 +522,6 @@ function siteorigin_unwind_related_posts( $post_id ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop.
 		$categories = get_the_category( $post_id );
-		if ( empty( $categories ) ) return;
 		$first_cat = $categories[0]->cat_ID;
 		$args=array(
 			'category__in' => array( $first_cat ),
@@ -739,18 +738,117 @@ function siteorigin_unwind_strip_gallery( $content ) {
 }
 endif;
 
+if ( ! function_exists( 'siteorigin_unwind_panels_get_panels_data' ) ) :
+/**
+ * Get the page builder data for the current page.
+ */
+function siteorigin_unwind_panels_get_panels_data() {
+	$panels_data = get_post_meta( get_the_ID(), 'panels_data', true );
+	// If no panels_data is detected, check if the post has blocks.
+	if ( empty( $panels_data ) ) {
+		if ( function_exists( 'has_blocks' ) && has_blocks( get_the_content() ) ) {
+			$parsed_content = parse_blocks( get_the_content() );
+			// Check if the first block is an SO Layout Block, and extract panels_data if it is.
+			if (
+				$parsed_content[0]['blockName'] == 'siteorigin-panels/layout-block' &&
+				isset( $parsed_content[0]['attrs'] ) &&
+				! empty( $parsed_content[0]['attrs']['panelsData'] )
+			) {
+				$panels_data = $parsed_content[0]['attrs']['panelsData'];
+			}
+
+			if ( is_array( $panels_data ) ) {
+				$panels_data['blocks'] = $parsed_content;
+			}
+		}
+	}
+	return $panels_data;
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_panels_video_widget' ) ) :
+/**
+ * Add Video Content Type support for the SiteOrigin Video Player Widget.
+ */
+function siteorigin_unwind_panels_video_widget( $embed = false, $panels_data = array() ) {
+	if ( empty( $panels_data ) ) {
+		$panels_data = siteorigin_unwind_panels_get_panels_data();
+	}
+
+	if ( isset( $panels_data['blocks'] ) ) {
+		$blocks = $panels_data['blocks'];
+		unset( $panels_data['blocks'] );
+	}
+
+	if ( $panels_data && ! empty( $panels_data['widgets'] ) ) {
+		foreach ( $panels_data['widgets'] as $wid => $widget ) {
+			$panels_info = $widget['panels_info'];
+			// Only check the first row for videos.
+			if ( $panels_info['grid'] > 0 ) {
+				break;
+			}
+
+			if ( $panels_info['class'] == 'SiteOrigin_Widget_Video_Widget' && ! empty( $widget['video'] ) ) {
+				// Do we return the video directly, or do we modify the post content?
+				if ( $embed ) {
+					// Try and render the video.
+					if (
+						(
+							$widget['host_type'] == 'external' &&
+							! empty( $widget['video']['external_video'] )
+						) ||
+						(
+							$widget['host_type'] == 'self' &&
+							! empty( $widget['video']['self_sources'] )
+						)
+					) {
+						$video_widget = new SiteOrigin_Widget_Video_Widget();
+						ob_start();
+						$video_widget->widget( array(), $widget );
+						return ob_get_clean();
+					}
+				} else {
+					// Return layout without the current video widget present.
+					unset( $panels_data['widgets'][ $wid ] );
+
+					// Is the current page powered by the Block Editor?
+					if ( isset( $blocks ) ) {
+						$blocks[0]['attrs']['panelsData'] = $panels_data;
+						return serialize_blocks( $blocks );
+					} else {
+						// Classic Editor.
+						return SiteOrigin_Panels::renderer()->render( false, true, $panels_data );
+					}
+				}
+			}
+		}
+	}
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_unwind_get_video' ) ) :
 /**
  * Get the video from the current post
  */
-function siteorigin_unwind_get_video() {
+function siteorigin_unwind_get_video( $embed = false ) {
+
+	// SiteOrigin Page Builder with SiteOrigin Video Player Widget.
+	if (
+		class_exists( 'SiteOrigin_Panels' ) &&
+		class_exists( 'SiteOrigin_Widget_Video_Widget' )
+	) {
+		$panels_content = siteorigin_unwind_panels_get_panels_data();
+		if ( ! empty( $panels_content ) ) {
+			return siteorigin_unwind_panels_video_widget( $embed, $panels_content );
+		}
+	}
+
+	// Classic or Block Editor page.
+	preg_match_all( '/https?\:\/\/[^\" ]+/i', get_the_content(), $urls );
+
 	$first_url    = '';
 	$first_video  = '';
-
 	$i = 0;
-
-	preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', get_the_content(), $urls );
-
 	foreach ( $urls[0] as $url ) {
 		$i++;
 
@@ -778,15 +876,33 @@ if ( ! function_exists( 'siteorigin_unwind_filter_video' ) ) :
  * Removes the video from the page
  */
 function siteorigin_unwind_filter_video( $content ) {
-	if ( siteorigin_unwind_get_video() ) {
-		preg_match_all( '|^\s*https?://[^\s"]+\s*$|im', $content, $urls );
-
+	$has_panels_data = siteorigin_unwind_panels_get_panels_data();
+	if ( ! $has_panels_data ) {
+		$urls = siteorigin_unwind_get_video();
+		
+		preg_match_all( '/https?\:\/\/[^\" ]+/i', $content, $urls );
 		if ( ! empty( $urls[0] ) ) {
 			$content = str_replace( $urls[0][0], '', $content );
 		}
-		return $content;
+	}
+	return $content;
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_unwind_render_video_format_content' ) ) :
+/**
+ * Renders the content for the Video post format.
+ */
+function siteorigin_unwind_render_video_format_content() {
+	// Display the content without first video
+	$content = siteorigin_unwind_get_video();
+	$has_panels_data = siteorigin_unwind_panels_get_panels_data();
+	if ( $has_panels_data && ! empty( $content ) ) {
+		add_filter( 'siteorigin_panels_filter_content_enabled', '__return_false' );
+		echo apply_filters( 'the_content', siteorigin_unwind_filter_video( $content ) );
+		remove_filter( 'siteorigin_panels_filter_content_enabled', '__return_false' );
 	} else {
-		return $content;
+		echo apply_filters( 'the_content', siteorigin_unwind_filter_video( get_the_content() ) );
 	}
 }
 endif;

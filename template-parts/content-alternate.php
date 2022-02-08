@@ -27,9 +27,9 @@
 				<div class="entry-image">
 					<?php echo siteorigin_unwind_get_image(); ?>
 				</div>
-			<?php elseif ( get_post_format() == 'video' && siteorigin_unwind_get_video() ) : ?>
+			<?php elseif ( get_post_format() == 'video' && siteorigin_unwind_get_video( true ) ) : ?>
 				<div class="entry-video">
-					<?php echo siteorigin_unwind_get_video(); ?>
+					<?php echo siteorigin_unwind_get_video( true ); ?>
 				</div>
 			<?php elseif ( has_post_thumbnail() ) : ?>
 				<a href="<?php the_permalink() ?>">
