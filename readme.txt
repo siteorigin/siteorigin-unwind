@@ -101,6 +101,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.9.0 - 08 February 2022 =
+* Video Post Format: Added support for the SiteOrigin Video Player Widget.
+* Related Posts: Resolved notice if no categories are found.
+* WooCommerce: Fixed single product variation drop-down alignment.
+
 = 1.8.6 - 06 January 2022 =
 * Removed `role="navigation"` in `nav` tags.
 
