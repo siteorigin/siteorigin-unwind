@@ -25,9 +25,9 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( siteorigin_unwind_get_video() ) : ?>
+	<?php if ( siteorigin_unwind_get_video( true ) ) : ?>
 		<div class="entry-video">
-			<?php echo siteorigin_unwind_get_video(); ?>
+			<?php echo siteorigin_unwind_get_video( true ); ?>
 		</div>
 	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
 		<div class="entry-thumbnail">
@@ -42,9 +42,12 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && $post_class !== 'entry' ) siteorigin_unwind_excerpt();
-		else echo apply_filters( 'the_content', siteorigin_unwind_filter_video( get_the_content() ) ); // Display the content without first video ?>
 		<?php
+		if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && $post_class !== 'entry' ) {
+			siteorigin_unwind_excerpt();
+		} else {
+			siteorigin_unwind_render_video_format_content();
+		}
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',
 				'after'  => '</div>',
