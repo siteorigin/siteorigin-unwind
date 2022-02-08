@@ -740,7 +740,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_panels_get_panels_data' ) ) :
 /**
- * Get the page builder data for the current page.
+ * Get the Page Builder data for the current page.
  */
 function siteorigin_unwind_panels_get_panels_data() {
 	$panels_data = get_post_meta( get_the_ID(), 'panels_data', true );
@@ -828,7 +828,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_get_video' ) ) :
 /**
- * Get the video from the current post
+ * Get the video from the current post.
  */
 function siteorigin_unwind_get_video( $embed = false ) {
 
@@ -873,13 +873,13 @@ endif;
 
 if ( ! function_exists( 'siteorigin_unwind_filter_video' ) ) :
 /**
- * Removes the video from the page
+ * Removes the video from the page.
  */
 function siteorigin_unwind_filter_video( $content ) {
 	$has_panels_data = siteorigin_unwind_panels_get_panels_data();
 	if ( ! $has_panels_data ) {
 		$urls = siteorigin_unwind_get_video();
-		
+
 		preg_match_all( '/https?\:\/\/[^\" ]+/i', $content, $urls );
 		if ( ! empty( $urls[0] ) ) {
 			$content = str_replace( $urls[0][0], '', $content );
@@ -894,7 +894,7 @@ if ( ! function_exists( 'siteorigin_unwind_render_video_format_content' ) ) :
  * Renders the content for the Video post format.
  */
 function siteorigin_unwind_render_video_format_content() {
-	// Display the content without first video
+	// Display the content without first video.
 	$content = siteorigin_unwind_get_video();
 	$has_panels_data = siteorigin_unwind_panels_get_panels_data();
 	if ( $has_panels_data && ! empty( $content ) ) {
@@ -978,7 +978,7 @@ add_filter( 'jetpack_relatedposts_filter_headline', 'siteorigin_unwind_jetpackme
 
 if ( ! function_exists( 'siteorigin_unwind_jetpackme_remove_rp' ) ) :
 /**
- * Removing jetpack related posts from the bottom of posts
+ * Removing jetpack related posts from the bottom of posts.
  */
 function siteorigin_unwind_jetpackme_remove_rp() {
 	if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
