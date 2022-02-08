@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce
 
-Tested up to: 5.8
+Tested up to: 5.9
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -100,6 +100,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDUmlkb0ZmaXg1WDQ&usp=sharing).
 
 == Changelog ==
+
+= 1.9.0 - 08 February 2022 =
+* Video Post Format: Added support for the SiteOrigin Video Player Widget.
+* Related Posts: Resolved notice if no categories are found.
+* WooCommerce: Fixed single product variation drop-down alignment.
 
 = 1.8.6 - 06 January 2022 =
 * Removed `role="navigation"` in `nav` tags.
