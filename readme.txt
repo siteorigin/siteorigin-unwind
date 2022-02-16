@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.9.1 - 16 February 2022 =
+* Updated SiteOrigin Settings: Excluded websafe fonts from Google Fonts enqueue.
+
 = 1.9.0 - 08 February 2022 =
 * Video Post Format: Added support for the SiteOrigin Video Player Widget.
 * Related Posts: Resolved notice if no categories are found.
