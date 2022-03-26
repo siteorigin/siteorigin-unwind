@@ -46,11 +46,17 @@
 
 		.entry-summary {
 			margin-top: 0;
+			width: 48.65%;
+
+			@media(max-width: 768px) {
+				margin-bottom: 16px;
+				width: 100%;
+			}
 
 			.product_title {
 				font-size: 24px;
 				text-align: left;
-				margin: 20px 0 0;
+				margin: 20px 0 15px;
 			}
 
 			.woocommerce-product-rating {
@@ -73,7 +79,7 @@
 			.price {
 				font-size: 24px;
 				line-height: normal;
-				margin-bottom: 15px;
+				margin-bottom: 20px;
 				color: $color__primary-accent;
 
 				del,
@@ -93,20 +99,24 @@
 
 				.variations {
 					font-family: $font__main;
+					margin-bottom: 16px;
 
 					tr {
 						background: none;
-						
-						&:last-of-type {
 
-							td {
-								padding: 0;
+						th {
+							line-height: normal;
+							padding: 0 0 14px;
+							vertical-align: middle;
+
+							label {
+								font-size: 0.9rem;
 							}
 						}
 					}
 
 					td {
-						padding: 0;
+						padding: 0 0 14px;
 						vertical-align: middle;
 					}
 
@@ -137,11 +147,16 @@
 			.product_meta {
 				border-bottom: 1px solid $color__background-hr;
 				font-size: 14px;
-				padding: 30px 0;
+				padding: 22.5px 0;
 
 				span {
 					color: $color__text-light;
 					display: block;
+					margin-bottom: 2px;
+
+					&:last-of-type {
+						margin-bottom: 0;
+					}
 
 					a {
 						color: $color__text-dark;
@@ -160,6 +175,12 @@
 		}
 
 		.images {
+			margin-bottom: 34.5px;
+			width: 48.65%;
+
+			@media(max-width: 768px) {
+				width: 100%;
+			}
 
 			.flex-control-nav {
 				margin-top: 10px;
@@ -180,6 +201,10 @@
 				margin-bottom: 30px;
 				padding-left: 0;
 				text-transform: uppercase;
+				
+				@media (max-width: 768px) {
+					padding-bottom: 15px;
+				}
 
 				&:before {
 					border-bottom: 1px solid $color__background-hr;
@@ -209,10 +234,29 @@
 						box-shadow: none;
 					}
 
+					@media (max-width: 768px) {
+						display: block;
+						font-size: 13px;
+						margin: 0 0 10px;
+						padding-bottom: 0;
+						width: auto;
+
+						&.active {
+							border-bottom: none;
+						}
+					}
+
 					a {
 						color: $color__text-light;
 					}
 				}
+			}
+		}
+
+		#tab-additional_information {
+
+			h2 {
+				font-size: 18px;
 			}
 		}
 
@@ -381,6 +425,10 @@
 // Product variations.
 .variations {
 
+	th {
+		padding-left: 0;
+	}
+
 	td {
 		padding: 0;
 	}
@@ -430,8 +478,9 @@
 }
 
 // Product quantity buttons.
-.quantity.button-controls {
+div.product form.cart div.quantity.button-controls {
 	@include clearfix;
+	margin-right: 5px;
 	min-width: 120px;
 
 	.qty {
