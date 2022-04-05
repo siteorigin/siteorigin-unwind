@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.9.2 - 05 April 2022 =
+* WooCommerce: Single product page styling improvements.
+
 = 1.9.1 - 16 February 2022 =
 * Updated SiteOrigin Settings: Excluded websafe fonts from Google Fonts enqueue.
 
