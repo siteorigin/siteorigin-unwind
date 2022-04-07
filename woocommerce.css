@@ -244,7 +244,7 @@ p.demo_store {
       -o-transform: scale(0.95);
       transform: scale(0.95); }
       .woocommerce .woocommerce-ordering .ordering-selector-wrapper .ordering-dropdown li {
-        color: #adadad;
+        color: #626262;
         cursor: pointer;
         padding: 15px 25px;
         position: relative;
