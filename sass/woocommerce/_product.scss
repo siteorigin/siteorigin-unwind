@@ -135,10 +135,53 @@
 				}
 			}
 
+			@at-root .woocommerce div.product form.cart {
+				border-bottom: 1px solid $color__background-hr;
+				margin-bottom: 0;
+				padding-bottom: 30px;
+
+				.variations {
+					font-family: $font__main;
+					margin-bottom: 16px;
+
+					tr {
+						background: none;
+
+						th {
+							line-height: normal;
+							padding: 0 0 14px;
+							vertical-align: middle;
+
+							label {
+								font-size: 0.9rem;
+							}
+						}
+					}
+
+					td {
+						padding: 0 0 14px;
+						vertical-align: middle;
+					}
+
+					// Woo Variation Swatches plugin.
+					@at-root .woo-variation-swatches.woocommerce.single-product #content div.product .entry-summary .cart .variations td {
+						padding: 0 0 10px;
+					}
+
+					@at-root .woo-variation-swatches.woocommerce.single-product #content div.product .entry-summary .cart .variations tr:last-of-type td {
+						padding: 0;
+					}
+				}
+
+				.woocommerce-variation-price {
+					margin-bottom: 20px;
+				}
+			}
+
 			.group_table {
 				display: block;
 				padding-bottom: 30px;
-				
+
 				td:first-child {
 					width: auto !important;
 				}
@@ -417,6 +460,58 @@
 						width: 100%;
 					}
 				}
+			}
+		}
+	}
+
+	// WCTB.
+	div.product .so-panel {
+
+		.product_title {
+			font-size: 24px;
+			text-align: left;
+			margin: 20px 0 15px;
+		}
+
+		p.price,
+		span.price {
+			font-size: 24px;
+			line-height: normal;
+			margin-bottom: 20px;
+			color: $color__primary-accent;
+
+			del,
+			del .amount {
+				color: $color__text-light;
+			}
+		}
+
+		.product_meta {
+			border-bottom: 1px solid $color__background-hr;
+			font-size: 14px;
+			padding: 22.5px 0;
+
+			span {
+				color: $color__text-light;
+				display: block;
+				margin-bottom: 2px;
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+
+				a {
+					color: $color__text-dark;
+
+					&:hover {
+						color: $color__text-light;
+					}
+				}
+			}
+
+			.sku {
+				color: $color__text-dark;
+				display: inline-block;
 			}
 		}
 	}
