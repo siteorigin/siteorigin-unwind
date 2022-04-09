@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.9.3 - 09 April 2022 =
+* WooCommerce Template Builder: Improved single product template styling.
+
 = 1.9.2 - 05 April 2022 =
 * WooCommerce: Single product page styling improvements.
 
