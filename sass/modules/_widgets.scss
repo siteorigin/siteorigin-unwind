@@ -129,25 +129,26 @@
 			text-align: center;
 		}
 	}
+}
 
-	tfoot {
+.calendar_wrap .wp-calendar-nav {
+	font-size: .875rem;
 
-		#prev,
-		#next {
-			@include font-size(0.9333);
+	a {
+		color: $color__primary-accent;
 
-			a {
-				color: $color__primary-accent;
-
-				&:hover {
-					color: $color__primary-accent-dark;
-				}
-			}
+		&:hover {
+			color: $color__primary-accent-dark;
 		}
+	}
 
-		#next {
-			text-align: right;
-		}
+	.wp-calendar-nav-prev {
+		float: left;
+	}
+
+	.wp-calendar-nav-next {
+		float: right;
+		text-align: right;
 	}
 }
 
