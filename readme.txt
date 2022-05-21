@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.9.4 - 21 May 2022 =
+* Updated Calendar Widget styling for new markup.
+
 = 1.9.3 - 09 April 2022 =
 * WooCommerce Template Builder: Improved single product template styling.
 
