@@ -101,6 +101,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.9.6 - 06 November 2022 =
+* WooCommerce: Updated bundled templates to `7.0.1`.
+* SiteOrigin Settings: Updated Google Fonts array.
+* SiteOrigin Settings: Resolved potential Google Fonts empty response.
+* SiteOrigin Settings: Added support for `siteorigin_web_font_url`.
+
 = 1.9.5 - 12 June 2022 =
 * SiteOrigin Settings: Added `siteorigin_settings_websafe` filter to allow filtering of websafe fonts.
 
