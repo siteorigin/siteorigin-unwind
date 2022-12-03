@@ -933,7 +933,7 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	color: ${fonts_text_dark};
 	}
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper .ordering-dropdown li {
-	color: ${fonts_text_light};
+	color: ${fonts_text_medium};
 	}
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper .ordering-dropdown li:hover {
 	color: ${fonts_text_dark};
@@ -1028,15 +1028,8 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	.woocommerce.single-product #content div.product .entry-summary .cart .variations {
 	.font( ${fonts_main} );
 	}
-	.woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .qty {
-	border-color: ${fonts_text_light};
-	color: ${fonts_text_medium};
-	}
-	.woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add,.woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract {
-	border-color: ${fonts_text_light};
-	}
-	.woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .add:hover,.woocommerce.single-product #content div.product .entry-summary .cart .quantity.button-controls .subtract:hover {
-	background: ${fonts_text_medium};
+	.woocommerce div.product form.cart .variations {
+	.font( ${fonts_main} );
 	}
 	.woocommerce.single-product #content div.product .entry-summary .product_meta span {
 	color: ${fonts_text_light};
@@ -1074,6 +1067,24 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	.woocommerce.single-product #content div.product #reviews #respond .comment-reply-title {
 	color: ${fonts_text_dark};
 	}
+	.woocommerce.single-product div.product .so-panel p.price,.woocommerce.single-product div.product .so-panel span.price {
+	color: ${branding_accent};
+	}
+	.woocommerce.single-product div.product .so-panel p.price del,.woocommerce.single-product div.product .so-panel p.price del .amount,.woocommerce.single-product div.product .so-panel span.price del,.woocommerce.single-product div.product .so-panel span.price del .amount {
+	color: ${fonts_text_light};
+	}
+	.woocommerce.single-product div.product .so-panel .product_meta span {
+	color: ${fonts_text_light};
+	}
+	.woocommerce.single-product div.product .so-panel .product_meta span a {
+	color: ${fonts_text_dark};
+	}
+	.woocommerce.single-product div.product .so-panel .product_meta span a:hover {
+	color: ${fonts_text_light};
+	}
+	.woocommerce.single-product div.product .so-panel .product_meta .sku {
+	color: ${fonts_text_dark};
+	}
 	.variations select {
 	color: ${fonts_text_medium};
 	}
@@ -1085,6 +1096,16 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	}
 	.variations select:hover + svg path {
 	fill: ${fonts_text_dark};
+	}
+	div.product form.cart div.quantity.button-controls .qty {
+	border-color: ${fonts_text_light};
+	color: ${fonts_text_medium};
+	}
+	div.product form.cart div.quantity.button-controls .add,div.product form.cart div.quantity.button-controls .subtract {
+	border-color: ${fonts_text_light};
+	}
+	div.product form.cart div.quantity.button-controls .add:hover,div.product form.cart div.quantity.button-controls .subtract:hover {
+	background: ${fonts_text_medium};
 	}
 	.woocommerce form.login label,.woocommerce form.checkout_coupon label {
 	color: ${fonts_text_dark};
