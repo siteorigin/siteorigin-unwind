@@ -492,9 +492,6 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.main-navigation > div li:hover > a,.main-navigation > div li.focus > a {
 	color: ${fonts_text_dark};
 	}
-	.header-design-4 .main-navigation-bar > .container {
-	height: calc( ${masthead_padding} / 2) 0;
-	}
 	.search-toggle .open .svg-icon-search path {
 	fill: ${fonts_text_medium};
 	}
@@ -586,10 +583,10 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	color: ${fonts_text_dark};
 	.font( ${fonts_main} );
 	}
-	.widget #wp-calendar tfoot #prev a,.widget #wp-calendar tfoot #next a {
+	.calendar_wrap .wp-calendar-nav a {
 	color: ${branding_accent};
 	}
-	.widget #wp-calendar tfoot #prev a:hover,.widget #wp-calendar tfoot #next a:hover {
+	.calendar_wrap .wp-calendar-nav a:hover {
 	color: ${branding_accent_dark};
 	}
 	.widget_recent_entries .post-date {
