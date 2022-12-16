@@ -138,6 +138,15 @@
 				}
 			}
 		}
+
+		@at-root body.sticky-bar-out .alt-logo,
+		.alt-logo-scroll {
+			display: none;
+		}
+
+		@at-root body.sticky-bar-out #masthead .alt-logo-scroll {
+			display: block;
+		}
 	}
 
 	#masthead-widgets {

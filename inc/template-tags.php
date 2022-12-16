@@ -154,6 +154,7 @@ if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) :
  */
 function siteorigin_unwind_display_logo() {
 	$logo = siteorigin_setting( 'branding_logo' );
+	do_action( 'siteorigin_unwind_logo_before' );
 	if ( ! empty( $logo ) ) {
 		$attrs = apply_filters( 'siteorigin_unwind_logo_attributes', array() );
 
@@ -172,6 +173,7 @@ function siteorigin_unwind_display_logo() {
 			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 		<?php endif;
 	}
+	do_action( 'siteorigin_unwind_logo_after' );
 }
 endif;
 
