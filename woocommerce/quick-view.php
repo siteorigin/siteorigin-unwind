@@ -1,19 +1,21 @@
 <?php
 
-while ( have_posts() ) : the_post();
+while ( have_posts() ) {
+	the_post();
 
 	global $post, $product;
 
-	if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view_class' ) ) :
-	/**
-	 * Adds the product-quick-view class to the Qick View post.
-	 */
-	function siteorigin_unwind_woocommerce_quick_view_class( $classes ) {
-		$classes[] = "woocommerce";
-		$classes[] = "product-quick-view";
-		return $classes;
+	if ( ! function_exists( 'siteorigin_unwind_woocommerce_quick_view_class' ) ) {
+		/**
+		 * Adds the product-quick-view class to the Qick View post.
+		 */
+		function siteorigin_unwind_woocommerce_quick_view_class( $classes ) {
+			$classes[] = 'woocommerce';
+			$classes[] = 'product-quick-view';
+
+			return $classes;
+		}
 	}
-	endif;
 	add_filter( 'post_class', 'siteorigin_unwind_woocommerce_quick_view_class' );
 
 	?>
@@ -39,4 +41,5 @@ while ( have_posts() ) : the_post();
 
 	</div>
 
-<?php endwhile;
+<?php
+}

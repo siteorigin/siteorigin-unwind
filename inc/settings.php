@@ -16,7 +16,7 @@ function siteorigin_unwind_settings_localize( $loc ) {
 
 		// For the settings metabox.
 		'meta_box' => esc_html__( 'Page settings', 'siteorigin-unwind' ),
-	), $loc);
+	), $loc );
 }
 add_filter( 'siteorigin_settings_localization', 'siteorigin_unwind_settings_localize' );
 
@@ -24,26 +24,24 @@ add_filter( 'siteorigin_settings_localization', 'siteorigin_unwind_settings_loca
  * Initialize the settings.
  */
 function siteorigin_unwind_settings_init() {
-
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
-
 		'branding' => array(
 			'title' => esc_html__( 'Branding', 'siteorigin-unwind' ),
 			'fields' => array(
 				'logo' => array(
 					'type' => 'media',
 					'label' => esc_html__( 'Logo', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'Logo displayed in your header.', 'siteorigin-unwind' )
+					'description' => esc_html__( 'Logo displayed in your header.', 'siteorigin-unwind' ),
 				),
 				'retina_logo' => array(
 					'type' => 'media',
 					'label' => esc_html__( 'Retina Logo', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'A double sized logo to use on retina devices.', 'siteorigin-unwind' )
+					'description' => esc_html__( 'A double sized logo to use on retina devices.', 'siteorigin-unwind' ),
 				),
 				'site_description' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Site Description', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'Show your site description below your site title or logo.', 'siteorigin-unwind' )
+					'description' => esc_html__( 'Show your site description below your site title or logo.', 'siteorigin-unwind' ),
 				),
 				'attribution' => array(
 					'type' => 'checkbox',
@@ -63,7 +61,7 @@ function siteorigin_unwind_settings_init() {
 					'description' => esc_html__( 'The color used for link hovers and various other accents.', 'siteorigin-unwind' ),
 					'live' => true,
 				),
-			)
+			),
 		),
 
 		'fonts' => array(
@@ -141,7 +139,7 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Bottom Margin', 'siteorigin-unwind' ),
 					'live' => true,
 				),
-			)
+			),
 		),
 
 		'navigation' => array(
@@ -160,7 +158,7 @@ function siteorigin_unwind_settings_init() {
 				'mobile_menu_collapse' => array(
 					'label' => esc_html__( 'Mobile Menu Collapse', 'siteorigin-unwind' ),
 					'type' => 'number',
-					'description' => esc_html__( 'The screen width in pixels when the primary menu changes to a mobile menu.', 'siteorigin-unwind' )
+					'description' => esc_html__( 'The screen width in pixels when the primary menu changes to a mobile menu.', 'siteorigin-unwind' ),
 				),
 				'post' => array(
 					'type' => 'checkbox',
@@ -208,7 +206,7 @@ function siteorigin_unwind_settings_init() {
 						'left' => esc_html__( 'Left', 'siteorigin-unwind' ),
 					),
 				),
-			)
+			),
 		),
 
 		'blog' => array(
@@ -240,7 +238,7 @@ function siteorigin_unwind_settings_init() {
 						'alternate' => esc_html__( 'Alternate', 'siteorigin-unwind' ),
 						'masonry' => esc_html__( 'Masonry', 'siteorigin-unwind' ),
 					),
-					'description' => esc_html__('Choose how to display your posts on the blog and archive pages.', 'siteorigin-unwind'),
+					'description' => esc_html__( 'Choose how to display your posts on the blog and archive pages.', 'siteorigin-unwind' ),
 				),
 				'archive_content' => array(
 					'type' => 'select',
@@ -288,15 +286,14 @@ function siteorigin_unwind_settings_init() {
 				'search_fallback' => array(
 					'type' => 'media',
 					'label' => esc_html__( 'Search Fallback Image', 'siteorigin-unwind' ),
-					'description' => esc_html__( "Used for blog posts with no featured image.", 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Used for blog posts with no featured image.', 'siteorigin-unwind' ),
 				),
-			)
+			),
 		),
 
 		'footer' => array(
 			'title' => esc_html__( 'Footer', 'siteorigin-unwind' ),
 			'fields' => array(
-
 				'text' => array(
 					'type' => 'text',
 					'label' => esc_html__( 'Footer Text', 'siteorigin-unwind' ),
@@ -311,7 +308,7 @@ function siteorigin_unwind_settings_init() {
 				'constrained' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Constrain', 'siteorigin-unwind' ),
-					'description' => esc_html__( "Constrain the footer width.", 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Constrain the footer width.', 'siteorigin-unwind' ),
 				),
 				'top_padding' => array(
 					'type' => 'measurement',
@@ -321,7 +318,7 @@ function siteorigin_unwind_settings_init() {
 				'side_padding' => array(
 					'type' => 'measurement',
 					'label' => esc_html__( 'Side Padding', 'siteorigin-unwind' ),
-					'description' => esc_html__( "Applies if the footer width is not constrained.", 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Applies if the footer width is not constrained.', 'siteorigin-unwind' ),
 					'live' => true,
 				),
 				'top_margin' => array(
@@ -331,19 +328,19 @@ function siteorigin_unwind_settings_init() {
 				),
 			),
 		),
-
 	) ) );
 }
 add_action( 'siteorigin_settings_init', 'siteorigin_unwind_settings_init' );
 
 function siteorigin_unwind_woocommerce_settings( $settings ) {
-	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
+	if ( ! function_exists( 'is_woocommerce' ) ) {
+		return $settings;
+	}
 
 	$wc_settings = array(
 		'woocommerce' => array(
 			'title' => esc_html__( 'WooCommerce', 'siteorigin-unwind' ),
 			'fields' => array(
-
 				'product_gallery' => array(
 					'type' => 'select',
 					'label' => esc_html__( 'Product Gallery', 'siteorigin-unwind' ),
@@ -360,7 +357,7 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-unwind' ),
 					'min' => 2,
 					'max' => 5,
-					'step' => 1
+					'step' => 1,
 				),
 				'display_quick_view' => array(
 					'type' => 'checkbox',
@@ -385,9 +382,8 @@ function siteorigin_unwind_woocommerce_settings( $settings ) {
 						'right' => esc_html__( 'Right', 'siteorigin-unwind' ),
 					),
 				),
-
-			)
-		)
+			),
+		),
 	);
 
 	return array_merge( $settings, $wc_settings );
@@ -397,30 +393,27 @@ add_filter( 'siteorigin_unwind_settings_array', 'siteorigin_unwind_woocommerce_s
 /**
  * Tell the settings framework which settings we're using as fonts.
  *
- * @param $settings
- *
  * @return array
  */
 function siteorigin_unwind_font_settings( $settings ) {
-
-	$settings['fonts_details']  = array(
+	$settings['fonts_details'] = array(
 		'name'    => 'Lato',
 		'weights' => array(
 			300,
-			400
+			400,
 		),
 	);
-	$settings['fonts_main']     = array(
+	$settings['fonts_main'] = array(
 		'name'    => 'Merriweather',
 		'weights' => array(
 			400,
-			700
+			700,
 		),
 	);
 	$settings['fonts_headings'] = array(
 		'name'    => 'Merriweather',
 		'weights' => array(
-			700
+			700,
 		),
 	);
 
@@ -430,8 +423,6 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_unwind_font_setting
 
 /**
  * Add custom CSS for the theme settings.
- *
- * @param $css
  *
  * @return string
  */
@@ -882,22 +873,23 @@ function siteorigin_unwind_settings_custom_css( $css ) {
 	.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button .button:hover,.flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button #page #infinite-handle span button:hover,#page #infinite-handle span .flexslider.featured-posts-slider .featured-posts-slides .featured-post-slide .slide-content .entry-button button:hover {
 	color: ${fonts_text_dark};
 	}';
+
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_settings_custom_css' );
 
-if ( ! function_exists( 'siteorigin_unwind_wc_settings_custom_css' ) ) :
-/**
- * Add custom CSS for the theme woocommerce elements
- *
- * @param $css
- *
- * @return string
- */
-function siteorigin_unwind_wc_settings_custom_css( $css ) {
-	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
-	// Custom WooCommerce CSS Code
-	$css .= '/* woocommerce */
+if ( ! function_exists( 'siteorigin_unwind_wc_settings_custom_css' ) ) {
+	/**
+	 * Add custom CSS for the theme woocommerce elements
+	 *
+	 * @return string
+	 */
+	function siteorigin_unwind_wc_settings_custom_css( $css ) {
+		if ( ! function_exists( 'is_woocommerce' ) ) {
+			return $css;
+		}
+		// Custom WooCommerce CSS Code
+		$css .= '/* woocommerce */
 	.woocommerce-store-notice,p.demo_store {
 	background: ${branding_accent};
 	}
@@ -1337,17 +1329,17 @@ function siteorigin_unwind_wc_settings_custom_css( $css ) {
 	.font( ${fonts_main} );
 	}';
 
-	return $css;
+		return $css;
+	}
 }
-endif;
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_wc_settings_custom_css' );
 
-if ( ! function_exists( 'siteorigin_unwind_menu_breakpoint_css' ) ) :
-/**
- * Add CSS for mobile menu breakpoint.
- */
-function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
-	$css .= '@media screen and (max-width: ' . intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) . 'px) {
+if ( ! function_exists( 'siteorigin_unwind_menu_breakpoint_css' ) ) {
+	/**
+	 * Add CSS for mobile menu breakpoint.
+	 */
+	function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
+		$css .= '@media screen and (max-width: ' . intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) . 'px) {
 		.main-navigation .menu-toggle {
 			display: block;
 		}
@@ -1371,20 +1363,18 @@ function siteorigin_unwind_menu_breakpoint_css( $css, $settings ) {
 			display: none;
 		}
 	}';
-	return $css;
+
+		return $css;
+	}
 }
-endif;
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_menu_breakpoint_css', 10, 2 );
 
 /**
  * Add default settings.
  *
- * @param $defaults
- *
  * @return mixed
  */
 function siteorigin_unwind_settings_defaults( $defaults ) {
-
 	// Branding defaults.
 	$defaults['branding_logo']                   = false;
 	$defaults['branding_site_description']       = false;
@@ -1460,7 +1450,6 @@ add_filter( 'siteorigin_settings_defaults', 'siteorigin_unwind_settings_defaults
  * Setup Page Settings.
  */
 function siteorigin_unwind_page_settings( $settings, $type, $id ) {
-
 	$settings['layout'] = array(
 		'type'    => 'select',
 		'label'   => esc_html__( 'Page Layout', 'siteorigin-unwind' ),
@@ -1476,35 +1465,35 @@ function siteorigin_unwind_page_settings( $settings, $type, $id ) {
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Page Title', 'siteorigin-unwind' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Display the page title.', 'siteorigin-unwind' )
+		'description'    => esc_html__( 'Display the page title.', 'siteorigin-unwind' ),
 	);
 
 	$settings['masthead_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Header Bottom Margin', 'siteorigin-unwind' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Display the margin below the header.', 'siteorigin-unwind' )
+		'description'    => esc_html__( 'Display the margin below the header.', 'siteorigin-unwind' ),
 	);
 
 	$settings['footer_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Footer Top Margin', 'siteorigin-unwind' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Display the margin above the footer.', 'siteorigin-unwind' )
+		'description'    => esc_html__( 'Display the margin above the footer.', 'siteorigin-unwind' ),
 	);
 
 	$settings['display_masthead'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Header', 'siteorigin-unwind' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Display the header and top bar.', 'siteorigin-unwind' )
+		'description'    => esc_html__( 'Display the header and top bar.', 'siteorigin-unwind' ),
 	);
 
 	$settings['display_footer_widgets'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Footer Widgets', 'siteorigin-unwind' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-unwind' ),
-		'description'    => esc_html__( 'Display the footer widgets.', 'siteorigin-unwind' )
+		'description'    => esc_html__( 'Display the footer widgets.', 'siteorigin-unwind' ),
 	);
 
 	return $settings;
@@ -1539,8 +1528,6 @@ add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_unwind_setup_page_s
 
 /**
  * Change the default page settings for the home page.
- *
- * @param $settings
  *
  * @return mixed
  */
