@@ -4,13 +4,11 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package siteorigin-unwind
+ * @see https://developer.wordpress.org/themes/basics/template-files/#template-partials
  * @since siteorigin-unwind 0.1
+ *
  * @license GPL 2.0
  */
-
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -31,7 +29,7 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-unwind' ); ?></a>
 
-	<?php if ( siteorigin_page_setting( 'display_masthead', true ) ) : ?>
+	<?php if ( siteorigin_page_setting( 'display_masthead', true ) ) { ?>
 		<header id="masthead" class="site-header">
 
 			<?php if ( class_exists( 'Woocommerce' ) && is_store_notice_showing() ) {
@@ -41,7 +39,7 @@
 			<?php get_template_part( 'template-parts/header', siteorigin_setting( 'masthead_design' ) ); ?>
 
 		</header><!-- #masthead -->
-	<?php endif; ?>
+	<?php } ?>
 
 	<div id="content" class="site-content">
 		<div class="container">

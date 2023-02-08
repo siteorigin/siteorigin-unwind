@@ -11,17 +11,16 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
+ *
  * @version 7.0.1
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 ?>
 
-<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url() ) ?>">
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url() ); ?>">
 	<label for='s' class='screen-reader-text'><?php esc_html_e( 'Search for:', 'siteorigin-unwind' ); ?></label>
 	<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field" placeholder="<?php echo esc_attr__( 'Search products&hellip;', 'siteorigin-unwind' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 	<button type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'siteorigin-unwind' ); ?>">
