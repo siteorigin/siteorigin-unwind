@@ -300,6 +300,9 @@ function siteorigin_unwind_premium_setup() {
 		'enabled'            => siteorigin_setting( 'blog_ajax_comments' ),
 		'siteorigin_setting' => 'blog_ajax_comments'
 	) );
+
+	// Logo Booster.
+	add_theme_support( 'siteorigin-premium-logo-booster' );
 }
 endif;
 add_action( 'after_setup_theme', 'siteorigin_unwind_premium_setup' );
