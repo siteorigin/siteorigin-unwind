@@ -4,33 +4,39 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package siteorigin-unwind
+ * @see https://developer.wordpress.org/themes/basics/template-files/#template-partials
  * @since siteorigin-unwind 0.1
+ *
  * @license GPL 2.0
  */
+$footer_classes = '';
+if ( ! siteorigin_setting( 'footer_constrained' ) ) {
+	$footer_classes .= ' unconstrained-footer';
+}
 
+if ( is_active_sidebar( 'footer-sidebar' ) ) {
+	$footer_classes .= ' footer-active-sidebar';
+}
 ?>
 		</div><!-- .container -->
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer'; if ( is_active_sidebar( 'footer-sidebar' ) ) echo ' footer-active-sidebar'; ?>">
+	<footer id="colophon" class="site-footer<?php echo $footer_classes; ?>">
 
-		<?php if ( siteorigin_page_setting( 'display_footer_widgets', true ) ) : ?>
+		<?php if ( siteorigin_page_setting( 'display_footer_widgets', true ) ) { ?>
 			<div class="container">
 				<?php
 				if ( is_active_sidebar( 'footer-sidebar' ) ) {
 					$siteorigin_unwind_sidebars = wp_get_sidebars_widgets();
 					?>
-					<div class="widgets widgets-<?php echo count( $siteorigin_unwind_sidebars['footer-sidebar'] ) ?>" aria-label="<?php esc_attr_e( 'Footer Sidebar', 'siteorigin-unwind' ); ?>">
+					<div class="widgets widgets-<?php echo count( $siteorigin_unwind_sidebars['footer-sidebar'] ); ?>" aria-label="<?php esc_attr_e( 'Footer Sidebar', 'siteorigin-unwind' ); ?>">
 						<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 					</div>
 					<?php
 				}
-				?>
+			?>
 			</div>
-		<?php endif; ?>
+		<?php } ?>
 
 		<div class="site-info">
 			<div class="container">
@@ -55,12 +61,12 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php if ( siteorigin_setting( 'navigation_scroll_to_top' ) ) : ?>
+<?php if ( siteorigin_setting( 'navigation_scroll_to_top' ) ) { ?>
 	<div id="scroll-to-top">
 		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-unwind' ); ?></span>
 		<?php siteorigin_unwind_display_icon( 'up-arrow' ); ?>
 	</div>
-<?php endif; ?>
+<?php } ?>
 
 <?php wp_footer(); ?>
 

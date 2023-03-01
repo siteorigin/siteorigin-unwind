@@ -2,13 +2,11 @@
 /**
  * The template for displaying Jetpack Portfolio archive pages.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package siteorigin-unwind
+ * @see https://codex.wordpress.org/Template_Hierarchy
  * @since siteorigin-unwind 1.2.15
+ *
  * @license GPL 2.0
  */
-
 get_header(); ?>
 
 	<?php siteorigin_unwind_archive_title(); ?>

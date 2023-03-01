@@ -7,20 +7,18 @@
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package siteorigin-unwind
+ * @see https://codex.wordpress.org/Template_Hierarchy
  * @since siteorigin-unwind 0.1
+ *
  * @license GPL 2.0
  */
-
 get_header(); ?>
 
-	<?php if ( siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts() ) : ?>
+	<?php if ( siteorigin_setting( 'blog_featured_slider' ) && siteorigin_unwind_has_featured_posts() ) { ?>
 
 		<?php get_template_part( 'template-parts/featured', 'slider' ); ?>
 
-	<?php endif; ?>
+	<?php } ?>
 
 	<?php siteorigin_unwind_breadcrumbs(); ?>
 

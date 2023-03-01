@@ -2,12 +2,12 @@
 /**
  * Template part for displaying offset posts.
  *
- * @package siteorigin-unwind
  * @since siteorigin-unwind 1.1.1
+ *
  * @license GPL 2.0
  */
-
 $num_comments = get_comments_number();
+
 if ( comments_open() ) {
 	if ( $num_comments == 0 ) {
 		$comments = esc_html__( 'Post a Comment', 'siteorigin-unwind' );
@@ -17,10 +17,11 @@ if ( comments_open() ) {
 		$comments = esc_html__( '1 Comment', 'siteorigin-unwind' );
 	}
 } else {
-	$comments = NULL;
+	$comments = null;
 }
 
 $gallery = get_post_gallery( get_the_ID(), false );
+
 if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' ) ) {
 	add_action( 'wp_footer', 'siteorigin_unwind_enqueue_flexslider' );
 }
@@ -34,12 +35,12 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 			<?php siteorigin_unwind_post_meta(); ?>
 		</div><!-- .entry-meta -->
 
-		<?php if ( siteorigin_setting( 'blog_display_date' ) ) : ?>
+		<?php if ( siteorigin_setting( 'blog_display_date' ) ) { ?>
 			<p class="entry-time">
 				<span class="meta-text"><?php esc_html_e( 'Posted on ', 'siteorigin-unwind' ); ?></span>
 				<?php the_time( apply_filters( 'siteorigin_unwind_date_format', 'M d, Y' ) ); ?>
 			</p>
-		<?php endif; ?>
+		<?php } ?>
 
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -60,63 +61,66 @@ if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_unwind_enqueu
 			</a>
 		</div>
 
-		<?php if ( siteorigin_setting( 'blog_display_category' ) ) : ?>
+		<?php if ( siteorigin_setting( 'blog_display_category' ) ) { ?>
 			<div class="entry-categories">
 				<span class="meta-text"><?php esc_html_e( 'Posted in', 'siteorigin-unwind' ); ?></span>
 				<?php the_category( ', ', '', '' ); ?>
 			</div>
-		<?php endif; ?>
+		<?php } ?>
 
-		<?php if ( $comments && siteorigin_setting( 'blog_display_comments' ) ) : ?>
+		<?php if ( $comments && siteorigin_setting( 'blog_display_comments' ) ) { ?>
 			<div class="entry-comments">
 				<span class="meta-text"><?php esc_html_e( 'Comments', 'siteorigin-unwind' ); ?></span>
 				<a href="<?php get_comments_link(); ?>"><?php echo $comments; ?></a>
 			</div>
-		<?php endif; ?>
+		<?php } ?>
 
 	</div>
 
 	<div class="entry-content">
 
 		<div class="entry-thumbnail">
-			<?php if ( get_post_format() == 'gallery' && siteorigin_unwind_get_gallery() ) : ?>
+			<?php if ( get_post_format() == 'gallery' && siteorigin_unwind_get_gallery() ) { ?>
 				<?php $gallery = siteorigin_unwind_get_gallery(); ?>
 				<div class="flexslider gallery-format-slider">
 					<ul class="slides gallery-format-slides">
-						<?php foreach ( $gallery['src'] as $image ) : ?>
+						<?php foreach ( $gallery['src'] as $image ) { ?>
 							<li class="gallery-format-slide">
 								<img src="<?php echo $image; ?>">
 							</li>
-						<?php endforeach; ?>
+						<?php } ?>
 					<ul>
 				</div>
-			<?php elseif ( get_post_format() == 'image' && siteorigin_unwind_get_image() ) : ?>
+			<?php } elseif ( get_post_format() == 'image' && siteorigin_unwind_get_image() ) { ?>
 				<div class="entry-image">
-					<a href="<?php the_permalink() ?>">
+					<a href="<?php the_permalink(); ?>">
 						<?php echo siteorigin_unwind_get_image(); ?>
 					</a>
 				</div>
-			<?php elseif ( get_post_format() == 'video' && siteorigin_unwind_get_video( true ) ) : ?>
+			<?php } elseif ( get_post_format() == 'video' && siteorigin_unwind_get_video( true ) ) { ?>
 				<div class="entry-video">
 					<?php echo siteorigin_unwind_get_video( true ); ?>
 				</div>
-			<?php elseif ( has_post_thumbnail() ) : ?>
-				<a href="<?php the_permalink() ?>">
+			<?php } elseif ( has_post_thumbnail() ) { ?>
+				<a href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'aligncenter' ) ); ?>
 				</a>
-			<?php endif; ?>
+			<?php } ?>
 		</div>
 
 		<?php
-			if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) siteorigin_unwind_excerpt();
-			else the_content();
+		if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) {
+			siteorigin_unwind_excerpt();
+		} else {
+			the_content();
+		}
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',
-				'after'  => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-			) );
+		wp_link_pages( array(
+			'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-unwind' ) . '</span>',
+			'after'  => '</div>',
+			'link_before' => '<span>',
+			'link_after'  => '</span>',
+		) );
 		?>
 
 	</div><!-- .entry-content -->
