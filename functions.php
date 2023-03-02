@@ -352,5 +352,8 @@ if ( ! function_exists( 'siteorigin_unwind_premium_setup' ) ) {
 			'siteorigin_setting' => 'blog_ajax_comments',
 		) );
 	}
+
+  // Logo Booster.
+	add_theme_support( 'siteorigin-premium-logo-booster' );
 }
 add_action( 'after_setup_theme', 'siteorigin_unwind_premium_setup' );
