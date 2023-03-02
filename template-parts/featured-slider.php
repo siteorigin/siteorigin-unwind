@@ -2,10 +2,9 @@
 /**
  * Template part for displaying Jetpack Featured Content posts slider.
  *
- * @link https://jetpack.com/support/featured-content/
- *
- * @package siteorigin-unwind
+ * @see https://jetpack.com/support/featured-content/
  * @since siteorigin-unwind 0.9.3
+ *
  * @license GPL 2.0
  */
 
@@ -13,21 +12,25 @@
 $slider = siteorigin_unwind_get_featured_posts();
 
 // Checking if featured posts exist.
-if ( empty( $slider ) ) return;
+if ( empty( $slider ) ) {
+	return;
+}
 
-// Looping through our posts. ?>
+// Looping through our posts.?>
 
 <div class="flexslider featured-posts-slider">
 	<ul class="slides featured-posts-slides">
 
-		<?php foreach ( $slider as $post ) :
+		<?php foreach ( $slider as $post ) {
 			setup_postdata( $post );
 			$thumbnail = has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : false;
 			?>
 
-			<li class="featured-post-slide" <?php if ( ! empty( $thumbnail ) ) echo 'style="background-image: url( \''  . esc_url( $thumbnail ) . '\' )"'; ?>>
+			<li class="featured-post-slide" <?php if ( ! empty( $thumbnail ) ) {
+				echo 'style="background-image: url( \'' . esc_url( $thumbnail ) . '\' )"';
+			} ?>>
 
-				<header class="slide-content <?php echo ( siteorigin_setting( 'blog_featured_slider_overlay' ) ? 'slide-overlay' : '' ) ?>">
+				<header class="slide-content <?php echo  siteorigin_setting( 'blog_featured_slider_overlay' ) ? 'slide-overlay' : ''; ?>">
 					<a class="slide-entry-link" href="<?php the_permalink(); ?>"></a>
 					<div class="slide-inner">
 						<div class="slide-inner-cell">
@@ -48,9 +51,10 @@ if ( empty( $slider ) ) return;
 
 			</li>
 
-		<?php endforeach; ?>
+		<?php } ?>
 
 	</ul>
 </div>
 
-<?php wp_reset_postdata(); ?>
+<?php
+wp_reset_postdata();

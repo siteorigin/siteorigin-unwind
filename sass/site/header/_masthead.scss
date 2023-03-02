@@ -113,10 +113,6 @@
 			}
 		}
 
-		a {
-			display: inline-block;
-		}
-
 		.site-description {
 			@include font-size(0.9333);
 			line-height: 1.7142;
@@ -137,6 +133,15 @@
 					@include font-size(1.8);
 				}
 			}
+		}
+
+		@at-root body.sticky-bar-out .alt-logo,
+		.alt-logo-scroll {
+			display: none;
+		}
+
+		@at-root body.sticky-bar-out #masthead .alt-logo-scroll {
+			display: block;
 		}
 	}
 
