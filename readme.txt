@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.9.9 - 08 March 2023 =
+* WooCommerce: Updated Simple Product Read More button styling.
+
 = 1.9.8 - 02 March 2023 =
 * Added compatibility for the SiteOrigin Premium Logo Booster Addon.
 * WordPress PHP Coding Standards improvements.
