@@ -101,6 +101,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.9.10 - 22 April 2023 =
+* Moved breadcrumb functionality to SiteOrigin Settings framework.
+
 = 1.9.9 - 08 March 2023 =
 * WooCommerce: Updated Simple Product Read More button styling.
 
