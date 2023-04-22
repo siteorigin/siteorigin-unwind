@@ -1632,8 +1632,6 @@ a {
       #masthead .site-branding .site-title a {
         color: #2d2d2d;
         text-decoration: none; }
-    #masthead .site-branding a {
-      display: inline-block; }
     #masthead .site-branding .site-description {
       font-size: 14.9328px;
       font-size: 0.9333rem;
@@ -1652,6 +1650,11 @@ a {
           .header-design-4 #masthead .site-branding .site-title {
             font-size: 28.8px;
             font-size: 1.8rem; } }
+    body.sticky-bar-out .alt-logo,
+    .alt-logo-scroll {
+      display: none; }
+    body.sticky-bar-out #masthead .alt-logo-scroll {
+      display: block; }
   #masthead #masthead-widgets {
     margin: 60px auto; }
     #masthead #masthead-widgets::after {
