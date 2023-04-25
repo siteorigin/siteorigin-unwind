@@ -38,13 +38,10 @@ function siteorigin_unwind_settings_init() {
 					'label' => esc_html__( 'Retina Logo', 'siteorigin-unwind' ),
 					'description' => esc_html__( 'A double sized logo to use on retina devices.', 'siteorigin-unwind' ),
 					'teaser' => array(
-						'text' => __(
-							sprintf(
-								'Enhance your SiteOrigin theme logo functionality with the %sLogo Booster addon%s. Add an alternative logo on any page; upload a sticky logo to display on scroll.',
-								'<a href="https://siteorigin.com/downloads/premium/?featured_addon=theme/logo-booster" target="_blank" rel="noopener noreferrer">',
-								'</a>'
-							),
-							'siteorigin-unwind',
+						'text' => sprintf(
+							__( 'Enhance your SiteOrigin theme logo functionality with the %sLogo Booster addon%s. Add an alternative logo on any page; upload a sticky logo to display on scroll.', 'siteorigin-unwind' ),
+							'<a href="https://siteorigin.com/downloads/premium/?featured_addon=theme/logo-booster" target="_blank" rel="noopener noreferrer">',
+							'</a>'
 						),
 					),
 				),
