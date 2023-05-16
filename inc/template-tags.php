@@ -161,8 +161,8 @@ if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) {
 			<?php
 			}
 		}
+		do_action( 'siteorigin_unwind_logo_after' );
 	}
-	do_action( 'siteorigin_unwind_logo_after' );
 }
 
 /**
