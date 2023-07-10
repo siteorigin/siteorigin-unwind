@@ -153,7 +153,7 @@ if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) {
 				}
 				echo wp_get_attachment_image( $logo, 'full', false, $attrs );
 				if ( siteorigin_setting( 'branding_site_title' ) ) {
-					$tag = is_front_page() ? 'h1' : 'p'; ?>
+					$tag = is_front_page() ? 'h1' : 'p';
 					?>
 					<<?php echo $tag; ?> class="site-title">
 						<?php bloginfo( 'name' ); ?>
