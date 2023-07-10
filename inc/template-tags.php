@@ -144,25 +144,40 @@ if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) {
 
 		if ( ! empty( $logo ) ) {
 			$attrs = apply_filters( 'siteorigin_unwind_logo_attributes', array() );
-      $logo = apply_filters( 'siteorigin_unwind_logo_url', $logo );
-
-			?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<span class="screen-reader-text"><?php esc_html_e( 'Home', 'siteorigin-unwind' ); ?></span><?php
+     		$logo = apply_filters( 'siteorigin_unwind_logo_url', $logo );
+			?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<?php if ( siteorigin_setting( 'branding_site_title' ) ) { ?> 
+					<span class="screen-reader-text"><?php esc_html_e( 'Home', 'siteorigin-unwind' ); ?></span>
+					<?php
+				}
 				echo wp_get_attachment_image( $logo, 'full', false, $attrs );
-			?></a><?php
+				if ( siteorigin_setting( 'branding_site_title' ) ) {
+					$tag = is_front_page() ? 'h1' : 'p'; ?>
+					?>
+					<<?php echo $tag; ?> class="site-title">
+						<?php bloginfo( 'name' ); ?>
+					</<?php echo $tag; ?>>
+					<?php
+				}
+				?>
+			</a>
+			<?php
 
 		} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
 			?><?php the_custom_logo(); ?><?php
 		} else {
-			if ( is_front_page() ) { ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php } else { ?>
-			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			$tag = is_front_page() ? 'h1' : 'p';
+			?>
+			<<?php echo $tag; ?> class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+			</<?php echo $tag; ?>>
 			<?php
-			}
 		}
+		do_action( 'siteorigin_unwind_logo_after' );
 	}
-	do_action( 'siteorigin_unwind_logo_after' );
 }
 
 /**

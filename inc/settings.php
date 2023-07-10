@@ -45,6 +45,11 @@ function siteorigin_unwind_settings_init() {
 						),
 					),
 				),
+				'site_title' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Site Title', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'If a logo is set, show your site title below your logo.', 'siteorigin-unwind' ),
+				),
 				'site_description' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Site Description', 'siteorigin-unwind' ),
@@ -1384,6 +1389,7 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_unwind_menu_breakpoint
 function siteorigin_unwind_settings_defaults( $defaults ) {
 	// Branding defaults.
 	$defaults['branding_logo']                   = false;
+	$defaults['branding_site_title']             = false;
 	$defaults['branding_site_description']       = false;
 	$defaults['branding_attribution']            = true;
 	$defaults['branding_accent']                 = '#24c48a';
