@@ -140,11 +140,11 @@ if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) {
 	 */
 	function siteorigin_unwind_display_logo() {
 		$logo = siteorigin_setting( 'branding_logo' );
-		do_action( 'siteorigin_unwind_logo_before' );
 
 		if ( ! empty( $logo ) ) {
 			$attrs = apply_filters( 'siteorigin_unwind_logo_attributes', array() );
      		$logo = apply_filters( 'siteorigin_unwind_logo_url', $logo );
+			do_action( 'siteorigin_unwind_logo_before' );
 			?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<?php if ( siteorigin_setting( 'branding_site_title' ) ) { ?> 
@@ -163,10 +163,13 @@ if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) {
 				?>
 			</a>
 			<?php
-
+			do_action( 'siteorigin_unwind_logo_after' );
 		} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-			?><?php the_custom_logo(); ?><?php
+			do_action( 'siteorigin_unwind_logo_before' );
+			the_custom_logo();
+			do_action( 'siteorigin_unwind_logo_after' );
 		} else {
+			do_action( 'siteorigin_unwind_logo_before' );
 			$tag = is_front_page() ? 'h1' : 'p';
 			?>
 			<<?php echo $tag; ?> class="site-title">
@@ -175,8 +178,8 @@ if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) {
 				</a>
 			</<?php echo $tag; ?>>
 			<?php
+			do_action( 'siteorigin_unwind_logo_after' );
 		}
-		do_action( 'siteorigin_unwind_logo_after' );
 	}
 }
 
