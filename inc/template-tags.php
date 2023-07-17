@@ -152,14 +152,16 @@ if ( ! function_exists( 'siteorigin_unwind_display_logo' ) ) {
 			?></a><?php
 
 		} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-			?><?php the_custom_logo(); ?><?php
+			the_custom_logo();
 		} else {
-			if ( is_front_page() ) { ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php } else { ?>
-			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			$tag = is_front_page() ? 'h1' : 'p';
+			?>
+			<<?php echo $tag; ?> class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+			</<?php echo $tag; ?>>
 			<?php
-			}
 		}
 		do_action( 'siteorigin_unwind_logo_after' );
 	}
