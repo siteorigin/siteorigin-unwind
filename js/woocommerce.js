@@ -1,55 +1,70 @@
 jQuery( function( $ ) {
 
-	function quantityButtons( element ) {
 
-		// Add the Add and Subtract buttons.
-		$( element )
-		.find( '.quantity:not(.button-controls)' )
-		.addClass( 'button-controls' )
-		.prepend( '<input type="button" value="-" class="subtract" />' )
-		.append( '<input type="button" value="+" class="add" />' );
+	if ( ! so_unwind_data.is_sold_individually ) {
+		function quantityButtons( element ) {
 
-		$( element ).on( 'click', '.add, .subtract', function() {
+			// Add the Add and Subtract buttons.
+			var quantity = $( element ).find( '.quantity:not(.button-controls)' );
 
-			// Get values from the number input field.
-			var $quantity = $( this ).closest( '.quantity').find( '.qty' ),
-				value = parseFloat( $quantity.val() ),
-				max = parseFloat( $quantity.attr( 'max' ) ),
-				min = parseFloat( $quantity.attr( 'min' ) ),
-				step = $quantity.attr( 'step' );
+			if ( $( 'body' ).hasClass( 'woocommerce-cart' ) ) {
+				quantity = $( element ).find( '.input-text.qty[type="number"]' );
 
-			// Change the value.
-			if ( $( this ).is( '.add' ) ) {
-				if ( value >= max ) {
-					$quantity.val( max );
-				} else {
-					$quantity.val( value + parseFloat( step ) );
+				// If the field is hidden, this product is solid individually.
+				if ( ! quantity.length ) {
+					return;
 				}
-			} else if ( $( this ).is( '.subtract' ) ) {
-				if ( value <= min ) {
-					$quantity.val(min);
-				} else if ( value > 0 ) {
-					$quantity.val( value - parseFloat( step ) );
-				}
+			} else {
+				quantity = $( element ).find( '.quantity:not(.button-controls)' );
 			}
 
-			// Trigger change event.
-			$quantity.trigger( 'change' );
-		} );
+			quantity
+				.addClass( 'button-controls' )
+				.prepend( '<input type="button" value="-" class="subtract" />' )
+				.append( '<input type="button" value="+" class="add" />' );
 
-	}
+			$( element ).on( 'click', '.add, .subtract', function() {
 
-	$.fn.triggerQuantityButtons = function() {
-		return this.each( function( i, el ) {
-			quantityButtons( el );
-		} );
-	}
+				// Get values from the number input field.
+				var $quantity = $( this ).closest( '.quantity').find( '.qty' ),
+					value = parseFloat( $quantity.val() ),
+					max = parseFloat( $quantity.attr( 'max' ) ),
+					min = parseFloat( $quantity.attr( 'min' ) ),
+					step = $quantity.attr( 'step' );
 
-	$( 'table.shop_table, .product form.cart' ).triggerQuantityButtons();
+				// Change the value.
+				if ( $( this ).is( '.add' ) ) {
+					if ( value >= max ) {
+						$quantity.val( max );
+					} else {
+						$quantity.val( value + parseFloat( step ) );
+					}
+				} else if ( $( this ).is( '.subtract' ) ) {
+					if ( value <= min ) {
+						$quantity.val(min);
+					} else if ( value > 0 ) {
+						$quantity.val( value - parseFloat( step ) );
+					}
+				}
 
-	$( document ).on( 'updated_cart_totals', function() {
+				// Trigger change event.
+				$quantity.trigger( 'change' );
+			} );
+
+		}
+
+		$.fn.triggerQuantityButtons = function() {
+			return this.each( function( i, el ) {
+				quantityButtons( el );
+			} );
+		}
+
 		$( 'table.shop_table, .product form.cart' ).triggerQuantityButtons();
-	} );
+
+		$( document ).on( 'updated_cart_totals', function() {
+			$( 'table.shop_table, .product form.cart' ).triggerQuantityButtons();
+		} );
+	}
 
 	$( 'table.shop_table' ).removeClass( 'shop_table_responsive' );
 
@@ -118,7 +133,9 @@ jQuery( function( $ ) {
 			{ action: 'so_product_quick_view', product_id: id },
 			function( data ) {
 				$( document ).find( $container ).find( $content ).html( data );
-				$( document ).find( '#product-quick-view .cart' ).triggerQuantityButtons();
+				if ( ! so_unwind_data.is_sold_individually ) {
+					$( document ).find( '#product-quick-view .cart' ).triggerQuantityButtons();
+				}
 				$( document ).find( '#product-quick-view .variations_form' ).wc_variation_form();
 				$( document ).find( '#product-quick-view .variations_form' ).trigger( 'check_variations' );
 				if ( ! $( 'body' ).hasClass( 'woo-variation-swatches' ) ) {
@@ -135,7 +152,7 @@ jQuery( function( $ ) {
 					slideshow: false,
 					customDirectionNav: $( this ).find( '.flex-direction-nav a' ),
 				} );
-				
+
 				// If variation has image, change to FlexSlider slide.
 				$( '#product-quick-view .variations_form' ).on( 'found_variation.wc-variation-form', function( event, variation ) {
 					if ( variation && variation.image && variation.image.full_src ) {
