@@ -995,7 +995,7 @@ if ( ! function_exists( 'siteorigin_unwind_jetpackme_related_posts_headline' ) )
 	function siteorigin_unwind_jetpackme_related_posts_headline( $headline ) {
 		$headline = sprintf(
 			'<h2 class="jp-relatedposts-headline related-posts heading-strike">%s</h2>',
-			esc_html( 'You may also like', 'siteorigin-unwind' )
+			esc_html__( 'You may also like', 'siteorigin-unwind' )
 		);
 
 		return $headline;
