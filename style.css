@@ -3369,7 +3369,14 @@ object {
 ## Homepage Slider
 --------------------------------------------------------------*/
 .flexslider.featured-posts-slider {
-  border: none; }
+  border: none;
+  min-height: 600px; }
+  @media (max-width: 768px) {
+    .flexslider.featured-posts-slider {
+      min-height: 380px; } }
+  @media (max-width: 480px) {
+    .flexslider.featured-posts-slider {
+      min-height: 155px; } }
   .flexslider.featured-posts-slider:hover .flex-direction-nav a.flex-prev:before {
     background-color: rgba(0, 0, 0, 0.4);
     background-image: url("images/arrow-left.svg");
@@ -3385,6 +3392,8 @@ object {
   .flexslider.featured-posts-slider:hover .flex-direction-nav .flex-prev:hover,
   .flexslider.featured-posts-slider:hover .flex-direction-nav .flex-next:hover {
     background: transparent !important; }
+  .flexslider.featured-posts-slider .flex-direction-nav li {
+    padding-bottom: 0; }
   @media (max-width: 860px) {
     .flexslider.featured-posts-slider .flex-direction-nav .flex-prev {
       left: 0; }
