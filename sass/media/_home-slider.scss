@@ -1,5 +1,15 @@
 .flexslider.featured-posts-slider {
 	border: none;
+	// Keep the featured slider's space while FlexSlider initializes its slides.
+	min-height: 600px;
+
+	@media (max-width: 768px) {
+		min-height: 380px;
+	}
+
+	@media (max-width: 480px) {
+		min-height: 155px;
+	}
 
 	&:hover {
 
@@ -29,6 +39,10 @@
 	}
 
 	.flex-direction-nav {
+
+		li {
+			padding-bottom: 0;
+		}
 
 			@media (max-width: 860px) {
 
